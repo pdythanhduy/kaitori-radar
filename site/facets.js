@@ -58,16 +58,29 @@
     return "";
   }
 
-  function capacity(it) {
-    const src = it.key.startsWith("iPhone") ? it.key : it.name;  // không dùng key name:… (đã mất dấu cách → "10128GB")
-    // lấy dung lượng LỚN NHẤT trong tên (bộ nhớ lưu trữ), bỏ RAM kiểu "12GB/256GB"
-    let best = null;
-    for (const m of N(src).matchAll(/(?:^|[^\d])(\d{1,4})\s*(GB|TB)\b/gi)) {
-      const gb = +m[1] * (m[2].toUpperCase() === "TB" ? 1024 : 1);
-      if (gb >= 32 && (!best || gb > best.gb)) best = { gb, label: m[1] + m[2].toUpperCase() };
-    }
-    return best ? best.label : "";
+  // "1024GB" → 1024, "1TB" → 1024
+  function capGB(label) {
+    const m = /^(\d+)(GB|TB)$/.exec(label || "");
+    return m ? +m[1] * (m[2] === "TB" ? 1024 : 1) : 0;
   }
+  function capLabel(gb) {
+    return gb >= 1024 && gb % 1024 === 0 ? gb / 1024 + "TB" : gb + "GB";
+  }
+  function capacity(it) {
+    // key iPhone dạng "iPhone 12 64GB|iphone1264gb": chỉ lấy phần trước "|" (phần sau mất dấu cách → "1264GB")
+    // key name:… cũng mất dấu cách → dùng tên sản phẩm
+    const src = it.key.startsWith("iPhone") ? it.key.split("|")[0] : it.name;
+    // số GB/TB đứng riêng, không dính chữ cái phía trước (bỏ mã máy kiểu "FMVL75GB")
+    const all = [...N(src).matchAll(/(?:^|[^\dA-Za-z])(\d{1,4})\s*(GB|TB)\b/gi)]
+      .map((m) => +m[1] * (m[2].toUpperCase() === "TB" ? 1024 : 1))
+      .filter((gb) => gb >= 8 && gb <= 8192);
+    // viết tắt "256G" (không có B), chỉ nhận các mức dung lượng chuẩn để không nhầm "5G"
+    for (const m of N(src).matchAll(/(?:^|[^\dA-Za-z])(32|64|128|256|512)G(?![A-Za-z])/g)) all.push(+m[1]);
+    if (!all.length) return "";
+    // nhiều số (vd "8GB/256GB", "12GB+512GB") → số lớn nhất là bộ nhớ lưu trữ, số nhỏ là RAM
+    return capLabel(Math.max(...all));
+  }
+  const capSort = (a, b) => capGB(a) - capGB(b);
 
   // khoá sắp xếp tự nhiên: số lớn (đời mới) lên trước
   const SPECIAL = { Duo: 18.9, Air: 17.05 };
@@ -89,6 +102,6 @@
       }
       return items;
     },
-    seriesSort, CAP_ORDER,
+    seriesSort, CAP_ORDER, capSort,
   };
 })();

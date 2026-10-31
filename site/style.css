@@ -160,7 +160,7 @@ button,select,input{font:inherit}
 #toTop{position:fixed;right:16px;bottom:20px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--fg);font-size:1.25rem;font-weight:800;box-shadow:var(--sh-h);cursor:pointer;z-index:50;opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity .2s,transform .2s}
 #toTop.show{opacity:1;pointer-events:auto;transform:none}
 #toTop:hover{border-color:#a1a1aa}
-@media(max-width:900px){body.side-open{overflow:hidden}body.side-open #toTop{display:none}#toTop{bottom:16px;right:12px}}
+@media(max-width:900px){body.side-open{overflow:hidden}body.side-open #toTop{display:none}#toTop{bottom:16px;right:12px;width:40px;height:40px;opacity:0;font-size:1.1rem}#toTop.show{opacity:.85}body.cg-open #toTop{display:none}main{padding-bottom:64px}}
 /* v7: chip mobile — tên ngắn, ẩn số, ghim dưới header, mờ mép phải */
 .chips .ls{display:none}
 @media(max-width:900px){

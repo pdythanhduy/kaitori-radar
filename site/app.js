@@ -166,7 +166,7 @@
     h += facetBlock("brand", t.fBrand, counts("brand", (i) => i._f.brand), { labels: (v) => (v === "Khác" ? t.otherB : v), sort: (a, b) => (a === "Khác") - (b === "Khác") || (cnt.brand.get(b) || 0) - (cnt.brand.get(a) || 0) });
     const sc = counts("series", (i) => i._f.series);
     h += facetBlock("series", t.fSeries, sc, { sort: st.f.brand.size ? FACETS.seriesSort : (a, b) => (sc.get(b) || 0) - (sc.get(a) || 0), limit: 12 });
-    h += facetBlock("cap", t.fCap, counts("cap", (i) => i._f.cap), { sort: (a, b) => FACETS.CAP_ORDER.indexOf(a) - FACETS.CAP_ORDER.indexOf(b) });
+    h += facetBlock("cap", t.fCap, counts("cap", (i) => i._f.cap), { sort: FACETS.capSort });
     h += facetBlock("shop", t.fShop, counts("shop", (i) => Object.keys(i.prices)), { labels: (s) => SH[s]?.name || s, limit: 12 });
     h += `<div class="fg"><div class="fg-t">${t.fPrice}</div>${t.price.map((p, i) => `<label class="fo"><input type="radio" name="pr" data-p="${i}" ${st.price === i ? "checked" : ""}><span>${p}</span></label>`).join("")}</div>`;
     h += `<div class="fg"><div class="fg-t">${t.fMore}</div>
@@ -316,7 +316,8 @@
     toTop.classList.toggle("show", window.scrollY > 600);
     $("#chips").classList.toggle("stuck", $("#chips").getBoundingClientRect().top <= 53 && window.scrollY > 60);
   }, { passive: true });
-  $("#scrim").addEventListener("click", () => openSide(false));
+  $("#scrim").addEventListener("click", () => { openSide(false); cgOpen(false); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") { openSide(false); cgOpen(false); } });
   let qT; $("#q").addEventListener("input", (e) => { clearTimeout(qT); qT = setTimeout(() => { st.q = e.target.value.trim(); clearFilters(); render(); }, 250); });
   $("#more").addEventListener("click", () => paint(false));
   $("#lang").addEventListener("click", () => { lang = lang === "vi" ? "ja" : "vi"; localStorage.setItem("lang", lang); applyLang(); render(); $("#top").innerHTML = top.slice(0, 18).map(card).join(""); });
