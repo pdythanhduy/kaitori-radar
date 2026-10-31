@@ -1,8 +1,11 @@
 name: update-prices
 on:
   schedule:
-    - cron: "0 22,3,9 * * *"   # 07:00 / 12:00 / 18:00 JST
-  workflow_dispatch: {}
+    - cron: "30 18 * * *"        # 03:30 JST: toàn bộ danh mục
+    - cron: "0 22-23,0-14/2 * * *"  # 07:00–23:00 JST mỗi 2 tiếng: hàng hot
+  workflow_dispatch:
+    inputs:
+      mode: { description: "hot | full", default: "hot" }
 permissions:
   contents: write
   pages: write
@@ -11,18 +14,24 @@ concurrency: { group: pages, cancel-in-progress: false }
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 75
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.11" }
       - run: pip install -r requirements.txt
-      - run: python -m radar.run
+      - name: scrape
+        run: |
+          MODE="${{ github.event.inputs.mode }}"
+          if [ -z "$MODE" ]; then
+            if [ "${{ github.event.schedule }}" = "30 18 * * *" ]; then MODE=full; else MODE=hot; fi
+          fi
+          python -m radar.run --$MODE
       - name: commit data
         run: |
           git config user.name "kaitori-radar-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add site/data
+          git add site/data data_raw
           git diff --cached --quiet || git commit -m "data: $(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M')"
           git push
       - uses: actions/configure-pages@v5
