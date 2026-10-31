@@ -1,0 +1,202 @@
+{
+ "updated": "2026-10-31 23:55",
+ "shops": {
+  "morimori": {
+   "name": "森森買取",
+   "url": "https://www.morimori-kaitori.jp"
+  },
+  "mobile_ichiban": {
+   "name": "モバイル一番",
+   "url": "https://www.mobile-ichiban.com"
+  },
+  "homura": {
+   "name": "買取ホムラ",
+   "url": "https://kaitori-homura.com"
+  }
+ },
+ "cats": {
+  "phone": {
+   "label": "スマホ",
+   "count": 100,
+   "multi": 42
+  },
+  "tablet": {
+   "label": "タブレット",
+   "count": 329,
+   "multi": 0
+  },
+  "game": {
+   "label": "ゲーム機",
+   "count": 314,
+   "multi": 41
+  },
+  "card": {
+   "label": "トレカ",
+   "count": 393,
+   "multi": 21
+  },
+  "pc": {
+   "label": "パソコン",
+   "count": 41,
+   "multi": 0
+  },
+  "camera": {
+   "label": "カメラ",
+   "count": 604,
+   "multi": 41
+  },
+  "audio": {
+   "label": "オーディオ",
+   "count": 205,
+   "multi": 9
+  },
+  "appliance": {
+   "label": "家電・美容",
+   "count": 1071,
+   "multi": 0
+  },
+  "watch": {
+   "label": "腕時計",
+   "count": 87,
+   "multi": 0
+  },
+  "hobby": {
+   "label": "ホビー・フィギュア",
+   "count": 170,
+   "multi": 0
+  },
+  "other": {
+   "label": "その他",
+   "count": 1182,
+   "multi": 0
+  }
+ },
+ "total": 4496,
+ "status": {
+  "mobile_ichiban:2": {
+   "ok": true,
+   "n": 1654,
+   "ts": "2026-10-31 23:52"
+  },
+  "morimori:01": {
+   "ok": true,
+   "n": 157,
+   "ts": "2026-10-31 23:46"
+  },
+  "morimori:02": {
+   "ok": true,
+   "n": 1,
+   "ts": "2026-10-31 23:46"
+  },
+  "morimori:03": {
+   "ok": true,
+   "n": 527,
+   "ts": "2026-10-31 23:47"
+  },
+  "morimori:04": {
+   "ok": true,
+   "n": 344,
+   "ts": "2026-10-31 23:47"
+  },
+  "morimori:05": {
+   "ok": true,
+   "n": 694,
+   "ts": "2026-10-31 23:48"
+  },
+  "morimori:06": {
+   "ok": true,
+   "n": 324,
+   "ts": "2026-10-31 23:49"
+  },
+  "morimori:07": {
+   "ok": true,
+   "n": 139,
+   "ts": "2026-10-31 23:49"
+  },
+  "morimori:08": {
+   "ok": true,
+   "n": 226,
+   "ts": "2026-10-31 23:49"
+  },
+  "morimori:09": {
+   "ok": true,
+   "n": 28,
+   "ts": "2026-10-31 23:49"
+  },
+  "morimori:10": {
+   "ok": true,
+   "n": 0,
+   "ts": "2026-10-31 23:49"
+  },
+  "morimori:12": {
+   "ok": true,
+   "n": 0,
+   "ts": "2026-10-31 23:49"
+  },
+  "morimori:13": {
+   "ok": true,
+   "n": 2,
+   "ts": "2026-10-31 23:49"
+  },
+  "morimori:14": {
+   "ok": true,
+   "n": 126,
+   "ts": "2026-10-31 23:50"
+  },
+  "morimori:15": {
+   "ok": true,
+   "n": 119,
+   "ts": "2026-10-31 23:50"
+  },
+  "morimori:16": {
+   "ok": true,
+   "n": 34,
+   "ts": "2026-10-31 23:50"
+  },
+  "morimori:18": {
+   "ok": true,
+   "n": 4,
+   "ts": "2026-10-31 23:50"
+  },
+  "morimori:19": {
+   "ok": true,
+   "n": 152,
+   "ts": "2026-10-31 23:50"
+  },
+  "morimori:24": {
+   "ok": true,
+   "n": 278,
+   "ts": "2026-10-31 23:50"
+  },
+  "morimori:27": {
+   "ok": true,
+   "n": 0,
+   "ts": "2026-10-31 23:51"
+  },
+  "morimori:31": {
+   "ok": true,
+   "n": 23,
+   "ts": "2026-10-31 23:51"
+  },
+  "morimori:99": {
+   "ok": true,
+   "n": 338,
+   "ts": "2026-10-31 23:51"
+  },
+  "mobile_ichiban:1": {
+   "ok": true,
+   "n": 43,
+   "ts": "2026-10-31 23:51"
+  },
+  "mobile_ichiban:3": {
+   "ok": true,
+   "n": 49,
+   "ts": "2026-10-31 23:55"
+  },
+  "homura:box": {
+   "ok": true,
+   "n": 100,
+   "ts": "2026-10-31 23:55"
+  }
+ }
+}

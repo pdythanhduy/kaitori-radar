@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>買取レーダー｜ポケカBOX・iPhone 買取価格を毎日比較</title>
-<meta name="description" content="森森買取・買取ホムラ・モバイル一番など大手買取店のポケカ未開封BOXとiPhone新品の買取価格を毎日自動で比較。一番高く売れる店が一目でわかります。">
+<title>買取レーダー｜iPhone・ゲーム機・ポケカ・家電の買取価格を毎日比較</title>
+<meta name="description" content="森森買取・モバイル一番・買取ホムラなど大手買取店の買取価格を毎日自動で比較。iPhone、PS5・Switch、ポケカBOX、カメラ、家電まで、一番高く売れる店がひと目でわかります。">
 <meta property="og:title" content="買取レーダー｜買取価格を毎日比較">
-<meta property="og:description" content="ポケカBOX・iPhoneの買取価格を大手買取店で毎日比較。最高値の店と価格推移がすぐわかる。">
+<meta property="og:description" content="大手買取店の買取価格を毎日自動比較。最高値の店と価格差がすぐわかる。">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,36 +20,42 @@
 <section class="hero">
   <div class="wrap">
     <h1>どこで売るのが一番高い？<br><span>買取価格を毎日自動で比較</span></h1>
-    <p>大手買取店の公開価格を1日数回チェック。ポケカ未開封BOXとiPhone新品（SIMフリー）の最高値の店と値動きがひと目でわかります。</p>
+    <p id="heroStat">大手買取店の公開価格を毎日チェック。新品・未開封品の最高値の店と値動きがひと目でわかります。</p>
+    <input id="q" class="hero-q" type="search" placeholder="商品名・型番で検索（例：PS5 Pro、CFI-2000、17 Pro、ロケット団）" autocomplete="off">
   </div>
 </section>
 
 <main class="wrap">
-  <nav class="tabs" id="tabs">
-    <button data-cat="pokebox" class="on">🃏 ポケカBOX</button>
-    <button data-cat="iphone_new">📱 iPhone 新品未開封</button>
-  </nav>
-  <div class="tools">
-    <input id="q" type="search" placeholder="商品名で検索（例：ロケット団、17 Pro）" autocomplete="off">
-    <select id="sort">
-      <option value="rec">おすすめ（複数店比較を優先）</option>
-      <option value="best">買取価格が高い順</option>
-      <option value="spread">店舗間の価格差が大きい順</option>
-      <option value="change">前日から上がった順</option>
-      <option value="drop">前日から下がった順</option>
-      <option value="name">名前順</option>
-    </select>
-    <label class="chk"><input type="checkbox" id="multi"> 複数店で比較できる商品のみ</label>
-  </div>
-  <p class="hint" id="hint"></p>
-  <div id="list" class="list"></div>
-  <p class="empty" id="empty" hidden>該当する商品がありません。</p>
+  <nav class="chips" id="chips"></nav>
+
+  <section id="home">
+    <h2 class="sec">💡 今日の価格差ランキング <small>同じ商品でも店によってこんなに違う</small></h2>
+    <div id="top" class="list"></div>
+  </section>
+
+  <section id="catview" hidden>
+    <div class="tools">
+      <select id="sort">
+        <option value="rec">おすすめ（複数店比較を優先）</option>
+        <option value="best">買取価格が高い順</option>
+        <option value="spread">店舗間の価格差が大きい順</option>
+        <option value="up">前日から上がった順</option>
+        <option value="down">前日から下がった順</option>
+        <option value="name">名前順</option>
+      </select>
+      <label class="chk"><input type="checkbox" id="multi"> 複数店で比較できる商品のみ</label>
+    </div>
+    <p class="hint" id="hint"></p>
+    <div id="list" class="list"></div>
+    <button id="more" class="more" hidden>もっと見る</button>
+    <p class="empty" id="empty" hidden>該当する商品がありません。</p>
+  </section>
 </main>
 
 <footer class="ft">
   <div class="wrap">
-    <p><b>買取レーダー</b> は各買取店の公式サイトに公開されている価格を自動取得して表示する比較サイトです。</p>
-    <p>※価格は取得時点の参考値です。状態（シュリンクの有無・傷）・色・在庫状況・キャンペーンにより実際の買取額は変わります。売却前に必ず各店舗の最新価格をご確認ください。</p>
+    <p><b>買取レーダー</b> は各買取店の公式サイトに公開されている買取価格（新品・未開封）を自動取得して比較表示するサイトです。人気商品は数時間ごと、全商品は1日1〜2回更新しています。</p>
+    <p>※価格は取得時点の参考値です。状態・色・付属品・在庫状況・キャンペーンにより実際の買取額は変わります。売却前に必ず各店舗の最新価格をご確認ください。</p>
     <p id="shops"></p>
     <p class="small">© 2026 買取レーダー</p>
   </div>
