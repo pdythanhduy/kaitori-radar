@@ -81,7 +81,31 @@ def _display(cat, key, names):
     return best
 
 
+def _key_rank(k):
+    return 0 if k.startswith("iPhone") else 1 if k.startswith(("model:", "box:")) else 2
+
+
+def unify_by_jan(rows):
+    """Cùng mã JAN = cùng sản phẩm: gom về một khoá (ưu tiên iPhone/model/box hơn name)."""
+    best = {}
+    for r in rows:
+        j = r.get("jan")
+        if j and (j not in best or _key_rank(r["key"]) < _key_rank(best[j][1])):
+            best[j] = (r["cat"], r["key"])
+    # khoá name: -> khoá tốt hơn qua JAN (để cả các dòng KHÔNG có JAN nhưng trùng khoá name cũng gộp theo)
+    remap = {}
+    for r in rows:
+        j = r.get("jan")
+        if j and best[j][1] != r["key"]:
+            remap[(r["cat"], r["key"])] = best[j]
+    for r in rows:
+        if (r["cat"], r["key"]) in remap:
+            r["cat"], r["key"] = remap[(r["cat"], r["key"])]
+    return rows
+
+
 def aggregate(rows):
+    rows = unify_by_jan(rows)
     groups = {}
     for r in rows:
         g = groups.setdefault((r["cat"], r["key"]), {"names": [], "prices": {}})

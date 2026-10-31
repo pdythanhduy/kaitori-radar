@@ -31,8 +31,9 @@ def _clean(s: str) -> str:
     return html.unescape(" ".join(re.sub(r"<[^>]+>", " ", s).split()))
 
 
-def _row(shop, cat, name, price, url, note=""):
-    return {"shop": shop, "cat": cat, "name": name, "key": make_key(cat, name), "price": price, "url": url, "note": note}
+def _row(shop, cat, name, price, url, note="", jan=None):
+    return {"shop": shop, "cat": cat, "name": name, "key": make_key(cat, name), "price": price, "url": url, "note": note,
+            "jan": jan}
 
 
 # ================================================================== 森森買取
@@ -63,8 +64,9 @@ def _mm_parse(s):
         if not (nm and pr):
             continue
         rk = re.search(r'class="rk">(.*?)</span>', blk)
+        jan = re.search(r"JAN:(\d{8,14})", blk)
         out.append({"url": MM + nm.group(1), "name": _clean(nm.group(2)), "cond": _clean(rk.group(1)) if rk else "",
-                    "price": int(pr.group(1).replace(",", ""))})
+                    "price": int(pr.group(1).replace(",", "")), "jan": jan.group(1) if jan else None})
     return out
 
 
@@ -83,7 +85,7 @@ def morimori_scope(sess, cid, max_pages=250):
             name = x["name"]
             if cat == "phone" and "iPhone" in name and "SIMフリー" not in name.replace("SIMﾌﾘｰ", "SIMフリー"):
                 continue  # iPhone: chỉ so bản SIMフリー
-            rows.append(_row("morimori", cat, name, x["price"], x["url"]))
+            rows.append(_row("morimori", cat, name, x["price"], x["url"], jan=x["jan"]))
         if f"page={p + 1}" not in s:
             break
     return rows
@@ -185,8 +187,76 @@ def homura_scope(sess, _scope="box"):
     return rows
 
 
+# ================================================================== 買取ルデヤ (robots: Allow /)
+RD = "https://kaitori-rudeya.com"
+RD_HOT = ["255", "253", "254", "220", "219", "221", "218", "232", "214", "1", "2", "114"]
+
+
+def _rd_cat(cat_name, name):
+    t = cat_name + " " + name
+    if re.search(r"iPhone|Google|Pixel|OPPO|Motorola|SHARP|AQUOS|Xperia|SAMSUNG|Galaxy|FCNT|arrows|スマホ", t, re.I):
+        return "tablet" if re.search(r"iPad|Tab", t) else "phone"
+    if re.search(r"ポケモンカード|ワンピースカード|ドラゴンボールカード|遊戯王|トレカ", t):
+        return "card"
+    if re.search(r"Switch|PlayStation|Xbox|Steam|ROG|Meta Quest|PSVR|ゲーム", t, re.I):
+        return "game"
+    if re.search(r"iPad|Kindle|タブレット", t, re.I):
+        return "tablet"
+    if re.search(r"カメラ|レンズ|チェキ", t):
+        return "camera"
+    if re.search(r"AirPods|WF-|WH-|イヤホン|ヘッドホン|スピーカー|オーディオ", t, re.I):
+        return "audio"
+    if re.search(r"Apple Watch|ウォッチ|腕時計", t, re.I):
+        return "watch"
+    if re.search(r"MacBook|パソコン|PC", t):
+        return "pc"
+    if re.search(r"フィギュア|プラモ|ホビー|おもちゃ", t):
+        return "hobby"
+    return "appliance"
+
+
+def _rd_parse(s, cat_name):
+    out = []
+    for blk in s.split('<article class="pgrid-card"')[1:]:
+        cond = re.search(r'product-card-cond-badge[^"]*">([^<]+)<', blk)
+        nm = re.search(r'product-card-name-link" href="([^"]+)">(.*?)</a>', blk, re.S)
+        pr = re.search(r'product-card-price-value">([\d,]+)', blk)
+        if not (nm and pr):
+            continue
+        if cond and cond.group(1).strip() not in ("新品", "未開封", "未使用"):
+            continue
+        jan = re.search(r"JAN:\s*(\d{8,14})", blk)
+        memo = re.search(r'product-card-memo">(.*?)</span>', blk, re.S)
+        name = _clean(nm.group(2))
+        out.append(_row("rudeya", _rd_cat(cat_name, name), name, int(pr.group(1).replace(",", "")), nm.group(1),
+                        _clean(memo.group(1))[:40] if memo else "", jan.group(1) if jan else None))
+    return out
+
+
+def rudeya_scope(sess, scope):
+    if scope == "hot":
+        ids = RD_HOT
+    else:
+        sm = _get(sess, f"{RD}/sitemap.xml")
+        ids = sorted(set(re.findall(r"/category/detail/(\d+)", sm)), key=int)
+    rows, seen = [], set()
+    for cid in ids:
+        try:
+            s = _get(sess, f"{RD}/category/detail/{cid}")
+        except Exception as exc:  # noqa: BLE001
+            print(f"  rudeya {cid}: {exc}")
+            continue
+        h1 = re.search(r"<h1[^>]*>(.*?)</h1>", s, re.S)
+        for r in _rd_parse(s, _clean(h1.group(1)) if h1 else ""):
+            if r["url"] not in seen:
+                seen.add(r["url"])
+                rows.append(r)
+    return rows
+
+
 SHOPS = {
     "morimori": {"name": "森森買取", "url": MM, "fn": morimori_scope, "scopes": MM_SCOPES, "hot": MM_HOT},
+    "rudeya": {"name": "買取ルデヤ", "url": RD, "fn": rudeya_scope, "scopes": ["full"], "hot": ["hot"]},
     "mobile_ichiban": {"name": "モバイル一番", "url": MI, "fn": mobile_ichiban_scope, "scopes": MI_SCOPES, "hot": MI_HOT},
     "homura": {"name": "買取ホムラ", "url": "https://kaitori-homura.com", "fn": homura_scope, "scopes": ["box"], "hot": ["box"]},
 }
