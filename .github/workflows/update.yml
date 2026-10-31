@@ -2,7 +2,7 @@ name: update-prices
 on:
   schedule:
     - cron: "30 18 * * *"        # 03:30 JST: toàn bộ danh mục
-    - cron: "0 22-23,0-14/2 * * *"  # 07:00–23:00 JST mỗi 2 tiếng: hàng hot
+    - cron: "0 23,0-13 * * *"     # 08:00–22:00 JST mỗi tiếng: hàng hot
   workflow_dispatch:
     inputs:
       mode: { description: "hot | full", default: "hot" }
