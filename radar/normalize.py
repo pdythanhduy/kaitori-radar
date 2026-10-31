@@ -53,11 +53,27 @@ _MODEL = re.compile(r"(?<![A-Za-z0-9])([A-Z]{2,6}-[A-Z0-9]{2,10}(?:-[A-Z0-9]{1,8
 _MODEL_BAD = {"SIM", "USB", "LTE", "BOX", "HDMI", "OLED", "SSD", "HDD", "RAM", "ROM", "CPU", "GPU"}
 
 
+_TOKEN = re.compile(r"[A-Z0-9][A-Z0-9.\-/]*[A-Z0-9]")
+_NOT_MODEL = re.compile(r"^(\d+(GB|TB|MB|MM|W|V|HZ|K|P|CM|INCH|インチ)?|F\d[\d.\-]*|M\d|[A-Z]\d|20\d\d|\d+\.\d+)$")
+
+
 def model_code(name: str) -> str | None:
+    """Số model đầy đủ: lấy NGUYÊN token có cả chữ và số (giữ phần gạch nối), vd RF100-400MM, CFI-7100B01, ILCE-7M4.
+    Trước đây chỉ lấy 'RF100' → mọi ống kính RF100-xxx bị gộp nhầm."""
     s = unicodedata.normalize("NFKC", name).upper()
-    s = re.sub(r"\d+\s*(GB|TB|MB)", " ", s)
-    cands = [c for c in _MODEL.findall(s) if c not in _MODEL_BAD and re.search(r"\d", c) and len(c) >= 5]
-    return max(cands, key=len) if cands else None
+    s = re.sub(r"[\[\]【】()（）「」\"'、,]", " ", s)
+    cands = []
+    for t in _TOKEN.findall(s):
+        t = t.strip("-./")
+        if len(t) < 5 or t in _MODEL_BAD or _NOT_MODEL.match(t):
+            continue
+        if not (re.search(r"[A-Z]", t) and re.search(r"\d", t)):
+            continue
+        cands.append(t)
+    if not cands:
+        return None
+    # ưu tiên token có gạch nối (dạng model chuẩn), sau đó token dài nhất
+    return max(cands, key=lambda c: ("-" in c, len(c)))
 
 
 def name_key(name: str) -> str:
@@ -73,6 +89,8 @@ def make_key(cat: str, name: str) -> str:
             return k
     if cat == "card" and re.search(r"BOX|ボックス", name, re.I):
         return "box:" + box_key(name)
+    if re.search(r"キット|セット|同梱|バンドル|kit", name, re.I):
+        return "name:" + name_key(name)  # bộ kit/set: số model của 1 linh kiện không đại diện cả bộ
     mc = model_code(name)
     if mc:
         return "model:" + mc

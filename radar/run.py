@@ -70,6 +70,9 @@ def load_rows():
             k = (r["shop"], r["url"], r["name"])
             if k not in latest or r["ts"] > latest[k]["ts"]:
                 latest[k] = r
+    from .normalize import make_key
+    for r in latest.values():
+        r["key"] = make_key(r["cat"], r["name"])  # luôn tính lại theo luật ghép mới nhất
     return list(latest.values())
 
 
@@ -110,8 +113,25 @@ def unify_by_jan(rows):
     return rows
 
 
+def split_mixed(rows, ratio=1.3):
+    """Trong CÙNG một tiệm, nếu một khoá chứa các dòng giá chênh > 1.3 lần → khoá quá thô (gộp nhầm nhiều SP):
+    tách theo tên đầy đủ. (Khác màu thường chỉ lệch < 15%.)"""
+    from .normalize import name_key
+    rng = {}
+    for r in rows:
+        k = (r["shop"], r["cat"], r["key"])
+        lo, hi = rng.get(k, (r["price"], r["price"]))
+        rng[k] = (min(lo, r["price"]), max(hi, r["price"]))
+    bad = {(c, k) for (s, c, k), (lo, hi) in rng.items() if hi > lo * ratio}
+    for r in rows:
+        if (r["cat"], r["key"]) in bad:
+            r["key"] = f'{r["key"]}|{name_key(r["name"])}'
+    return rows
+
+
 def aggregate(rows):
     rows = unify_by_jan(rows)
+    rows = split_mixed(rows)
     groups = {}
     for r in rows:
         g = groups.setdefault((r["cat"], r["key"]), {"names": [], "prices": {}})
@@ -171,7 +191,7 @@ def write_outputs(items, status):
         (OUT / "cat" / f"{cat}.json").write_text(json.dumps(its, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
         cats[cat] = {"label": label, "count": len(its), "multi": sum(1 for i in its if i["n_shops"] > 1)}
     idx = {"updated": now_jst().strftime("%Y-%m-%d %H:%M"),
-           "shops": {k: {"name": v["name"], "url": v["url"]} for k, v in SHOPS.items()},
+           "shops": {k: {"name": v["name"], "url": v["url"], "list": v.get("list", False)} for k, v in SHOPS.items()},
            "cats": cats, "total": len(items), "status": status}
     (OUT / "index.json").write_text(json.dumps(idx, ensure_ascii=False, indent=1), encoding="utf-8")
     # top chênh lệch để hiển thị trang chủ

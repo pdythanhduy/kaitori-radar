@@ -429,10 +429,10 @@ def keitaigod_scope(sess, scope):
 SHOPS = {
     "morimori": {"name": "森森買取", "url": MM, "fn": morimori_scope, "scopes": MM_SCOPES, "hot": MM_HOT},
     "rudeya": {"name": "買取ルデヤ", "url": RD, "fn": rudeya_scope, "scopes": ["full"], "hot": ["hot"]},
-    "panda": {"name": "PANDA買取", "url": PD, "fn": panda_scope, "scopes": ["full"], "hot": ["hot"]},
-    "guestmobile": {"name": "ゲストモバイル", "url": GM, "fn": guestmobile_scope, "scopes": ["full"], "hot": ["hot"]},
+    "panda": {"name": "PANDA買取", "url": PD, "list": True, "fn": panda_scope, "scopes": ["full"], "hot": ["hot"]},
+    "guestmobile": {"name": "ゲストモバイル", "url": GM, "list": True, "fn": guestmobile_scope, "scopes": ["full"], "hot": ["hot"]},
     "toban": {"name": "買取当番", "url": TB, "fn": toban_scope, "scopes": ["full"], "hot": ["hot"]},
     "keitaigod": {"name": "ケータイゴッド", "url": KG, "fn": keitaigod_scope, "scopes": ["full"], "hot": ["hot"]},
-    "mobile_ichiban": {"name": "モバイル一番", "url": MI, "fn": mobile_ichiban_scope, "scopes": MI_SCOPES, "hot": MI_HOT},
+    "mobile_ichiban": {"name": "モバイル一番", "url": MI, "list": True, "fn": mobile_ichiban_scope, "scopes": MI_SCOPES, "hot": MI_HOT},
     "homura": {"name": "買取ホムラ", "url": "https://kaitori-homura.com", "fn": homura_scope, "scopes": ["box"], "hot": ["box"]},
 }

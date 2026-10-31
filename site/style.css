@@ -91,3 +91,8 @@ a{color:inherit;text-decoration:none}
  .f-lab{flex-basis:100%}
  .reset{margin-left:0}
 }
+/* v4: chips wrap on desktop, list links, toast */
+@media(min-width:701px){.chips{flex-wrap:wrap;overflow:visible}}
+.sh a.lst{color:#7c3aed}
+#toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(120%);background:#0f172a;color:#fff;padding:.7rem 1rem;border-radius:12px;font-size:.85rem;max-width:92vw;box-shadow:0 10px 30px rgba(0,0,0,.3);transition:transform .25s;z-index:99}
+#toast.show{transform:translateX(-50%) translateY(0)}

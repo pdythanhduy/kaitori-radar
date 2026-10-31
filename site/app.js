@@ -54,7 +54,11 @@
     const chg = it.chg ? `<span class="chg ${it.chg > 0 ? "up" : "dn"}">${it.chg > 0 ? "▲" : "▼"}${Math.abs(it.chg).toLocaleString()}</span>` : "";
     const rows = shops.map(([sid, p], i) => {
       const extra = p.min && p.min !== p.price ? `<span class="nt">${t.colorFrom} ${yen(p.min)}</span>` : p.note ? `<span class="nt">${esc(p.note.slice(0, 16))}</span>` : "";
-      return `<div class="sh ${i === 0 && shops.length > 1 ? "top" : ""}"><span><a href="${esc(p.url)}" target="_blank" rel="noopener nofollow">${SH[sid]?.name || sid}</a>${extra}</span><span class="p">${yen(p.price)}</span></div>`;
+      const lst = SH[sid]?.list;
+      const a = lst
+        ? `<a href="${esc(p.url)}" target="_blank" rel="noopener nofollow" class="lst" data-copy="${esc(it.name)}" title="${esc(t.listTip)}">${SH[sid]?.name || sid} 🔍</a>`
+        : `<a href="${esc(p.url)}" target="_blank" rel="noopener nofollow">${SH[sid]?.name || sid}</a>`;
+      return `<div class="sh ${i === 0 && shops.length > 1 ? "top" : ""}"><span>${a}${extra}</span><span class="p">${yen(p.price)}</span></div>`;
     }).join("");
     const diff = it.n_shops > 1 && it.spread > 0 ? `<div class="diff">${t.diff(yen(it.spread))}</div>` : "";
     return `<article class="card">
@@ -159,6 +163,15 @@
   let qT; $("#q").addEventListener("input", (e) => { clearTimeout(qT); qT = setTimeout(() => { st.q = e.target.value.trim(); render(); }, 250); });
   $("#more").addEventListener("click", () => paint(false));
   $("#lang").addEventListener("click", () => { lang = lang === "vi" ? "ja" : "vi"; localStorage.setItem("lang", lang); applyLang(); render(); $("#top").innerHTML = top.slice(0, 18).map(card).join(""); });
+  document.body.addEventListener("click", (e) => {
+    const a = e.target.closest("a.lst"); if (!a) return;
+    navigator.clipboard?.writeText(a.dataset.copy).catch(() => {});
+    toast(T().copied);
+  });
+  function toast(msg) {
+    let el = $("#toast"); if (!el) { el = document.createElement("div"); el.id = "toast"; document.body.appendChild(el); }
+    el.textContent = msg; el.classList.add("show"); clearTimeout(el._t); el._t = setTimeout(() => el.classList.remove("show"), 3500);
+  }
   document.body.addEventListener("input", (e) => {
     if (!e.target.matches(".calc input")) return;
     const v = parseInt(e.target.value, 10), best = +e.target.dataset.best, out = e.target.parentElement.querySelector(".pf");
