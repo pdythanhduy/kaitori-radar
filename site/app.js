@@ -54,10 +54,13 @@
       return;
     }
     chipsLang = lang;
-    const order = Object.entries(CATS).sort((a, b) => b[1].multi - a[1].multi || b[1].count - a[1].count);
+    // thứ tự cố định theo mức quan tâm của người đi kaitori (hot trước)
+    const PRIO = ["phone", "game", "camera", "card", "tablet", "audio", "watch", "pc", "hobby", "appliance", "other"];
+    const order = Object.entries(CATS).sort((a, b) => (PRIO.indexOf(a[0]) + 99) % 99 - (PRIO.indexOf(b[0]) + 99) % 99);
+    const short = T().catsShort || {};
     $("#chips").innerHTML =
-      `<button data-v="home" class="${st.view === "home" ? "on" : ""}">${T().home}</button>` +
-      order.map(([c, v]) => `<button data-c="${c}" class="${st.view === "cat" && st.cat === c && !st.q ? "on" : ""}">${ICON[c] || ""} ${T().cats[c] || v.label}<small>${v.count.toLocaleString()}</small></button>`).join("") +
+      `<button data-v="home" class="${st.view === "home" ? "on" : ""}"><span class="lf">${T().home}</span><span class="ls">🏠</span></button>` +
+      order.map(([c, v]) => `<button data-c="${c}" class="${st.view === "cat" && st.cat === c && !st.q ? "on" : ""}">${ICON[c] || ""} <span class="lf">${T().cats[c] || v.label}</span><span class="ls">${short[c] || T().cats[c] || v.label}</span><small>${v.count.toLocaleString()}</small></button>`).join("") +
       `<button data-v="deals" class="deal ${st.view === "deals" ? "on" : ""}">${T().deals}</button>`;
   }
 
@@ -238,8 +241,8 @@
     $("#q").value = ""; st.q = ""; clearFilters();
     if (b.dataset.c) { st.view = "cat"; st.cat = b.dataset.c; } else st.view = b.dataset.v;
     b.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" });  // chip được chọn ra giữa, không nhảy dọc
-    const top = $("#chips").getBoundingClientRect().top;
-    if (top < 0) window.scrollTo({ top: window.scrollY + top - 56, behavior: "smooth" });  // chỉ cuộn khi đang ở dưới thanh chip
+    const anchor = $("main").getBoundingClientRect().top + window.scrollY - 52;  // đầu vùng nội dung (dưới header)
+    if (window.scrollY > anchor + 4) window.scrollTo({ top: anchor, behavior: "smooth" });  // đang ở sâu → về đầu danh sách mới
     render();
   });
   $("#facets").addEventListener("change", (e) => {
@@ -281,7 +284,10 @@
   toTop.id = "toTop"; toTop.setAttribute("aria-label", "top"); toTop.textContent = "↑";
   document.body.appendChild(toTop);
   toTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
-  window.addEventListener("scroll", () => toTop.classList.toggle("show", window.scrollY > 600), { passive: true });
+  window.addEventListener("scroll", () => {
+    toTop.classList.toggle("show", window.scrollY > 600);
+    $("#chips").classList.toggle("stuck", $("#chips").getBoundingClientRect().top <= 53 && window.scrollY > 60);
+  }, { passive: true });
   $("#scrim").addEventListener("click", () => openSide(false));
   let qT; $("#q").addEventListener("input", (e) => { clearTimeout(qT); qT = setTimeout(() => { st.q = e.target.value.trim(); clearFilters(); render(); }, 250); });
   $("#more").addEventListener("click", () => paint(false));

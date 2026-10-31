@@ -161,3 +161,15 @@ button,select,input{font:inherit}
 #toTop.show{opacity:1;pointer-events:auto;transform:none}
 #toTop:hover{border-color:#a1a1aa}
 @media(max-width:900px){body.side-open{overflow:hidden}body.side-open #toTop{display:none}#toTop{bottom:16px;right:12px}}
+/* v7: chip mobile — tên ngắn, ẩn số, ghim dưới header, mờ mép phải */
+.chips .ls{display:none}
+@media(max-width:900px){
+ .chips{position:sticky;top:52px;z-index:30;background:var(--bg);margin:0 -16px;padding:8px 16px;gap:.35rem;
+   -webkit-mask-image:linear-gradient(to right,#000 0,#000 calc(100% - 36px),transparent);mask-image:linear-gradient(to right,#000 0,#000 calc(100% - 36px),transparent);
+   border-bottom:1px solid transparent;transition:border-color .2s}
+ .chips.stuck{border-bottom-color:var(--line);box-shadow:0 4px 10px -8px rgba(0,0,0,.25)}
+ .chips .lf,.chips small{display:none}
+ .chips .ls{display:inline}
+ .chips button{padding:.45rem .75rem;font-size:.86rem;min-height:36px}
+ .chips button:last-child{margin-right:28px}
+}
