@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-01 01:34",
+ "updated": "2026-11-01 01:59",
  "shops": {
   "morimori": {
    "name": "森森買取",
@@ -46,60 +46,60 @@
   "phone": {
    "label": "スマホ",
    "count": 1134,
-   "multi": 430
+   "multi": 429
   },
   "tablet": {
    "label": "タブレット",
-   "count": 671,
+   "count": 691,
    "multi": 157
   },
   "game": {
    "label": "ゲーム機",
-   "count": 660,
-   "multi": 234
+   "count": 695,
+   "multi": 244
   },
   "card": {
    "label": "トレカ",
-   "count": 1232,
+   "count": 1225,
    "multi": 76
   },
   "pc": {
    "label": "パソコン",
-   "count": 287,
-   "multi": 24
+   "count": 414,
+   "multi": 17
   },
   "camera": {
    "label": "カメラ",
-   "count": 705,
-   "multi": 201
+   "count": 1284,
+   "multi": 353
   },
   "audio": {
    "label": "オーディオ",
-   "count": 277,
-   "multi": 63
+   "count": 275,
+   "multi": 68
   },
   "appliance": {
    "label": "家電・美容",
-   "count": 3418,
-   "multi": 433
+   "count": 2733,
+   "multi": 299
   },
   "watch": {
    "label": "腕時計",
-   "count": 205,
+   "count": 241,
    "multi": 94
   },
   "hobby": {
    "label": "ホビー・フィギュア",
-   "count": 179,
-   "multi": 10
+   "count": 181,
+   "multi": 9
   },
   "other": {
    "label": "その他",
-   "count": 1149,
-   "multi": 2
+   "count": 861,
+   "multi": 7
   }
  },
- "total": 9917,
+ "total": 9734,
  "status": {
   "mobile_ichiban:2": {
    "ok": true,

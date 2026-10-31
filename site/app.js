@@ -14,6 +14,19 @@
   const st = { view: "home", cat: null, q: "", f: { cat: new Set(), brand: new Set(), series: new Set(), cap: new Set(), shop: new Set() },
     price: 0, multi: false, gap: false, sort: "rec", layout: localStorage.getItem("layout") || "card" };
 
+  const promos = await fetch("promos.json" + bust).then((r) => r.json()).catch(() => ({ groups: [], inline: {} }));
+  const AFF = promos.inline || {};
+  const pxSeen = new Set();
+  function pixel(src) {  // ảnh 1x1 đo lượt hiển thị A8 — mỗi chương trình 1 lần/trang
+    if (!src || pxSeen.has(src)) return;
+    pxSeen.add(src);
+    const i = new Image(1, 1); i.src = src; i.alt = ""; i.style.cssText = "position:absolute;width:1px;height:1px;opacity:0"; document.body.appendChild(i);
+  }
+  function affBox(cat) {
+    const a = AFF[cat]; if (!a) return "";
+    pixel(a.px + "?a8mat=" + a.a8mat);
+    return `<div class="aff"><span class="pr">PR</span><span>${T().affText}</span><a href="https://px.a8.net/svt/ejp?a8mat=${a.a8mat}" target="_blank" rel="sponsored nofollow noopener">${esc(a.name)} →</a></div>`;
+  }
   const loadCat = async (c) => (cache[c] ||= FACETS.enrich(await fetch(`data/cat/${c}.json` + bust).then((r) => r.json())));
   const loadHist = async (c) => (hcache[c] ||= await fetch(`data/hist/${c}.json` + bust).then((r) => r.json()).catch(() => ({})));
 
@@ -67,6 +80,7 @@
       <div class="c-top"><div><div class="c-name">${esc(it.name)}</div><div class="c-sub">${ICON[it.cat] || ""} ${esc(tag || t.cats[it.cat] || "")}・${t.shopsN(it.n_shops)}</div></div>${spark(it)}</div>
       <div class="best"><span class="best-p">${yen(it.best)}</span><span class="best-s ${it.n_shops > 1 ? "" : "one"}">${it.n_shops > 1 ? t.best + "：" : ""}${SH[it.best_shop]?.name || ""}</span>${chg}</div>
       ${diff}<div class="shops">${rows}</div>
+      ${affBox(it.cat)}
       <label class="calc">${t.calc} <input type="number" inputmode="numeric" placeholder="${Math.round(it.best * 0.9).toLocaleString()}" data-best="${it.best}"> 円 → ${t.profit} <b class="pf">—</b></label>
     </article>`;
   }
@@ -189,10 +203,11 @@
   // ================= deals (PR)
   let deals = null;
   async function renderDeals() {
-    deals ||= await fetch("promos.json" + bust).then((r) => r.json()).catch(() => ({ groups: [] }));
+    deals ||= promos;
     $("#dealList").innerHTML = deals.groups.map((g) => {
       const items = g.items.filter((x) => x.url);
       if (!items.length) return "";
+      items.forEach((x) => x.px && pixel(x.px));
       return `<h3 class="dg">${esc(g.title[lang] || g.title.vi)}</h3><div class="dlist">` + items.map((x) => `
         <a class="deal-card" href="${esc(x.url)}" target="_blank" rel="sponsored noopener">
           <span class="pr">${x.affiliate ? "PR" : "LINK"}</span>

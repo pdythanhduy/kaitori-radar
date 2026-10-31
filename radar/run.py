@@ -163,7 +163,7 @@ def aggregate(rows):
         best_shop = max(g["prices"], key=lambda s: g["prices"][s]["price"])
         vals = sorted(v["price"] for v in g["prices"].values())
         med = vals[len(vals) // 2]
-        core = [v for v in vals if v >= med * 0.85]  # bỏ giá thấp bất thường khi tính chênh lệch
+        core = [v for v in vals if med * 0.85 <= v <= med * 1.2]  # bỏ giá thấp bất thường khi tính chênh lệch
         items.append({"cat": cat, "key": key, "name": _display(cat, key, g["names"]), "prices": g["prices"],
                       "best_shop": best_shop, "best": vals[-1], "n_shops": len(vals),
                       "spread": core[-1] - core[0] if len(core) > 1 else 0})
@@ -196,7 +196,17 @@ def write_outputs(items, status):
            "cats": cats, "total": len(items), "status": status}
     (OUT / "index.json").write_text(json.dumps(idx, ensure_ascii=False, indent=1), encoding="utf-8")
     # top chênh lệch để hiển thị trang chủ
-    top = sorted([i for i in items if i["n_shops"] > 1 and i["spread"] > 0], key=lambda x: -x["spread"])[:30]
+    # top chênh lệch: đa dạng nhóm hàng (tối đa 3 món/nhóm), bỏ thẻ PSA lẻ giá cực cao
+    pool = sorted([i for i in items if i["n_shops"] > 1 and i["spread"] > 0 and "PSA" not in i["name"]],
+                  key=lambda x: -x["spread"])
+    top, per = [], {}
+    for i in pool:
+        if per.get(i["cat"], 0) >= 3:
+            continue
+        per[i["cat"]] = per.get(i["cat"], 0) + 1
+        top.append(i)
+        if len(top) >= 30:
+            break
     (OUT / "top.json").write_text(json.dumps(top, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     for old in ("latest.json", "history.json"):
         (OUT / old).unlink(missing_ok=True)

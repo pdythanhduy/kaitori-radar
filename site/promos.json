@@ -1,55 +1,253 @@
 {
-  "_huong_dan": "Sửa file này để thêm link. Mỗi mục: name, url, affiliate (true nếu là link affiliate → hiện nhãn PR), desc/badge theo vi/ja. Mục nào url rỗng sẽ tự ẩn.",
-  "groups": [
+ "_huong_dan": "Sửa file này để thêm link. Mỗi mục: name, url, affiliate (true nếu là link affiliate → hiện nhãn PR), desc/badge theo vi/ja. Mục nào url rỗng sẽ tự ẩn.",
+ "groups": [
+  {
+   "id": "aff",
+   "title": {
+    "vi": "⭐ Bán qua bưu điện — tiệm đối tác (PR)",
+    "ja": "⭐ 宅配買取 提携店（PR）"
+   },
+   "items": [
     {
-      "id": "takuhai",
-      "title": { "vi": "📦 Bán qua bưu điện (宅配買取) — gửi hàng, tiệm chuyển khoản", "ja": "📦 宅配買取（送るだけで現金化）" },
-      "items": [
-        { "name": "森森買取", "url": "https://www.morimori-kaitori.jp", "affiliate": false,
-          "desc": { "vi": "Nhận game, iPhone, máy ảnh, thẻ bài. Có dịch vụ chuyển khoản nhanh (即フリ).", "ja": "ゲーム・スマホ・カメラ・トレカ。即日振込あり。" } },
-        { "name": "買取ルデヤ", "url": "https://kaitori-rudeya.com", "affiliate": false,
-          "desc": { "vi": "Danh mục rất rộng: iPhone, Switch, PS5, máy ảnh, Apple Watch.", "ja": "iPhone・ゲーム機・カメラなど幅広く買取。" } },
-        { "name": "モバイル一番", "url": "https://www.mobile-ichiban.com", "affiliate": false,
-          "desc": { "vi": "Chuyên iPhone mới chưa khui, máy game, gia dụng.", "ja": "新品iPhone・ゲーム機・家電の買取。" } },
-        { "name": "PANDA買取", "url": "https://panda-kaitori.co.jp", "affiliate": false,
-          "desc": { "vi": "Game, iPhone, máy ảnh, ống kính, PC, rượu.", "ja": "ゲーム・スマホ・カメラ・PC・お酒。" } },
-        { "name": "買取当番", "url": "https://tobansyoji.co.jp", "affiliate": false,
-          "desc": { "vi": "iPhone, Pixel, máy game, thẻ bài.", "ja": "スマホ・ゲーム機・トレカ。" } },
-        { "name": "ケータイゴッド", "url": "https://keitai-god.com", "affiliate": false,
-          "desc": { "vi": "Tiệm ở Shinjuku, nhận gửi bưu điện miễn phí ship.", "ja": "新宿の買取店。郵送買取は送料無料。" } },
-        { "name": "ゲストモバイル", "url": "https://www.guestmobile.jp", "affiliate": false,
-          "desc": { "vi": "Bảng giá iPhone, SIMフリー, máy tính bảng.", "ja": "iPhone・SIMフリー・タブレット。" } },
-        { "name": "買取ホムラ", "url": "https://kaitori-homura.com", "affiliate": false,
-          "desc": { "vi": "Chuyên hộp thẻ Pokémon, có bảng giá cập nhật mỗi ngày.", "ja": "ポケカBOXに強い。毎日更新の買取表。" } }
-      ]
+     "name": "ネットオフ スマホ買取",
+     "url": "https://px.a8.net/svt/ejp?a8mat=4BGAUV+247I7M+1SOW+ZQ80I",
+     "px": "https://www17.a8.net/0.gif?a8mat=4BGAUV+247I7M+1SOW+ZQ80I",
+     "affiliate": true,
+     "badge": {
+      "vi": "Miễn phí ship & phí",
+      "ja": "送料・手数料無料"
+     },
+     "desc": {
+      "vi": "Gửi điện thoại/iPhone qua bưu điện, có chiến dịch tăng giá tới 20%.",
+      "ja": "スマホ・iPhoneを宅配で売るなら。最大20%UPキャンペーン。"
+     }
     },
     {
-      "id": "card",
-      "title": { "vi": "💳 Thẻ tín dụng hoàn điểm cao khi mua hàng để bán lại", "ja": "💳 仕入れにおすすめの高還元クレジットカード" },
-      "items": [
-        { "name": "(chỗ trống — thêm link affiliate thẻ tín dụng)", "url": "", "affiliate": true, "desc": { "vi": "", "ja": "" } }
-      ]
+     "name": "ゲーム買取ブラザーズ",
+     "url": "https://px.a8.net/svt/ejp?a8mat=4BGAUV+276O8I+3V2O+NVHCY",
+     "px": "https://www16.a8.net/0.gif?a8mat=4BGAUV+276O8I+3V2O+NVHCY",
+     "affiliate": true,
+     "desc": {
+      "vi": "Thu mua máy game & game qua bưu điện.",
+      "ja": "ゲーム機・ゲームソフトの宅配買取。"
+     }
     },
     {
-      "id": "sim",
-      "title": { "vi": "📶 SIM giá rẻ cho người nước ngoài", "ja": "📶 格安SIM" },
-      "items": [
-        { "name": "(chỗ trống)", "url": "", "affiliate": true, "desc": { "vi": "", "ja": "" } }
-      ]
+     "name": "カメラ買取アローズ",
+     "url": "https://px.a8.net/svt/ejp?a8mat=4BGAUV+28YZ1U+3V2O+HV7V6",
+     "px": "https://www13.a8.net/0.gif?a8mat=4BGAUV+28YZ1U+3V2O+HV7V6",
+     "affiliate": true,
+     "desc": {
+      "vi": "Thu mua máy ảnh, ống kính, định giá nhanh, chuyển khoản trong ngày.",
+      "ja": "カメラ・レンズの宅配買取。スピード査定・即日入金。"
+     }
     },
     {
-      "id": "shop",
-      "title": { "vi": "🛒 Mua hàng giá tốt (Amazon / Rakuten / Yahoo)", "ja": "🛒 お得に仕入れ" },
-      "items": [
-        { "name": "(chỗ trống)", "url": "", "affiliate": true, "desc": { "vi": "", "ja": "" } }
-      ]
+     "name": "パソコン買取アローズ",
+     "url": "https://px.a8.net/svt/ejp?a8mat=4BGAUV+2M2ICY+3V2O+1BMW42",
+     "px": "https://www11.a8.net/0.gif?a8mat=4BGAUV+2M2ICY+3V2O+1BMW42",
+     "affiliate": true,
+     "badge": {
+      "vi": "Miễn phí ship, hộp đóng gói",
+      "ja": "送料・梱包材無料"
+     },
+     "desc": {
+      "vi": "Thu mua PC & linh kiện, miễn phí ship, định giá, hộp đóng gói.",
+      "ja": "パソコン・周辺機器の買取。送料・査定料・梱包材すべて無料。"
+     }
     },
     {
-      "id": "remit",
-      "title": { "vi": "💸 Chuyển tiền về Việt Nam", "ja": "💸 海外送金" },
-      "items": [
-        { "name": "(chỗ trống)", "url": "", "affiliate": true, "desc": { "vi": "", "ja": "" } }
-      ]
+     "name": "フィギュア買取ネット",
+     "url": "https://px.a8.net/svt/ejp?a8mat=4BGAUV+2EBVHU+2P0S+BYLJM",
+     "px": "https://www12.a8.net/0.gif?a8mat=4BGAUV+2EBVHU+2P0S+BYLJM",
+     "affiliate": true,
+     "desc": {
+      "vi": "Figure, đồ anime, cosplay, DVD, truyện — bán gộp được.",
+      "ja": "フィギュア・アニメグッズ・コスプレ・DVD・漫画もまとめて。"
+     }
     }
-  ]
+   ]
+  },
+  {
+   "id": "takuhai",
+   "title": {
+    "vi": "📦 Bán qua bưu điện (宅配買取) — gửi hàng, tiệm chuyển khoản",
+    "ja": "📦 宅配買取（送るだけで現金化）"
+   },
+   "items": [
+    {
+     "name": "森森買取",
+     "url": "https://www.morimori-kaitori.jp",
+     "affiliate": false,
+     "desc": {
+      "vi": "Nhận game, iPhone, máy ảnh, thẻ bài. Có dịch vụ chuyển khoản nhanh (即フリ).",
+      "ja": "ゲーム・スマホ・カメラ・トレカ。即日振込あり。"
+     }
+    },
+    {
+     "name": "買取ルデヤ",
+     "url": "https://kaitori-rudeya.com",
+     "affiliate": false,
+     "desc": {
+      "vi": "Danh mục rất rộng: iPhone, Switch, PS5, máy ảnh, Apple Watch.",
+      "ja": "iPhone・ゲーム機・カメラなど幅広く買取。"
+     }
+    },
+    {
+     "name": "モバイル一番",
+     "url": "https://www.mobile-ichiban.com",
+     "affiliate": false,
+     "desc": {
+      "vi": "Chuyên iPhone mới chưa khui, máy game, gia dụng.",
+      "ja": "新品iPhone・ゲーム機・家電の買取。"
+     }
+    },
+    {
+     "name": "PANDA買取",
+     "url": "https://panda-kaitori.co.jp",
+     "affiliate": false,
+     "desc": {
+      "vi": "Game, iPhone, máy ảnh, ống kính, PC, rượu.",
+      "ja": "ゲーム・スマホ・カメラ・PC・お酒。"
+     }
+    },
+    {
+     "name": "買取当番",
+     "url": "https://tobansyoji.co.jp",
+     "affiliate": false,
+     "desc": {
+      "vi": "iPhone, Pixel, máy game, thẻ bài.",
+      "ja": "スマホ・ゲーム機・トレカ。"
+     }
+    },
+    {
+     "name": "ケータイゴッド",
+     "url": "https://keitai-god.com",
+     "affiliate": false,
+     "desc": {
+      "vi": "Tiệm ở Shinjuku, nhận gửi bưu điện miễn phí ship.",
+      "ja": "新宿の買取店。郵送買取は送料無料。"
+     }
+    },
+    {
+     "name": "ゲストモバイル",
+     "url": "https://www.guestmobile.jp",
+     "affiliate": false,
+     "desc": {
+      "vi": "Bảng giá iPhone, SIMフリー, máy tính bảng.",
+      "ja": "iPhone・SIMフリー・タブレット。"
+     }
+    },
+    {
+     "name": "買取ホムラ",
+     "url": "https://kaitori-homura.com",
+     "affiliate": false,
+     "desc": {
+      "vi": "Chuyên hộp thẻ Pokémon, có bảng giá cập nhật mỗi ngày.",
+      "ja": "ポケカBOXに強い。毎日更新の買取表。"
+     }
+    }
+   ]
+  },
+  {
+   "id": "card",
+   "title": {
+    "vi": "💳 Thẻ tín dụng hoàn điểm cao khi mua hàng để bán lại",
+    "ja": "💳 仕入れにおすすめの高還元クレジットカード"
+   },
+   "items": [
+    {
+     "name": "(chỗ trống — thêm link affiliate thẻ tín dụng)",
+     "url": "",
+     "affiliate": true,
+     "desc": {
+      "vi": "",
+      "ja": ""
+     }
+    }
+   ]
+  },
+  {
+   "id": "sim",
+   "title": {
+    "vi": "📶 SIM giá rẻ cho người nước ngoài",
+    "ja": "📶 格安SIM"
+   },
+   "items": [
+    {
+     "name": "(chỗ trống)",
+     "url": "",
+     "affiliate": true,
+     "desc": {
+      "vi": "",
+      "ja": ""
+     }
+    }
+   ]
+  },
+  {
+   "id": "shop",
+   "title": {
+    "vi": "🛒 Mua hàng giá tốt (Amazon / Rakuten / Yahoo)",
+    "ja": "🛒 お得に仕入れ"
+   },
+   "items": [
+    {
+     "name": "(chỗ trống)",
+     "url": "",
+     "affiliate": true,
+     "desc": {
+      "vi": "",
+      "ja": ""
+     }
+    }
+   ]
+  },
+  {
+   "id": "remit",
+   "title": {
+    "vi": "💸 Chuyển tiền về Việt Nam",
+    "ja": "💸 海外送金"
+   },
+   "items": [
+    {
+     "name": "(chỗ trống)",
+     "url": "",
+     "affiliate": true,
+     "desc": {
+      "vi": "",
+      "ja": ""
+     }
+    }
+   ]
+  }
+ ],
+ "inline": {
+  "phone": {
+   "name": "ネットオフ スマホ買取",
+   "a8mat": "4BGAUV+247I7M+1SOW+ZQ80I",
+   "px": "https://www17.a8.net/0.gif"
+  },
+  "game": {
+   "name": "ゲーム買取ブラザーズ",
+   "a8mat": "4BGAUV+276O8I+3V2O+NVHCY",
+   "px": "https://www16.a8.net/0.gif"
+  },
+  "camera": {
+   "name": "カメラ買取アローズ",
+   "a8mat": "4BGAUV+28YZ1U+3V2O+HV7V6",
+   "px": "https://www13.a8.net/0.gif"
+  },
+  "pc": {
+   "name": "パソコン買取アローズ",
+   "a8mat": "4BGAUV+2M2ICY+3V2O+1BMW42",
+   "px": "https://www11.a8.net/0.gif"
+  },
+  "hobby": {
+   "name": "フィギュア買取ネット",
+   "a8mat": "4BGAUV+2EBVHU+2P0S+BYLJM",
+   "px": "https://www12.a8.net/0.gif"
+  }
+ },
+ "_huong_dan_inline": "inline: link affiliate hiện trong thẻ sản phẩm theo nhóm hàng (phone/game/camera/pc/hobby/tablet/audio/appliance/watch/card). a8mat lấy ở A8 → 広告リンク作成 (テキスト). px = ảnh 1x1 đo lượt hiển thị của A8."
 }
