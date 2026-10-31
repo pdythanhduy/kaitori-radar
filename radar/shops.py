@@ -124,7 +124,7 @@ def _mi_cat(kid, name):
         return "watch"
     if re.search(r"AirPods|イヤホン|ヘッドホン|スピーカー|WH-|WF-", name, re.I):
         return "audio"
-    if re.search(r"カメラ|EOS|α|LUMIX|Z ?\d|GoPro|ILCE|DJI", name, re.I):
+    if re.search(r"カメラ|EOS|α|LUMIX|Z ?\d|GoPro|ILCE|DJI|\d+(-\d+)?\s?mm|F\d(\.\d)?|SIGMA|TAMRON|Insta360", name, re.I):
         return "camera"
     return "appliance"
 
@@ -204,6 +204,8 @@ def _rd_cat(cat_name, name):
         return "tablet" if re.search(r"iPad|Tab", t) else "phone"
     if re.search(r"ポケモンカード|ワンピースカード|ドラゴンボールカード|遊戯王|トレカ", t):
         return "card"
+    if re.search(r"\d+(-\d+)?\s?mm|F\d(\.\d)?|一眼|ミラーレス|EOS|LUMIX|FUJIFILM|富士フイルム|ニコン|Nikon|ILCE|SIGMA|TAMRON|OM SYSTEM|ハッセルブラッド|GoPro|Insta360|DJI|instax|チェキ", t, re.I):
+        return "camera"
     if re.search(r"Switch|PlayStation|Xbox|Steam|ROG|Meta Quest|PSVR|ゲーム", t, re.I):
         return "game"
     if re.search(r"iPad|Kindle|タブレット", t, re.I):

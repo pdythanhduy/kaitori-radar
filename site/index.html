@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>So sánh giá thu mua (kaitori) ở Nhật — iPhone, máy game, Pokémon, máy ảnh</title>
 <meta name="description" content="So sánh giá thu mua hàng mới (新品・未開封) tại các tiệm kaitori lớn ở Nhật mỗi giờ: iPhone, PS5, Switch, hộp thẻ Pokémon, máy ảnh, gia dụng. Biết ngay tiệm nào trả cao nhất.">
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
 <header class="hd">
@@ -29,60 +29,48 @@
 <main class="wrap">
   <nav class="chips" id="chips"></nav>
 
-  <!-- ===== Bộ lọc ===== -->
-  <section class="filters" id="filters" hidden>
-    <button class="f-toggle" id="fToggle"><span data-i18n="filters">🔎 Bộ lọc</span> <b id="fCount"></b></button>
-    <div class="f-body" id="fBody">
-      <div class="f-row">
-        <span class="f-lab" data-i18n="fShop">Tiệm</span>
-        <div class="f-opts" id="fShops"></div>
-      </div>
-      <div class="f-row">
-        <span class="f-lab" data-i18n="fPrice">Giá thu mua</span>
-        <div class="f-opts" id="fPrice"></div>
-      </div>
-      <div class="f-row">
-        <span class="f-lab" data-i18n="fMore">Tuỳ chọn</span>
-        <div class="f-opts">
-          <label class="pill"><input type="checkbox" id="multi"><span data-i18n="fMulti">Chỉ món có ở ≥2 tiệm</span></label>
-          <label class="pill"><input type="checkbox" id="gap"><span data-i18n="fGap">Chênh lệch ≥ 3.000円</span></label>
-        </div>
-      </div>
-      <div class="f-row">
-        <span class="f-lab" data-i18n="fSort">Sắp xếp</span>
-        <select id="sort"></select>
-        <button class="reset" id="reset" data-i18n="reset">Xoá lọc</button>
-      </div>
-    </div>
-  </section>
-
   <section id="home">
     <h2 class="sec"><span data-i18n="topTitle">💡 Chênh lệch giá lớn nhất hôm nay</span> <small data-i18n="topSub">cùng một món, mỗi tiệm trả một giá</small></h2>
     <div id="top" class="list"></div>
   </section>
 
-  <section id="catview" hidden>
-    <p class="hint" id="hint"></p>
-    <div id="list" class="list"></div>
-    <button id="more" class="more" hidden data-i18n="more">Xem thêm</button>
-    <p class="empty" id="empty" hidden data-i18n="empty">Không có sản phẩm phù hợp.</p>
+  <section id="catview" class="layout" hidden>
+    <aside class="side" id="side">
+      <div class="side-hd"><b data-i18n="filters">🔎 Bộ lọc</b><button class="side-x" id="sideClose" aria-label="close">✕</button></div>
+      <div id="facets"></div>
+      <div class="side-ft"><button class="reset" id="reset" data-i18n="reset">Xoá lọc</button><button class="apply" id="apply" data-i18n="apply">Xem kết quả</button></div>
+    </aside>
+    <div class="results">
+      <div class="rbar">
+        <button class="fbtn" id="fbtn"><span data-i18n="filters">🔎 Bộ lọc</span> <b id="fCount"></b></button>
+        <span class="hint" id="hint"></span>
+        <select id="sort"></select>
+        <div class="vtog" id="vtog"><button data-v="card" class="on">▦</button><button data-v="table">☰</button></div>
+      </div>
+      <div class="active" id="active"></div>
+      <div id="list" class="list"></div>
+      <button id="more" class="more" hidden data-i18n="more">Xem thêm</button>
+      <p class="empty" id="empty" hidden data-i18n="empty">Không có sản phẩm phù hợp.</p>
+    </div>
   </section>
 
   <section id="deals" hidden>
-    <div class="pr-note" data-i18n="prNote">【PR / 広告】Trang này có chứa liên kết quảng cáo (affiliate). Khi bạn đăng ký hoặc mua qua liên kết, chúng tôi có thể nhận hoa hồng — giá bạn trả không đổi.</div>
+    <div class="pr-note" data-i18n="prNote"></div>
     <div id="dealList"></div>
   </section>
 </main>
+<div class="scrim" id="scrim"></div>
 
 <footer class="ft">
   <div class="wrap">
-    <p data-i18n="ft1">Trang tự động lấy giá thu mua công khai (hàng mới・chưa khui) trên website chính thức của các tiệm kaitori và so sánh. Hàng hot cập nhật mỗi giờ, toàn bộ cập nhật mỗi ngày.</p>
-    <p data-i18n="ft2">※ Giá chỉ để tham khảo tại thời điểm lấy dữ liệu. Giá thực tế thay đổi theo tình trạng, màu, phụ kiện, khuyến mãi. Hãy kiểm tra giá mới nhất trên trang của tiệm trước khi bán.</p>
+    <p data-i18n="ft1"></p>
+    <p data-i18n="ft2"></p>
     <p id="shops"></p>
     <p class="small">© 2026</p>
   </div>
 </footer>
-<script src="i18n.js?v=4"></script>
-<script src="app.js?v=4"></script>
+<script src="i18n.js?v=7"></script>
+<script src="facets.js?v=7"></script>
+<script src="app.js?v=7"></script>
 </body>
 </html>

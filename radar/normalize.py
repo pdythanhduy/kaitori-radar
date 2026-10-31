@@ -95,3 +95,25 @@ def make_key(cat: str, name: str) -> str:
     if mc:
         return "model:" + mc
     return "name:" + name_key(name)
+
+
+_REFINE = [
+    ("card", r"PSA\s?10|ポケモンカード|ポケカ|遊戯王|ONE PIECE|ワンピースカード|デュエル|拡張パック"),
+    ("phone", r"iPhone|Galaxy (S|Z|A)\d|Pixel \d|Xperia|AQUOS (sense|R|wish)|arrows"),
+    ("tablet", r"iPad|Galaxy Tab|Kindle|Fire HD|Pixel Tablet"),
+    ("game", r"Nintendo Switch|PlayStation|PS5|Xbox|Steam Deck|Steam Machine|Meta Quest|ROG Ally|DualSense|PS VR"),
+    ("camera", r"\d+(-\d+)?\s?mm\b|\bF\d(\.\d)?\b|一眼|ミラーレス|EOS |LUMIX|FUJIFILM|富士フイルム|ニコン|Nikon|ILCE|SIGMA|TAMRON|OM SYSTEM|ハッセルブラッド|GoPro|Insta360|DJI|instax|チェキ|カメラ"),
+    ("audio", r"AirPods|WF-1000|WH-1000|イヤホン|ヘッドホン|Earbuds|スピーカー|Bose|Sennheiser"),
+    ("watch", r"Apple Watch|Galaxy Watch|Pixel Watch|G-SHOCK|Garmin|腕時計"),
+    ("pc", r"MacBook|Mac mini|iMac|Surface|ノートPC|GeForce|RTX ?\d{4}|Radeon"),
+]
+
+
+def refine_cat(cat: str, name: str) -> str:
+    """Món bị xếp vào 'appliance'/'other' nhưng tên cho thấy rõ nhóm khác → chuyển nhóm."""
+    if cat not in ("appliance", "other"):
+        return cat
+    for c, pat in _REFINE:
+        if re.search(pat, name, re.I):
+            return c
+    return cat

@@ -70,8 +70,9 @@ def load_rows():
             k = (r["shop"], r["url"], r["name"])
             if k not in latest or r["ts"] > latest[k]["ts"]:
                 latest[k] = r
-    from .normalize import make_key
+    from .normalize import make_key, refine_cat
     for r in latest.values():
+        r["cat"] = refine_cat(r["cat"], r["name"])
         r["key"] = make_key(r["cat"], r["name"])  # luôn tính lại theo luật ghép mới nhất
     return list(latest.values())
 

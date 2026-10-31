@@ -3,7 +3,7 @@
   const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const yen = (n) => n.toLocaleString("ja-JP") + "円";
   const bust = "?" + Math.floor(Date.now() / 600000);
-  let lang = localStorage.getItem("lang") || "vi";  // mặc định tiếng Việt
+  let lang = localStorage.getItem("lang") || "vi";
   const T = () => window.I18N[lang];
 
   const idx = await fetch("data/index.json" + bust).then((r) => r.json());
@@ -11,12 +11,13 @@
   const cache = {}, hcache = {};
   const ICON = { phone: "📱", tablet: "📲", game: "🎮", card: "🃏", pc: "💻", camera: "📷", audio: "🎧", appliance: "🔌", watch: "⌚", hobby: "🧸", other: "📦" };
   const PRICE = [[0, Infinity], [0, 10000], [10000, 50000], [50000, 200000], [200000, Infinity]];
-  const st = { view: "home", cat: null, q: "", shops: new Set(), price: 0, multi: false, gap: false, sort: "rec" };
+  const st = { view: "home", cat: null, q: "", f: { cat: new Set(), brand: new Set(), series: new Set(), cap: new Set(), shop: new Set() },
+    price: 0, multi: false, gap: false, sort: "rec", layout: localStorage.getItem("layout") || "card" };
 
-  const loadCat = async (c) => (cache[c] ||= await fetch(`data/cat/${c}.json` + bust).then((r) => r.json()));
+  const loadCat = async (c) => (cache[c] ||= FACETS.enrich(await fetch(`data/cat/${c}.json` + bust).then((r) => r.json())));
   const loadHist = async (c) => (hcache[c] ||= await fetch(`data/hist/${c}.json` + bust).then((r) => r.json()).catch(() => ({})));
 
-  // ---------------- static text
+  // ================= static text
   function applyLang() {
     document.documentElement.lang = lang;
     document.querySelectorAll("[data-i18n]").forEach((el) => { const v = T()[el.dataset.i18n]; if (typeof v === "string") el.textContent = v; });
@@ -26,21 +27,18 @@
     $("#heroStat").textContent = T().hero(Object.keys(SH).length, idx.total.toLocaleString());
     $("#shops").innerHTML = T().stores + " " + Object.values(SH).map((s) => `<a href="${s.url}" target="_blank" rel="noopener">${s.name}</a>`).join("・");
     $("#sort").innerHTML = Object.entries(T().sort).map(([k, v]) => `<option value="${k}" ${st.sort === k ? "selected" : ""}>${v}</option>`).join("");
-    $("#fPrice").innerHTML = T().price.map((p, i) => `<button class="opt ${st.price === i ? "on" : ""}" data-p="${i}">${p}</button>`).join("");
-    $("#fShops").innerHTML = `<button class="opt ${st.shops.size ? "" : "on"}" data-s="">${T().all}</button>` +
-      Object.entries(SH).map(([k, s]) => `<button class="opt ${st.shops.has(k) ? "on" : ""}" data-s="${k}">${s.name}</button>`).join("");
+    document.querySelectorAll("#vtog button").forEach((b) => b.classList.toggle("on", b.dataset.v === st.layout));
     chips();
   }
-
   function chips() {
     const order = Object.entries(CATS).sort((a, b) => b[1].multi - a[1].multi || b[1].count - a[1].count);
     $("#chips").innerHTML =
       `<button data-v="home" class="${st.view === "home" ? "on" : ""}">${T().home}</button>` +
-      order.map(([c, v]) => `<button data-c="${c}" class="${st.view === "cat" && st.cat === c ? "on" : ""}">${ICON[c] || ""} ${T().cats[c] || v.label}<small>${v.count.toLocaleString()}</small></button>`).join("") +
+      order.map(([c, v]) => `<button data-c="${c}" class="${st.view === "cat" && st.cat === c && !st.q ? "on" : ""}">${ICON[c] || ""} ${T().cats[c] || v.label}<small>${v.count.toLocaleString()}</small></button>`).join("") +
       `<button data-v="deals" class="deal ${st.view === "deals" ? "on" : ""}">${T().deals}</button>`;
   }
 
-  // ---------------- cards
+  // ================= card / table
   function spark(it) {
     const s = ((hcache[it.cat] || {})[it.key] || []).slice(-30);
     if (s.length < 2) return "";
@@ -48,38 +46,102 @@
     const pts = v.map((y, i) => `${((i / (v.length - 1)) * 80 + 2).toFixed(1)},${(30 - ((y - mn) / r) * 26).toFixed(1)}`).join(" ");
     return `<svg class="spark" width="84" height="32" viewBox="0 0 84 32"><polyline fill="none" stroke="${v[v.length - 1] >= v[0] ? "#16a34a" : "#dc2626"}" stroke-width="2" points="${pts}"/></svg>`;
   }
+  function shopLink(sid, p, it) {
+    const lst = SH[sid]?.list;
+    return lst
+      ? `<a href="${esc(p.url)}" target="_blank" rel="noopener nofollow" class="lst" data-copy="${esc(it.name)}" title="${esc(T().listTip)}">${SH[sid]?.name || sid} 🔍</a>`
+      : `<a href="${esc(p.url)}" target="_blank" rel="noopener nofollow">${SH[sid]?.name || sid}</a>`;
+  }
   function card(it) {
     const t = T();
     const shops = Object.entries(it.prices).sort((a, b) => b[1].price - a[1].price);
     const chg = it.chg ? `<span class="chg ${it.chg > 0 ? "up" : "dn"}">${it.chg > 0 ? "▲" : "▼"}${Math.abs(it.chg).toLocaleString()}</span>` : "";
     const rows = shops.map(([sid, p], i) => {
       const extra = p.min && p.min !== p.price ? `<span class="nt">${t.colorFrom} ${yen(p.min)}</span>` : p.note ? `<span class="nt">${esc(p.note.slice(0, 16))}</span>` : "";
-      const lst = SH[sid]?.list;
-      const a = lst
-        ? `<a href="${esc(p.url)}" target="_blank" rel="noopener nofollow" class="lst" data-copy="${esc(it.name)}" title="${esc(t.listTip)}">${SH[sid]?.name || sid} 🔍</a>`
-        : `<a href="${esc(p.url)}" target="_blank" rel="noopener nofollow">${SH[sid]?.name || sid}</a>`;
-      return `<div class="sh ${i === 0 && shops.length > 1 ? "top" : ""}"><span>${a}${extra}</span><span class="p">${yen(p.price)}</span></div>`;
+      return `<div class="sh ${i === 0 && shops.length > 1 ? "top" : ""}"><span>${shopLink(sid, p, it)}${extra}</span><span class="p">${yen(p.price)}</span></div>`;
     }).join("");
     const diff = it.n_shops > 1 && it.spread > 0 ? `<div class="diff">${t.diff(yen(it.spread))}</div>` : "";
+    const br = it._f?.brand !== "Khác" ? it._f?.brand : "";
+    const tag = [br && !(it._f?.series || "").startsWith(br.split(" ")[0]) ? br : "", it._f?.series, it._f?.cap].filter(Boolean).join(" · ");
     return `<article class="card">
-      <div class="c-top"><div><div class="c-name">${esc(it.name)}</div><div class="c-sub">${ICON[it.cat] || ""} ${t.cats[it.cat] || ""}・${t.newItem}・${t.shopsN(it.n_shops)}</div></div>${spark(it)}</div>
+      <div class="c-top"><div><div class="c-name">${esc(it.name)}</div><div class="c-sub">${ICON[it.cat] || ""} ${esc(tag || t.cats[it.cat] || "")}・${t.shopsN(it.n_shops)}</div></div>${spark(it)}</div>
       <div class="best"><span class="best-p">${yen(it.best)}</span><span class="best-s ${it.n_shops > 1 ? "" : "one"}">${it.n_shops > 1 ? t.best + "：" : ""}${SH[it.best_shop]?.name || ""}</span>${chg}</div>
       ${diff}<div class="shops">${rows}</div>
       <label class="calc">${t.calc} <input type="number" inputmode="numeric" placeholder="${Math.round(it.best * 0.9).toLocaleString()}" data-best="${it.best}"> 円 → ${t.profit} <b class="pf">—</b></label>
     </article>`;
   }
+  function tableHead() {
+    const t = T();
+    return `<div class="tbl"><div class="tr th"><span>${t.colName}</span><span>${t.colBest}</span><span>${t.colShop}</span><span>${t.col2nd}</span><span>${t.colGap}</span></div>`;
+  }
+  function trow(it) {
+    const shops = Object.entries(it.prices).sort((a, b) => b[1].price - a[1].price);
+    const [s1, p1] = shops[0], s2 = shops[1];
+    const chg = it.chg ? `<i class="${it.chg > 0 ? "up" : "dn"}">${it.chg > 0 ? "▲" : "▼"}${Math.abs(it.chg).toLocaleString()}</i>` : "";
+    return `<div class="tr"><span class="tn">${esc(it.name)}<small>${esc([it._f?.series, it._f?.cap].filter(Boolean).join(" · "))} · ${T().shopsN(it.n_shops)}</small></span>
+      <span class="tb">${yen(it.best)} ${chg}</span><span>${shopLink(s1, p1, it)}</span>
+      <span class="t2">${s2 ? `${yen(s2[1].price)}<small>${SH[s2[0]]?.name || ""}</small>` : "—"}</span>
+      <span class="tg">${it.spread ? "+" + it.spread.toLocaleString() : "—"}</span></div>`;
+  }
 
-  // ---------------- list view
-  let view = [], shown = 0;
+  // ================= filtering with facet counts
+  let base = [], view = [], shown = 0;
   const PAGE = 48;
-  function filterItems(items) {
-    const [lo, hi] = PRICE[st.price];
-    return items.filter((i) => {
-      if (st.multi && i.n_shops < 2) return false;
-      if (st.gap && i.spread < 3000) return false;
-      if (st.shops.size && !Object.keys(i.prices).some((s) => st.shops.has(s))) return false;
-      return i.best >= lo && i.best < hi;
-    });
+  function passes(it, skip) {
+    const f = st.f, [lo, hi] = PRICE[st.price];
+    if (st.multi && it.n_shops < 2) return false;
+    if (st.gap && it.spread < 3000) return false;
+    if (it.best < lo || it.best >= hi) return false;
+    if (skip !== "cat" && f.cat.size && !f.cat.has(it.cat)) return false;
+    if (skip !== "brand" && f.brand.size && !f.brand.has(it._f.brand)) return false;
+    if (skip !== "series" && f.series.size && !f.series.has(it._f.series)) return false;
+    if (skip !== "cap" && f.cap.size && !f.cap.has(it._f.cap)) return false;
+    if (skip !== "shop" && f.shop.size && !Object.keys(it.prices).some((s) => f.shop.has(s))) return false;
+    return true;
+  }
+  function counts(key, getter) {
+    const m = new Map();
+    for (const it of base) {
+      if (!passes(it, key)) continue;
+      for (const v of [].concat(getter(it))) if (v) m.set(v, (m.get(v) || 0) + 1);
+    }
+    return m;
+  }
+  function facetBlock(key, title, map, { sort, limit = 10, labels } = {}) {
+    if (!map.size || (map.size === 1 && !st.f[key].size)) return "";
+    let entries = [...map.entries()];
+    entries.sort(sort ? (a, b) => sort(a[0], b[0]) : (a, b) => b[1] - a[1]);
+    for (const v of st.f[key]) if (!map.has(v)) entries.unshift([v, 0]);
+    const open = st._open?.[key];
+    const rows = entries.map(([v, n], i) => `<label class="fo ${i >= limit && !open ? "hid" : ""}"><input type="checkbox" data-k="${key}" value="${esc(v)}" ${st.f[key].has(v) ? "checked" : ""}><span>${esc(labels ? labels(v) : v)}</span><em>${n}</em></label>`).join("");
+    const more = entries.length > limit ? `<button class="fmore" data-k="${key}">${open ? T().less : T().moreN(entries.length - limit)}</button>` : "";
+    return `<div class="fg"><div class="fg-t">${title}</div>${rows}${more}</div>`;
+  }
+  function renderFacets() {
+    const t = T();
+    let h = "";
+    if (st.q) h += facetBlock("cat", t.fCat, counts("cat", (i) => i.cat), { labels: (c) => `${ICON[c] || ""} ${t.cats[c] || c}` });
+    h += facetBlock("brand", t.fBrand, counts("brand", (i) => i._f.brand), { labels: (v) => (v === "Khác" ? t.otherB : v), sort: (a, b) => (a === "Khác") - (b === "Khác") || (cnt.brand.get(b) || 0) - (cnt.brand.get(a) || 0) });
+    const sc = counts("series", (i) => i._f.series);
+    h += facetBlock("series", t.fSeries, sc, { sort: st.f.brand.size ? FACETS.seriesSort : (a, b) => (sc.get(b) || 0) - (sc.get(a) || 0), limit: 12 });
+    h += facetBlock("cap", t.fCap, counts("cap", (i) => i._f.cap), { sort: (a, b) => FACETS.CAP_ORDER.indexOf(a) - FACETS.CAP_ORDER.indexOf(b) });
+    h += facetBlock("shop", t.fShop, counts("shop", (i) => Object.keys(i.prices)), { labels: (s) => SH[s]?.name || s, limit: 12 });
+    h += `<div class="fg"><div class="fg-t">${t.fPrice}</div>${t.price.map((p, i) => `<label class="fo"><input type="radio" name="pr" data-p="${i}" ${st.price === i ? "checked" : ""}><span>${p}</span></label>`).join("")}</div>`;
+    h += `<div class="fg"><div class="fg-t">${t.fMore}</div>
+      <label class="fo"><input type="checkbox" id="multi" ${st.multi ? "checked" : ""}><span>${t.fMulti}</span></label>
+      <label class="fo"><input type="checkbox" id="gap" ${st.gap ? "checked" : ""}><span>${t.fGap}</span></label></div>`;
+    $("#facets").innerHTML = h;
+  }
+  let cnt = { brand: new Map() };
+  function renderActive() {
+    const t = T(), chipsA = [];
+    const lab = { cat: (c) => t.cats[c], shop: (s) => SH[s]?.name || s };
+    for (const k of ["cat", "brand", "series", "cap", "shop"]) for (const v of st.f[k]) chipsA.push(`<button class="ac" data-k="${k}" data-v="${esc(v)}">${esc(lab[k] ? lab[k](v) : v)} ✕</button>`);
+    if (st.price) chipsA.push(`<button class="ac" data-k="price">${t.price[st.price]} ✕</button>`);
+    if (st.multi) chipsA.push(`<button class="ac" data-k="multi">${t.fMulti} ✕</button>`);
+    if (st.gap) chipsA.push(`<button class="ac" data-k="gap">${t.fGap} ✕</button>`);
+    $("#active").innerHTML = chipsA.length ? chipsA.join("") + `<button class="ac clr" data-k="all">${t.reset}</button>` : "";
+    $("#fCount").textContent = chipsA.length ? `(${chipsA.length})` : "";
   }
   function sortItems(items) {
     const f = { rec: (a, b) => (b.n_shops - a.n_shops) || (b.spread - a.spread) || (b.best - a.best), best: (a, b) => b.best - a.best,
@@ -88,42 +150,43 @@
     return items.sort(f);
   }
   function paint(reset) {
-    if (reset) { shown = 0; $("#list").innerHTML = ""; }
+    const tbl = st.layout === "table";
+    if (reset) { shown = 0; $("#list").innerHTML = tbl ? tableHead() + "</div>" : ""; $("#list").className = tbl ? "" : "list"; }
     const slice = view.slice(shown, shown + PAGE);
-    $("#list").insertAdjacentHTML("beforeend", slice.map(card).join(""));
+    const target = tbl ? $("#list .tbl") : $("#list");
+    target.insertAdjacentHTML("beforeend", slice.map(tbl ? trow : card).join(""));
     shown += slice.length;
     $("#more").hidden = shown >= view.length;
     $("#empty").hidden = view.length > 0;
   }
-  function fCount() {
-    const n = st.shops.size + (st.price ? 1 : 0) + (st.multi ? 1 : 0) + (st.gap ? 1 : 0);
-    $("#fCount").textContent = n ? `(${n})` : "";
+  function refresh() {
+    cnt.brand = counts("brand", (i) => i._f.brand);
+    view = sortItems(base.filter((i) => passes(i)));
+    $("#hint").textContent = st.q ? T().hintQ(st.q, view.length.toLocaleString()) : T().hintCat(T().cats[st.cat], view.length.toLocaleString(), CATS[st.cat]?.multi?.toLocaleString() || 0);
+    renderFacets(); renderActive(); paint(true);
   }
   async function render() {
+    const listMode = st.view === "cat" || !!st.q;
     $("#home").hidden = st.view !== "home" || !!st.q;
-    $("#catview").hidden = !(st.view === "cat" || st.q);
+    $("#catview").hidden = !listMode;
     $("#deals").hidden = st.view !== "deals" || !!st.q;
-    $("#filters").hidden = !(st.view === "cat" || st.q);
-    chips(); fCount();
+    chips();
     if (st.view === "deals" && !st.q) return renderDeals();
-    if (!(st.view === "cat" || st.q)) return;
+    if (!listMode) { history.replaceState(null, "", "./"); return; }
     $("#hint").textContent = "…";
-    let items;
     if (st.q) {
       const all = (await Promise.all(Object.keys(CATS).map(loadCat))).flat();
       const q = st.q.toLowerCase().replace(/\s/g, "");
-      items = all.filter((i) => (i.name + i.key).toLowerCase().replace(/\s/g, "").includes(q));
+      base = all.filter((i) => (i.name + i.key + (i._f.series || "")).toLowerCase().replace(/\s/g, "").includes(q));
     } else {
-      items = (await Promise.all([loadCat(st.cat), loadHist(st.cat)]))[0].slice();
+      base = (await Promise.all([loadCat(st.cat), loadHist(st.cat)]))[0];
     }
-    view = sortItems(filterItems(items));
-    $("#hint").textContent = st.q ? T().hintQ(st.q, view.length.toLocaleString()) : T().hintCat(T().cats[st.cat], view.length.toLocaleString(), CATS[st.cat].multi.toLocaleString());
-    paint(true);
-    const u = new URLSearchParams(); if (st.view === "cat") u.set("c", st.cat); if (st.view === "deals") u.set("v", "deals");
-    history.replaceState(null, "", u.toString() ? "?" + u : "./");
+    refresh();
+    history.replaceState(null, "", st.view === "cat" && !st.q ? "?c=" + st.cat : "./");
   }
+  function clearFilters() { for (const k in st.f) st.f[k].clear(); st.price = 0; st.multi = st.gap = false; }
 
-  // ---------------- deals (PR)
+  // ================= deals (PR)
   let deals = null;
   async function renderDeals() {
     deals ||= await fetch("promos.json" + bust).then((r) => r.json()).catch(() => ({ groups: [] }));
@@ -141,26 +204,46 @@
     history.replaceState(null, "", "?v=deals");
   }
 
-  // ---------------- events
+  // ================= events
   $("#chips").addEventListener("click", (e) => {
     const b = e.target.closest("button"); if (!b) return;
-    $("#q").value = ""; st.q = "";
+    $("#q").value = ""; st.q = ""; clearFilters();
     if (b.dataset.c) { st.view = "cat"; st.cat = b.dataset.c; } else st.view = b.dataset.v;
     window.scrollTo({ top: $("#chips").offsetTop - 60, behavior: "smooth" });
     render();
   });
-  $("#fShops").addEventListener("click", (e) => {
-    const b = e.target.closest("button"); if (!b) return;
-    const s = b.dataset.s; if (!s) st.shops.clear(); else st.shops.has(s) ? st.shops.delete(s) : st.shops.add(s);
-    applyLang(); render();
+  $("#facets").addEventListener("change", (e) => {
+    const el = e.target;
+    if (el.dataset.k) { const s = st.f[el.dataset.k]; el.checked ? s.add(el.value) : s.delete(el.value); if (el.dataset.k === "brand" && !el.checked) st.f.series.clear(); }
+    else if (el.name === "pr") st.price = +el.dataset.p;
+    else if (el.id === "multi") st.multi = el.checked;
+    else if (el.id === "gap") st.gap = el.checked;
+    refresh();
   });
-  $("#fPrice").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; st.price = +b.dataset.p; applyLang(); render(); });
-  $("#multi").addEventListener("change", (e) => { st.multi = e.target.checked; render(); });
-  $("#gap").addEventListener("change", (e) => { st.gap = e.target.checked; render(); });
-  $("#sort").addEventListener("change", (e) => { st.sort = e.target.value; render(); });
-  $("#reset").addEventListener("click", () => { st.shops.clear(); st.price = 0; st.multi = st.gap = false; st.sort = "rec"; $("#multi").checked = $("#gap").checked = false; applyLang(); render(); });
-  $("#fToggle").addEventListener("click", () => $("#filters").classList.toggle("open"));
-  let qT; $("#q").addEventListener("input", (e) => { clearTimeout(qT); qT = setTimeout(() => { st.q = e.target.value.trim(); render(); }, 250); });
+  $("#facets").addEventListener("click", (e) => {
+    const b = e.target.closest(".fmore"); if (!b) return;
+    st._open = { ...(st._open || {}), [b.dataset.k]: !(st._open || {})[b.dataset.k] }; renderFacets();
+  });
+  $("#active").addEventListener("click", (e) => {
+    const b = e.target.closest(".ac"); if (!b) return;
+    const k = b.dataset.k;
+    if (k === "all") clearFilters(); else if (k === "price") st.price = 0; else if (k === "multi") st.multi = false; else if (k === "gap") st.gap = false;
+    else st.f[k].delete(b.dataset.v);
+    refresh();
+  });
+  $("#reset").addEventListener("click", () => { clearFilters(); refresh(); });
+  $("#sort").addEventListener("change", (e) => { st.sort = e.target.value; refresh(); });
+  $("#vtog").addEventListener("click", (e) => {
+    const b = e.target.closest("button"); if (!b) return;
+    st.layout = b.dataset.v; localStorage.setItem("layout", st.layout);
+    document.querySelectorAll("#vtog button").forEach((x) => x.classList.toggle("on", x === b)); paint(true);
+  });
+  const openSide = (o) => { document.body.classList.toggle("side-open", o); };
+  $("#fbtn").addEventListener("click", () => openSide(true));
+  $("#sideClose").addEventListener("click", () => openSide(false));
+  $("#apply").addEventListener("click", () => openSide(false));
+  $("#scrim").addEventListener("click", () => openSide(false));
+  let qT; $("#q").addEventListener("input", (e) => { clearTimeout(qT); qT = setTimeout(() => { st.q = e.target.value.trim(); clearFilters(); render(); }, 250); });
   $("#more").addEventListener("click", () => paint(false));
   $("#lang").addEventListener("click", () => { lang = lang === "vi" ? "ja" : "vi"; localStorage.setItem("lang", lang); applyLang(); render(); $("#top").innerHTML = top.slice(0, 18).map(card).join(""); });
   document.body.addEventListener("click", (e) => {
@@ -179,8 +262,8 @@
     const p = best - v; out.textContent = (p >= 0 ? "+" : "") + p.toLocaleString() + "円"; out.style.color = p >= 0 ? "#16a34a" : "#dc2626";
   });
 
-  // ---------------- start
-  const top = await fetch("data/top.json" + bust).then((r) => r.json()).catch(() => []);
+  // ================= start
+  const top = FACETS.enrich(await fetch("data/top.json" + bust).then((r) => r.json()).catch(() => []));
   const sp = new URLSearchParams(location.search);
   if (sp.get("c") && CATS[sp.get("c")]) { st.view = "cat"; st.cat = sp.get("c"); }
   if (sp.get("v") === "deals") st.view = "deals";
