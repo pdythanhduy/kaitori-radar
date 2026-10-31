@@ -192,6 +192,27 @@
     $("#active").innerHTML = chipsA.length ? chipsA.join("") + `<button class="ac clr" data-k="all">${t.reset}</button>` : "";
     $("#fCount").textContent = chipsA.length ? `(${chipsA.length})` : "";
   }
+  const SLIDERS = `<svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 4h7M13 4h1M2 12h1M7 12h7"/><circle cx="11" cy="4" r="2"/><circle cx="5" cy="12" r="2"/></svg>`;
+  function renderQuick() {
+    const t = T(), q = [], n = st.price + st.multi + st.gap + Object.values(st.f).reduce((a, x) => a + x.size, 0);
+    q.push(`<button class="qc qf ${n ? "has" : ""}" data-open="1">${SLIDERS}<span>${t.filterShort}</span>${n ? `<b>${n}</b>` : ""}</button>`);
+    // đang chọn → chip đậm có ✕
+    const lab = { cat: (c) => t.cats[c], shop: (s) => SH[s]?.name || s };
+    for (const k of ["brand", "series", "cap", "shop", "cat"]) for (const v of st.f[k]) q.push(`<button class="qc on" data-k="${k}" data-v="${esc(v)}">${esc(lab[k] ? lab[k](v) : v)}<i>✕</i></button>`);
+    if (st.multi) q.push(`<button class="qc on" data-k="multi">${t.qMulti}<i>✕</i></button>`);
+    if (st.gap) q.push(`<button class="qc on" data-k="gap">${t.fGap}<i>✕</i></button>`);
+    if (st.price) q.push(`<button class="qc on" data-k="price">${t.price[st.price]}<i>✕</i></button>`);
+    // gợi ý: hãng → dòng máy (khi đã chọn hãng) → dung lượng
+    const top = (key, get, k) => [...counts(key, get).entries()].filter(([v]) => v && v !== "Khác" && !st.f[key].has(v)).sort((a, b) => b[1] - a[1]).slice(0, k);
+    const sug = [];
+    if (!st.f.brand.size) sug.push(...top("brand", (i) => i._f.brand, 5).map(([v]) => ["brand", v]));
+    else sug.push(...top("series", (i) => i._f.series, 5).map(([v]) => ["series", v]));
+    if (!st.f.cap.size) sug.push(...top("cap", (i) => i._f.cap, 4).sort((a, b) => FACETS.capSort(a[0], b[0])).map(([v]) => ["cap", v]));
+    for (const [k, v] of sug) q.push(`<button class="qc" data-k="${k}" data-v="${esc(v)}" data-add="1">${esc(v)}</button>`);
+    if (!st.multi) q.push(`<button class="qc" data-k="multi" data-add="1">${t.qMulti}</button>`);
+    q.push(`<button class="qc more" data-open="1">${t.qAll} ›</button>`);
+    $("#quick").innerHTML = q.join("");
+  }
   function sortItems(items) {
     const f = { rec: (a, b) => (b.n_shops - a.n_shops) || (b.spread - a.spread) || (b.best - a.best), best: (a, b) => b.best - a.best,
       spread: (a, b) => b.spread - a.spread, up: (a, b) => (b.chg || 0) - (a.chg || 0), down: (a, b) => (a.chg || 0) - (b.chg || 0),
@@ -212,7 +233,7 @@
     cnt.brand = counts("brand", (i) => i._f.brand);
     view = sortItems(base.filter((i) => passes(i)));
     $("#hint").textContent = $("#mhint").textContent = st.q ? T().hintQ(st.q, view.length.toLocaleString()) : T().hintCat(T().cats[st.cat], view.length.toLocaleString(), CATS[st.cat]?.multi?.toLocaleString() || 0);
-    renderFacets(); renderActive(); paint(true);
+    renderFacets(); renderActive(); renderQuick(); paint(true);
   }
   async function render() {
     const listMode = st.view === "cat" || !!st.q;
@@ -291,6 +312,15 @@
   $("#facets").addEventListener("click", (e) => {
     const b = e.target.closest(".fmore"); if (!b) return;
     st._open = { ...(st._open || {}), [b.dataset.k]: !(st._open || {})[b.dataset.k] }; renderFacets();
+  });
+  $("#quick").addEventListener("click", (e) => {
+    const b = e.target.closest(".qc"); if (!b) return;
+    if (b.dataset.open) return openSide(true);
+    const k = b.dataset.k, add = !!b.dataset.add;
+    if (k === "multi") st.multi = add; else if (k === "gap") st.gap = add; else if (k === "price") st.price = 0;
+    else { add ? st.f[k].add(b.dataset.v) : st.f[k].delete(b.dataset.v); if (k === "brand" && !add) st.f.series.clear(); }
+    refresh();
+    $("#quick").scrollLeft = 0;
   });
   $("#active").addEventListener("click", (e) => {
     const b = e.target.closest(".ac"); if (!b) return;

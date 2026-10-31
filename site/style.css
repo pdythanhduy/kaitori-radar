@@ -267,3 +267,20 @@ button,select,input{font:inherit}
  .aff a{color:#15803d}
  .calc{border-top:1px solid var(--line2);padding-top:8px}
 }
+
+/* v11: hàng chip lọc nhanh (mobile) — ai cũng thấy ngay có thể lọc theo hãng / dung lượng */
+.quick{display:none}
+@media(max-width:900px){
+ .rbar .fbtn{display:none}
+ .active{display:none}
+ .quick{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;margin:0 -16px 8px;padding:2px 16px 4px;scroll-padding:16px}
+ .quick::-webkit-scrollbar{display:none}
+ .qc{flex:none;display:inline-flex;align-items:center;gap:.3rem;height:32px;padding:0 .8rem;border-radius:999px;border:1px solid #e4e4e7;background:#fff;color:#27272a;font-size:.8rem;font-weight:600;white-space:nowrap;cursor:pointer;-webkit-tap-highlight-color:transparent}
+ .qc:active{transform:scale(.97)}
+ .qc.qf{background:var(--fg);border-color:var(--fg);color:#fff;padding:0 .75rem}
+ .qc.qf b{background:var(--a);color:#fff;font-size:.66rem;min-width:17px;height:17px;border-radius:999px;display:inline-grid;place-items:center;padding:0 4px}
+ .qc.on{background:#eef2ff;border-color:#c7d2fe;color:#3730a3}
+ .qc.on i{font-style:normal;font-size:.7rem;opacity:.6}
+ .qc.more{color:var(--muted);border-style:dashed}
+ .rbar select{flex:1}
+}
