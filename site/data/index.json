@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-01 01:59",
+ "updated": "2026-11-01 02:07",
  "shops": {
   "morimori": {
    "name": "森森買取",
@@ -65,13 +65,13 @@
   },
   "pc": {
    "label": "パソコン",
-   "count": 414,
+   "count": 417,
    "multi": 17
   },
   "camera": {
    "label": "カメラ",
-   "count": 1284,
-   "multi": 353
+   "count": 1294,
+   "multi": 381
   },
   "audio": {
    "label": "オーディオ",
@@ -80,8 +80,8 @@
   },
   "appliance": {
    "label": "家電・美容",
-   "count": 2733,
-   "multi": 299
+   "count": 2667,
+   "multi": 277
   },
   "watch": {
    "label": "腕時計",
@@ -95,11 +95,11 @@
   },
   "other": {
    "label": "その他",
-   "count": 861,
+   "count": 871,
    "multi": 7
   }
  },
- "total": 9734,
+ "total": 9691,
  "status": {
   "mobile_ichiban:2": {
    "ok": true,

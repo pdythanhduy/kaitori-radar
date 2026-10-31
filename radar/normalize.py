@@ -102,16 +102,24 @@ _REFINE = [
     ("phone", r"iPhone|Galaxy (S|Z|A)\d|Pixel \d|Xperia|AQUOS (sense|R|wish)|arrows"),
     ("tablet", r"iPad|Galaxy Tab|Kindle|Fire HD|Pixel Tablet"),
     ("game", r"Nintendo Switch|PlayStation|PS5|Xbox|Steam Deck|Steam Machine|Meta Quest|ROG Ally|DualSense|PS VR"),
-    ("camera", r"\d+(-\d+)?\s?mm\b|\bF\d(\.\d)?\b|一眼|ミラーレス|EOS |LUMIX|FUJIFILM|富士フイルム|ニコン|Nikon|ILCE|SIGMA|TAMRON|OM SYSTEM|ハッセルブラッド|GoPro|Insta360|DJI|instax|チェキ|カメラ"),
+    ("camera", r"ボディ|レンズキット|ダブルレンズ|ズームレンズ|交換レンズ|\d+(-\d+)?\s?mm(?![a-z])|\bF\d(\.\d)?\b|一眼|ミラーレス|コンデジ|"
+               r"デジタルカメラ|サイバーショット|VLOGCAM|\bDSC-|\bZV-(E|1)|\bILCE|\bILME|α\d|RICOH GR|\bGR\s?I|PENTAX|PowerShot|"
+               r"\bIXY\b|COOLPIX|NIKKOR|ニコン|Nikon|LUMIX|\bDC-[GSTF]|\bX-(T|S|H|E|M|Pro)\d|\bXF\d|\bGFX|EOS|\bE?F-?S?\d+-\d+|"
+               r"\bRF-?S?\d+|\bZ\s?\d+-\d+|\bOM-\d|\bE-M\d|FUJIFILM|富士フイルム|SIGMA|TAMRON|OM SYSTEM|ハッセルブラッド|Hasselblad|"
+               r"Leica|ライカ|GoPro|Insta360|DJI|Osmo|instax|チェキ|カメラ"),
     ("audio", r"AirPods|WF-1000|WH-1000|イヤホン|ヘッドホン|Earbuds|スピーカー|Bose|Sennheiser"),
     ("watch", r"Apple Watch|Galaxy Watch|Pixel Watch|G-SHOCK|Garmin|腕時計"),
-    ("pc", r"MacBook|Mac mini|iMac|Surface|ノートPC|GeForce|RTX ?\d{4}|Radeon"),
+    ("pc", r"MacBook|Mac mini|iMac|Surface|ノートPC|LIFEBOOK|ThinkPad|GeForce|RTX ?\d{4}|Radeon"),
 ]
+# máy in, định vị ô tô… giữ ở gia dụng (tên có chữ Canon / mm dễ bị nhầm sang máy ảnh)
+_KEEP_APPLIANCE = r"プリンター|PIXUS|Satera|\bG\d{4}\b|インクジェット|カーナビ|楽ナビ|AVIC|ALPINE|アルパイン|フローティング"
 
 
 def refine_cat(cat: str, name: str) -> str:
     """Món bị xếp vào 'appliance'/'other' nhưng tên cho thấy rõ nhóm khác → chuyển nhóm."""
     if cat not in ("appliance", "other"):
+        return cat
+    if re.search(_KEEP_APPLIANCE, name, re.I):
         return cat
     for c, pat in _REFINE:
         if re.search(pat, name, re.I):
