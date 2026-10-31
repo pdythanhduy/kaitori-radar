@@ -92,14 +92,18 @@
       ? `<a href="${esc(p.url)}" target="_blank" rel="noopener nofollow" class="lst" data-copy="${esc(it.name)}" title="${esc(T().listTip)}">${SH[sid]?.name || sid} 🔍</a>`
       : `<a href="${esc(p.url)}" target="_blank" rel="noopener nofollow">${SH[sid]?.name || sid}</a>`;
   }
+  function shopRows(it, shops) {
+    const t = T();
+    return shops.map(([sid, p], i) => {
+      const extra = p.min && p.min !== p.price ? `<span class="nt">${t.colorFrom} ${yen(p.min)}</span>` : p.note ? `<span class="nt">${esc(p.note.slice(0, 16))}</span>` : "";
+      return `<div class="sh ${i === 0 && shops.length > 1 ? "top" : ""}"><span>${shopLink(sid, p, it)}${extra}</span><span class="p">${yen(p.price)}</span></div>`;
+    }).join("");
+  }
   function card(it) {
     const t = T();
     const shops = Object.entries(it.prices).sort((a, b) => b[1].price - a[1].price);
     const chg = it.chg ? `<span class="chg ${it.chg > 0 ? "up" : "dn"}">${it.chg > 0 ? "▲" : "▼"}${Math.abs(it.chg).toLocaleString()}</span>` : "";
-    const rows = shops.map(([sid, p], i) => {
-      const extra = p.min && p.min !== p.price ? `<span class="nt">${t.colorFrom} ${yen(p.min)}</span>` : p.note ? `<span class="nt">${esc(p.note.slice(0, 16))}</span>` : "";
-      return `<div class="sh ${i === 0 && shops.length > 1 ? "top" : ""}"><span>${shopLink(sid, p, it)}${extra}</span><span class="p">${yen(p.price)}</span></div>`;
-    }).join("");
+    const rows = shopRows(it, shops);
     const diff = it.n_shops > 1 && it.spread > 0 ? `<div class="diff">${t.diff(yen(it.spread))}</div>` : "";
     const br = it._f?.brand !== "Khác" ? it._f?.brand : "";
     const tag = [br && !(it._f?.series || "").startsWith(br.split(" ")[0]) ? br : "", it._f?.series, it._f?.cap].filter(Boolean).join(" · ");
@@ -122,7 +126,8 @@
     return `<div class="tr"><span class="tn">${esc(it.name)}<small>${esc([it._f?.series, it._f?.cap].filter(Boolean).join(" · "))} · ${T().shopsN(it.n_shops)}</small></span>
       <span class="tb">${yen(it.best)} ${chg}</span><span>${shopLink(s1, p1, it)}</span>
       <span class="t2">${s2 ? `${yen(s2[1].price)}<small>${SH[s2[0]]?.name || ""}</small>` : "—"}</span>
-      <span class="tg">${it.spread ? "+" + it.spread.toLocaleString() : "—"}</span></div>`;
+      <span class="tg">${it.spread ? "+" + it.spread.toLocaleString() : "—"}</span>
+      ${shops.length > 1 ? `<button class="tmore" type="button">${T().allShops(shops.length)} ▾</button><div class="tx shops">${shopRows(it, shops)}</div>` : ""}</div>`;
   }
 
   // ================= filtering with facet counts
@@ -214,6 +219,8 @@
     $("#home").hidden = st.view !== "home" || !!st.q;
     $("#catview").hidden = !listMode;
     $("#deals").hidden = st.view !== "deals" || !!st.q;
+    const ttl = st.q ? `「${st.q}」` : st.view === "cat" ? (lang === "ja" ? CAT_JA[st.cat] : T().cats[st.cat]) : "";
+    document.title = ttl ? `${ttl} ${lang === "ja" ? "買取価格比較" : "so sánh giá thu mua"}｜買取プライス` : TITLE0;
     chips();
     if (st.view === "deals" && !st.q) return renderDeals();
     if (!listMode) { history.replaceState(null, "", "./"); return; }
@@ -320,6 +327,11 @@
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") { openSide(false); cgOpen(false); } });
   let qT; $("#q").addEventListener("input", (e) => { clearTimeout(qT); qT = setTimeout(() => { st.q = e.target.value.trim(); clearFilters(); render(); }, 250); });
   $("#more").addEventListener("click", () => paint(false));
+  // bảng: bấm "Xem cả N tiệm" để mở danh sách giá tất cả tiệm của món đó
+  $("#list").addEventListener("click", (e) => {
+    const b = e.target.closest(".tmore"); if (!b) return;
+    b.parentElement.classList.toggle("open");
+  });
   $("#lang").addEventListener("click", () => { lang = lang === "vi" ? "ja" : "vi"; localStorage.setItem("lang", lang); applyLang(); render(); $("#top").innerHTML = top.slice(0, 18).map(card).join(""); });
   document.body.addEventListener("click", (e) => {
     const a = e.target.closest("a.lst"); if (!a) return;
@@ -337,11 +349,14 @@
     const p = best - v; out.textContent = (p >= 0 ? "+" : "") + p.toLocaleString() + "円"; out.style.color = p >= 0 ? "#16a34a" : "#dc2626";
   });
 
+  const TITLE0 = document.title;
+  const CAT_JA = { phone: "スマホ・iPhone", tablet: "タブレット・iPad", game: "ゲーム機", card: "トレカ・ポケカBOX", pc: "パソコン", camera: "カメラ・レンズ", audio: "オーディオ", appliance: "家電", watch: "時計", hobby: "ホビー・フィギュア", other: "その他" };
   // ================= start
   const top = FACETS.enrich(await fetch("data/top.json" + bust).then((r) => r.json()).catch(() => []));
   const sp = new URLSearchParams(location.search);
   if (sp.get("c") && CATS[sp.get("c")]) { st.view = "cat"; st.cat = sp.get("c"); }
   if (sp.get("v") === "deals") st.view = "deals";
+  if (sp.get("q")) { st.q = sp.get("q").trim().slice(0, 80); $("#q").value = st.q; }
   applyLang();
   $("#top").innerHTML = top.slice(0, 18).map(card).join("");
   render();

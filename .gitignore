@@ -2,3 +2,8 @@ __pycache__/
 *.pyc
 .env
 data_full_run.log
+# sinh lúc deploy bởi radar/pages.py
+site/p/
+site/c/
+site/sitemap.xml
+site/llms.txt

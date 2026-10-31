@@ -3,7 +3,7 @@ name: deploy-site
 on:
   push:
     branches: [main]
-    paths: ["site/*.html", "site/*.js", "site/*.css", "site/*.json", "site/*.svg", "site/*.png", "site/*.ico", "site/*.xml", "site/*.txt", ".github/workflows/deploy.yml"]
+    paths: ["site/*.html", "site/*.js", "site/*.css", "site/*.json", "site/*.svg", "site/*.png", "site/*.ico", "site/*.xml", "site/*.txt", "radar/pages.py", ".github/workflows/deploy.yml"]
   workflow_dispatch: {}
 permissions:
   contents: read
@@ -15,6 +15,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - name: build SEO pages (/p, /c, sitemap, llms.txt)
+        run: python -m radar.pages
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with: { path: site }
