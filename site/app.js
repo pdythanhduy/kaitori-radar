@@ -44,10 +44,22 @@
     chips();
   }
   let chipsLang = null;
+  function mobileCat() {
+    // điện thoại: 1 hàng gọn [🏠] [Nhóm đang chọn ▾] [🎁], bấm ▾ mở lưới tất cả nhóm
+    const t = T(), short = t.catsShort || {};
+    const cur = st.view === "cat" && !st.q ? `${ICON[st.cat] || ""} ${t.cats[st.cat] || ""}` : t.pickCat;
+    $("#mcLabel").textContent = cur;
+    $("#mcPick").classList.toggle("on", st.view === "cat" && !st.q);
+    $("#mcat .mc-home").classList.toggle("on", st.view === "home" && !st.q);
+    $("#mcDeal").textContent = t.deals;
+    $("#mcDeal").classList.toggle("on", st.view === "deals" && !st.q);
+    $("#cgTitle").textContent = t.pickCat;
+  }
   function chips() {
+    mobileCat();
     // chỉ dựng lại HTML khi đổi ngôn ngữ; còn lại chỉ đổi class → thanh chip không bị nhảy/mất vị trí cuộn ngang
     if (chipsLang === lang) {
-      document.querySelectorAll("#chips button").forEach((b) => {
+      document.querySelectorAll("#chips button, #cgrid button").forEach((b) => {
         const on = b.dataset.c ? st.view === "cat" && st.cat === b.dataset.c && !st.q : st.view === b.dataset.v && !st.q;
         b.classList.toggle("on", on);
       });
@@ -62,6 +74,8 @@
       `<button data-v="home" class="${st.view === "home" ? "on" : ""}"><span class="lf">${T().home}</span><span class="ls">🏠</span></button>` +
       order.map(([c, v]) => `<button data-c="${c}" class="${st.view === "cat" && st.cat === c && !st.q ? "on" : ""}">${ICON[c] || ""} <span class="lf">${T().cats[c] || v.label}</span><span class="ls">${short[c] || T().cats[c] || v.label}</span><small>${v.count.toLocaleString()}</small></button>`).join("") +
       `<button data-v="deals" class="deal ${st.view === "deals" ? "on" : ""}">${T().deals}</button>`;
+    $("#cgrid").innerHTML = order.map(([c, v]) =>
+      `<button data-c="${c}" class="${st.view === "cat" && st.cat === c && !st.q ? "on" : ""}"><span class="ci">${ICON[c] || "📦"}</span><span class="cn">${short[c] || T().cats[c] || v.label}</span><span class="cc">${v.count.toLocaleString()}</span></button>`).join("");
   }
 
   // ================= card / table
@@ -236,6 +250,20 @@
   }
 
   // ================= events
+  const cgOpen = (o) => document.body.classList.toggle("cg-open", o);
+  $("#mcPick").addEventListener("click", () => cgOpen(true));
+  $("#cgClose").addEventListener("click", () => cgOpen(false));
+  const pickNav = (e) => {
+    const b = e.target.closest("button[data-c],button[data-v]"); if (!b) return;
+    cgOpen(false);
+    $("#q").value = ""; st.q = ""; clearFilters();
+    if (b.dataset.c) { st.view = "cat"; st.cat = b.dataset.c; } else st.view = b.dataset.v;
+    const anchor = $("main").getBoundingClientRect().top + window.scrollY - 52;
+    if (window.scrollY > anchor + 4) window.scrollTo({ top: anchor, behavior: "smooth" });
+    render();
+  };
+  $("#mcat").addEventListener("click", pickNav);
+  $("#cgrid").addEventListener("click", pickNav);
   $("#chips").addEventListener("click", (e) => {
     const b = e.target.closest("button"); if (!b) return;
     $("#q").value = ""; st.q = ""; clearFilters();

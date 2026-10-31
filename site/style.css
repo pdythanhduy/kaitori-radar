@@ -173,3 +173,23 @@ button,select,input{font:inherit}
  .chips button{padding:.45rem .75rem;font-size:.86rem;min-height:36px}
  .chips button:last-child{margin-right:28px}
 }
+/* v8: mobile category picker thay cho chip kéo ngang */
+.mcat,.cgrid-wrap{display:none}
+@media(max-width:900px){
+ .chips{display:none}
+ .mcat{display:flex;gap:.4rem;position:sticky;top:52px;z-index:30;background:var(--bg);margin:0 -16px;padding:8px 16px}
+ .mcat button{border:1px solid var(--line);background:var(--card);border-radius:10px;padding:.5rem .7rem;font-weight:700;font-size:.88rem;cursor:pointer;min-height:40px}
+ .mcat .mc-pick{flex:1;display:flex;justify-content:space-between;align-items:center;text-align:left}
+ .mcat .on{background:var(--fg);color:#fff;border-color:var(--fg)}
+ .mcat .mc-deal{background:var(--warn-bg);border-color:#fde68a;color:var(--warn)}.mcat .mc-deal.on{background:#f59e0b;color:#fff}
+ .cgrid-wrap{display:block;position:fixed;left:0;right:0;bottom:0;z-index:70;background:var(--card);border-radius:16px 16px 0 0;padding:12px 14px calc(16px + env(safe-area-inset-bottom));transform:translateY(105%);transition:transform .25s;box-shadow:0 -10px 30px rgba(0,0,0,.2)}
+ body.cg-open .cgrid-wrap{transform:none}
+ body.cg-open .scrim{opacity:1;pointer-events:auto}
+ body.cg-open{overflow:hidden}
+ .cgrid-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+ .cgrid-hd button{border:0;background:none;font-size:1.1rem;cursor:pointer}
+ .cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+ .cgrid button{display:flex;flex-direction:column;align-items:center;gap:2px;border:1px solid var(--line);background:var(--bg);border-radius:12px;padding:10px 4px;cursor:pointer}
+ .cgrid button.on{border-color:var(--fg);background:#f4f4f5}
+ .cgrid .ci{font-size:1.4rem}.cgrid .cn{font-weight:700;font-size:.82rem}.cgrid .cc{font-size:.7rem;color:var(--muted)}
+}
