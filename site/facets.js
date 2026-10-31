@@ -60,8 +60,13 @@
 
   function capacity(it) {
     const src = it.key.startsWith("iPhone") ? it.key : it.name;  // không dùng key name:… (đã mất dấu cách → "10128GB")
-    const m = N(src).match(/(?:^|[^\d])(\d{2,4})\s*(GB|TB)\b/i);
-    return m ? m[1] + m[2].toUpperCase() : "";
+    // lấy dung lượng LỚN NHẤT trong tên (bộ nhớ lưu trữ), bỏ RAM kiểu "12GB/256GB"
+    let best = null;
+    for (const m of N(src).matchAll(/(?:^|[^\d])(\d{1,4})\s*(GB|TB)\b/gi)) {
+      const gb = +m[1] * (m[2].toUpperCase() === "TB" ? 1024 : 1);
+      if (gb >= 32 && (!best || gb > best.gb)) best = { gb, label: m[1] + m[2].toUpperCase() };
+    }
+    return best ? best.label : "";
   }
 
   // khoá sắp xếp tự nhiên: số lớn (đời mới) lên trước
