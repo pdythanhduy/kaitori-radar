@@ -59,7 +59,8 @@
   }
 
   function capacity(it) {
-    const m = N(it.key + " " + it.name).match(/(\d+)\s*(GB|TB)\b/i);
+    const src = it.key.startsWith("iPhone") ? it.key : it.name;  // không dùng key name:… (đã mất dấu cách → "10128GB")
+    const m = N(src).match(/(?:^|[^\d])(\d{2,4})\s*(GB|TB)\b/i);
     return m ? m[1] + m[2].toUpperCase() : "";
   }
 
