@@ -285,3 +285,17 @@ button,select,input{font:inherit}
  .qc.more{color:var(--muted);border-style:dashed}
  .rbar select{flex:1}
 }
+
+/* v12: dòng tiệm = nút bấm rõ ràng (cả dòng là link, ↗ ở cuối, đổi nền khi chạm) */
+a.sh{display:flex;align-items:center;gap:8px;color:inherit;text-decoration:none;padding:9px 6px;margin:0 -6px;border-radius:10px;border:0;background:linear-gradient(var(--line2),var(--line2)) top center/calc(100% - 12px) 1px no-repeat;-webkit-tap-highlight-color:transparent;transition:background-color .12s}
+.shops a.sh:first-child{background-image:none}
+a.sh:hover,a.sh:active{background-color:#f4f4f5}
+a.sh .sn{flex:1;min-width:0;display:flex;flex-wrap:wrap;align-items:baseline;gap:0 .4rem}
+a.sh .sn b{font-weight:600;color:var(--fg)}
+a.sh .sq{font-style:normal;font-size:.62rem;font-weight:600;color:#6d28d9;background:#f5f3ff;border-radius:4px;padding:0 4px;line-height:1.5}
+a.sh .nt{margin-left:0}
+a.sh .p{font-weight:700}
+a.sh .go{flex:none;width:22px;height:22px;border-radius:999px;display:grid;place-items:center;font-size:.72rem;font-weight:700;color:#71717a;background:#f4f4f5}
+a.sh.top .go{color:var(--a);background:var(--a-soft)}
+a.sh:hover .go{background:var(--fg);color:#fff}
+.tr .tx a.sh{background-image:linear-gradient(#e4e4e7,#e4e4e7)}.tr .tx a.sh:first-child{background-image:none}

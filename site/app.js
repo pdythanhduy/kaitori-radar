@@ -96,7 +96,10 @@
     const t = T();
     return shops.map(([sid, p], i) => {
       const extra = p.min && p.min !== p.price ? `<span class="nt">${t.colorFrom} ${yen(p.min)}</span>` : p.note ? `<span class="nt">${esc(p.note.slice(0, 16))}</span>` : "";
-      return `<div class="sh ${i === 0 && shops.length > 1 ? "top" : ""}"><span>${shopLink(sid, p, it)}${extra}</span><span class="p">${yen(p.price)}</span></div>`;
+      const lst = SH[sid]?.list, nm = SH[sid]?.name || sid;
+      // cả dòng là 1 link sang trang tiệm (có ↗ ở cuối để người dùng biết bấm được)
+      return `<a class="sh ${i === 0 && shops.length > 1 ? "top" : ""} ${lst ? "lst" : ""}" href="${esc(p.url)}" target="_blank" rel="noopener nofollow"${lst ? ` data-copy="${esc(it.name)}" title="${esc(t.listTip)}"` : ""}>`
+        + `<span class="sn"><b>${nm}</b>${lst ? `<i class="sq">${t.searchTag}</i>` : ""}${extra}</span><span class="p">${yen(p.price)}</span><span class="go" aria-hidden="true">↗</span></a>`;
     }).join("");
   }
   function card(it) {
