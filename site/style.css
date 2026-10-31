@@ -202,3 +202,41 @@ button,select,input{font:inherit}
  .cgrid button.on{border-color:var(--fg);background:#f4f4f5}
  .cgrid .ci{font-size:1.4rem}.cgrid .cn{font-weight:700;font-size:.82rem}.cgrid .cc{font-size:.7rem;color:var(--muted)}
 }
+
+/* v9: mobile hiện đại — segmented control mảnh, kính mờ khi ghim, search bo tròn, thanh lọc 1 dòng */
+@media(max-width:900px){
+ .hero-in{gap:8px;padding-top:10px;padding-bottom:10px}
+ .hero h1{font-size:.92rem;font-weight:700;letter-spacing:-.01em}
+ .hero-q{height:40px;border-radius:999px;border-color:transparent;background:#f1f1f4 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%2371717a' stroke-width='2.2' stroke-linecap='round'%3E%3Ccircle cx='7' cy='7' r='5'/%3E%3Cpath d='m11 11 3.5 3.5'/%3E%3C/svg%3E") no-repeat 14px 50%;padding:0 14px 0 38px;font-size:.88rem}
+ .hero-q:focus{background-color:#fff;border-color:#d4d4d8}
+ .mcat{display:block;padding:8px 16px;background:rgba(250,250,250,.82);-webkit-backdrop-filter:saturate(180%) blur(14px);backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid transparent}
+ .mcat .seg{display:flex;gap:2px;background:#ececf0;border-radius:12px;padding:3px}
+ .mcat button{height:34px;border:0;border-radius:9px;background:transparent;font-size:.82rem;font-weight:600;color:#3f3f46;padding:0 .7rem;box-shadow:none;transition:background .15s,color .15s}
+ .mcat .mc-home{width:40px;font-size:1rem}
+ .mcat .on,.mcat .mc-deal.on{background:#fff;color:var(--fg);box-shadow:0 1px 3px rgba(0,0,0,.12),0 0 0 .5px rgba(0,0,0,.04)}
+ .mcat .mc-pick b{font-size:.62rem;color:#a1a1aa}.mcat .mc-pick.on b{color:#a1a1aa}
+ .mcat .mc-deal{background:transparent;color:#b45309}
+ .mcat .prb{font-size:.56rem;padding:0 3px;border-radius:3px;opacity:.7}
+ body.scrolled .mcat{border-bottom-color:var(--line)}
+ .rbar{flex-wrap:nowrap;gap:6px;margin:4px 0 6px}
+ .rbar .hint{display:none}
+ .fbtn{height:34px;border-radius:999px;padding:0 .85rem;font-size:.8rem;font-weight:600;background:var(--fg);border:0}
+ .rbar select{flex:1;min-width:0;height:34px;border-radius:999px;padding:0 .8rem;font-size:.8rem;border-color:var(--line);-webkit-appearance:none;appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none' stroke='%2371717a' stroke-width='1.6'%3E%3Cpath d='m1 1 4 4 4-4'/%3E%3C/svg%3E") no-repeat right 12px center;padding-right:28px;color:var(--fg)}
+ .vtog{height:34px;border-radius:999px;padding:2px;background:#ececf0;border:0;gap:2px}
+ .vtog button{border-radius:999px;padding:0 .6rem;font-size:.85rem;color:#71717a}
+ .vtog button.on{background:#fff;color:var(--fg);box-shadow:0 1px 2px rgba(0,0,0,.12)}
+ .mhint{display:block;font-size:.74rem;color:var(--muted);margin:0 0 8px}
+ .layout{grid-template-columns:minmax(0,1fr)}.results{min-width:0}
+ .fbtn{flex:none}
+ /* thẻ sản phẩm: trung tính, chỉ giá cao nhất có màu nhấn */
+ .card{border-radius:16px;border-color:#ececf0;box-shadow:0 1px 2px rgba(0,0,0,.04);padding:14px 14px 12px}
+ .c-name{font-size:.98rem;letter-spacing:-.01em}
+ .best-s{font-size:.72rem;padding:.15rem .5rem}
+ .diff{font-size:.78rem;padding:.35rem .6rem;border-radius:8px}
+ .sh{font-size:.84rem;padding:5px 0}
+ .sh a,.sh a.lst{color:var(--fg);font-weight:500;text-decoration:none}
+ .sh a:active{opacity:.6}
+ .sh .nt{font-size:.68rem}
+ .calc{font-size:.78rem}
+}
+.mhint{display:none}

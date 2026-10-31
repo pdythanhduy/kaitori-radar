@@ -211,7 +211,7 @@
   function refresh() {
     cnt.brand = counts("brand", (i) => i._f.brand);
     view = sortItems(base.filter((i) => passes(i)));
-    $("#hint").textContent = st.q ? T().hintQ(st.q, view.length.toLocaleString()) : T().hintCat(T().cats[st.cat], view.length.toLocaleString(), CATS[st.cat]?.multi?.toLocaleString() || 0);
+    $("#hint").textContent = $("#mhint").textContent = st.q ? T().hintQ(st.q, view.length.toLocaleString()) : T().hintCat(T().cats[st.cat], view.length.toLocaleString(), CATS[st.cat]?.multi?.toLocaleString() || 0);
     renderFacets(); renderActive(); paint(true);
   }
   async function render() {
@@ -321,6 +321,7 @@
   toTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
   window.addEventListener("scroll", () => {
     toTop.classList.toggle("show", window.scrollY > 600);
+    document.body.classList.toggle("scrolled", window.scrollY > 80);
     $("#chips").classList.toggle("stuck", $("#chips").getBoundingClientRect().top <= 53 && window.scrollY > 60);
   }, { passive: true });
   $("#scrim").addEventListener("click", () => { openSide(false); cgOpen(false); });
