@@ -1,81 +1,105 @@
 {
- "updated": "2026-11-01 00:40",
+ "updated": "2026-11-01 01:12",
  "shops": {
   "morimori": {
    "name": "森森買取",
-   "url": "https://www.morimori-kaitori.jp"
+   "url": "https://www.morimori-kaitori.jp",
+   "list": false
   },
   "rudeya": {
    "name": "買取ルデヤ",
-   "url": "https://kaitori-rudeya.com"
+   "url": "https://kaitori-rudeya.com",
+   "list": false
+  },
+  "panda": {
+   "name": "PANDA買取",
+   "url": "https://panda-kaitori.co.jp",
+   "list": true
+  },
+  "guestmobile": {
+   "name": "ゲストモバイル",
+   "url": "https://www.guestmobile.jp",
+   "list": true
+  },
+  "toban": {
+   "name": "買取当番",
+   "url": "https://tobansyoji.co.jp",
+   "list": false
+  },
+  "keitaigod": {
+   "name": "ケータイゴッド",
+   "url": "https://keitai-god.com",
+   "list": false
   },
   "mobile_ichiban": {
    "name": "モバイル一番",
-   "url": "https://www.mobile-ichiban.com"
+   "url": "https://www.mobile-ichiban.com",
+   "list": true
   },
   "homura": {
    "name": "買取ホムラ",
-   "url": "https://kaitori-homura.com"
+   "url": "https://kaitori-homura.com",
+   "list": false
   }
  },
  "cats": {
   "phone": {
    "label": "スマホ",
-   "count": 275,
-   "multi": 47
+   "count": 266,
+   "multi": 44
   },
   "tablet": {
    "label": "タブレット",
-   "count": 357,
-   "multi": 89
+   "count": 358,
+   "multi": 88
   },
   "game": {
    "label": "ゲーム機",
-   "count": 561,
-   "multi": 111
+   "count": 591,
+   "multi": 127
   },
   "card": {
    "label": "トレカ",
-   "count": 412,
-   "multi": 66
+   "count": 433,
+   "multi": 45
   },
   "pc": {
    "label": "パソコン",
-   "count": 209,
-   "multi": 4
+   "count": 210,
+   "multi": 17
   },
   "camera": {
    "label": "カメラ",
-   "count": 570,
-   "multi": 119
+   "count": 707,
+   "multi": 188
   },
   "audio": {
    "label": "オーディオ",
-   "count": 212,
-   "multi": 48
+   "count": 233,
+   "multi": 44
   },
   "appliance": {
    "label": "家電・美容",
-   "count": 2313,
-   "multi": 373
+   "count": 2185,
+   "multi": 226
   },
   "watch": {
    "label": "腕時計",
-   "count": 172,
-   "multi": 102
+   "count": 123,
+   "multi": 84
   },
   "hobby": {
    "label": "ホビー・フィギュア",
-   "count": 168,
-   "multi": 1
+   "count": 181,
+   "multi": 10
   },
   "other": {
    "label": "その他",
-   "count": 1026,
-   "multi": 1
+   "count": 1166,
+   "multi": 11
   }
  },
- "total": 6275,
+ "total": 6453,
  "status": {
   "mobile_ichiban:2": {
    "ok": true,
