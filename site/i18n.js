@@ -1,6 +1,6 @@
 window.I18N = {
   vi: {
-    brand: "Kaitori Price", h1a: "Bán ở đâu được giá nhất?", h1b: "So sánh giá thu mua mỗi giờ",
+    brand: "買取プライス", h1a: "Bán ở đâu được giá nhất?", h1b: "So sánh giá thu mua mỗi giờ",
     hero: (n, t) => `So sánh giá thu mua hàng mới・chưa khui của ${n} tiệm kaitori lớn ở Nhật — ${t} sản phẩm. Biết ngay tiệm nào trả cao nhất và giá đang lên hay xuống.`,
     search: "Tìm tên hoặc số model (vd: PS5 Pro, CFI-2000, 17 Pro, ロケット団)",
     upd: "Cập nhật", filters: "🔎 Bộ lọc", fShop: "Tiệm", fCat: "Nhóm hàng", fBrand: "Hãng", fSeries: "Dòng máy", fCap: "Dung lượng", apply: "Xem kết quả", less: "Thu gọn ▲", moreN: (n) => `Xem thêm ${n} ▼`, otherB: "Khác", colName: "Sản phẩm", colBest: "Giá cao nhất", colShop: "Tiệm trả cao nhất", col2nd: "Tiệm thứ 2", colGap: "Chênh lệch", fPrice: "Giá thu mua", fMore: "Tuỳ chọn", fMulti: "Chỉ món có ở ≥2 tiệm",
@@ -18,7 +18,7 @@ window.I18N = {
     cats: { phone: "Điện thoại", tablet: "Máy tính bảng", game: "Máy game", card: "Thẻ bài", pc: "Máy tính", camera: "Máy ảnh", audio: "Âm thanh", appliance: "Gia dụng・Làm đẹp", watch: "Đồng hồ", hobby: "Đồ chơi・Figure", other: "Khác" },
   },
   ja: {
-    brand: "Kaitori Price", h1a: "どこで売るのが一番高い？", h1b: "買取価格を毎時自動で比較",
+    brand: "買取プライス", h1a: "どこで売るのが一番高い？", h1b: "買取価格を毎時自動で比較",
     hero: (n, t) => `大手買取店${n}店舗・${t}商品の新品（未開封）買取価格を比較。最高値の店と値動きがひと目でわかります。`,
     search: "商品名・型番で検索（例：PS5 Pro、CFI-2000、17 Pro、ロケット団）",
     upd: "最終更新", filters: "🔎 絞り込み", fShop: "店舗", fCat: "カテゴリ", fBrand: "メーカー", fSeries: "シリーズ", fCap: "容量", apply: "結果を見る", less: "閉じる ▲", moreN: (n) => `他${n}件 ▼`, otherB: "その他", colName: "商品", colBest: "最高買取", colShop: "最高値の店", col2nd: "2番目", colGap: "価格差", fPrice: "買取価格", fMore: "条件", fMulti: "複数店で比較できる商品のみ",

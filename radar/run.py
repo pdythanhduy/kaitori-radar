@@ -208,6 +208,14 @@ def write_outputs(items, status):
         if len(top) >= 30:
             break
     (OUT / "top.json").write_text(json.dumps(top, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    # sitemap cho Google (trang chủ + từng nhóm hàng)
+    urls = ["https://kaitoriprice.com/"] + [f"https://kaitoriprice.com/?c={c}" for c in cats] + ["https://kaitoriprice.com/?v=deals"]
+    lastmod = now_jst().strftime("%Y-%m-%d")
+    nl = chr(10)
+    sm = '<?xml version="1.0" encoding="UTF-8"?>' + nl + '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + nl
+    sm += "".join(f"  <url><loc>{u.replace('&', '&amp;')}</loc><lastmod>{lastmod}</lastmod><changefreq>hourly</changefreq></url>{nl}" for u in urls)
+    sm += "</urlset>" + nl
+    (OUT.parent / "sitemap.xml").write_text(sm, encoding="utf-8")
     for old in ("latest.json", "history.json"):
         (OUT / old).unlink(missing_ok=True)
     return cats

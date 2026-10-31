@@ -3,7 +3,7 @@ name: deploy-site
 on:
   push:
     branches: [main]
-    paths: ["site/*.html", "site/*.js", "site/*.css", "site/promos.json", "site/*.svg", "site/*.png", "site/*.ico", ".github/workflows/deploy.yml"]
+    paths: ["site/*.html", "site/*.js", "site/*.css", "site/*.json", "site/*.svg", "site/*.png", "site/*.ico", "site/*.xml", "site/*.txt", ".github/workflows/deploy.yml"]
   workflow_dispatch: {}
 permissions:
   contents: read

@@ -43,7 +43,17 @@
     document.querySelectorAll("#vtog button").forEach((b) => b.classList.toggle("on", b.dataset.v === st.layout));
     chips();
   }
+  let chipsLang = null;
   function chips() {
+    // chỉ dựng lại HTML khi đổi ngôn ngữ; còn lại chỉ đổi class → thanh chip không bị nhảy/mất vị trí cuộn ngang
+    if (chipsLang === lang) {
+      document.querySelectorAll("#chips button").forEach((b) => {
+        const on = b.dataset.c ? st.view === "cat" && st.cat === b.dataset.c && !st.q : st.view === b.dataset.v && !st.q;
+        b.classList.toggle("on", on);
+      });
+      return;
+    }
+    chipsLang = lang;
     const order = Object.entries(CATS).sort((a, b) => b[1].multi - a[1].multi || b[1].count - a[1].count);
     $("#chips").innerHTML =
       `<button data-v="home" class="${st.view === "home" ? "on" : ""}">${T().home}</button>` +
@@ -145,7 +155,9 @@
     h += `<div class="fg"><div class="fg-t">${t.fMore}</div>
       <label class="fo"><input type="checkbox" id="multi" ${st.multi ? "checked" : ""}><span>${t.fMulti}</span></label>
       <label class="fo"><input type="checkbox" id="gap" ${st.gap ? "checked" : ""}><span>${t.fGap}</span></label></div>`;
+    const side = $("#side"), keep = side.scrollTop;  // giữ vị trí cuộn của bộ lọc khi tick → không bị nhảy lên đầu
     $("#facets").innerHTML = h;
+    side.scrollTop = keep;
   }
   let cnt = { brand: new Map() };
   function renderActive() {
@@ -225,7 +237,9 @@
     const b = e.target.closest("button"); if (!b) return;
     $("#q").value = ""; st.q = ""; clearFilters();
     if (b.dataset.c) { st.view = "cat"; st.cat = b.dataset.c; } else st.view = b.dataset.v;
-    window.scrollTo({ top: $("#chips").offsetTop - 60, behavior: "smooth" });
+    b.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" });  // chip được chọn ra giữa, không nhảy dọc
+    const top = $("#chips").getBoundingClientRect().top;
+    if (top < 0) window.scrollTo({ top: window.scrollY + top - 56, behavior: "smooth" });  // chỉ cuộn khi đang ở dưới thanh chip
     render();
   });
   $("#facets").addEventListener("change", (e) => {
@@ -257,7 +271,17 @@
   const openSide = (o) => { document.body.classList.toggle("side-open", o); };
   $("#fbtn").addEventListener("click", () => openSide(true));
   $("#sideClose").addEventListener("click", () => openSide(false));
-  $("#apply").addEventListener("click", () => openSide(false));
+  $("#apply").addEventListener("click", () => {
+    openSide(false);
+    const r = $("#catview").getBoundingClientRect().top;
+    window.scrollTo({ top: window.scrollY + r - 60, behavior: "smooth" });
+  });
+  // nút ↑ về đầu trang
+  const toTop = document.createElement("button");
+  toTop.id = "toTop"; toTop.setAttribute("aria-label", "top"); toTop.textContent = "↑";
+  document.body.appendChild(toTop);
+  toTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+  window.addEventListener("scroll", () => toTop.classList.toggle("show", window.scrollY > 600), { passive: true });
   $("#scrim").addEventListener("click", () => openSide(false));
   let qT; $("#q").addEventListener("input", (e) => { clearTimeout(qT); qT = setTimeout(() => { st.q = e.target.value.trim(); clearFilters(); render(); }, 250); });
   $("#more").addEventListener("click", () => paint(false));

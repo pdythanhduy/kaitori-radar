@@ -157,3 +157,8 @@ button,select,input{font:inherit}
  .rbar .hint{flex-basis:100%;order:3}
 }
 @media(max-width:560px){.list{grid-template-columns:1fr}.best-p{font-size:1.3rem}}
+/* v6: back-to-top, khoá cuộn nền khi mở bộ lọc */
+#toTop{position:fixed;right:16px;bottom:20px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--fg);font-size:1.25rem;font-weight:800;box-shadow:var(--sh-h);cursor:pointer;z-index:50;opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity .2s,transform .2s}
+#toTop.show{opacity:1;pointer-events:auto;transform:none}
+#toTop:hover{border-color:#a1a1aa}
+@media(max-width:900px){body.side-open{overflow:hidden}body.side-open #toTop{display:none}#toTop{bottom:16px;right:12px}}
