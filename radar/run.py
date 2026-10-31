@@ -178,7 +178,7 @@ def telegram(items):
     if not token or not chat:
         return
     shop = {k: v["name"] for k, v in SHOPS.items()}
-    lines = [f"📡 <b>買取レーダー {now_jst():%m/%d %H:%M}</b>"]
+    lines = [f"📡 <b>新品買取価格比較（β版） {now_jst():%m/%d %H:%M}</b>"]
     for title, pick in (("🃏 ポケカBOX", lambda i: i["cat"] == "card" and i["key"].startswith("box:")),
                         ("📱 iPhone mới SIMフリー", lambda i: i["key"].startswith("iPhone")),
                         ("🎮 Game", lambda i: i["cat"] == "game")):
