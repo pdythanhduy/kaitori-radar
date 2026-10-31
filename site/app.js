@@ -47,11 +47,11 @@
   function mobileCat() {
     // điện thoại: 1 hàng gọn [🏠] [Nhóm đang chọn ▾] [🎁], bấm ▾ mở lưới tất cả nhóm
     const t = T(), short = t.catsShort || {};
-    const cur = st.view === "cat" && !st.q ? `${ICON[st.cat] || ""} ${t.cats[st.cat] || ""}` : t.pickCat;
+    const cur = st.view === "cat" && !st.q ? `${ICON[st.cat] || ""} ${short[st.cat] || t.cats[st.cat] || ""}` : t.pickCat;
     $("#mcLabel").textContent = cur;
     $("#mcPick").classList.toggle("on", st.view === "cat" && !st.q);
     $("#mcat .mc-home").classList.toggle("on", st.view === "home" && !st.q);
-    $("#mcDeal").textContent = t.deals;
+    $("#mcDeal").innerHTML = `🎁<span class="dl">${t.dealsShort}</span><small class="prb">PR</small>`;
     $("#mcDeal").classList.toggle("on", st.view === "deals" && !st.q);
     $("#cgTitle").textContent = t.pickCat;
   }
