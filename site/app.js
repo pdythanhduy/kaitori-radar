@@ -12,7 +12,7 @@
   const ICON = { phone: "📱", tablet: "📲", game: "🎮", card: "🃏", pc: "💻", camera: "📷", audio: "🎧", appliance: "🔌", watch: "⌚", hobby: "🧸", other: "📦" };
   const PRICE = [[0, Infinity], [0, 10000], [10000, 50000], [50000, 200000], [200000, Infinity]];
   const st = { view: "home", cat: null, q: "", f: { cat: new Set(), brand: new Set(), series: new Set(), cap: new Set(), shop: new Set() },
-    price: 0, multi: false, gap: false, sort: "rec", layout: localStorage.getItem("layout") || "card" };
+    price: 0, multi: false, gap: false, sort: "rec", layout: localStorage.getItem("layout2") || "card" };
 
   const promos = await fetch("promos.json" + bust).then((r) => r.json()).catch(() => ({ groups: [], inline: {} }));
   const AFF = promos.inline || {};
@@ -303,7 +303,7 @@
   $("#sort").addEventListener("change", (e) => { st.sort = e.target.value; refresh(); });
   $("#vtog").addEventListener("click", (e) => {
     const b = e.target.closest("button"); if (!b) return;
-    st.layout = b.dataset.v; localStorage.setItem("layout", st.layout);
+    st.layout = b.dataset.v; localStorage.setItem("layout2", st.layout);
     document.querySelectorAll("#vtog button").forEach((x) => x.classList.toggle("on", x === b)); paint(true);
   });
   const openSide = (o) => { document.body.classList.toggle("side-open", o); };
