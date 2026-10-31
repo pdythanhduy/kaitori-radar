@@ -194,6 +194,12 @@ RD_HOT = ["255", "253", "254", "220", "219", "221", "218", "232", "214", "1", "2
 
 def _rd_cat(cat_name, name):
     t = cat_name + " " + name
+    if re.search(r"PSA\s?10|ポケモンカード|ポケカ|遊戯王|ONE PIECE|ワンピース.*カード|デュエル|TCG|トレカ|拡張パック", t, re.I):
+        return "card"
+    if re.search(r"iPhone", name, re.I):
+        return "phone"
+    if re.search(r"スマートフォン|携帯電話", cat_name):
+        return "phone"
     if re.search(r"iPhone|Google|Pixel|OPPO|Motorola|SHARP|AQUOS|Xperia|SAMSUNG|Galaxy|FCNT|arrows|スマホ", t, re.I):
         return "tablet" if re.search(r"iPad|Tab", t) else "phone"
     if re.search(r"ポケモンカード|ワンピースカード|ドラゴンボールカード|遊戯王|トレカ", t):
@@ -254,9 +260,179 @@ def rudeya_scope(sess, scope):
     return rows
 
 
+_JAN_RE = re.compile(r"(?<!\d)(45\d{11}|49\d{11}|0\d{12}|\d{13})(?!\d)")
+
+
+def _jan_in(text):
+    m = _JAN_RE.search(text or "")
+    return m.group(1) if m else None
+
+
+# ================================================================== PANDA買取 (robots: chỉ cấm /wp-admin, /link)
+PD = "https://panda-kaitori.co.jp"
+PD_HOT = ["iphone", "game", "nintendo", "playstation"]
+
+
+def panda_scope(sess, scope):
+    if scope == "hot":
+        slugs = PD_HOT
+    else:
+        home = _get(sess, f"{PD}/?cpro=game")
+        slugs = sorted(set(re.findall(r"cpro=([a-z0-9_-]+)", home)))
+    rows, seen = [], set()
+    for slug in slugs:
+        for p in range(1, 40):
+            s = _get(sess, f"{PD}/?cpro={slug}" + (f"&nowpage={p}" if p > 1 else ""))
+            got = 0
+            for tr in re.findall(r"<tr>\s*<td class=\"tb-var\">.*?</tr>", s, re.S):
+                jan = re.search(r'tb-var"><span>(\d*)</span>', tr)
+                nm = re.search(r'product-name">(.*?)</div>', tr, re.S)
+                pr = re.search(r"<ins>¥([\d,]+)</ins>", tr)
+                if not (nm and pr):
+                    continue
+                name = _clean(nm.group(1))
+                k = (jan.group(1) if jan else "", name)
+                got += 1
+                if k in seen:
+                    continue
+                seen.add(k)
+                rows.append(_row("panda", _rd_cat(slug, name), name, int(pr.group(1).replace(",", "")),
+                                 f"{PD}/?cpro={slug}", "", (jan.group(1) or None) if jan else None))
+            if not got or f"nowpage={p + 1}" not in s:
+                break
+    return rows
+
+
+# ================================================================== ゲストモバイル (WordPress, bảng giá)
+GM = "https://www.guestmobile.jp"
+
+
+def guestmobile_scope(sess, scope):
+    home = _get(sess, GM + "/")
+    pages = sorted(set(u for u in re.findall(r'href="(https://www\.guestmobile\.jp/[^"#?]+/)"', home)
+                       if "%e8%b2%b7%e5%8f%96%e4%be%a1%e6%a0%bc" in u.lower()  # "買取価格"
+                       and "%e4%b8%ad%e5%8f%a4" not in u.lower()             # bỏ trang "中古"
+                       and "/category/" not in u))
+    pages.append(GM + "/%e3%83%94%e3%83%83%e3%82%af%e3%82%a2%e3%83%83%e3%83%97%e8%b2%b7%e5%8f%96%e6%a9%9f%e7%a8%ae/")  # ピックアップ
+    if scope == "hot":
+        pages = [u for u in pages if "iphone" in u.lower()] or pages[:3]
+    rows, seen = [], set()
+    for u in pages:
+        s = _get(sess, u)
+        for tb in re.findall(r"<table.*?</table>", s, re.S):
+            trs = re.findall(r"<tr.*?</tr>", tb, re.S)
+            hcol, hlen = None, 0
+            for tr in trs:
+                cells = [_clean(c) for c in re.findall(r"<t[dh][^>]*>(.*?)</t[dh]>", tr, re.S)]
+                if not any(re.search(r"\d円", c) for c in cells):  # dòng tiêu đề (không có giá)
+                    for i, c in enumerate(cells):
+                        if "未開封" in c or "未使用" in c or c == "新品":
+                            hcol, hlen = i, len(cells)
+                            break
+                    continue
+                if hcol is None:
+                    continue
+                col = hcol + max(0, len(cells) - hlen)  # tiêu đề thường thiếu cột ghi chú
+                if len(cells) <= col:
+                    continue
+                m = re.search(r"([\d,]{3,})\s*円", cells[col])
+                if not m or not cells[0]:
+                    continue
+                name = cells[0]
+                if name in seen:
+                    continue
+                seen.add(name)
+                note = cells[1][:40] if col > 1 else ""
+                rows.append(_row("guestmobile", _rd_cat("", name), name, int(m.group(1).replace(",", "")), u, note,
+                                 _jan_in(name)))
+    return rows
+
+
+# ================================================================== 買取当番 (WooCommerce Store API công khai)
+TB = "https://tobansyoji.co.jp"
+
+
+def toban_scope(sess, scope):
+    rows = []
+    for p in range(1, 60):
+        r = sess.get(f"{TB}/wp-json/wc/store/v1/products", params={"per_page": 100, "page": p}, headers=UA, timeout=40)
+        time.sleep(DELAY)
+        if r.status_code != 200:
+            break
+        items = r.json()
+        if not items:
+            break
+        for it in items:
+            pr = it.get("prices") or {}
+            rng = pr.get("price_range") or {}
+            val = rng.get("max_amount") or pr.get("price")
+            try:
+                price = int(val) // (10 ** int(pr.get("currency_minor_unit", 0)))
+            except (TypeError, ValueError):
+                continue
+            if price <= 0:
+                continue
+            name = html.unescape(it.get("name", ""))
+            desc = _clean(it.get("description", "") + " " + it.get("short_description", ""))
+            if "中古" in desc and "新品" not in desc:
+                continue
+            cats = " ".join(c.get("name", "") for c in it.get("categories", []))
+            rows.append(_row("toban", _rd_cat(cats, name), name.replace("来店専用", "").strip(), price,
+                             it.get("permalink", TB), "来店専用" if "来店専用" in name else "", _jan_in(desc) or _jan_in(name)))
+        if len(items) < 100:
+            break
+    return rows
+
+
+# ================================================================== ケータイゴッド (bảng danh sách 20 máy/trang)
+KG = "https://keitai-god.com"
+KG_HOT = ["1", "8"]
+
+
+def keitaigod_scope(sess, scope):
+    if scope == "hot":
+        cis = KG_HOT
+    else:
+        idx = _get(sess, f"{KG}/price/index.php")
+        cis = sorted(set(re.findall(r'index\.php\?ci=(\d+)"', idx)), key=int)
+    rows, seen = [], set()
+    for ci in cis:
+        for p in range(1, 80):
+            s = _get(sess, f"{KG}/price/index.php?ci={ci}" + (f"&page={p}" if p > 1 else ""))
+            tb = re.search(r'id="price_table">(.*?)</table>', s, re.S)
+            if not tb:
+                break
+            got = 0
+            for tr in re.findall(r"<tr>(.*?)</tr>", tb.group(1), re.S):
+                tds = re.findall(r"<td[^>]*>(.*?)</td>", tr, re.S)
+                if len(tds) < 3:
+                    continue
+                name = _clean(tds[1])
+                m = re.search(r"([\d,]+)円", tds[2])
+                link = re.search(r'href="([^"]+model\.php\?moid=\d+)"', tr)
+                if not m:
+                    continue
+                got += 1
+                url = link.group(1) if link else f"{KG}/price/index.php?ci={ci}"
+                if url in seen:
+                    continue
+                seen.add(url)
+                jan = _jan_in(name)
+                clean_name = _JAN_RE.sub("", name).strip()
+                rows.append(_row("keitaigod", _rd_cat("", clean_name), clean_name, int(m.group(1).replace(",", "")), url,
+                                 "新品上限", jan))
+            if not got or f"page={p + 1}&" not in s:
+                break
+    return rows
+
+
 SHOPS = {
     "morimori": {"name": "森森買取", "url": MM, "fn": morimori_scope, "scopes": MM_SCOPES, "hot": MM_HOT},
     "rudeya": {"name": "買取ルデヤ", "url": RD, "fn": rudeya_scope, "scopes": ["full"], "hot": ["hot"]},
+    "panda": {"name": "PANDA買取", "url": PD, "fn": panda_scope, "scopes": ["full"], "hot": ["hot"]},
+    "guestmobile": {"name": "ゲストモバイル", "url": GM, "fn": guestmobile_scope, "scopes": ["full"], "hot": ["hot"]},
+    "toban": {"name": "買取当番", "url": TB, "fn": toban_scope, "scopes": ["full"], "hot": ["hot"]},
+    "keitaigod": {"name": "ケータイゴッド", "url": KG, "fn": keitaigod_scope, "scopes": ["full"], "hot": ["hot"]},
     "mobile_ichiban": {"name": "モバイル一番", "url": MI, "fn": mobile_ichiban_scope, "scopes": MI_SCOPES, "hot": MI_HOT},
     "homura": {"name": "買取ホムラ", "url": "https://kaitori-homura.com", "fn": homura_scope, "scopes": ["box"], "hot": ["box"]},
 }

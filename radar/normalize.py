@@ -67,7 +67,7 @@ def name_key(name: str) -> str:
 
 
 def make_key(cat: str, name: str) -> str:
-    if cat == "phone":
+    if "iphone" in name.lower():
         k = iphone_key(name)
         if k:
             return k

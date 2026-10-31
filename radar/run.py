@@ -92,6 +92,12 @@ def unify_by_jan(rows):
         j = r.get("jan")
         if j and (j not in best or _key_rank(r["key"]) < _key_rank(best[j][1])):
             best[j] = (r["cat"], r["key"])
+    cat_pref = {}
+    for r in rows:  # danh mục cụ thể (không phải appliance/other) được ưu tiên
+        j = r.get("jan")
+        if j and r["cat"] not in ("appliance", "other"):
+            cat_pref.setdefault(j, r["cat"])
+    best = {j: (cat_pref.get(j, c), k) for j, (c, k) in best.items()}
     # khoá name: -> khoá tốt hơn qua JAN (để cả các dòng KHÔNG có JAN nhưng trùng khoá name cũng gộp theo)
     remap = {}
     for r in rows:
@@ -117,13 +123,29 @@ def aggregate(rows):
             cur["min"] = min(cur["min"], r["price"])
             if r["price"] > cur["price"]:
                 cur.update(price=r["price"], url=r["url"], note=r.get("note", "")[:40], ts=r["ts"])
+    # Chống ghép sai: cùng khoá nhưng giá chênh > 1.8 lần giữa các tiệm => gần như chắc là 2 sản phẩm khác
+    # (vd ống kính trùng số model, 1 BOX vs 1 thùng). Giữ nhóm giá cao, tách các tiệm giá thấp thành món riêng.
+    RATIO = 1.8
+    for (cat, key), g in list(groups.items()):
+        ps = g["prices"]
+        if len(ps) < 2:
+            continue
+        top = max(v["price"] for v in ps.values())
+        low = {s: v for s, v in ps.items() if v["price"] * RATIO < top}
+        if not low:
+            continue
+        for s, v in low.items():
+            del ps[s]
+            groups[(cat, f"{key}#{s}")] = {"names": g["names"][:1], "prices": {s: v}}
     items = []
     for (cat, key), g in groups.items():
         best_shop = max(g["prices"], key=lambda s: g["prices"][s]["price"])
-        vals = [v["price"] for v in g["prices"].values()]
+        vals = sorted(v["price"] for v in g["prices"].values())
+        med = vals[len(vals) // 2]
+        core = [v for v in vals if v >= med * 0.85]  # bỏ giá thấp bất thường khi tính chênh lệch
         items.append({"cat": cat, "key": key, "name": _display(cat, key, g["names"]), "prices": g["prices"],
-                      "best_shop": best_shop, "best": max(vals), "n_shops": len(vals),
-                      "spread": max(vals) - min(vals) if len(vals) > 1 else 0})
+                      "best_shop": best_shop, "best": vals[-1], "n_shops": len(vals),
+                      "spread": core[-1] - core[0] if len(core) > 1 else 0})
     return items
 
 

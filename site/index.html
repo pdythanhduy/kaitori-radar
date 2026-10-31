@@ -1,65 +1,88 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="vi">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>新品買取価格比較（β版）｜iPhone・ゲーム機・ポケカ・家電の買取価格を毎日比較</title>
-<meta name="description" content="森森買取・モバイル一番・買取ホムラなど大手買取店の買取価格を毎日自動で比較。iPhone、PS5・Switch、ポケカBOX、カメラ、家電まで、一番高く売れる店がひと目でわかります。">
-<meta property="og:title" content="新品買取価格比較（β版）｜買取価格を毎日比較">
-<meta property="og:description" content="大手買取店の買取価格を毎日自動比較。最高値の店と価格差がすぐわかる。">
+<title>So sánh giá thu mua (kaitori) ở Nhật — iPhone, máy game, Pokémon, máy ảnh</title>
+<meta name="description" content="So sánh giá thu mua hàng mới (新品・未開封) tại các tiệm kaitori lớn ở Nhật mỗi giờ: iPhone, PS5, Switch, hộp thẻ Pokémon, máy ảnh, gia dụng. Biết ngay tiệm nào trả cao nhất.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="hd">
   <div class="wrap hd-in">
-    <a class="logo" href="./"><span class="logo-dot"></span>新品買取価格比較（β版）</a>
-    <span class="upd" id="upd">読み込み中…</span>
+    <a class="logo" href="./"><span class="logo-dot"></span><span data-i18n="brand">Giá Kaitori</span></a>
+    <div class="hd-r">
+      <span class="upd" id="upd"></span>
+      <button class="lang" id="lang" aria-label="language">日本語</button>
+    </div>
   </div>
 </header>
 
 <section class="hero">
   <div class="wrap">
-    <h1>どこで売るのが一番高い？<br><span>買取価格を毎日自動で比較</span></h1>
-    <p id="heroStat">大手買取店の公開価格を毎日チェック。新品・未開封品の最高値の店と値動きがひと目でわかります。</p>
-    <input id="q" class="hero-q" type="search" placeholder="商品名・型番で検索（例：PS5 Pro、CFI-2000、17 Pro、ロケット団）" autocomplete="off">
+    <h1><span data-i18n="h1a">Bán ở đâu được giá nhất?</span><br><span class="hl" data-i18n="h1b">So sánh giá thu mua mỗi giờ</span></h1>
+    <p id="heroStat"></p>
+    <input id="q" class="hero-q" type="search" autocomplete="off">
   </div>
 </section>
 
 <main class="wrap">
   <nav class="chips" id="chips"></nav>
 
+  <!-- ===== Bộ lọc ===== -->
+  <section class="filters" id="filters" hidden>
+    <button class="f-toggle" id="fToggle"><span data-i18n="filters">🔎 Bộ lọc</span> <b id="fCount"></b></button>
+    <div class="f-body" id="fBody">
+      <div class="f-row">
+        <span class="f-lab" data-i18n="fShop">Tiệm</span>
+        <div class="f-opts" id="fShops"></div>
+      </div>
+      <div class="f-row">
+        <span class="f-lab" data-i18n="fPrice">Giá thu mua</span>
+        <div class="f-opts" id="fPrice"></div>
+      </div>
+      <div class="f-row">
+        <span class="f-lab" data-i18n="fMore">Tuỳ chọn</span>
+        <div class="f-opts">
+          <label class="pill"><input type="checkbox" id="multi"><span data-i18n="fMulti">Chỉ món có ở ≥2 tiệm</span></label>
+          <label class="pill"><input type="checkbox" id="gap"><span data-i18n="fGap">Chênh lệch ≥ 3.000円</span></label>
+        </div>
+      </div>
+      <div class="f-row">
+        <span class="f-lab" data-i18n="fSort">Sắp xếp</span>
+        <select id="sort"></select>
+        <button class="reset" id="reset" data-i18n="reset">Xoá lọc</button>
+      </div>
+    </div>
+  </section>
+
   <section id="home">
-    <h2 class="sec">💡 今日の価格差ランキング <small>同じ商品でも店によってこんなに違う</small></h2>
+    <h2 class="sec"><span data-i18n="topTitle">💡 Chênh lệch giá lớn nhất hôm nay</span> <small data-i18n="topSub">cùng một món, mỗi tiệm trả một giá</small></h2>
     <div id="top" class="list"></div>
   </section>
 
   <section id="catview" hidden>
-    <div class="tools">
-      <select id="sort">
-        <option value="rec">おすすめ（複数店比較を優先）</option>
-        <option value="best">買取価格が高い順</option>
-        <option value="spread">店舗間の価格差が大きい順</option>
-        <option value="up">前日から上がった順</option>
-        <option value="down">前日から下がった順</option>
-        <option value="name">名前順</option>
-      </select>
-      <label class="chk"><input type="checkbox" id="multi"> 複数店で比較できる商品のみ</label>
-    </div>
     <p class="hint" id="hint"></p>
     <div id="list" class="list"></div>
-    <button id="more" class="more" hidden>もっと見る</button>
-    <p class="empty" id="empty" hidden>該当する商品がありません。</p>
+    <button id="more" class="more" hidden data-i18n="more">Xem thêm</button>
+    <p class="empty" id="empty" hidden data-i18n="empty">Không có sản phẩm phù hợp.</p>
+  </section>
+
+  <section id="deals" hidden>
+    <div class="pr-note" data-i18n="prNote">【PR / 広告】Trang này có chứa liên kết quảng cáo (affiliate). Khi bạn đăng ký hoặc mua qua liên kết, chúng tôi có thể nhận hoa hồng — giá bạn trả không đổi.</div>
+    <div id="dealList"></div>
   </section>
 </main>
 
 <footer class="ft">
   <div class="wrap">
-    <p><b>新品買取価格比較（β版）</b> は各買取店の公式サイトに公開されている買取価格（新品・未開封）を自動取得して比較表示するサイトです。人気商品は数時間ごと、全商品は1日1〜2回更新しています。</p>
-    <p>※価格は取得時点の参考値です。状態・色・付属品・在庫状況・キャンペーンにより実際の買取額は変わります。売却前に必ず各店舗の最新価格をご確認ください。</p>
+    <p data-i18n="ft1">Trang tự động lấy giá thu mua công khai (hàng mới・chưa khui) trên website chính thức của các tiệm kaitori và so sánh. Hàng hot cập nhật mỗi giờ, toàn bộ cập nhật mỗi ngày.</p>
+    <p data-i18n="ft2">※ Giá chỉ để tham khảo tại thời điểm lấy dữ liệu. Giá thực tế thay đổi theo tình trạng, màu, phụ kiện, khuyến mãi. Hãy kiểm tra giá mới nhất trên trang của tiệm trước khi bán.</p>
     <p id="shops"></p>
-    <p class="small">© 2026 新品買取価格比較（β版）</p>
+    <p class="small">© 2026</p>
   </div>
 </footer>
+<script src="i18n.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

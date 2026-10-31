@@ -1,0 +1,55 @@
+{
+  "_huong_dan": "Sửa file này để thêm link. Mỗi mục: name, url, affiliate (true nếu là link affiliate → hiện nhãn PR), desc/badge theo vi/ja. Mục nào url rỗng sẽ tự ẩn.",
+  "groups": [
+    {
+      "id": "takuhai",
+      "title": { "vi": "📦 Bán qua bưu điện (宅配買取) — gửi hàng, tiệm chuyển khoản", "ja": "📦 宅配買取（送るだけで現金化）" },
+      "items": [
+        { "name": "森森買取", "url": "https://www.morimori-kaitori.jp", "affiliate": false,
+          "desc": { "vi": "Nhận game, iPhone, máy ảnh, thẻ bài. Có dịch vụ chuyển khoản nhanh (即フリ).", "ja": "ゲーム・スマホ・カメラ・トレカ。即日振込あり。" } },
+        { "name": "買取ルデヤ", "url": "https://kaitori-rudeya.com", "affiliate": false,
+          "desc": { "vi": "Danh mục rất rộng: iPhone, Switch, PS5, máy ảnh, Apple Watch.", "ja": "iPhone・ゲーム機・カメラなど幅広く買取。" } },
+        { "name": "モバイル一番", "url": "https://www.mobile-ichiban.com", "affiliate": false,
+          "desc": { "vi": "Chuyên iPhone mới chưa khui, máy game, gia dụng.", "ja": "新品iPhone・ゲーム機・家電の買取。" } },
+        { "name": "PANDA買取", "url": "https://panda-kaitori.co.jp", "affiliate": false,
+          "desc": { "vi": "Game, iPhone, máy ảnh, ống kính, PC, rượu.", "ja": "ゲーム・スマホ・カメラ・PC・お酒。" } },
+        { "name": "買取当番", "url": "https://tobansyoji.co.jp", "affiliate": false,
+          "desc": { "vi": "iPhone, Pixel, máy game, thẻ bài.", "ja": "スマホ・ゲーム機・トレカ。" } },
+        { "name": "ケータイゴッド", "url": "https://keitai-god.com", "affiliate": false,
+          "desc": { "vi": "Tiệm ở Shinjuku, nhận gửi bưu điện miễn phí ship.", "ja": "新宿の買取店。郵送買取は送料無料。" } },
+        { "name": "ゲストモバイル", "url": "https://www.guestmobile.jp", "affiliate": false,
+          "desc": { "vi": "Bảng giá iPhone, SIMフリー, máy tính bảng.", "ja": "iPhone・SIMフリー・タブレット。" } },
+        { "name": "買取ホムラ", "url": "https://kaitori-homura.com", "affiliate": false,
+          "desc": { "vi": "Chuyên hộp thẻ Pokémon, có bảng giá cập nhật mỗi ngày.", "ja": "ポケカBOXに強い。毎日更新の買取表。" } }
+      ]
+    },
+    {
+      "id": "card",
+      "title": { "vi": "💳 Thẻ tín dụng hoàn điểm cao khi mua hàng để bán lại", "ja": "💳 仕入れにおすすめの高還元クレジットカード" },
+      "items": [
+        { "name": "(chỗ trống — thêm link affiliate thẻ tín dụng)", "url": "", "affiliate": true, "desc": { "vi": "", "ja": "" } }
+      ]
+    },
+    {
+      "id": "sim",
+      "title": { "vi": "📶 SIM giá rẻ cho người nước ngoài", "ja": "📶 格安SIM" },
+      "items": [
+        { "name": "(chỗ trống)", "url": "", "affiliate": true, "desc": { "vi": "", "ja": "" } }
+      ]
+    },
+    {
+      "id": "shop",
+      "title": { "vi": "🛒 Mua hàng giá tốt (Amazon / Rakuten / Yahoo)", "ja": "🛒 お得に仕入れ" },
+      "items": [
+        { "name": "(chỗ trống)", "url": "", "affiliate": true, "desc": { "vi": "", "ja": "" } }
+      ]
+    },
+    {
+      "id": "remit",
+      "title": { "vi": "💸 Chuyển tiền về Việt Nam", "ja": "💸 海外送金" },
+      "items": [
+        { "name": "(chỗ trống)", "url": "", "affiliate": true, "desc": { "vi": "", "ja": "" } }
+      ]
+    }
+  ]
+}
