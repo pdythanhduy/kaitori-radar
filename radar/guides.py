@@ -306,6 +306,61 @@ hoặc mua hàng để bán lại cho tiệm kaitori. <b>Thông tin rà soát ng
     (out / "index.html").write_text(pv, encoding="utf-8")
     extra.append(("/guide/meo-mua-re/", "weekly"))
 
+    # ---------------------------------------------------------------- 6. Danh sách tiệm (VI) — lấy từ web chính thức 01/11/2026
+    from urllib.parse import quote as _qq
+    STORES = [  # (khu vực, tiệm, chi nhánh, địa chỉ hoặc "", giờ / ghi chú, trang chính thức)
+        ("Tokyo", "森森買取", "秋葉原駅前店", "東京都千代田区神田佐久間町1丁目13 チョムチョム秋葉原 1F", "JR秋葉原駅 中央改札 徒歩1分", "https://www.morimori-kaitori.jp/inviting"),
+        ("Tokyo", "森森買取", "新宿店", "東京都新宿区新宿2-7-4 アリサビル1F", "新宿三丁目駅 C5出口 徒歩3分", "https://www.morimori-kaitori.jp/inviting"),
+        ("Tokyo", "森森買取", "高田馬場店", "東京都新宿区高田馬場2-14-6 アライビル1階", "高田馬場駅 徒歩2〜3分・不定休", "https://www.morimori-kaitori.jp/inviting"),
+        ("Tokyo", "買取ルデヤ", "池袋・秋葉原・新宿・赤羽店", "", "10:00〜19:00（月〜土・祝）・日曜休み", "https://kaitori-rudeya.com/accessmap"),
+        ("Tokyo", "ケータイゴッド", "新宿店", "東京都新宿区西新宿1-18-17 ラウンドクロス西新宿7階", "11:00〜20:00・不定休", "https://keitai-god.com/shop.php"),
+        ("Tokyo", "ケータイゴッド", "池袋PARCO店", "東京都豊島区南池袋1-28-2 池袋PARCO 本館7F", "11:00〜21:00（買取受付20:00まで）・不定休", "https://keitai-god.com/shop.php"),
+        ("Tokyo", "モバイル一番", "池袋駅前店", "東京都豊島区西池袋1-29-5 山の手ビル1F", "TEL 03-6912-6085", "https://www.mobile-ichiban.com/"),
+        ("Tokyo", "モバイル一番", "赤羽店", "東京都北区赤羽南1-21-9", "TEL 03-5939-6588", "https://www.mobile-ichiban.com/"),
+        ("Tokyo", "モバイル一番", "浮間舟渡店", "東京都北区浮間2-13-10", "TEL 03-6454-5032", "https://www.mobile-ichiban.com/"),
+        ("Tokyo", "買取当番", "秋葉原支店", "東京都千代田区外神田1-2-9 ラオックス秋葉原本店 5階", "11:00〜19:00（最終受付18:45）・年中無休", "https://tobansyoji.co.jp/company/"),
+        ("Tokyo", "PANDA買取", "日暮里", "東京都荒川区東日暮里1-17-11", "Giờ mở cửa: xem trang tiệm", "http://panda-kaitori.co.jp/shop.html"),
+        ("Kanagawa / Saitama", "買取ルデヤ", "川崎店・大宮店", "", "10:00〜19:00（月〜土・祝）・日曜休み", "https://kaitori-rudeya.com/accessmap"),
+        ("Kanagawa / Saitama", "買取当番", "川崎支店", "神奈川県川崎市川崎区砂子2-7-5 サン・ラビル1階", "11:00〜19:00（最終受付18:45）・年中無休", "https://tobansyoji.co.jp/company/"),
+        ("Kanagawa / Saitama", "ゲストモバイル", "橋本・町田・八王子・相模原", "", "11:30〜19:00", "https://www.guestmobile.jp/%e5%ba%97%e9%a0%ad%e8%b2%b7%e5%8f%96/"),
+        ("Osaka", "森森買取", "大阪なんば店", "大阪府大阪市浪速区難波中1-3-15 シャトー中山 1F", "11:00〜20:00・TEL 06-6964-8839", "https://www.morimori-kaitori.jp/inviting"),
+        ("Osaka", "モバイル一番", "大阪日本橋店", "大阪府大阪市浪速区日本橋4-10-6", "TEL 06-7507-2600", "https://www.mobile-ichiban.com/"),
+        ("Nagoya", "買取1丁目", "名古屋店（2026/10/19 OPEN）", "愛知県名古屋市中区栄2-15-12 大橋ビル1F", "10:00〜19:00", "https://www.1-chome.com/"),
+        ("Nagoya", "モバイル一番", "名古屋大須店", "愛知県名古屋市中区大須4丁目1-9 菱水ビル1F", "TEL 052-212-7981", "https://www.mobile-ichiban.com/"),
+        ("Fukuoka", "森森買取", "福岡店", "", "天神駅 徒歩6分", "https://www.morimori-kaitori.jp/inviting"),
+    ]
+    regions = list(dict.fromkeys(r[0] for r in STORES))
+    rows_html = []
+    for reg in regions:
+        cards_ = []
+        for _, shop, br, addr, info, url in [r for r in STORES if r[0] == reg]:
+            mp = f'<a href="https://www.google.com/maps/search/?api=1&query={_qq(shop + " " + (addr or br))}" target="_blank" rel="noopener nofollow">📍 Bản đồ</a>'
+            cards_.append(f'<div class="store"><b>{e(shop)}</b> <span class="br">{e(br)}</span>'
+                          f'{f"<p>{e(addr)}</p>" if addr else ""}<p class="small">🕘 {e(info)}</p>'
+                          f'<p class="small">{mp} · <a href="{e(url)}" target="_blank" rel="noopener nofollow">Trang tiệm ↗</a></p></div>')
+        rows_html.append(f'<h2 id="{e(reg.split()[0].lower())}">{e(reg)}</h2><div class="stores">{"".join(cards_)}</div>')
+    toc = " · ".join(f'<a href="#{e(r.split()[0].lower())}">{e(r)}</a>' for r in regions)
+    body_st = f"""
+<p>Địa chỉ, giờ mở cửa và ga gần nhất của các tiệm kaitori mà web đang so giá. <b>Lấy từ trang chính thức của từng tiệm ngày 01/11/2026.</b>
+Giờ mở cửa và ngày nghỉ có thể thay đổi, nên kiểm tra trang tiệm hoặc gọi trước khi đi.</p>
+<p class="pt-note">💡 Ở xa tiệm? Hầu hết các tiệm có <b>gửi bưu điện (郵送買取)</b>: gửi hàng đi, tiệm chuyển khoản. Trước khi đi hoặc gửi, so giá 9 tiệm ở <a href="/vi/">kaitoriprice.com/vi</a>.</p>
+<nav class="toc"><b>Khu vực:</b> {toc}</nav>
+{"".join(rows_html)}
+<h2>Mang gì khi đi bán?</h2>
+<ul class="tips"><li>Thẻ cư trú (在留カード) hoặc bằng lái xe: bắt buộc</li><li>Máy còn nguyên seal, đủ hộp và phụ kiện</li><li>Nhiều tiệm cần đăng ký thành viên online trước (ví dụ 森森買取)</li></ul>
+<p><a href="https://www.facebook.com/groups/1118827834446963" target="_blank" rel="noopener">👥 Hỏi kinh nghiệm bán ở từng tiệm trong nhóm Facebook →</a></p>"""
+    out = site / "guide" / "tiem-kaitori"
+    out.mkdir(parents=True, exist_ok=True)
+    pv = page("Danh sách tiệm kaitori ở Tokyo, Osaka, Nagoya: địa chỉ, giờ mở cửa | Kaitori Price",
+              "Địa chỉ, giờ mở cửa, ga gần nhất của 森森買取, 買取ルデヤ, モバイル一番, ケータイゴッド, 買取当番, 買取1丁目… ở Tokyo, Osaka, Nagoya.",
+              "/guide/tiem-kaitori/",
+              f'<nav class="bc"><a href="/vi/">Trang chủ</a> › <a href="/guide/vi/">Mẹo & Hướng dẫn</a> › Danh sách tiệm</nav><article class="guide" lang="vi"><h1>📍 Danh sách tiệm kaitori (Tokyo, Osaka, Nagoya)</h1>{body_st}</article>',
+              [], updated)
+    pv = pv.replace('<html lang="ja">', '<html lang="vi">', 1).replace(
+        '<a class="hd-cta" href="/">全商品を比較 →</a>', '<a class="hd-cta" href="/vi/">So giá 9 tiệm →</a>', 1)
+    (out / "index.html").write_text(pv, encoding="utf-8")
+    extra.append(("/guide/tiem-kaitori/", "weekly"))
+
     # ---------------------------------------------------------------- trang tổng hợp (JA /guide/, VI /guide/vi/)
     # (path, icon, tiêu đề VI, mô tả VI, có bản tiếng Việt?) — nhóm theo mục để dễ tìm
     SECTIONS = [
@@ -335,6 +390,9 @@ hoặc mua hàng để bán lại cho tiệm kaitori. <b>Thông tin rà soát ng
                 vi_cards.append(card(p, m[1], m[2], m[3], '<span class="gl">日本語</span>'))
         if ja_cards:
             ja_html.append(f'<section class="gsec"><h2>{ja_t}</h2><div class="ggrid">{"".join(ja_cards)}</div></section>')
+        if sid == "sell":
+            vi_cards.insert(0, card("/guide/tiem-kaitori/", "📍", "Danh sách tiệm kaitori (Tokyo, Osaka, Nagoya)",
+                                    "Địa chỉ, giờ mở cửa, ga gần nhất, link bản đồ của các tiệm web đang so giá"))
         if sid == "buy":  # bài chỉ có tiếng Việt
             vi_cards.insert(0, card("/guide/meo-mua-re/", "🛒", "7 cách mua hàng giảm giá ở Nhật",
                                     "Rakuten, Yahoo, Amazon, điểm điện máy, phiếu cổ đông, trang tích điểm, điện thoại 1 yên"))
