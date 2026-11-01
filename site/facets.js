@@ -94,12 +94,21 @@
   }
   const CAP_ORDER = ["64GB", "128GB", "256GB", "512GB", "1TB", "2TB"];
 
+  // độ mới của đời máy so với đời mới nhất CÙNG HÃNG (1 = mới nhất): iPhone 18, Galaxy S26, Pixel 11 đều = 1
+  function recency(items) {
+    const top = {};
+    for (const it of items) { const v = it._f.series ? ver(it._f.series) : 0, b = it.cat + "|" + it._f.brand; if (v > (top[b] || 0)) top[b] = v; }
+    for (const it of items) { const v = it._f.series ? ver(it._f.series) : 0, t = top[it.cat + "|" + it._f.brand]; it._f.rec = v && t ? v / t : 0; }
+  }
   window.FACETS = {
     enrich(items) {
+      let fresh = false;
       for (const it of items) {
         if (it._f) continue;
+        fresh = true;
         it._f = { brand: brand(it.cat, it.name), series: series(it.cat, it), cap: ["phone", "tablet"].includes(it.cat) ? capacity(it) : "" };
       }
+      if (fresh) recency(items);
       return items;
     },
     seriesSort, CAP_ORDER, capSort,

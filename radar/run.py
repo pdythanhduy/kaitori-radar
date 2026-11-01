@@ -175,6 +175,10 @@ def write_outputs(items, status):
     (OUT / "cat").mkdir(exist_ok=True)
     (OUT / "hist").mkdir(exist_ok=True)
     today = now_jst().strftime("%Y-%m-%d")
+    # ngày đầu tiên thấy món này (để sắp xếp "mới nhất"); lưu riêng vì hist chỉ giữ 120 điểm
+    fp = OUT / "first.json"
+    boot = not fp.exists()  # lần đầu: mọi món hiện có coi như "có từ trước", chỉ món xuất hiện sau đó mới là "mới"
+    first = {} if boot else json.loads(fp.read_text(encoding="utf-8"))
     cats = {}
     for cat, label in CATS.items():
         its = sorted([i for i in items if i["cat"] == cat], key=lambda x: (-x["n_shops"], -x["best"]))
@@ -183,6 +187,10 @@ def write_outputs(items, status):
         hp = OUT / "hist" / f"{cat}.json"
         hist = json.loads(hp.read_text(encoding="utf-8")) if hp.exists() else {}
         for it in its:
+            fk = f"{cat}|{it['key']}"
+            if fk not in first:
+                first[fk] = "2000-01-01" if boot else today
+            it["first"] = first[fk]
             s = [p for p in hist.get(it["key"], []) if p[0] != today]
             s.append([today, it["best"]])
             hist[it["key"]] = s[-120:]
@@ -191,6 +199,7 @@ def write_outputs(items, status):
         hp.write_text(json.dumps(hist, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
         (OUT / "cat" / f"{cat}.json").write_text(json.dumps(its, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
         cats[cat] = {"label": label, "count": len(its), "multi": sum(1 for i in its if i["n_shops"] > 1)}
+    fp.write_text(json.dumps(first, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     idx = {"updated": now_jst().strftime("%Y-%m-%d %H:%M"),
            "shops": {k: {"name": v["name"], "url": v["url"], "list": v.get("list", False)} for k, v in SHOPS.items()},
            "cats": cats, "total": len(items), "status": status}

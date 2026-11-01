@@ -12,7 +12,7 @@
   const ICON = { phone: "📱", tablet: "📲", game: "🎮", card: "🃏", pc: "💻", camera: "📷", audio: "🎧", appliance: "🔌", watch: "⌚", hobby: "🧸", other: "📦" };
   const PRICE = [[0, Infinity], [0, 10000], [10000, 50000], [50000, 200000], [200000, Infinity]];
   const st = { view: "home", cat: null, q: "", f: { cat: new Set(), brand: new Set(), series: new Set(), cap: new Set(), shop: new Set() },
-    price: 0, multi: false, gap: false, sort: "rec", layout: localStorage.getItem("layout2") || "card" };
+    price: 0, multi: false, gap: false, sort: "new", layout: localStorage.getItem("layout2") || "card" };
 
   const promos = await fetch("promos.json" + bust).then((r) => r.json()).catch(() => ({ groups: [], inline: {} }));
   const AFF = promos.inline || {};
@@ -217,7 +217,8 @@
     $("#quick").innerHTML = q.join("");
   }
   function sortItems(items) {
-    const f = { rec: (a, b) => (b.n_shops - a.n_shops) || (b.spread - a.spread) || (b.best - a.best), best: (a, b) => b.best - a.best,
+    const f = { new: (a, b) => (b.first || "").localeCompare(a.first || "") || ((b._f.rec || 0) - (a._f.rec || 0)) || (b.best - a.best),
+      rec: (a, b) => (b.n_shops - a.n_shops) || (b.spread - a.spread) || (b.best - a.best), best: (a, b) => b.best - a.best,
       spread: (a, b) => b.spread - a.spread, up: (a, b) => (b.chg || 0) - (a.chg || 0), down: (a, b) => (a.chg || 0) - (b.chg || 0),
       name: (a, b) => a.name.localeCompare(b.name, "ja") }[st.sort];
     return items.sort(f);
