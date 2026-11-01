@@ -177,7 +177,7 @@
     return `<article class="card">
       <div class="c-top"><div><div class="c-name">${esc(it.name)}</div><div class="c-sub">${ICON[it.cat] || ""} ${esc(tag || t.cats[it.cat] || "")}・${t.shopsN(it.n_shops)}</div></div>${spark(it)}<div class="c-act"><button class="shr" data-id="${esc(id)}" aria-label="${esc(t.share)}" title="${esc(t.share)}"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M12 3v12"/><path d="m7 8 5-5 5 5"/></svg></button><button class="fav ${fav}" data-id="${esc(id)}" aria-label="${esc(t.watch)}" title="${esc(t.watch)}">${fav ? "♥" : "♡"}</button></div></div>
       <div class="best"><span class="best-p">${yen(it.best)}</span><span class="best-s ${it.n_shops > 1 ? "" : "one"}">${it.n_shops > 1 ? t.best + "：" : ""}${SH[it.best_shop]?.name || ""}</span>${chg}</div>
-      ${boostTag(it)}${msrpLine(it)}${diff}<div class="shops">${rows}</div>
+      ${boostTag(it)}${msrpLine(it)}${diff}<div class="shops ${shops.length > 4 ? "clip" : ""}">${rows}</div>${shops.length > 4 ? `<button class="shmore" type="button">${t.allShops(shops.length)} ▾</button>` : ""}
       ${affBox(it.cat, it.key)}${buyBox(it)}
       <div class="calc-row"><label class="calc">${t.calc} <input type="number" inputmode="numeric" placeholder="${Math.round(it.best * 0.9).toLocaleString()}" data-best="${it.best}"> 円 → ${t.profit} <b class="pf">—</b></label><button class="stk ${mine.stock[id] ? "on" : ""}" data-id="${esc(id)}">${mine.stock[id] ? t.inStock : t.addStock}</button></div>
     </article>`;
@@ -316,8 +316,11 @@
     if (!listMode) { pv("./"); return; }
     $("#hint").textContent = "…";
     if (st.q) {
-      const all = (await Promise.all(Object.keys(CATS).map(loadCat))).flat();
       const q = st.q.toLowerCase().replace(/\s/g, "");
+      // tìm trước trong mục lục nhỏ → chỉ tải những nhóm có kết quả
+      sidx ||= await fetch("data/search.json" + bust).then((r) => r.json()).catch(() => null);
+      const cats = sidx ? [...new Set(sidx.filter(([, n]) => n.toLowerCase().replace(/\s/g, "").includes(q)).map(([c]) => c))] : Object.keys(CATS);
+      const all = (await Promise.all((cats.length ? cats : Object.keys(CATS)).filter((c) => CATS[c]).map(loadCat))).flat();
       base = all.filter((i) => (i.name + i.key + (i._f.series || "")).toLowerCase().replace(/\s/g, "").includes(q));
     } else {
       base = (await Promise.all([loadCat(st.cat), loadHist(st.cat)]))[0];
@@ -325,7 +328,7 @@
     refresh();
     pv(st.q ? "./?q=" + encodeURIComponent(st.q) : "?c=" + st.cat);
   }
-  let lastPv = null;
+  let lastPv = null, sidx = null;
   function clearFilters() { for (const k in st.f) st.f[k].clear(); st.price = 0; st.multi = st.gap = false; }
 
   // ================= Của tôi
@@ -396,6 +399,7 @@
   }
   document.addEventListener("click", (e) => {
     const sh = e.target.closest(".shr"); if (sh) { e.preventDefault(); return shareItem(REG.get(sh.dataset.id)); }
+    const sm = e.target.closest(".shmore"); if (sm) { const box = sm.previousElementSibling; box.classList.toggle("clip"); sm.textContent = box.classList.contains("clip") ? sm.textContent.replace("▴", "▾") : sm.textContent.replace("▾", "▴"); return; }
     const f = e.target.closest(".fav"); if (f) { e.preventDefault(); return toggleWatch(f.dataset.id); }
     const k = e.target.closest(".stk"); if (k) { e.preventDefault(); return addStock(k.dataset.id, k); }
     const d = e.target.closest(".sdel"); if (d) { delete mine.stock[d.dataset.id]; saveMine(); return renderMine(); }

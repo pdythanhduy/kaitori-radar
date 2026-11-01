@@ -412,3 +412,6 @@ a.sh:hover .go{background:var(--fg);color:#fff}
  #side[data-focus] .fg .fo.hid{display:flex}
  #side[data-focus] .fg .fmore{display:none}
 }
+
+.shops.clip > .sh:nth-child(n+5){display:none}
+.shmore{display:block;width:100%;margin:.2rem 0 .4rem;padding:.45rem;border:1px dashed var(--line,#e2e8f0);border-radius:10px;background:none;font:inherit;font-size:.8rem;font-weight:700;color:#475569;cursor:pointer}

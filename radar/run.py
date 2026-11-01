@@ -260,6 +260,9 @@ def write_outputs(items, status):
         boost.append(i)
         if len(boost) >= 24:
             break
+    # mục lục tìm kiếm nhỏ: tên + key + nhóm → app chỉ tải các nhóm có kết quả (thay vì cả 11 file)
+    sidx = [[i["cat"], i["name"] + ("|" + i["key"].split("|")[0] if i["key"].startswith("iPhone") and i["key"].split("|")[0] != i["name"] else "")] for i in items]
+    (OUT / "search.json").write_text(json.dumps(sidx, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     (OUT / "boost.json").write_text(json.dumps(boost, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     # 📈📉 tăng/giảm mạnh hôm nay (chỉ thay đổi thật, theo %)
     mv = [i for i in items if i.get("mv") and i["n_shops"] > 1 and i["best"] >= 3000 and "PSA" not in i["name"]]
