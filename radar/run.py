@@ -74,7 +74,24 @@ def load_rows():
     for r in latest.values():
         r["cat"] = refine_cat(r["cat"], r["name"])
         r["key"] = make_key(r["cat"], r["name"])  # luôn tính lại theo luật ghép mới nhất
-    return list(latest.values())
+    return unify_card_sets(list(latest.values()))
+
+
+def unify_card_sets(rows):
+    """Hộp thẻ không ghi mã bộ (vd ホムラ 「蒼空ストリーム BOX」) → tra mã từ tiệm có ghi (「蒼空ストリーム BOX s7R」)."""
+    from .normalize import card_set
+    core2code = {}
+    for r in rows:
+        if r["key"].startswith("box:"):
+            cs = card_set(r["name"])
+            if cs and cs[0] and cs[1]:
+                core2code.setdefault(cs[1], cs[0])
+    for r in rows:
+        if r["key"].startswith("box:"):
+            cs = card_set(r["name"])
+            if cs and not cs[0] and cs[1] in core2code:
+                r["key"] = "box:" + core2code[cs[1]]
+    return rows
 
 
 def _display(cat, key, names):
@@ -151,8 +168,10 @@ def aggregate(rows):
         ps = g["prices"]
         if len(ps) < 2:
             continue
-        top = max(v["price"] for v in ps.values())
-        low = {s: v for s, v in ps.items() if v["price"] * RATIO < top}
+        # mốc = giá trung vị (đa số tiệm), không phải giá cao nhất: 1 tiệm ghi giá cả thùng (カートン) không kéo cả nhóm đi
+        vs = sorted(v["price"] for v in ps.values())
+        top = vs[len(vs) // 2] if len(vs) >= 3 else vs[-1]
+        low = {s: v for s, v in ps.items() if v["price"] * RATIO < top or v["price"] > top * RATIO}
         if not low:
             continue
         for s, v in low.items():

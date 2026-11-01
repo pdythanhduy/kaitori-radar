@@ -87,13 +87,46 @@ def name_key(name: str) -> str:
     return re.sub(r"[^0-9a-zぁ-んァ-ヶ一-龠]", "", s)[:60]
 
 
+# mã bộ thẻ: SV2a, S7R, SM12a, SV11B-D (デラックス), OP-11, EB-02, PRB-02, ST-21
+_SET = re.compile(r"(?<![A-Za-z0-9])(SV\d{1,2}[A-Za-z]?|SM\d{1,2}[A-Za-z]?|S\d{1,2}[A-Za-z]?|OP-?\d{2}|EB-?\d{2}|PRB-?\d{2}|ST-?\d{2})"
+                  r"(?:[-_](D|DX))?(?![A-Za-z0-9])", re.I)
+_SET_DROP = ["遊戯王オフィシャルカードゲーム", "遊戯王 OCG", "遊戯王OCG", "デュエルモンスターズ", "ONE PIECEカードゲーム", "ONE PIECE カードゲーム", "カードゲーム", "サン&ムーン", "ソード&シールド", "S&V", "TAG TEAM GX",
+             "エクストラブースター", "ブースターパック", "プレミアムブースター", "強化", "ハイクラス", "ポケモンカード"]
+_CARTON = r"カートン|ケース|carton|\d+\s*BOX(入|セット)|BOXセット"
+
+
+def card_set(name: str):
+    """(mã bộ hoặc None, tên lõi) của 1 hộp thẻ. Hộp デラックス có hậu tố 'dx'. None nếu không phải hộp/bộ."""
+    s = unicodedata.normalize("NFKC", name)
+    if re.search(r"PSA|BGS|ARS\d|鑑定|\d+/\d+|\d{3}-\d{3}", s) or re.search(_CARTON, s, re.I):
+        return None
+    dx = bool(re.search(r"デラックス|\bDX\b", s, re.I))
+    m = _SET.search(s)
+    code = None
+    if m:
+        code = re.sub(r"-", "", m.group(1)).lower()
+        dx = dx or bool(m.group(2))
+    core = _SET.sub(" ", s)
+    for w in _SET_DROP:
+        core = core.replace(w, " ")
+    core = re.sub(r"デラックス|\bDX\b", " ", core, flags=re.I)
+    core = box_key(core)
+    if dx:
+        core += "dx"
+        code = code and code + "dx"
+    return code, core
+
+
 def make_key(cat: str, name: str) -> str:
     if "iphone" in name.lower():
         k = iphone_key(name)
         if k:
             return k
-    if cat == "card" and re.search(r"BOX|ボックス", name, re.I):
-        return "box:" + box_key(name)
+    # hộp thẻ: tên có BOX, hoặc kiểu 買取当番 「【SV11B】ブラックボルト」 (mã bộ trong 【】, không ghi BOX)
+    if cat == "card" and (re.search(r"BOX|ボックス", name, re.I) or re.match(r"\s*【[A-Za-z]{1,3}-?\d{1,2}[A-Za-z]?(-D)?】", name)):
+        cs = card_set(name)
+        if cs:
+            return "box:" + (cs[0] or cs[1])
     if re.search(r"キット|セット|同梱|バンドル|kit", name, re.I):
         return "name:" + name_key(name)  # bộ kit/set: số model của 1 linh kiện không đại diện cả bộ
     mc = model_code(name)

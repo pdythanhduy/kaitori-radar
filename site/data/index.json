@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-01 10:50",
+ "updated": "2026-11-01 11:41",
  "shops": {
   "morimori": {
    "name": "森森買取",
@@ -50,7 +50,7 @@
   },
   "tablet": {
    "label": "タブレット",
-   "count": 691,
+   "count": 690,
    "multi": 157
   },
   "game": {
@@ -60,8 +60,8 @@
   },
   "card": {
    "label": "トレカ",
-   "count": 1225,
-   "multi": 76
+   "count": 1143,
+   "multi": 133
   },
   "pc": {
    "label": "パソコン",
@@ -80,7 +80,7 @@
   },
   "appliance": {
    "label": "家電・美容",
-   "count": 2667,
+   "count": 2666,
    "multi": 277
   },
   "watch": {
@@ -99,7 +99,7 @@
    "multi": 7
   }
  },
- "total": 9690,
+ "total": 9606,
  "status": {
   "mobile_ichiban:2": {
    "ok": true,
