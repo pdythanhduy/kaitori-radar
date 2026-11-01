@@ -559,7 +559,7 @@
   const homeExtra = () => {
     FACETS.enrich(boost);
     $("#boostH").hidden = !boost.length;
-    $("#boost").innerHTML = boost.slice(0, 12).map(card).join("");
+    $("#boost").innerHTML = boost.slice(0, 6).map(card).join("");
     $("#movers").innerHTML = moversHtml(movers);
   };
   homeExtra();
