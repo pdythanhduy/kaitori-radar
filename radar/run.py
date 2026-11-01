@@ -157,10 +157,14 @@ def aggregate(rows):
         cur = g["prices"].get(r["shop"])
         if cur is None:
             g["prices"][r["shop"]] = {"price": r["price"], "url": r["url"], "note": r.get("note", "")[:40], "min": r["price"], "ts": r["ts"]}
+            if SHOPS.get(r["shop"], {}).get("list"):  # tiệm không có trang SP: giữ tên gốc để nhảy tới đúng dòng (#:~:text=)
+                g["prices"][r["shop"]]["n"] = r["name"][:80]
         else:
             cur["min"] = min(cur["min"], r["price"])
             if r["price"] > cur["price"]:
                 cur.update(price=r["price"], url=r["url"], note=r.get("note", "")[:40], ts=r["ts"])
+                if "n" in cur:
+                    cur["n"] = r["name"][:80]
     # Chống ghép sai: cùng khoá nhưng giá chênh > 1.8 lần giữa các tiệm => gần như chắc là 2 sản phẩm khác
     # (vd ống kính trùng số model, 1 BOX vs 1 thùng). Giữ nhóm giá cao, tách các tiệm giá thấp thành món riêng.
     RATIO = 1.8

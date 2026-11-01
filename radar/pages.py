@@ -142,7 +142,8 @@ def product_page(it: dict, shops: dict, hist: list, related: list, updated: str)
         note = p.get("note", "").strip()
         if p.get("min") and p["min"] != p["price"]:
             note = f"色により{yen(p['min'])}〜"
-        trs.append(f'<tr class="{"top" if i == 0 else ""}"><td><a href="{e(p["url"])}" target="_blank" rel="noopener nofollow">{e(sn)}</a>'
+        href = p["url"] + ("#:~:text=" + _q(p["n"].strip(), safe="").replace("-", "%2D") if p.get("n") else "")
+        trs.append(f'<tr class="{"top" if i == 0 else ""}"><td><a href="{e(href)}" target="_blank" rel="noopener nofollow">{e(sn)}</a>'
                    f'{f"<small>{e(note[:40])}</small>" if note else ""}</td><td class="p">{yen(p["price"])}</td>'
                    f'<td class="d">{"最高" if i == 0 else "−" + format(it["best"] - p["price"], ",")}</td></tr>')
     hpts = hist[-60:]

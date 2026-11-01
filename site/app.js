@@ -120,10 +120,12 @@
     const pts = v.map((y, i) => `${((i / (v.length - 1)) * 80 + 2).toFixed(1)},${(30 - ((y - mn) / r) * 26).toFixed(1)}`).join(" ");
     return `<svg class="spark" width="84" height="32" viewBox="0 0 84 32"><polyline fill="none" stroke="${v[v.length - 1] >= v[0] ? "#16a34a" : "#dc2626"}" stroke-width="2" points="${pts}"/></svg>`;
   }
+  // tiệm không có trang riêng cho SP: link "#:~:text=" → trình duyệt tự cuộn tới & tô vàng đúng dòng sản phẩm
+  const lstUrl = (p, it) => p.url.split("#")[0] + "#:~:text=" + encodeURIComponent((p.n || it.name).trim()).replace(/-/g, "%2D");
   function shopLink(sid, p, it) {
     const lst = SH[sid]?.list;
     return lst
-      ? `<a href="${esc(p.url)}" target="_blank" rel="noopener nofollow" class="lst" data-copy="${esc(it.name)}" title="${esc(T().listTip)}">${SH[sid]?.name || sid} 🔍</a>`
+      ? `<a href="${esc(lstUrl(p, it))}" target="_blank" rel="noopener nofollow" class="lst" data-copy="${esc(p.n || it.name)}" title="${esc(T().listTip)}">${SH[sid]?.name || sid} 🔍</a>`
       : `<a href="${esc(p.url)}" target="_blank" rel="noopener nofollow">${SH[sid]?.name || sid}</a>`;
   }
   function shopRows(it, shops) {
@@ -132,7 +134,7 @@
       const extra = p.min && p.min !== p.price ? `<span class="nt">${t.colorFrom} ${yen(p.min)}</span>` : p.note ? `<span class="nt">${esc(p.note.slice(0, 16))}</span>` : "";
       const lst = SH[sid]?.list, nm = SH[sid]?.name || sid;
       // cả dòng là 1 link sang trang tiệm (có ↗ ở cuối để người dùng biết bấm được)
-      return `<a class="sh ${i === 0 && shops.length > 1 ? "top" : ""} ${lst ? "lst" : ""}" href="${esc(p.url)}" target="_blank" rel="noopener nofollow"${lst ? ` data-copy="${esc(it.name)}" title="${esc(t.listTip)}"` : ""}>`
+      return `<a class="sh ${i === 0 && shops.length > 1 ? "top" : ""} ${lst ? "lst" : ""}" href="${esc(lst ? lstUrl(p, it) : p.url)}" target="_blank" rel="noopener nofollow"${lst ? ` data-copy="${esc(p.n || it.name)}" title="${esc(t.listTip)}"` : ""}>`
         + `<span class="sn"><b>${nm}</b>${lst ? `<i class="sq">${t.searchTag}</i>` : ""}${extra}</span><span class="p">${yen(p.price)}</span><span class="go" aria-hidden="true">↗</span></a>`;
     }).join("");
   }
