@@ -148,7 +148,7 @@
   }
   // 🍎 so với giá niêm yết Apple (chỉ đời Apple đang bán: iPhone 18 / Duo)
   function msrpLine(it) {
-    if (!it.msrp || !/^iPhone (18|Duo)/.test(it.key)) return "";
+    if (!it.msrp || !/^iPhone (18|Duo)\b/.test(it.key)) return "";
     const d = it.best - it.msrp, cls = d >= 0 ? "up" : "dn";
     return `<div class="msrp ${cls}" title="${esc(T().msrpTip)}">${T().msrpLine(yen(it.msrp), `<b>${d >= 0 ? "+" : "−"}${yen(Math.abs(d))}</b>`)}</div>`;
   }
