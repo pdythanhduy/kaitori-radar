@@ -154,6 +154,8 @@ def aggregate(rows):
     for r in rows:
         g = groups.setdefault((r["cat"], r["key"]), {"names": [], "prices": {}})
         g["names"].append(r["name"])
+        if r.get("msrp"):
+            g["msrp"] = r["msrp"]
         cur = g["prices"].get(r["shop"])
         if cur is None:
             g["prices"][r["shop"]] = {"price": r["price"], "url": r["url"], "note": r.get("note", "")[:40], "min": r["price"], "ts": r["ts"]}
@@ -193,7 +195,7 @@ def aggregate(rows):
         core = [v for v in vals if med * 0.85 <= v <= med * 1.2]  # bỏ giá thấp bất thường khi tính chênh lệch
         items.append({"cat": cat, "key": key, "name": _display(cat, key, g["names"]), "prices": g["prices"],
                       "best_shop": best_shop, "best": vals[-1], "n_shops": len(vals),
-                      "spread": core[-1] - core[0] if len(core) > 1 else 0})
+                      "spread": core[-1] - core[0] if len(core) > 1 else 0, **({"msrp": g["msrp"]} if g.get("msrp") else {})})
     return items
 
 

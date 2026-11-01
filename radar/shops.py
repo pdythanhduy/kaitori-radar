@@ -472,6 +472,9 @@ def ichome_scope(sess, scope):
                 rows.append(_row("ichome", cat, name, int(price), link, note, jan))
                 if g.get("impo"):  # 買取強化 (1丁目 tự đánh dấu đang thu mạnh)
                     rows[-1]["boost"] = True
+                pp = [o.get("publicPrice") for o in g.get("keitaiColorOptions") or [] if o.get("publicPrice")]
+                if pp:  # giá niêm yết Apple/nhà sản xuất (税込) — để tính "mua giá Apple bán kai lời bao nhiêu"
+                    rows[-1]["msrp"] = int(min(pp))
             if page >= (d.get("totalPages") or 1) or not content:
                 break
     return rows
