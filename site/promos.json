@@ -150,6 +150,64 @@
    ]
   },
   {
+   "id": "yutai",
+   "title": {
+    "vi": "🎟 Mẹo mua rẻ: phiếu ưu đãi cổ đông (株主優待券)",
+    "ja": "🎟 株主優待券でお得に仕入れ"
+   },
+   "items": [
+    {
+     "name": "ビックカメラ 株主優待券",
+     "url": "https://finance.yahoo.co.jp/quote/3048.T/incentive",
+     "affiliate": false,
+     "desc": {
+      "vi": "Phiếu 1.000円 dùng ở ビックカメラ・コジマ・ソフマップ. Không mua thẳng iPhone được, nhiều người dùng để mua Apple Gift Card. Phiếu giấy, hay được bán lại trên ヤフオク/メルカリ.",
+      "ja": "1,000円券。ビックカメラ・コジマ・ソフマップで利用可。Apple Gift Card購入に使う人も。"
+     }
+    },
+    {
+     "name": "エディオン 株主優待ギフトカード",
+     "url": "https://finance.yahoo.co.jp/quote/2730.T/incentive",
+     "affiliate": false,
+     "desc": {
+      "vi": "Thẻ có nạp sẵn tiền (từ 3.000円), dùng ở エディオン・100満ボルト và エディオンネットショップ, tối đa 10 thẻ mỗi lần mua.",
+      "ja": "3,000円相当〜のギフトカード。店舗・ネットショップで利用、1回10枚まで。"
+     }
+    },
+    {
+     "name": "ヤマダ電機 株主優待券",
+     "url": "https://finance.yahoo.co.jp/quote/9831.T/incentive",
+     "affiliate": false,
+     "desc": {
+      "vi": "Phiếu 500円, thường cứ mua 1.000円 dùng được 1 phiếu, có hạn sử dụng. Điều kiện hay thay đổi, xem kỹ mặt sau phiếu.",
+      "ja": "500円券（1,000円ごとに1枚が目安）。条件は券面で確認。"
+     }
+    },
+    {
+     "name": "アシックス / Onitsuka Tiger 株主優待",
+     "url": "https://finance.yahoo.co.jp/quote/7936.T/incentive",
+     "affiliate": false,
+     "desc": {
+      "vi": "Vé điện tử giảm 20–40% tuỳ số cổ phần, hiện chủ yếu dùng ở cửa hàng online ASICS / Onitsuka Tiger, cần mã cổ đông để đăng ký. Điều kiện đổi theo năm.",
+      "ja": "20〜40%割引の電子チケット（主にオンラインストア）。登録に株主番号が必要。"
+     }
+    },
+    {
+     "name": "⚠️ ノジマ 株主優待（mua lại KHÔNG dùng được）",
+     "url": "https://www.nojima.co.jp/ir/stockholder/",
+     "affiliate": false,
+     "badge": {
+      "vi": "Chú ý",
+      "ja": "注意"
+     },
+     "desc": {
+      "vi": "Phiếu ノジマ ghi rõ phải chính cổ đông mang tới cửa hàng, nên mua lại trên mạng sẽ không dùng được. Trước khi mua phiếu nào, luôn đọc dòng 'ご本人様のみ' (chỉ chính chủ).",
+      "ja": "ノジマの割引券は株主様ご本人のみ利用可。購入前に利用条件を必ず確認。"
+     }
+    }
+   ]
+  },
+  {
    "id": "card",
    "title": {
     "vi": "💳 Thẻ tín dụng hoàn điểm cao khi mua hàng để bán lại",
