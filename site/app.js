@@ -231,11 +231,12 @@
     const more = entries.length > limit ? `<button class="fmore" data-k="${key}">${open ? T().less : T().moreN(entries.length - limit)}</button>` : "";
     return `<div class="fg" data-fk="${key}"><div class="fg-t">${title}</div>${rows}${more}</div>`;
   }
+  const PIN = ["iPad", "Nintendo Switch 2", "PlayStation 5", "Pokémon", "iPhone"];  // hãng hay tìm nhất lên đầu (cuối mảng = ưu tiên cao nhất)
   function renderFacets() {
     const t = T();
     let h = "";
     if (st.q) h += facetBlock("cat", t.fCat, counts("cat", (i) => i.cat), { labels: (c) => `${ICON[c] || ""} ${t.cats[c] || c}` });
-    h += facetBlock("brand", t.fBrand, counts("brand", (i) => i._f.brand), { labels: (v) => (v === "Khác" ? t.otherB : v), sort: (a, b) => (a === "Khác") - (b === "Khác") || (cnt.brand.get(b) || 0) - (cnt.brand.get(a) || 0) });
+    h += facetBlock("brand", t.fBrand, counts("brand", (i) => i._f.brand), { labels: (v) => (v === "Khác" ? t.otherB : v), sort: (a, b) => (a === "Khác") - (b === "Khác") || PIN.indexOf(b) - PIN.indexOf(a) || (cnt.brand.get(b) || 0) - (cnt.brand.get(a) || 0) });
     const sc = counts("series", (i) => i._f.series);
     h += facetBlock("series", t.fSeries, sc, { sort: st.f.brand.size ? FACETS.seriesSort : (a, b) => (sc.get(b) || 0) - (sc.get(a) || 0), limit: 12 });
     h += facetBlock("cap", t.fCap, counts("cap", (i) => i._f.cap), { sort: FACETS.capSort });
