@@ -270,10 +270,12 @@
     const ttl = st.q ? `「${st.q}」` : st.view === "cat" ? (lang === "ja" ? CAT_JA[st.cat] : T().cats[st.cat]) : "";
     document.title = ttl ? `${ttl} ${lang === "ja" ? "買取価格比較" : "so sánh giá thu mua"}｜買取プライス` : TITLE0;
     chips();
-    if (st.view === "deals" && !st.q) return renderDeals();
-    if (st.view === "mine" && !st.q) { history.replaceState(null, "", "?v=mine"); return renderMine(); }
+    // thống kê: 1 page_view mỗi lần đổi màn hình, gửi SAU khi URL đã cập nhật
+    const pv = (url) => { history.replaceState(null, "", url); if (url !== lastPv) { lastPv = url; window.kpPage?.(); } };
+    if (st.view === "deals" && !st.q) { pv("?v=deals"); return renderDeals(); }
+    if (st.view === "mine" && !st.q) { pv("?v=mine"); return renderMine(); }
     if (st.view === "home" && !st.q) renderNews();
-    if (!listMode) { history.replaceState(null, "", "./"); return; }
+    if (!listMode) { pv("./"); return; }
     $("#hint").textContent = "…";
     if (st.q) {
       const all = (await Promise.all(Object.keys(CATS).map(loadCat))).flat();
@@ -283,8 +285,9 @@
       base = (await Promise.all([loadCat(st.cat), loadHist(st.cat)]))[0];
     }
     refresh();
-    history.replaceState(null, "", st.view === "cat" && !st.q ? "?c=" + st.cat : "./");
+    pv(st.q ? "./?q=" + encodeURIComponent(st.q) : "?c=" + st.cat);
   }
+  let lastPv = null;
   function clearFilters() { for (const k in st.f) st.f[k].clear(); st.price = 0; st.multi = st.gap = false; }
 
   // ================= Của tôi
@@ -337,6 +340,7 @@
     saveMine();
     document.querySelectorAll(`.fav[data-id="${CSS.escape(id)}"]`).forEach((b) => { const on = !!mine.watch[id]; b.classList.toggle("on", on); b.textContent = on ? "♥" : "♡"; });
     toast(mine.watch[id] ? T().watchAdded : T().watchRemoved);
+    window.kpTrack?.(mine.watch[id] ? "watch_add" : "watch_remove", { item: it?.name || id });
     updMineBadge(0);
   }
   function addStock(id, btn) {
@@ -349,6 +353,7 @@
     saveMine();
     btn.classList.add("on"); btn.textContent = T().inStock;
     toast(T().stockAdded);
+    window.kpTrack?.("stock_add", { item: it.name, value: buy, currency: "JPY" });
     updMineBadge(0);
   }
   document.addEventListener("click", (e) => {
@@ -463,7 +468,8 @@
   }, { passive: true });
   $("#scrim").addEventListener("click", () => { openSide(false); cgOpen(false); });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") { openSide(false); cgOpen(false); } });
-  let qT; $("#q").addEventListener("input", (e) => { clearTimeout(qT); qT = setTimeout(() => { st.q = e.target.value.trim(); clearFilters(); render(); }, 250); });
+  let qT, qL; $("#q").addEventListener("input", (e) => { clearTimeout(qT); clearTimeout(qL); qT = setTimeout(() => { st.q = e.target.value.trim(); clearFilters(); render(); }, 250);
+    qL = setTimeout(() => { const v = e.target.value.trim(); if (v.length >= 2) window.kpTrack?.("search", { search_term: v.slice(0, 80) }); }, 1500); });
   $("#more").addEventListener("click", () => paint(false));
   // bảng: bấm "Xem cả N tiệm" để mở danh sách giá tất cả tiệm của món đó
   $("#list").addEventListener("click", (e) => {
@@ -488,11 +494,11 @@
     const ios = /iphone|ipad|ipod/i.test(navigator.userAgent) && !/crios|fxios/i.test(navigator.userAgent);
     let deferred = null;
     const show = (html) => { box.innerHTML = `<img src="icon-192.png" alt="">${html}<button class="a2hs-x" aria-label="close">✕</button>`; box.hidden = false; box.querySelector(".a2hs-x").onclick = close; };
-    if (ios) setTimeout(() => show(`<span>${t.a2hsIos}</span>`), 4000);
+    if (ios) setTimeout(() => { show(`<span>${t.a2hsIos}</span>`); window.kpTrack?.("a2hs_prompt", { platform: "ios" }); }, 4000);
     addEventListener("beforeinstallprompt", (e) => {
       e.preventDefault(); deferred = e;
       show(`<span>${t.a2hsText}</span><button class="a2hs-b">${t.a2hsBtn}</button>`);
-      box.querySelector(".a2hs-b").onclick = async () => { deferred.prompt(); await deferred.userChoice.catch(() => {}); close(); };
+      box.querySelector(".a2hs-b").onclick = async () => { deferred.prompt(); const c = await deferred.userChoice.catch(() => ({})); window.kpTrack?.("a2hs_" + (c.outcome || "unknown"), { platform: "android" }); close(); };
     });
   }
   function toast(msg) {
