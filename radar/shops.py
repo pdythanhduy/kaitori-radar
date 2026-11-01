@@ -293,6 +293,8 @@ def panda_scope(sess, scope):
                 if not (nm and pr):
                     continue
                 name = _clean(nm.group(1))
+                boost = name.startswith("強化")  # PANDA ghi "強化" (đang thu mạnh) ở đầu tên
+                name = re.sub(r"^強化\s*", "", name)
                 k = (jan.group(1) if jan else "", name)
                 got += 1
                 if k in seen:
@@ -300,6 +302,8 @@ def panda_scope(sess, scope):
                 seen.add(k)
                 rows.append(_row("panda", _rd_cat(slug, name), name, int(pr.group(1).replace(",", "")),
                                  f"{PD}/?cpro={slug}", "", (jan.group(1) or None) if jan else None))
+                if boost:
+                    rows[-1]["boost"] = True
             if not got or f"nowpage={p + 1}" not in s:
                 break
     return rows
@@ -466,6 +470,8 @@ def ichome_scope(sess, scope):
                 name = _clean(g.get("title") or "")
                 note = _clean(g.get("kbDesc") or "")[:40]
                 rows.append(_row("ichome", cat, name, int(price), link, note, jan))
+                if g.get("impo"):  # 買取強化 (1丁目 tự đánh dấu đang thu mạnh)
+                    rows[-1]["boost"] = True
             if page >= (d.get("totalPages") or 1) or not content:
                 break
     return rows

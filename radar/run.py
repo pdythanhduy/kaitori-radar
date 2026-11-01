@@ -157,6 +157,8 @@ def aggregate(rows):
         cur = g["prices"].get(r["shop"])
         if cur is None:
             g["prices"][r["shop"]] = {"price": r["price"], "url": r["url"], "note": r.get("note", "")[:40], "min": r["price"], "ts": r["ts"]}
+            if r.get("boost"):
+                g["prices"][r["shop"]]["b"] = 1  # tiệm đang 買取強化 món này
             if SHOPS.get(r["shop"], {}).get("list"):  # tiệm không có trang SP: giữ tên gốc để nhảy tới đúng dòng (#:~:text=)
                 g["prices"][r["shop"]]["n"] = r["name"][:80]
         else:
@@ -165,6 +167,8 @@ def aggregate(rows):
                 cur.update(price=r["price"], url=r["url"], note=r.get("note", "")[:40], ts=r["ts"])
                 if "n" in cur:
                     cur["n"] = r["name"][:80]
+            if r.get("boost"):
+                g["prices"][r["shop"]]["b"] = 1
     # Chống ghép sai: cùng khoá nhưng giá chênh > 1.8 lần giữa các tiệm => gần như chắc là 2 sản phẩm khác
     # (vd ống kính trùng số model, 1 BOX vs 1 thùng). Giữ nhóm giá cao, tách các tiệm giá thấp thành món riêng.
     RATIO = 1.8
@@ -215,10 +219,13 @@ def write_outputs(items, status):
                 first[fk] = "2000-01-01" if boot else today
             it["first"] = first[fk]
             s = [p for p in hist.get(it["key"], []) if p[0] != today]
-            s.append([today, it["best"]])
+            s.append([today, it["best"], it["best_shop"]])  # điểm 3: tiệm trả cao nhất hôm đó
             hist[it["key"]] = s[-120:]
             if len(s) >= 2:
                 it["chg"] = s[-1][1] - s[-2][1]
+                # "thay đổi thật": cùng 1 tiệm dẫn đầu cả 2 ngày (tránh tăng ảo khi vừa thêm tiệm mới)
+                if len(s[-2]) > 2 and s[-2][2] == it["best_shop"] and it["chg"]:
+                    it["mv"] = it["chg"]
         hp.write_text(json.dumps(hist, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
         (OUT / "cat" / f"{cat}.json").write_text(json.dumps(its, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
         cats[cat] = {"label": label, "count": len(its), "multi": sum(1 for i in its if i["n_shops"] > 1)}
@@ -240,6 +247,24 @@ def write_outputs(items, status):
         if len(top) >= 30:
             break
     (OUT / "top.json").write_text(json.dumps(top, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    # 🔥 đang thu mạnh (買取強化): ưu tiên món so được nhiều tiệm, đa dạng nhóm hàng
+    bpool = sorted([i for i in items if any(p.get("b") for p in i["prices"].values()) and "PSA" not in i["name"]],
+                   key=lambda x: (-x["n_shops"], -x["best"]))
+    boost, per = [], {}
+    for i in bpool:
+        if per.get(i["cat"], 0) >= 6:
+            continue
+        per[i["cat"]] = per.get(i["cat"], 0) + 1
+        boost.append(i)
+        if len(boost) >= 24:
+            break
+    (OUT / "boost.json").write_text(json.dumps(boost, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    # 📈📉 tăng/giảm mạnh hôm nay (chỉ thay đổi thật, theo %)
+    mv = [i for i in items if i.get("mv") and i["n_shops"] > 1 and i["best"] >= 3000 and "PSA" not in i["name"]]
+    pct = lambda i: i["mv"] / max(1, i["best"] - i["mv"])  # noqa: E731
+    movers = {"up": sorted([i for i in mv if i["mv"] > 0], key=pct, reverse=True)[:8],
+              "down": sorted([i for i in mv if i["mv"] < 0], key=pct)[:8]}
+    (OUT / "movers.json").write_text(json.dumps(movers, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     # sitemap.xml / llms.txt / trang tĩnh /p /c: do radar/pages.py sinh lúc deploy
     for old in ("latest.json", "history.json"):
         (OUT / old).unlink(missing_ok=True)

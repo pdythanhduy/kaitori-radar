@@ -138,6 +138,16 @@
         + `<span class="sn"><b>${nm}</b>${lst ? `<i class="sq">${t.searchTag}</i>` : ""}${extra}</span><span class="p">${yen(p.price)}</span><span class="go" aria-hidden="true">↗</span></a>`;
     }).join("");
   }
+  function boostTag(it) {
+    const b = Object.entries(it.prices).filter(([, p]) => p.b).map(([s]) => SH[s]?.name || s);
+    return b.length ? `<div class="boost">${esc(T().boostTag(b.join("・")))}</div>` : "";
+  }
+  function moversHtml(mv) {
+    const t = T(), row = (i) => `<button class="mv-i" data-q="${esc(i.name)}"><span>${esc(i.name)}</span><b class="${i.mv > 0 ? "up" : "dn"}">${i.mv > 0 ? "▲" : "▼"}${Math.abs(i.mv).toLocaleString()}円</b><small>${yen(i.best)}</small></button>`;
+    const col = (title, arr) => arr.length ? `<div class="mv-c"><h3>${title}</h3>${arr.slice(0, 5).map(row).join("")}</div>` : "";
+    const h = col(t.upTitle, mv.up || []) + col(t.downTitle, mv.down || []);
+    return h ? `<div class="movers">${h}</div>` : "";
+  }
   function card(it) {
     const t = T();
     const shops = Object.entries(it.prices).sort((a, b) => b[1].price - a[1].price);
@@ -151,7 +161,7 @@
     return `<article class="card">
       <div class="c-top"><div><div class="c-name">${esc(it.name)}</div><div class="c-sub">${ICON[it.cat] || ""} ${esc(tag || t.cats[it.cat] || "")}・${t.shopsN(it.n_shops)}</div></div>${spark(it)}<button class="fav ${fav}" data-id="${esc(id)}" aria-label="${esc(t.watch)}" title="${esc(t.watch)}">${fav ? "♥" : "♡"}</button></div>
       <div class="best"><span class="best-p">${yen(it.best)}</span><span class="best-s ${it.n_shops > 1 ? "" : "one"}">${it.n_shops > 1 ? t.best + "：" : ""}${SH[it.best_shop]?.name || ""}</span>${chg}</div>
-      ${diff}<div class="shops">${rows}</div>
+      ${boostTag(it)}${diff}<div class="shops">${rows}</div>
       ${affBox(it.cat)}${buyBox(it)}
       <div class="calc-row"><label class="calc">${t.calc} <input type="number" inputmode="numeric" placeholder="${Math.round(it.best * 0.9).toLocaleString()}" data-best="${it.best}"> 円 → ${t.profit} <b class="pf">—</b></label><button class="stk ${mine.stock[id] ? "on" : ""}" data-id="${esc(id)}">${mine.stock[id] ? t.inStock : t.addStock}</button></div>
     </article>`;
@@ -541,5 +551,19 @@
   applyLang();
   installPrompt();
   $("#top").innerHTML = top.slice(0, 18).map(card).join("");
+  // 🔥 thu mạnh + 📈📉 tăng/giảm mạnh (trang chủ)
+  const [boost, movers] = await Promise.all([
+    fetch("data/boost.json" + bust).then((r) => r.json()).catch(() => []),
+    fetch("data/movers.json" + bust).then((r) => r.json()).catch(() => ({})),
+  ]);
+  const homeExtra = () => {
+    FACETS.enrich(boost);
+    $("#boostH").hidden = !boost.length;
+    $("#boost").innerHTML = boost.slice(0, 12).map(card).join("");
+    $("#movers").innerHTML = moversHtml(movers);
+  };
+  homeExtra();
+  $("#lang").addEventListener("click", homeExtra);
+  $("#movers").addEventListener("click", (e) => { const b = e.target.closest(".mv-i"); if (b) { $("#q").value = b.dataset.q; $("#q").dispatchEvent(new Event("input", { bubbles: true })); } });
   render();
 })();
