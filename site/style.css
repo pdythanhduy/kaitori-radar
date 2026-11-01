@@ -350,3 +350,5 @@ a.sh:hover .go{background:var(--fg);color:#fff}
 .hd-mine .mine-n{background:#e11d48;color:#fff;border-radius:999px;font-size:.68rem;min-width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;padding:0 5px}
 .hd-mine.on .mine-n{background:#fff;color:#e11d48}
 @media(max-width:900px){.hd-mine{display:none}}
+
+.fbg a{display:inline-block;background:#1877f2;color:#fff;border-radius:10px;padding:.55rem .9rem;font-weight:700;text-decoration:none;margin:.4rem 0}

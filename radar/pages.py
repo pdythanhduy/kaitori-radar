@@ -96,6 +96,7 @@ def page(title: str, desc: str, path: str, body: str, ld: list, updated: str) ->
 <footer class="ft">
 <nav>{" ".join(f'<a href="/c/{c}/">{e(CAT_JA[c])}</a>' for c in CAT_ORDER)} <a href="/guide/">買取ガイド</a></nav>
 <p>価格は各買取店の公開ページから自動取得（最終更新 {e(updated)} JST）。実際の買取額は状態・時期により変わります。必ず各店舗でご確認ください。</p>
+<p><a href="https://www.facebook.com/groups/1118827834446963" target="_blank" rel="noopener">👥 Facebookグループ（ベトナム語）: Săn Giá Kaitori Nhật Bản</a></p>
 <p>© {BRAND} · <a href="/">kaitoriprice.com</a></p>
 </footer>
 </body>
