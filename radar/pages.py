@@ -264,6 +264,11 @@ def build() -> int:
             out.mkdir(parents=True, exist_ok=True)
             (out / "index.html").write_text(cat_page(cat, its, len(items), updated), encoding="utf-8")
     from . import guides
+    try:  # ảnh giá + bài viết sẵn cho Facebook (/share/), cần Pillow + font
+        from . import share
+        print("share images:", share.build(all_items, SITE, updated))
+    except Exception as exc:  # noqa: BLE001
+        print("share skipped:", exc)
     urls += guides.build(all_items, shops, updated, page, e, SITE, BASE)
     build_vi()
     head = [("/", "hourly"), ("/vi/", "hourly")] + [(f"/c/{c}/", "hourly") for c, _ in cats_present] + [("/?v=deals", "daily")]
