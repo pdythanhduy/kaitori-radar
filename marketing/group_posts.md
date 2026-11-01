@@ -142,3 +142,25 @@ Xem thêm Switch 2, Xbox…: https://kaitoriprice.com/vi/
 • AirPods 4 chống ồn: cao nhất **20.300円** (買取ルデヤ)
 
 Món nhỏ nhưng bán nhầm tiệm vẫn mất một bữa nhậu 😄 https://kaitoriprice.com/vi/
+
+---
+
+## 12. ✅ Mẹo mua rẻ bằng phiếu cổ đông (株主優待券)
+🎟 **Vì sao có người mua Onitsuka Tiger, đồ điện máy rẻ 20–30%? Bí mật là 株主優待券**
+
+Nhiều công ty tặng cổ đông phiếu giảm giá. Cổ đông không dùng thì đem bán lại trên ヤフオク / メルカリ với giá rẻ, ai mua lại cũng có thể được giảm giá như cổ đông.
+
+Mấy loại hay gặp:
+• ビックカメラ: phiếu 1.000円, dùng ở ビック・コジマ・ソフマップ (nhiều người dùng mua Apple Gift Card)
+• エディオン: thẻ quà tặng nạp sẵn tiền, dùng ở cửa hàng + web
+• ヤマダ電機: phiếu 500円, thường cứ 1.000円 dùng 1 phiếu
+• ASICS / Onitsuka Tiger: vé điện tử giảm 20–40%, hiện chủ yếu dùng mua online
+
+⚠️ 3 điều phải biết trước khi mua phiếu:
+1️⃣ Có loại CHỈ chính cổ đông dùng được (ví dụ ノジマ ghi rõ "ご本人様のみ"), mua lại là mất tiền
+2️⃣ Xem hạn dùng + mặt hàng bị loại trừ in trên phiếu
+3️⃣ Phiếu điện tử cần mã cổ đông để đăng ký → chỉ mua của người bán uy tín, nhiều đánh giá
+
+Mua hàng bằng phiếu rồi đem bán kai thì lời thêm được một khoản. So giá thu mua 9 tiệm: https://kaitoriprice.com/vi/ (tab "Ưu đãi" có tổng hợp các loại phiếu)
+
+Anh em đã ai dùng phiếu nào rồi? Chia sẻ kinh nghiệm nhé 👇
