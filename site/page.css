@@ -35,3 +35,11 @@ h2{font-size:1.02rem;margin:1.6rem 0 .6rem}
 .buy{font-size:.82rem;color:#64748b;margin:.8rem 0}
 .buy a{color:#bf0000;font-weight:700;margin-right:.7rem;text-decoration:underline}
 .buy .pr{font-size:.65rem;font-weight:800;background:#f1f5f9;border-radius:4px;padding:0 .3rem}
+.guide h2{margin-top:1.6rem}
+.guide .tips li{margin:.55rem 0;line-height:1.7}
+.tw{overflow-x:auto}
+.pt-note{background:#fef3c7;border-radius:8px;padding:.5rem .7rem}
+.guide details{border:1px solid #e2e8f0;border-radius:8px;padding:.5rem .7rem;margin:.4rem 0}
+.guide summary{font-weight:700;cursor:pointer}
+.glist{list-style:none;padding:0}.glist li{border:1px solid #e2e8f0;border-radius:10px;padding:.7rem .9rem;margin:.6rem 0}.glist p{margin:.3rem 0 0;color:#64748b;font-size:.85rem}
+.small{font-size:.8rem;color:#64748b}

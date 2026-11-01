@@ -84,7 +84,7 @@ def page(title: str, desc: str, path: str, body: str, ld: list, updated: str) ->
 <link rel="icon" href="/icon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#0f172a">
-<link rel="stylesheet" href="/page.css?v=2">
+<link rel="stylesheet" href="/page.css?v=3">
 <script src="/ga.js?v=2"></script>
 {lds}
 </head>
@@ -94,7 +94,7 @@ def page(title: str, desc: str, path: str, body: str, ld: list, updated: str) ->
 {body}
 </main>
 <footer class="ft">
-<nav>{" ".join(f'<a href="/c/{c}/">{e(CAT_JA[c])}</a>' for c in CAT_ORDER)}</nav>
+<nav>{" ".join(f'<a href="/c/{c}/">{e(CAT_JA[c])}</a>' for c in CAT_ORDER)} <a href="/guide/">買取ガイド</a></nav>
 <p>価格は各買取店の公開ページから自動取得（最終更新 {e(updated)} JST）。実際の買取額は状態・時期により変わります。必ず各店舗でご確認ください。</p>
 <p>© {BRAND} · <a href="/">kaitoriprice.com</a></p>
 </footer>
@@ -197,7 +197,8 @@ def cat_page(cat: str, its: list, n_all: int, updated: str) -> str:
 def build() -> int:
     idx = json.loads((DATA / "index.json").read_text(encoding="utf-8"))
     shops, updated = idx.get("shops", {}), idx.get("updated", "")
-    for d in ("p", "c"):
+    all_items: dict[str, list] = {}
+    for d in ("p", "c", "guide"):
         shutil.rmtree(SITE / d, ignore_errors=True)
     urls: list[tuple[str, str]] = []
     lastmod = (updated or datetime.now(timezone(timedelta(hours=9))).strftime("%Y-%m-%d"))[:10]
@@ -209,6 +210,7 @@ def build() -> int:
         if not fp.exists():
             continue
         items = json.loads(fp.read_text(encoding="utf-8"))
+        all_items[cat] = items
         hp = DATA / "hist" / f"{cat}.json"
         hist = json.loads(hp.read_text(encoding="utf-8")) if hp.exists() else {}
         its = [i for i in items if i.get("n_shops", len(i["prices"])) >= MIN_SHOPS]
@@ -233,6 +235,8 @@ def build() -> int:
             out = SITE / "c" / cat
             out.mkdir(parents=True, exist_ok=True)
             (out / "index.html").write_text(cat_page(cat, its, len(items), updated), encoding="utf-8")
+    from . import guides
+    urls += guides.build(all_items, shops, updated, page, e, SITE, BASE)
     head = [("/", "hourly")] + [(f"/c/{c}/", "hourly") for c, _ in cats_present] + [("/?v=deals", "daily")]
     nl = "\n"
     sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
