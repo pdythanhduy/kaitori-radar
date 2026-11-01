@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-01 12:42",
+ "updated": "2026-11-01 13:12",
  "shops": {
   "morimori": {
    "name": "森森買取",
@@ -36,6 +36,11 @@
    "url": "https://www.mobile-ichiban.com",
    "list": true
   },
+  "ichome": {
+   "name": "買取1丁目",
+   "url": "https://www.1-chome.com",
+   "list": false
+  },
   "homura": {
    "name": "買取ホムラ",
    "url": "https://kaitori-homura.com",
@@ -45,43 +50,43 @@
  "cats": {
   "phone": {
    "label": "スマホ",
-   "count": 1132,
-   "multi": 429
+   "count": 1210,
+   "multi": 457
   },
   "tablet": {
    "label": "タブレット",
-   "count": 690,
-   "multi": 157
+   "count": 712,
+   "multi": 210
   },
   "game": {
    "label": "ゲーム機",
-   "count": 683,
-   "multi": 237
+   "count": 710,
+   "multi": 289
   },
   "card": {
    "label": "トレカ",
-   "count": 1193,
-   "multi": 135
+   "count": 1209,
+   "multi": 151
   },
   "pc": {
    "label": "パソコン",
-   "count": 400,
-   "multi": 35
+   "count": 417,
+   "multi": 17
   },
   "camera": {
    "label": "カメラ",
-   "count": 1289,
-   "multi": 369
+   "count": 1549,
+   "multi": 590
   },
   "audio": {
    "label": "オーディオ",
-   "count": 276,
-   "multi": 68
+   "count": 473,
+   "multi": 159
   },
   "appliance": {
    "label": "家電・美容",
-   "count": 2678,
-   "multi": 285
+   "count": 2627,
+   "multi": 274
   },
   "watch": {
    "label": "腕時計",
@@ -90,16 +95,16 @@
   },
   "hobby": {
    "label": "ホビー・フィギュア",
-   "count": 179,
-   "multi": 10
+   "count": 180,
+   "multi": 9
   },
   "other": {
    "label": "その他",
-   "count": 862,
-   "multi": 0
+   "count": 890,
+   "multi": 9
   }
  },
- "total": 9623,
+ "total": 10218,
  "status": {
   "mobile_ichiban:2": {
    "ok": true,
@@ -300,6 +305,11 @@
    "ok": true,
    "n": 298,
    "ts": "2026-11-01 12:40"
+  },
+  "ichome:full": {
+   "ok": true,
+   "n": 1795,
+   "ts": "2026-11-01 13:11"
   }
  }
 }

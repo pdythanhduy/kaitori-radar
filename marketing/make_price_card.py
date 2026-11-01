@@ -7,7 +7,7 @@ from PIL import Image, ImageDraw, ImageFont
 KEY = sys.argv[1] if len(sys.argv) > 1 else "iPhone Duo 256GB"
 CAT = sys.argv[2] if len(sys.argv) > 2 else "phone"
 SHOP = {"rudeya": "買取ルデヤ", "panda": "PANDA買取", "mobile_ichiban": "モバイル一番", "morimori": "森森買取",
-        "toban": "買取当番", "guestmobile": "ゲストモバイル", "keitaigod": "ケータイゴッド", "homura": "買取ホムラ"}
+        "toban": "買取当番", "guestmobile": "ゲストモバイル", "keitaigod": "ケータイゴッド", "homura": "買取ホムラ", "ichome": "買取1丁目"}
 
 d = json.load(open(f"site/data/cat/{CAT}.json", encoding="utf-8"))
 items = d["items"] if isinstance(d, dict) else d

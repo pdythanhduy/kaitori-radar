@@ -428,6 +428,49 @@ def keitaigod_scope(sess, scope):
     return rows
 
 
+# ================================================================== 買取1丁目 (SPA, JSON công khai mà trang web tự gọi)
+IC = "https://www.1-chome.com"
+# (cateCode, danh mục của mình, loại API). "other" → refine_cat tự xếp (MacBook→pc, iPad→tablet, AirPods→audio…)
+IC_CATES = {"iphone": ("RGNg976kptBN7UjF", "phone", "keitai"), "android": ("WkCcKCxwC6NInC5c", "phone", "keitai"),
+            "apple": ("20748358", "other", "goods"), "camera": ("10000001", "camera", "goods"),
+            "card": ("4IE7zlA4XkiWSxy8", "card", "goods"), "earphone": ("10000004", "audio", "goods"),
+            "game": ("10000005", "game", "goods"), "tablet": ("20030016", "tablet", "goods")}
+_IC_OK = re.compile(r"未開封|新品|箱付|シュリンク")
+_IC_BAD = re.compile(r"開封済|中古|箱な|シュリンクな|難あり|ジャンク")
+
+
+def ichome_scope(sess, scope):
+    import json as _json
+    cates = ["iphone", "card", "game"] if scope == "hot" else list(IC_CATES)
+    rows, seen = [], set()
+    for c in cates:
+        code, cat, api = IC_CATES[c]
+        for page in range(1, 60):
+            url = (f"{IC}/api/{api}/listPage?accCode=&page={page}&size=60&keyword=&isImpo=false&isCampaign=false"
+                   f"&cateCode={code}&kbNames=&cateName=" + ("&isImpoCate=false" if api == "keitai" else ""))
+            d = (_json.loads(_get(sess, url)).get("data") or {})
+            content = d.get("content") or []
+            for g in content:
+                if _IC_BAD.search(g.get("kbName") or ""):
+                    continue
+                prices = [x.get("kbDetailPrice") or 0 for x in g.get("goodsKbDetails") or []
+                          if _IC_OK.search(x.get("kbDetailName") or "") and not _IC_BAD.search(x.get("kbDetailName") or "")]
+                price = max(prices or [0])
+                if price <= 0:
+                    continue
+                link = f"{IC}/productDetail/{g['goodsId']}/{g.get('allGoodsKbId', '')}"
+                if link in seen:
+                    continue
+                seen.add(link)
+                jan = g.get("jan") or next((o.get("jan") for o in g.get("keitaiColorOptions") or [] if o.get("jan")), None)
+                name = _clean(g.get("title") or "")
+                note = _clean(g.get("kbDesc") or "")[:40]
+                rows.append(_row("ichome", cat, name, int(price), link, note, jan))
+            if page >= (d.get("totalPages") or 1) or not content:
+                break
+    return rows
+
+
 SHOPS = {
     "morimori": {"name": "森森買取", "url": MM, "fn": morimori_scope, "scopes": MM_SCOPES, "hot": MM_HOT},
     "rudeya": {"name": "買取ルデヤ", "url": RD, "fn": rudeya_scope, "scopes": ["full"], "hot": ["hot"]},
@@ -436,5 +479,6 @@ SHOPS = {
     "toban": {"name": "買取当番", "url": TB, "fn": toban_scope, "scopes": ["full"], "hot": ["hot"]},
     "keitaigod": {"name": "ケータイゴッド", "url": KG, "fn": keitaigod_scope, "scopes": ["full"], "hot": ["hot"]},
     "mobile_ichiban": {"name": "モバイル一番", "url": MI, "list": True, "fn": mobile_ichiban_scope, "scopes": MI_SCOPES, "hot": MI_HOT},
+    "ichome": {"name": "買取1丁目", "url": IC, "fn": ichome_scope, "scopes": ["full"], "hot": ["hot"]},
     "homura": {"name": "買取ホムラ", "url": "https://kaitori-homura.com", "fn": homura_scope, "scopes": ["box"], "hot": ["box"]},
 }
