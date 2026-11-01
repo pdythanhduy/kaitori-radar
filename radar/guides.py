@@ -339,6 +339,30 @@ hoặc mua hàng để bán lại cho tiệm kaitori. <b>Thông tin rà soát ng
                           f'{f"<p>{e(addr)}</p>" if addr else ""}<p class="small">🕘 {e(info)}</p>'
                           f'<p class="small">{mp} · <a href="{e(url)}" target="_blank" rel="noopener nofollow">Trang tiệm ↗</a></p></div>')
         rows_html.append(f'<h2 id="{e(reg.split()[0].lower())}">{e(reg)}</h2><div class="stores">{"".join(cards_)}</div>')
+        if reg == "Osaka":  # tiệm khác ở Osaka (chưa so giá) — theo trang tổng hợp, cần kiểm tra trước khi đi
+            OSAKA_MORE = [
+                ("イオシス", "大阪買取センター", "大阪府大阪市浪速区難波中2-5-14", "なんば・恵美須町 徒歩6分・11:00〜19:30"),
+                ("じゃんぱら", "大阪本店", "大阪府大阪市浪速区難波中2-1-21 じゃんぱら難波ビル1F", "南海なんば 徒歩3分・11:30〜20:00"),
+                ("モバックス", "日本橋4丁目本店", "大阪府大阪市浪速区日本橋4-11-10 大南ビル1F", "恵美須町 徒歩約4分・10:30〜20:00"),
+                ("モバステ", "大阪店", "大阪府大阪市浪速区日本橋4-11-6", "南海なんば 徒歩6分・11:30〜20:00"),
+                ("JCKA", "大阪日本橋店", "大阪府大阪市浪速区日本橋5-13-7 上田ビル", "11:00〜19:00"),
+                ("フォンサルドットコム", "大阪なんば日本橋店", "大阪府大阪市浪速区日本橋5-9-12 日本橋総合案内所内", "恵美須町 徒歩3分・11:00〜19:30"),
+                ("ODAモバイル", "日本橋三丁目店", "大阪府大阪市浪速区日本橋3-6-1 本田ビル2F", "10:30〜20:00"),
+                ("ゲオモバイル", "大阪なんば店", "大阪府大阪市中央区難波千日前7-8", "11:00〜20:00"),
+                ("スマートバイヤー", "梅田店", "大阪府大阪市北区梅田1-3-1 大阪駅前第1ビル1F", "梅田 徒歩約5分・12:00〜20:00"),
+                ("アメモバ", "大阪・梅田店", "大阪府大阪市北区梅田1-1-3 大阪駅前第3ビル地下2F", "大阪駅 徒歩約3分・11:00〜19:30"),
+                ("カウモバイル", "大阪梅田本店", "大阪府大阪市北区角田町1-10 黒船ビル2F", "阪急梅田 徒歩2分・11:30〜14:00 / 15:00〜19:00"),
+                ("ゲオモバイル", "大阪駅前第3ビル店", "大阪府大阪市北区梅田1-1-3 B2F", "11:00〜20:00"),
+            ]
+            more = "".join(
+                f'<div class="store"><b>{e(sh)}</b> <span class="br">{e(br)}</span><p>{e(ad)}</p><p class="small">🕘 {e(info)}</p>'
+                f'<p class="small"><a href="https://www.google.com/maps/search/?api=1&query={_qq(sh + " " + ad)}" target="_blank" rel="noopener nofollow">📍 Bản đồ</a></p></div>'
+                for sh, br, ad, info in OSAKA_MORE)
+            rows_html.append('<h3>Osaka: các tiệm khác (web chưa so giá)</h3>'
+                             '<p class="small">Khu 日本橋・なんば và 梅田 có rất nhiều tiệm thu mua iPhone, máy game. Thông tin lấy từ '
+                             '<a href="https://linx-as.co.jp/buyshops/osaka-city/" target="_blank" rel="noopener nofollow">trang tổng hợp</a> (01/11/2026), '
+                             'chưa đối chiếu với web từng tiệm, nên kiểm tra giờ mở cửa và việc tiệm có nhận hàng mới hay không trước khi đi.</p>'
+                             f'<div class="stores">{more}</div>')
     toc = " · ".join(f'<a href="#{e(r.split()[0].lower())}">{e(r)}</a>' for r in regions)
     body_st = f"""
 <p>Địa chỉ, giờ mở cửa và ga gần nhất của các tiệm kaitori mà web đang so giá. <b>Lấy từ trang chính thức của từng tiệm ngày 01/11/2026.</b>
