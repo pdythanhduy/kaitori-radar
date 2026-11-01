@@ -3,7 +3,10 @@
   const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const yen = (n) => n.toLocaleString("ja-JP") + "円";
   const bust = "?" + Math.floor(Date.now() / 600000);
-  let lang = localStorage.getItem("lang") || "vi";
+  // mặc định theo ngôn ngữ trình duyệt: máy tiếng Việt → vi, còn lại (Nhật, Googlebot…) → ja; ?lang=vi|ja để ép
+  const qLang = new URLSearchParams(location.search).get("lang");
+  let lang = (["vi", "ja"].includes(qLang) && qLang) || localStorage.getItem("lang") ||
+    ((navigator.languages || [navigator.language || ""]).some((l) => /^vi/i.test(l)) ? "vi" : "ja");
   const T = () => window.I18N[lang];
 
   const idx = await fetch("data/index.json" + bust).then((r) => r.json());
