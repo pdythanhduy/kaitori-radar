@@ -84,7 +84,7 @@ def page(title: str, desc: str, path: str, body: str, ld: list, updated: str) ->
 <link rel="icon" href="/icon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#0f172a">
-<link rel="stylesheet" href="/page.css?v=1">
+<link rel="stylesheet" href="/page.css?v=2">
 <script src="/ga.js?v=2"></script>
 {lds}
 </head>
@@ -107,6 +107,22 @@ def crumbs(items: list[tuple[str, str]]) -> dict:
     return {"@context": "https://schema.org", "@type": "BreadcrumbList",
             "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": n, "item": BASE + p}
                                 for i, (n, p) in enumerate(items)]}
+
+
+from urllib.parse import quote as _q
+_MOSHIMO = {"楽天市場": (5876750, 54, 54, 616, "https://search.rakuten.co.jp/search/mall/{}/"),
+            "Yahoo!ショッピング": (5876756, 1225, 1925, 18502, "https://shopping.yahoo.co.jp/search?p={}")}
+
+
+def buy_html(it, name):
+    """Nút mua hàng mới (もしもアフィリエイト), ghi rõ PR theo quy định ステマ."""
+    q = re.sub(r"[【\[(（][^】\])）]*[】\])）]", " ", it["key"].split("|")[0] if it["key"].startswith("iPhone") else name)
+    q = re.sub(r"\s+", " ", q).strip()[:60]
+    links = []
+    for label, (a, p, pc, pl, u) in _MOSHIMO.items():
+        href = f"https://af.moshimo.com/af/c/click?a_id={a}&p_id={p}&pc_id={pc}&pl_id={pl}&url={_q(u.format(_q(q)), safe='')}"
+        links.append(f'<a href="{e(href)}" target="_blank" rel="sponsored nofollow noopener">{label}</a>')
+    return f'<p class="buy"><span class="pr">PR</span> 新品を探す：{" ".join(links)}</p>'
 
 
 def product_page(it: dict, shops: dict, hist: list, related: list, updated: str) -> str:
@@ -148,6 +164,7 @@ def product_page(it: dict, shops: dict, hist: list, related: list, updated: str)
 <table class="pt"><thead><tr><th>買取店</th><th>買取価格</th><th>差額</th></tr></thead><tbody>{''.join(trs)}</tbody></table>
 <p class="upd">最終更新：{e(updated)} JST（毎時自動更新）</p>
 {hist_html}
+{buy_html(it, name)}
 <p class="cta"><a href="/?q={e(series_of(name))}">「{e(series_of(name))}」の全モデルを比較する →</a></p>
 {rel_html}
 <section class="vi" lang="vi"><h2>Tiếng Việt</h2><p>Giá thu mua <b>{e(name)}</b> (hàng mới, chưa mở hộp) tại {it['n_shops']} tiệm kaitori ở Nhật. Cao nhất: <b>{yen(it['best'])}</b> tại {e(best_name)}{f", chênh lệch giữa các tiệm tới {yen(gap)}" if gap > 0 else ""}. Cập nhật mỗi giờ.</p></section>"""

@@ -25,6 +25,15 @@
     pxSeen.add(src);
     const i = new Image(1, 1); i.src = src; i.alt = ""; i.style.cssText = "position:absolute;width:1px;height:1px;opacity:0"; document.body.appendChild(i);
   }
+  // nút mua hàng mới qua もしもアフィリエイト (楽天市場 / Yahoo!ショッピング)
+  const MOSHIMO = { rakuten: [5876750, 54, 54, 616, (q) => "https://search.rakuten.co.jp/search/mall/" + encodeURIComponent(q) + "/"],
+    yahoo: [5876756, 1225, 1925, 18502, (q) => "https://shopping.yahoo.co.jp/search?p=" + encodeURIComponent(q)] };
+  const buyQ = (it) => (it.key.startsWith("iPhone") ? it.key.split("|")[0] : it.name).replace(/[【\[(（][^】\])）]*[】\])）]/g, " ").replace(/\s+/g, " ").trim().slice(0, 60);
+  const mLink = (k, q) => { const [a, p, pc, pl, u] = MOSHIMO[k]; return `https://af.moshimo.com/af/c/click?a_id=${a}&p_id=${p}&pc_id=${pc}&pl_id=${pl}&url=${encodeURIComponent(u(q))}`; };
+  function buyBox(it) {
+    const q = buyQ(it);
+    return `<div class="buy"><span class="pr">PR</span><span>${T().buyNew}</span><a href="${mLink("rakuten", q)}" target="_blank" rel="sponsored nofollow noopener">楽天市場</a><a href="${mLink("yahoo", q)}" target="_blank" rel="sponsored nofollow noopener">Yahoo!ショッピング</a></div>`;
+  }
   function affBox(cat) {
     const a = AFF[cat]; if (!a) return "";
     pixel(a.px + "?a8mat=" + a.a8mat);
@@ -141,7 +150,7 @@
       <div class="c-top"><div><div class="c-name">${esc(it.name)}</div><div class="c-sub">${ICON[it.cat] || ""} ${esc(tag || t.cats[it.cat] || "")}・${t.shopsN(it.n_shops)}</div></div>${spark(it)}<button class="fav ${fav}" data-id="${esc(id)}" aria-label="${esc(t.watch)}" title="${esc(t.watch)}">${fav ? "♥" : "♡"}</button></div>
       <div class="best"><span class="best-p">${yen(it.best)}</span><span class="best-s ${it.n_shops > 1 ? "" : "one"}">${it.n_shops > 1 ? t.best + "：" : ""}${SH[it.best_shop]?.name || ""}</span>${chg}</div>
       ${diff}<div class="shops">${rows}</div>
-      ${affBox(it.cat)}
+      ${affBox(it.cat)}${buyBox(it)}
       <div class="calc-row"><label class="calc">${t.calc} <input type="number" inputmode="numeric" placeholder="${Math.round(it.best * 0.9).toLocaleString()}" data-best="${it.best}"> 円 → ${t.profit} <b class="pf">—</b></label><button class="stk ${mine.stock[id] ? "on" : ""}" data-id="${esc(id)}">${mine.stock[id] ? t.inStock : t.addStock}</button></div>
     </article>`;
   }
