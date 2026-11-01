@@ -5,7 +5,7 @@
   const bust = "?" + Math.floor(Date.now() / 600000);
   // mặc định theo ngôn ngữ trình duyệt: máy tiếng Việt → vi, còn lại (Nhật, Googlebot…) → ja; ?lang=vi|ja để ép
   const qLang = new URLSearchParams(location.search).get("lang");
-  let lang = (["vi", "ja"].includes(qLang) && qLang) || localStorage.getItem("lang") ||
+  let lang = (["vi", "ja"].includes(qLang) && qLang) || (location.pathname.startsWith("/vi") && "vi") || localStorage.getItem("lang") ||
     ((navigator.languages || [navigator.language || ""]).some((l) => /^vi/i.test(l)) ? "vi" : "ja");
   const T = () => window.I18N[lang];
 
@@ -282,7 +282,7 @@
     $("#deals").hidden = st.view !== "deals" || !!st.q;
     $("#mine").hidden = st.view !== "mine" || !!st.q;
     const ttl = st.q ? `「${st.q}」` : st.view === "cat" ? (lang === "ja" ? CAT_JA[st.cat] : T().cats[st.cat]) : "";
-    document.title = ttl ? `${ttl} ${lang === "ja" ? "買取価格比較" : "so sánh giá thu mua"}｜買取プライス` : TITLE0;
+    document.title = ttl ? `${ttl} ${lang === "ja" ? "買取価格比較｜買取プライス" : "– so sánh giá thu mua｜Kaitori Price"}` : (lang === "ja" ? TITLE0 : "Kaitori Price｜So sánh giá thu mua iPhone, máy game, thẻ Pokémon ở Nhật");
     chips();
     // thống kê: 1 page_view mỗi lần đổi màn hình, gửi SAU khi URL đã cập nhật
     const pv = (url) => { history.replaceState(null, "", url); if (url !== lastPv) { lastPv = url; window.kpPage?.(); } };
@@ -527,7 +527,7 @@
     const p = best - v; out.textContent = (p >= 0 ? "+" : "") + p.toLocaleString() + "円"; out.style.color = p >= 0 ? "#16a34a" : "#dc2626";
   });
 
-  const TITLE0 = document.title;
+  const TITLE0 = location.pathname.startsWith("/vi") ? "買取プライス｜iPhone・ゲーム機・ポケカの買取価格を毎時比較" : document.title;
   const CAT_JA = { phone: "スマホ・iPhone", tablet: "タブレット・iPad", game: "ゲーム機", card: "トレカ・ポケカBOX", pc: "パソコン", camera: "カメラ・レンズ", audio: "オーディオ", appliance: "家電", watch: "時計", hobby: "ホビー・フィギュア", other: "その他" };
   // ================= start
   const top = FACETS.enrich(await fetch("data/top.json" + bust).then((r) => r.json()).catch(() => []));

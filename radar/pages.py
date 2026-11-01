@@ -194,6 +194,33 @@ def cat_page(cat: str, its: list, n_all: int, updated: str) -> str:
     return page(title, desc, f"/c/{cat}/", body, ld, updated)
 
 
+
+VI_TITLE = "Kaitori Price｜So sánh giá thu mua iPhone, máy game, thẻ Pokémon ở Nhật"
+VI_DESC = ("So sánh giá thu mua hàng mới (chưa mở hộp) tại 9 tiệm kaitori lớn ở Nhật, cập nhật mỗi giờ: iPhone, PS5, Switch, "
+           "hộp thẻ Pokémon, máy ảnh. Biết ngay tiệm nào trả cao nhất trước khi bán. Miễn phí.")
+
+
+def build_vi():
+    """/vi/: bản trang chủ có tiêu đề/mô tả/ảnh xem trước tiếng Việt (Facebook, Zalo không chạy JS nên cần HTML riêng)."""
+    s = (SITE / "index.html").read_text(encoding="utf-8")
+    rep = [(r"<html lang=\"[a-z]+\">", '<html lang="vi">'),
+           (r"<title>[^<]*</title>", f"<title>{e(VI_TITLE)}</title>"),
+           (r'<link rel="canonical" href="[^"]*">', f'<link rel="canonical" href="{BASE}/vi/">'),
+           (r'<meta property="og:url" content="[^"]*">', f'<meta property="og:url" content="{BASE}/vi/">'),
+           (r'<meta property="og:title" content="[^"]*">', f'<meta property="og:title" content="{e(VI_TITLE)}">'),
+           (r'<meta property="og:description" content="[^"]*">', f'<meta property="og:description" content="{e(VI_DESC)}">'),
+           (r'<meta name="description" content="[^"]*">', f'<meta name="description" content="{e(VI_DESC)}">')]
+    for a, b in rep:
+        s, n = re.subn(a, lambda m, b=b: b, s, count=1)
+        assert n == 1, a
+    s = s.replace("<head>", '<head>\n<base href="/">', 1)  # file css/js/ảnh dùng đường dẫn tương đối → lấy từ gốc
+    s = s.replace('<meta property="og:type" content="website">',
+                  '<meta property="og:type" content="website">\n<meta property="og:locale" content="vi_VN">', 1)
+    out = SITE / "vi"
+    out.mkdir(exist_ok=True)
+    (out / "index.html").write_text(s, encoding="utf-8")
+
+
 def build() -> int:
     idx = json.loads((DATA / "index.json").read_text(encoding="utf-8"))
     shops, updated = idx.get("shops", {}), idx.get("updated", "")
@@ -237,7 +264,8 @@ def build() -> int:
             (out / "index.html").write_text(cat_page(cat, its, len(items), updated), encoding="utf-8")
     from . import guides
     urls += guides.build(all_items, shops, updated, page, e, SITE, BASE)
-    head = [("/", "hourly")] + [(f"/c/{c}/", "hourly") for c, _ in cats_present] + [("/?v=deals", "daily")]
+    build_vi()
+    head = [("/", "hourly"), ("/vi/", "hourly")] + [(f"/c/{c}/", "hourly") for c, _ in cats_present] + [("/?v=deals", "daily")]
     nl = "\n"
     sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     sm += [f"  <url><loc>{html.escape(BASE + u)}</loc><lastmod>{lastmod}</lastmod><changefreq>{f}</changefreq></url>" for u, f in head + urls]
