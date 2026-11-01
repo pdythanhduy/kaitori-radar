@@ -223,13 +223,53 @@ So giá 9 tiệm lớn, cập nhật mỗi giờ: <a href="/vi/">kaitoriprice.co
     (out / "index.html").write_text(pv, encoding="utf-8")
     extra = [("/guide/phieu-co-dong/", "weekly")]
 
-    # ---------------------------------------------------------------- danh sách
-    lis = "".join(f'<li><a href="{p}">{e(h)}</a><p>{e(d)}</p></li>' for p, h, d in guides)
-    idx_body = (f'<nav class="bc"><a href="/">トップ</a> › 買取ガイド</nav><h1>買取ガイド</h1>'
-                f'<p>買取価格の比較データをもとに、高く売るためのポイントをまとめています。</p><ul class="glist">{lis}</ul>')
+    # ---------------------------------------------------------------- trang tổng hợp (JA /guide/, VI /guide/vi/)
+    # (path, icon, tiêu đề VI, mô tả VI, có bản tiếng Việt?) — nhóm theo mục để dễ tìm
+    SECTIONS = [
+        ("sell", "💴 売る前に読む", "💴 Trước khi bán"),
+        ("buy", "🛒 お得に買う・仕入れる", "🛒 Mua rẻ để bán lại"),
+    ]
+    META = {
+        "/guide/iphone-18-kaitori/": ("sell", "📱", "Bán iPhone 18 ở đâu được giá nhất", "Bảng giá 12 mẫu iPhone 18 / Duo ở 8 tiệm, mẹo màu bị trừ tiền, giấy tờ cần mang", False),
+        "/guide/pokeca-box-kaitori/": ("sell", "🃏", "Giá thu mua hộp thẻ Pokémon", "Bảng 30 hộp thẻ so giá nhiều tiệm, mẹo màng co (シュリンク), giá thùng", False),
+        "/guide/yoyaku-kaitori/": ("sell", "⏰", "Đặt trước khi bán (予約買取) là gì", "Cách giữ giá, hạn giữ giá, quy định huỷ cần chú ý", False),
+        "/guide/kabunushi-yutai/": ("buy", "🎟", "Mua rẻ 20–30% bằng phiếu cổ đông", "ビックカメラ, エディオン, ヤマダ, ASICS / Onitsuka Tiger và 3 điều cần biết", "/guide/phieu-co-dong/"),
+    }
+    def card(href, icon, title, desc, tag=""):
+        return (f'<a class="gcard" href="{href}"><span class="gi">{icon}</span><span class="gt"><b>{e(title)}</b>'
+                f'<small>{e(desc)}</small></span>{tag}<span class="ga">→</span></a>')
+    ja_html, vi_html = [], []
+    for sid, ja_t, vi_t in SECTIONS:
+        ja_cards = [card(p, META[p][1], h, d) for p, h, d in guides if META.get(p, ("",))[0] == sid]
+        vi_cards = []
+        for p, h, d in guides:
+            m = META.get(p)
+            if not m or m[0] != sid:
+                continue
+            if m[4]:
+                vi_cards.append(card(m[4], m[1], m[2], m[3]))
+            else:
+                vi_cards.append(card(p, m[1], m[2], m[3], '<span class="gl">日本語</span>'))
+        if ja_cards:
+            ja_html.append(f'<section class="gsec"><h2>{ja_t}</h2><div class="ggrid">{"".join(ja_cards)}</div></section>')
+        if vi_cards:
+            vi_html.append(f'<section class="gsec"><h2>{vi_t}</h2><div class="ggrid">{"".join(vi_cards)}</div></section>')
+    idx_body = (f'<nav class="bc"><a href="/">トップ</a> › 買取ガイド</nav><h1>📚 買取ガイド</h1>'
+                f'<p class="lead">買取価格の比較データをもとに、高く売る・安く買うためのポイントをまとめています。</p>{"".join(ja_html)}')
     out = site / "guide"
     out.mkdir(parents=True, exist_ok=True)
-    (out / "index.html").write_text(page("買取ガイド｜高く売るためのポイント - 買取プライス",
-                                         "iPhone・ポケカBOXなどを高く売るための買取ガイド。大手買取店の価格比較データをもとに解説。",
+    (out / "index.html").write_text(page("買取ガイド｜高く売る・安く買うためのポイント - 買取プライス",
+                                         "iPhone・ポケカBOXを高く売る方法、株主優待券で安く買う方法など。大手買取店の価格比較データをもとに解説。",
                                          "/guide/", idx_body, [], updated), encoding="utf-8")
+    vi_body = (f'<nav class="bc"><a href="/vi/">Trang chủ</a> › Mẹo & Hướng dẫn</nav><h1>📚 Mẹo & Hướng dẫn</h1>'
+               f'<p class="lead">Kinh nghiệm bán hàng cho tiệm kaitori và mẹo mua rẻ ở Nhật. Bài có nhãn 日本語 hiện chỉ có tiếng Nhật.</p>{"".join(vi_html)}'
+               f'<p><a href="https://www.facebook.com/groups/1118827834446963" target="_blank" rel="noopener">👥 Hỏi đáp trong nhóm Facebook "Săn Giá Kaitori Nhật Bản" →</a></p>')
+    out = site / "guide" / "vi"
+    out.mkdir(parents=True, exist_ok=True)
+    pv = page("Mẹo & Hướng dẫn bán kaitori, mua rẻ ở Nhật | Kaitori Price",
+              "Kinh nghiệm bán iPhone, máy game, thẻ Pokémon cho tiệm kaitori và mẹo mua rẻ ở Nhật.", "/guide/vi/", vi_body, [], updated)
+    pv = pv.replace('<html lang="ja">', '<html lang="vi">', 1).replace(
+        '<a class="hd-cta" href="/">全商品を比較 →</a>', '<a class="hd-cta" href="/vi/">So giá 9 tiệm →</a>', 1)
+    (out / "index.html").write_text(pv, encoding="utf-8")
+    extra.append(("/guide/vi/", "weekly"))
     return [("/guide/", "weekly")] + [(p, "daily") for p, _, _ in guides] + extra

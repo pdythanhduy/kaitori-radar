@@ -361,3 +361,13 @@ a.sh:hover .go{background:var(--fg);color:#fff}
 .mv-i span{font-size:.82rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .mv-i b{font-size:.82rem}.mv-i b.up{color:#16a34a}.mv-i b.dn{color:#dc2626}
 .mv-i small{grid-column:1/-1;color:#64748b;font-size:.72rem}
+
+.hd-guide{display:inline-flex;align-items:center;gap:.3rem;color:#e2e8f0;text-decoration:none;font-size:.8rem;font-weight:700;border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:.3rem .7rem}
+.hd-guide:hover{background:rgba(255,255,255,.08)}
+@media (max-width:640px){.hd-guide b{display:none}.hd-guide{padding:.3rem .5rem}}
+.ft-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem 2rem;margin-bottom:1rem}
+.ft-grid h4{font-size:.85rem;margin:0 0 .5rem;color:#0f172a}
+.ft-col{display:flex;flex-direction:column;gap:.35rem}
+.ft-col a{color:#475569;text-decoration:none;font-size:.82rem}.ft-col a:hover{text-decoration:underline}
+.ft-col i{color:#94a3b8;font-style:normal;font-size:.72rem}
+.ft-shops{font-size:.8rem;color:#475569;line-height:1.6}

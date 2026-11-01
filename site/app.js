@@ -65,7 +65,12 @@
     document.documentElement.lang = lang;
     document.querySelectorAll("[data-i18n]").forEach((el) => { const v = T()[el.dataset.i18n]; if (typeof v === "string") el.textContent = v; });
     $("#lang").textContent = lang === "vi" ? "日本語" : "Tiếng Việt";
-    const fbg = $("#fbg"); if (fbg) fbg.hidden = lang !== "vi";  // nhóm FB tiếng Việt: chỉ hiện cho người dùng tiếng Việt
+    const fbg = $("#fbg"); if (fbg) fbg.hidden = lang !== "vi";
+    // đầu/chân trang theo ngôn ngữ: link hướng dẫn + tên danh mục
+    $("#hdGuide") && ($("#hdGuide").href = lang === "vi" ? "/guide/vi/" : "/guide/");
+    $("#ftGuideJa") && ($("#ftGuideJa").hidden = lang === "vi");
+    $("#ftGuideVi") && ($("#ftGuideVi").hidden = lang !== "vi");
+    document.querySelectorAll(".ft-col a[data-c]").forEach((a) => { a.textContent = lang === "vi" ? (T().cats[a.dataset.c] || a.textContent) : (CAT_JA[a.dataset.c] || a.textContent); });  // nhóm FB tiếng Việt: chỉ hiện cho người dùng tiếng Việt
     $("#q").placeholder = T().search;
     $("#upd").textContent = `${T().upd} ${idx.updated}`;
     $("#heroStat").textContent = T().hero(Object.keys(SH).length, idx.total.toLocaleString());
