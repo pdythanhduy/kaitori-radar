@@ -83,7 +83,7 @@ def page(title: str, desc: str, path: str, body: str, ld: list, updated: str) ->
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#0f172a">
 <link rel="stylesheet" href="/page.css?v=1">
-<script src="/ga.js?v=1"></script>
+<script src="/ga.js?v=2"></script>
 {lds}
 </head>
 <body>

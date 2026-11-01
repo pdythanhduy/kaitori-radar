@@ -7,6 +7,13 @@
   window.kpPage = function () {
     if (window.gtag) window.gtag("event", "page_view", { page_location: location.href, page_title: document.title });
   };
+  var CF_TOKEN = "0ed70a31538b456293c208bf5f799cfb";  // Cloudflare Web Analytics (mã công khai, không cookie)
+  if (CF_TOKEN && location.hostname === "kaitoriprice.com") {
+    var cf = document.createElement("script");
+    cf.defer = true; cf.src = "https://static.cloudflareinsights.com/beacon.min.js";
+    cf.setAttribute("data-cf-beacon", JSON.stringify({ token: CF_TOKEN, spa: true }));
+    document.head.appendChild(cf);
+  }
   if (!GA_ID || location.hostname !== "kaitoriprice.com") return;  // chỉ đếm trên web thật
 
   var s = document.createElement("script");
