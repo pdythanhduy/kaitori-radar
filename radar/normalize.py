@@ -122,6 +122,8 @@ _KEEP_APPLIANCE = r"プリンター|PIXUS|Satera|\bG\d{4}\b|インクジェッ�
 
 def refine_cat(cat: str, name: str) -> str:
     """Món bị xếp vào 'appliance'/'other' nhưng tên cho thấy rõ nhóm khác → chuyển nhóm."""
+    if re.search(r"instax|チェキ|インスタックス|INSTAXフィルム", name, re.I):
+        return "camera"  # phim/máy chụp lấy liền (vd "PASTEL GALAXY" từng bị nhầm sang điện thoại Galaxy)
     if cat not in ("appliance", "other"):
         return cat
     if re.search(_KEEP_APPLIANCE, name, re.I):
