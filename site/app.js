@@ -434,6 +434,27 @@
     if (window.scrollY > anchor + 4) window.scrollTo({ top: anchor, behavior: "smooth" });
     render();
   };
+  // ☰ menu bên (điện thoại): danh mục + mục phụ (hướng dẫn, nhóm FB, ngôn ngữ)
+  const drOpen = (o) => { document.body.classList.toggle("dr-open", o); if (o) renderDrawer(); };
+  function renderDrawer() {
+    const t = T(), on = (c) => (c ? " on" : "");
+    const cats = Object.keys(CATS).map((c) => `<button data-c="${c}" class="${on(st.view === "cat" && st.cat === c && !st.q)}">${ICON[c] || ""} ${esc(t.cats[c] || c)}<small>${(CATS[c].count || 0).toLocaleString()}</small></button>`).join("");
+    $("#drNav").innerHTML = `
+      <button data-v="home" class="${on(st.view === "home" && !st.q)}">🏠 ${t.drHome}</button>
+      <button data-v="mine" class="${on(st.view === "mine")}">♥ ${t.drMine}</button>
+      <button data-v="deals" class="${on(st.view === "deals")}">🎁 ${t.drDeals}</button>
+      <a href="${lang === "vi" ? "/guide/vi/" : "/guide/"}">📚 ${t.guideBtn}</a>
+      ${lang === "vi" ? `<a href="https://www.facebook.com/groups/1118827834446963" target="_blank" rel="noopener">👥 ${t.drFb}</a>` : ""}
+      <h4>${t.drCats}</h4>${cats}
+      <button class="dr-lang" data-lang="1">🌐 ${t.drLang}</button>`;
+  }
+  $("#hdMenu").addEventListener("click", () => drOpen(true));
+  $("#drClose").addEventListener("click", () => drOpen(false));
+  $("#drNav").addEventListener("click", (e) => {
+    if (e.target.closest("[data-lang]")) { drOpen(false); return $("#lang").click(); }
+    if (e.target.closest("a")) return drOpen(false);
+    if (e.target.closest("button[data-c],button[data-v]")) { drOpen(false); pickNav(e); }
+  });
   $("#mcat").addEventListener("click", pickNav);
   $("#hdMine").addEventListener("click", pickNav);
   $("#cgrid").addEventListener("click", pickNav);
@@ -499,8 +520,8 @@
     document.body.classList.toggle("scrolled", window.scrollY > 80);
     $("#chips").classList.toggle("stuck", $("#chips").getBoundingClientRect().top <= 53 && window.scrollY > 60);
   }, { passive: true });
-  $("#scrim").addEventListener("click", () => { openSide(false); cgOpen(false); });
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape") { openSide(false); cgOpen(false); } });
+  $("#scrim").addEventListener("click", () => { openSide(false); cgOpen(false); drOpen(false); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") { openSide(false); cgOpen(false); drOpen(false); } });
   let qT, qL; $("#q").addEventListener("input", (e) => { clearTimeout(qT); clearTimeout(qL); qT = setTimeout(() => { st.q = e.target.value.trim(); clearFilters(); render(); }, 250);
     qL = setTimeout(() => { const v = e.target.value.trim(); if (v.length >= 2) window.kpTrack?.("search", { search_term: v.slice(0, 80) }); }, 1500); });
   $("#more").addEventListener("click", () => paint(false));
