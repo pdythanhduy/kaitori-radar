@@ -1,8 +1,8 @@
 name: update-prices
 on:
   schedule:
-    - cron: "17 18 * * *"           # 03:17 JST: toàn bộ danh mục
-    - cron: "7,37 23,0-13 * * *"    # 08:07–22:37 JST mỗi 30 phút: hàng hot (phút lẻ để GitHub ít trễ)
+    - cron: "47 1 * * *"            # 10:47 JST: toàn bộ danh mục (sau khi các tiệm mở cửa, cập nhật giá ~10:00)
+    - cron: "7,37 1-13 * * *"       # 10:07–22:37 JST mỗi 30 phút: hàng hot (phút lẻ để GitHub ít trễ)
   workflow_dispatch:
     inputs:
       mode: { description: "hot | full", default: "hot" }
@@ -24,7 +24,7 @@ jobs:
         run: |
           MODE="${{ github.event.inputs.mode }}"
           if [ -z "$MODE" ]; then
-            if [ "${{ github.event.schedule }}" = "17 18 * * *" ]; then MODE=full; else MODE=hot; fi
+            if [ "${{ github.event.schedule }}" = "47 1 * * *" ]; then MODE=full; else MODE=hot; fi
           fi
           python -m radar.run --$MODE
       - name: commit data
