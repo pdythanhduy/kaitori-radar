@@ -65,6 +65,56 @@
       "vi": "Figure, đồ anime, cosplay, DVD, truyện — bán gộp được.",
       "ja": "フィギュア・アニメグッズ・コスプレ・DVD・漫画もまとめて。"
      }
+    },
+    {
+     "name": "ふるいち ゲーム買取",
+     "url": "https://px.a8.net/svt/ejp?a8mat=4BGAV4+2LH2R6+5W1M+5YJRM",
+     "px": "https://www10.a8.net/0.gif?a8mat=4BGAV4+2LH2R6+5W1M+5YJRM",
+     "affiliate": true,
+     "desc": {
+      "vi": "Bán máy game, đĩa game qua bưu điện: miễn phí ship, có người tới lấy hàng tận nhà.",
+      "ja": "送料無料・自動集荷でゲーム宅配買取。"
+     }
+    },
+    {
+     "name": "ふるいち トレカ買取",
+     "url": "https://px.a8.net/svt/ejp?a8mat=4BGAV4+2MNXYQ+5W1M+BWVTE",
+     "px": "https://www18.a8.net/0.gif?a8mat=4BGAV4+2MNXYQ+5W1M+BWVTE",
+     "affiliate": true,
+     "desc": {
+      "vi": "Bán thẻ bài (Pokémon, One Piece…): gửi nguyên sleeve, công ty niêm yết vận hành.",
+      "ja": "スリーブのまま送るだけのトレカ宅配買取。"
+     }
+    },
+    {
+     "name": "ふるいち スマホ・タブレット買取",
+     "url": "https://px.a8.net/svt/ejp?a8mat=4BGAV4+2NUT6A+5W1M+NTRMQ",
+     "px": "https://www18.a8.net/0.gif?a8mat=4BGAV4+2NUT6A+5W1M+NTRMQ",
+     "affiliate": true,
+     "desc": {
+      "vi": "Bán điện thoại, tablet qua bưu điện, miễn phí ship.",
+      "ja": "送料無料のスマホ・タブレット宅配買取。"
+     }
+    },
+    {
+     "name": "ふるいち フィギュア買取",
+     "url": "https://px.a8.net/svt/ejp?a8mat=4BGAV4+28YZ1U+5W1M+HV7V6",
+     "px": "https://www18.a8.net/0.gif?a8mat=4BGAV4+28YZ1U+5W1M+HV7V6",
+     "affiliate": true,
+     "desc": {
+      "vi": "Bán figure, mô hình (プラモデル) tại nhà.",
+      "ja": "フィギュア・プラモデルの宅配買取。"
+     }
+    },
+    {
+     "name": "オクルウル（美容家電）",
+     "url": "https://px.a8.net/svt/ejp?a8mat=4BGAV4+29KENM+5PCS+HV7V6",
+     "px": "https://www15.a8.net/0.gif?a8mat=4BGAV4+29KENM+5PCS+HV7V6",
+     "affiliate": true,
+     "desc": {
+      "vi": "Gửi máy sấy, máy làm đẹp… đi là có tiền ngay.",
+      "ja": "美容家電を詰めて送るだけで即現金。"
+     }
     }
    ]
   },
@@ -281,16 +331,30 @@
   }
  ],
  "inline": {
-  "phone": {
-   "name": "ネットオフ スマホ買取",
-   "a8mat": "4BGAUV+247I7M+1SOW+ZQ80I",
-   "px": "https://www17.a8.net/0.gif"
-  },
-  "game": {
-   "name": "ゲーム買取ブラザーズ",
-   "a8mat": "4BGAUV+276O8I+3V2O+NVHCY",
-   "px": "https://www16.a8.net/0.gif"
-  },
+  "phone": [
+   {
+    "name": "ネットオフ スマホ買取",
+    "a8mat": "4BGAUV+247I7M+1SOW+ZQ80I",
+    "px": "https://www17.a8.net/0.gif"
+   },
+   {
+    "name": "ふるいち スマホ買取",
+    "a8mat": "4BGAV4+2NUT6A+5W1M+NTRMQ",
+    "px": "https://www18.a8.net/0.gif"
+   }
+  ],
+  "game": [
+   {
+    "name": "ゲーム買取ブラザーズ",
+    "a8mat": "4BGAUV+276O8I+3V2O+NVHCY",
+    "px": "https://www16.a8.net/0.gif"
+   },
+   {
+    "name": "ふるいち ゲーム買取",
+    "a8mat": "4BGAV4+2LH2R6+5W1M+5YJRM",
+    "px": "https://www10.a8.net/0.gif"
+   }
+  ],
   "camera": {
    "name": "カメラ買取アローズ",
    "a8mat": "4BGAUV+28YZ1U+3V2O+HV7V6",
@@ -301,10 +365,32 @@
    "a8mat": "4BGAUV+2M2ICY+3V2O+1BMW42",
    "px": "https://www11.a8.net/0.gif"
   },
-  "hobby": {
-   "name": "フィギュア買取ネット",
-   "a8mat": "4BGAUV+2EBVHU+2P0S+BYLJM",
-   "px": "https://www12.a8.net/0.gif"
+  "hobby": [
+   {
+    "name": "フィギュア買取ネット",
+    "a8mat": "4BGAUV+2EBVHU+2P0S+BYLJM",
+    "px": "https://www12.a8.net/0.gif"
+   },
+   {
+    "name": "ふるいち フィギュア買取",
+    "a8mat": "4BGAV4+28YZ1U+5W1M+HV7V6",
+    "px": "https://www18.a8.net/0.gif"
+   }
+  ],
+  "tablet": {
+   "name": "ふるいち スマホ・タブレット買取",
+   "a8mat": "4BGAV4+2NUT6A+5W1M+NTRMQ",
+   "px": "https://www18.a8.net/0.gif"
+  },
+  "card": {
+   "name": "ふるいち トレカ買取",
+   "a8mat": "4BGAV4+2MNXYQ+5W1M+BWVTE",
+   "px": "https://www18.a8.net/0.gif"
+  },
+  "appliance": {
+   "name": "オクルウル（美容家電）",
+   "a8mat": "4BGAV4+29KENM+5PCS+HV7V6",
+   "px": "https://www15.a8.net/0.gif"
   }
  },
  "_huong_dan_inline": "inline: link affiliate hiện trong thẻ sản phẩm theo nhóm hàng (phone/game/camera/pc/hobby/tablet/audio/appliance/watch/card). a8mat lấy ở A8 → 広告リンク作成 (テキスト). px = ảnh 1x1 đo lượt hiển thị của A8."
