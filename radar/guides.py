@@ -150,6 +150,79 @@ def build(items: dict, shops: dict, updated: str, page, e, site, base: str) -> l
           [("予約買取をキャンセルするとどうなりますか？", "店舗によって異なります。キャンセル料や今後の予約制限がある場合もあるため、各店舗の規約を確認してください。"),
            ("予約した価格は必ずもらえますか？", "期限内に持ち込み、検品で条件を満たした場合に適用されるのが一般的です。")])
 
+    # ---------------------------------------------------------------- 4. 株主優待券 (JA + VI)
+    src = ('<section><h2>参考 / Nguồn</h2><ul class="small">'
+           '<li><a href="https://finance.yahoo.co.jp/quote/3048.T/incentive" rel="nofollow noopener" target="_blank">ビックカメラ 株主優待（Yahoo!ファイナンス）</a></li>'
+           '<li><a href="https://finance.yahoo.co.jp/quote/2730.T/incentive" rel="nofollow noopener" target="_blank">エディオン 株主優待（Yahoo!ファイナンス）</a></li>'
+           '<li><a href="https://finance.yahoo.co.jp/quote/9831.T/incentive" rel="nofollow noopener" target="_blank">ヤマダHD 株主優待（Yahoo!ファイナンス）</a></li>'
+           '<li><a href="https://finance.matsui.co.jp/stock/7936/complimentary/index" rel="nofollow noopener" target="_blank">アシックス 株主優待（松井証券）</a></li>'
+           '<li><a href="https://www.nojima.co.jp/ir/stockholder/" rel="nofollow noopener" target="_blank">ノジマ 株主優待（公式）</a></li></ul></section>')
+    body = f"""
+<p>株主優待券（株主優待割引券・買物券）は、企業が株主に贈る割引券です。使わない株主がヤフオク・メルカリなどで出品することがあり、
+<b>家電・ゲーム機・スニーカーなどを割安に購入</b>する方法として注目されています。ここでは仕入れに使われることの多い優待券と、購入前の注意点をまとめます。</p>
+<p class="pt-note">※優待の内容・利用条件は毎年変わることがあります。購入・利用前に必ず各社の最新の案内と券面の注意事項をご確認ください。</p>
+<h2>よく使われる株主優待券</h2>
+<div class="tw"><table class="pt"><thead><tr><th>企業</th><th>内容（目安）</th><th>使える場所</th></tr></thead><tbody>
+<tr><td>ビックカメラ</td><td>1,000円の買物優待券</td><td>ビックカメラ・コジマ・ソフマップ（Apple Gift Cardの購入に使う人も）</td></tr>
+<tr><td>エディオン</td><td>株主優待ギフトカード（3,000円相当〜）</td><td>エディオン・100満ボルト・エディオンネットショップ（1回10枚まで）</td></tr>
+<tr><td>ヤマダHD</td><td>500円の優待券（1,000円ごとに1枚が目安）</td><td>ヤマダデンキ各店（有効期限あり）</td></tr>
+<tr><td>アシックス</td><td>20〜40%割引の電子チケット（保有株数・期間による）</td><td>主にアシックス／オニツカタイガーのオンラインストア（登録に株主番号が必要）</td></tr>
+</tbody></table></div>
+<h2>購入前に必ず確認したい3つのポイント</h2>
+<ol class="tips">
+<li><b>「株主様ご本人のみ」の券は使えない</b><br>例えばノジマの割引券は株主本人の持参が必要と案内されています。譲渡できない券を買うと無駄になります。</li>
+<li><b>有効期限・対象外商品</b><br>券面に有効期限や対象外の商品・支払い方法が書かれています。</li>
+<li><b>電子チケットは信頼できる出品者から</b><br>登録に株主番号などが必要なものがあります。評価の多い出品者を選びましょう。</li>
+</ol>
+<h2>仕入れに使うなら：買取価格も比較</h2>
+<p>優待券で安く買った商品を買取店に売る場合は、<b>店によって買取価格が数千円〜数万円違う</b>ことがあります。<a href="/">買取プライス</a>で大手買取店9社の価格を比較してから売りましょう。</p>
+<p class="cta"><a href="/?v=deals">お得情報一覧を見る →</a></p>
+{src}"""
+    write("/guide/kabunushi-yutai/",
+          "株主優待券で家電・ゲーム機・スニーカーを安く買う方法と注意点 - 買取プライス",
+          "ビックカメラ・エディオン・ヤマダ・アシックス（オニツカタイガー）の株主優待券で安く購入する方法と、譲渡不可の券・有効期限など購入前の注意点を解説。",
+          "株主優待券で安く買う方法と注意点（ビックカメラ・エディオン・アシックスほか）",
+          body,
+          [("株主優待券は誰でも使えますか？", "券によります。譲渡可能な券は誰でも使えますが、「株主様ご本人のみ」と案内されている券は第三者は使えません。"),
+           ("オニツカタイガーで株主優待は使えますか？", "アシックスの株主優待はオニツカタイガーでも利用できる案内がありますが、現在は主にオンラインストア向けの電子チケットです。最新の案内をご確認ください。")])
+
+    # bản tiếng Việt (link chia sẻ cho nhóm Facebook)
+    body_vi = f"""
+<p>Phiếu ưu đãi cổ đông (<b>株主優待券</b>) là phiếu giảm giá mà các công ty tặng cho người nắm cổ phiếu. Nhiều cổ đông không dùng đến nên bán lại trên
+ヤフオク / メルカリ với giá rẻ. Người mua lại có thể dùng phiếu để <b>mua đồ điện máy, máy game, giày… rẻ hơn 20–30%</b>.
+Đây là lý do gần đây nhiều người khoe mua Onitsuka Tiger "giảm giá", dù hãng gần như không bao giờ sale.</p>
+<p class="pt-note">⚠️ Điều kiện của mỗi loại phiếu có thể thay đổi theo năm. Trước khi mua và dùng, luôn đọc kỹ thông báo mới nhất của công ty và phần lưu ý in trên phiếu.</p>
+<h2>Các loại phiếu hay dùng</h2>
+<div class="tw"><table class="pt"><thead><tr><th>Công ty</th><th>Nội dung</th><th>Dùng ở đâu</th></tr></thead><tbody>
+<tr><td>ビックカメラ</td><td>Phiếu 1.000円</td><td>ビックカメラ・コジマ・ソフマップ. Không mua thẳng iPhone được, nhiều người dùng để mua Apple Gift Card</td></tr>
+<tr><td>エディオン</td><td>Thẻ quà tặng nạp sẵn tiền (từ 3.000円)</td><td>エディオン・100満ボルト và エディオンネットショップ, tối đa 10 thẻ mỗi lần mua</td></tr>
+<tr><td>ヤマダ電機</td><td>Phiếu 500円, thường cứ mua 1.000円 dùng 1 phiếu</td><td>Cửa hàng ヤマダデンキ (có hạn sử dụng)</td></tr>
+<tr><td>ASICS / Onitsuka Tiger</td><td>Vé điện tử giảm 20–40% tuỳ số cổ phần</td><td>Hiện chủ yếu dùng ở cửa hàng online ASICS / Onitsuka Tiger, cần mã cổ đông để đăng ký</td></tr>
+</tbody></table></div>
+<h2>3 điều phải biết trước khi mua phiếu</h2>
+<ol class="tips">
+<li><b>Có loại CHỈ chính cổ đông dùng được.</b> Ví dụ phiếu ノジマ ghi rõ phải chính cổ đông mang tới cửa hàng (ご本人様のみ), mua lại là mất tiền.</li>
+<li><b>Xem hạn sử dụng và hàng bị loại trừ</b> in trên phiếu. Có phiếu không dùng cho thẻ trả trước, sửa chữa…</li>
+<li><b>Phiếu điện tử cần mã cổ đông để đăng ký</b>, nên chỉ mua của người bán uy tín, có nhiều đánh giá tốt.</li>
+</ol>
+<h2>Mua rẻ rồi bán kai: nhớ so giá</h2>
+<p>Nếu mua hàng bằng phiếu để bán lại cho tiệm kaitori, các tiệm có thể trả chênh nhau vài nghìn đến vài man yên cho cùng một món.
+So giá 9 tiệm lớn, cập nhật mỗi giờ: <a href="/vi/">kaitoriprice.com/vi</a></p>
+<p class="cta"><a href="/vi/?v=deals">Xem các ưu đãi khác →</a></p>
+<p><a href="https://www.facebook.com/groups/1118827834446963" target="_blank" rel="noopener">👥 Nhóm Facebook "Săn Giá Kaitori Nhật Bản": hỏi đáp, chia sẻ kinh nghiệm →</a></p>
+{src}"""
+    out = site / "guide" / "phieu-co-dong"
+    out.mkdir(parents=True, exist_ok=True)
+    pv = page("Mua rẻ 20–30% bằng phiếu cổ đông (株主優待券): Onitsuka Tiger, ビックカメラ, エディオン | Kaitori Price",
+              "Cách dùng phiếu ưu đãi cổ đông (株主優待券) mua đồ điện máy, giày Onitsuka Tiger rẻ hơn, và 3 điều phải biết để không mất tiền.",
+              "/guide/phieu-co-dong/",
+              f'<nav class="bc"><a href="/vi/">Trang chủ</a> › Mẹo mua rẻ</nav><article class="guide" lang="vi"><h1>Mua rẻ 20–30% bằng phiếu cổ đông (株主優待券)</h1>{body_vi}</article>',
+              [], updated)
+    pv = pv.replace('<html lang="ja">', '<html lang="vi">', 1).replace(
+        '<a class="hd-cta" href="/">全商品を比較 →</a>', '<a class="hd-cta" href="/vi/">So giá 9 tiệm →</a>', 1)
+    (out / "index.html").write_text(pv, encoding="utf-8")
+    extra = [("/guide/phieu-co-dong/", "weekly")]
+
     # ---------------------------------------------------------------- danh sách
     lis = "".join(f'<li><a href="{p}">{e(h)}</a><p>{e(d)}</p></li>' for p, h, d in guides)
     idx_body = (f'<nav class="bc"><a href="/">トップ</a> › 買取ガイド</nav><h1>買取ガイド</h1>'
@@ -159,4 +232,4 @@ def build(items: dict, shops: dict, updated: str, page, e, site, base: str) -> l
     (out / "index.html").write_text(page("買取ガイド｜高く売るためのポイント - 買取プライス",
                                          "iPhone・ポケカBOXなどを高く売るための買取ガイド。大手買取店の価格比較データをもとに解説。",
                                          "/guide/", idx_body, [], updated), encoding="utf-8")
-    return [("/guide/", "weekly")] + [(p, "daily") for p, _, _ in guides]
+    return [("/guide/", "weekly")] + [(p, "daily") for p, _, _ in guides] + extra
