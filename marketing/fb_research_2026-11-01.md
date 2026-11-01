@@ -43,4 +43,4 @@
 - Đọc nội quy từng nhóm: nhóm cấm link thì để link ở **bình luận đầu tiên**
 - Bài phải **có ích trước** (bảng giá hôm nay), link để sau, không viết kiểu quảng cáo
 - Trả lời bình luận nhanh trong 1 giờ đầu → bài được đẩy lên
-- Link dùng `https://kaitoriprice.com/?lang=vi` để luôn hiện tiếng Việt
+- Link dùng `https://kaitoriprice.com/vi/` để luôn hiện tiếng Việt
