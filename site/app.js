@@ -72,6 +72,7 @@
     $("#mcDeal").innerHTML = `🎁<span class="dl">${t.dealsShort}</span><small class="prb">PR</small>`;
     $("#mcDeal").classList.toggle("on", st.view === "deals" && !st.q);
     $("#mcMine").classList.toggle("on", st.view === "mine" && !st.q);
+    $("#hdMine").classList.toggle("on", st.view === "mine" && !st.q);
     $("#cgTitle").textContent = t.pickCat;
   }
   function chips() {
@@ -92,8 +93,9 @@
     $("#chips").innerHTML =
       `<button data-v="home" class="${st.view === "home" ? "on" : ""}"><span class="lf">${T().home}</span><span class="ls">🏠</span></button>` +
       order.map(([c, v]) => `<button data-c="${c}" class="${st.view === "cat" && st.cat === c && !st.q ? "on" : ""}">${ICON[c] || ""} <span class="lf">${T().cats[c] || v.label}</span><span class="ls">${short[c] || T().cats[c] || v.label}</span><small>${v.count.toLocaleString()}</small></button>`).join("") +
-      `<button data-v="deals" class="deal ${st.view === "deals" ? "on" : ""}">${T().deals}</button>` +
-      `<button data-v="mine" class="mine ${st.view === "mine" ? "on" : ""}">♥ ${T().mine}<b class="mine-n" hidden></b></button>`;
+      `<button data-v="deals" class="deal ${st.view === "deals" ? "on" : ""}">${T().deals}</button>`;
+    // "♥ Của tôi" không phải nhóm hàng → đặt trên header (máy tính), không trộn vào hàng chip
+    $("#hdMine").innerHTML = `♥ <span>${T().mine}</span><b class="mine-n" hidden></b>`;
     $("#cgrid").innerHTML = order.map(([c, v]) =>
       `<button data-c="${c}" class="${st.view === "cat" && st.cat === c && !st.q ? "on" : ""}"><span class="ci">${ICON[c] || "📦"}</span><span class="cn">${short[c] || T().cats[c] || v.label}</span><span class="cc">${v.count.toLocaleString()}</span></button>`).join("");
   }
@@ -403,6 +405,7 @@
     render();
   };
   $("#mcat").addEventListener("click", pickNav);
+  $("#hdMine").addEventListener("click", pickNav);
   $("#cgrid").addEventListener("click", pickNav);
   $("#chips").addEventListener("click", (e) => {
     const b = e.target.closest("button"); if (!b) return;
