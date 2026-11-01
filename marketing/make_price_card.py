@@ -46,7 +46,8 @@ yen(600, 308, best - worst, "#b91c1c")
 g.text((600, 410), "cùng 1 máy, khác tiệm", font=vi(30), fill=INK2)
 
 # thanh ngang: bắt đầu từ 0, nhãn giá + chênh so với cao nhất
-top, rh, x0, x1 = 500, 96, 330, 860
+top, x0, x1 = 490, 330, 860
+rh = min(96, (H - 150 - 20 - top) // len(rows))  # co dòng khi nhiều tiệm để không tràn chân trang
 g.line([x0, top - 10, x0, top + rh * len(rows)], fill=GRID, width=2)
 for i, (name, price, _) in enumerate(rows):
     y = top + i * rh
