@@ -65,7 +65,7 @@
   function mobileCat() {
     // điện thoại: 1 hàng gọn [🏠] [Nhóm đang chọn ▾] [🎁], bấm ▾ mở lưới tất cả nhóm
     const t = T(), short = t.catsShort || {};
-    const cur = st.view === "cat" && !st.q ? `${ICON[st.cat] || ""} ${short[st.cat] || t.cats[st.cat] || ""}` : t.pickCat;
+    const cur = st.view === "cat" && !st.q ? `${ICON[st.cat] || ""} ${short[st.cat] || t.cats[st.cat] || ""}` : `📂 ${t.pickShort}`;
     $("#mcLabel").textContent = cur;
     $("#mcPick").classList.toggle("on", st.view === "cat" && !st.q);
     $("#mcat .mc-home").classList.toggle("on", st.view === "home" && !st.q);
