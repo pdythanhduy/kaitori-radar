@@ -64,7 +64,9 @@
   function applyLang() {
     document.documentElement.lang = lang;
     document.querySelectorAll("[data-i18n]").forEach((el) => { const v = T()[el.dataset.i18n]; if (typeof v === "string") el.textContent = v; });
-    $("#lang").textContent = lang === "vi" ? "日本語" : "Tiếng Việt";
+    // nút VI | JP: ngôn ngữ đang dùng được tô đậm, bấm để đổi
+    $("#lang").innerHTML = `<span class="${lang === "vi" ? "on" : ""}">VI</span><span class="${lang === "ja" ? "on" : ""}">JP</span>`;
+    $("#lang").setAttribute("aria-label", lang === "vi" ? "日本語に切り替え" : "Chuyển sang tiếng Việt");
     const fbg = $("#fbg"); if (fbg) fbg.hidden = lang !== "vi";
     // đầu/chân trang theo ngôn ngữ: link hướng dẫn + tên danh mục
     $("#hdGuide") && ($("#hdGuide").href = lang === "vi" ? "/guide/vi/" : "/guide/");
