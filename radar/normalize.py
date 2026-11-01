@@ -39,6 +39,11 @@ _CAP = re.compile(r"(\d+)\s*(GB|TB)", re.I)
 def iphone_key(name: str) -> str | None:
     s = unicodedata.normalize("NFKC", name)
     m, c = _IP.search(s), _CAP.search(s)
+    if m and not c:
+        # tiệm ghi thiếu đơn vị, vd PANDA "iPhone Duo 512" → hiểu là 512GB (chỉ các mức dung lượng chuẩn)
+        b = re.match(r"\s*(64|128|256|512)(?![\dA-Za-z])", s[m.end():])
+        if b:
+            return iphone_key(s[: m.end()] + f" {b.group(1)}GB" + s[m.end() + b.end():])
     if not (m and c):
         return None
     model = m.group(1).strip()
