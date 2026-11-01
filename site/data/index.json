@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-01 13:15",
+ "updated": "2026-11-01 13:42",
  "shops": {
   "morimori": {
    "name": "森森買取",
@@ -50,8 +50,8 @@
  "cats": {
   "phone": {
    "label": "スマホ",
-   "count": 1210,
-   "multi": 457
+   "count": 1213,
+   "multi": 459
   },
   "tablet": {
    "label": "タブレット",
@@ -60,33 +60,33 @@
   },
   "game": {
    "label": "ゲーム機",
-   "count": 710,
-   "multi": 289
+   "count": 693,
+   "multi": 280
   },
   "card": {
    "label": "トレカ",
    "count": 1209,
-   "multi": 151
+   "multi": 150
   },
   "pc": {
    "label": "パソコン",
-   "count": 417,
-   "multi": 17
+   "count": 400,
+   "multi": 35
   },
   "camera": {
    "label": "カメラ",
-   "count": 1549,
-   "multi": 590
+   "count": 1527,
+   "multi": 570
   },
   "audio": {
    "label": "オーディオ",
-   "count": 473,
-   "multi": 159
+   "count": 429,
+   "multi": 144
   },
   "appliance": {
    "label": "家電・美容",
-   "count": 2627,
-   "multi": 274
+   "count": 2665,
+   "multi": 284
   },
   "watch": {
    "label": "腕時計",
@@ -95,16 +95,16 @@
   },
   "hobby": {
    "label": "ホビー・フィギュア",
-   "count": 180,
-   "multi": 9
+   "count": 179,
+   "multi": 10
   },
   "other": {
    "label": "その他",
-   "count": 890,
-   "multi": 9
+   "count": 883,
+   "multi": 2
   }
  },
- "total": 10218,
+ "total": 10151,
  "status": {
   "mobile_ichiban:2": {
    "ok": true,
@@ -219,42 +219,42 @@
   "mobile_ichiban:1": {
    "ok": true,
    "n": 43,
-   "ts": "2026-11-01 13:13"
+   "ts": "2026-11-01 13:41"
   },
   "mobile_ichiban:3": {
    "ok": true,
    "n": 49,
-   "ts": "2026-11-01 13:15"
+   "ts": "2026-11-01 13:42"
   },
   "homura:box": {
    "ok": true,
    "n": 100,
-   "ts": "2026-11-01 13:15"
+   "ts": "2026-11-01 13:42"
   },
   "morimori:0301": {
-   "ok": false,
-   "err": "HTTPSConnectionPool(host='www.morimori-kaitori.jp', port=443): Max retries exceeded with url: /category/0301 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.morimori-kaitori.jp', port=443) a",
-   "ts": "2026-11-01 13:07"
+   "ok": true,
+   "n": 211,
+   "ts": "2026-11-01 13:37"
   },
   "morimori:0101": {
-   "ok": false,
-   "err": "HTTPSConnectionPool(host='www.morimori-kaitori.jp', port=443): Max retries exceeded with url: /category/0101 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.morimori-kaitori.jp', port=443) a",
-   "ts": "2026-11-01 13:08"
+   "ok": true,
+   "n": 108,
+   "ts": "2026-11-01 13:37"
   },
   "morimori:0104": {
-   "ok": false,
-   "err": "HTTPSConnectionPool(host='www.morimori-kaitori.jp', port=443): Max retries exceeded with url: /category/0104 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.morimori-kaitori.jp', port=443) a",
-   "ts": "2026-11-01 13:08"
+   "ok": true,
+   "n": 71,
+   "ts": "2026-11-01 13:38"
   },
   "morimori:2401010": {
-   "ok": false,
-   "err": "HTTPSConnectionPool(host='www.morimori-kaitori.jp', port=443): Max retries exceeded with url: /category/2401010 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.morimori-kaitori.jp', port=443",
-   "ts": "2026-11-01 13:09"
+   "ok": true,
+   "n": 7,
+   "ts": "2026-11-01 13:38"
   },
   "morimori:2401001": {
-   "ok": false,
-   "err": "HTTPSConnectionPool(host='www.morimori-kaitori.jp', port=443): Max retries exceeded with url: /category/2401001 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.morimori-kaitori.jp', port=443",
-   "ts": "2026-11-01 13:10"
+   "ok": true,
+   "n": 27,
+   "ts": "2026-11-01 13:38"
   },
   "rudeya:full": {
    "ok": true,
@@ -264,7 +264,7 @@
   "rudeya:hot": {
    "ok": true,
    "n": 299,
-   "ts": "2026-11-01 13:10"
+   "ts": "2026-11-01 13:38"
   },
   "panda:full": {
    "ok": true,
@@ -289,22 +289,27 @@
   "panda:hot": {
    "ok": true,
    "n": 334,
-   "ts": "2026-11-01 13:11"
+   "ts": "2026-11-01 13:38"
   },
   "guestmobile:hot": {
    "ok": true,
    "n": 143,
-   "ts": "2026-11-01 13:12"
+   "ts": "2026-11-01 13:39"
   },
   "toban:hot": {
    "ok": true,
-   "n": 1205,
-   "ts": "2026-11-01 13:12"
+   "n": 1206,
+   "ts": "2026-11-01 13:40"
   },
   "keitaigod:hot": {
    "ok": true,
    "n": 298,
-   "ts": "2026-11-01 13:13"
+   "ts": "2026-11-01 13:40"
+  },
+  "ichome:hot": {
+   "ok": true,
+   "n": 410,
+   "ts": "2026-11-01 13:42"
   }
  }
 }
