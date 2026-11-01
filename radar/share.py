@@ -77,7 +77,7 @@ def render(name: str, prices: dict, out: Path) -> bool:
         bw = int((x1 - x0) * price / best)
         g.rounded_rectangle([x0, y + 18, x0 + bw, y + 70], radius=6, fill=TOP if i == 0 else BAR)
         g.text((x0 + bw + 14, y + 16), f"{price:,}", font=vi(34, True), fill=INK)
-        g.text((x0 + bw + 14, y + 56), "cao nhất" if i == 0 else f"−{best - price:,}", font=vi(24),
+        g.text((x0 + bw + 14, y + 56), "cao nhất" if i == 0 else f"-{best - price:,}", font=vi(24),
                fill=TOP if i == 0 else MUTED)
     fy = H - 150
     g.line([60, fy, W - 60, fy], fill=GRID, width=2)
