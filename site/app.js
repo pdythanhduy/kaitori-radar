@@ -30,6 +30,24 @@
   const loadCat = async (c) => (cache[c] ||= FACETS.enrich(await fetch(`data/cat/${c}.json` + bust).then((r) => r.json())));
   const loadHist = async (c) => (hcache[c] ||= await fetch(`data/hist/${c}.json` + bust).then((r) => r.json()).catch(() => ({})));
 
+  // ================= "Của tôi": theo dõi (♥) + kho hàng — lưu trên máy (localStorage), không cần đăng nhập
+  const MINE_KEY = "kp_mine";
+  const mine = (() => { try { return { watch: {}, stock: {}, ...JSON.parse(localStorage.getItem(MINE_KEY) || "{}") }; } catch { return { watch: {}, stock: {} }; } })();
+  const saveMine = () => localStorage.setItem(MINE_KEY, JSON.stringify(mine));
+  const idOf = (it) => it.cat + "|" + it.key;
+  const REG = new Map();  // id → item đang hiển thị (để bấm ♥ / lưu kho biết món nào)
+  async function mineItems() {
+    const ids = [...new Set([...Object.keys(mine.watch), ...Object.keys(mine.stock)])];
+    const cats = [...new Set(ids.map((i) => i.split("|")[0]).filter((c) => CATS[c]))];
+    const all = (await Promise.all(cats.map(loadCat))).flat();
+    const m = new Map(all.map((it) => [idOf(it), it]));
+    return m;
+  }
+  function changedWatch(m) {
+    // món theo dõi có giá cao nhất khác lần cuối bạn xem
+    return Object.entries(mine.watch).map(([id, w]) => ({ id, w, it: m.get(id) })).filter((x) => x.it && x.it.best !== x.w.seen);
+  }
+
   // ================= static text
   function applyLang() {
     document.documentElement.lang = lang;
@@ -53,6 +71,7 @@
     $("#mcat .mc-home").classList.toggle("on", st.view === "home" && !st.q);
     $("#mcDeal").innerHTML = `🎁<span class="dl">${t.dealsShort}</span><small class="prb">PR</small>`;
     $("#mcDeal").classList.toggle("on", st.view === "deals" && !st.q);
+    $("#mcMine").classList.toggle("on", st.view === "mine" && !st.q);
     $("#cgTitle").textContent = t.pickCat;
   }
   function chips() {
@@ -73,7 +92,8 @@
     $("#chips").innerHTML =
       `<button data-v="home" class="${st.view === "home" ? "on" : ""}"><span class="lf">${T().home}</span><span class="ls">🏠</span></button>` +
       order.map(([c, v]) => `<button data-c="${c}" class="${st.view === "cat" && st.cat === c && !st.q ? "on" : ""}">${ICON[c] || ""} <span class="lf">${T().cats[c] || v.label}</span><span class="ls">${short[c] || T().cats[c] || v.label}</span><small>${v.count.toLocaleString()}</small></button>`).join("") +
-      `<button data-v="deals" class="deal ${st.view === "deals" ? "on" : ""}">${T().deals}</button>`;
+      `<button data-v="deals" class="deal ${st.view === "deals" ? "on" : ""}">${T().deals}</button>` +
+      `<button data-v="mine" class="mine ${st.view === "mine" ? "on" : ""}">♥ ${T().mine}<b class="mine-n" hidden></b></button>`;
     $("#cgrid").innerHTML = order.map(([c, v]) =>
       `<button data-c="${c}" class="${st.view === "cat" && st.cat === c && !st.q ? "on" : ""}"><span class="ci">${ICON[c] || "📦"}</span><span class="cn">${short[c] || T().cats[c] || v.label}</span><span class="cc">${v.count.toLocaleString()}</span></button>`).join("");
   }
@@ -110,12 +130,14 @@
     const diff = it.n_shops > 1 && it.spread > 0 ? `<div class="diff">${t.diff(yen(it.spread))}</div>` : "";
     const br = it._f?.brand !== "Khác" ? it._f?.brand : "";
     const tag = [br && !(it._f?.series || "").startsWith(br.split(" ")[0]) ? br : "", it._f?.series, it._f?.cap].filter(Boolean).join(" · ");
+    const id = idOf(it); REG.set(id, it);
+    const fav = mine.watch[id] ? "on" : "";
     return `<article class="card">
-      <div class="c-top"><div><div class="c-name">${esc(it.name)}</div><div class="c-sub">${ICON[it.cat] || ""} ${esc(tag || t.cats[it.cat] || "")}・${t.shopsN(it.n_shops)}</div></div>${spark(it)}</div>
+      <div class="c-top"><div><div class="c-name">${esc(it.name)}</div><div class="c-sub">${ICON[it.cat] || ""} ${esc(tag || t.cats[it.cat] || "")}・${t.shopsN(it.n_shops)}</div></div>${spark(it)}<button class="fav ${fav}" data-id="${esc(id)}" aria-label="${esc(t.watch)}" title="${esc(t.watch)}">${fav ? "♥" : "♡"}</button></div>
       <div class="best"><span class="best-p">${yen(it.best)}</span><span class="best-s ${it.n_shops > 1 ? "" : "one"}">${it.n_shops > 1 ? t.best + "：" : ""}${SH[it.best_shop]?.name || ""}</span>${chg}</div>
       ${diff}<div class="shops">${rows}</div>
       ${affBox(it.cat)}
-      <label class="calc">${t.calc} <input type="number" inputmode="numeric" placeholder="${Math.round(it.best * 0.9).toLocaleString()}" data-best="${it.best}"> 円 → ${t.profit} <b class="pf">—</b></label>
+      <div class="calc-row"><label class="calc">${t.calc} <input type="number" inputmode="numeric" placeholder="${Math.round(it.best * 0.9).toLocaleString()}" data-best="${it.best}"> 円 → ${t.profit} <b class="pf">—</b></label><button class="stk ${mine.stock[id] ? "on" : ""}" data-id="${esc(id)}">${mine.stock[id] ? t.inStock : t.addStock}</button></div>
     </article>`;
   }
   function tableHead() {
@@ -244,10 +266,13 @@
     $("#home").hidden = st.view !== "home" || !!st.q;
     $("#catview").hidden = !listMode;
     $("#deals").hidden = st.view !== "deals" || !!st.q;
+    $("#mine").hidden = st.view !== "mine" || !!st.q;
     const ttl = st.q ? `「${st.q}」` : st.view === "cat" ? (lang === "ja" ? CAT_JA[st.cat] : T().cats[st.cat]) : "";
     document.title = ttl ? `${ttl} ${lang === "ja" ? "買取価格比較" : "so sánh giá thu mua"}｜買取プライス` : TITLE0;
     chips();
     if (st.view === "deals" && !st.q) return renderDeals();
+    if (st.view === "mine" && !st.q) { history.replaceState(null, "", "?v=mine"); return renderMine(); }
+    if (st.view === "home" && !st.q) renderNews();
     if (!listMode) { history.replaceState(null, "", "./"); return; }
     $("#hint").textContent = "…";
     if (st.q) {
@@ -261,6 +286,84 @@
     history.replaceState(null, "", st.view === "cat" && !st.q ? "?c=" + st.cat : "./");
   }
   function clearFilters() { for (const k in st.f) st.f[k].clear(); st.price = 0; st.multi = st.gap = false; }
+
+  // ================= Của tôi
+  function updMineBadge(n) {
+    const total = Object.keys(mine.watch).length + Object.keys(mine.stock).length;
+    document.querySelectorAll(".mine-n").forEach((b) => { b.textContent = n ? n : ""; b.hidden = !n; });
+    document.querySelectorAll("[data-v=mine]").forEach((b) => b.classList.toggle("has", total > 0));
+  }
+  async function renderNews() {
+    // trang chủ: "Thay đổi từ lần trước bạn vào" cho các món đang theo dõi
+    if (!Object.keys(mine.watch).length) { $("#news").innerHTML = ""; updMineBadge(0); return; }
+    const m = await mineItems(), ch = changedWatch(m), t = T();
+    updMineBadge(ch.length);
+    if (!ch.length) { $("#news").innerHTML = ""; return; }
+    const li = ch.slice(0, 4).map(({ w, it }) => { const d = it.best - w.seen;
+      return `<li><span>${esc(it.name)}</span><b class="${d > 0 ? "up" : "dn"}">${d > 0 ? "▲" : "▼"}${Math.abs(d).toLocaleString()}円</b></li>`; }).join("");
+    $("#news").innerHTML = `<button class="news" data-v="mine"><div class="news-t">🔔 ${t.newsTitle(ch.length)}</div><ul>${li}</ul><span class="news-go">${t.newsGo} →</span></button>`;
+  }
+  async function renderMine() {
+    const t = T(), m = await mineItems();
+    const stock = Object.entries(mine.stock).map(([id, s]) => ({ id, s, it: m.get(id) }));
+    let sum = 0, cnt = 0;
+    const rows = stock.map(({ id, s, it }) => {
+      if (!it) return `<div class="srow gone"><div class="sn">${esc(s.name)}</div><div class="sm">${t.noPrice}</div><button class="sdel" data-id="${esc(id)}" aria-label="delete">✕</button></div>`;
+      const p = it.prices[it.best_shop] || {}, per = it.best - s.buy, tot = per * (s.qty || 1);
+      sum += tot; cnt += s.qty || 1;
+      const chg = it.chg ? `<span class="chg ${it.chg > 0 ? "up" : "dn"}">${it.chg > 0 ? "▲" : "▼"}${Math.abs(it.chg).toLocaleString()}</span>` : "";
+      return `<div class="srow"><div class="sn">${esc(it.name)}</div>
+        <div class="sm">${t.boughtAt} ${yen(s.buy)} · ${t.qty} <input class="sq-in" type="number" min="1" inputmode="numeric" value="${s.qty || 1}" data-id="${esc(id)}"></div>
+        <a class="sbest" href="${esc(p.url || "#")}" target="_blank" rel="noopener nofollow"><span>${t.sellNow} <b>${SH[it.best_shop]?.name || ""}</b></span><span class="p">${yen(it.best)} ${chg}</span></a>
+        <div class="spf ${tot >= 0 ? "up" : "dn"}">${t.profit} ${tot >= 0 ? "+" : ""}${tot.toLocaleString()}円${(s.qty || 1) > 1 ? ` <small>(${per >= 0 ? "+" : ""}${per.toLocaleString()}円 × ${s.qty})</small>` : ""}</div>
+        <button class="sdel" data-id="${esc(id)}" aria-label="delete">✕</button></div>`;
+    }).join("");
+    const watch = Object.entries(mine.watch).map(([id, w]) => ({ id, w, it: m.get(id) }));
+    const wcards = watch.filter((x) => x.it).map((x) => card(x.it)).join("");
+    const gone = watch.filter((x) => !x.it).map((x) => `<li>${esc(x.w.name)} — ${t.noPrice} <button class="wdel" data-id="${esc(x.id)}">✕</button></li>`).join("");
+    $("#mineBody").innerHTML = `
+      <h2 class="sec">📦 ${t.stockTitle}</h2>
+      ${stock.length ? `<div class="ssum"><span>${t.stockSum(cnt)}</span><b class="${sum >= 0 ? "up" : "dn"}">${sum >= 0 ? "+" : ""}${sum.toLocaleString()}円</b></div><div class="slist">${rows}</div>` : `<p class="mempty">${t.stockEmpty}</p>`}
+      <h2 class="sec">♥ ${t.watchTitle}</h2>
+      ${watch.length ? `<div class="list">${wcards}</div>${gone ? `<ul class="wgone">${gone}</ul>` : ""}` : `<p class="mempty">${t.watchEmpty}</p>`}`;
+    // đã xem → cập nhật mốc "lần trước"
+    for (const { id, it } of watch) if (it) mine.watch[id].seen = it.best;
+    saveMine(); updMineBadge(0);
+  }
+  function toggleWatch(id) {
+    const it = REG.get(id);
+    if (mine.watch[id]) delete mine.watch[id];
+    else if (it) mine.watch[id] = { cat: it.cat, key: it.key, name: it.name, seen: it.best, at: it.best };
+    saveMine();
+    document.querySelectorAll(`.fav[data-id="${CSS.escape(id)}"]`).forEach((b) => { const on = !!mine.watch[id]; b.classList.toggle("on", on); b.textContent = on ? "♥" : "♡"; });
+    toast(mine.watch[id] ? T().watchAdded : T().watchRemoved);
+    updMineBadge(0);
+  }
+  function addStock(id, btn) {
+    const it = REG.get(id); if (!it) return;
+    if (mine.stock[id]) { st.view = "mine"; return render(); }
+    const inp = btn.closest(".card")?.querySelector(".calc input");
+    const buy = +(inp?.value || 0);
+    if (!buy) { inp?.focus(); return toast(T().needBuy); }
+    mine.stock[id] = { cat: it.cat, key: it.key, name: it.name, buy, qty: 1, d: idx.updated.slice(0, 10) };
+    saveMine();
+    btn.classList.add("on"); btn.textContent = T().inStock;
+    toast(T().stockAdded);
+    updMineBadge(0);
+  }
+  document.addEventListener("click", (e) => {
+    const f = e.target.closest(".fav"); if (f) { e.preventDefault(); return toggleWatch(f.dataset.id); }
+    const k = e.target.closest(".stk"); if (k) { e.preventDefault(); return addStock(k.dataset.id, k); }
+    const d = e.target.closest(".sdel"); if (d) { delete mine.stock[d.dataset.id]; saveMine(); return renderMine(); }
+    const w = e.target.closest(".wdel"); if (w) { delete mine.watch[w.dataset.id]; saveMine(); return renderMine(); }
+    const n = e.target.closest(".news,[data-v=mine]");
+    if (n && !n.closest("#chips,#mcat")) { st.view = "mine"; $("#q").value = ""; st.q = ""; window.scrollTo({ top: 0 }); return render(); }
+  });
+  document.addEventListener("change", (e) => {
+    const q = e.target.closest(".sq-in"); if (!q) return;
+    const s = mine.stock[q.dataset.id]; if (!s) return;
+    s.qty = Math.max(1, Math.round(+q.value || 1)); saveMine(); renderMine();
+  });
 
   // ================= deals (PR)
   let deals = null;
@@ -373,6 +476,25 @@
     navigator.clipboard?.writeText(a.dataset.copy).catch(() => {});
     toast(T().copied);
   });
+  // ================= thêm vào màn hình chính (PWA): hiện từ lần vào thứ 2, tắt rồi thì 30 ngày sau mới hỏi lại
+  function installPrompt() {
+    if ("serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js").catch(() => {});
+    const standalone = matchMedia("(display-mode: standalone)").matches || navigator.standalone;
+    const visits = +(localStorage.getItem("kp_visits") || 0) + 1; localStorage.setItem("kp_visits", visits);
+    const off = +(localStorage.getItem("kp_a2hs_off") || 0);
+    if (standalone || visits < 2 || Date.now() - off < 30 * 864e5 || innerWidth > 900) return;
+    const box = $("#a2hs"), t = T();
+    const close = () => { box.hidden = true; localStorage.setItem("kp_a2hs_off", Date.now()); };
+    const ios = /iphone|ipad|ipod/i.test(navigator.userAgent) && !/crios|fxios/i.test(navigator.userAgent);
+    let deferred = null;
+    const show = (html) => { box.innerHTML = `<img src="icon-192.png" alt="">${html}<button class="a2hs-x" aria-label="close">✕</button>`; box.hidden = false; box.querySelector(".a2hs-x").onclick = close; };
+    if (ios) setTimeout(() => show(`<span>${t.a2hsIos}</span>`), 4000);
+    addEventListener("beforeinstallprompt", (e) => {
+      e.preventDefault(); deferred = e;
+      show(`<span>${t.a2hsText}</span><button class="a2hs-b">${t.a2hsBtn}</button>`);
+      box.querySelector(".a2hs-b").onclick = async () => { deferred.prompt(); await deferred.userChoice.catch(() => {}); close(); };
+    });
+  }
   function toast(msg) {
     let el = $("#toast"); if (!el) { el = document.createElement("div"); el.id = "toast"; document.body.appendChild(el); }
     el.textContent = msg; el.classList.add("show"); clearTimeout(el._t); el._t = setTimeout(() => el.classList.remove("show"), 3500);
@@ -391,8 +513,10 @@
   const sp = new URLSearchParams(location.search);
   if (sp.get("c") && CATS[sp.get("c")]) { st.view = "cat"; st.cat = sp.get("c"); }
   if (sp.get("v") === "deals") st.view = "deals";
+  if (sp.get("v") === "mine") st.view = "mine";
   if (sp.get("q")) { st.q = sp.get("q").trim().slice(0, 80); $("#q").value = st.q; }
   applyLang();
+  installPrompt();
   $("#top").innerHTML = top.slice(0, 18).map(card).join("");
   render();
 })();

@@ -18,7 +18,7 @@
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
 <meta name="description" content="So sánh giá thu mua hàng mới (新品・未開封) tại các tiệm kaitori lớn ở Nhật mỗi giờ: iPhone, PS5, Switch, hộp thẻ Pokémon, máy ảnh, gia dụng. Biết ngay tiệm nào trả cao nhất.">
-<link rel="stylesheet" href="style.css?v=27">
+<link rel="stylesheet" href="style.css?v=29">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "買取プライス", "alternateName": "Kaitori Price", "url": "https://kaitoriprice.com/", "inLanguage": ["ja", "vi"], "potentialAction": {"@type": "SearchAction", "target": "https://kaitoriprice.com/?q={search_term_string}", "query-input": "required name=search_term_string"}}</script>
 </head>
 <body>
@@ -48,12 +48,14 @@
     <div class="seg">
     <button class="mc-home" data-v="home" aria-label="home">🏠</button>
     <button class="mc-pick" id="mcPick"><span id="mcLabel"></span><b>▾</b></button>
+    <button class="mc-mine" data-v="mine" id="mcMine" aria-label="mine">♥<b class="mine-n" hidden></b></button>
     <button class="mc-deal" data-v="deals" id="mcDeal"></button>
     </div>
   </div>
   <div class="cgrid-wrap" id="cgridWrap"><div class="cgrid-hd"><b id="cgTitle"></b><button id="cgClose" aria-label="close">✕</button></div><div class="cgrid" id="cgrid"></div></div>
 
   <section id="home">
+    <div id="news"></div>
     <h2 class="sec"><span data-i18n="topTitle">💡 Chênh lệch giá lớn nhất hôm nay</span> <small data-i18n="topSub">cùng một món, mỗi tiệm trả một giá</small></h2>
     <div id="top" class="list"></div>
   </section>
@@ -80,12 +82,15 @@
     </div>
   </section>
 
+  <section id="mine" hidden><div id="mineBody"></div></section>
+
   <section id="deals" hidden>
     <div class="pr-note" data-i18n="prNote"></div>
     <div id="dealList"></div>
   </section>
 </main>
 <div class="scrim" id="scrim"></div>
+<div class="a2hs" id="a2hs" hidden></div>
 
 <footer class="ft">
   <div class="wrap">
@@ -96,8 +101,8 @@
     <p class="small">© 2026</p>
   </div>
 </footer>
-<script src="i18n.js?v=28"></script>
-<script src="facets.js?v=27"></script>
-<script src="app.js?v=27"></script>
+<script src="i18n.js?v=29"></script>
+<script src="facets.js?v=29"></script>
+<script src="app.js?v=29"></script>
 </body>
 </html>

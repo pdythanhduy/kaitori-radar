@@ -299,3 +299,43 @@ a.sh .go{flex:none;width:22px;height:22px;border-radius:999px;display:grid;place
 a.sh.top .go{color:var(--a);background:var(--a-soft)}
 a.sh:hover .go{background:var(--fg);color:#fff}
 .tr .tx a.sh{background-image:linear-gradient(#e4e4e7,#e4e4e7)}.tr .tx a.sh:first-child{background-image:none}
+
+/* v13: Của tôi — ♥ theo dõi, kho hàng, thông báo đổi giá, thêm vào màn hình chính */
+.c-top{position:relative}
+.fav{flex:none;align-self:flex-start;width:34px;height:34px;margin:-4px -4px 0 4px;border:0;border-radius:999px;background:#f4f4f5;color:#71717a;font-size:1.05rem;line-height:1;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:transform .12s,background .12s}
+.fav:active{transform:scale(.88)}.fav.on{background:#fff1f2;color:var(--a)}
+.calc-row{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.stk{border:1px solid var(--line);background:#fff;color:var(--fg);border-radius:999px;font-size:.74rem;font-weight:600;padding:.3rem .7rem;cursor:pointer;white-space:nowrap}
+.stk.on{background:#ecfdf5;border-color:#a7f3d0;color:#047857}
+.chips button.mine{border-color:#fecdd3;color:var(--a)}.chips button.mine.on{background:var(--a);border-color:var(--a);color:#fff}
+.mine-n{display:inline-grid;place-items:center;min-width:16px;height:16px;padding:0 4px;margin-left:4px;border-radius:999px;background:var(--a);color:#fff;font-size:.62rem;font-weight:800}
+#news:empty{display:none}
+.news{display:block;width:100%;text-align:left;border:0;cursor:pointer;background:linear-gradient(135deg,#fff1f2,#fff);box-shadow:0 0 0 1px #fecdd3;border-radius:16px;padding:12px 14px;margin:6px 0 4px;color:var(--fg)}
+.news-t{font-weight:800;font-size:.9rem;margin-bottom:4px}
+.news ul{list-style:none;margin:0;padding:0}.news li{display:flex;justify-content:space-between;gap:8px;font-size:.82rem;padding:2px 0}
+.news li span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.news .up,.spf.up,.ssum .up{color:var(--g)}.news .dn,.spf.dn,.ssum .dn{color:var(--r)}
+.news-go{display:block;margin-top:4px;font-size:.78rem;font-weight:700;color:var(--a)}
+#mine .sec{margin-top:14px}
+.mempty{background:var(--card);border:1px dashed var(--line);border-radius:14px;padding:14px;color:var(--muted);font-size:.86rem;line-height:1.6}
+.ssum{display:flex;justify-content:space-between;align-items:baseline;background:var(--fg);color:#fff;border-radius:14px;padding:12px 14px;margin-bottom:8px;font-size:.84rem}
+.ssum b{font-size:1.25rem;font-weight:800}.ssum .up{color:#4ade80}.ssum .dn{color:#f87171}
+.slist{display:grid;gap:8px}
+.srow{position:relative;background:var(--card);border-radius:14px;box-shadow:0 1px 2px rgba(15,23,42,.06),0 0 0 1px rgba(15,23,42,.04);padding:12px 40px 12px 14px;display:grid;gap:4px}
+.srow .sn{font-weight:700;font-size:.92rem}.srow .sm{font-size:.76rem;color:var(--muted);display:flex;align-items:center;gap:4px}
+.sq-in{width:52px;border:1px solid var(--line);border-radius:6px;padding:.1rem .3rem;font-size:.78rem}
+.sbest{display:flex;justify-content:space-between;gap:8px;align-items:baseline;color:inherit;text-decoration:none;font-size:.82rem;background:#f4f4f5;border-radius:8px;padding:6px 8px}
+.sbest b{font-weight:700}.sbest .p{font-weight:800}
+.spf{font-weight:800;font-size:.95rem}.spf small{font-weight:500;color:var(--muted);font-size:.72rem}
+.sdel{position:absolute;top:8px;right:8px;width:28px;height:28px;border:0;border-radius:999px;background:none;color:#a1a1aa;cursor:pointer}
+.srow.gone{opacity:.6}
+.wgone{font-size:.8rem;color:var(--muted)}.wgone button{border:0;background:none;color:#a1a1aa;cursor:pointer}
+.a2hs{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:80;background:var(--fg);color:#fff;border-radius:16px;padding:12px 40px 12px 14px;font-size:.84rem;box-shadow:0 10px 30px rgba(0,0,0,.3);display:flex;align-items:center;gap:10px}
+.a2hs img{width:36px;height:36px;border-radius:9px;flex:none}
+.a2hs .a2hs-b{margin-left:auto;border:0;background:#fff;color:var(--fg);font-weight:700;border-radius:999px;padding:.4rem .8rem;white-space:nowrap;cursor:pointer}
+.a2hs .a2hs-x{position:absolute;top:6px;right:8px;border:0;background:none;color:#a1a1aa;font-size:1rem;cursor:pointer}
+@media(max-width:900px){
+ .mcat .mc-mine{width:40px;padding:0;font-size:1rem;color:#fda4af;position:relative}
+ .mcat .mc-mine.on{color:var(--a)}
+ .mcat .mc-mine .mine-n{position:absolute;top:1px;right:1px;margin:0;min-width:14px;height:14px;font-size:.56rem}
+}
