@@ -285,7 +285,7 @@
     document.title = ttl ? `${ttl} ${lang === "ja" ? "買取価格比較｜買取プライス" : "– so sánh giá thu mua｜Kaitori Price"}` : (lang === "ja" ? TITLE0 : "Kaitori Price｜So sánh giá thu mua iPhone, máy game, thẻ Pokémon ở Nhật");
     chips();
     // thống kê: 1 page_view mỗi lần đổi màn hình, gửi SAU khi URL đã cập nhật
-    const pv = (url) => { history.replaceState(null, "", url); if (url !== lastPv) { lastPv = url; window.kpPage?.(); } };
+    const pv = (url) => { history.replaceState(null, "", new URL(url, location.href).href); if (url !== lastPv) { lastPv = url; window.kpPage?.(); } };
     if (st.view === "deals" && !st.q) { pv("?v=deals"); return renderDeals(); }
     if (st.view === "mine" && !st.q) { pv("?v=mine"); return renderMine(); }
     if (st.view === "home" && !st.q) renderNews();
@@ -400,7 +400,7 @@
           <span class="go">${lang === "vi" ? "Xem chi tiết →" : "詳しく見る →"}</span>
         </a>`).join("") + "</div>";
     }).join("");
-    history.replaceState(null, "", "?v=deals");
+    history.replaceState(null, "", new URL("?v=deals", location.href).href);
   }
 
   // ================= events
