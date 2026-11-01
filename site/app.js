@@ -32,7 +32,7 @@
   const mLink = (k, q) => { const [a, p, pc, pl, u] = MOSHIMO[k]; return `https://af.moshimo.com/af/c/click?a_id=${a}&p_id=${p}&pc_id=${pc}&pl_id=${pl}&url=${encodeURIComponent(u(q))}`; };
   function buyBox(it) {
     const q = buyQ(it);
-    return `<div class="buy"><span class="pr">PR</span><span>${T().buyNew}</span><a href="${mLink("rakuten", q)}" target="_blank" rel="sponsored nofollow noopener">楽天市場</a><a href="${mLink("yahoo", q)}" target="_blank" rel="sponsored nofollow noopener">Yahoo!ショッピング</a></div>`;
+    return `<div class="buy"><span class="pr">PR</span><span>${T().buyNew}</span><a href="${mLink("rakuten", q)}" target="_blank" rel="sponsored nofollow noopener">楽天</a><a href="${mLink("yahoo", q)}" target="_blank" rel="sponsored nofollow noopener">Yahoo!</a></div>`;
   }
   function affBox(cat) {
     const a = AFF[cat]; if (!a) return "";
