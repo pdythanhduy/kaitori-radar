@@ -223,6 +223,89 @@ So giá 9 tiệm lớn, cập nhật mỗi giờ: <a href="/vi/">kaitoriprice.co
     (out / "index.html").write_text(pv, encoding="utf-8")
     extra = [("/guide/phieu-co-dong/", "weekly")]
 
+    # ---------------------------------------------------------------- 5. Mẹo mua hàng giảm giá (VI) — rà soát 01/11/2026
+    body_tips = """
+<p>Tổng hợp các cách mua hàng rẻ hơn ở Nhật: sale online, điểm thưởng, phiếu cổ đông, trang tích điểm… dùng được khi mua đồ cho mình
+hoặc mua hàng để bán lại cho tiệm kaitori. <b>Thông tin rà soát ngày 01/11/2026</b>. Các sự kiện hay đổi điều kiện, nên luôn xem lại trang chính thức trước khi mua.</p>
+<nav class="toc"><b>Mục lục</b><ol><li><a href="#rakuten">Rakuten</a></li><li><a href="#yahoo">Yahoo!ショッピング</a></li><li><a href="#amazon">Amazon</a></li>
+<li><a href="#denki">Chuỗi điện máy</a></li><li><a href="#yutai">Phiếu cổ đông</a></li><li><a href="#pointsite">Trang tích điểm</a></li><li><a href="#phone">Điện thoại "1 yên"</a></li></ol></nav>
+
+<h2 id="rakuten">1. 🛒 Rakuten (楽天市場)</h2>
+<div class="tw"><table class="pt"><thead><tr><th>Sự kiện</th><th>Cách tính</th><th>Lưu ý</th></tr></thead><tbody>
+<tr><td>お買い物マラソン / スーパーSALE</td><td>Mua ở càng nhiều shop khác nhau thì điểm thưởng càng cao (tối đa khoảng 10 shop)</td><td>Có giới hạn điểm mỗi đợt (5.000 / 7.000 / 10.000 điểm tuỳ đợt), xem trên trang sự kiện</td></tr>
+<tr><td>Ngày 5 và 0 (5, 10, 15, 20, 25, 30)</td><td>Cộng thêm điểm khi trả bằng thẻ 楽天カード</td><td>Giới hạn khoảng 1.000 điểm/tháng</td></tr>
+<tr><td>SPU</td><td>Dùng càng nhiều dịch vụ Rakuten thì nhân điểm càng cao</td><td>Trang chính thức ghi tối đa 18,5 lần, giới hạn theo tháng</td></tr>
+</tbody></table></div>
+<p>💡 <b>Mẹo:</b> gom đồ định mua vào đợt マラソン rơi trúng ngày 5 hoặc 0. ⚠️ Từ 10/2025, ふるさと納税 qua Rakuten không còn được tính điểm マラソン / SPU.</p>
+
+<h2 id="yahoo">2. 🛒 Yahoo!ショッピング (PayPay)</h2>
+<ul class="tips">
+<li><b>Ngày 5, 15, 25:</b> +4% điểm PayPay (phải bấm đăng ký sự kiện trước). Từ 5/9/2026 giới hạn 2.000 điểm/người.</li>
+<li><b>LYPプレミアム</b> (508円/tháng): thêm +2% mỗi ngày.</li>
+<li>⚠️ <b>Ngày 25/11/2026 không có sự kiện ngày 5</b> vì trùng Black Friday. Khi có 超PayPay祭 thì các sự kiện thường hay tạm dừng.</li>
+</ul>
+
+<h2 id="amazon">3. 🛒 Amazon</h2>
+<ul class="tips">
+<li><b>Black Friday 2026:</b> chưa có ngày chính thức (các trang dự đoán khoảng 20–23/11 đến cuối tháng 11).</li>
+<li>Phải <b>bấm đăng ký nhận điểm</b> thì mới được cộng thêm. Mức cộng thêm giảm dần: năm 2023–24 là +2%, năm 2025 còn +1,5%.</li>
+</ul>
+
+<h2 id="denki">4. 🏬 Chuỗi điện máy (ヨドバシ / ビックカメラ)</h2>
+<ul class="tips">
+<li><b>ヨドバシ:</b> hoàn điểm cơ bản 10%, nhưng <b>hàng Apple (iPhone, iPad, Mac) chỉ 5%</b>. Thẻ ゴールドポイントカード・プラス được thêm điểm.</li>
+<li>Trả bằng thẻ tín dụng hãng khác mà không mở app tích điểm thì bị giảm điểm.</li>
+<li>Mức hoàn điểm của ビックカメラ hay thay đổi, nên hỏi tại quầy trước khi mua.</li>
+</ul>
+
+<h2 id="yutai">5. 🎟 Phiếu cổ đông (株主優待券)</h2>
+<p>Phiếu ビックカメラ, エディオン, ヤマダ, ASICS / Onitsuka Tiger mua lại trên ヤフオク / メルカリ để giảm giá.
+⚠️ Phiếu ノジマ chỉ chính chủ dùng được; phiếu ABCマート đã bỏ từ năm 2021. 👉 <a href="/guide/phieu-co-dong/">Xem bài chi tiết</a></p>
+
+<h2 id="pointsite">6. 💳 Trang tích điểm (ポイントサイト)</h2>
+<ul class="tips">
+<li>Vào Rakuten / Yahoo… <b>thông qua trang tích điểm</b> như ハピタス, モッピー thì được hoàn thêm khoảng 1%.</li>
+<li>⚠️ Không xoá cookie, không mở shop ở tab khác, không thoát giữa chừng khi đang mua, nếu không sẽ không được cộng điểm.</li>
+<li>Mức hoàn thay đổi liên tục, xem trên chính trang tích điểm.</li>
+</ul>
+
+<h2 id="phone">7. 📱 Điện thoại "1 yên" (一括1円)</h2>
+<ul class="tips">
+<li><b>Từ 27/12/2023:</b> giảm giá máy tối đa <b>44.000円</b>, kể cả mua máy không kèm hợp đồng (白ロム). Kiểu "一括1円" gần như không còn, chỉ còn "実質1円" (phải ký hợp đồng và trả lại máy sau một thời gian).</li>
+<li>Năm 2026 Bộ Nội vụ (総務省) đang xem xét lại các ưu đãi chuyển mạng, dự kiến có kết luận vào mùa thu 2026, chưa có quy định mới.</li>
+</ul>
+
+<h2>📅 Lịch mua gợi ý</h2>
+<ul class="tips">
+<li><b>Mua online:</b> chờ マラソン trùng ngày 5/0 (Rakuten) hoặc ngày 5 của Yahoo, và luôn vào qua trang tích điểm.</li>
+<li><b>Đồ điện máy:</b> dùng phiếu cổ đông ビックカメラ / エディオン, cộng thẻ tích điểm của cửa hàng.</li>
+<li><b>Tháng 11:</b> Black Friday (Amazon / Yahoo). Năm nay Yahoo không có ngày 25/11.</li>
+<li><b>Mua để bán kai:</b> so giá 9 tiệm trước khi bán 👉 <a href="/vi/">kaitoriprice.com/vi</a></li>
+</ul>
+<p><a href="https://www.facebook.com/groups/1118827834446963" target="_blank" rel="noopener">👥 Hỏi đáp trong nhóm Facebook "Săn Giá Kaitori Nhật Bản" →</a></p>
+<section><h2>Nguồn tham khảo</h2><ul class="small">
+<li><a href="https://event.rakuten.co.jp/campaign/point-up/everyday/point/" rel="nofollow noopener" target="_blank">楽天 SPU（公式）</a></li>
+<li><a href="https://www.r-zyunin.com/rakuten-tools/maximum-point" rel="nofollow noopener" target="_blank">楽天ポイント上限一覧</a></li>
+<li><a href="https://shopping.yahoo.co.jp/promotion/campaign/guide/" rel="nofollow noopener" target="_blank">Yahoo!ショッピング お得ガイド（公式）</a></li>
+<li><a href="https://appllio.com/yahoo-shopping-paypay-matsuri-check-list" rel="nofollow noopener" target="_blank">Yahoo!ショッピング 2026年10・11月キャンペーン</a></li>
+<li><a href="https://gori.me/amazon/amazon-sale/156809" rel="nofollow noopener" target="_blank">Amazonブラックフライデー2026 予想</a></li>
+<li><a href="https://pricey.jp/web/articles/4181" rel="nofollow noopener" target="_blank">ヨドバシ ポイント還元</a></li>
+<li><a href="https://pay-route.co.jp/article/?p=4884" rel="nofollow noopener" target="_blank">ポイントサイト経由の注意点</a></li>
+<li><a href="https://k-tai.watch.impress.co.jp/docs/news/1544945.html" rel="nofollow noopener" target="_blank">スマホ割引 原則4万円上限・白ロム割規制（ケータイWatch）</a></li>
+<li><a href="https://selectra.jp/telecom/news/mnp-restrictions" rel="nofollow noopener" target="_blank">MNP特典規制の見直し 2026</a></li>
+</ul></section>"""
+    out = site / "guide" / "meo-mua-re"
+    out.mkdir(parents=True, exist_ok=True)
+    pv = page("7 cách mua hàng giảm giá ở Nhật: Rakuten, Yahoo, Amazon, điện máy, phiếu cổ đông | Kaitori Price",
+              "Rà soát 01/11/2026: lịch sale Rakuten, ngày 5 Yahoo, Black Friday Amazon, điểm ヨドバシ, phiếu cổ đông, trang tích điểm, quy định điện thoại 1 yên.",
+              "/guide/meo-mua-re/",
+              f'<nav class="bc"><a href="/vi/">Trang chủ</a> › <a href="/guide/vi/">Mẹo & Hướng dẫn</a> › Mua hàng giảm giá</nav><article class="guide" lang="vi"><h1>🛒 7 cách mua hàng giảm giá ở Nhật</h1>{body_tips}</article>',
+              [], updated)
+    pv = pv.replace('<html lang="ja">', '<html lang="vi">', 1).replace(
+        '<a class="hd-cta" href="/">全商品を比較 →</a>', '<a class="hd-cta" href="/vi/">So giá 9 tiệm →</a>', 1)
+    (out / "index.html").write_text(pv, encoding="utf-8")
+    extra.append(("/guide/meo-mua-re/", "weekly"))
+
     # ---------------------------------------------------------------- trang tổng hợp (JA /guide/, VI /guide/vi/)
     # (path, icon, tiêu đề VI, mô tả VI, có bản tiếng Việt?) — nhóm theo mục để dễ tìm
     SECTIONS = [
@@ -252,6 +335,9 @@ So giá 9 tiệm lớn, cập nhật mỗi giờ: <a href="/vi/">kaitoriprice.co
                 vi_cards.append(card(p, m[1], m[2], m[3], '<span class="gl">日本語</span>'))
         if ja_cards:
             ja_html.append(f'<section class="gsec"><h2>{ja_t}</h2><div class="ggrid">{"".join(ja_cards)}</div></section>')
+        if sid == "buy":  # bài chỉ có tiếng Việt
+            vi_cards.insert(0, card("/guide/meo-mua-re/", "🛒", "7 cách mua hàng giảm giá ở Nhật",
+                                    "Rakuten, Yahoo, Amazon, điểm điện máy, phiếu cổ đông, trang tích điểm, điện thoại 1 yên"))
         if vi_cards:
             vi_html.append(f'<section class="gsec"><h2>{vi_t}</h2><div class="ggrid">{"".join(vi_cards)}</div></section>')
     idx_body = (f'<nav class="bc"><a href="/">トップ</a> › 買取ガイド</nav><h1>📚 買取ガイド</h1>'

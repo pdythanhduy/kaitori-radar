@@ -50,3 +50,4 @@ h2{font-size:1.02rem;margin:1.6rem 0 .6rem}
 .gi{font-size:1.6rem;line-height:1}.gt{flex:1;display:flex;flex-direction:column;gap:.15rem}.gt b{font-size:.95rem}.gt small{color:#64748b;font-size:.8rem;line-height:1.45}
 .ga{color:#94a3b8;font-weight:700}.gl{font-size:.65rem;background:#f1f5f9;color:#64748b;border-radius:4px;padding:.05rem .35rem;white-space:nowrap}
 .lead{color:#475569}
+.toc{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:.6rem .9rem;margin:1rem 0;font-size:.88rem}.toc ol{margin:.3rem 0 0;padding-left:1.2rem;columns:2}
