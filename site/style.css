@@ -393,3 +393,7 @@ a.sh:hover .go{background:var(--fg);color:#fff}
 .lang{display:inline-flex;padding:2px;gap:2px;border:1px solid #475569;border-radius:999px;background:rgba(255,255,255,.04)}
 .lang span{padding:.18rem .5rem;border-radius:999px;font-size:.72rem;font-weight:800;letter-spacing:.03em;color:#94a3b8;line-height:1.2}
 .lang span.on{background:#fff;color:#0f172a}
+
+.c-act{display:flex;gap:.3rem;align-items:flex-start;flex:none}
+.shr{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:999px;border:1px solid var(--line,#e2e8f0);background:var(--card,#fff);color:#475569;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.shr:hover{color:#0f172a;border-color:#94a3b8}

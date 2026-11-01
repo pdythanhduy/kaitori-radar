@@ -167,7 +167,7 @@
     const id = idOf(it); REG.set(id, it);
     const fav = mine.watch[id] ? "on" : "";
     return `<article class="card">
-      <div class="c-top"><div><div class="c-name">${esc(it.name)}</div><div class="c-sub">${ICON[it.cat] || ""} ${esc(tag || t.cats[it.cat] || "")}・${t.shopsN(it.n_shops)}</div></div>${spark(it)}<button class="fav ${fav}" data-id="${esc(id)}" aria-label="${esc(t.watch)}" title="${esc(t.watch)}">${fav ? "♥" : "♡"}</button></div>
+      <div class="c-top"><div><div class="c-name">${esc(it.name)}</div><div class="c-sub">${ICON[it.cat] || ""} ${esc(tag || t.cats[it.cat] || "")}・${t.shopsN(it.n_shops)}</div></div>${spark(it)}<div class="c-act"><button class="shr" data-id="${esc(id)}" aria-label="${esc(t.share)}" title="${esc(t.share)}"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M12 3v12"/><path d="m7 8 5-5 5 5"/></svg></button><button class="fav ${fav}" data-id="${esc(id)}" aria-label="${esc(t.watch)}" title="${esc(t.watch)}">${fav ? "♥" : "♡"}</button></div></div>
       <div class="best"><span class="best-p">${yen(it.best)}</span><span class="best-s ${it.n_shops > 1 ? "" : "one"}">${it.n_shops > 1 ? t.best + "：" : ""}${SH[it.best_shop]?.name || ""}</span>${chg}</div>
       ${boostTag(it)}${diff}<div class="shops">${rows}</div>
       ${affBox(it.cat)}${buyBox(it)}
@@ -391,6 +391,7 @@
     updMineBadge(0);
   }
   document.addEventListener("click", (e) => {
+    const sh = e.target.closest(".shr"); if (sh) { e.preventDefault(); return shareItem(REG.get(sh.dataset.id)); }
     const f = e.target.closest(".fav"); if (f) { e.preventDefault(); return toggleWatch(f.dataset.id); }
     const k = e.target.closest(".stk"); if (k) { e.preventDefault(); return addStock(k.dataset.id, k); }
     const d = e.target.closest(".sdel"); if (d) { delete mine.stock[d.dataset.id]; saveMine(); return renderMine(); }
@@ -556,6 +557,15 @@
       show(`<span>${t.a2hsText}</span><button class="a2hs-b">${t.a2hsBtn}</button>`);
       box.querySelector(".a2hs-b").onclick = async () => { deferred.prompt(); const c = await deferred.userChoice.catch(() => ({})); window.kpTrack?.("a2hs_" + (c.outcome || "unknown"), { platform: "android" }); close(); };
     });
+  }
+  // chia sẻ 1 sản phẩm: link mở đúng món (theo ngôn ngữ đang dùng) + tên, giá cao nhất, tiệm
+  async function shareItem(it) {
+    if (!it) return;
+    const t = T(), url = location.origin + (lang === "vi" ? "/vi/" : "/") + "?q=" + encodeURIComponent(it.name);
+    const text = t.shareText(it.name, yen(it.best), SH[it.best_shop]?.name || "");
+    window.kpTrack?.("share", { item: it.name });
+    if (navigator.share) { try { await navigator.share({ title: it.name, text, url }); return; } catch (err) { if (err && err.name === "AbortError") return; } }
+    try { await navigator.clipboard.writeText(text + "\n" + url); toast(t.linkCopied); } catch { toast(url); }
   }
   function toast(msg) {
     let el = $("#toast"); if (!el) { el = document.createElement("div"); el.id = "toast"; document.body.appendChild(el); }
