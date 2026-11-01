@@ -15,7 +15,7 @@
   const ICON = { phone: "📱", tablet: "📲", game: "🎮", card: "🃏", pc: "💻", camera: "📷", audio: "🎧", appliance: "🔌", watch: "⌚", hobby: "🧸", other: "📦" };
   const PRICE = [[0, Infinity], [0, 10000], [10000, 50000], [50000, 200000], [200000, Infinity]];
   const st = { view: "home", cat: null, q: "", f: { cat: new Set(), brand: new Set(), series: new Set(), cap: new Set(), shop: new Set() },
-    price: 0, multi: false, gap: false, sort: "new", layout: localStorage.getItem("layout2") || "card" };
+    price: 0, multi: false, gap: false, sort: "rec", layout: localStorage.getItem("layout2") || "card" };
 
   const promos = await fetch("promos.json" + bust).then((r) => r.json()).catch(() => ({ groups: [], inline: {} }));
   const AFF = promos.inline || {};
@@ -229,7 +229,7 @@
     if (entries.length <= limit + 2) limit = entries.length;  // chỉ ẩn khi dư ≥3 lựa chọn, tránh "Xem thêm 1"
     const rows = entries.map(([v, n], i) => `<label class="fo ${i >= limit && !open ? "hid" : ""}"><input type="checkbox" data-k="${key}" value="${esc(v)}" ${st.f[key].has(v) ? "checked" : ""}><span>${esc(labels ? labels(v) : v)}</span><em>${n}</em></label>`).join("");
     const more = entries.length > limit ? `<button class="fmore" data-k="${key}">${open ? T().less : T().moreN(entries.length - limit)}</button>` : "";
-    return `<div class="fg"><div class="fg-t">${title}</div>${rows}${more}</div>`;
+    return `<div class="fg" data-fk="${key}"><div class="fg-t">${title}</div>${rows}${more}</div>`;
   }
   function renderFacets() {
     const t = T();
@@ -240,8 +240,8 @@
     h += facetBlock("series", t.fSeries, sc, { sort: st.f.brand.size ? FACETS.seriesSort : (a, b) => (sc.get(b) || 0) - (sc.get(a) || 0), limit: 12 });
     h += facetBlock("cap", t.fCap, counts("cap", (i) => i._f.cap), { sort: FACETS.capSort });
     h += facetBlock("shop", t.fShop, counts("shop", (i) => Object.keys(i.prices)), { labels: (s) => SH[s]?.name || s, limit: 12 });
-    h += `<div class="fg"><div class="fg-t">${t.fPrice}</div>${t.price.map((p, i) => `<label class="fo"><input type="radio" name="pr" data-p="${i}" ${st.price === i ? "checked" : ""}><span>${p}</span></label>`).join("")}</div>`;
-    h += `<div class="fg"><div class="fg-t">${t.fMore}</div>
+    h += `<div class="fg" data-fk="price"><div class="fg-t">${t.fPrice}</div>${t.price.map((p, i) => `<label class="fo"><input type="radio" name="pr" data-p="${i}" ${st.price === i ? "checked" : ""}><span>${p}</span></label>`).join("")}</div>`;
+    h += `<div class="fg" data-fk="more"><div class="fg-t">${t.fMore}</div>
       <label class="fo"><input type="checkbox" id="multi" ${st.multi ? "checked" : ""}><span>${t.fMulti}</span></label>
       <label class="fo"><input type="checkbox" id="gap" ${st.gap ? "checked" : ""}><span>${t.fGap}</span></label></div>`;
     const side = $("#side"), keep = side.scrollTop;  // giữ vị trí cuộn của bộ lọc khi tick → không bị nhảy lên đầu
@@ -261,23 +261,17 @@
   }
   const SLIDERS = `<svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 4h7M13 4h1M2 12h1M7 12h7"/><circle cx="11" cy="4" r="2"/><circle cx="5" cy="12" r="2"/></svg>`;
   function renderQuick() {
-    const t = T(), q = [], n = st.price + st.multi + st.gap + Object.values(st.f).reduce((a, x) => a + x.size, 0);
-    q.push(`<button class="qc qf ${n ? "has" : ""}" data-open="1">${SLIDERS}<span>${t.filterShort}</span>${n ? `<b>${n}</b>` : ""}</button>`);
-    // đang chọn → chip đậm có ✕
-    const lab = { cat: (c) => t.cats[c], shop: (s) => SH[s]?.name || s };
-    for (const k of ["brand", "series", "cap", "shop", "cat"]) for (const v of st.f[k]) q.push(`<button class="qc on" data-k="${k}" data-v="${esc(v)}">${esc(lab[k] ? lab[k](v) : v)}<i>✕</i></button>`);
-    if (st.multi) q.push(`<button class="qc on" data-k="multi">${t.qMulti}<i>✕</i></button>`);
-    if (st.gap) q.push(`<button class="qc on" data-k="gap">${t.fGap}<i>✕</i></button>`);
-    if (st.price) q.push(`<button class="qc on" data-k="price">${t.price[st.price]}<i>✕</i></button>`);
-    // gợi ý: hãng → dòng máy (khi đã chọn hãng) → dung lượng
-    const top = (key, get, k) => [...counts(key, get).entries()].filter(([v]) => v && v !== "Khác" && !st.f[key].has(v)).sort((a, b) => b[1] - a[1]).slice(0, k);
-    const sug = [];
-    if (!st.f.brand.size) sug.push(...top("brand", (i) => i._f.brand, 5).map(([v]) => ["brand", v]));
-    else sug.push(...top("series", (i) => i._f.series, 5).map(([v]) => ["series", v]));
-    if (!st.f.cap.size) sug.push(...top("cap", (i) => i._f.cap, 4).sort((a, b) => FACETS.capSort(a[0], b[0])).map(([v]) => ["cap", v]));
-    for (const [k, v] of sug) q.push(`<button class="qc" data-k="${k}" data-v="${esc(v)}" data-add="1">${esc(v)}</button>`);
-    if (!st.multi) q.push(`<button class="qc" data-k="multi" data-add="1">${t.qMulti}</button>`);
-    q.push(`<button class="qc more" data-open="1">${t.qAll} ›</button>`);
+    // điện thoại: dãy nút theo LOẠI bộ lọc (kiểu Amazon/Rakuten) — bấm nút nào mở đúng bộ lọc đó
+    const t = T(), n = st.price + st.multi + st.gap + Object.values(st.f).reduce((a, x) => a + x.size, 0);
+    const q = [`<button class="qc qf ${n ? "has" : ""}" data-open="all">${SLIDERS}<span>${t.filterShort}</span>${n ? `<b>${n}</b>` : ""}</button>`];
+    const lab = (k, set) => { const v = [...set]; return v.length ? (v.length === 1 ? (k === "brand" && v[0] === "Khác" ? t.otherB : v[0]) : `${v[0]} +${v.length - 1}`) : ""; };
+    const chip = (key, name, has) => { const v = has || ""; return `<button class="qc dd ${v ? "on" : ""}" data-open="${key}">${esc(v || name)}<i>▾</i></button>`; };
+    if (counts("brand", (i) => i._f.brand).size > 1 || st.f.brand.size) q.push(chip("brand", t.qBrand, lab("brand", st.f.brand)));
+    if (counts("series", (i) => i._f.series).size > 1 || st.f.series.size) q.push(chip("series", t.qSeries, lab("series", st.f.series)));
+    if (counts("cap", (i) => i._f.cap).size > 1 || st.f.cap.size) q.push(chip("cap", t.qCap, lab("cap", st.f.cap)));
+    q.push(chip("price", t.qPrice, st.price ? t.price[st.price] : ""));
+    q.push(`<button class="qc tg ${st.multi ? "on" : ""}" data-k="multi" ${st.multi ? "" : 'data-add="1"'}>${st.multi ? "✓ " : ""}${t.qMulti}</button>`);
+    if (st.f.shop.size) q.push(chip("shop", t.fShop, lab("shop", new Set([...st.f.shop].map((x) => SH[x]?.name || x)))));
     $("#quick").innerHTML = q.join("");
   }
   function sortItems(items) {
@@ -302,6 +296,7 @@
     view = sortItems(base.filter((i) => passes(i)));
     $("#hint").textContent = $("#mhint").textContent = st.q ? T().hintQ(st.q, view.length.toLocaleString()) : T().hintCat(T().cats[st.cat], view.length.toLocaleString(), CATS[st.cat]?.multi?.toLocaleString() || 0);
     renderFacets(); renderActive(); renderQuick(); paint(true);
+    if (document.body.classList.contains("side-open")) updApply();
   }
   async function render() {
     const listMode = st.view === "cat" || !!st.q;
@@ -492,7 +487,7 @@
   });
   $("#quick").addEventListener("click", (e) => {
     const b = e.target.closest(".qc"); if (!b) return;
-    if (b.dataset.open) return openSide(true);
+    if (b.dataset.open) return openSide(true, b.dataset.open === "all" ? "" : b.dataset.open);
     const k = b.dataset.k, add = !!b.dataset.add;
     if (k === "multi") st.multi = add; else if (k === "gap") st.gap = add; else if (k === "price") st.price = 0;
     else { add ? st.f[k].add(b.dataset.v) : st.f[k].delete(b.dataset.v); if (k === "brand" && !add) st.f.series.clear(); }
@@ -513,7 +508,14 @@
     st.layout = b.dataset.v; localStorage.setItem("layout2", st.layout);
     document.querySelectorAll("#vtog button").forEach((x) => x.classList.toggle("on", x === b)); paint(true);
   });
-  const openSide = (o) => { document.body.classList.toggle("side-open", o); };
+  // focus: chỉ hiện 1 nhóm bộ lọc (hãng / dòng máy / dung lượng / giá); rỗng = tất cả
+  const openSide = (o, focus = "") => {
+    document.body.classList.toggle("side-open", o);
+    const side = $("#side");
+    if (o && focus) side.dataset.focus = focus; else delete side.dataset.focus;
+    if (o) { side.scrollTop = 0; updApply(); }
+  };
+  const updApply = () => { $("#apply").textContent = T().applyN(view.length); };
   $("#fbtn").addEventListener("click", () => openSide(true));
   $("#sideClose").addEventListener("click", () => openSide(false));
   $("#apply").addEventListener("click", () => {

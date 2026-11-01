@@ -400,3 +400,15 @@ a.sh:hover .go{background:var(--fg);color:#fff}
 
 .msrp{font-size:.78rem;border-radius:8px;padding:.25rem .55rem;margin:.2rem 0 .35rem;display:inline-block}
 .msrp.up{background:#f0fdf4;color:#166534;border:1px solid #bbf7d0}.msrp.dn{background:#fef2f2;color:#991b1b;border:1px solid #fecaca}
+
+/* điện thoại: nút theo loại bộ lọc + mở đúng 1 nhóm */
+.qc.dd i{font-style:normal;font-size:.65rem;margin-left:.25rem;opacity:.7}
+.qc.dd.on{background:var(--fg,#0f172a);color:#fff;border-color:var(--fg,#0f172a)}
+.qc.tg.on{background:#ecfdf5;color:#065f46;border-color:#6ee7b7}
+@media(max-width:900px){
+ #side[data-focus] .fg{display:none}
+ #side[data-focus="brand"] .fg[data-fk="brand"],#side[data-focus="series"] .fg[data-fk="series"],#side[data-focus="cap"] .fg[data-fk="cap"],
+ #side[data-focus="price"] .fg[data-fk="price"],#side[data-focus="shop"] .fg[data-fk="shop"]{display:block}
+ #side[data-focus] .fg .fo.hid{display:flex}
+ #side[data-focus] .fg .fmore{display:none}
+}
