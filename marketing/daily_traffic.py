@@ -54,7 +54,7 @@ Q = """query($a:String!,$f:AccountRumPageloadEventsAdaptiveGroupsFilter_InputObj
 
 
 def day(tag: str, d0: datetime) -> dict:
-    f = {"siteTag": tag, "bot": 0, "datetime_geq": d0.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+    f = {"requestHost": HOST, "bot": 0, "datetime_geq": d0.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
          "datetime_lt": (d0 + timedelta(days=1)).astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")}
     r = requests.post("https://api.cloudflare.com/client/v4/graphql", headers=H, timeout=60,
                       json={"query": Q, "variables": {"a": ACCOUNT, "f": f}}).json()
@@ -89,7 +89,7 @@ def pct(a, b):
 
 
 def report() -> str:
-    tag = site_tag()
+    tag = ""
     today = datetime.now(JST).replace(hour=0, minute=0, second=0, microsecond=0)
     y, p = day(tag, today - timedelta(days=1)), day(tag, today - timedelta(days=2))
     dname = (today - timedelta(days=1)).strftime("%d/%m")
