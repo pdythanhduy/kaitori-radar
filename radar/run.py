@@ -74,7 +74,8 @@ def load_rows():
     for r in latest.values():
         r["cat"] = refine_cat(r["cat"], r["name"])
         r["key"] = make_key(r["cat"], r["name"])  # luôn tính lại theo luật ghép mới nhất
-    return unify_card_sets(list(latest.values()))
+    # bỏ giá rác (tiệm ghi 1円 / 0円 làm chỗ trống) — nếu không sẽ thành món riêng 'giá 1円'
+    return unify_card_sets([r for r in latest.values() if (r.get("price") or 0) >= 100])
 
 
 def unify_card_sets(rows):
