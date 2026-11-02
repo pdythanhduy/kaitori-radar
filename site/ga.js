@@ -8,6 +8,13 @@
     if (window.gtag) window.gtag("event", "page_view", { page_location: location.href, page_title: document.title });
   };
   var CF_TOKEN = "0ed70a31538b456293c208bf5f799cfb";  // Cloudflare Web Analytics (mã công khai, không cookie)
+  // chủ web: mở kaitoriprice.com/?me=1 một lần trên mỗi máy → máy đó không bị đếm nữa (?me=0 để bật lại)
+  try {
+    var me = new URLSearchParams(location.search).get("me");
+    if (me === "1") { localStorage.setItem("kp_me", "1"); alert("✓ Máy này sẽ không bị đếm vào lượt truy cập nữa"); }
+    if (me === "0") localStorage.removeItem("kp_me");
+    if (localStorage.getItem("kp_me") === "1") CF_TOKEN = "";
+  } catch (e) {}
   if (CF_TOKEN && location.hostname === "kaitoriprice.com") {
     var cf = document.createElement("script");
     cf.defer = true; cf.src = "https://static.cloudflareinsights.com/beacon.min.js";
