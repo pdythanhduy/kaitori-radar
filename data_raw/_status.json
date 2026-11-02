@@ -1,128 +1,128 @@
 {
  "mobile_ichiban:2": {
   "ok": true,
-  "n": 1654,
-  "ts": "2026-11-02 10:25"
+  "n": 1653,
+  "ts": "2026-11-02 11:12"
  },
  "morimori:01": {
   "ok": true,
   "n": 157,
-  "ts": "2026-11-02 10:03"
+  "ts": "2026-11-02 10:47"
  },
  "morimori:02": {
   "ok": true,
   "n": 1,
-  "ts": "2026-11-02 10:03"
+  "ts": "2026-11-02 10:48"
  },
  "morimori:03": {
   "ok": true,
   "n": 527,
-  "ts": "2026-11-02 10:03"
+  "ts": "2026-11-02 10:48"
  },
  "morimori:04": {
   "ok": true,
   "n": 344,
-  "ts": "2026-11-02 10:05"
+  "ts": "2026-11-02 10:49"
  },
  "morimori:05": {
-  "ok": false,
-  "err": "502 Server Error: Bad Gateway for url: https://www.morimori-kaitori.jp/category/05?page=6",
-  "ts": "2026-11-02 10:05"
+  "ok": true,
+  "n": 694,
+  "ts": "2026-11-02 10:49"
  },
  "morimori:06": {
-  "ok": false,
-  "err": "502 Server Error: Bad Gateway for url: https://www.morimori-kaitori.jp/category/06",
-  "ts": "2026-11-02 10:06"
+  "ok": true,
+  "n": 324,
+  "ts": "2026-11-02 10:50"
  },
  "morimori:07": {
-  "ok": false,
-  "err": "502 Server Error: Bad Gateway for url: https://www.morimori-kaitori.jp/category/07",
-  "ts": "2026-11-02 10:06"
+  "ok": true,
+  "n": 139,
+  "ts": "2026-11-02 10:51"
  },
  "morimori:08": {
-  "ok": false,
-  "err": "403 Client Error: Forbidden for url: https://www.morimori-kaitori.jp/category/08",
-  "ts": "2026-11-02 10:06"
+  "ok": true,
+  "n": 226,
+  "ts": "2026-11-02 10:51"
  },
  "morimori:09": {
-  "ok": false,
-  "err": "403 Client Error: Forbidden for url: https://www.morimori-kaitori.jp/category/09",
-  "ts": "2026-11-02 10:06"
+  "ok": true,
+  "n": 28,
+  "ts": "2026-11-02 10:51"
  },
  "morimori:10": {
-  "ok": false,
-  "err": "502 Server Error: Bad Gateway for url: https://www.morimori-kaitori.jp/category/10",
-  "ts": "2026-11-02 10:06"
+  "ok": true,
+  "n": 0,
+  "ts": "2026-11-02 10:51"
  },
  "morimori:12": {
-  "ok": false,
-  "err": "403 Client Error: Forbidden for url: https://www.morimori-kaitori.jp/category/12",
-  "ts": "2026-11-02 10:06"
+  "ok": true,
+  "n": 0,
+  "ts": "2026-11-02 10:51"
  },
  "morimori:13": {
-  "ok": false,
-  "err": "403 Client Error: Forbidden for url: https://www.morimori-kaitori.jp/category/13",
-  "ts": "2026-11-02 10:06"
+  "ok": true,
+  "n": 2,
+  "ts": "2026-11-02 10:51"
  },
  "morimori:14": {
-  "ok": false,
-  "err": "403 Client Error: Forbidden for url: https://www.morimori-kaitori.jp/category/14",
-  "ts": "2026-11-02 10:06"
+  "ok": true,
+  "n": 126,
+  "ts": "2026-11-02 10:51"
  },
  "morimori:15": {
-  "ok": false,
-  "err": "403 Client Error: Forbidden for url: https://www.morimori-kaitori.jp/category/15",
-  "ts": "2026-11-02 10:06"
+  "ok": true,
+  "n": 119,
+  "ts": "2026-11-02 10:52"
  },
  "morimori:16": {
-  "ok": false,
-  "err": "403 Client Error: Forbidden for url: https://www.morimori-kaitori.jp/category/16",
-  "ts": "2026-11-02 10:06"
+  "ok": true,
+  "n": 34,
+  "ts": "2026-11-02 10:52"
  },
  "morimori:18": {
-  "ok": false,
-  "err": "403 Client Error: Forbidden for url: https://www.morimori-kaitori.jp/category/18",
-  "ts": "2026-11-02 10:06"
+  "ok": true,
+  "n": 4,
+  "ts": "2026-11-02 10:52"
  },
  "morimori:19": {
-  "ok": false,
-  "err": "403 Client Error: Forbidden for url: https://www.morimori-kaitori.jp/category/19",
-  "ts": "2026-11-02 10:06"
+  "ok": true,
+  "n": 152,
+  "ts": "2026-11-02 10:52"
  },
  "morimori:24": {
-  "ok": false,
-  "err": "403 Client Error: Forbidden for url: https://www.morimori-kaitori.jp/category/24",
-  "ts": "2026-11-02 10:06"
+  "ok": true,
+  "n": 279,
+  "ts": "2026-11-02 10:52"
  },
  "morimori:27": {
-  "ok": false,
-  "err": "403 Client Error: Forbidden for url: https://www.morimori-kaitori.jp/category/27",
-  "ts": "2026-11-02 10:06"
+  "ok": true,
+  "n": 0,
+  "ts": "2026-11-02 10:52"
  },
  "morimori:31": {
   "ok": true,
   "n": 23,
-  "ts": "2026-11-02 10:06"
+  "ts": "2026-11-02 10:53"
  },
  "morimori:99": {
   "ok": true,
   "n": 338,
-  "ts": "2026-11-02 10:06"
+  "ts": "2026-11-02 10:53"
  },
  "mobile_ichiban:1": {
   "ok": true,
   "n": 43,
-  "ts": "2026-11-02 10:41"
+  "ts": "2026-11-02 11:11"
  },
  "mobile_ichiban:3": {
   "ok": true,
   "n": 49,
-  "ts": "2026-11-02 10:42"
+  "ts": "2026-11-02 11:15"
  },
  "homura:box": {
   "ok": true,
   "n": 100,
-  "ts": "2026-11-02 10:42"
+  "ts": "2026-11-02 11:17"
  },
  "morimori:0301": {
   "ok": true,
@@ -152,7 +152,7 @@
  "rudeya:full": {
   "ok": true,
   "n": 3341,
-  "ts": "2026-11-02 10:07"
+  "ts": "2026-11-02 10:53"
  },
  "rudeya:hot": {
   "ok": true,
@@ -162,22 +162,22 @@
  "panda:full": {
   "ok": true,
   "n": 874,
-  "ts": "2026-11-02 10:14"
+  "ts": "2026-11-02 11:02"
  },
  "guestmobile:full": {
   "ok": true,
   "n": 1481,
-  "ts": "2026-11-02 10:20"
+  "ts": "2026-11-02 11:07"
  },
  "toban:full": {
   "ok": true,
-  "n": 1206,
-  "ts": "2026-11-02 10:21"
+  "n": 1207,
+  "ts": "2026-11-02 11:08"
  },
  "keitaigod:full": {
   "ok": true,
   "n": 2573,
-  "ts": "2026-11-02 10:21"
+  "ts": "2026-11-02 11:09"
  },
  "panda:hot": {
   "ok": true,
@@ -207,6 +207,6 @@
  "ichome:full": {
   "ok": true,
   "n": 1795,
-  "ts": "2026-11-02 10:28"
+  "ts": "2026-11-02 11:15"
  }
 }
