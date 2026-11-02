@@ -23,6 +23,20 @@
      }
     },
     {
+     "name": "ワッピー iPhone買取",
+     "url": "",
+     "affiliate": true,
+     "_note": "Link affiliate Rentracks (レントラックス) — dán vào url sau khi được duyệt. 1.320円/giao dịch.",
+     "badge": {
+      "vi": "Trả góp chưa xong vẫn bán được",
+      "ja": "分割支払い中もOK"
+     },
+     "desc": {
+      "vi": "Bán iPhone qua bưu điện, máy còn trả góp vẫn nhận, nhận tiền trong ngày.",
+      "ja": "iPhoneの宅配買取。分割中も買取・即日現金化。"
+     }
+    },
+    {
      "name": "ゲーム買取ブラザーズ",
      "url": "https://px.a8.net/svt/ejp?a8mat=4BGAUV+276O8I+3V2O+NVHCY",
      "px": "https://www16.a8.net/0.gif?a8mat=4BGAUV+276O8I+3V2O+NVHCY",
@@ -393,5 +407,12 @@
    "px": "https://www15.a8.net/0.gif"
   }
  },
- "_huong_dan_inline": "inline: link affiliate hiện trong thẻ sản phẩm theo nhóm hàng (phone/game/camera/pc/hobby/tablet/audio/appliance/watch/card). a8mat lấy ở A8 → 広告リンク作成 (テキスト). px = ảnh 1x1 đo lượt hiển thị của A8."
+ "_huong_dan_inline": "inline: link affiliate hiện trong thẻ sản phẩm theo nhóm hàng (phone/game/camera/pc/hobby/tablet/audio/appliance/watch/card). a8mat lấy ở A8 → 広告リンク作成 (テキスト). px = ảnh 1x1 đo lượt hiển thị của A8.",
+ "_huong_dan_ref": "ref: mã giới thiệu từng tiệm. Điền code (森森 = ユーザーID trong マイページ) là web tự hiện ở dòng giá tiệm đó + trang Ưu đãi. Để rỗng = ẩn.",
+ "ref": {
+  "morimori": {
+   "code": "75798",
+   "bonus": 3000
+  }
+ }
 }

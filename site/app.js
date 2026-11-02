@@ -19,6 +19,10 @@
 
   const promos = await fetch("promos.json" + bust).then((r) => r.json()).catch(() => ({ groups: [], inline: {} }));
   const AFF = promos.inline || {};
+  // mã giới thiệu tiệm (promos.json → ref): hiện ở dòng giá tiệm đó + thẻ ở trang Ưu đãi
+  const REF = Object.fromEntries(Object.entries(promos.ref || {}).filter(([, r]) => r && r.code));
+  const refText = (sid) => { const r = REF[sid]; if (!r) return "";
+    return lang === "vi" ? `🎁 Mã giới thiệu ${r.code}: +${r.bonus.toLocaleString()}円 khi đăng ký` : `🎁 紹介コード ${r.code} で${r.bonus.toLocaleString()}円分クーポン`; };
   const pxSeen = new Set();
   function pixel(src) {  // ảnh 1x1 đo lượt hiển thị A8 — mỗi chương trình 1 lần/trang
     if (!src || pxSeen.has(src)) return;
@@ -147,7 +151,7 @@
       const lst = SH[sid]?.list, nm = SH[sid]?.name || sid;
       // cả dòng là 1 link sang trang tiệm (có ↗ ở cuối để người dùng biết bấm được)
       return `<a class="sh ${i === 0 && shops.length > 1 ? "top" : ""} ${lst ? "lst" : ""}" href="${esc(lst ? lstUrl(p, it) : p.url)}" target="_blank" rel="noopener nofollow"${lst ? ` data-copy="${esc(p.n || it.name)}" title="${esc(t.listTip)}"` : ""}>`
-        + `<span class="sn"><b>${nm}</b>${lst ? `<i class="sq">${t.searchTag}</i>` : ""}${extra}</span><span class="p">${yen(p.price)}</span><span class="go" aria-hidden="true">↗</span></a>`;
+        + `<span class="sn"><b>${nm}</b>${lst ? `<i class="sq">${t.searchTag}</i>` : ""}${extra}${REF[sid] ? `<i class="ref">${esc(refText(sid))}</i>` : ""}</span><span class="p">${yen(p.price)}</span><span class="go" aria-hidden="true">↗</span></a>`;
     }).join("");
   }
   // 🍎 so với giá niêm yết Apple (chỉ đời Apple đang bán: iPhone 18 / Duo)
@@ -448,6 +452,7 @@
           <span class="pr">${x.affiliate ? "PR" : "LINK"}</span>
           ${x.badge ? `<span class="badge">${esc(x.badge[lang] || x.badge.vi)}</span>` : ""}
           <b>${esc(x.name)}</b><span>${esc((x.desc && (x.desc[lang] || x.desc.vi)) || "")}</span>
+          ${Object.entries(SH).some(([sid, s]) => s.name === x.name && REF[sid]) ? `<span class="ref">${esc(refText(Object.keys(SH).find((sid) => SH[sid].name === x.name)))}</span>` : ""}
           <span class="go">${lang === "vi" ? "Xem chi tiết →" : "詳しく見る →"}</span>
         </a>`).join("") + "</div>";
     }).join("");

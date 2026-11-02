@@ -95,6 +95,7 @@ button,select,input{font:inherit}
 .sh .p{font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
 .sh.top .p{color:var(--a)}
 .sh .nt{font-size:.7rem;color:var(--muted);margin-left:.3rem}
+.sh .ref,.deal-card .ref{display:block;font-size:.7rem;font-style:normal;font-weight:700;color:#b45309;margin-top:.15rem}
 .calc{display:flex;align-items:center;gap:.4rem;font-size:.78rem;color:var(--muted)}
 .calc input{width:92px;border:1px solid var(--line);border-radius:7px;padding:.25rem .45rem;font-size:.82rem;background:var(--bg)}
 .calc b{font-size:.86rem}

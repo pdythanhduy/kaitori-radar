@@ -1,10 +1,14 @@
 # Nhật ký bình luận Facebook (trang Nhật Bản 24H)
 
-Mỗi dòng: ngày giờ | nhóm | bài (link hoặc tóm tắt) | nội dung tóm tắt
-Dùng để: đếm số bình luận/ngày (tối đa 8) và không bình luận trùng bài.
+Mỗi dòng: ngày | giờ (JST, HH:MM) | nhóm | bài (link hoặc tóm tắt) | nội dung tóm tắt
+Ví dụ:   2026-11-03 | 14:30 | 32K (807826924656140) | permalink/123... | so giá kai
+Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa các bình luận và không bình luận trùng bài.
+(Các dòng cũ không ghi giờ được để `--:--`.)
 
-2026-11-02 | 53K (713324666776820) | 18PM cắt lỗ Tokyo, posts/1600479134728031 | so giá kai
-2026-11-02 | 32K (807826924656140) | Embee9806 18prm 512 đỏ Osaka | tiệm 森森 なんば / モバイル一番 日本橋
-2026-11-02 | 32K (807826924656140) | permalink/1447609897344503 cần mua 18prm trắng Yamato | giá hợp lý 22,5–23,5 man
-2026-11-02 | 32K (807826924656140) | permalink/1447515777353915 cần đỏ prm256 Tokyo | đỏ không trừ màu, ~236.000
-2026-11-02 | 32K (807826924656140) | Do Hai Hung 2 cây 18prm256 Funabashi | giá kai nếu không ai chốt
+2026-11-02 | --:-- | 53K (713324666776820) | 18PM cắt lỗ Tokyo, posts/1600479134728031 | so giá kai
+2026-11-02 | --:-- | 32K (807826924656140) | Embee9806 18prm 512 đỏ Osaka | tiệm 森森 なんば / モバイル一番 日本橋
+2026-11-02 | --:-- | 32K (807826924656140) | permalink/1447609897344503 cần mua 18prm trắng Yamato | giá hợp lý 22,5–23,5 man
+2026-11-02 | --:-- | 32K (807826924656140) | permalink/1447515777353915 cần đỏ prm256 Tokyo | đỏ không trừ màu, ~236.000
+2026-11-02 | --:-- | 32K (807826924656140) | Do Hai Hung 2 cây 18prm256 Funabashi | giá kai nếu không ai chốt
+2026-11-02 | 14:45 | 53K (713324666776820) | permalink/1600698654706079 Duo 256 trắng Namba | 森森 370k / ルデヤ 372,5k, trắng trừ 5k ở 1丁目/モバイル一番 + link web
+2026-11-02 | 15:20 | 53K (713324666776820) | Vô Thường: giá kai cần 2 Duo Chiba/Tokyo (tk Duy) | Duo 256 ルデヤ 372,5k/森森 370k, 512 415,5k, trắng trừ 5–6k + link ?q=iPhone Duo
