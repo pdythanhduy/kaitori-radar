@@ -3,7 +3,8 @@
 Mỗi ngày ghi vào marketing/market_log.csv và (tuỳ chọn) gửi Telegram:
   1. Tỷ giá JPY→CNY/HKD (frankfurter.app, dữ liệu ECB). Yên yếu → hàng Nhật rẻ với người mua TQ/HK.
   2. Giá Apple chính hãng ở Trung Quốc và Hồng Kông (apple.com.cn / apple.com/hk). Apple TQ giảm giá → hàng xuất từ Nhật kém hấp dẫn.
-  3. Xu hướng giá kai của chính web (site/data/hist/phone.json), các mẫu iPhone 18 / Duo.
+  3. Bảng giá thu mua cao nhất ở Đài Loan (miko3c.com, công khai, cập nhật hằng ngày), quy ra yên để so.
+  4. Xu hướng giá kai của chính web (site/data/hist/phone.json), các mẫu iPhone 18 / Duo.
 Đây là CHỈ BÁO để theo dõi, không phải dự đoán chắc chắn. Sau vài tuần đủ dữ liệu sẽ kiểm tra chỉ báo nào thật sự đi trước giá kai.
 
   python marketing/market_watch.py --dry     # in ra, không gửi, không ghi
@@ -44,6 +45,25 @@ def apple(region: str) -> list[int]:
     url, pat = APPLE[region]
     t = requests.get(url, headers=UA, timeout=40).text
     return sorted({v for x in re.findall(pat, t) if (v := int(x.replace(",", ""))) >= 5000})  # bỏ giá trả góp/tháng
+
+
+def taiwan() -> dict | None:
+    """Bảng 最高收購價 iPhone 18 Pro / Pro Max của miko3c (Đài Loan, TWD). Trang công khai, đọc 1 lần/ngày."""
+    try:
+        import html as _h
+        r = requests.get("https://www.miko3c.com/recycle/High-Price-Purchase/apple/iPhone18/", headers=UA, timeout=40)
+        r.encoding = "utf-8"
+        x = re.sub(r"\s+", " ", _h.unescape(re.sub(r"<[^>]+>", " ", r.text)))
+        upd = (re.findall(r"更新.{0,12}?([0-9]{4}/[0-9]{1,2}/[0-9]{1,2})", x) or ["?"])[0]
+        got = {}
+        for model, cap, p in re.findall(r"(iPhone 18 Pro Max|iPhone 18 Pro) 容量 (\d+(?:G|TB)) 最高收購價 ([0-9,]+)", x):
+            name = f"{model} {cap.replace('G', 'GB') if cap.endswith('G') else cap}"
+            got.setdefault(name, int(p.replace(",", "")))
+        rate = requests.get("https://open.er-api.com/v6/latest/TWD", timeout=30).json()["rates"]["JPY"]
+        keep = [n for n in ("iPhone 18 Pro Max 256GB", "iPhone 18 Pro Max 512GB", "iPhone 18 Pro 256GB") if n in got]
+        return {"upd": upd, "jpy": rate, "rows": [(n, got[n]) for n in keep]} if keep else None
+    except Exception:
+        return None
 
 
 def kai_trend() -> list[tuple[str, int, int | None, int | None]]:
@@ -100,6 +120,15 @@ def report(news: str = "") -> tuple[str, dict]:
         L += ["", "📈 Giá kai (cao nhất 9 tiệm):"]
         for name, now, d1, d7 in tr:
             L.append(f"• {name}: {now:,}円 {('· 1 ngày ' + pct(now, d1)) if d1 else ''} {('· dài hạn ' + pct(now, d7)) if d7 else ''}")
+    tw = taiwan()
+    if tw:
+        kai = {k.split("|")[0]: it["best"] for it in json.loads((ROOT / "site" / "data" / "cat" / "phone.json").read_text(encoding="utf-8")) for k in [it["key"]]}
+        L += ["", f"🇹🇼 Giá thu mua cao nhất ở Đài Loan (miko3c, cập nhật {tw['upd']}), quy ra yên (để so sánh; điều kiện máy có thể khác):"]
+        for name, twd in tw["rows"]:
+            jp = kai.get(name)
+            yen_ = twd * tw["jpy"]
+            row[f"tw {name}"] = twd
+            L.append(f"• {name}: {twd:,} TWD ≈ {yen_:,.0f}円" + (f" · Nhật {jp:,}円 ({'Nhật cao hơn' if jp > yen_ else 'Đài Loan cao hơn'} {abs(jp - yen_) / yen_ * 100:.0f}%)" if jp else ""))
     if news:
         L += ["", "📰 Tin TQ/HK:", news.strip()]
     L += ["", "<i>Chỉ báo để tham khảo, chưa phải dự đoán. Sau 2–3 tuần mình sẽ kiểm tra chỉ báo nào đi trước giá kai.</i>"]
