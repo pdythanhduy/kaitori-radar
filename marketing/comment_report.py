@@ -18,7 +18,7 @@ from pathlib import Path
 from daily_traffic import JST, send
 
 LOG = Path(__file__).resolve().parent / "comment_log.md"
-LIMIT = 8
+LIMIT = 15
 ROW = re.compile(r"^(\d{4}-\d{2}-\d{2}) \| ([\d:-]{5}) \| (.+?) \| (.+?) \| (.+)$")
 
 
@@ -53,8 +53,8 @@ def report() -> str:
     times = sorted(r[1] for r in t if r[1] != "--:--")
     for a, b in zip(times, times[1:]):
         gap = (int(b[:2]) * 60 + int(b[3:])) - (int(a[:2]) * 60 + int(a[3:]))
-        if gap < 20:
-            warn.append(f"{a} → {b} chỉ cách {gap} phút, nên giãn ≥ 20 phút.")
+        if gap < 40:
+            warn.append(f"{a} → {b} chỉ cách {gap} phút, nên giãn ≥ 45 phút.")
             break
     posts = Counter(r[3] for r in all_rows)
     dup = [p for p, c in posts.items() if c > 1]
