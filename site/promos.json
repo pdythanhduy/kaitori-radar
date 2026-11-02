@@ -2,6 +2,85 @@
  "_huong_dan": "Sửa file này để thêm link. Mỗi mục: name, url, affiliate (true nếu là link affiliate → hiện nhãn PR), desc/badge theo vi/ja. Mục nào url rỗng sẽ tự ẩn. Mỗi nhóm có 'tab' = nút lọc trên trang Ưu đãi (các nhóm cùng tab gộp chung 1 nút).",
  "groups": [
   {
+   "id": "mnp",
+   "title": {
+    "vi": "📱 Chuyển mạng (MNP) được máy 1円 / nhận điểm – tháng 11/2026",
+    "ja": "📱 乗り換え（MNP）一括1円・ポイント還元 – 2026年11月"
+   },
+   "tab": {
+    "vi": "📱 Chuyển mạng 1円",
+    "ja": "📱 乗り換え1円"
+   },
+   "_ghi_chu": "Link chính thức (affiliate=false → nhãn LINK). Khi được duyệt chương trình A8/もしも của nhà mạng thì thay url bằng link affiliate và đổi affiliate=true. Rà lại khuyến mãi mỗi tuần.",
+   "items": [
+    {
+     "name": "楽天モバイル",
+     "url": "https://network.mobile.rakuten.co.jp/campaign/",
+     "affiliate": false,
+     "badge": {
+      "vi": "Android 1円 · tới 14.000 điểm",
+      "ja": "Android一括1円・最大14,000pt"
+     },
+     "desc": {
+      "vi": "Chuyển mạng sang: Galaxy A25 5G, nubia S2R, moto g37j một lần trả 1円. Chương trình giới thiệu (三木谷キャンペーン) thêm 14.000 điểm, iPhone giảm tới 20.000円. 💴 moto g37j bản Rakuten đang được kai thu ~26.000円. (Theo trang tổng hợp 02/11/2026, chưa đối chiếu trang chính thức; kiểm tra điều kiện trước khi đăng ký.)",
+      "ja": "MNPでGalaxy A25 5G・nubia S2R・moto g37jが一括1円。三木谷キャンペーンで最大14,000pt、iPhoneは最大20,000円割引。（2026/11/2時点のまとめサイト情報。申込前に公式で条件をご確認ください）"
+     }
+    },
+    {
+     "name": "ワイモバイル (Y!mobile)",
+     "url": "https://www.ymobile.jp/store/",
+     "affiliate": false,
+     "badge": {
+      "vi": "Android 1円",
+      "ja": "一括1円"
+     },
+     "desc": {
+      "vi": "Chuyển mạng sang: Galaxy A25 5G, nubia S2 một lần trả 1円. ⚠️ Hợp đồng đăng ký từ 01/07/2026 có phí huỷ tối đa 1.100円. (Theo trang tổng hợp 02/11/2026, chưa đối chiếu trang chính thức; kiểm tra điều kiện trước khi đăng ký.)",
+      "ja": "MNPでGalaxy A25 5G・nubia S2が一括1円。2026/7/1以降の契約は解除料最大1,100円。（2026/11/2時点のまとめサイト情報。申込前に公式で条件をご確認ください）"
+     }
+    },
+    {
+     "name": "UQモバイル",
+     "url": "https://shop.uqmobile.jp/",
+     "affiliate": false,
+     "badge": {
+      "vi": "OPPO A5 5G 1円",
+      "ja": "OPPO A5 5G 一括1円"
+     },
+     "desc": {
+      "vi": "Chuyển mạng sang: OPPO A5 5G một lần trả 1円, các máy Android khác từ 2円/tháng. 💴 OPPO A5 5G (OPG06) đang được kai thu ~19.100円. (Theo trang tổng hợp 02/11/2026, chưa đối chiếu trang chính thức; kiểm tra điều kiện trước khi đăng ký.)",
+      "ja": "MNPでOPPO A5 5Gが一括1円、他のAndroidは月2円〜。（2026/11/2時点のまとめサイト情報。申込前に公式で条件をご確認ください）"
+     }
+    },
+    {
+     "name": "IIJmio",
+     "url": "https://www.iijmio.jp/campaign/",
+     "affiliate": false,
+     "badge": {
+      "vi": "Máy từ 4.980円 · tới 04/11",
+      "ja": "一括4,980円〜・11/4まで"
+     },
+     "desc": {
+      "vi": "Chuyển mạng kèm mua máy: từ 4.980円 trả một lần, hạn tới 04/11/2026. Cước tháng rẻ, hợp để giữ số lâu dài. (Theo trang tổng hợp 02/11/2026, chưa đối chiếu trang chính thức; kiểm tra điều kiện trước khi đăng ký.)",
+      "ja": "MNP同時購入で一括4,980円〜（11/4まで）。（2026/11/2時点のまとめサイト情報。申込前に公式で条件をご確認ください）"
+     }
+    },
+    {
+     "name": "⚠️ Đọc trước khi chuyển mạng nhiều lần",
+     "url": "/guide/huy-iphone/#ruiro",
+     "affiliate": false,
+     "badge": {
+      "vi": "Rủi ro danh sách đen",
+      "ja": "短期解約の注意"
+     },
+     "desc": {
+      "vi": "Mở rồi huỷ hợp đồng liên tục dễ bị nhà mạng từ chối về sau. Luật Nhật giới hạn giảm giá máy kèm hợp đồng tối đa 44.000円, nên máy đắt hiếm khi 1円.",
+      "ja": "短期解約を繰り返すと契約を断られる恐れ。回線セットの端末割引は上限44,000円。"
+     }
+    }
+   ]
+  },
+  {
    "id": "aff",
    "title": {
     "vi": "⭐ Bán qua bưu điện — tiệm đối tác (PR)",
