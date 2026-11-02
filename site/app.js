@@ -407,7 +407,7 @@
       <h2 class="sec">📦 ${t.stockTitle}</h2>
       ${stock.length ? `<div class="ssum"><span>${t.stockSum(cnt)}</span><b class="${sum >= 0 ? "up" : "dn"}">${sum >= 0 ? "+" : ""}${sum.toLocaleString()}円</b></div><div class="slist">${rows}</div>` : `<p class="mempty">${t.stockEmpty}</p>`}
       <h2 class="sec">♥ ${t.watchTitle}</h2>
-      ${pushOk || isIos ? await pushBox(watch) : ""}
+      ${await pushBox(watch)}
       ${watch.length ? `<div class="list">${wcards}</div>${gone ? `<ul class="wgone">${gone}</ul>` : ""}` : `<p class="mempty">${t.watchEmpty}</p>`}`;
     // đã xem → cập nhật mốc "lần trước"
     for (const { id, it } of watch) if (it) mine.watch[id].seen = it.best;
@@ -429,9 +429,19 @@
     await fetch(PUSH_API + "/sub", { method: "POST", headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ sub: sub.toJSON(), items, lang }) }).catch(() => {});
   }
+  const inApp = /FBAN|FBAV|FB_IAB|Instagram|Line\/|Zalo|Messenger/i.test(navigator.userAgent);
+  let pushHelp = "";  // hướng dẫn hiện ngay trong khung 🔔 khi bật không được
+  function helpText() {
+    if (inApp) return vi() ? "Bạn đang mở web trong <b>Facebook / Zalo / LINE</b>, ở đây không bật được thông báo. Bấm <b>⋯</b> (góc trên) → <b>Mở bằng trình duyệt</b> (Safari / Chrome), rồi bật lại." : "Facebook・LINEなどのアプリ内ブラウザでは通知をオンにできません。<b>⋯</b> → <b>ブラウザで開く</b> を選んでください。";
+    if (isIos && !standalone) return vi() ? "iPhone: bấm nút <b>Chia sẻ ⬆</b> → <b>Thêm vào Màn hình chính</b>, rồi <b>mở web từ biểu tượng mới</b> trên màn hình và bật lại." : "iPhone：<b>共有⬆</b> → <b>ホーム画面に追加</b> し、そのアイコンから開いてオンにしてください。";
+    if (pushOk && Notification.permission === "denied") return vi() ? (isIos ? "Thông báo đang bị chặn: vào <b>Cài đặt → Thông báo → 買取プライス</b> → bật <b>Cho phép thông báo</b>." : "Thông báo đang bị chặn: bấm <b>biểu tượng ổ khoá / ⓘ</b> cạnh địa chỉ web → <b>Quyền / Thông báo</b> → <b>Cho phép</b>, rồi tải lại trang.") : "通知がブロックされています。アドレスバーの🔒 → 通知 → 許可 にしてから再読み込みしてください。";
+    if (!pushOk) return vi() ? "Trình duyệt này chưa hỗ trợ thông báo. Hãy mở bằng Chrome (Android) hoặc Safari (iPhone)." : "このブラウザは通知に未対応です。";
+    return vi() ? "Khi trình duyệt hỏi, hãy chọn <b>Cho phép</b>. Lỡ bấm Chặn thì bấm biểu tượng ổ khoá / ⓘ cạnh địa chỉ web để bật lại." : "ブラウザの確認で<b>許可</b>を選んでください。";
+  }
   async function enablePush() {
-    if (!pushOk) return toast(vi() ? (isIos ? "Trên iPhone: thêm web vào màn hình chính trước, rồi mở từ biểu tượng đó" : "Trình duyệt này chưa hỗ trợ thông báo") : (isIos ? "iPhoneはホーム画面に追加してから開いてください" : "このブラウザは通知に未対応です"));
-    if (await Notification.requestPermission() !== "granted") return toast(vi() ? "Bạn chưa cho phép thông báo" : "通知が許可されていません");
+    if (inApp || !pushOk || Notification.permission === "denied") { pushHelp = helpText(); return renderMine(); }
+    if (await Notification.requestPermission() !== "granted") { pushHelp = helpText(); return renderMine(); }
+    pushHelp = "";
     const key = Uint8Array.from(atob(VAPID.replace(/-/g, "+").replace(/_/g, "/")), (c) => c.charCodeAt(0));
     const sub = await (await navigator.serviceWorker.ready).pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: key });
     await syncPush(sub);
@@ -449,7 +459,8 @@
     const on = !!(await getSub()) && Notification.permission === "granted";
     const rows = watch.filter((x) => x.it).map(({ id, w, it }) => `<div class="arow"><span class="an">${esc(it.name)}<small>${vi() ? "Hiện" : "現在"} ${yen(it.best)}</small></span>
       <label>${vi() ? "Báo khi ≥" : "通知 ≥"} <input class="atg" type="number" inputmode="numeric" step="1000" placeholder="${vi() ? "mọi thay đổi ≥2%" : "2%以上の変動"}" value="${w.target || ""}" data-id="${esc(id)}">円</label></div>`).join("");
-    const iosHint = isIos && !standalone ? `<p class="small">📱 ${vi() ? "iPhone: cần <b>Thêm vào Màn hình chính</b> (nút Chia sẻ ⬆) rồi mở web từ biểu tượng đó mới nhận được thông báo." : "iPhoneは<b>ホーム画面に追加</b>（共有⬆）して、そのアイコンから開くと通知を受け取れます。"}</p>` : "";
+    const iosHint = pushHelp ? `<p class="phelp">⚠️ ${pushHelp}</p>`
+      : (inApp || (isIos && !standalone)) && !on ? `<p class="small">📱 ${helpText()}</p>` : "";
     return `<div class="pbox ${on ? "on" : ""}"><div class="ph"><b>🔔 ${vi() ? "Báo về điện thoại khi giá đổi" : "価格変動をスマホに通知"}</b>
       ${on ? `<button class="poff" type="button">${vi() ? "Tắt" : "オフ"}</button>` : `<button class="pon" type="button">${vi() ? "Bật thông báo" : "通知をオン"}</button>`}</div>
       <p class="small">${on ? (vi() ? "Đang bật. Web kiểm tra sau mỗi lần cập nhật giá (khoảng 30 phút/lần). Không cần đăng nhập." : "オン中。価格更新（約30分ごと）のたびにチェックします。") : (vi() ? "Không cần mở web: giá đạt mức bạn đặt, hoặc đổi từ 2% trở lên, là điện thoại báo ngay." : "サイトを開かなくても、目標価格到達や2%以上の変動を通知します。")}</p>
