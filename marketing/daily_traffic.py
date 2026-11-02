@@ -110,7 +110,7 @@ def report() -> str:
     if fb > v * 0.6:
         notes.append(f"Facebook mang về {fb * 100 // v}% → phụ thuộc FB, nên đều tay bài/bình luận.")
     notes.append("Google: " + (f"{gg} lượt – bắt đầu có khách tìm kiếm 👍" if gg >= 5 else "gần như chưa có, SEO cần thêm thời gian."))
-    jp = y["cty"].get("Japan", 0)
+    jp = y["cty"].get("JP", 0) + y["cty"].get("Japan", 0)
     if jp and jp < v * 0.8:
         notes.append(f"Chỉ {jp * 100 // v}% từ Nhật (phần còn lại phần lớn là bot của FB đọc link).")
     lines += ["", "💡 " + "\n💡 ".join(notes[:3])]
