@@ -373,6 +373,17 @@
       return `<li><span>${esc(it.name)}</span><b class="${d > 0 ? "up" : "dn"}">${d > 0 ? "▲" : "▼"}${Math.abs(d).toLocaleString()}円</b></li>`; }).join("");
     $("#news").innerHTML = `<button class="news" data-v="mine"><div class="news-t">🔔 ${t.newsTitle(ch.length)}</div><ul>${li}</ul><span class="news-go">${t.newsGo} →</span></button>`;
   }
+  // kho hàng: giá ở các tiệm còn lại + lời/lỗ nếu bán ở đó (gập lại, bấm mới mở)
+  function stockShops(it, s) {
+    const sh = Object.entries(it.prices).filter(([, p]) => p && p.price).sort((a, b) => b[1].price - a[1].price);
+    if (sh.length < 2) return "";
+    const q = s.qty || 1;
+    const rows = sh.map(([sid, p]) => {
+      const pf = (p.price - s.buy) * q, lst = SH[sid]?.list;
+      return `<a class="ssh" href="${esc(lst ? lstUrl(p, it) : p.url || "#")}" target="_blank" rel="noopener nofollow"><span>${esc(SH[sid]?.name || sid)}</span><span class="p">${yen(p.price)}</span><b class="${pf >= 0 ? "up" : "dn"}">${pf >= 0 ? "+" : ""}${pf.toLocaleString()}</b></a>`;
+    }).join("");
+    return `<details class="sshops"><summary>${T().allShops(sh.length)}</summary>${rows}</details>`;
+  }
   async function renderMine() {
     const t = T(), m = await mineItems();
     const stock = Object.entries(mine.stock).map(([id, s]) => ({ id, s, it: m.get(id) }));
@@ -386,6 +397,7 @@
         <div class="sm">${t.boughtAt} ${yen(s.buy)} · ${t.qty} <input class="sq-in" type="number" min="1" inputmode="numeric" value="${s.qty || 1}" data-id="${esc(id)}"></div>
         <a class="sbest" href="${esc(p.url || "#")}" target="_blank" rel="noopener nofollow"><span>${t.sellNow} <b>${SH[it.best_shop]?.name || ""}</b></span><span class="p">${yen(it.best)} ${chg}</span></a>
         <div class="spf ${tot >= 0 ? "up" : "dn"}">${t.profit} ${tot >= 0 ? "+" : ""}${tot.toLocaleString()}円${(s.qty || 1) > 1 ? ` <small>(${per >= 0 ? "+" : ""}${per.toLocaleString()}円 × ${s.qty})</small>` : ""}</div>
+        ${stockShops(it, s)}
         <button class="sdel" data-id="${esc(id)}" aria-label="delete">✕</button></div>`;
     }).join("");
     const watch = Object.entries(mine.watch).map(([id, w]) => ({ id, w, it: m.get(id) }));
@@ -440,24 +452,46 @@
   });
 
   // ================= deals (PR)
-  let deals = null;
+  let deals = null, dTab = "", dQ = "";
+  const dSeen = new Set(); // pixel hiển thị chỉ bắn 1 lần / mục, không bắn lại mỗi lần lọc
+  const dTxt = (o) => (o && (o[lang] || o.vi)) || "";
+  const dNorm = (x) => x.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d");
   async function renderDeals() {
     deals ||= promos;
-    $("#dealList").innerHTML = deals.groups.map((g) => {
-      const items = g.items.filter((x) => x.url);
+    const vi = lang === "vi", groups = deals.groups.map((g) => ({ ...g, items: g.items.filter((x) => x.url) })).filter((g) => g.items.length);
+    const tabs = [...new Set(groups.map((g) => dTxt(g.tab) || dTxt(g.title)))];
+    if (dTab && !tabs.includes(dTab)) dTab = "";
+    const chip = (v, label) => `<button class="dtab ${dTab === v ? "on" : ""}" data-tab="${esc(v)}">${esc(label)}</button>`;
+    const tabHtml = chip("", vi ? "Tất cả" : "すべて") + tabs.map((t) => chip(t, t)).join("");
+    const q = dNorm(dQ.trim());
+    const html = groups.map((g) => {
+      if (dTab && (dTxt(g.tab) || dTxt(g.title)) !== dTab) return "";
+      const items = q ? g.items.filter((x) => dNorm([x.name, x.desc?.vi, x.desc?.ja, x.badge?.vi, x.badge?.ja, g.title?.vi, g.title?.ja].join(" ")).includes(q)) : g.items;
       if (!items.length) return "";
-      items.forEach((x) => x.px && pixel(x.px));
-      return `<h3 class="dg">${esc(g.title[lang] || g.title.vi)}</h3><div class="dlist">` + items.map((x) => `
+      items.forEach((x) => x.px && !dSeen.has(x.px) && (dSeen.add(x.px), pixel(x.px)));
+      return `<h3 class="dg">${esc(dTxt(g.title))}</h3><div class="dlist">` + items.map((x) => `
         <a class="deal-card" href="${esc(x.url)}" target="_blank" rel="sponsored noopener">
           <span class="pr">${x.affiliate ? "PR" : "LINK"}</span>
-          ${x.badge ? `<span class="badge">${esc(x.badge[lang] || x.badge.vi)}</span>` : ""}
-          <b>${esc(x.name)}</b><span>${esc((x.desc && (x.desc[lang] || x.desc.vi)) || "")}</span>
+          ${x.badge ? `<span class="badge">${esc(dTxt(x.badge))}</span>` : ""}
+          <b>${esc(x.name)}</b><span>${esc(dTxt(x.desc))}</span>
           ${Object.entries(SH).some(([sid, s]) => s.name === x.name && REF[sid]) ? `<span class="ref">${esc(refText(Object.keys(SH).find((sid) => SH[sid].name === x.name)))}</span>` : ""}
-          <span class="go">${lang === "vi" ? "Xem chi tiết →" : "詳しく見る →"}</span>
+          <span class="go">${vi ? "Xem chi tiết →" : "詳しく見る →"}</span>
         </a>`).join("") + "</div>";
     }).join("");
+    const empty = `<p class="mempty">${vi ? "Không có ưu đãi phù hợp." : "該当するお得情報がありません。"}</p>`;
+    // ô tìm giữ nguyên (không vẽ lại) để bàn phím điện thoại không bị đóng khi gõ
+    if (!$("#dq") || $("#dq").dataset.lang !== lang) $("#dealList").innerHTML = `<div class="dbar"><input id="dq" type="search" data-lang="${lang}" value="${esc(dQ)}" placeholder="${vi ? "🔍 Tìm ưu đãi (vd: iPhone, máy ảnh, SIM…)" : "🔍 お得情報を検索（例：iPhone、カメラ、SIM）"}"><div class="dtabs"></div></div><div id="dealRes"></div>`;
+    $("#dealList .dtabs").innerHTML = tabHtml;
+    $("#dealRes").innerHTML = html || empty;
     history.replaceState(null, "", new URL("?v=deals", location.href).href);
   }
+
+  $("#dealList").addEventListener("click", (e) => {
+    const b = e.target.closest(".dtab"); if (!b) return;
+    dTab = b.dataset.tab; renderDeals();
+    window.kpTrack?.("deal_filter", { tab: dTab || "all" });
+  });
+  $("#dealList").addEventListener("input", (e) => { if (e.target.id === "dq") { dQ = e.target.value; renderDeals(); } });
 
   // ================= events
   const cgOpen = (o) => document.body.classList.toggle("cg-open", o);

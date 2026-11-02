@@ -536,32 +536,39 @@ nhưng tính đúng con số thì quyết định dễ hơn.</p>
     def card(href, icon, title, desc, tag=""):
         return (f'<a class="gcard" href="{href}"><span class="gi">{icon}</span><span class="gt"><b>{e(title)}</b>'
                 f'<small>{e(desc)}</small></span>{tag}<span class="ga">→</span></a>')
-    ja_html, vi_html = [], []
-    for sid, ja_t, vi_t in SECTIONS:
+    ja_html = []
+    for sid, ja_t, _ in SECTIONS:
         ja_cards = [card(p, META[p][1], h, d) for p, h, d in guides if META.get(p, ("",))[0] == sid]
-        vi_cards = []
-        for p, h, d in guides:
-            m = META.get(p)
-            if not m or m[0] != sid:
-                continue
-            if m[4]:
-                vi_cards.append(card(m[4], m[1], m[2], m[3]))
-            else:
-                vi_cards.append(card(p, m[1], m[2], m[3], '<span class="gl">日本語</span>'))
         if ja_cards:
             ja_html.append(f'<section class="gsec"><h2>{ja_t}</h2><div class="ggrid">{"".join(ja_cards)}</div></section>')
-        if sid == "sell":
-            for c_ in [("/guide/tra-iphone-apple/", "↩️", "Trả iPhone cho Apple trong 14 ngày", "Điều kiện, tắt Tìm iPhone, khi nào bị phí 15%"),
-                       ("/guide/huy-iphone/", "❌", "Cách huỷ đơn iPhone không mất phí", "Apple Store, docomo, au, SoftBank, Rakuten: huỷ trước khi gửi hàng"),
-                       ("/guide/gia-iphone-giam/", "📉", "Giá kai iPhone giảm: huỷ, bán hay giữ?", "Bảng giá mới nhất 9 tiệm + cách tính lời lỗ")]:
-                vi_cards.insert(0, card(*c_))
-            vi_cards.insert(0, card("/guide/tiem-kaitori/", "📍", "Danh sách tiệm kaitori (Tokyo, Osaka, Nagoya)",
-                                    "Địa chỉ, giờ mở cửa, ga gần nhất, link bản đồ của các tiệm web đang so giá"))
-        if sid == "buy":  # bài chỉ có tiếng Việt
-            vi_cards.insert(0, card("/guide/meo-mua-re/", "🛒", "7 cách mua hàng giảm giá ở Nhật",
-                                    "Rakuten, Yahoo, Amazon, điểm điện máy, phiếu cổ đông, trang tích điểm, điện thoại 1 yên"))
-        if vi_cards:
-            vi_html.append(f'<section class="gsec"><h2>{vi_t}</h2><div class="ggrid">{"".join(vi_cards)}</div></section>')
+    # VI: chia theo chủ đề + nút lọc + ô tìm (bài nhiều lên vẫn dễ tìm)
+    have = {p for p, _, _ in guides}
+    def vcard(p):
+        m = META[p]
+        return card(m[4], m[1], m[2], m[3]) if m[4] else card(p, m[1], m[2], m[3], '<span class="gl">日本語</span>')
+    VI_TOPICS = [
+        ("iphone", "📱 iPhone", [card("/guide/gia-iphone-giam/", "📉", "Giá kai iPhone giảm: huỷ, bán hay giữ?", "Bảng giá mới nhất 9 tiệm + cách tính lời lỗ"),
+                               card("/guide/huy-iphone/", "❌", "Cách huỷ đơn iPhone không mất phí", "Apple Store, docomo, au, SoftBank, Rakuten: huỷ trước khi gửi hàng"),
+                               card("/guide/tra-iphone-apple/", "↩️", "Trả iPhone cho Apple trong 14 ngày", "Điều kiện, tắt Tìm iPhone, khi nào bị phí 15%")]
+                              + [vcard(p) for p in ["/guide/iphone-18-kaitori/"] if p in have]),
+        ("shop", "🏪 Bán cho tiệm", [card("/guide/tiem-kaitori/", "📍", "Danh sách tiệm kaitori (Tokyo, Osaka, Nagoya)",
+                                         "Địa chỉ, giờ mở cửa, ga gần nhất, link bản đồ của các tiệm web đang so giá")]
+                                   + [vcard(p) for p in ["/guide/yoyaku-kaitori/", "/guide/pokeca-box-kaitori/"] if p in have]),
+        ("buy", "🛒 Mua rẻ để bán lại", [card("/guide/meo-mua-re/", "🛒", "7 cách mua hàng giảm giá ở Nhật",
+                                             "Rakuten, Yahoo, Amazon, điểm điện máy, phiếu cổ đông, trang tích điểm, điện thoại 1 yên")]
+                                       + [vcard(p) for p in ["/guide/kabunushi-yutai/"] if p in have]),
+    ]
+    vi_bar = ('<div class="gbar"><input id="gq" type="search" placeholder="🔍 Tìm mẹo (vd: huỷ đơn, trả máy, Pokémon…)">'
+              '<div class="gtabs"><button class="gtab on" data-t="">Tất cả</button>'
+              + "".join(f'<button class="gtab" data-t="{k}">{e(t)}</button>' for k, t, c in VI_TOPICS if c)
+              + '</div></div>')
+    vi_html = [vi_bar] + [f'<section class="gsec" data-t="{k}"><h2>{e(t)}</h2><div class="ggrid">{"".join(c)}</div></section>'
+                          for k, t, c in VI_TOPICS if c]
+    vi_html.append('<p class="gnone" hidden>Không tìm thấy bài phù hợp — hỏi trong nhóm Facebook bên dưới nhé.</p>'
+                   '<script>(()=>{const q=document.getElementById("gq"),tabs=document.querySelectorAll(".gtab"),secs=document.querySelectorAll(".gsec[data-t]"),none=document.querySelector(".gnone");let t="";'
+                   'const norm=s=>s.toLowerCase().normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").replace(/đ/g,"d");'
+                   'function f(){const w=norm(q.value.trim());let n=0;secs.forEach(s=>{let k=0;s.querySelectorAll(".gcard").forEach(c=>{const ok=(!t||s.dataset.t===t)&&(!w||norm(c.textContent).includes(w));c.hidden=!ok;k+=ok});s.hidden=!k;n+=k});none.hidden=!!n}'
+                   'tabs.forEach(b=>b.onclick=()=>{t=b.dataset.t;tabs.forEach(x=>x.classList.toggle("on",x===b));f()});q.oninput=f})();</script>')
     idx_body = (f'<nav class="bc"><a href="/">トップ</a> › 買取ガイド</nav><h1>📚 買取ガイド</h1>'
                 f'<p class="lead">買取価格の比較データをもとに、高く売る・安く買うためのポイントをまとめています。</p>{"".join(ja_html)}')
     out = site / "guide"

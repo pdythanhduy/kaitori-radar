@@ -1,11 +1,15 @@
 {
- "_huong_dan": "Sửa file này để thêm link. Mỗi mục: name, url, affiliate (true nếu là link affiliate → hiện nhãn PR), desc/badge theo vi/ja. Mục nào url rỗng sẽ tự ẩn.",
+ "_huong_dan": "Sửa file này để thêm link. Mỗi mục: name, url, affiliate (true nếu là link affiliate → hiện nhãn PR), desc/badge theo vi/ja. Mục nào url rỗng sẽ tự ẩn. Mỗi nhóm có 'tab' = nút lọc trên trang Ưu đãi (các nhóm cùng tab gộp chung 1 nút).",
  "groups": [
   {
    "id": "aff",
    "title": {
     "vi": "⭐ Bán qua bưu điện — tiệm đối tác (PR)",
     "ja": "⭐ 宅配買取 提携店（PR）"
+   },
+   "tab": {
+    "vi": "📦 Bán qua bưu điện",
+    "ja": "📦 宅配買取"
    },
    "items": [
     {
@@ -138,6 +142,10 @@
     "vi": "📦 Bán qua bưu điện (宅配買取) — gửi hàng, tiệm chuyển khoản",
     "ja": "📦 宅配買取（送るだけで現金化）"
    },
+   "tab": {
+    "vi": "📦 Bán qua bưu điện",
+    "ja": "📦 宅配買取"
+   },
    "items": [
     {
      "name": "森森買取",
@@ -219,6 +227,10 @@
     "vi": "🎟 Mẹo mua rẻ: phiếu ưu đãi cổ đông (株主優待券)",
     "ja": "🎟 株主優待券でお得に仕入れ"
    },
+   "tab": {
+    "vi": "🎟 Phiếu cổ đông",
+    "ja": "🎟 株主優待"
+   },
    "items": [
     {
      "name": "ビックカメラ 株主優待券",
@@ -277,6 +289,10 @@
     "vi": "💳 Thẻ tín dụng hoàn điểm cao khi mua hàng để bán lại",
     "ja": "💳 仕入れにおすすめの高還元クレジットカード"
    },
+   "tab": {
+    "vi": "💳 Thẻ tín dụng",
+    "ja": "💳 カード"
+   },
    "items": [
     {
      "name": "(chỗ trống — thêm link affiliate thẻ tín dụng)",
@@ -294,6 +310,10 @@
    "title": {
     "vi": "📶 SIM giá rẻ cho người nước ngoài",
     "ja": "📶 格安SIM"
+   },
+   "tab": {
+    "vi": "📶 SIM",
+    "ja": "📶 SIM"
    },
    "items": [
     {
@@ -313,6 +333,10 @@
     "vi": "🛒 Mua hàng giá tốt (Amazon / Rakuten / Yahoo)",
     "ja": "🛒 お得に仕入れ"
    },
+   "tab": {
+    "vi": "🛒 Mua rẻ",
+    "ja": "🛒 お得に仕入れ"
+   },
    "items": [
     {
      "name": "(chỗ trống)",
@@ -329,6 +353,10 @@
    "id": "remit",
    "title": {
     "vi": "💸 Chuyển tiền về Việt Nam",
+    "ja": "💸 海外送金"
+   },
+   "tab": {
+    "vi": "💸 Chuyển tiền",
     "ja": "💸 海外送金"
    },
    "items": [
