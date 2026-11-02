@@ -407,10 +407,53 @@
       <h2 class="sec">📦 ${t.stockTitle}</h2>
       ${stock.length ? `<div class="ssum"><span>${t.stockSum(cnt)}</span><b class="${sum >= 0 ? "up" : "dn"}">${sum >= 0 ? "+" : ""}${sum.toLocaleString()}円</b></div><div class="slist">${rows}</div>` : `<p class="mempty">${t.stockEmpty}</p>`}
       <h2 class="sec">♥ ${t.watchTitle}</h2>
+      ${pushOk || isIos ? await pushBox(watch) : ""}
       ${watch.length ? `<div class="list">${wcards}</div>${gone ? `<ul class="wgone">${gone}</ul>` : ""}` : `<p class="mempty">${t.watchEmpty}</p>`}`;
     // đã xem → cập nhật mốc "lần trước"
     for (const { id, it } of watch) if (it) mine.watch[id].seen = it.best;
     saveMine(); updMineBadge(0);
+  }
+  // ================= 🔔 cảnh báo giá qua Web Push (Worker kaitori-push lưu đăng ký, cron gửi khi giá đạt điều kiện)
+  const PUSH_API = "https://kaitori-push.thanhduy8vn.workers.dev";
+  const VAPID = "BLbRGmtO0hD8tyxin38tRvoaGuUznUEC-u1bv2FEY5lSzxNVXOB54kGykHf4-N-nOx-HB2LRYqj70LgvQwzaJvs";
+  const vi = () => lang === "vi";
+  const isIos = /iPhone|iPad|iPod/.test(navigator.userAgent);
+  const standalone = matchMedia("(display-mode: standalone)").matches || navigator.standalone;
+  const pushOk = "serviceWorker" in navigator && "PushManager" in window && "Notification" in window;
+  const getSub = async () => { if (!pushOk) return null; try {
+    const reg = await Promise.race([navigator.serviceWorker.ready, new Promise((r) => setTimeout(r, 1500))]);  // SW lỗi thì `ready` treo mãi
+    return reg ? await reg.pushManager.getSubscription() : null; } catch { return null; } };
+  async function syncPush(sub) {
+    sub = sub || await getSub(); if (!sub) return;
+    const items = Object.entries(mine.watch).map(([, w]) => ({ cat: w.cat, key: w.key, name: w.name, target: w.target || 0, last: w.seen }));
+    await fetch(PUSH_API + "/sub", { method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ sub: sub.toJSON(), items, lang }) }).catch(() => {});
+  }
+  async function enablePush() {
+    if (!pushOk) return toast(vi() ? (isIos ? "Trên iPhone: thêm web vào màn hình chính trước, rồi mở từ biểu tượng đó" : "Trình duyệt này chưa hỗ trợ thông báo") : (isIos ? "iPhoneはホーム画面に追加してから開いてください" : "このブラウザは通知に未対応です"));
+    if (await Notification.requestPermission() !== "granted") return toast(vi() ? "Bạn chưa cho phép thông báo" : "通知が許可されていません");
+    const key = Uint8Array.from(atob(VAPID.replace(/-/g, "+").replace(/_/g, "/")), (c) => c.charCodeAt(0));
+    const sub = await (await navigator.serviceWorker.ready).pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: key });
+    await syncPush(sub);
+    fetch(PUSH_API + "/test", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ endpoint: sub.endpoint }) }).catch(() => {});
+    window.kpTrack?.("push_on", { n: Object.keys(mine.watch).length });
+    renderMine();
+  }
+  async function disablePush() {
+    const sub = await getSub();
+    if (sub) { fetch(PUSH_API + "/unsub", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ endpoint: sub.endpoint }) }).catch(() => {}); await sub.unsubscribe().catch(() => {}); }
+    renderMine();
+  }
+  async function pushBox(watch) {
+    if (!watch.length) return "";
+    const on = !!(await getSub()) && Notification.permission === "granted";
+    const rows = watch.filter((x) => x.it).map(({ id, w, it }) => `<div class="arow"><span class="an">${esc(it.name)}<small>${vi() ? "Hiện" : "現在"} ${yen(it.best)}</small></span>
+      <label>${vi() ? "Báo khi ≥" : "通知 ≥"} <input class="atg" type="number" inputmode="numeric" step="1000" placeholder="${vi() ? "mọi thay đổi ≥2%" : "2%以上の変動"}" value="${w.target || ""}" data-id="${esc(id)}">円</label></div>`).join("");
+    const iosHint = isIos && !standalone ? `<p class="small">📱 ${vi() ? "iPhone: cần <b>Thêm vào Màn hình chính</b> (nút Chia sẻ ⬆) rồi mở web từ biểu tượng đó mới nhận được thông báo." : "iPhoneは<b>ホーム画面に追加</b>（共有⬆）して、そのアイコンから開くと通知を受け取れます。"}</p>` : "";
+    return `<div class="pbox ${on ? "on" : ""}"><div class="ph"><b>🔔 ${vi() ? "Báo về điện thoại khi giá đổi" : "価格変動をスマホに通知"}</b>
+      ${on ? `<button class="poff" type="button">${vi() ? "Tắt" : "オフ"}</button>` : `<button class="pon" type="button">${vi() ? "Bật thông báo" : "通知をオン"}</button>`}</div>
+      <p class="small">${on ? (vi() ? "Đang bật. Web kiểm tra sau mỗi lần cập nhật giá (khoảng 30 phút/lần). Không cần đăng nhập." : "オン中。価格更新（約30分ごと）のたびにチェックします。") : (vi() ? "Không cần mở web: giá đạt mức bạn đặt, hoặc đổi từ 2% trở lên, là điện thoại báo ngay." : "サイトを開かなくても、目標価格到達や2%以上の変動を通知します。")}</p>
+      ${iosHint}${on ? `<div class="alist">${rows}</div>` : ""}</div>`;
   }
   function toggleWatch(id) {
     const it = REG.get(id);
@@ -421,6 +464,7 @@
     toast(mine.watch[id] ? T().watchAdded : T().watchRemoved);
     window.kpTrack?.(mine.watch[id] ? "watch_add" : "watch_remove", { item: it?.name || id });
     updMineBadge(0);
+    if (pushOk) syncPush();
   }
   function addStock(id, btn) {
     const it = REG.get(id); if (!it) return;
@@ -441,11 +485,16 @@
     const f = e.target.closest(".fav"); if (f) { e.preventDefault(); return toggleWatch(f.dataset.id); }
     const k = e.target.closest(".stk"); if (k) { e.preventDefault(); return addStock(k.dataset.id, k); }
     const d = e.target.closest(".sdel"); if (d) { delete mine.stock[d.dataset.id]; saveMine(); return renderMine(); }
-    const w = e.target.closest(".wdel"); if (w) { delete mine.watch[w.dataset.id]; saveMine(); return renderMine(); }
+    const w = e.target.closest(".wdel"); if (w) { delete mine.watch[w.dataset.id]; saveMine(); if (pushOk) syncPush(); return renderMine(); }
+    if (e.target.closest(".pon")) return enablePush().catch(() => toast(vi() ? "Chưa bật được thông báo, thử lại sau" : "通知をオンにできませんでした"));
+    if (e.target.closest(".poff")) return disablePush();
     const n = e.target.closest(".news,[data-v=mine]");
     if (n && !n.closest("#chips,#mcat")) { st.view = "mine"; $("#q").value = ""; st.q = ""; window.scrollTo({ top: 0 }); return render(); }
   });
   document.addEventListener("change", (e) => {
+    const a = e.target.closest(".atg");
+    if (a) { const w = mine.watch[a.dataset.id]; if (!w) return; w.target = Math.max(0, Math.round(+a.value || 0)); saveMine(); syncPush();
+      return toast(w.target ? (vi() ? `🔔 Sẽ báo khi giá ≥ ${yen(w.target)}` : `🔔 ${yen(w.target)}以上で通知`) : (vi() ? "🔔 Sẽ báo khi giá đổi ≥2%" : "🔔 2%以上の変動で通知")); }
     const q = e.target.closest(".sq-in"); if (!q) return;
     const s = mine.stock[q.dataset.id]; if (!s) return;
     s.qty = Math.max(1, Math.round(+q.value || 1)); saveMine(); renderMine();

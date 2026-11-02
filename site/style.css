@@ -452,3 +452,8 @@ a.sh:hover .go{background:var(--fg);color:#fff}
 .dtabs{display:flex;gap:6px;overflow-x:auto;padding:8px 0 2px;scrollbar-width:none}.dtabs::-webkit-scrollbar{display:none}
 .dtab{flex:none;border:1px solid var(--line);background:var(--card);color:inherit;border-radius:999px;padding:.35rem .8rem;font:inherit;font-size:.8rem;font-weight:700;cursor:pointer;white-space:nowrap}
 .dtab.on{background:var(--fg);border-color:var(--fg);color:#fff}
+.pbox{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin:0 0 10px}.pbox.on{border-color:#16a34a}
+.pbox .ph{display:flex;justify-content:space-between;align-items:center;gap:8px}.pbox .small{font-size:.78rem;color:var(--muted);margin:.4rem 0 0;line-height:1.5}
+.pbox .pon,.pbox .poff{border:0;border-radius:10px;padding:.45rem .8rem;font-weight:700;font-size:.82rem;cursor:pointer;background:var(--fg);color:#fff;white-space:nowrap}.pbox .poff{background:transparent;color:var(--muted);border:1px solid var(--line)}
+.alist{margin-top:8px;display:grid;gap:6px}.arow{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:.8rem;border-top:1px solid var(--line);padding-top:6px}
+.arow .an{display:flex;flex-direction:column;min-width:0}.arow .an small{color:var(--muted)}.arow label{white-space:nowrap}.arow input{width:7.5em;padding:.3rem;border:1px solid var(--line);border-radius:8px;font-size:.8rem}
