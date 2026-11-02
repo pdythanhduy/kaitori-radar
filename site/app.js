@@ -118,6 +118,8 @@
       `<button data-v="deals" class="deal ${st.view === "deals" ? "on" : ""}">${T().deals}</button>`;
     // "♥ Của tôi" không phải nhóm hàng → đặt trên header (máy tính), không trộn vào hàng chip
     $("#hdMine").innerHTML = `♥ <span>${T().mine}</span><b class="mine-n" hidden></b>`;
+    $("#hcats").innerHTML = `<h2>${T().hcTitle}</h2><div class="cgrid">` + order.map(([c, v]) =>
+      `<button data-c="${c}"><span class="ci">${ICON[c] || "📦"}</span><span class="cn">${short[c] || T().cats[c] || v.label}</span><span class="cc">${v.count.toLocaleString()}</span></button>`).join("") + "</div>";
     $("#cgrid").innerHTML = order.map(([c, v]) =>
       `<button data-c="${c}" class="${st.view === "cat" && st.cat === c && !st.q ? "on" : ""}"><span class="ci">${ICON[c] || "📦"}</span><span class="cn">${short[c] || T().cats[c] || v.label}</span><span class="cc">${v.count.toLocaleString()}</span></button>`).join("");
   }
@@ -160,7 +162,7 @@
   }
   function moversHtml(mv) {
     const t = T(), row = (i) => `<button class="mv-i" data-q="${esc(i.name)}"><span>${esc(i.name)}</span><b class="${i.mv > 0 ? "up" : "dn"}">${i.mv > 0 ? "▲" : "▼"}${Math.abs(i.mv).toLocaleString()}円</b><small>${yen(i.best)}</small></button>`;
-    const col = (title, arr) => arr.length ? `<div class="mv-c"><h3>${title}</h3>${arr.slice(0, 5).map(row).join("")}</div>` : "";
+    const col = (title, arr) => arr.length ? `<div class="mv-c"><h3>${title}</h3>${arr.slice(0, 3).map(row).join("")}</div>` : "";
     const h = col(t.upTitle, mv.up || []) + col(t.downTitle, mv.down || []);
     return h ? `<div class="movers">${h}</div>` : "";
   }
@@ -267,13 +269,33 @@
     const q = [`<button class="qc qf ${n ? "has" : ""}" data-open="all">${SLIDERS}<span>${t.filterShort}</span>${n ? `<b>${n}</b>` : ""}</button>`];
     const lab = (k, set) => { const v = [...set]; return v.length ? (v.length === 1 ? (k === "brand" && v[0] === "Khác" ? t.otherB : v[0]) : `${v[0]} +${v.length - 1}`) : ""; };
     const chip = (key, name, has) => { const v = has || ""; return `<button class="qc dd ${v ? "on" : ""}" data-open="${key}">${esc(v || name)}<i>▾</i></button>`; };
-    if (counts("brand", (i) => i._f.brand).size > 1 || st.f.brand.size) q.push(chip("brand", t.qBrand, lab("brand", st.f.brand)));
-    if (counts("series", (i) => i._f.series).size > 1 || st.f.series.size) q.push(chip("series", t.qSeries, lab("series", st.f.series)));
-    if (counts("cap", (i) => i._f.cap).size > 1 || st.f.cap.size) q.push(chip("cap", t.qCap, lab("cap", st.f.cap)));
     q.push(chip("price", t.qPrice, st.price ? t.price[st.price] : ""));
     q.push(`<button class="qc tg ${st.multi ? "on" : ""}" data-k="multi" ${st.multi ? "" : 'data-add="1"'}>${st.multi ? "✓ " : ""}${t.qMulti}</button>`);
     if (st.f.shop.size) q.push(chip("shop", t.fShop, lab("shop", new Set([...st.f.shop].map((x) => SH[x]?.name || x)))));
     $("#quick").innerHTML = q.join("");
+    renderDrill();
+  }
+  // điện thoại: chọn theo bậc Hãng → Dòng máy → Dung lượng ngay trên 1 hàng chip (kiểu kakaku/Mercari), không phải mở bảng lọc
+  function renderDrill() {
+    const t = T(), steps = [["brand", t.qBrand, (i) => i._f.brand], ["series", t.qSeries, (i) => i._f.series], ["cap", t.qCap, (i) => i._f.cap]];
+    const crumbs = [];
+    let next = null;
+    for (const [k, name, get] of steps) {
+      if (st.f[k].size) { const v = [...st.f[k]]; crumbs.push(`<button class="dc" data-k="${k}">${esc(v.length > 1 ? `${v[0]} +${v.length - 1}` : (v[0] === "Khác" ? t.otherB : v[0]))}<i>✕</i></button>`); continue; }
+      const m = counts(k, get);
+      if (m.size > 1) { next = [k, name, m]; break; }
+    }
+    let opts = "";
+    if (next) {
+      const [k, name, m] = next;
+      const sort = k === "cap" ? FACETS.capSort : k === "series" && st.f.brand.size ? FACETS.seriesSort
+        : k === "brand" ? (a, b) => (a === "Khác") - (b === "Khác") || PIN.indexOf(b) - PIN.indexOf(a) || m.get(b) - m.get(a) : (a, b) => m.get(b) - m.get(a);
+      const vals = [...m.keys()].sort(sort);
+      opts = `<span class="dl">${esc(t.drPick(name))}</span>` + vals.map((v) => `<button class="do" data-k="${k}" data-v="${esc(v)}">${esc(v === "Khác" ? t.otherB : v)}<em>${m.get(v)}</em></button>`).join("");
+    }
+    const el = $("#drill");
+    el.innerHTML = (crumbs.length ? `<div class="dcr">${crumbs.join('<span class="dsep">›</span>')}</div>` : "") + (opts ? `<div class="dop">${opts}</div>` : "");
+    el.hidden = !el.innerHTML;
   }
   function sortItems(items) {
     const f = { new: (a, b) => (b.first || "").localeCompare(a.first || "") || ((b._f.rec || 0) - (a._f.rec || 0)) || (b.best - a.best),
@@ -469,6 +491,7 @@
   $("#mcat").addEventListener("click", pickNav);
   $("#hdMine").addEventListener("click", pickNav);
   $("#cgrid").addEventListener("click", pickNav);
+  $("#hcats").addEventListener("click", pickNav);
   $("#chips").addEventListener("click", (e) => {
     const b = e.target.closest("button"); if (!b) return;
     $("#q").value = ""; st.q = ""; clearFilters();
@@ -498,6 +521,13 @@
     else { add ? st.f[k].add(b.dataset.v) : st.f[k].delete(b.dataset.v); if (k === "brand" && !add) st.f.series.clear(); }
     refresh();
     $("#quick").scrollLeft = 0;
+  });
+  $("#drill").addEventListener("click", (e) => {
+    const b = e.target.closest("button"); if (!b) return;
+    const k = b.dataset.k, order = ["brand", "series", "cap"];
+    if (b.classList.contains("dc")) order.slice(order.indexOf(k)).forEach((x) => st.f[x].clear());  // bỏ bậc này + các bậc sau
+    else { st.f[k] = new Set([b.dataset.v]); window.kpTrack?.("drill", { step: k, value: b.dataset.v }); }
+    refresh();
   });
   $("#active").addEventListener("click", (e) => {
     const b = e.target.closest(".ac"); if (!b) return;

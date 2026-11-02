@@ -415,3 +415,30 @@ a.sh:hover .go{background:var(--fg);color:#fff}
 
 .shops.clip > .sh:nth-child(n+5){display:none}
 .shmore{display:block;width:100%;margin:.2rem 0 .4rem;padding:.45rem;border:1px dashed var(--line,#e2e8f0);border-radius:10px;background:none;font:inherit;font-size:.8rem;font-weight:700;color:#475569;cursor:pointer}
+
+/* trang chủ điện thoại: lưới nhóm hàng lên đầu */
+.hcats{display:none}
+@media(max-width:900px){
+ .hcats{display:block;background:var(--card,#fff);border:1px solid var(--line,#e2e8f0);border-radius:14px;padding:12px;margin:4px 0 14px}
+ .hcats h2{font-size:1rem;margin:0 0 10px}
+ .hcats .cgrid{grid-template-columns:repeat(4,1fr);gap:6px}
+ .hcats .cgrid button{display:flex;flex-direction:column;align-items:center;gap:1px;border:1px solid var(--line,#e2e8f0);background:var(--bg,#f8fafc);border-radius:12px;padding:8px 2px;cursor:pointer;font:inherit;color:inherit}
+ .hcats .ci{font-size:1.4rem}.hcats .cn{font-size:.72rem;font-weight:600;text-align:center;line-height:1.2}.hcats .cc{font-size:.62rem;color:#94a3b8}
+ .mv-c{padding:.5rem .7rem}.mv-c h3{font-size:.88rem}
+}
+/* hàng chọn theo bậc Hãng › Dòng máy › Dung lượng */
+.drill{display:none}
+@media(max-width:900px){
+ .drill{display:block;margin:0 -16px 8px}
+ .drill[hidden]{display:none}
+ .drill .dcr{display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:2px 16px 6px}
+ .drill .dop{display:flex;align-items:center;gap:6px;overflow-x:auto;scrollbar-width:none;padding:2px 16px 4px;-webkit-overflow-scrolling:touch}
+ .drill .dop::-webkit-scrollbar{display:none}
+ .drill .dl{flex:none;font-size:.75rem;color:#64748b;font-weight:600}
+ .drill .dsep{flex:none;color:#94a3b8;font-size:.9rem}
+ .drill button{flex:none;display:inline-flex;align-items:center;gap:.3rem;height:34px;padding:0 .8rem;border-radius:999px;border:1px solid #c7d2fe;background:#fff;color:#1e293b;font-size:.82rem;font-weight:600;white-space:nowrap;cursor:pointer;font-family:inherit;-webkit-tap-highlight-color:transparent}
+ .drill button em{font-style:normal;font-size:.68rem;color:#94a3b8;font-weight:500}
+ .drill .dc{background:var(--fg,#0f172a);border-color:var(--fg,#0f172a);color:#fff}
+ .drill .dc i{font-style:normal;font-size:.7rem;opacity:.7}
+ .drill button:active{transform:scale(.97)}
+}
