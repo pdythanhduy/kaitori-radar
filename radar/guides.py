@@ -385,6 +385,142 @@ Giờ mở cửa và ngày nghỉ có thể thay đổi, nên kiểm tra trang t
     (out / "index.html").write_text(pv, encoding="utf-8")
     extra.append(("/guide/tiem-kaitori/", "weekly"))
 
+    # ---------------------------------------------------------------- 7. Huỷ / trả iPhone (VI) — rà soát 02/11/2026
+    def vi_page(path, title, desc, crumb, h1, body):
+        out = site / path.strip("/")
+        out.mkdir(parents=True, exist_ok=True)
+        pv = page(title, desc, path,
+                  f'<nav class="bc"><a href="/vi/">Trang chủ</a> › <a href="/guide/vi/">Mẹo & Hướng dẫn</a> › {e(crumb)}</nav>'
+                  f'<article class="guide" lang="vi"><h1>{e(h1)}</h1>{body}</article>', [], updated)
+        pv = pv.replace('<html lang="ja">', '<html lang="vi">', 1).replace(
+            '<a class="hd-cta" href="/">全商品を比較 →</a>', '<a class="hd-cta" href="/vi/">So giá 9 tiệm →</a>', 1)
+        (out / "index.html").write_text(pv, encoding="utf-8")
+        extra.append((path, "daily"))
+
+    SRC = ('<p class="small">Nguồn: <a href="https://www.apple.com/jp/shop/help/returns_refund" target="_blank" rel="noopener nofollow">Apple 返品・返金</a> · '
+           '<a href="https://www.softbank.jp/support/faq/view/12278" target="_blank" rel="noopener nofollow">SoftBank FAQ</a> · '
+           '<a href="https://www.showcase-tv.com/mobile/iphone-duo-cancel/" target="_blank" rel="noopener nofollow">bài tổng hợp cách huỷ đặt trước (16/10/2026)</a> · '
+           '<a href="https://www.soumu.go.jp/main_content/000877865.pdf" target="_blank" rel="noopener nofollow">tài liệu 総務省</a>. '
+           'Rà soát ngày 02/11/2026. Quy định có thể thay đổi, nên xem lại trang chính thức trước khi làm.</p>')
+    CTA = '<p class="cta"><a href="/vi/?q=iPhone">Xem giá kai iPhone ở 9 tiệm (cập nhật mỗi giờ) →</a></p>'
+
+    body_huy = f"""
+<p>Giá kai iPhone giảm, nhiều người muốn <b>huỷ đơn đã đặt</b> để khỏi bán lỗ. Bài này tóm tắt cách huỷ ở Apple Store và các nhà mạng
+sao cho <b>không mất phí</b>. Nguyên tắc quan trọng nhất: <b>huỷ trước khi hàng được gửi đi</b>. Sau khi đã giao hàng, việc huỷ sẽ thành
+<b>trả hàng</b>, khó hơn nhiều, và ở một số nơi iPhone không được trả.</p>
+<nav class="toc"><b>Mục lục</b><ol><li><a href="#apple">Apple Store</a></li><li><a href="#docomo">docomo</a></li><li><a href="#au">au</a></li>
+<li><a href="#sb">SoftBank</a></li><li><a href="#rakuten">Rakuten Mobile</a></li><li><a href="#hopdong">Hợp đồng sim đi kèm</a></li><li><a href="#ruiro">Rủi ro huỷ nhiều lần</a></li></ol></nav>
+
+<h2 id="apple">🍎 Apple Store (online)</h2>
+<ul class="tips">
+<li><b>Chưa gửi hàng:</b> đăng nhập Apple Account → trang <b>ご注文状況</b> → chọn đơn → <b>商品のキャンセル</b>. Đã trả tiền thì Apple hoàn lại số tiền đã thanh toán.</li>
+<li>Khi đơn đã chuyển sang <b>出荷準備中</b> hoặc <b>出荷完了</b> thì không tự huỷ được nữa. Lúc đó dùng cách <a href="/guide/tra-iphone-apple/">trả máy trong 14 ngày</a>.</li>
+<li>Thanh toán ở konbini hoặc chuyển khoản mà <b>không trả tiền trong 2 tuần</b> thì đơn tự huỷ (theo bài tổng hợp, trang trợ giúp của Apple không ghi rõ).</li>
+<li>Apple không công bố hạn chót cụ thể. Muốn huỷ thì <b>huỷ càng sớm càng tốt</b>, đừng đợi tới ngày giao.</li>
+</ul>
+
+<h2 id="docomo">📶 docomo</h2>
+<ul class="tips">
+<li>Huỷ đặt trước: đăng nhập <b>dアカウント</b> → trang <b>予約状況の確認</b> → huỷ.</li>
+<li>⚠️ Theo bài tổng hợp, chế độ trả hàng (返品保証) của docomo Online Shop <b>chỉ áp dụng cho Android, iPhone không được trả</b>. Vì vậy iPhone đặt ở docomo phải huỷ trước khi gửi hàng.</li>
+</ul>
+
+<h2 id="au">📶 au</h2>
+<ul class="tips">
+<li>Tự huỷ được <b>tới trước khi bắt đầu chuẩn bị gửi hàng</b>.</li>
+<li>Đổi máy (機種変更): đăng nhập bằng <b>au ID</b>. Mở số mới hoặc chuyển mạng (新規・のりかえ): cần <b>số đặt trước (予約番号) và mật khẩu</b> trong email xác nhận. Giữ lại email này tới khi xong việc.</li>
+</ul>
+
+<h2 id="sb">📶 SoftBank</h2>
+<ul class="tips">
+<li>Sau khi đặt, <b>gần như không đổi được</b> màu, dung lượng, số lần trả góp. Muốn đổi thì phải <b>huỷ rồi đặt lại</b>.</li>
+<li>Cách huỷ khác nhau tuỳ tình trạng đơn, xem ở trang FAQ của SoftBank Online Shop (cần <b>số tiếp nhận 受付番号</b>). Đặt ở cửa hàng thì liên hệ chính cửa hàng đó.</li>
+<li>SoftBank không ghi hạn chót huỷ, nên làm sớm.</li>
+</ul>
+
+<h2 id="rakuten">📶 Rakuten Mobile</h2>
+<ul class="tips"><li>Chỉ huỷ được <b>trước khi đơn đăng ký được tiếp nhận xong</b>.</li></ul>
+
+<h2 id="hopdong">📄 Hợp đồng sim đi kèm</h2>
+<ul class="tips">
+<li><b>Trả máy cho Apple không tự huỷ hợp đồng nhà mạng.</b> Hợp đồng sim phải tự huỷ với nhà mạng.</li>
+<li><b>初期契約解除 (huỷ trong 8 ngày):</b> là chế độ huỷ <b>hợp đồng sim</b> (ví dụ sóng yếu, giải thích không đủ). Phí tháng tính theo ngày, phí gọi và dữ liệu đã dùng vẫn phải trả. Chế độ này <b>không phải</b> là trả máy.</li>
+</ul>
+
+<h2 id="ruiro">⚠️ Rủi ro khi mở rồi huỷ hợp đồng nhiều lần</h2>
+<ul class="tips">
+<li>Tài liệu của 総務省 (2023) ghi nhận có đại lý nói rằng huỷ sớm (ví dụ trong 3 hoặc 6 tháng) sẽ bị đưa vào <b>danh sách đen</b>. Mở rồi huỷ liên tục có rủi ro bị từ chối hợp đồng sau này.</li>
+<li>Theo tin tổng hợp, Y!mobile thu <b>phí huỷ hợp đồng tối đa 1.100円</b> với hợp đồng đăng ký từ 01/07/2026. Xu hướng là các nhà mạng siết chuyện mở rồi huỷ nhanh.</li>
+<li>Huỷ <b>đơn đặt trước khi chưa giao</b> đơn giản hơn nhiều so với huỷ hợp đồng sau khi đã nhận máy.</li>
+</ul>
+
+<p class="pt-note">💡 Chưa chắc nên huỷ? Đọc <a href="/guide/gia-iphone-giam/">Giá kai iPhone giảm: huỷ, bán ngay hay giữ?</a> và so giá 9 tiệm trước khi quyết định.</p>
+{CTA}{SRC}"""
+    vi_page("/guide/huy-iphone/", "Cách huỷ đơn iPhone không mất phí: Apple Store, docomo, au, SoftBank | Kaitori Price",
+            "Huỷ đơn đặt iPhone trước khi gửi hàng ở Apple Store, docomo, au, SoftBank, Rakuten Mobile. Điều cần biết về hợp đồng sim và rủi ro danh sách đen.",
+            "Huỷ đơn iPhone", "❌ Cách huỷ đơn iPhone không mất phí", body_huy)
+
+    body_tra = f"""
+<p>Nếu đơn Apple Store đã gửi đi, không huỷ được nữa, vẫn có thể <b>trả máy trong 14 ngày</b>. Đây là điều kiện ghi trên trang chính thức của Apple Nhật.</p>
+<h2>Điều kiện trả máy</h2>
+<ul class="tips">
+<li><b>Trong 14 ngày</b> kể từ khi nhận hàng, iPhone <b>không hư hại</b>, kèm phụ kiện đi kèm.</li>
+<li>Phải ở <b>tình trạng ban đầu, đủ linh kiện, phụ kiện và hộp</b>. Giữ lại hộp, giấy, cáp, đừng vứt đi.</li>
+<li>Chỉ trả <b>tại Nhật</b> (nước đã mua).</li>
+<li>Hoàn tiền qua ngân hàng thì <b>chỉ vào tài khoản đứng tên người mua</b>. Apple có thể kiểm tra máy trước khi hoàn tiền.</li>
+</ul>
+<h2>Các bước trước khi gửi trả</h2>
+<ul class="tips">
+<li><b>Tắt "Tìm iPhone" (アクティベーションロック)</b> nếu đã bật. Apple có thể từ chối nhận máy còn khoá.</li>
+<li>Nếu có hợp đồng sim đi kèm: <b>tự huỷ hợp đồng với nhà mạng</b>. Trả máy không tự huỷ hợp đồng.</li>
+<li>Bắt đầu trả hàng từ trang <b>ご注文状況</b> trên Apple Store online.</li>
+</ul>
+<h2>⚠️ Khi nào bị trừ phí 15%</h2>
+<p>Bình thường trả máy trong 14 ngày không có phí. Nhưng Apple ghi rõ sẽ thu <b>phí trả hàng 15% mỗi sản phẩm</b> với
+<b>đơn mua số lượng lớn</b> hoặc khi nghi ngờ trả hàng, huỷ đơn bất thường. Mua nhiều máy để bán lại rồi trả hàng loạt dễ bị phí này.</p>
+<h2>Ở nhà mạng thì sao?</h2>
+<p>Quy định trả máy của nhà mạng khác Apple. Ví dụ docomo Online Shop không nhận trả iPhone (xem <a href="/guide/huy-iphone/#docomo">bài huỷ đơn</a>).
+Với máy mua ở nhà mạng, hãy huỷ trước khi gửi hàng.</p>
+{CTA}{SRC}"""
+    vi_page("/guide/tra-iphone-apple/", "Trả iPhone cho Apple trong 14 ngày: điều kiện, phí 15% | Kaitori Price",
+            "Điều kiện trả iPhone mua ở Apple Store Nhật trong 14 ngày, cần tắt Tìm iPhone, huỷ hợp đồng sim, khi nào bị phí 15%.",
+            "Trả iPhone cho Apple", "↩️ Trả iPhone cho Apple trong 14 ngày", body_tra)
+
+    trs = []
+    for it in ip18:
+        ps = sorted(it["prices"].items(), key=lambda kv: -kv[1]["price"])
+        (s1, p1), low = ps[0], ps[-1]
+        link = f'<a href="/p/{it["_slug"]}/">{e(it["name"])}</a>' if it.get("_slug") else e(it["name"])
+        trs.append(f"<tr><td>{link}</td><td><b>{_yen(p1['price'])}</b><br><small>{e(shops.get(s1, {}).get('name', s1))}</small></td>"
+                   f"<td>{_yen(p1['price'] - low[1]['price']) if len(ps) > 1 else '—'}</td><td>{it['n_shops']}</td></tr>")
+    tbl = ('<div class="tw"><table class="pt"><thead><tr><th>Mẫu</th><th>Giá kai cao nhất</th><th>Chênh cao–thấp</th><th>Số tiệm</th></tr></thead>'
+           f"<tbody>{''.join(trs)}</tbody></table></div>") if trs else ""
+    body_gia = f"""
+<p class="upd">Giá cập nhật: {upd} JST (tự động mỗi giờ)</p>
+<p>Giá kai iPhone giảm thì có 3 lựa chọn: <b>huỷ đơn</b>, <b>bán ngay</b> hoặc <b>giữ chờ giá</b>. Không có cách nào chắc chắn đúng,
+nhưng tính đúng con số thì quyết định dễ hơn.</p>
+<h2>Giá kai iPhone 18 / Duo mới nhất (máy mới, chưa mở)</h2>
+{tbl}
+<p class="small">Bấm tên mẫu để xem giá từng tiệm và biểu đồ giá.</p>
+<h2>Cách tính nhanh</h2>
+<ul class="tips">
+<li><b>Lời / lỗ = giá kai cao nhất − (giá mua − điểm thưởng nhận được)</b>. Nhớ trừ cả phí đi lại hoặc phí gửi bưu điện.</li>
+<li>Các tiệm lệch nhau có khi vài nghìn tới vài chục nghìn yên, đừng chỉ hỏi 1 tiệm.</li>
+<li>Màu, dung lượng có thể bị trừ tiền khác nhau giữa các tiệm, xem ghi chú trên trang giá.</li>
+</ul>
+<h2>Khi nào nên làm gì?</h2>
+<ul class="tips">
+<li><b>Huỷ:</b> khi tính ra lỗ và đơn <b>chưa gửi hàng</b>, huỷ được miễn phí. Xem <a href="/guide/huy-iphone/">cách huỷ từng nơi</a>.</li>
+<li><b>Trả máy:</b> đã nhận máy ở Apple Store, còn trong 14 ngày, chưa hư hại. Xem <a href="/guide/tra-iphone-apple/">điều kiện trả</a>. Mua số lượng lớn có thể bị phí 15%.</li>
+<li><b>Bán ngay:</b> khi vẫn còn lời, hoặc lỗ ít hơn chi phí huỷ. Chọn tiệm giá cao nhất, có thể <a href="/guide/yoyaku-kaitori/">đặt giữ giá (予約買取)</a> trước khi máy về.</li>
+<li><b>Giữ chờ giá:</b> là đánh cược. Máy mới thường mất giá theo thời gian, và khi đã mở hộp hoặc kích hoạt thì không còn bán được giá "mới chưa mở".</li>
+</ul>
+<p class="pt-note">📈 Giá 9 tiệm cập nhật mỗi giờ, theo dõi trước khi quyết định: <a href="/vi/?q=iPhone">kaitoriprice.com/vi</a></p>
+<p class="small">Bài chỉ để tham khảo, không phải lời khuyên đầu tư. Giá trong bảng là giá công khai trên web các tiệm, giá thực tế khi bán có thể khác.</p>"""
+    vi_page("/guide/gia-iphone-giam/", "Giá kai iPhone giảm: nên huỷ, bán ngay hay giữ? | Kaitori Price",
+            "Bảng giá kai iPhone 18 / Duo mới nhất ở 9 tiệm, cách tính lời lỗ và khi nào nên huỷ đơn, trả máy, bán ngay.",
+            "Giá iPhone giảm", "📉 Giá kai iPhone giảm: huỷ, bán ngay hay giữ?", body_gia)
+
     # ---------------------------------------------------------------- trang tổng hợp (JA /guide/, VI /guide/vi/)
     # (path, icon, tiêu đề VI, mô tả VI, có bản tiếng Việt?) — nhóm theo mục để dễ tìm
     SECTIONS = [
@@ -415,6 +551,10 @@ Giờ mở cửa và ngày nghỉ có thể thay đổi, nên kiểm tra trang t
         if ja_cards:
             ja_html.append(f'<section class="gsec"><h2>{ja_t}</h2><div class="ggrid">{"".join(ja_cards)}</div></section>')
         if sid == "sell":
+            for c_ in [("/guide/tra-iphone-apple/", "↩️", "Trả iPhone cho Apple trong 14 ngày", "Điều kiện, tắt Tìm iPhone, khi nào bị phí 15%"),
+                       ("/guide/huy-iphone/", "❌", "Cách huỷ đơn iPhone không mất phí", "Apple Store, docomo, au, SoftBank, Rakuten: huỷ trước khi gửi hàng"),
+                       ("/guide/gia-iphone-giam/", "📉", "Giá kai iPhone giảm: huỷ, bán hay giữ?", "Bảng giá mới nhất 9 tiệm + cách tính lời lỗ")]:
+                vi_cards.insert(0, card(*c_))
             vi_cards.insert(0, card("/guide/tiem-kaitori/", "📍", "Danh sách tiệm kaitori (Tokyo, Osaka, Nagoya)",
                                     "Địa chỉ, giờ mở cửa, ga gần nhất, link bản đồ của các tiệm web đang so giá"))
         if sid == "buy":  # bài chỉ có tiếng Việt
