@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-02 15:13",
+ "updated": "2026-11-02 15:43",
  "shops": {
   "morimori": {
    "name": "森森買取",
@@ -217,44 +217,44 @@
    "ts": "2026-11-02 10:53"
   },
   "mobile_ichiban:1": {
-   "ok": false,
-   "err": "HTTPSConnectionPool(host='www.mobile-ichiban.com', port=443): Max retries exceeded with url: /Prod/1 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.mobile-ichiban.com', port=443) at 0x7ff95",
-   "ts": "2026-11-02 15:11"
+   "ok": true,
+   "n": 43,
+   "ts": "2026-11-02 15:41"
   },
   "mobile_ichiban:3": {
-   "ok": false,
-   "err": "HTTPSConnectionPool(host='www.mobile-ichiban.com', port=443): Max retries exceeded with url: /Prod/3 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.mobile-ichiban.com', port=443) at 0x7ff95",
-   "ts": "2026-11-02 15:12"
+   "ok": true,
+   "n": 49,
+   "ts": "2026-11-02 15:42"
   },
   "homura:box": {
    "ok": true,
    "n": 100,
-   "ts": "2026-11-02 15:13"
+   "ts": "2026-11-02 15:43"
   },
   "morimori:0301": {
    "ok": true,
    "n": 211,
-   "ts": "2026-11-02 15:07"
+   "ts": "2026-11-02 15:37"
   },
   "morimori:0101": {
    "ok": true,
    "n": 108,
-   "ts": "2026-11-02 15:07"
+   "ts": "2026-11-02 15:37"
   },
   "morimori:0104": {
    "ok": true,
    "n": 71,
-   "ts": "2026-11-02 15:08"
+   "ts": "2026-11-02 15:38"
   },
   "morimori:2401010": {
    "ok": true,
    "n": 7,
-   "ts": "2026-11-02 15:08"
+   "ts": "2026-11-02 15:38"
   },
   "morimori:2401001": {
    "ok": true,
    "n": 27,
-   "ts": "2026-11-02 15:08"
+   "ts": "2026-11-02 15:38"
   },
   "rudeya:full": {
    "ok": true,
@@ -264,7 +264,7 @@
   "rudeya:hot": {
    "ok": true,
    "n": 299,
-   "ts": "2026-11-02 15:08"
+   "ts": "2026-11-02 15:38"
   },
   "panda:full": {
    "ok": true,
@@ -289,27 +289,27 @@
   "panda:hot": {
    "ok": true,
    "n": 334,
-   "ts": "2026-11-02 15:08"
+   "ts": "2026-11-02 15:38"
   },
   "guestmobile:hot": {
    "ok": true,
    "n": 143,
-   "ts": "2026-11-02 15:09"
+   "ts": "2026-11-02 15:40"
   },
   "toban:hot": {
    "ok": true,
    "n": 1206,
-   "ts": "2026-11-02 15:10"
+   "ts": "2026-11-02 15:40"
   },
   "keitaigod:hot": {
-   "ok": false,
-   "err": "HTTPSConnectionPool(host='keitai-god.com', port=443): Max retries exceeded with url: /price/index.php?ci=1 (Caused by ConnectTimeoutError(<HTTPSConnection(host='keitai-god.com', port=443) at 0x7ff9576",
-   "ts": "2026-11-02 15:10"
+   "ok": true,
+   "n": 298,
+   "ts": "2026-11-02 15:41"
   },
   "ichome:hot": {
    "ok": true,
    "n": 410,
-   "ts": "2026-11-02 15:12"
+   "ts": "2026-11-02 15:42"
   },
   "ichome:full": {
    "ok": true,
