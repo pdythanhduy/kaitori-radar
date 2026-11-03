@@ -112,42 +112,42 @@
  "mobile_ichiban:1": {
   "ok": true,
   "n": 43,
-  "ts": "2026-11-03 20:11"
+  "ts": "2026-11-03 20:16"
  },
  "mobile_ichiban:3": {
   "ok": true,
   "n": 49,
-  "ts": "2026-11-03 20:12"
+  "ts": "2026-11-03 20:18"
  },
  "homura:box": {
   "ok": true,
   "n": 100,
-  "ts": "2026-11-03 20:12"
+  "ts": "2026-11-03 20:18"
  },
  "morimori:0301": {
   "ok": true,
   "n": 211,
-  "ts": "2026-11-03 20:07"
+  "ts": "2026-11-03 20:13"
  },
  "morimori:0101": {
   "ok": true,
   "n": 108,
-  "ts": "2026-11-03 20:07"
+  "ts": "2026-11-03 20:13"
  },
  "morimori:0104": {
   "ok": true,
   "n": 71,
-  "ts": "2026-11-03 20:08"
+  "ts": "2026-11-03 20:13"
  },
  "morimori:2401010": {
   "ok": true,
   "n": 7,
-  "ts": "2026-11-03 20:08"
+  "ts": "2026-11-03 20:14"
  },
  "morimori:2401001": {
   "ok": true,
   "n": 27,
-  "ts": "2026-11-03 20:08"
+  "ts": "2026-11-03 20:14"
  },
  "rudeya:full": {
   "ok": true,
@@ -157,7 +157,7 @@
  "rudeya:hot": {
   "ok": true,
   "n": 300,
-  "ts": "2026-11-03 20:08"
+  "ts": "2026-11-03 20:14"
  },
  "panda:full": {
   "ok": true,
@@ -182,31 +182,36 @@
  "panda:hot": {
   "ok": true,
   "n": 334,
-  "ts": "2026-11-03 20:08"
+  "ts": "2026-11-03 20:14"
  },
  "guestmobile:hot": {
-  "ok": false,
-  "err": "HTTPSConnectionPool(host='www.guestmobile.jp', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol",
-  "ts": "2026-11-03 20:09"
+  "ok": true,
+  "n": 143,
+  "ts": "2026-11-03 20:15"
  },
  "toban:hot": {
   "ok": true,
   "n": 1205,
-  "ts": "2026-11-03 20:10"
+  "ts": "2026-11-03 20:15"
  },
  "keitaigod:hot": {
   "ok": true,
   "n": 296,
-  "ts": "2026-11-03 20:10"
+  "ts": "2026-11-03 20:16"
  },
  "ichome:hot": {
   "ok": true,
   "n": 410,
-  "ts": "2026-11-03 20:12"
+  "ts": "2026-11-03 20:18"
  },
  "ichome:full": {
   "ok": true,
   "n": 1792,
   "ts": "2026-11-03 12:33"
+ },
+ "mobasute:hot": {
+  "ok": false,
+  "err": "403 Client Error: Forbidden for url: https://pastec.net/iphone",
+  "ts": "2026-11-03 20:18"
  }
 }
