@@ -45,6 +45,12 @@
     pixel(a.px + "?a8mat=" + a.a8mat);
     return `<div class="aff"><span class="pr">PR</span><span>${T().affText}</span><a href="https://px.a8.net/svt/ejp?a8mat=${a.a8mat}" target="_blank" rel="sponsored nofollow noopener">${esc(a.name)} →</a></div>`;
   }
+  // thẻ tín dụng tích điểm cho sản phẩm bán ở Apple (promos.cardpay) — thay dòng 楽天/Yahoo để thẻ không dài thêm
+  function cardBox(it) {
+    const c = promos.cardpay; if (!c || !c.a8mat || !it.msrp) return "";
+    pixel(c.px + "?a8mat=" + c.a8mat);
+    return `<div class="aff"><span class="pr">PR</span><span>${T().cardText}</span><a href="https://px.a8.net/svt/ejp?a8mat=${c.a8mat}" target="_blank" rel="sponsored nofollow noopener">${esc(c.name)} →</a></div>`;
+  }
   const loadCat = async (c) => (cache[c] ||= FACETS.enrich(await fetch(`data/cat/${c}.json` + bust).then((r) => r.json())));
   const loadHist = async (c) => (hcache[c] ||= await fetch(`data/hist/${c}.json` + bust).then((r) => r.json()).catch(() => ({})));
 
@@ -184,7 +190,7 @@
       <div class="c-top"><div><div class="c-name">${esc(it.name)}</div><div class="c-sub">${ICON[it.cat] || ""} ${esc(tag || t.cats[it.cat] || "")}・${t.shopsN(it.n_shops)}</div></div>${spark(it)}<div class="c-act"><button class="shr" data-id="${esc(id)}" aria-label="${esc(t.share)}" title="${esc(t.share)}"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M12 3v12"/><path d="m7 8 5-5 5 5"/></svg></button><button class="fav ${fav}" data-id="${esc(id)}" aria-label="${esc(t.watch)}" title="${esc(t.watch)}">${fav ? "♥" : "♡"}</button></div></div>
       <div class="best"><span class="best-p">${yen(it.best)}</span><span class="best-s ${it.n_shops > 1 ? "" : "one"}">${it.n_shops > 1 ? t.best + "：" : ""}${SH[it.best_shop]?.name || ""}</span>${chg}</div>
       ${boostTag(it)}${msrpLine(it)}${diff}<div class="shops ${shops.length > 4 ? "clip" : ""}">${rows}</div>${shops.length > 4 ? `<button class="shmore" type="button">${t.allShops(shops.length)} ▾</button>` : ""}
-      ${affBox(it.cat, it.key)}${buyBox(it)}
+      ${affBox(it.cat, it.key)}${cardBox(it) || buyBox(it)}
       <div class="calc-row"><label class="calc">${t.calc} <input type="number" inputmode="numeric" placeholder="${Math.round(it.best * 0.9).toLocaleString()}" data-best="${it.best}"> 円 → ${t.profit} <b class="pf">—</b></label><button class="stk ${mine.stock[id] ? "on" : ""}" data-id="${esc(id)}">${mine.stock[id] ? t.inStock : t.addStock}</button></div>
     </article>`;
   }

@@ -365,24 +365,68 @@
   {
    "id": "card",
    "title": {
-    "vi": "💳 Thẻ tín dụng hoàn điểm cao khi mua hàng để bán lại",
-    "ja": "💳 仕入れにおすすめの高還元クレジットカード"
+    "vi": "💳 Thẻ tín dụng tích điểm khi mua máy",
+    "ja": "💳 端末購入でポイントが貯まるクレジットカード"
    },
    "tab": {
-    "vi": "💳 Thẻ tín dụng",
+    "vi": "💳 Thẻ tích điểm",
     "ja": "💳 カード"
    },
    "items": [
     {
-     "name": "(chỗ trống — thêm link affiliate thẻ tín dụng)",
+     "name": "楽天カード",
      "url": "",
      "affiliate": true,
-     "desc": {
+     "badge": {
       "vi": "",
       "ja": ""
+     },
+     "desc": {
+      "vi": "Quẹt thẻ khi mua máy ở Apple hoặc nhà mạng để tích điểm. Người nước ngoài có thẻ cư trú vẫn đăng ký được, nhưng kết quả xét duyệt tuỳ hồ sơ. Xem tỷ lệ điểm và điều kiện trên trang chính thức.",
+      "ja": "Appleやキャリアで端末を買うときに使えばポイントが貯まります。審査結果は申込内容によります。還元率・条件は公式サイトでご確認ください。"
+     }
+    },
+    {
+     "name": "PayPayカード",
+     "url": "",
+     "affiliate": true,
+     "badge": {
+      "vi": "",
+      "ja": ""
+     },
+     "desc": {
+      "vi": "Quẹt thẻ khi mua máy ở Apple hoặc nhà mạng để tích điểm. Người nước ngoài có thẻ cư trú vẫn đăng ký được, nhưng kết quả xét duyệt tuỳ hồ sơ. Xem tỷ lệ điểm và điều kiện trên trang chính thức.",
+      "ja": "Appleやキャリアで端末を買うときに使えばポイントが貯まります。審査結果は申込内容によります。還元率・条件は公式サイトでご確認ください。"
+     }
+    },
+    {
+     "name": "エポスカード",
+     "url": "",
+     "affiliate": true,
+     "badge": {
+      "vi": "",
+      "ja": ""
+     },
+     "desc": {
+      "vi": "Quẹt thẻ khi mua máy ở Apple hoặc nhà mạng để tích điểm. Người nước ngoài có thẻ cư trú vẫn đăng ký được, nhưng kết quả xét duyệt tuỳ hồ sơ. Xem tỷ lệ điểm và điều kiện trên trang chính thức.",
+      "ja": "Appleやキャリアで端末を買うときに使えばポイントが貯まります。審査結果は申込内容によります。還元率・条件は公式サイトでご確認ください。"
+     }
+    },
+    {
+     "name": "三井住友カード(NL)",
+     "url": "",
+     "affiliate": true,
+     "badge": {
+      "vi": "",
+      "ja": ""
+     },
+     "desc": {
+      "vi": "Quẹt thẻ khi mua máy ở Apple hoặc nhà mạng để tích điểm. Người nước ngoài có thẻ cư trú vẫn đăng ký được, nhưng kết quả xét duyệt tuỳ hồ sơ. Xem tỷ lệ điểm và điều kiện trên trang chính thức.",
+      "ja": "Appleやキャリアで端末を買うときに使えばポイントが貯まります。審査結果は申込内容によります。還元率・条件は公式サイトでご確認ください。"
      }
     }
-   ]
+   ],
+   "_ghi_chu": "url rỗng = ẩn. Khi được duyệt chương trình A8 thì điền url = https://px.a8.net/svt/ejp?a8mat=..., giữ affiliate=true. Kiểm tra tỷ lệ điểm/ưu đãi trên trang chính thức rồi mới điền badge."
   },
   {
    "id": "sim",
@@ -521,5 +565,11 @@
    "code": "75798",
    "bonus": 3000
   }
+ },
+ "_huong_dan_cardpay": "cardpay: thẻ tín dụng hiện trong thẻ sản phẩm có giá Apple (iPhone, iPad…), thay cho dòng 楽天/Yahoo. Điền name + a8mat (A8 → 広告リンク作成 → テキスト) + px là tự hiện; để a8mat rỗng = ẩn.",
+ "cardpay": {
+  "name": "",
+  "a8mat": "",
+  "px": "https://www13.a8.net/0.gif"
  }
 }
