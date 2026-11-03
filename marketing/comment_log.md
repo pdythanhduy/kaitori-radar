@@ -13,3 +13,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-02 | 14:45 | 53K (713324666776820) | permalink/1600698654706079 Duo 256 trắng Namba | 森森 370k / ルデヤ 372,5k, trắng trừ 5k ở 1丁目/モバイル一番 + link web
 2026-11-02 | 15:20 | 53K (713324666776820) | Vô Thường: giá kai cần 2 Duo Chiba/Tokyo (tk Duy) | Duo 256 ルデヤ 372,5k/森森 370k, 512 415,5k, trắng trừ 5–6k + link ?q=iPhone Duo
 2026-11-02 | 18:38 | 53K (713324666776820) | UnforgettableLlama2103: 2 máy 18PM đỏ Nagoya xin giá (tk Duy) | 256 森森 233k / 512 267k, mã giới thiệu 森森 75798 + link ?q=iPhone 18 Pro Max
+2026-11-03 | 10:19 | 32K (807826924656140) | posts/1448829140555912 (bài huỷ đơn của Duy) | link huy-iphone + gia-iphone-giam trong bình luận bài mình
