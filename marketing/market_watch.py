@@ -117,7 +117,7 @@ def report(news: str = "") -> tuple[str, dict]:
     L.append(chg("cn", cn, "Trung Quốc"))
     L.append(chg("hk", hk, "Hồng Kông"))
     if tr:
-        L += ["", "📈 Giá kai (cao nhất 10 tiệm):"]
+        L += ["", "📈 Giá kai (cao nhất 9 tiệm):"]
         for name, now, d1, d7 in tr:
             L.append(f"• {name}: {now:,}円 {('· 1 ngày ' + pct(now, d1)) if d1 else ''} {('· dài hạn ' + pct(now, d7)) if d7 else ''}")
     tw = taiwan()

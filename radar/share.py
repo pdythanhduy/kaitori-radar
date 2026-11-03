@@ -82,7 +82,7 @@ def render(name: str, prices: dict, out: Path) -> bool:
     fy = H - 150
     g.line([60, fy, W - 60, fy], fill=GRID, width=2)
     g.text((60, fy + 24), "kaitoriprice.com/vi", font=vi(52, True), fill=INK)
-    g.text((60, fy + 92), "So giá kaitori 10 tiệm · cập nhật mỗi giờ · miễn phí", font=vi(28), fill=INK2)
+    g.text((60, fy + 92), "So giá kaitori 9 tiệm · cập nhật mỗi giờ · miễn phí", font=vi(28), fill=INK2)
     g.text((W - 60, fy + 34), "買取プライス", font=ja(34, True), fill=MUTED, anchor="ra")
     out.parent.mkdir(parents=True, exist_ok=True)
     img.save(out, optimize=True)
@@ -106,7 +106,7 @@ def _caption(it, label):
     tail = f" → chọn nhầm tiệm mất tới {man} man!" if gap >= 10000 else f" → chênh {f(gap)}円."
     return (f"📊 {label}: {title(it)} – {len(ps)} tiệm kai\n"
             f"Cao nhất {SHOP.get(s1, s1)} {f(p1['price'])}円, thấp nhất {f(pl['price'])}円{tail}\n"
-            "Giá 10 tiệm cập nhật mỗi giờ 👉 https://kaitoriprice.com/vi/\n"
+            "Giá 9 tiệm cập nhật mỗi giờ 👉 https://kaitoriprice.com/vi/\n"
             "Anh em hôm nay bán được bao nhiêu, ở tiệm nào? Comment chia sẻ nhé 👇")
 
 

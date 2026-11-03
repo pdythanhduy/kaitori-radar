@@ -207,7 +207,7 @@ def build(items: dict, shops: dict, updated: str, page, e, site, base: str) -> l
 </ol>
 <h2>Mua rẻ rồi bán kai: nhớ so giá</h2>
 <p>Nếu mua hàng bằng phiếu để bán lại cho tiệm kaitori, các tiệm có thể trả chênh nhau vài nghìn đến vài man yên cho cùng một món.
-So giá 10 tiệm lớn, cập nhật mỗi giờ: <a href="/vi/">kaitoriprice.com/vi</a></p>
+So giá 9 tiệm lớn, cập nhật mỗi giờ: <a href="/vi/">kaitoriprice.com/vi</a></p>
 <p class="cta"><a href="/vi/?v=deals">Xem các ưu đãi khác →</a></p>
 <p><a href="https://www.facebook.com/groups/1118827834446963" target="_blank" rel="noopener">👥 Nhóm Facebook "Săn Giá Kaitori Nhật Bản": hỏi đáp, chia sẻ kinh nghiệm →</a></p>
 {src}"""
@@ -219,7 +219,7 @@ So giá 10 tiệm lớn, cập nhật mỗi giờ: <a href="/vi/">kaitoriprice.c
               f'<nav class="bc"><a href="/vi/">Trang chủ</a> › Mẹo mua rẻ</nav><article class="guide" lang="vi"><h1>Mua rẻ 20–30% bằng phiếu cổ đông (株主優待券)</h1>{body_vi}</article>',
               [], updated)
     pv = pv.replace('<html lang="ja">', '<html lang="vi">', 1).replace(
-        '<a class="hd-cta" href="/">全商品を比較 →</a>', '<a class="hd-cta" href="/vi/">So giá 10 tiệm →</a>', 1)
+        '<a class="hd-cta" href="/">全商品を比較 →</a>', '<a class="hd-cta" href="/vi/">So giá 9 tiệm →</a>', 1)
     (out / "index.html").write_text(pv, encoding="utf-8")
     extra = [("/guide/phieu-co-dong/", "weekly")]
 
@@ -280,7 +280,7 @@ hoặc mua hàng để bán lại cho tiệm kaitori. <b>Thông tin rà soát ng
 <li><b>Mua online:</b> chờ マラソン trùng ngày 5/0 (Rakuten) hoặc ngày 5 của Yahoo, và luôn vào qua trang tích điểm.</li>
 <li><b>Đồ điện máy:</b> dùng phiếu cổ đông ビックカメラ / エディオン, cộng thẻ tích điểm của cửa hàng.</li>
 <li><b>Tháng 11:</b> Black Friday (Amazon / Yahoo). Năm nay Yahoo không có ngày 25/11.</li>
-<li><b>Mua để bán kai:</b> so giá 10 tiệm trước khi bán 👉 <a href="/vi/">kaitoriprice.com/vi</a></li>
+<li><b>Mua để bán kai:</b> so giá 9 tiệm trước khi bán 👉 <a href="/vi/">kaitoriprice.com/vi</a></li>
 </ul>
 <p><a href="https://www.facebook.com/groups/1118827834446963" target="_blank" rel="noopener">👥 Hỏi đáp trong nhóm Facebook "Săn Giá Kaitori Nhật Bản" →</a></p>
 <section><h2>Nguồn tham khảo</h2><ul class="small">
@@ -302,7 +302,7 @@ hoặc mua hàng để bán lại cho tiệm kaitori. <b>Thông tin rà soát ng
               f'<nav class="bc"><a href="/vi/">Trang chủ</a> › <a href="/guide/vi/">Mẹo & Hướng dẫn</a> › Mua hàng giảm giá</nav><article class="guide" lang="vi"><h1>🛒 7 cách mua hàng giảm giá ở Nhật</h1>{body_tips}</article>',
               [], updated)
     pv = pv.replace('<html lang="ja">', '<html lang="vi">', 1).replace(
-        '<a class="hd-cta" href="/">全商品を比較 →</a>', '<a class="hd-cta" href="/vi/">So giá 10 tiệm →</a>', 1)
+        '<a class="hd-cta" href="/">全商品を比較 →</a>', '<a class="hd-cta" href="/vi/">So giá 9 tiệm →</a>', 1)
     (out / "index.html").write_text(pv, encoding="utf-8")
     extra.append(("/guide/meo-mua-re/", "weekly"))
 
@@ -367,7 +367,7 @@ hoặc mua hàng để bán lại cho tiệm kaitori. <b>Thông tin rà soát ng
     body_st = f"""
 <p>Địa chỉ, giờ mở cửa và ga gần nhất của các tiệm kaitori mà web đang so giá. <b>Lấy từ trang chính thức của từng tiệm ngày 01/11/2026.</b>
 Giờ mở cửa và ngày nghỉ có thể thay đổi, nên kiểm tra trang tiệm hoặc gọi trước khi đi.</p>
-<p class="pt-note">💡 Ở xa tiệm? Hầu hết các tiệm có <b>gửi bưu điện (郵送買取)</b>: gửi hàng đi, tiệm chuyển khoản. Trước khi đi hoặc gửi, so giá 10 tiệm ở <a href="/vi/">kaitoriprice.com/vi</a>.</p>
+<p class="pt-note">💡 Ở xa tiệm? Hầu hết các tiệm có <b>gửi bưu điện (郵送買取)</b>: gửi hàng đi, tiệm chuyển khoản. Trước khi đi hoặc gửi, so giá 9 tiệm ở <a href="/vi/">kaitoriprice.com/vi</a>.</p>
 <nav class="toc"><b>Khu vực:</b> {toc}</nav>
 {"".join(rows_html)}
 <h2>Mang gì khi đi bán?</h2>
@@ -381,7 +381,7 @@ Giờ mở cửa và ngày nghỉ có thể thay đổi, nên kiểm tra trang t
               f'<nav class="bc"><a href="/vi/">Trang chủ</a> › <a href="/guide/vi/">Mẹo & Hướng dẫn</a> › Danh sách tiệm</nav><article class="guide" lang="vi"><h1>📍 Danh sách tiệm kaitori (Tokyo, Osaka, Nagoya)</h1>{body_st}</article>',
               [], updated)
     pv = pv.replace('<html lang="ja">', '<html lang="vi">', 1).replace(
-        '<a class="hd-cta" href="/">全商品を比較 →</a>', '<a class="hd-cta" href="/vi/">So giá 10 tiệm →</a>', 1)
+        '<a class="hd-cta" href="/">全商品を比較 →</a>', '<a class="hd-cta" href="/vi/">So giá 9 tiệm →</a>', 1)
     (out / "index.html").write_text(pv, encoding="utf-8")
     extra.append(("/guide/tiem-kaitori/", "weekly"))
 
@@ -393,7 +393,7 @@ Giờ mở cửa và ngày nghỉ có thể thay đổi, nên kiểm tra trang t
                   f'<nav class="bc"><a href="/vi/">Trang chủ</a> › <a href="/guide/vi/">Mẹo & Hướng dẫn</a> › {e(crumb)}</nav>'
                   f'<article class="guide" lang="vi"><h1>{e(h1)}</h1>{body}</article>', [], updated)
         pv = pv.replace('<html lang="ja">', '<html lang="vi">', 1).replace(
-            '<a class="hd-cta" href="/">全商品を比較 →</a>', '<a class="hd-cta" href="/vi/">So giá 10 tiệm →</a>', 1)
+            '<a class="hd-cta" href="/">全商品を比較 →</a>', '<a class="hd-cta" href="/vi/">So giá 9 tiệm →</a>', 1)
         (out / "index.html").write_text(pv, encoding="utf-8")
         extra.append((path, "daily"))
 
@@ -402,7 +402,7 @@ Giờ mở cửa và ngày nghỉ có thể thay đổi, nên kiểm tra trang t
            '<a href="https://www.showcase-tv.com/mobile/iphone-duo-cancel/" target="_blank" rel="noopener nofollow">bài tổng hợp cách huỷ đặt trước (16/10/2026)</a> · '
            '<a href="https://www.soumu.go.jp/main_content/000877865.pdf" target="_blank" rel="noopener nofollow">tài liệu 総務省</a>. '
            'Rà soát ngày 02/11/2026. Quy định có thể thay đổi, nên xem lại trang chính thức trước khi làm.</p>')
-    CTA = '<p class="cta"><a href="/vi/?q=iPhone">Xem giá kai iPhone ở 10 tiệm (cập nhật mỗi giờ) →</a></p>'
+    CTA = '<p class="cta"><a href="/vi/?q=iPhone">Xem giá kai iPhone ở 9 tiệm (cập nhật mỗi giờ) →</a></p>'
 
     body_huy = f"""
 <p>Giá kai iPhone giảm, nhiều người muốn <b>huỷ đơn đã đặt</b> để khỏi bán lỗ. Bài này tóm tắt cách huỷ ở Apple Store và các nhà mạng
@@ -454,7 +454,7 @@ sao cho <b>không mất phí</b>. Nguyên tắc quan trọng nhất: <b>huỷ tr
 <li>Huỷ <b>đơn đặt trước khi chưa giao</b> đơn giản hơn nhiều so với huỷ hợp đồng sau khi đã nhận máy.</li>
 </ul>
 
-<p class="pt-note">💡 Chưa chắc nên huỷ? Đọc <a href="/guide/gia-iphone-giam/">Giá kai iPhone giảm: huỷ, bán ngay hay giữ?</a> và so giá 10 tiệm trước khi quyết định.</p>
+<p class="pt-note">💡 Chưa chắc nên huỷ? Đọc <a href="/guide/gia-iphone-giam/">Giá kai iPhone giảm: huỷ, bán ngay hay giữ?</a> và so giá 9 tiệm trước khi quyết định.</p>
 {CTA}{SRC}"""
     vi_page("/guide/huy-iphone/", "Cách huỷ đơn iPhone không mất phí: Apple Store, docomo, au, SoftBank | Kaitori Price",
             "Huỷ đơn đặt iPhone trước khi gửi hàng ở Apple Store, docomo, au, SoftBank, Rakuten Mobile. Điều cần biết về hợp đồng sim và rủi ro danh sách đen.",
@@ -515,10 +515,10 @@ nhưng tính đúng con số thì quyết định dễ hơn.</p>
 <li><b>Bán ngay:</b> khi vẫn còn lời, hoặc lỗ ít hơn chi phí huỷ. Chọn tiệm giá cao nhất, có thể <a href="/guide/yoyaku-kaitori/">đặt giữ giá (予約買取)</a> trước khi máy về.</li>
 <li><b>Giữ chờ giá:</b> là đánh cược. Máy mới thường mất giá theo thời gian, và khi đã mở hộp hoặc kích hoạt thì không còn bán được giá "mới chưa mở".</li>
 </ul>
-<p class="pt-note">📈 Giá 10 tiệm cập nhật mỗi giờ, theo dõi trước khi quyết định: <a href="/vi/?q=iPhone">kaitoriprice.com/vi</a></p>
+<p class="pt-note">📈 Giá 9 tiệm cập nhật mỗi giờ, theo dõi trước khi quyết định: <a href="/vi/?q=iPhone">kaitoriprice.com/vi</a></p>
 <p class="small">Bài chỉ để tham khảo, không phải lời khuyên đầu tư. Giá trong bảng là giá công khai trên web các tiệm, giá thực tế khi bán có thể khác.</p>"""
     vi_page("/guide/gia-iphone-giam/", "Giá kai iPhone giảm: nên huỷ, bán ngay hay giữ? | Kaitori Price",
-            "Bảng giá kai iPhone 18 / Duo mới nhất ở 10 tiệm, cách tính lời lỗ và khi nào nên huỷ đơn, trả máy, bán ngay.",
+            "Bảng giá kai iPhone 18 / Duo mới nhất ở 9 tiệm, cách tính lời lỗ và khi nào nên huỷ đơn, trả máy, bán ngay.",
             "Giá iPhone giảm", "📉 Giá kai iPhone giảm: huỷ, bán ngay hay giữ?", body_gia)
 
     # ---------------------------------------------------------------- trang tổng hợp (JA /guide/, VI /guide/vi/)
@@ -547,7 +547,7 @@ nhưng tính đúng con số thì quyết định dễ hơn.</p>
         m = META[p]
         return card(m[4], m[1], m[2], m[3]) if m[4] else card(p, m[1], m[2], m[3], '<span class="gl">日本語</span>')
     VI_TOPICS = [
-        ("iphone", "📱 iPhone", [card("/guide/gia-iphone-giam/", "📉", "Giá kai iPhone giảm: huỷ, bán hay giữ?", "Bảng giá mới nhất 10 tiệm + cách tính lời lỗ"),
+        ("iphone", "📱 iPhone", [card("/guide/gia-iphone-giam/", "📉", "Giá kai iPhone giảm: huỷ, bán hay giữ?", "Bảng giá mới nhất 9 tiệm + cách tính lời lỗ"),
                                card("/guide/huy-iphone/", "❌", "Cách huỷ đơn iPhone không mất phí", "Apple Store, docomo, au, SoftBank, Rakuten: huỷ trước khi gửi hàng"),
                                card("/guide/tra-iphone-apple/", "↩️", "Trả iPhone cho Apple trong 14 ngày", "Điều kiện, tắt Tìm iPhone, khi nào bị phí 15%")]
                               + [vcard(p) for p in ["/guide/iphone-18-kaitori/"] if p in have]),
@@ -584,7 +584,7 @@ nhưng tính đúng con số thì quyết định dễ hơn.</p>
     pv = page("Mẹo & Hướng dẫn bán kaitori, mua rẻ ở Nhật | Kaitori Price",
               "Kinh nghiệm bán iPhone, máy game, thẻ Pokémon cho tiệm kaitori và mẹo mua rẻ ở Nhật.", "/guide/vi/", vi_body, [], updated)
     pv = pv.replace('<html lang="ja">', '<html lang="vi">', 1).replace(
-        '<a class="hd-cta" href="/">全商品を比較 →</a>', '<a class="hd-cta" href="/vi/">So giá 10 tiệm →</a>', 1)
+        '<a class="hd-cta" href="/">全商品を比較 →</a>', '<a class="hd-cta" href="/vi/">So giá 9 tiệm →</a>', 1)
     (out / "index.html").write_text(pv, encoding="utf-8")
     extra.append(("/guide/vi/", "weekly"))
     return [("/guide/", "weekly")] + [(p, "daily") for p, _, _ in guides] + extra

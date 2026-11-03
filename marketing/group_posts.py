@@ -67,7 +67,7 @@ def updated() -> str:
     return json.loads((DATA / "index.json").read_text(encoding="utf-8")).get("updated", "")
 
 
-FOOT = "\n\n👉 Giá 10 tiệm cập nhật mỗi giờ: {url}\n(Giá công khai trên web các tiệm lúc {upd}. Chưa tính điểm thưởng, phí ship. Bán thật có thể khác một chút.)"
+FOOT = "\n\n👉 Giá 9 tiệm cập nhật mỗi giờ: {url}\n(Giá công khai trên web các tiệm lúc {upd}. Chưa tính điểm thưởng, phí ship. Bán thật có thể khác một chút.)"
 
 
 # ------------------------------------------------------------------ 1. lời/lỗ iPhone mua giá Apple

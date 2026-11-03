@@ -523,6 +523,7 @@ SHOPS = {
     "keitaigod": {"name": "ケータイゴッド", "url": KG, "fn": keitaigod_scope, "scopes": ["full"], "hot": ["hot"]},
     "mobile_ichiban": {"name": "モバイル一番", "url": MI, "list": True, "fn": mobile_ichiban_scope, "scopes": MI_SCOPES, "hot": MI_HOT},
     "ichome": {"name": "買取1丁目", "url": IC, "fn": ichome_scope, "scopes": ["full"], "hot": ["hot"]},
-    "mobasute": {"name": "モバステ", "url": MS, "fn": mobasute_scope, "scopes": ["full"], "hot": ["hot"]},
+    # "mobasute": {"name": "モバステ", "url": MS, "fn": mobasute_scope, "scopes": ["full"], "hot": ["hot"]},
+    #   ↑ tắt 03/11/2026: pastec.net trả 403 cho máy chủ GitHub Actions (chặn truy cập tự động từ datacenter). Không lách.
     "homura": {"name": "買取ホムラ", "url": "https://kaitori-homura.com", "fn": homura_scope, "scopes": ["box"], "hot": ["box"]},
 }
