@@ -60,7 +60,7 @@ def sane(it) -> bool:
 
 
 def ref(it) -> str:
-    return " (森森 nhập mã giới thiệu 75798 được thêm 3.000円)" if it.get("best_shop") == "morimori" else ""
+    return " (森森: mã giới thiệu 75798 được coupon 3.000円 khi đăng ký mới)" if it.get("best_shop") == "morimori" else ""
 
 
 def updated() -> str:
