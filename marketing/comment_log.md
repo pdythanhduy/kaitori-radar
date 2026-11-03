@@ -16,3 +16,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-03 | 10:19 | 32K (807826924656140) | posts/1448829140555912 (bài huỷ đơn của Duy) | link huy-iphone + gia-iphone-giam trong bình luận bài mình
 2026-11-03 | 11:22 | 85K (congdongmuabandienthoaimaytinhnhatban) | ẩn danh 09:39: Technics EAH-AZ100 muốn bán, hỏi giá (tk Duy) | AZ100 đen: 1丁目 30,7k/森森 30,5k (mã 75798)/モバイル一番 30k/東邦 29,5k, hàng mới seal; đã dùng phải định giá + link ?q=EAH-AZ100
 2026-11-03 | 13:17 | 85K (congdongmuabandienthoaimaytinhnhatban) | https://www.facebook.com/groups/congdongmuabandienthoaimaytinhnhatban/posts/1734227727675329/ | radar TQ/HK + link
+2026-11-03 | 13:24 | 53K (713324666776820) | Pham Luan 12:55: bán 18 Pro 256 tím seal giá app-5s Nagoya (tk Duy) | Apple 219,8k / kai cao nhất 203k (ルデヤ/当番/パンダ/森森 mã 75798), tím không trừ màu + link ?q=iPhone 18 Pro 256GB
