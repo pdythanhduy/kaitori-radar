@@ -21,3 +21,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-03 | 18:15 | 53K (713324666776820) | posts/1601828044593140 InspiringRaspberry4251: Duo 256 trắng Shinjuku/Ike xin giá (tk Duy) | パンダ 376k/森森 373k (coupon 75798), 1丁目・モバイル一番 trắng -5k, ゲスト -6k, Apple 364,8k + link ?q=iPhone Duo 256GB
 2026-11-03 | 18:53 | 32K (807826924656140) | WarmPineapple2393 18:45: bán 18PM 256 Nagoya xanh 23,5m/trắng 23,4m/đen 23,3m (tk Duy) | 森森 233,5k (coupon 75798)/ルデヤ,1丁目,ゲスト,モバイル一番 231k; trừ màu ブラック-9k/グレイシャー-7k/シルバー-11,5–12k; Apple 239,8k; không link
 2026-11-03 | 19:56 | 53K (713324666776820) | posts/1601898304586114 WholesomePeapod1048: để lại 18 Pro/PM đỏ + bạc, gdtt Nagoya T7 (tk Duy) | PM256 森森 233,5k/PM512 268k, Pro256 203k/Pro512 240k, đỏ không trừ màu, bạc -10~11,5k ở 1丁目, coupon 75798 + link ?q=iPhone 18 Pro
+2026-11-03 | 20:24 | 53K (713324666776820) | https://www.facebook.com/groups/713324666776820/posts/1601934984582446/ | MNP 1円 + link
