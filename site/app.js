@@ -80,7 +80,7 @@
     $("#ftGuideVi") && ($("#ftGuideVi").hidden = lang !== "vi");
     document.querySelectorAll(".ft-col a[data-c]").forEach((a) => { a.textContent = lang === "vi" ? (T().cats[a.dataset.c] || a.textContent) : (CAT_JA[a.dataset.c] || a.textContent); });  // nhóm FB tiếng Việt: chỉ hiện cho người dùng tiếng Việt
     $("#q").placeholder = T().search;
-    $("#upd").textContent = `${T().upd} ${idx.updated}`;
+    $("#upd").innerHTML = `<span class="upd-l">${T().upd} ${idx.updated.slice(0, 5)}</span>${idx.updated.slice(5)}`; $("#upd").title = `${T().upd} ${idx.updated}`;
     $("#heroStat").textContent = T().hero(Object.keys(SH).length, idx.total.toLocaleString());
     $("#shops").innerHTML = T().stores + " " + Object.values(SH).map((s) => `<a href="${s.url}" target="_blank" rel="noopener">${s.name}</a>`).join("・");
     $("#sort").innerHTML = Object.entries(T().sort).map(([k, v]) => `<option value="${k}" ${st.sort === k ? "selected" : ""}>${v}</option>`).join("");
