@@ -157,6 +157,8 @@ def refine_cat(cat: str, name: str) -> str:
     """Món bị xếp vào 'appliance'/'other' nhưng tên cho thấy rõ nhóm khác → chuyển nhóm."""
     if re.search(r"instax|チェキ|インスタックス|INSTAXフィルム", name, re.I):
         return "camera"  # phim/máy chụp lấy liền (vd "PASTEL GALAXY" từng bị nhầm sang điện thoại Galaxy)
+    if re.search(r"カードゲーム|フュージョンワールド|スーパーダイバーズ|ドラゴンボールヒーローズ|トレーディングカード|アドバンスパック|ブースターパック", name):
+        return "card"  # thẻ bài (Dragon Ball, One Piece…) có tiệm xếp vào "game"/"gia dụng" → người lọc Thẻ bài không thấy
     if cat not in ("appliance", "other"):
         return cat
     if re.search(_KEEP_APPLIANCE, name, re.I):
