@@ -22,7 +22,7 @@
   // mã giới thiệu tiệm (promos.json → ref): hiện ở dòng giá tiệm đó + thẻ ở trang Ưu đãi
   const REF = Object.fromEntries(Object.entries(promos.ref || {}).filter(([, r]) => r && r.code));
   const refText = (sid) => { const r = REF[sid]; if (!r) return "";
-    return lang === "vi" ? `🎁 Mã giới thiệu ${r.code}: +${r.bonus.toLocaleString()}円 khi đăng ký` : `🎁 紹介コード ${r.code} で${r.bonus.toLocaleString()}円分クーポン`; };
+    return lang === "vi" ? `🎁 Mã giới thiệu ${r.code}: coupon ${r.bonus.toLocaleString()}円 (nhập khi đăng ký mới)` : `🎁 紹介コード ${r.code} で${r.bonus.toLocaleString()}円分クーポン`; };
   const pxSeen = new Set();
   function pixel(src) {  // ảnh 1x1 đo lượt hiển thị A8 — mỗi chương trình 1 lần/trang
     if (!src || pxSeen.has(src)) return;
