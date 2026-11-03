@@ -460,3 +460,36 @@ a.sh:hover .go{background:var(--fg);color:#fff}
 .alist{margin-top:8px;display:grid;gap:6px}.arow{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:.8rem;border-top:1px solid var(--line);padding-top:6px}
 .arow .an{display:flex;flex-direction:column;min-width:0}.arow .an small{color:var(--muted)}.arow label{white-space:nowrap}.arow input{width:7.5em;padding:.3rem;border:1px solid var(--line);border-radius:8px;font-size:.8rem}
 .pbox .phelp{background:#fef3c7;color:#92400e;border-radius:10px;padding:.55rem .7rem;font-size:.8rem;line-height:1.55;margin:.5rem 0 0}
+
+/* v14: trang chủ điện thoại gọn hơn — chữ nhỏ lại, nhóm hàng thành 1 hàng cuộn ngang, thẻ sản phẩm thấp hơn */
+@media(max-width:560px){
+ body{font-size:13.5px;line-height:1.5}
+ /* dòng giới thiệu dưới logo: ẩn khỏi màn hình nhưng vẫn giữ cho Google đọc */
+ .hero h1{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+ .hero-in{padding-top:8px;padding-bottom:8px;gap:8px}
+ .hero-q{height:38px;font-size:.86rem}
+ /* "Bạn muốn bán gì?": 1 hàng cuộn ngang thay cho lưới 4 cột */
+ .hcats{padding:8px 0 8px 10px;margin:2px 0 10px;border-radius:12px}
+ .hcats h2{font-size:.82rem;margin:0 0 6px;color:#52525b}
+ .hcats .cgrid{display:flex;overflow-x:auto;gap:6px;padding-right:10px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+ .hcats .cgrid::-webkit-scrollbar{display:none}
+ .hcats .cgrid button{flex:none;width:62px;padding:6px 2px;border-radius:10px}
+ .hcats .ci{font-size:1.15rem}.hcats .cn{font-size:.66rem}.hcats .cc{display:none}
+ /* tiêu đề mục */
+ h2.sec{font-size:.9rem;margin:10px 2px 6px}h2.sec small{font-size:.7rem}
+ /* thẻ sản phẩm */
+ .card{padding:10px 12px 8px;gap:5px;border-radius:14px}
+ .c-name{font-size:.88rem;line-height:1.35}
+ .c-sub{font-size:.7rem}
+ .best-p{font-size:1.12rem}
+ .best-s{font-size:.66rem;padding:.08rem .45rem}
+ .fav,.shr{width:30px;height:30px}
+ .boost{font-size:.66rem;margin:0}
+ a.sh{padding:6px 6px;gap:6px;font-size:.84rem}
+ a.sh .go{width:20px;height:20px;font-size:.66rem}
+ .shops.clip > .sh:nth-child(n+4){display:none}
+ .shmore{font-size:.74rem;padding:.35rem;margin:.1rem 0 .2rem}
+ .list{gap:8px}
+ .diff{font-size:.68rem;padding:.15rem .45rem}
+ .msrp{font-size:.7rem;padding:.15rem .45rem;margin:.05rem 0 .1rem}
+}

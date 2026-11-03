@@ -6,10 +6,31 @@
 // Bindings: KV namespace "KV"; secret VAPID_PRIVATE_JWK (JSON JWK P-256); var VAPID_PUBLIC (base64url).
 // Điều kiện báo: có target → giá cao nhất ≥ target (báo 1 lần, rồi chờ giá xuống dưới target mới báo lại);
 //                không target → giá cao nhất đổi ≥ 2% so với lần báo trước.
+// - Sự kiện ẩn danh từ web: POST /ev {e,a,b,p,l} → Durable Object "Stats" (SQLite) cộng dồn theo ngày JST.
+//   Đọc báo cáo: GET /stats?key=<EV_KEY>&days=7  (EV_KEY là secret). Không lưu IP / định danh.
+import { DurableObject } from "cloudflare:workers";
+
+export class Stats extends DurableObject {
+  constructor(ctx, env) {
+    super(ctx, env);
+    this.sql = ctx.storage.sql;
+    this.sql.exec("CREATE TABLE IF NOT EXISTS ev (day TEXT, e TEXT, a TEXT, b TEXT, p TEXT, l TEXT, c TEXT, n INTEGER, PRIMARY KEY (day, e, a, b, p, l, c))");
+  }
+  add(r) {
+    const day = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
+    this.sql.exec("INSERT INTO ev VALUES (?, ?, ?, ?, ?, ?, ?, 1) ON CONFLICT DO UPDATE SET n = n + 1", day, r.e, r.a, r.b, r.p, r.l, r.c);
+  }
+  rows(days) {
+    const from = new Date(Date.now() + 9 * 3600e3 - (days - 1) * 86400e3).toISOString().slice(0, 10);
+    this.sql.exec("DELETE FROM ev WHERE day < ?", new Date(Date.now() - 120 * 86400e3).toISOString().slice(0, 10));  // giữ 120 ngày
+    return this.sql.exec("SELECT day, e, a, b, p, l, c, n FROM ev WHERE day >= ? ORDER BY day, n DESC", from).toArray();
+  }
+}
+
 const SITE = "https://kaitoriprice.com";
 const MOVE = 0.02;
 const MAX_ITEMS = 30;
-const CORS = { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "POST, OPTIONS", "Access-Control-Allow-Headers": "Content-Type" };
+const CORS = { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "GET, POST, OPTIONS", "Access-Control-Allow-Headers": "Content-Type" };
 const json = (o, s = 200) => new Response(JSON.stringify(o), { status: s, headers: { "Content-Type": "application/json", ...CORS } });
 
 const b64u = (buf) => btoa(String.fromCharCode(...new Uint8Array(buf))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
@@ -80,10 +101,29 @@ export default {
   async scheduled(event, env, ctx) {
     console.log("push check", JSON.stringify(await check(env)));
   },
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const u = new URL(request.url);
     if (request.method === "OPTIONS") return new Response(null, { headers: CORS });
-    if (request.method === "GET") return json({ ok: true, kv: !!env.KV, vapid: !!env.VAPID_PRIVATE_JWK });
+    if (u.pathname === "/stats") {
+      if (!env.EV_KEY || u.searchParams.get("key") !== env.EV_KEY) return json({ error: "forbidden" }, 403);
+      const days = Math.max(1, Math.min(120, parseInt(u.searchParams.get("days") || "7", 10) || 7));
+      return json({ rows: await env.STATS.get(env.STATS.idFromName("main")).rows(days) });
+    }
+    if (request.method === "GET") return json({ ok: true, kv: !!env.KV, vapid: !!env.VAPID_PRIVATE_JWK, stats: !!env.STATS });
+    if (u.pathname === "/ev") {  // sự kiện ẩn danh từ web (tìm kiếm, bấm sang tiệm…): không lưu IP, không định danh
+      const src = request.headers.get("Origin") || request.headers.get("Referer") || "";
+      const dev = /^http:\/\/localhost(:\d+)?/.test(src);
+      if (env.STATS && (dev || /^https:\/\/(www\.)?kaitoriprice\.com/.test(src))) {
+        let e = {}; try { e = JSON.parse((await request.text()).slice(0, 2000)); } catch {}
+        const s = (v, n) => String(v ?? "").replace(/[\u0000-\u001f]/g, " ").trim().slice(0, n);
+        const name = s(e.e, 40);
+        if (/^[a-z_0-9]{2,40}$/.test(name)) {
+          const stub = env.STATS.get(env.STATS.idFromName("main"));
+          ctx.waitUntil(stub.add({ e: dev ? "dev_" + name : name, a: s(e.a, 100), b: s(e.b, 100), p: s(e.p, 60), l: s(e.l, 4), c: s(request.cf?.country, 4) }));
+        }
+      }
+      return new Response(null, { status: 204, headers: CORS });
+    }
     let b; try { b = await request.json(); } catch { return json({ error: "bad json" }, 400); }
     const ep = b?.sub?.endpoint || b?.endpoint;
     if (!ep || !/^https:\/\//.test(ep) || ep.length > 1000) return json({ error: "bad endpoint" }, 400);

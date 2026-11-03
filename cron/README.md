@@ -15,3 +15,12 @@ Cron miễn phí của GitHub hay trễ/bỏ lượt, nên Worker này gọi `wo
   Đổi khoá thì mọi đăng ký cũ hỏng → người dùng phải bật lại.
 - Cron (UTC) `22,52 1-13 * * *`: ~15 phút sau mỗi lượt cập nhật giá, đọc `kaitoriprice.com/data/cat/*.json`, gửi push (không payload);
   service worker (`site/sw.js`) gọi `/msg` để lấy nội dung.
+
+## Thống kê hành vi ẩn danh (kaitori-push `/ev`, `/stats`)
+
+- `site/ga.js` gửi sự kiện (tìm kiếm, tìm không ra, bấm sang tiệm, bấm link đối tác, vào từ link `?q=`, mở bài hướng dẫn, theo dõi giá…) bằng `sendBeacon` tới `POST /ev`.
+  Không cookie, không lưu IP. Máy chủ web (`?me=1`) không bị đếm. Thử trên máy local: thêm `?evdebug=1`, sự kiện được ghi với tiền tố `dev_`.
+- Worker cộng dồn theo ngày JST vào Durable Object `Stats` (SQLite, giữ 120 ngày). Chỉ nhận request từ kaitoriprice.com hoặc localhost.
+- Đọc: `GET /stats?key=<EV_KEY>&days=7`. Secret `EV_KEY` nằm trong `.env`.
+- Báo cáo: `python marketing/events_report.py [--today|--days 7] [--send]`. Báo cáo truy cập buổi sáng (`daily_traffic.py`) tự gộp phần "Hành vi người dùng".
+- Deploy: `python cron/deploy_push.py`. Script giữ KV, VAPID, cron, thêm DO `STATS` (migration v1) và secret `EV_KEY`.

@@ -114,6 +114,12 @@ def report() -> str:
     if jp and jp < v * 0.8:
         notes.append(f"Chỉ {jp * 100 // v}% từ Nhật (phần còn lại phần lớn là bot của FB đọc link).")
     lines += ["", "💡 " + "\n💡 ".join(notes[:3])]
+    try:  # hành vi: tìm gì, bấm sang tiệm nào (worker kaitori-push /stats)
+        from events_report import summary
+        d = (today - timedelta(days=1)).strftime("%Y-%m-%d")
+        lines += ["", summary(d, d)]
+    except Exception as e:
+        lines += ["", f"🧭 Hành vi: lỗi đọc sự kiện ({e})"]
     return "\n".join(lines)
 
 

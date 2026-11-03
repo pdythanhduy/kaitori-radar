@@ -670,7 +670,7 @@
   $("#scrim").addEventListener("click", () => { openSide(false); cgOpen(false); drOpen(false); });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") { openSide(false); cgOpen(false); drOpen(false); } });
   let qT, qL; $("#q").addEventListener("input", (e) => { clearTimeout(qT); clearTimeout(qL); qT = setTimeout(() => { st.q = e.target.value.trim(); clearFilters(); render(); }, 250);
-    qL = setTimeout(() => { const v = e.target.value.trim(); if (v.length >= 2) window.kpTrack?.("search", { search_term: v.slice(0, 80) }); }, 1500); });
+    qL = setTimeout(() => { const v = e.target.value.trim(); if (v.length >= 2) window.kpTrack?.($("#empty").hidden ? "search" : "search_none", { search_term: v.slice(0, 80) }); }, 1500); });
   $("#more").addEventListener("click", () => paint(false));
   // bảng: bấm "Xem cả N tiệm" để mở danh sách giá tất cả tiệm của món đó
   $("#list").addEventListener("click", (e) => {
