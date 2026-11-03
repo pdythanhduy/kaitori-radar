@@ -12,3 +12,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-03 | 13:17 | radar-85K | 📡 VÌ SAO GIÁ KAI iPHONE LÊN XUỐNG? (TQ & HK, không link, link ở bình luận, đăng ngay không chờ duyệt) | https://www.facebook.com/groups/congdongmuabandienthoaimaytinhnhatban/posts/1734227727675329/
 2026-11-03 | 15:18 | 3 | 📊 GIÁ KAI ĐỔI GÌ HÔM NAY? | https://www.facebook.com/groups/1118827834446963
 2026-11-03 | 19:18 | 4 | 🪪 KHI NÀO CẦN GIẤY PHÉP 古物商? | https://www.facebook.com/groups/1118827834446963
+2026-11-03 | 19:35 | radar-109K | 📡 VÌ SAO GIÁ KAI iPHONE LÊN XUỐNG? (TQ & HK, không link, CHỜ DUYỆT, chưa bình luận link) | https://www.facebook.com/groups/310466206520060
