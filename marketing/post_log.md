@@ -8,3 +8,5 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-03 | 09:21 | 1 | 💰 HÔM NAY MUA iPHONE GIÁ APPLE RỒI BÁN KAI THÌ LỜI HAY LỖ? | https://www.facebook.com/groups/1118827834446963
 2026-11-03 | 10:19 | 32K | 📌 HUỶ ĐƠN iPHONE (không link, link ở bình luận) | https://www.facebook.com/groups/807826924656140/posts/1448829140555912/
 2026-11-03 | 10:45 | 53K | 📌 HUỶ ĐƠN iPHONE (không link, chờ duyệt) | https://www.facebook.com/groups/713324666776820
+2026-11-03 | 13:14 | 2 | 🔀 CÙNG 1 MÓN, BÁN SAI TIỆM LÀ MẤT TIỀN | https://www.facebook.com/groups/1118827834446963
+2026-11-03 | 13:17 | radar-85K | 📡 VÌ SAO GIÁ KAI iPHONE LÊN XUỐNG? (TQ & HK, không link, link ở bình luận, đăng ngay không chờ duyệt) | https://www.facebook.com/groups/congdongmuabandienthoaimaytinhnhatban/posts/1734227727675329/

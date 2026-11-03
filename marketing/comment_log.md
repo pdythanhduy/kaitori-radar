@@ -15,3 +15,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-02 | 18:38 | 53K (713324666776820) | UnforgettableLlama2103: 2 máy 18PM đỏ Nagoya xin giá (tk Duy) | 256 森森 233k / 512 267k, mã giới thiệu 森森 75798 + link ?q=iPhone 18 Pro Max
 2026-11-03 | 10:19 | 32K (807826924656140) | posts/1448829140555912 (bài huỷ đơn của Duy) | link huy-iphone + gia-iphone-giam trong bình luận bài mình
 2026-11-03 | 11:22 | 85K (congdongmuabandienthoaimaytinhnhatban) | ẩn danh 09:39: Technics EAH-AZ100 muốn bán, hỏi giá (tk Duy) | AZ100 đen: 1丁目 30,7k/森森 30,5k (mã 75798)/モバイル一番 30k/東邦 29,5k, hàng mới seal; đã dùng phải định giá + link ?q=EAH-AZ100
+2026-11-03 | 13:17 | 85K (congdongmuabandienthoaimaytinhnhatban) | https://www.facebook.com/groups/congdongmuabandienthoaimaytinhnhatban/posts/1734227727675329/ | radar TQ/HK + link
