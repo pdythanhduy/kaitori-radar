@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-03 22:45",
+ "updated": "2026-11-03 23:50",
  "shops": {
   "morimori": {
    "name": "森森買取",
@@ -219,42 +219,42 @@
   "mobile_ichiban:1": {
    "ok": true,
    "n": 43,
-   "ts": "2026-11-03 22:44"
+   "ts": "2026-11-03 23:48"
   },
   "mobile_ichiban:3": {
    "ok": true,
    "n": 49,
-   "ts": "2026-11-03 22:45"
+   "ts": "2026-11-03 23:50"
   },
   "homura:box": {
    "ok": true,
    "n": 100,
-   "ts": "2026-11-03 22:45"
+   "ts": "2026-11-03 23:50"
   },
   "morimori:0301": {
-   "ok": false,
-   "err": "HTTPSConnectionPool(host='www.morimori-kaitori.jp', port=443): Max retries exceeded with url: /category/0301 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.morimori-kaitori.jp', port=443) a",
-   "ts": "2026-11-03 22:37"
+   "ok": true,
+   "n": 211,
+   "ts": "2026-11-03 23:45"
   },
   "morimori:0101": {
-   "ok": false,
-   "err": "HTTPSConnectionPool(host='www.morimori-kaitori.jp', port=443): Max retries exceeded with url: /category/0101 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.morimori-kaitori.jp', port=443) a",
-   "ts": "2026-11-03 22:38"
+   "ok": true,
+   "n": 108,
+   "ts": "2026-11-03 23:45"
   },
   "morimori:0104": {
-   "ok": false,
-   "err": "HTTPSConnectionPool(host='www.morimori-kaitori.jp', port=443): Max retries exceeded with url: /category/0104 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.morimori-kaitori.jp', port=443) a",
-   "ts": "2026-11-03 22:38"
+   "ok": true,
+   "n": 71,
+   "ts": "2026-11-03 23:45"
   },
   "morimori:2401010": {
-   "ok": false,
-   "err": "HTTPSConnectionPool(host='www.morimori-kaitori.jp', port=443): Max retries exceeded with url: /category/2401010 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.morimori-kaitori.jp', port=443",
-   "ts": "2026-11-03 22:39"
+   "ok": true,
+   "n": 7,
+   "ts": "2026-11-03 23:45"
   },
   "morimori:2401001": {
-   "ok": false,
-   "err": "HTTPSConnectionPool(host='www.morimori-kaitori.jp', port=443): Max retries exceeded with url: /category/2401001 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.morimori-kaitori.jp', port=443",
-   "ts": "2026-11-03 22:40"
+   "ok": true,
+   "n": 27,
+   "ts": "2026-11-03 23:45"
   },
   "rudeya:full": {
    "ok": true,
@@ -264,7 +264,7 @@
   "rudeya:hot": {
    "ok": true,
    "n": 300,
-   "ts": "2026-11-03 22:40"
+   "ts": "2026-11-03 23:45"
   },
   "panda:full": {
    "ok": true,
@@ -289,27 +289,27 @@
   "panda:hot": {
    "ok": true,
    "n": 334,
-   "ts": "2026-11-03 22:41"
+   "ts": "2026-11-03 23:46"
   },
   "guestmobile:hot": {
    "ok": true,
    "n": 143,
-   "ts": "2026-11-03 22:42"
+   "ts": "2026-11-03 23:47"
   },
   "toban:hot": {
    "ok": true,
    "n": 1205,
-   "ts": "2026-11-03 22:43"
+   "ts": "2026-11-03 23:47"
   },
   "keitaigod:hot": {
    "ok": true,
    "n": 296,
-   "ts": "2026-11-03 22:43"
+   "ts": "2026-11-03 23:48"
   },
   "ichome:hot": {
    "ok": true,
    "n": 410,
-   "ts": "2026-11-03 22:45"
+   "ts": "2026-11-03 23:50"
   },
   "ichome:full": {
    "ok": true,
