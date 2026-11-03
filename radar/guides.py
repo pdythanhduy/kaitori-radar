@@ -521,6 +521,122 @@ nhưng tính đúng con số thì quyết định dễ hơn.</p>
             "Bảng giá kai iPhone 18 / Duo mới nhất ở 9 tiệm, cách tính lời lỗ và khi nào nên huỷ đơn, trả máy, bán ngay.",
             "Giá iPhone giảm", "📉 Giá kai iPhone giảm: huỷ, bán ngay hay giữ?", body_gia)
 
+    # ---------------------------------------------------------------- 8. Lừa đảo khi giao dịch trực tiếp (VI) — 03/11/2026
+    body_lua = f"""
+<p>Các nhóm mua bán iPhone giữa người Việt ở Nhật rất tiện, nhưng cũng là chỗ kẻ gian nhắm tới. Dưới đây là những kiểu lừa hay gặp
+và cách tự bảo vệ, cho cả <b>người mua</b> lẫn <b>người bán</b>.</p>
+
+<h2 id="vat-la">📦 Hộp còn seal nhưng bên trong là vật lạ, không phải iPhone</h2>
+<p>Kiểu lừa nguy hiểm nhất với hàng "nguyên seal": hộp thật, màng co trông như mới, nhưng bên trong là cục đá, xà phòng, hộp giấy
+hoặc máy rẻ tiền. Người mua không dám bóc vì sợ mất giá "chưa mở", về nhà mới phát hiện.</p>
+<ul class="tips">
+<li><b>Hẹn giao dịch ngay tại quầy tiệm kaitori</b> (hoặc gần đó): nhờ tiệm kiểm tra / định giá, hoặc bán thẳng cho tiệm. Kẻ gian thường từ chối đi tiệm.</li>
+<li><b>Xem kỹ màng co (シュリンク):</b> màng bị nhăn, có vết keo, mép dán lại bằng nhiệt không đều, dải xé bị lệch là dấu hiệu đã bóc ra dán lại.</li>
+<li><b>Đối chiếu số trên nhãn hộp:</b> chụp lại số serial / IMEI in trên nhãn, kiểm tra trên trang của Apple (checkcoverage.apple.com) xem số có thật và đúng mẫu không. Số không tồn tại hoặc sai mẫu → không mua.</li>
+<li><b>So cảm giác cầm:</b> hộp quá nhẹ, quá nặng, hoặc lắc nghe tiếng lạ thì dừng lại.</li>
+<li><b>Mua nhiều máy:</b> đừng để người bán "cho xem 1 hộp, giao hộp khác". Kiểm tra từng hộp và cầm luôn hộp đã kiểm.</li>
+<li><b>Giá rẻ bất thường</b> (thấp hơn giá kai cao nhất nhiều) là dấu hiệu nguy hiểm. Xem giá kai thật trước: <a href="/vi/?q=iPhone">bảng giá 9 tiệm</a>.</li>
+</ul>
+
+<h2>💸 Chuyển khoản / PayPay giả</h2>
+<ul class="tips">
+<li>Ảnh chụp màn hình "đã chuyển khoản" rất dễ làm giả. <b>Chỉ giao máy khi tiền đã vào tài khoản của bạn</b> (mở app ngân hàng của chính bạn để xem).</li>
+<li>Người mua hối thúc "chuyển rồi, ngân hàng chậm" → không giao, chờ tiền vào.</li>
+<li>Giá trị lớn thì ưu tiên tiền mặt, đếm tại chỗ ở nơi đông người.</li>
+</ul>
+
+<h2>🔒 Máy bị khoá hoặc bị chặn mạng</h2>
+<ul class="tips">
+<li><b>Khoá kích hoạt (Tìm iPhone / iCloud):</b> máy đã kích hoạt mà người bán không đăng xuất được iCloud thì máy gần như vô dụng.</li>
+<li><b>利用制限 (hạn chế sử dụng):</b> máy mua trả góp ở nhà mạng chưa trả hết có thể bị đánh dấu △, nếu không trả tiếp sẽ thành × và bị chặn sóng.
+Nhiều tiệm kai <b>không mua máy △</b>. Kiểm tra IMEI trên trang 利用制限確認 của docomo / au / SoftBank trước khi mua máy mạng.</li>
+</ul>
+
+<h2>🧾 Với người bán</h2>
+<ul class="tips">
+<li>Người mua "kiểm tra máy" rồi tráo máy khác trả lại: không rời mắt khỏi máy, giao máy cuối cùng sau khi đã nhận đủ tiền.</li>
+<li>Không nhận bán hộ máy của người lạ: máy có thể là đồ trộm cắp hoặc mua bằng thẻ gian lận, người bán có thể bị liên luỵ.</li>
+<li>Tiệm kaitori luôn yêu cầu giấy tờ (thẻ cư trú…) và ghi lại thông tin người bán. Bán cho tiệm thường an toàn hơn bán cho người lạ.</li>
+</ul>
+
+<h2>Bị lừa rồi thì làm gì?</h2>
+<ul class="tips">
+<li>Giữ lại toàn bộ tin nhắn, ảnh, số tài khoản, ảnh hộp và nhãn hộp.</li>
+<li>Báo cảnh sát: gọi <b>110</b> nếu khẩn cấp, hoặc <b>#9110</b> (đường dây tư vấn của cảnh sát) để hỏi cách trình báo.</li>
+<li>Báo admin nhóm Facebook để cảnh báo người khác.</li>
+</ul>
+<p class="pt-note">💡 Cách an toàn nhất để biết giá đúng và tránh bị ép giá: <a href="/vi/">so giá 9 tiệm cập nhật mỗi giờ</a>, rồi bán thẳng cho tiệm trả cao nhất.</p>
+<p class="small">Bài tổng hợp kinh nghiệm chung để tham khảo, không phải tư vấn pháp lý. Gặp tình huống cụ thể hãy hỏi cảnh sát (#9110).</p>"""
+    vi_page("/guide/lua-dao-iphone/", "Cảnh giác lừa đảo khi mua bán iPhone trực tiếp ở Nhật: hộp seal có vật lạ, chuyển khoản giả | Kaitori Price",
+            "Các kiểu lừa khi gặp trực tiếp mua bán iPhone giữa người Việt ở Nhật: hộp nguyên seal bên trong là vật lạ, ảnh chuyển khoản giả, máy bị khoá iCloud hoặc 利用制限. Cách kiểm tra và xử lý.",
+            "Cảnh giác lừa đảo", "⚠️ Cảnh giác lừa đảo khi mua bán iPhone trực tiếp", body_lua)
+
+    # ---------------------------------------------------------------- 9. Bán cho người dùng hay bán kai (VI, số liệu thật)
+    rows_u = []
+    for it in ip18:
+        msrp = it.get("msrp")
+        if not msrp:
+            continue
+        ps = sorted(it["prices"].items(), key=lambda kv: -kv[1]["price"])
+        s1, p1 = ps[0]
+        user = msrp - 5000
+        d = p1["price"] - user
+        link = f'<a href="/p/{it["_slug"]}/">{e(it["name"])}</a>' if it.get("_slug") else e(it["name"])
+        verdict = "Kai cao hơn" if d > 0 else ("Ngang nhau" if d == 0 else "Bán người dùng cao hơn")
+        rows_u.append(f"<tr><td>{link}</td><td>{_yen(msrp)}</td><td>{_yen(user)}</td><td><b>{_yen(p1['price'])}</b><br><small>{e(shops.get(s1, {}).get('name', s1))}</small></td>"
+                      f"<td>{'+' if d > 0 else ''}{d:,}円<br><small>{verdict}</small></td></tr>")
+    tbl_u = ('<div class="tw"><table class="pt"><thead><tr><th>Mẫu</th><th>Giá Apple</th><th>Apple −5.000</th><th>Kai cao nhất</th><th>Kai − (Apple−5.000)</th></tr></thead>'
+             f"<tbody>{''.join(rows_u)}</tbody></table></div>") if rows_u else "<p>Chưa có số liệu.</p>"
+    body_u = f"""
+<p class="upd">Giá cập nhật: {upd} JST (tự động mỗi giờ)</p>
+<p>Trong các nhóm hay thấy giá <b>"app −5s"</b> (giá Apple trừ 5.000円) khi bán cho người dùng. Bảng dưới so mức đó với
+<b>giá kai cao nhất</b> trong 9 tiệm, để biết bán cho ai lợi hơn.</p>
+{tbl_u}
+<h2>Đọc bảng thế nào?</h2>
+<ul class="tips">
+<li><b>Số dương</b>: tiệm kai đang trả cao hơn mức app −5s → bán kai lợi hơn, lại nhanh và an toàn hơn gặp người lạ.</li>
+<li><b>Số âm</b>: bán cho người dùng ở mức app −5s được nhiều hơn. Nhưng nhớ rủi ro khi gặp trực tiếp: <a href="/guide/lua-dao-iphone/">cảnh giác lừa đảo</a>.</li>
+<li>Giá kai là máy <b>mới, chưa mở</b>. Một số màu bị tiệm trừ tiền, xem <a href="/guide/tru-mau-iphone/">bảng trừ màu</a>.</li>
+<li>Giá Apple lấy theo giá niêm yết các tiệm ghi (có thể khác giá Apple Store theo màu).</li>
+</ul>
+<p class="pt-note">📈 Giá đổi nhiều lần mỗi ngày, xem trước khi chốt: <a href="/vi/?q=iPhone">kaitoriprice.com/vi</a></p>
+<p class="small">Chỉ để tham khảo, không phải lời khuyên mua bán.</p>"""
+    vi_page("/guide/ban-nguoi-dung-hay-kai/", "Bán iPhone cho người dùng (app −5s) hay bán kai? Bảng so sánh hôm nay | Kaitori Price",
+            "So sánh giá Apple −5.000円 với giá kai cao nhất 9 tiệm cho từng mẫu iPhone 18 / Duo, cập nhật mỗi giờ.",
+            "Bán người dùng hay kai", "⚖️ Bán cho người dùng (app −5s) hay bán kai?", body_u)
+
+    # ---------------------------------------------------------------- 10. Bảng trừ màu từng tiệm (VI, từ ghi chú của tiệm)
+    def _cnote(t):  # chỉ giữ phần trừ màu, bỏ câu điều kiện phía sau (店頭… / 郵送… / △…)
+        t = re.sub(r"色減額[:：]?", "", t or "")
+        return re.split(r"\s*(?:店頭|郵送|△|※)", t)[0].strip()[:90]
+    COLOR = re.compile(r"ブラック|シルバー|グレイシャー|ホワイト|オレンジ|ブルー|ディープ|コズミック|ピンク|グリーン|パープル|レッド|色減額|White|Black|Silver|Blue", re.I)
+    rows_c = []
+    for it in ip18:
+        notes = [(shops.get(s, {}).get("name", s), p.get("note", "")) for s, p in it["prices"].items()
+                 if COLOR.search(p.get("note", "") or "") and re.search(r"-\s?[\d,]+", p.get("note", "") or "")]
+        if not notes:
+            continue
+        link = f'<a href="/p/{it["_slug"]}/">{e(it["name"])}</a>' if it.get("_slug") else e(it["name"])
+        cell = "<br>".join(f"<b>{e(n)}</b>: {e(_cnote(t))}" for n, t in notes)
+        rows_c.append(f"<tr><td>{link}</td><td>{cell}</td></tr>")
+    tbl_c = ('<div class="tw"><table class="pt"><thead><tr><th>Mẫu</th><th>Tiệm trừ tiền theo màu (đúng như tiệm ghi)</th></tr></thead>'
+             f"<tbody>{''.join(rows_c)}</tbody></table></div>") if rows_c else "<p>Hiện chưa tiệm nào ghi trừ màu.</p>"
+    body_c = f"""
+<p class="upd">Cập nhật: {upd} JST (tự động mỗi giờ)</p>
+<p>Cùng một mẫu iPhone, nhiều tiệm kai <b>trừ tiền theo màu</b> (ví dụ ブラック −9.000円). Màu không có trong ghi chú của tiệm thường được
+mua đủ giá. Bảng dưới lấy <b>đúng ghi chú các tiệm đăng trên web</b>; tiệm không có trong bảng là tiệm không ghi trừ màu.</p>
+{tbl_c}
+<h2>Mẹo</h2>
+<ul class="tips">
+<li>Máy màu bị trừ ở tiệm A có thể <b>không bị trừ ở tiệm B</b>, nên với màu bị trừ càng phải so nhiều tiệm.</li>
+<li>Tên màu tiếng Nhật: ブラック = đen, シルバー = bạc, ホワイト = trắng, ブルー = xanh dương, オレンジ = cam, グレイシャー = xanh băng.</li>
+<li>Mức trừ có thể đổi trong ngày, xem lại ngay trước khi mang máy đi bán.</li>
+</ul>
+<p class="pt-note">📈 Giá và ghi chú từng tiệm: <a href="/vi/?q=iPhone">kaitoriprice.com/vi</a> · So bán người dùng hay kai: <a href="/guide/ban-nguoi-dung-hay-kai/">bảng so sánh</a></p>"""
+    vi_page("/guide/tru-mau-iphone/", "Màu iPhone nào bị trừ tiền khi bán kai? Bảng trừ màu từng tiệm | Kaitori Price",
+            "Bảng mức trừ tiền theo màu (ブラック, シルバー, グレイシャー, ホワイト…) của từng tiệm kaitori cho iPhone 18 / Duo, lấy từ ghi chú của tiệm, cập nhật mỗi giờ.",
+            "Bảng trừ màu", "🎨 Màu iPhone nào bị trừ tiền? Bảng từng tiệm", body_c)
+
     # ---------------------------------------------------------------- trang tổng hợp (JA /guide/, VI /guide/vi/)
     # (path, icon, tiêu đề VI, mô tả VI, có bản tiếng Việt?) — nhóm theo mục để dễ tìm
     SECTIONS = [
@@ -549,7 +665,10 @@ nhưng tính đúng con số thì quyết định dễ hơn.</p>
     VI_TOPICS = [
         ("iphone", "📱 iPhone", [card("/guide/gia-iphone-giam/", "📉", "Giá kai iPhone giảm: huỷ, bán hay giữ?", "Bảng giá mới nhất 9 tiệm + cách tính lời lỗ"),
                                card("/guide/huy-iphone/", "❌", "Cách huỷ đơn iPhone không mất phí", "Apple Store, docomo, au, SoftBank, Rakuten: huỷ trước khi gửi hàng"),
-                               card("/guide/tra-iphone-apple/", "↩️", "Trả iPhone cho Apple trong 14 ngày", "Điều kiện, tắt Tìm iPhone, khi nào bị phí 15%")]
+                               card("/guide/tra-iphone-apple/", "↩️", "Trả iPhone cho Apple trong 14 ngày", "Điều kiện, tắt Tìm iPhone, khi nào bị phí 15%"),
+                               card("/guide/ban-nguoi-dung-hay-kai/", "⚖️", "Bán cho người dùng (app −5s) hay bán kai?", "Bảng so giá Apple −5.000 với giá kai cao nhất từng mẫu"),
+                               card("/guide/tru-mau-iphone/", "🎨", "Màu iPhone nào bị trừ tiền?", "Bảng trừ màu từng tiệm, đúng như tiệm ghi"),
+                               card("/guide/lua-dao-iphone/", "⚠️", "Cảnh giác lừa đảo khi mua bán trực tiếp", "Hộp seal có vật lạ, chuyển khoản giả, máy khoá iCloud / 利用制限")]
                               + [vcard(p) for p in ["/guide/iphone-18-kaitori/"] if p in have]),
         ("shop", "🏪 Bán cho tiệm", [card("/guide/tiem-kaitori/", "📍", "Danh sách tiệm kaitori (Tokyo, Osaka, Nagoya)",
                                          "Địa chỉ, giờ mở cửa, ga gần nhất, link bản đồ của các tiệm web đang so giá")]
