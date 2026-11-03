@@ -197,7 +197,7 @@ def cat_page(cat: str, its: list, n_all: int, updated: str) -> str:
 
 
 VI_TITLE = "Kaitori Price｜So sánh giá thu mua iPhone, máy game, thẻ Pokémon ở Nhật"
-VI_DESC = ("So sánh giá thu mua hàng mới (chưa mở hộp) tại 9 tiệm kaitori lớn ở Nhật, cập nhật mỗi giờ: iPhone, PS5, Switch, "
+VI_DESC = ("So sánh giá thu mua hàng mới (chưa mở hộp) tại 10 tiệm kaitori lớn ở Nhật, cập nhật mỗi giờ: iPhone, PS5, Switch, "
            "hộp thẻ Pokémon, máy ảnh. Biết ngay tiệm nào trả cao nhất trước khi bán. Miễn phí.")
 
 

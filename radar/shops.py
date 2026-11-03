@@ -480,6 +480,40 @@ def ichome_scope(sess, scope):
     return rows
 
 
+# ================================================================== モバステ (株式会社パステック, 13 cửa hàng) — bảng giá HTML tĩnh
+MS = "https://pastec.net"
+MS_PAGES = {"iphone": "phone"}  # iPad: tiệm ghi số model A3355 dùng chung nhiều dung lượng → chưa ghép được với mã MDYL4J/A của tiệm khác
+
+
+def _ms_note(t: str) -> str:
+    """'グレイシャー -7,000(開封済・未開封)\\nブラック -9,000(…)' → 'グレイシャー-7,000/ブラック-9,000'"""
+    t = re.sub(r"[（(][^)）]*[)）]", "", html.unescape(t or ""))
+    parts = [re.sub(r"\s+", "", p) for p in re.split(r"[\n/]+", t) if p.strip()]
+    return "/".join(parts)[:80]
+
+
+def mobasute_scope(sess, scope):
+    rows, seen = [], set()
+    for page, cat in MS_PAGES.items():
+        if scope == "hot" and page != "iphone":
+            continue
+        s = _get(sess, f"{MS}/{page}")
+        for body in re.findall(r'<tr\s+id="device-\d+"[^>]*>(.*?)</tr>', s, re.S):
+            nm = re.search(r'p-priceTable__name">\s*(?:<[^>]+>\s*)*<span>([^<]+)</span>', body)
+            pr = re.search(r'price--unopened">\s*([\d,]+)\s*円', body)   # chỉ lấy giá 未開封 (máy mới chưa mở hộp)
+            if not nm or not pr:
+                continue
+            name = _clean(nm.group(1))
+            link = re.search(rf'href="({re.escape(MS)}/{page}/[^"?]+)', body)
+            url = link.group(1) if link else f"{MS}/{page}"
+            if url in seen:
+                continue
+            seen.add(url)
+            cau = re.search(r'p-priceTable__caution[^"]*">(.*?)</div>', body, re.S)
+            rows.append(_row("mobasute", cat, name, int(pr.group(1).replace(",", "")), url, _ms_note(cau.group(1) if cau else "")))
+    return rows
+
+
 SHOPS = {
     "morimori": {"name": "森森買取", "url": MM, "fn": morimori_scope, "scopes": MM_SCOPES, "hot": MM_HOT},
     "rudeya": {"name": "買取ルデヤ", "url": RD, "fn": rudeya_scope, "scopes": ["full"], "hot": ["hot"]},
@@ -489,5 +523,6 @@ SHOPS = {
     "keitaigod": {"name": "ケータイゴッド", "url": KG, "fn": keitaigod_scope, "scopes": ["full"], "hot": ["hot"]},
     "mobile_ichiban": {"name": "モバイル一番", "url": MI, "list": True, "fn": mobile_ichiban_scope, "scopes": MI_SCOPES, "hot": MI_HOT},
     "ichome": {"name": "買取1丁目", "url": IC, "fn": ichome_scope, "scopes": ["full"], "hot": ["hot"]},
+    "mobasute": {"name": "モバステ", "url": MS, "fn": mobasute_scope, "scopes": ["full"], "hot": ["hot"]},
     "homura": {"name": "買取ホムラ", "url": "https://kaitori-homura.com", "fn": homura_scope, "scopes": ["box"], "hot": ["box"]},
 }
