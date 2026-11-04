@@ -48,3 +48,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-04 | 20:19 | 85K (congdongmuabandienthoaimaytinhnhatban) | https://www.facebook.com/groups/congdongmuabandienthoaimaytinhnhatban/posts/1735479497550152/ | MNP 1円 + link
 2026-11-04 | 20:45 | 32K (807826924656140) | https://www.facebook.com/groups/807826924656140/posts/1450205023751657/ | xu hướng 5 ngày + link
 2026-11-04 | 21:15 | 32K (807826924656140) | posts/1450205023751657 (trả lời CaringNarwhal7291 dưới bài xu hướng, page Nhật Bản 24H) | PM512 272k→267k (Apple −7,8k), Duo512 +31,2k vs Apple; không đoán giá; đỏ 森森 267k, đen/bạc thấp hơn 5,5–6,5k; không link (link đã có trong bài)
+2026-11-04 | 21:47 | 53K (713324666776820) | posts/1602973444478600 Boa1819xx 20:58: 18PM256 cherry app-6s khó trôi? (tk Duy) | app-6s=233,8k > kai đỏ 森森 232k/ルデヤ,当番,PANDA 230k → mua về bán kai lỗ 1,8–3,8k, hợp người dùng; coupon 75798 + link ?q=iPhone 18 Pro Max 256GB
