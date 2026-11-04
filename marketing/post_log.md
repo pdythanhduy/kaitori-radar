@@ -17,3 +17,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-03 | 23:14 | 5 | 🃏 GIÁ THU MUA HỘP THẺ POKÉMON CAO NHẤT HÔM NAY | https://www.facebook.com/groups/1118827834446963
 2026-11-04 | 08:23 | tinhot | 🔥 POKÉMON & iPHONE: TIN HOT HÔM NAY 04/11 | https://www.facebook.com/groups/1118827834446963
 2026-11-04 | 09:19 | 1 | 💰 HÔM NAY MUA iPHONE GIÁ APPLE RỒI BÁN KAI THÌ LỜI HAY LỖ? | https://www.facebook.com/groups/1118827834446963
+2026-11-04 | 10:13 | gioi-thieu | 📌 CHÀO MỪNG ĐẾN NHÓM SĂN GIÁ KAITORI NHẬT BẢN (ghim Đáng chú ý) | https://www.facebook.com/groups/1118827834446963/posts/1121631380833275/
