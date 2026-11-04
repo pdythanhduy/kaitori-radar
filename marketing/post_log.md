@@ -23,3 +23,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-04 | 12:43 | mnp-32K | BỎ LƯỢT: Chrome đang đăng nhập FB 'Fan Cứng L.Messi' (không phải Duy, chưa vào nhóm 32K) – chưa đăng | https://www.facebook.com/groups/807826924656140
 2026-11-04 | 13:36 | mnp-32K | 📱 CHUYỂN MẠNG LẤY MÁY 1円 RỒI BÁN KAI: THÁNG 11 CÒN NHỮNG NHÀ MẠNG NÀO? (đăng bù sau khi đổi lại tk Duy; không link, đăng ngay không chờ duyệt, link ở bình luận) | https://www.facebook.com/groups/807826924656140/posts/1449921247113368/
 2026-11-04 | 15:54 | 3 | 📊 GIÁ KAI ĐỔI GÌ HÔM NAY? | https://www.facebook.com/groups/1118827834446963 (bỏ dòng SM10B +50k: 当番 93k vs モバイル一番 150k bất thường)
+2026-11-04 | 16:25 | lua-dao | ⚠️ MUA BÁN iPHONE TRỰC TIẾP: HỘP CÒN SEAL MÀ BÊN TRONG LÀ VẬT LẠ? | https://www.facebook.com/groups/1118827834446963/posts/1121879424141804/
