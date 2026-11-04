@@ -39,3 +39,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-04 | 15:45 | 32K (807826924656140) | posts/1449980863774073 ẩn danh: cần ra đi Duo trắng Suita, không ghi dung lượng (tk Duy) | Duo trắng theo dung lượng: 256 森森 378k/ルデヤ 375k, 512 森森 430k, 1TB 森森 499k, 2TB 森森 610k; 1丁目/一番 trừ trắng -5k; coupon 75798 + link ?q=iPhone Duo
 2026-11-04 | 16:06 | 53K (713324666776820) | posts/1602668094509135 (trả lời bình luận của mình) | ĐÍNH CHÍNH: 森森 Duo256 trắng ~373k (không phải 378k), ルデヤ có màu từ 370k
 2026-11-04 | 16:06 | 32K (807826924656140) | posts/1449980863774073 (trả lời bình luận của mình) | ĐÍNH CHÍNH: 森森 trắng 256 ~373k/512 ~426k (-5k), 1TB/2TB đủ giá
+2026-11-04 | 16:46 | 53K (713324666776820) | posts/1602751551167456 ẩn danh 16:00: bán Duo trắng Umeda/Namba, không ghi dung lượng (tk Duy) | Duo trắng đã trừ màu: 256 森森 373k/ルデヤ,1丁目,一番 370k; 512 森森 426k/others 420k; 1TB 森森 503k; 2TB 森森 612k; coupon 75798 + link ?q=iPhone Duo (chọn màu)
