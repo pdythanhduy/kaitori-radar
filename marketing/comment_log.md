@@ -46,3 +46,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-04 | 18:46 | 32K (807826924656140) | posts/1450082080430618 IntelligentHummingbird7870 17:55: cắt lỗ 18 đỏ 256 Kawasaki (tk Duy) | mốc kai đỏ: 18PM256 森森 232k/ルデヤ,当番,PANDA 230k (Apple 239,8k); 18Pro256 PANDA,森森 203k (Apple 219,8k); coupon 75798 + link ?q=iPhone 18 Pro
 2026-11-04 | 19:15 | 53K (713324666776820) | posts/1602886111154000 AttentiveOtter1046 18:58: 2 máy 18PM 256 trắng 23,1/cây Osaka (tk Duy) | trắng=シルバー: 森森 223k/ルデヤ,一番 ~220k/1丁目,ゲスト ~218k (đỏ 230–232k), 当番 230k không ghi trừ → hỏi lại; coupon 75798; không link (N=21)
 2026-11-04 | 20:19 | 85K (congdongmuabandienthoaimaytinhnhatban) | https://www.facebook.com/groups/congdongmuabandienthoaimaytinhnhatban/posts/1735479497550152/ | MNP 1円 + link
+2026-11-04 | 20:45 | 32K (807826924656140) | https://www.facebook.com/groups/807826924656140/posts/1450205023751657/ | xu hướng 5 ngày + link
