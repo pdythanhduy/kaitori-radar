@@ -22,3 +22,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-04 | 10:26 | duyet-check | radar-109K (posts/2235618427338152) + huy-53K (posts/1601540101288601) ĐÃ DUYỆT, đã bình luận link | https://www.facebook.com/groups/310466206520060/posts/2235618427338152/
 2026-11-04 | 12:43 | mnp-32K | BỎ LƯỢT: Chrome đang đăng nhập FB 'Fan Cứng L.Messi' (không phải Duy, chưa vào nhóm 32K) – chưa đăng | https://www.facebook.com/groups/807826924656140
 2026-11-04 | 13:36 | mnp-32K | 📱 CHUYỂN MẠNG LẤY MÁY 1円 RỒI BÁN KAI: THÁNG 11 CÒN NHỮNG NHÀ MẠNG NÀO? (đăng bù sau khi đổi lại tk Duy; không link, đăng ngay không chờ duyệt, link ở bình luận) | https://www.facebook.com/groups/807826924656140/posts/1449921247113368/
+2026-11-04 | 15:54 | 3 | 📊 GIÁ KAI ĐỔI GÌ HÔM NAY? | https://www.facebook.com/groups/1118827834446963 (bỏ dòng SM10B +50k: 当番 93k vs モバイル一番 150k bất thường)
