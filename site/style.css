@@ -501,3 +501,5 @@ a.sh:hover .go{background:var(--fg);color:#fff}
 .cpick button.on{background:#111827;color:#fff;border-color:#111827}
 .cnote{font-size:.68rem;color:var(--muted);margin:0 0 .25rem}
 .sh .nt.cd{color:#dc2626;font-weight:600}.sh .nt.c0{color:#16a34a}
+.trend{font-size:.68rem;font-weight:600;border-radius:999px;padding:1px 7px;white-space:nowrap;align-self:center}
+.trend.up{color:#15803d;background:#dcfce7}.trend.dn{color:#b91c1c;background:#fee2e2}.trend.eq{color:var(--muted);background:var(--line2)}

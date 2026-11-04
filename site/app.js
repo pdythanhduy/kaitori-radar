@@ -142,6 +142,16 @@
     const pts = v.map((y, i) => `${((i / (v.length - 1)) * 80 + 2).toFixed(1)},${(30 - ((y - mn) / r) * 26).toFixed(1)}`).join(" ");
     return `<svg class="spark" width="84" height="32" viewBox="0 0 84 32"><polyline fill="none" stroke="${v[v.length - 1] >= v[0] ? "#16a34a" : "#dc2626"}" stroke-width="2" points="${pts}"/></svg>`;
   }
+  // 📈 xu hướng: giá cao nhất hôm nay so với trung bình tối đa 7 ngày trước (cần ≥ 3 ngày dữ liệu). Chỉ nêu sự thật, không khuyên bán/giữ.
+  function trend(it) {
+    const s = (hcache[it.cat] || {})[it.key] || [];
+    if (s.length < 3) return "";
+    const prev = s.slice(-8, -1).map((p) => p[1]), avg = prev.reduce((a, b) => a + b, 0) / prev.length;
+    const pct = ((it.best - avg) / avg) * 100, n = prev.length, t = T();
+    const top = pct > 0.5 && s.length >= 4 && it.best >= Math.max(...s.map((p) => p[1]));
+    const cls = pct > 0.5 ? "up" : pct < -0.5 ? "dn" : "eq";
+    return `<span class="trend ${cls}" title="${esc(t.trendTip)}">${t.trend(cls, n, Math.abs(pct).toFixed(1))}${top ? t.trendTop(s.length) : ""}</span>`;
+  }
   // tiệm không có trang riêng cho SP: link "#:~:text=" → trình duyệt tự cuộn tới & tô vàng đúng dòng sản phẩm
   const lstUrl = (p, it) => p.url.split("#")[0] + "#:~:text=" + encodeURIComponent((p.n || it.name).trim()).replace(/-/g, "%2D");
   function shopLink(sid, p, it) {
@@ -237,7 +247,7 @@
     const fav = mine.watch[id] ? "on" : "";
     return `<article class="card">
       <div class="c-top"><div><div class="c-name">${esc(it.name)}</div><div class="c-sub">${ICON[it.cat] || ""} ${esc(tag || t.cats[it.cat] || "")}・${t.shopsN(it.n_shops)}</div></div>${spark(it)}<div class="c-act"><button class="shr" data-id="${esc(id)}" aria-label="${esc(t.share)}" title="${esc(t.share)}"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M12 3v12"/><path d="m7 8 5-5 5 5"/></svg></button><button class="fav ${fav}" data-id="${esc(id)}" aria-label="${esc(t.watch)}" title="${esc(t.watch)}">${fav ? "♥" : "♡"}</button></div></div>
-      <div class="best"><span class="best-p">${yen(bestP)}</span><span class="best-s ${it.n_shops > 1 ? "" : "one"}">${it.n_shops > 1 ? t.best + "：" : ""}${SH[bestS]?.name || ""}</span>${chg}</div>
+      <div class="best"><span class="best-p">${yen(bestP)}</span><span class="best-s ${it.n_shops > 1 ? "" : "one"}">${it.n_shops > 1 ? t.best + "：" : ""}${SH[bestS]?.name || ""}</span>${chg}${col ? "" : trend(it)}</div>
       ${colorPick(it, id, col)}${boostTag(it)}${msrpLine(it, bestP)}${diff}<div class="shops ${shops.length > 4 ? "clip" : ""}">${rows}</div>${shops.length > 4 ? `<button class="shmore" type="button">${t.allShops(shops.length)} ▾</button>` : ""}
       ${affBox(it.cat, it.key)}${cardBox(it) || buyBox(it)}
       <div class="calc-row"><label class="calc">${t.calc} <input type="number" inputmode="numeric" placeholder="${Math.round(it.best * 0.9).toLocaleString()}" data-best="${it.best}"> 円 → ${t.profit} <b class="pf">—</b></label><button class="stk ${mine.stock[id] ? "on" : ""}" data-id="${esc(id)}">${mine.stock[id] ? t.inStock : t.addStock}</button></div>
@@ -401,7 +411,9 @@
       // tìm trước trong mục lục nhỏ → chỉ tải những nhóm có kết quả
       sidx ||= await fetch("data/search.json" + bust).then((r) => r.json()).catch(() => null);
       const cats = sidx ? [...new Set(sidx.filter(([, n]) => n.toLowerCase().replace(/\s/g, "").includes(q)).map(([c]) => c))] : Object.keys(CATS);
-      const all = (await Promise.all((cats.length ? cats : Object.keys(CATS)).filter((c) => CATS[c]).map(loadCat))).flat();
+      const use = (cats.length ? cats : Object.keys(CATS)).filter((c) => CATS[c]);
+      // tìm trong ≤ 2 nhóm (vd link ?q=iPhone từ Facebook): tải luôn lịch sử để có biểu đồ + nhãn xu hướng
+      const [all] = await Promise.all([Promise.all(use.map(loadCat)).then((a) => a.flat()), use.length <= 2 ? Promise.all(use.map(loadHist)) : null]);
       base = all.filter((i) => (i.name + i.key + (i._f.series || "")).toLowerCase().replace(/\s/g, "").includes(q));
     } else {
       base = (await Promise.all([loadCat(st.cat), loadHist(st.cat)]))[0];
