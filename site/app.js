@@ -247,7 +247,7 @@
     const fav = mine.watch[id] ? "on" : "";
     return `<article class="card">
       <div class="c-top"><div><div class="c-name">${esc(it.name)}</div><div class="c-sub">${ICON[it.cat] || ""} ${esc(tag || t.cats[it.cat] || "")}・${t.shopsN(it.n_shops)}</div></div>${spark(it)}<div class="c-act"><button class="shr" data-id="${esc(id)}" aria-label="${esc(t.share)}" title="${esc(t.share)}"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M12 3v12"/><path d="m7 8 5-5 5 5"/></svg></button><button class="fav ${fav}" data-id="${esc(id)}" aria-label="${esc(t.watch)}" title="${esc(t.watch)}">${fav ? "♥" : "♡"}</button></div></div>
-      <div class="best"><span class="best-p">${yen(bestP)}</span><span class="best-s ${it.n_shops > 1 ? "" : "one"}">${it.n_shops > 1 ? t.best + "：" : ""}${SH[bestS]?.name || ""}</span>${chg}${col ? "" : trend(it)}</div>
+      <div class="best"><span class="best-p">${yen(bestP)}</span><span class="best-s ${it.n_shops > 1 ? "" : "one"}">${it.n_shops > 1 ? t.best + "：" : ""}${SH[bestS]?.name || ""}</span>${chg}${col ? "" : trend(it)}<button class="bell ${mine.watch[id]?.target ? "on" : ""}" type="button" data-id="${esc(id)}" title="${esc(t.bellTip)}">${mine.watch[id]?.target ? "🔔 " + yen(mine.watch[id].target) : t.bellBtn}</button></div>
       ${colorPick(it, id, col)}${boostTag(it)}${msrpLine(it, bestP)}${diff}<div class="shops ${shops.length > 4 ? "clip" : ""}">${rows}</div>${shops.length > 4 ? `<button class="shmore" type="button">${t.allShops(shops.length)} ▾</button>` : ""}
       ${affBox(it.cat, it.key)}${cardBox(it) || buyBox(it)}
       <div class="calc-row"><label class="calc">${t.calc} <input type="number" inputmode="numeric" placeholder="${Math.round(it.best * 0.9).toLocaleString()}" data-best="${it.best}"> 円 → ${t.profit} <b class="pf">—</b></label><button class="stk ${mine.stock[id] ? "on" : ""}" data-id="${esc(id)}">${mine.stock[id] ? t.inStock : t.addStock}</button></div>
@@ -533,12 +533,38 @@
       <p class="small">${on ? (vi() ? "Đang bật. Web kiểm tra sau mỗi lần cập nhật giá (khoảng 30 phút/lần). Không cần đăng nhập." : "オン中。価格更新（約30分ごと）のたびにチェックします。") : (vi() ? "Không cần mở web: giá đạt mức bạn đặt, hoặc đổi từ 2% trở lên, là điện thoại báo ngay." : "サイトを開かなくても、目標価格到達や2%以上の変動を通知します。")}</p>
       ${iosHint}${on ? `<div class="alist">${rows}</div>` : ""}</div>`;
   }
+  // 🔔 trên thẻ: đặt mức giá muốn bán ngay tại chỗ → tự theo dõi (♥) + bật thông báo đẩy
+  function bellPanel(btn) {
+    const el = btn.closest(".card"), id = btn.dataset.id, it = REG.get(id); if (!el || !it) return;
+    const old = el.querySelector(".apanel"); if (old) return old.remove();
+    const t = T(), w = mine.watch[id], def = w?.target || Math.ceil((it.best + 3000) / 1000) * 1000;
+    el.querySelector(".best").insertAdjacentHTML("afterend", `<div class="apanel"><label>${t.bellAsk} <input class="atg2" type="number" inputmode="numeric" step="1000" value="${def}">円</label>`
+      + `<button class="aok" type="button" data-id="${esc(id)}">${t.bellOk}</button>${w?.target ? `<button class="aoff" type="button" data-id="${esc(id)}">${t.bellOff}</button>` : ""}<p class="ahelp" hidden></p></div>`);
+    el.querySelector(".atg2").focus();
+  }
+  async function bellSave(btn, off) {
+    const id = btn.dataset.id, it = REG.get(id), el = btn.closest(".card"), box = btn.closest(".apanel"); if (!it || !box) return;
+    const t = T(), v = off ? 0 : Math.max(0, Math.round(+box.querySelector(".atg2").value || 0));
+    if (!off && !v) return box.querySelector(".atg2").focus();
+    if (!mine.watch[id]) mine.watch[id] = { cat: it.cat, key: it.key, name: it.name, seen: it.best, at: it.best };
+    mine.watch[id].target = v; saveMine(); updMineBadge(0);
+    el.querySelectorAll(".fav").forEach((b) => { b.classList.add("on"); b.textContent = "♥"; });
+    el.querySelectorAll(".bell").forEach((b) => { b.classList.toggle("on", !!v); b.textContent = v ? "🔔 " + yen(v) : t.bellBtn; });
+    window.kpTrack?.(off ? "bell_off" : "bell_set", { item: it.name, value: v });
+    if (off) { if (pushOk) syncPush(); box.remove(); return toast(t.bellRemoved); }
+    let on = !!(await getSub()) && Notification.permission === "granted";
+    if (!on && !inApp && pushOk && Notification.permission !== "denied" && !(isIos && !standalone)) { await enablePush().catch(() => {}); on = !!(await getSub()) && Notification.permission === "granted"; }
+    if (on) { await syncPush(); box.remove(); return toast(t.bellDone(yen(v))); }
+    // chưa bật được (trình duyệt trong Facebook/Zalo, iPhone chưa thêm vào màn hình chính…): mức giá vẫn được lưu
+    const h = box.querySelector(".ahelp"); h.hidden = false; h.innerHTML = `✅ ${esc(t.bellSaved(yen(v)))}<br>⚠️ ${helpText()}`;
+  }
   function toggleWatch(id) {
     const it = REG.get(id);
     if (mine.watch[id]) delete mine.watch[id];
     else if (it) mine.watch[id] = { cat: it.cat, key: it.key, name: it.name, seen: it.best, at: it.best };
     saveMine();
     document.querySelectorAll(`.fav[data-id="${CSS.escape(id)}"]`).forEach((b) => { const on = !!mine.watch[id]; b.classList.toggle("on", on); b.textContent = on ? "♥" : "♡"; });
+    document.querySelectorAll(`.bell[data-id="${CSS.escape(id)}"]`).forEach((b) => { const v = mine.watch[id]?.target; b.classList.toggle("on", !!v); b.textContent = v ? "🔔 " + yen(v) : T().bellBtn; });
     toast(mine.watch[id] ? T().watchAdded : T().watchRemoved);
     window.kpTrack?.(mine.watch[id] ? "watch_add" : "watch_remove", { item: it?.name || id });
     updMineBadge(0);
@@ -559,6 +585,8 @@
   }
   document.addEventListener("click", (e) => {
     const sh = e.target.closest(".shr"); if (sh) { e.preventDefault(); return shareItem(REG.get(sh.dataset.id)); }
+    const bl = e.target.closest(".bell"); if (bl) { e.preventDefault(); return bellPanel(bl); }
+    const ok = e.target.closest(".aok, .aoff"); if (ok) { e.preventDefault(); return bellSave(ok, ok.classList.contains("aoff")); }
     const cp = e.target.closest(".cpick button"); if (cp) {
       const id = cp.dataset.id, it = REG.get(id), el = cp.closest(".card"); if (!it || !el) return;
       const v = CSEL.get(id) === cp.dataset.col ? "" : cp.dataset.col;  // bấm lại màu đang chọn = bỏ chọn
@@ -577,6 +605,7 @@
     const n = e.target.closest(".news,[data-v=mine]");
     if (n && !n.closest("#chips,#mcat")) { st.view = "mine"; $("#q").value = ""; st.q = ""; window.scrollTo({ top: 0 }); return render(); }
   });
+  document.addEventListener("keydown", (e) => { if (e.key === "Enter" && e.target.closest(".atg2")) { e.preventDefault(); e.target.closest(".apanel").querySelector(".aok").click(); } });
   document.addEventListener("change", (e) => {
     const a = e.target.closest(".atg");
     if (a) { const w = mine.watch[a.dataset.id]; if (!w) return; w.target = Math.max(0, Math.round(+a.value || 0)); saveMine(); syncPush();
