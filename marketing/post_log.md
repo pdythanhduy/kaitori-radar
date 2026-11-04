@@ -25,3 +25,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-04 | 15:54 | 3 | 📊 GIÁ KAI ĐỔI GÌ HÔM NAY? | https://www.facebook.com/groups/1118827834446963 (bỏ dòng SM10B +50k: 当番 93k vs モバイル一番 150k bất thường)
 2026-11-04 | 16:25 | lua-dao | ⚠️ MUA BÁN iPHONE TRỰC TIẾP: HỘP CÒN SEAL MÀ BÊN TRONG LÀ VẬT LẠ? | https://www.facebook.com/groups/1118827834446963/posts/1121879424141804/
 2026-11-04 | 17:15 | lua-dao-53K | ⚠️ MUA BÁN iPHONE TRỰC TIẾP: HỘP CÒN SEAL MÀ BÊN TRONG LÀ VẬT LẠ? (không link, đăng ngay không chờ duyệt, link ở bình luận) | https://www.facebook.com/groups/713324666776820/posts/1602802077829070/
+2026-11-04 | 19:54 | 4 | ⚠️ 3 SAI LẦM LÀM LỖ CỦA NGƯỜI MỚI | https://www.facebook.com/groups/1118827834446963 (+ dòng giới thiệu nút 🎨 chọn màu)
