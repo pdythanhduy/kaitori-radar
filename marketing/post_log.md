@@ -26,3 +26,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-04 | 16:25 | lua-dao | ⚠️ MUA BÁN iPHONE TRỰC TIẾP: HỘP CÒN SEAL MÀ BÊN TRONG LÀ VẬT LẠ? | https://www.facebook.com/groups/1118827834446963/posts/1121879424141804/
 2026-11-04 | 17:15 | lua-dao-53K | ⚠️ MUA BÁN iPHONE TRỰC TIẾP: HỘP CÒN SEAL MÀ BÊN TRONG LÀ VẬT LẠ? (không link, đăng ngay không chờ duyệt, link ở bình luận) | https://www.facebook.com/groups/713324666776820/posts/1602802077829070/
 2026-11-04 | 19:54 | 4 | ⚠️ 3 SAI LẦM LÀM LỖ CỦA NGƯỜI MỚI | https://www.facebook.com/groups/1118827834446963 (+ dòng giới thiệu nút 🎨 chọn màu)
+2026-11-04 | 20:19 | mnp-85K | 📱 CHUYỂN MẠNG LẤY MÁY 1円 RỒI BÁN KAI: THÁNG 11 CÒN NHỮNG NHÀ MẠNG NÀO? (không link, bỏ IIJmio hết hạn, đăng ngay không chờ duyệt, link ở bình luận) | https://www.facebook.com/groups/congdongmuabandienthoaimaytinhnhatban/posts/1735479497550152/
