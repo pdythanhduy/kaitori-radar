@@ -29,3 +29,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-04 | 10:16 | 85K (congdongmuabandienthoaimaytinhnhatban) | https://www.facebook.com/groups/congdongmuabandienthoaimaytinhnhatban/posts/1735079884256780/ | huỷ đơn + link
 2026-11-04 | 10:25 | 109K (310466206520060) | https://www.facebook.com/groups/310466206520060/posts/2235618427338152/ | radar TQ/HK đã duyệt + link ?q=iPhone
 2026-11-04 | 10:26 | 53K (713324666776820) | https://www.facebook.com/groups/713324666776820/posts/1601540101288601/ | huỷ đơn đã duyệt + link guide huy-iphone/gia-iphone-giam
+2026-11-04 | 11:15 | 32K (807826924656140) | posts/1449804293791730 hanasakura8892 10:35: bán 18 Pro 512 trắng nguyên hộp Osaka (tk Duy) | ルデヤ/森森/ゲスト 240k, 1丁目・モバイル一番 238k, 当番 237k, Apple 254,8k, シルバー -11k ở ゲスト/1丁目/一番, coupon 75798; không link (N=6)
