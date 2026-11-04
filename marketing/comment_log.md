@@ -41,3 +41,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-04 | 16:06 | 32K (807826924656140) | posts/1449980863774073 (trả lời bình luận của mình) | ĐÍNH CHÍNH: 森森 trắng 256 ~373k/512 ~426k (-5k), 1TB/2TB đủ giá
 2026-11-04 | 16:46 | 53K (713324666776820) | posts/1602751551167456 ẩn danh 16:00: bán Duo trắng Umeda/Namba, không ghi dung lượng (tk Duy) | Duo trắng đã trừ màu: 256 森森 373k/ルデヤ,1丁目,一番 370k; 512 森森 426k/others 420k; 1TB 森森 503k; 2TB 森森 612k; coupon 75798 + link ?q=iPhone Duo (chọn màu)
 2026-11-04 | 17:15 | 53K (713324666776820) | https://www.facebook.com/groups/713324666776820/posts/1602802077829070/ | cảnh giác lừa đảo + link
+2026-11-04 | 17:46 | 32K (807826924656140) | posts/1450034497102043 MotivatedRabbit1175 16:45: bán 18PM đỏ app-6 Umeda (tk Duy) | 18PM đỏ (màu giá cao nhất): 256 森森 232k/ゲスト 231k/ルデヤ,当番 230k; 512 森森 267k; 1TB 森森 339k; coupon 75798; không link (N=18)
