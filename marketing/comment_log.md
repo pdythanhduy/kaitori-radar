@@ -34,3 +34,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-04 | 12:16 | 32K (807826924656140) | posts/1449848820453944 PinkRabbit1382 11:43: Duo đen 256 ga Ike xin giá (tk Duy) | 森森 377k (coupon 75798)/PANDA,1丁目,一番 373k/ルデヤ 370k, Apple 364,8k, đen không trừ + link ?q=iPhone Duo 256GB
 2026-11-04 | 13:36 | 32K (807826924656140) | https://www.facebook.com/groups/807826924656140/posts/1449921247113368/ | MNP 1円 + link
 2026-11-04 | 14:16 | 53K (713324666776820) | posts/1602668094509135 ChaảmingPanda8888 13:50: bán 18PM 512 đỏ + Duo 256 trắng Tennoji (tk Duy) | 18PM512 đỏ 森森 267k/others 266k, Apple 274,8k; Duo256 trắng 森森 378k/ルデヤ 375k/1丁目・一番 375k -5k trắng, Apple 364,8k; coupon 75798 + link ?q=iPhone
+2026-11-04 | 14:46 | 32K (807826924656140) | posts/1449938447111648 ẩn danh 14:00: Duo xanh (ảnh: 256GB ナイトスカイ) Shinjuku/Yokohama hỏi thu giá nào (tk Duy) | 森森 378k (coupon 75798)/ルデヤ,1丁目,一番 375k, xanh không trừ, Apple 364,8k + link ?q=iPhone Duo 256GB
