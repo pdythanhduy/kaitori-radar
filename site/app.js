@@ -2,6 +2,7 @@
   const $ = (s) => document.querySelector(s);
   const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const yen = (n) => n.toLocaleString("ja-JP") + "円";
+  const man = (n) => (lang === "vi" ? (n / 10000).toLocaleString("vi-VN", { maximumFractionDigits: 2 }) + " man" : n.toLocaleString("ja-JP") + "円");
   const bust = "?" + Math.floor(Date.now() / 600000);
   // mặc định theo ngôn ngữ trình duyệt: máy tiếng Việt → vi, còn lại (Nhật, Googlebot…) → ja; ?lang=vi|ja để ép
   const qLang = new URLSearchParams(location.search).get("lang");
@@ -135,12 +136,24 @@
   }
 
   // ================= card / table
-  function spark(it) {
+  function spark(it, w = 84, h = 32) {
     const s = ((hcache[it.cat] || {})[it.key] || []).slice(-30);
     if (s.length < 2) return "";
     const v = s.map((p) => p[1]), mn = Math.min(...v), mx = Math.max(...v), r = mx - mn || 1;
-    const pts = v.map((y, i) => `${((i / (v.length - 1)) * 80 + 2).toFixed(1)},${(30 - ((y - mn) / r) * 26).toFixed(1)}`).join(" ");
-    return `<svg class="spark" width="84" height="32" viewBox="0 0 84 32"><polyline fill="none" stroke="${v[v.length - 1] >= v[0] ? "#16a34a" : "#dc2626"}" stroke-width="2" points="${pts}"/></svg>`;
+    const pts = v.map((y, i) => [(i / (v.length - 1)) * (w - 6) + 2, 3 + (1 - (y - mn) / r) * (h - 8)]);
+    const c = v[v.length - 1] >= v[0] ? "#16a34a" : "#dc2626", line = pts.map((p) => p.map((n) => n.toFixed(1)).join(",")).join(" ");
+    const [ex, ey] = pts[pts.length - 1];
+    return `<svg class="spark" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" aria-hidden="true"><path d="M${pts[0][0].toFixed(1)},${h - 1} L${line.replace(/ /g, " L")} L${ex.toFixed(1)},${h - 1} Z" fill="${c}" opacity=".12"/><polyline fill="none" stroke="${c}" stroke-width="2" stroke-linejoin="round" points="${line}"/><circle cx="${ex.toFixed(1)}" cy="${ey.toFixed(1)}" r="2.8" fill="${c}"/></svg>`;
+  }
+  // thước giá: hôm nay nằm ở đâu trong khoảng thấp–cao các ngày có dữ liệu
+  function gauge(it) {
+    const s = ((hcache[it.cat] || {})[it.key] || []).slice(-30);
+    if (s.length < 3) return "";
+    const v = s.map((p) => p[1]), mn = Math.min(...v), mx = Math.max(...v);
+    if (mx === mn) return "";
+    const pos = Math.max(0, Math.min(100, ((it.best - mn) / (mx - mn)) * 100)), t = T();
+    const lab = pos >= 90 ? t.gHi(s.length) : pos <= 10 ? t.gLo(s.length) : t.gMid(s.length);
+    return `<div class="gauge" title="${esc(t.trendTip)}"><div class="g-track"><span class="g-knob" style="left:${pos.toFixed(0)}%"></span></div><div class="g-ends"><span>${man(mn)}</span><span>${lab}</span><span>${man(mx)}</span></div></div>`;
   }
   // 📈 xu hướng: giá cao nhất hôm nay so với trung bình tối đa 7 ngày trước (cần ≥ 3 ngày dữ liệu). Chỉ nêu sự thật, không khuyên bán/giữ.
   function trend(it) {
@@ -252,13 +265,44 @@
     const br = it._f?.brand !== "Khác" ? it._f?.brand : "";
     const tag = [br && !(it._f?.series || "").startsWith(br.split(" ")[0]) ? br : "", it._f?.series, it._f?.cap].filter(Boolean).join(" · ");
     const fav = mine.watch[id] ? "on" : "";
-    return `<article class="card">
-      <div class="c-top"><div><div class="c-name">${esc(it.name)}</div><div class="c-sub">${ICON[it.cat] || ""} ${esc(tag || t.cats[it.cat] || "")}・${t.shopsN(it.n_shops)}</div></div>${spark(it)}<div class="c-act"><button class="shr" data-id="${esc(id)}" aria-label="${esc(t.share)}" title="${esc(t.share)}"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M12 3v12"/><path d="m7 8 5-5 5 5"/></svg></button><button class="fav ${fav}" data-id="${esc(id)}" aria-label="${esc(t.watch)}" title="${esc(t.watch)}">${fav ? "♥" : "♡"}</button></div></div>
-      <div class="best"><span class="best-p">${yen(bestP)}</span><span class="best-s ${it.n_shops > 1 ? "" : "one"}">${it.n_shops > 1 ? t.best + "：" : ""}${SH[bestS]?.name || ""}</span>${chg}${col ? "" : trend(it)}<button class="bell ${mine.watch[id]?.target ? "on" : ""}" type="button" data-id="${esc(id)}" title="${esc(t.bellTip)}">${mine.watch[id]?.target ? "🔔 " + yen(mine.watch[id].target) : t.bellBtn}</button></div>
-      ${colorPick(it, id, col, shops)}${boostTag(it)}${msrpLine(it, bestP)}${diff}<div class="shops ${shops.length > 4 ? "clip" : ""}">${rows}</div>${shops.length > 4 ? `<button class="shmore" type="button">${t.allShops(shops.length)} ▾</button>` : ""}
+    // B · "quyết định nhanh": bán ở đâu, được bao nhiêu, giá đang cao hay thấp → top 3 → nút mở tiệm; phần còn lại thu gọn
+    const lnk = (sid, p) => (SH[sid]?.list ? lstUrl(p, it) : p.url);
+    const pv = ([sid, p, d]) => (col && d < 0 && p.min && p.min < p.price ? man(p.min) + "〜" : man(p.price - (d > 0 ? d : 0)));
+    const pods = shops.slice(0, 3).map((e, i) => {
+      const [sid, p, d] = e, lst = SH[sid]?.list;
+      return `<a class="sh pod ${i === 0 ? "first" : ""}" href="${esc(lnk(sid, p))}" target="_blank" rel="noopener nofollow"${lst ? ` data-copy="${esc(p.n || it.name)}"` : ""}>`
+        + `<span class="rk">#${i + 1}</span><span class="sn"><b>${SH[sid]?.name || sid}</b></span><span class="pa">${pv(e)}</span>`
+        + `${d > 0 ? `<span class="nt cd">−${(d / 1000).toLocaleString()}k ${t.colShort}</span>` : d < 0 ? `<span class="nt">${t.colUnkShort}</span>` : ""}</a>`;
+    }).join("");
+    const rest = shops.slice(3);
+    const restLine = rest.length ? t.restN(rest.length, man(net(rest[rest.length - 1])), man(net(rest[0]))) : "";
+    const vsA = it.msrp && /^iPhone (18|Duo)\b/.test(it.key) ? bestP - it.msrp : null;
+    const pills = [col ? "" : trend(it), vsA != null ? `<span class="trend ${vsA >= 0 ? "up" : "dn"}" title="${esc(t.msrpTip)}">🍎 Apple ${vsA >= 0 ? "+" : "−"}${yen(Math.abs(vsA))}</span>` : "", chg].filter(Boolean).join("");
+    const bp = shops[0][1];
+    return `<article class="card bcard">
+      <div class="c-top"><div><div class="c-name">${esc(it.name)}</div><div class="c-sub">${ICON[it.cat] || ""} ${esc(tag || t.cats[it.cat] || "")}・${t.shopsN(it.n_shops)}</div></div><div class="c-act"><button class="shr" data-id="${esc(id)}" aria-label="${esc(t.share)}" title="${esc(t.share)}"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M12 3v12"/><path d="m7 8 5-5 5 5"/></svg></button><button class="fav ${fav}" data-id="${esc(id)}" aria-label="${esc(t.watch)}" title="${esc(t.watch)}">${fav ? "♥" : "♡"}</button></div></div>
+      <div class="bhero"><div class="bh-l"><div class="bh-lab">${it.n_shops > 1 ? t.sellAt(SH[bestS]?.name || "") : SH[bestS]?.name || ""}${col ? ` · ${esc(col === "_o" ? t.colOther : t.colNames[col] || col)}` : ""}</div>
+        <div class="bh-p">${bestP.toLocaleString("ja-JP")}<small>円</small></div></div>${spark(it)}${col ? "" : gauge(it)}</div>
+      ${pills ? `<div class="bh-pills">${pills}</div>` : ""}
+      ${colorPick(it, id, col, shops)}
+      ${shops.length > 1 ? `<div class="pods">${pods}</div>` : ""}
+      ${rest.length ? `<div class="shops clip">${shopRows(it, shops)}</div><button class="shmore" type="button">${restLine} · ${t.allShops(shops.length)} ▾</button>` : ""}
+      <a class="sbest cta" href="${esc(lnk(bestS, bp))}" target="_blank" rel="noopener nofollow"${SH[bestS]?.list ? ` data-copy="${esc(bp.n || it.name)}"` : ""}><span>${t.ctaOpen}<b>${SH[bestS]?.name || ""}</b></span><span aria-hidden="true">↗</span></a>
+      ${REF[bestS] ? `<div class="ref-line">${esc(refText(bestS))}</div>` : ""}${boostTag(it)}
+      <div class="b-acts"><button class="bell ${mine.watch[id]?.target ? "on" : ""}" type="button" data-id="${esc(id)}" title="${esc(t.bellTip)}">${mine.watch[id]?.target ? "🔔 " + yen(mine.watch[id].target) : t.bellBtn}</button></div>
       ${affBox(it.cat, it.key)}${cardBox(it) || buyBox(it)}
       <div class="calc-row"><label class="calc">${t.calc} <input type="number" inputmode="numeric" placeholder="${Math.round(it.best * 0.9).toLocaleString()}" data-best="${it.best}"> 円 → ${t.profit} <b class="pf">—</b></label><button class="stk ${mine.stock[id] ? "on" : ""}" data-id="${esc(id)}">${mine.stock[id] ? t.inStock : t.addStock}</button></div>
     </article>`;
+  }
+  // C · danh sách gọn (điện thoại): 1 dòng / máy, chạm để mở thẻ B ngay bên dưới
+  function crow(it, open) {
+    const id = idOf(it); REG.set(id, it);
+    const vsA = it.msrp && /^iPhone (18|Duo)\b/.test(it.key) ? it.best - it.msrp : null;
+    const k = (n) => (Math.abs(n) / 1000).toLocaleString(undefined, { maximumFractionDigits: 1 }) + "k";
+    return `<div class="crow ${open ? "open" : ""}" data-id="${esc(id)}"><button class="crow-h" type="button" data-id="${esc(id)}" aria-expanded="${!!open}">
+      <span class="cr-n">${esc(it.name)}</span><span class="cr-p">${man(it.best)}</span>
+      <span class="cr-s">${it.n_shops > 1 ? SH[it.best_shop]?.name || "" : ""}${vsA != null ? ` <i class="${vsA >= 0 ? "up" : "dn"}">Apple ${vsA >= 0 ? "+" : "−"}${k(vsA)}</i>` : ""}${it.chg ? ` <i class="${it.chg > 0 ? "up" : "dn"}">${it.chg > 0 ? "▲" : "▼"}${k(it.chg)}</i>` : ""}</span>
+      <span class="cr-sp">${spark(it, 64, 22)}</span></button><div class="crow-b">${open ? card(it) : ""}</div></div>`;
   }
   function tableHead() {
     const t = T();
@@ -385,7 +429,10 @@
     if (reset) { shown = 0; $("#list").innerHTML = tbl ? tableHead() + "</div>" : ""; $("#list").className = tbl ? "" : "list"; }
     const slice = view.slice(shown, shown + PAGE);
     const target = tbl ? $("#list .tbl") : $("#list");
-    target.insertAdjacentHTML("beforeend", slice.map(tbl ? trow : card).join(""));
+    // điện thoại: danh sách gọn (C), chạm để mở thẻ (B); ít kết quả (vd link ?q= từ Facebook) thì mở sẵn món đầu
+    const compact = !tbl && matchMedia("(max-width:560px)").matches;
+    const autoOpen = compact && reset && (view.length <= 3 || !!st.q);
+    target.insertAdjacentHTML("beforeend", slice.map(tbl ? trow : compact ? (it, i) => crow(it, autoOpen && i === 0) : card).join(""));
     shown += slice.length;
     $("#more").hidden = shown >= view.length;
     $("#empty").hidden = view.length > 0;
@@ -545,7 +592,7 @@
     const el = btn.closest(".card"), id = btn.dataset.id, it = REG.get(id); if (!el || !it) return;
     const old = el.querySelector(".apanel"); if (old) return old.remove();
     const t = T(), w = mine.watch[id], def = w?.target || Math.ceil((it.best + 3000) / 1000) * 1000;
-    el.querySelector(".best").insertAdjacentHTML("afterend", `<div class="apanel"><label>${t.bellAsk} <input class="atg2" type="number" inputmode="numeric" step="1000" value="${def}">円</label>`
+    (el.querySelector(".bh-pills") || el.querySelector(".bhero")).insertAdjacentHTML("afterend", `<div class="apanel"><label>${t.bellAsk} <input class="atg2" type="number" inputmode="numeric" step="1000" value="${def}">円</label>`
       + `<button class="aok" type="button" data-id="${esc(id)}">${t.bellOk}</button>${w?.target ? `<button class="aoff" type="button" data-id="${esc(id)}">${t.bellOff}</button>` : ""}<p class="ahelp" hidden></p></div>`);
     el.querySelector(".atg2").focus();
   }
@@ -592,6 +639,13 @@
   }
   document.addEventListener("click", (e) => {
     const sh = e.target.closest(".shr"); if (sh) { e.preventDefault(); return shareItem(REG.get(sh.dataset.id)); }
+    const ch = e.target.closest(".crow-h"); if (ch) {
+      const w = ch.closest(".crow"), it = REG.get(ch.dataset.id), body = w.querySelector(".crow-b"); if (!it) return;
+      const open = !w.classList.contains("open"); w.classList.toggle("open", open); ch.setAttribute("aria-expanded", open);
+      body.innerHTML = open ? card(it) : "";
+      if (open) window.kpTrack?.("row_open", { item: it.name });
+      return;
+    }
     const bl = e.target.closest(".bell"); if (bl) { e.preventDefault(); return bellPanel(bl); }
     const ok = e.target.closest(".aok, .aoff"); if (ok) { e.preventDefault(); return bellSave(ok, ok.classList.contains("aoff")); }
     const cp = e.target.closest(".cpick button"); if (cp) {
