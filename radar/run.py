@@ -148,6 +148,22 @@ def split_mixed(rows, ratio=1.3):
     return rows
 
 
+# 🎨 màu trong tên SP (tiệm đăng mỗi màu 1 dòng, vd 森森 "Duo 256GB スターホワイト") → lưu giá theo màu.
+# Khoá màu phải trùng COLS trong site/app.js.
+_COLOR_KEYS = [("white", r"ホワイト|white"), ("black", r"ブラック|black"), ("silver", r"シルバー|silver"),
+               ("glacier", r"グレイシャー|glacier"), ("nightsky", r"ナイトスカイ"), ("blue", r"ブルー|blue"),
+               ("orange", r"オレンジ|orange"), ("red", r"レッド|バーガンディ|burgundy|\bred\b"), ("pink", r"ピンク|pink"),
+               ("green", r"グリーン|green"), ("purple", r"パープル|purple"), ("gold", r"ゴールド|gold")]
+
+
+def color_key(name):
+    import re
+    for k, pat in _COLOR_KEYS:
+        if re.search(pat, name or "", re.I):
+            return k
+    return None
+
+
 def aggregate(rows):
     rows = unify_by_jan(rows)
     rows = split_mixed(rows)
@@ -158,8 +174,14 @@ def aggregate(rows):
         if r.get("msrp"):
             g["msrp"] = r["msrp"]
         cur = g["prices"].get(r["shop"])
+        ck = color_key(r["name"]) if r["cat"] == "phone" else None
+        if ck and cur is not None:
+            cur.setdefault("c", {})
+            cur["c"][ck] = max(cur["c"].get(ck, 0), r["price"])
         if cur is None:
-            g["prices"][r["shop"]] = {"price": r["price"], "url": r["url"], "note": r.get("note", "")[:40], "min": r["price"], "ts": r["ts"]}
+            g["prices"][r["shop"]] = {"price": r["price"], "url": r["url"], "note": r.get("note", "")[:90], "min": r["price"], "ts": r["ts"]}
+            if ck:
+                g["prices"][r["shop"]]["c"] = {ck: r["price"]}
             if r.get("boost"):
                 g["prices"][r["shop"]]["b"] = 1  # tiệm đang 買取強化 món này
             if SHOPS.get(r["shop"], {}).get("list"):  # tiệm không có trang SP: giữ tên gốc để nhảy tới đúng dòng (#:~:text=)
@@ -167,7 +189,7 @@ def aggregate(rows):
         else:
             cur["min"] = min(cur["min"], r["price"])
             if r["price"] > cur["price"]:
-                cur.update(price=r["price"], url=r["url"], note=r.get("note", "")[:40], ts=r["ts"])
+                cur.update(price=r["price"], url=r["url"], note=r.get("note", "")[:90], ts=r["ts"])
                 if "n" in cur:
                     cur["n"] = r["name"][:80]
             if r.get("boost"):

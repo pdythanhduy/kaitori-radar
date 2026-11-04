@@ -152,19 +152,60 @@
   }
   function shopRows(it, shops) {
     const t = T();
-    return shops.map(([sid, p], i) => {
-      const extra = p.min && p.min !== p.price ? `<span class="nt">${t.colorFrom} ${yen(p.min)}</span>` : p.note ? `<span class="nt">${esc(p.note.slice(0, 16))}</span>` : "";
+    return shops.map(([sid, p, d], i) => {
+      const extra = d != null ? (d > 0 ? `<span class="nt cd">${t.colDed(yen(d))}</span>` : d < 0 ? `<span class="nt">${p.min && p.min < p.price ? `${t.colorFrom} ${yen(p.min)}` : t.colUnk}</span>` : `<span class="nt c0">${t.colNo}</span>`)
+        : p.min && p.min !== p.price ? `<span class="nt">${t.colorFrom} ${yen(p.min)}</span>` : p.note ? `<span class="nt">${esc(p.note.slice(0, 16))}</span>` : "";
       const lst = SH[sid]?.list, nm = SH[sid]?.name || sid;
       // cả dòng là 1 link sang trang tiệm (có ↗ ở cuối để người dùng biết bấm được)
       return `<a class="sh ${i === 0 && shops.length > 1 ? "top" : ""} ${lst ? "lst" : ""}" href="${esc(lst ? lstUrl(p, it) : p.url)}" target="_blank" rel="noopener nofollow"${lst ? ` data-copy="${esc(p.n || it.name)}" title="${esc(t.listTip)}"` : ""}>`
-        + `<span class="sn"><b>${nm}</b>${lst ? `<i class="sq">${t.searchTag}</i>` : ""}${extra}${REF[sid] ? `<i class="ref">${esc(refText(sid))}</i>` : ""}</span><span class="p">${yen(p.price)}</span><span class="go" aria-hidden="true">↗</span></a>`;
+        + `<span class="sn"><b>${nm}</b>${lst ? `<i class="sq">${t.searchTag}</i>` : ""}${extra}${REF[sid] ? `<i class="ref">${esc(refText(sid))}</i>` : ""}</span><span class="p">${yen(p.price - (d > 0 ? d : 0))}</span><span class="go" aria-hidden="true">↗</span></a>`;
     }).join("");
   }
   // 🍎 so với giá niêm yết Apple (chỉ đời Apple đang bán: iPhone 18 / Duo)
-  function msrpLine(it) {
+  function msrpLine(it, best = it.best) {
     if (!it.msrp || !/^iPhone (18|Duo)\b/.test(it.key)) return "";
-    const d = it.best - it.msrp, cls = d >= 0 ? "up" : "dn";
+    const d = best - it.msrp, cls = d >= 0 ? "up" : "dn";
     return `<div class="msrp ${cls}" title="${esc(T().msrpTip)}">${T().msrpLine(yen(it.msrp), `<b>${d >= 0 ? "+" : "−"}${yen(Math.abs(d))}</b>`)}</div>`;
+  }
+  // 🎨 trừ tiền theo màu: đọc ghi chú tiệm ("ブラック,グレイシャー-7000,シルバー-11000", "色減額:White-6000"…)
+  // → {by: {sid: {màu: số tiền}}, cols: [màu…]}; màu chỉ nhận khi có tên màu rõ ràng, số tiền 1.000–60.000円
+  const COLS = [["white", /ホワイト|white/i], ["black", /ブラック|black/i], ["silver", /シルバー|silver/i], ["glacier", /グレイシャー|glacier/i],
+    ["nightsky", /ナイトスカイ/i], ["blue", /ブルー|blue/i], ["orange", /オレンジ|orange/i], ["red", /レッド|バーガンディ|burgundy|red/i],
+    ["pink", /ピンク|pink/i], ["green", /グリーン|green/i], ["purple", /パープル|purple/i], ["gold", /ゴールド|gold/i]];
+  const COL_RE = /スターホワイト|ホワイト|ブラック|シルバー|グレイシャー|ナイトスカイ|ディープブルー|ブルー|コズミックオレンジ|オレンジ|レッド|バーガンディ|ピンク|グリーン|パープル|ゴールド|white|black|silver|glacier|blue|orange|burgundy|red|pink|green|purple|gold|(\d[\d,]{3,})/gi;
+  const colKey = (w) => (COLS.find(([, r]) => r.test(w)) || [])[0];
+  const DED = new WeakMap(), CSEL = new Map();
+  function colorDeds(it) {
+    if (DED.has(it)) return DED.get(it);
+    const by = {}, seen = new Set(), hit = new Set(), multi = new Set();
+    for (const [sid, p] of Object.entries(it.prices)) {
+      // tiệm đăng mỗi màu 1 giá (p.c từ run.py): mức trừ = giá cao nhất − giá màu đó (0 = màu đó được đủ giá)
+      const cs = Object.entries(p.c || {});
+      if (cs.length >= 2) {
+        multi.add(sid);
+        for (const [k, v] of cs) { (by[sid] ||= {})[k] = Math.max(0, p.price - v); seen.add(k); if (p.price > v) hit.add(k); }
+        continue;
+      }
+      const t = (p.note || "").replace(/色減額[:：]?/g, "").split(/\s*(?:店頭|郵送|△|※)/)[0];
+      let pend = [];
+      for (const m of t.matchAll(COL_RE)) {
+        if (!m[1]) { const k = colKey(m[0]); if (k && !pend.includes(k)) pend.push(k); continue; }
+        const amt = +m[1].replace(/,/g, "");
+        if (pend.length && amt >= 1000 && amt <= 60000) for (const k of pend) { (by[sid] ||= {})[k] = amt; seen.add(k); hit.add(k); }
+        pend = [];
+      }
+    }
+    // chỉ hiện ô chọn màu khi có ít nhất 1 màu thật sự bị trừ ở 1 tiệm
+    const r = { by, multi, cols: hit.size ? COLS.map(([k]) => k).filter((k) => seen.has(k)) : [] };
+    DED.set(it, r);
+    return r;
+  }
+  function colorPick(it, id, col) {
+    const { cols } = colorDeds(it), t = T();
+    if (!cols.length) return "";
+    const b = (k, label) => `<button type="button" class="${col === k ? "on" : ""}" data-col="${k}" data-id="${esc(id)}">${esc(label)}</button>`;
+    return `<div class="cpick"><span>${t.colPick}</span>${cols.map((k) => b(k, t.colNames[k] || k)).join("")}${b("_o", t.colOther)}</div>`
+      + (col ? `<div class="cnote">${esc(col === "_o" ? t.colNoteO : t.colNote)}</div>` : "");
   }
   function boostTag(it) {
     const b = Object.entries(it.prices).filter(([, p]) => p.b).map(([s]) => SH[s]?.name || s);
@@ -178,18 +219,26 @@
   }
   function card(it) {
     const t = T();
-    const shops = Object.entries(it.prices).sort((a, b) => b[1].price - a[1].price);
-    const chg = it.chg ? `<span class="chg ${it.chg > 0 ? "up" : "dn"}">${it.chg > 0 ? "▲" : "▼"}${Math.abs(it.chg).toLocaleString()}</span>` : "";
+    const id = idOf(it); REG.set(id, it);
+    // đã chọn màu → giá thực nhận = giá tiệm − mức trừ màu tiệm ghi; xếp lại theo giá thực nhận
+    const { by, multi, cols } = colorDeds(it), col = cols.length ? CSEL.get(id) || "" : "";
+    // d: số tiền trừ; -1 = tiệm có đăng giá theo màu nhưng không có màu này (chưa rõ) → tạm tính giá cao nhất của tiệm
+    // tiệm có biến thể giá thấp hơn (p.min) mà không rõ màu nào → cũng "chưa rõ", không khẳng định "không trừ"
+    const dOf = (s) => (by[s]?.[col] ?? (multi.has(s) || it.prices[s].min < it.prices[s].price ? -1 : 0));
+    const net = ([s, p]) => p.price - (col ? Math.max(0, dOf(s)) : 0);
+    const shops = Object.entries(it.prices).map((e) => col ? [e[0], e[1], dOf(e[0])] : e).sort((a, b) => net(b) - net(a));
+    const bestP = net(shops[0]), bestS = shops[0][0];
+    const chg = it.chg && !col ? `<span class="chg ${it.chg > 0 ? "up" : "dn"}">${it.chg > 0 ? "▲" : "▼"}${Math.abs(it.chg).toLocaleString()}</span>` : "";
     const rows = shopRows(it, shops);
-    const diff = it.n_shops > 1 && it.spread > 0 ? `<div class="diff">${t.diff(yen(it.spread))}</div>` : "";
+    const spread = col ? bestP - net(shops[shops.length - 1]) : it.spread;
+    const diff = it.n_shops > 1 && spread > 0 ? `<div class="diff">${t.diff(yen(spread))}</div>` : "";
     const br = it._f?.brand !== "Khác" ? it._f?.brand : "";
     const tag = [br && !(it._f?.series || "").startsWith(br.split(" ")[0]) ? br : "", it._f?.series, it._f?.cap].filter(Boolean).join(" · ");
-    const id = idOf(it); REG.set(id, it);
     const fav = mine.watch[id] ? "on" : "";
     return `<article class="card">
       <div class="c-top"><div><div class="c-name">${esc(it.name)}</div><div class="c-sub">${ICON[it.cat] || ""} ${esc(tag || t.cats[it.cat] || "")}・${t.shopsN(it.n_shops)}</div></div>${spark(it)}<div class="c-act"><button class="shr" data-id="${esc(id)}" aria-label="${esc(t.share)}" title="${esc(t.share)}"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M12 3v12"/><path d="m7 8 5-5 5 5"/></svg></button><button class="fav ${fav}" data-id="${esc(id)}" aria-label="${esc(t.watch)}" title="${esc(t.watch)}">${fav ? "♥" : "♡"}</button></div></div>
-      <div class="best"><span class="best-p">${yen(it.best)}</span><span class="best-s ${it.n_shops > 1 ? "" : "one"}">${it.n_shops > 1 ? t.best + "：" : ""}${SH[it.best_shop]?.name || ""}</span>${chg}</div>
-      ${boostTag(it)}${msrpLine(it)}${diff}<div class="shops ${shops.length > 4 ? "clip" : ""}">${rows}</div>${shops.length > 4 ? `<button class="shmore" type="button">${t.allShops(shops.length)} ▾</button>` : ""}
+      <div class="best"><span class="best-p">${yen(bestP)}</span><span class="best-s ${it.n_shops > 1 ? "" : "one"}">${it.n_shops > 1 ? t.best + "：" : ""}${SH[bestS]?.name || ""}</span>${chg}</div>
+      ${colorPick(it, id, col)}${boostTag(it)}${msrpLine(it, bestP)}${diff}<div class="shops ${shops.length > 4 ? "clip" : ""}">${rows}</div>${shops.length > 4 ? `<button class="shmore" type="button">${t.allShops(shops.length)} ▾</button>` : ""}
       ${affBox(it.cat, it.key)}${cardBox(it) || buyBox(it)}
       <div class="calc-row"><label class="calc">${t.calc} <input type="number" inputmode="numeric" placeholder="${Math.round(it.best * 0.9).toLocaleString()}" data-best="${it.best}"> 円 → ${t.profit} <b class="pf">—</b></label><button class="stk ${mine.stock[id] ? "on" : ""}" data-id="${esc(id)}">${mine.stock[id] ? t.inStock : t.addStock}</button></div>
     </article>`;
@@ -498,6 +547,14 @@
   }
   document.addEventListener("click", (e) => {
     const sh = e.target.closest(".shr"); if (sh) { e.preventDefault(); return shareItem(REG.get(sh.dataset.id)); }
+    const cp = e.target.closest(".cpick button"); if (cp) {
+      const id = cp.dataset.id, it = REG.get(id), el = cp.closest(".card"); if (!it || !el) return;
+      const v = CSEL.get(id) === cp.dataset.col ? "" : cp.dataset.col;  // bấm lại màu đang chọn = bỏ chọn
+      v ? CSEL.set(id, v) : CSEL.delete(id);
+      el.outerHTML = card(it);
+      if (v) window.kpTrack?.("color_pick", { item: it.name, color: v });
+      return;
+    }
     const sm = e.target.closest(".shmore"); if (sm) { const box = sm.previousElementSibling; box.classList.toggle("clip"); sm.textContent = box.classList.contains("clip") ? sm.textContent.replace("▴", "▾") : sm.textContent.replace("▾", "▴"); return; }
     const f = e.target.closest(".fav"); if (f) { e.preventDefault(); return toggleWatch(f.dataset.id); }
     const k = e.target.closest(".stk"); if (k) { e.preventDefault(); return addStock(k.dataset.id, k); }

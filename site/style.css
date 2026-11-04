@@ -493,3 +493,11 @@ a.sh:hover .go{background:var(--fg);color:#fff}
  .diff{font-size:.68rem;padding:.15rem .45rem}
  .msrp{font-size:.7rem;padding:.15rem .45rem;margin:.05rem 0 .1rem}
 }
+
+/* 🎨 chọn màu → giá thực nhận */
+.cpick{display:flex;flex-wrap:wrap;align-items:center;gap:4px;margin:.3rem 0 .2rem;font-size:.74rem}
+.cpick span{color:var(--muted);margin-right:2px}
+.cpick button{border:1px solid var(--line);background:var(--card);color:inherit;border-radius:999px;padding:2px 9px;font-size:.72rem;line-height:1.5;cursor:pointer}
+.cpick button.on{background:#111827;color:#fff;border-color:#111827}
+.cnote{font-size:.68rem;color:var(--muted);margin:0 0 .25rem}
+.sh .nt.cd{color:#dc2626;font-weight:600}.sh .nt.c0{color:#16a34a}
