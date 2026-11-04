@@ -51,7 +51,8 @@
      "desc": {
       "vi": "Chuyển mạng sang Y!mobile qua đại lý chính thức Yステーション (có chương trình hoàn PayPay khi chuyển mạng theo quảng cáo của đại lý). Ưu đãi máy ở đại lý có thể khác cửa hàng Y!mobile, xem kỹ điều kiện trước khi đăng ký.",
       "ja": "Y!mobile正規取扱店Yステーションで乗り換え（PayPay還元キャンペーンあり）。端末特典は公式ストアと異なる場合があります。申込前に条件をご確認ください。"
-     }
+     },
+     "name_ja": "Yステーション（Y!mobile正規取扱店）"
     },
     {
      "name": "UQモバイル",
@@ -90,7 +91,8 @@
      "desc": {
       "vi": "Mở rồi huỷ hợp đồng liên tục dễ bị nhà mạng từ chối về sau. Luật Nhật giới hạn giảm giá máy kèm hợp đồng tối đa 44.000円, nên máy đắt hiếm khi 1円.",
       "ja": "短期解約を繰り返すと契約を断られる恐れ。回線セットの端末割引は上限44,000円。"
-     }
+     },
+     "name_ja": "⚠️ 短期解約・乗り換えを繰り返す前に"
     }
    ]
   },
@@ -372,7 +374,8 @@
      "desc": {
       "vi": "Phiếu ノジマ ghi rõ phải chính cổ đông mang tới cửa hàng, nên mua lại trên mạng sẽ không dùng được. Trước khi mua phiếu nào, luôn đọc dòng 'ご本人様のみ' (chỉ chính chủ).",
       "ja": "ノジマの割引券は株主様ご本人のみ利用可。購入前に利用条件を必ず確認。"
-     }
+     },
+     "name_ja": "⚠️ ノジマ 株主優待（株主本人のみ利用可）"
     }
    ]
   },

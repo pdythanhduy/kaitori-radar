@@ -263,7 +263,7 @@
     const spread = col ? bestP - net(shops[shops.length - 1]) : it.spread;
     const diff = it.n_shops > 1 && spread > 0 ? `<div class="diff">${t.diff(yen(spread))}</div>` : "";
     const br = it._f?.brand !== "Khác" ? it._f?.brand : "";
-    const tag = [br && !(it._f?.series || "").startsWith(br.split(" ")[0]) ? br : "", it._f?.series, it._f?.cap].filter(Boolean).join(" · ");
+    const tag = [br && !(it._f?.series || "").startsWith(br.split(" ")[0]) ? br : "", it._f?.series && FL(it._f.series), it._f?.cap].filter(Boolean).join(" · ");
     const fav = mine.watch[id] ? "on" : "";
     // B · "quyết định nhanh": bán ở đâu, được bao nhiêu, giá đang cao hay thấp → top 3 → nút mở tiệm; phần còn lại thu gọn
     const lnk = (sid, p) => (SH[sid]?.list ? lstUrl(p, it) : p.url);
@@ -312,7 +312,7 @@
     const shops = Object.entries(it.prices).sort((a, b) => b[1].price - a[1].price);
     const [s1, p1] = shops[0], s2 = shops[1];
     const chg = it.chg ? `<i class="${it.chg > 0 ? "up" : "dn"}">${it.chg > 0 ? "▲" : "▼"}${Math.abs(it.chg).toLocaleString()}</i>` : "";
-    return `<div class="tr"><span class="tn">${esc(it.name)}<small>${esc([it._f?.series, it._f?.cap].filter(Boolean).join(" · "))} · ${T().shopsN(it.n_shops)}</small></span>
+    return `<div class="tr"><span class="tn">${esc(it.name)}<small>${esc([it._f?.series && FL(it._f.series), it._f?.cap].filter(Boolean).join(" · "))} · ${T().shopsN(it.n_shops)}</small></span>
       <span class="tb">${yen(it.best)} ${chg}</span><span>${shopLink(s1, p1, it)}</span>
       <span class="t2">${s2 ? `${yen(s2[1].price)}<small>${SH[s2[0]]?.name || ""}</small>` : "—"}</span>
       <span class="tg">${it.spread ? "+" + it.spread.toLocaleString() : "—"}</span>
@@ -353,14 +353,17 @@
     const more = entries.length > limit ? `<button class="fmore" data-k="${key}">${open ? T().less : T().moreN(entries.length - limit)}</button>` : "";
     return `<div class="fg" data-fk="${key}"><div class="fg-t">${title}</div>${rows}${more}</div>`;
   }
+  // giá trị bộ lọc trong facets.js là tiếng Việt (dùng làm khoá) → khi xem tiếng Nhật thì dịch để không lẫn tiếng Việt
+  const FL_JA = { "Khác": "その他", "Tay cầm": "コントローラー", "Switch 2 (bộ kèm game)": "Switch 2（ソフト同梱）", "Nintendo (khác)": "Nintendo（その他）" };
+  const FL = (v) => (lang === "ja" ? FL_JA[v] || v : v === "Khác" ? T().otherB : v);
   const PIN = ["iPad", "Nintendo Switch 2", "PlayStation 5", "Pokémon", "iPhone"];  // hãng hay tìm nhất lên đầu (cuối mảng = ưu tiên cao nhất)
   function renderFacets() {
     const t = T();
     let h = "";
     if (st.q) h += facetBlock("cat", t.fCat, counts("cat", (i) => i.cat), { labels: (c) => `${ICON[c] || ""} ${t.cats[c] || c}` });
-    h += facetBlock("brand", t.fBrand, counts("brand", (i) => i._f.brand), { labels: (v) => (v === "Khác" ? t.otherB : v), sort: (a, b) => (a === "Khác") - (b === "Khác") || PIN.indexOf(b) - PIN.indexOf(a) || (cnt.brand.get(b) || 0) - (cnt.brand.get(a) || 0) });
+    h += facetBlock("brand", t.fBrand, counts("brand", (i) => i._f.brand), { labels: FL, sort: (a, b) => (a === "Khác") - (b === "Khác") || PIN.indexOf(b) - PIN.indexOf(a) || (cnt.brand.get(b) || 0) - (cnt.brand.get(a) || 0) });
     const sc = counts("series", (i) => i._f.series);
-    h += facetBlock("series", t.fSeries, sc, { sort: st.f.brand.size ? FACETS.seriesSort : (a, b) => (sc.get(b) || 0) - (sc.get(a) || 0), limit: 12 });
+    h += facetBlock("series", t.fSeries, sc, { labels: FL, sort: st.f.brand.size ? FACETS.seriesSort : (a, b) => (sc.get(b) || 0) - (sc.get(a) || 0), limit: 12 });
     h += facetBlock("cap", t.fCap, counts("cap", (i) => i._f.cap), { sort: FACETS.capSort });
     h += facetBlock("shop", t.fShop, counts("shop", (i) => Object.keys(i.prices)), { labels: (s) => SH[s]?.name || s, limit: 12 });
     h += `<div class="fg" data-fk="price"><div class="fg-t">${t.fPrice}</div>${t.price.map((p, i) => `<label class="fo"><input type="radio" name="pr" data-p="${i}" ${st.price === i ? "checked" : ""}><span>${p}</span></label>`).join("")}</div>`;
@@ -387,7 +390,7 @@
     // điện thoại: dãy nút theo LOẠI bộ lọc (kiểu Amazon/Rakuten) — bấm nút nào mở đúng bộ lọc đó
     const t = T(), n = st.price + st.multi + st.gap + Object.values(st.f).reduce((a, x) => a + x.size, 0);
     const q = [`<button class="qc qf ${n ? "has" : ""}" data-open="all">${SLIDERS}<span>${t.filterShort}</span>${n ? `<b>${n}</b>` : ""}</button>`];
-    const lab = (k, set) => { const v = [...set]; return v.length ? (v.length === 1 ? (k === "brand" && v[0] === "Khác" ? t.otherB : v[0]) : `${v[0]} +${v.length - 1}`) : ""; };
+    const lab = (k, set) => { const v = [...set]; return v.length ? (v.length === 1 ? FL(v[0]) : `${v[0]} +${v.length - 1}`) : ""; };
     const chip = (key, name, has) => { const v = has || ""; return `<button class="qc dd ${v ? "on" : ""}" data-open="${key}">${esc(v || name)}<i>▾</i></button>`; };
     q.push(chip("price", t.qPrice, st.price ? t.price[st.price] : ""));
     q.push(`<button class="qc tg ${st.multi ? "on" : ""}" data-k="multi" ${st.multi ? "" : 'data-add="1"'}>${st.multi ? "✓ " : ""}${t.qMulti}</button>`);
@@ -401,7 +404,7 @@
     const crumbs = [];
     let next = null;
     for (const [k, name, get] of steps) {
-      if (st.f[k].size) { const v = [...st.f[k]]; crumbs.push(`<button class="dc" data-k="${k}">${esc(v.length > 1 ? `${v[0]} +${v.length - 1}` : (v[0] === "Khác" ? t.otherB : v[0]))}<i>✕</i></button>`); continue; }
+      if (st.f[k].size) { const v = [...st.f[k]]; crumbs.push(`<button class="dc" data-k="${k}">${esc(v.length > 1 ? `${v[0]} +${v.length - 1}` : FL(v[0]))}<i>✕</i></button>`); continue; }
       const m = counts(k, get);
       if (m.size > 1) { next = [k, name, m]; break; }
     }
@@ -411,7 +414,7 @@
       const sort = k === "cap" ? FACETS.capSort : k === "series" && st.f.brand.size ? FACETS.seriesSort
         : k === "brand" ? (a, b) => (a === "Khác") - (b === "Khác") || PIN.indexOf(b) - PIN.indexOf(a) || m.get(b) - m.get(a) : (a, b) => m.get(b) - m.get(a);
       const vals = [...m.keys()].sort(sort);
-      opts = `<span class="dl">${esc(t.drPick(name))}</span>` + vals.map((v) => `<button class="do" data-k="${k}" data-v="${esc(v)}">${esc(v === "Khác" ? t.otherB : v)}<em>${m.get(v)}</em></button>`).join("");
+      opts = `<span class="dl">${esc(t.drPick(name))}</span>` + vals.map((v) => `<button class="do" data-k="${k}" data-v="${esc(v)}">${esc(FL(v))}<em>${m.get(v)}</em></button>`).join("");
     }
     const el = $("#drill");
     el.innerHTML = (crumbs.length ? `<div class="dcr">${crumbs.join('<span class="dsep">›</span>')}</div>` : "") + (opts ? `<div class="dop">${opts}</div>` : "");
@@ -698,7 +701,7 @@
         <a class="deal-card" href="${esc(x.url)}" target="_blank" rel="sponsored noopener">
           <span class="pr">${x.affiliate ? "PR" : "LINK"}</span>
           ${x.badge ? `<span class="badge">${esc(dTxt(x.badge))}</span>` : ""}
-          <b>${esc(x.name)}</b><span>${esc(dTxt(x.desc))}</span>
+          <b>${esc((lang === "ja" && x.name_ja) || x.name)}</b><span>${esc(dTxt(x.desc))}</span>
           ${Object.entries(SH).some(([sid, s]) => s.name === x.name && REF[sid]) ? `<span class="ref">${esc(refText(Object.keys(SH).find((sid) => SH[sid].name === x.name)))}</span>` : ""}
           <span class="go">${vi ? "Xem chi tiết →" : "詳しく見る →"}</span>
         </a>`).join("") + "</div>";

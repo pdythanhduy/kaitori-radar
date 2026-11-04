@@ -65,9 +65,11 @@
   addEventListener("DOMContentLoaded", function () {
     var f = document.querySelector("footer .wrap") || document.querySelector("footer"); if (!f) return;
     var p = document.createElement("p"); p.className = "small";
+    var ls = ""; try { ls = localStorage.getItem("lang") || ""; } catch (e) {}
+    var vi = /[?&]lang=ja/.test(location.search) ? false : ls === "vi" || (document.documentElement.lang || "").indexOf("vi") === 0 || location.pathname.indexOf("/vi") === 0 || /[?&]lang=vi/.test(location.search);
     p.textContent = GA_ID
-      ? "当サイトはアクセス解析にGoogle アナリティクス（Cookie）を使用しています。個人を特定する情報は収集しません。 / Trang dùng Google Analytics (cookie) để thống kê lượt xem ẩn danh."
-      : "当サイトはCookieを使わない匿名のアクセス解析（検索語・クリック数の集計）を行っています。個人を特定する情報は収集しません。 / Trang thống kê ẩn danh (từ khoá, lượt bấm), không dùng cookie, không thu thập thông tin cá nhân.";
+      ? (vi ? "Trang dùng Google Analytics (cookie) để thống kê lượt xem ẩn danh." : "当サイトはアクセス解析にGoogle アナリティクス（Cookie）を使用しています。個人を特定する情報は収集しません。")
+      : (vi ? "Trang thống kê ẩn danh (từ khoá, lượt bấm), không dùng cookie, không thu thập thông tin cá nhân." : "当サイトはCookieを使わない匿名のアクセス解析（検索語・クリック数の集計）を行っています。個人を特定する情報は収集しません。");
     f.appendChild(p);
   });
 
