@@ -40,6 +40,20 @@
      }
     },
     {
+     "name": "Yステーション (đại lý chính thức Y!mobile)",
+     "url": "https://px.a8.net/svt/ejp?a8mat=4BGCF4+D0K5V6+424K+BXQOI",
+     "px": "https://www14.a8.net/0.gif?a8mat=4BGCF4+D0K5V6+424K+BXQOI",
+     "affiliate": true,
+     "badge": {
+      "vi": "Đăng ký online · PayPay hoàn tiền",
+      "ja": "オンライン申込・PayPay還元"
+     },
+     "desc": {
+      "vi": "Chuyển mạng sang Y!mobile qua đại lý chính thức Yステーション (có chương trình hoàn PayPay khi chuyển mạng theo quảng cáo của đại lý). Ưu đãi máy ở đại lý có thể khác cửa hàng Y!mobile, xem kỹ điều kiện trước khi đăng ký.",
+      "ja": "Y!mobile正規取扱店Yステーションで乗り換え（PayPay還元キャンペーンあり）。端末特典は公式ストアと異なる場合があります。申込前に条件をご確認ください。"
+     }
+    },
+    {
      "name": "UQモバイル",
      "url": "https://shop.uqmobile.jp/",
      "affiliate": false,
