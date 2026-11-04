@@ -32,3 +32,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-04 | 11:15 | 32K (807826924656140) | posts/1449804293791730 hanasakura8892 10:35: bán 18 Pro 512 trắng nguyên hộp Osaka (tk Duy) | ルデヤ/森森/ゲスト 240k, 1丁目・モバイル一番 238k, 当番 237k, Apple 254,8k, シルバー -11k ở ゲスト/1丁目/一番, coupon 75798; không link (N=6)
 2026-11-04 | 11:46 | 53K (713324666776820) | posts/1602559417853336 ẩn danh 11:18: cần đổi mạng có kèo gì (tk Duy) | MNP T11: 楽天 g37j/A25 1円 +14k pt, UQ OPPO A5 1円, Y!m A25 1円, IIJmio 4.980円 hết 04/11; kai g37j 26–27,5k, A5 19,1k, A25 16–20k; cước tháng, 44.000円, danh sách đen + link ?v=deals
 2026-11-04 | 12:16 | 32K (807826924656140) | posts/1449848820453944 PinkRabbit1382 11:43: Duo đen 256 ga Ike xin giá (tk Duy) | 森森 377k (coupon 75798)/PANDA,1丁目,一番 373k/ルデヤ 370k, Apple 364,8k, đen không trừ + link ?q=iPhone Duo 256GB
+2026-11-04 | 13:36 | 32K (807826924656140) | https://www.facebook.com/groups/807826924656140/posts/1449921247113368/ | MNP 1円 + link
