@@ -24,3 +24,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-03 | 20:24 | 53K (713324666776820) | https://www.facebook.com/groups/713324666776820/posts/1601934984582446/ | MNP 1円 + link
 2026-11-03 | 21:22 | 32K (807826924656140) | posts/1449206293851530 CleverShark5949: 2 máy đỏ 256 app-5s Nishifunabashi (tk Duy) | nếu 18PM256: 森森 233,5k/others 231k, đỏ không trừ màu, app-5s=234,8k; nếu 18Pro256: 203k; coupon 75798 + link ?q=iPhone 18 Pro Max 256GB
 2026-11-03 | 23:16 | 53K (713324666776820) | posts/1601963114579633 ẩn danh 20:56: nên ôm hay bán, 1 máy đỏ Tokyo (tk Duy) | không khuyên ôm/bán; 18PM256 đỏ 森森 233,5k (coupon 75798)/others 231k, lỗ 6–9k so Apple 239,8k, xu hướng +0,2% ngày/-0,8% dài hạn; không link
+2026-11-04 | 09:22 | 32K (807826924656140) | グエン ミンカン 9:07: bán ip 18 đỏ 23,5m Shinjuku/Shinokubo (tk Duy) | nếu 18PM256 đỏ: 森森 233,5k (coupon 75798)/others 231k, không trừ màu, Apple 239,8k; nếu 18Pro256: 203k; không link
