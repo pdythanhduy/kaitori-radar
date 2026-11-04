@@ -163,12 +163,12 @@
   function shopRows(it, shops) {
     const t = T();
     return shops.map(([sid, p, d], i) => {
-      const extra = d != null ? (d > 0 ? `<span class="nt cd">${t.colDed(yen(d))}</span>` : d < 0 ? `<span class="nt">${p.min && p.min < p.price ? `${t.colorFrom} ${yen(p.min)}` : t.colUnk}</span>` : `<span class="nt c0">${t.colNo}</span>`)
+      const extra = d != null ? (d > 0 ? `<span class="nt cd">${t.colDed(yen(d))}</span>` : d < 0 ? `<span class="nt">${p.min && p.min < p.price ? `${t.colUnk} (${yen(p.min)}〜${yen(p.price)})` : t.colUnk}</span>` : "")
         : p.min && p.min !== p.price ? `<span class="nt">${t.colorFrom} ${yen(p.min)}</span>` : p.note ? `<span class="nt">${esc(p.note.slice(0, 16))}</span>` : "";
       const lst = SH[sid]?.list, nm = SH[sid]?.name || sid;
       // cả dòng là 1 link sang trang tiệm (có ↗ ở cuối để người dùng biết bấm được)
       return `<a class="sh ${i === 0 && shops.length > 1 ? "top" : ""} ${lst ? "lst" : ""}" href="${esc(lst ? lstUrl(p, it) : p.url)}" target="_blank" rel="noopener nofollow"${lst ? ` data-copy="${esc(p.n || it.name)}" title="${esc(t.listTip)}"` : ""}>`
-        + `<span class="sn"><b>${nm}</b>${lst ? `<i class="sq">${t.searchTag}</i>` : ""}${extra}${REF[sid] ? `<i class="ref">${esc(refText(sid))}</i>` : ""}</span><span class="p">${yen(p.price - (d > 0 ? d : 0))}</span><span class="go" aria-hidden="true">↗</span></a>`;
+        + `<span class="sn"><b>${nm}</b>${lst ? `<i class="sq">${t.searchTag}</i>` : ""}${extra}${REF[sid] ? `<i class="ref">${esc(refText(sid))}</i>` : ""}</span><span class="p">${d < 0 && p.min && p.min < p.price ? yen(p.min) + "〜" : yen(p.price - (d > 0 ? d : 0))}</span><span class="go" aria-hidden="true">↗</span></a>`;
     }).join("");
   }
   // 🍎 so với giá niêm yết Apple (chỉ đời Apple đang bán: iPhone 18 / Duo)
@@ -210,12 +210,18 @@
     DED.set(it, r);
     return r;
   }
-  function colorPick(it, id, col) {
+  function colorPick(it, id, col, shops) {
     const { cols } = colorDeds(it), t = T();
     if (!cols.length) return "";
     const b = (k, label) => `<button type="button" class="${col === k ? "on" : ""}" data-col="${k}" data-id="${esc(id)}">${esc(label)}</button>`;
-    return `<div class="cpick"><span>${t.colPick}</span>${cols.map((k) => b(k, t.colNames[k] || k)).join("")}${b("_o", t.colOther)}</div>`
-      + (col ? `<div class="cnote">${esc(col === "_o" ? t.colNoteO : t.colNote)}</div>` : "");
+    let note = "";
+    if (col) {  // 1 dòng tóm tắt thay cho nhãn lặp ở từng tiệm
+      const ds = shops.map((x) => x[2]).filter((d) => d > 0), unk = shops.some((x) => x[2] < 0);
+      const name = col === "_o" ? t.colOther : t.colNames[col] || col;
+      note = ds.length ? t.colSumDed(name, yen(Math.min(...ds)), yen(Math.max(...ds))) : t.colSumNone(name);
+      note = `<div class="cnote ${ds.length ? "" : "ok"}">${esc(note)}${unk ? " " + esc(t.colSumUnk) : ""}</div>`;
+    }
+    return `<div class="cpick"><span>${t.colPick}</span>${cols.map((k) => b(k, t.colNames[k] || k)).join("")}${b("_o", t.colOther)}</div>${note}`;
   }
   function boostTag(it) {
     const b = Object.entries(it.prices).filter(([, p]) => p.b).map(([s]) => SH[s]?.name || s);
@@ -235,7 +241,8 @@
     // d: số tiền trừ; -1 = tiệm có đăng giá theo màu nhưng không có màu này (chưa rõ) → tạm tính giá cao nhất của tiệm
     // tiệm có biến thể giá thấp hơn (p.min) mà không rõ màu nào → cũng "chưa rõ", không khẳng định "không trừ"
     const dOf = (s) => (by[s]?.[col] ?? (multi.has(s) || it.prices[s].min < it.prices[s].price ? -1 : 0));
-    const net = ([s, p]) => p.price - (col ? Math.max(0, dOf(s)) : 0);
+    // chưa rõ giá màu này → xếp theo giá thấp nhất của tiệm (thận trọng), không đẩy lên đầu
+    const net = ([s, p]) => { if (!col) return p.price; const d = dOf(s); return d < 0 ? Math.min(p.price, p.min || p.price) : p.price - d; };
     const shops = Object.entries(it.prices).map((e) => col ? [e[0], e[1], dOf(e[0])] : e).sort((a, b) => net(b) - net(a));
     const bestP = net(shops[0]), bestS = shops[0][0];
     const chg = it.chg && !col ? `<span class="chg ${it.chg > 0 ? "up" : "dn"}">${it.chg > 0 ? "▲" : "▼"}${Math.abs(it.chg).toLocaleString()}</span>` : "";
@@ -248,7 +255,7 @@
     return `<article class="card">
       <div class="c-top"><div><div class="c-name">${esc(it.name)}</div><div class="c-sub">${ICON[it.cat] || ""} ${esc(tag || t.cats[it.cat] || "")}・${t.shopsN(it.n_shops)}</div></div>${spark(it)}<div class="c-act"><button class="shr" data-id="${esc(id)}" aria-label="${esc(t.share)}" title="${esc(t.share)}"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M12 3v12"/><path d="m7 8 5-5 5 5"/></svg></button><button class="fav ${fav}" data-id="${esc(id)}" aria-label="${esc(t.watch)}" title="${esc(t.watch)}">${fav ? "♥" : "♡"}</button></div></div>
       <div class="best"><span class="best-p">${yen(bestP)}</span><span class="best-s ${it.n_shops > 1 ? "" : "one"}">${it.n_shops > 1 ? t.best + "：" : ""}${SH[bestS]?.name || ""}</span>${chg}${col ? "" : trend(it)}<button class="bell ${mine.watch[id]?.target ? "on" : ""}" type="button" data-id="${esc(id)}" title="${esc(t.bellTip)}">${mine.watch[id]?.target ? "🔔 " + yen(mine.watch[id].target) : t.bellBtn}</button></div>
-      ${colorPick(it, id, col)}${boostTag(it)}${msrpLine(it, bestP)}${diff}<div class="shops ${shops.length > 4 ? "clip" : ""}">${rows}</div>${shops.length > 4 ? `<button class="shmore" type="button">${t.allShops(shops.length)} ▾</button>` : ""}
+      ${colorPick(it, id, col, shops)}${boostTag(it)}${msrpLine(it, bestP)}${diff}<div class="shops ${shops.length > 4 ? "clip" : ""}">${rows}</div>${shops.length > 4 ? `<button class="shmore" type="button">${t.allShops(shops.length)} ▾</button>` : ""}
       ${affBox(it.cat, it.key)}${cardBox(it) || buyBox(it)}
       <div class="calc-row"><label class="calc">${t.calc} <input type="number" inputmode="numeric" placeholder="${Math.round(it.best * 0.9).toLocaleString()}" data-best="${it.best}"> 円 → ${t.profit} <b class="pf">—</b></label><button class="stk ${mine.stock[id] ? "on" : ""}" data-id="${esc(id)}">${mine.stock[id] ? t.inStock : t.addStock}</button></div>
     </article>`;
