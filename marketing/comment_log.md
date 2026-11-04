@@ -27,3 +27,5 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-04 | 09:22 | 32K (807826924656140) | グエン ミンカン 9:07: bán ip 18 đỏ 23,5m Shinjuku/Shinokubo (tk Duy) | nếu 18PM256 đỏ: 森森 233,5k (coupon 75798)/others 231k, không trừ màu, Apple 239,8k; nếu 18Pro256: 203k; không link
 2026-11-04 | 09:53 | 53K (713324666776820) | TurquoiseTiger582 9:40: sẵn Duo đen 256 Yokohama, xin báo giá (tk Duy) | PANDA 376k/森森,1丁目 373k (coupon 75798)/ルデヤ 370k, đen không trừ màu, Apple 364,8k + link ?q=iPhone Duo 256GB
 2026-11-04 | 10:16 | 85K (congdongmuabandienthoaimaytinhnhatban) | https://www.facebook.com/groups/congdongmuabandienthoaimaytinhnhatban/posts/1735079884256780/ | huỷ đơn + link
+2026-11-04 | 10:25 | 109K (310466206520060) | https://www.facebook.com/groups/310466206520060/posts/2235618427338152/ | radar TQ/HK đã duyệt + link ?q=iPhone
+2026-11-04 | 10:26 | 53K (713324666776820) | https://www.facebook.com/groups/713324666776820/posts/1601540101288601/ | huỷ đơn đã duyệt + link guide huy-iphone/gia-iphone-giam

@@ -19,3 +19,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-04 | 09:19 | 1 | 💰 HÔM NAY MUA iPHONE GIÁ APPLE RỒI BÁN KAI THÌ LỜI HAY LỖ? | https://www.facebook.com/groups/1118827834446963
 2026-11-04 | 10:13 | gioi-thieu | 📌 CHÀO MỪNG ĐẾN NHÓM SĂN GIÁ KAITORI NHẬT BẢN (ghim Đáng chú ý) | https://www.facebook.com/groups/1118827834446963/posts/1121631380833275/
 2026-11-04 | 10:16 | huy-85K | 📌 GIÁ KAI iPHONE ĐANG THẾ NÀO? HUỶ ĐƠN HAY BÁN, ĐỌC TRƯỚC KHI QUYẾT (không link, đăng ngay không chờ duyệt, link ở bình luận) | https://www.facebook.com/groups/congdongmuabandienthoaimaytinhnhatban/posts/1735079884256780/
+2026-11-04 | 10:26 | duyet-check | radar-109K (posts/2235618427338152) + huy-53K (posts/1601540101288601) ĐÃ DUYỆT, đã bình luận link | https://www.facebook.com/groups/310466206520060/posts/2235618427338152/
