@@ -32,3 +32,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-04 | 22:51 | pokemon-daily | ⚡ BOX 30th CELEBRATION MỞ BÁN ONLINE Ở au PAY: 20H THỨ HAI 9/11 (kèm ảnh; lần 1 bị TỰ ĐỘNG TỪ CHỐI — nghi do '@wowma.jp' thành link; lần 2 bỏ domain → ĐANG CHỜ DUYỆT; chưa bình luận link) | https://www.facebook.com/groups/pokemonae/my_pending_content
 2026-11-05 | 08:16 | tinhot | 🔥 POKÉMON & iPHONE: TIN HOT HÔM NAY 05/11 (Box 30th au PAY 9/11, bốc thăm hết hạn 5/11, MEGA deck 13/11, ハドウシーカー 27/11) | https://www.facebook.com/groups/1118827834446963
 2026-11-05 | 10:07 | duyet-check | Pokémon box30th au PAY (gửi 04/11 22:50): VẪN CHỜ DUYỆT (bản lần 1 bị từ chối vẫn nằm ở mục Bị từ chối) | https://www.facebook.com/groups/pokemonae/my_pending_content
+2026-11-05 | 11:55 | 1 | 💰 HÔM NAY MUA iPHONE GIÁ APPLE RỒI BÁN KAI THÌ LỜI HAY LỖ? | https://www.facebook.com/groups/1118827834446963 (+ dòng giá Duo giảm 2–6k so tối qua)
