@@ -25,6 +25,8 @@ Thí nghiệm nào không hiệu quả sau 3–7 ngày thì dừng. Thí nghiệ
 | Bình luận lượt chia hết cho 3 mời vào nhóm (không link) | 05/11 | 12/11 | số thành viên nhóm (05/11: 20) |
 | Trang cá nhân Duy 1 bài/ngày | 05/11 | 12/11 | lượt từ facebook.com vào /vi/ ngoài giờ bình luận |
 | X @duyto2 えにし神社 (4 bài hẹn giờ) | 05/11 | 10/11 | lượt vào enishijinja.com (mốc khoảng 5/ngày) |
+| 💹 Bảng lời/lỗ mua Apple → bán kai (?v=profit) + dòng trên trang chủ | 05/11 | 12/11 | profit_teaser / profit_open / profit_pts, lượt vào ?v=profit |
+| 📅 Lịch Pokémon /guide/lich-pokemon/ (radar/events.json) | 05/11 | 19/11 | lượt vào path, Google |
 
 ## Nhật ký
 
