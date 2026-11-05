@@ -65,6 +65,11 @@ def summary(day_from: str, day_to: str, top: int = 6) -> str:
             out.append(f"{LABEL[e]}: " + ", ".join(f"{k} ({n})" for k, n in items))
     if by.get("shop_item"):
         out.append("🏪 Món + tiệm được bấm nhiều: " + ", ".join(f"{k} ({n})" for k, n in by["shop_item"].most_common(4)))
+    if by.get("visit"):
+        v = by["visit"]; n = sum(v.values()); ret = n - v.get("new", 0)
+        out.append(f"🔁 Thiết bị vào (mỗi máy 1 lần/ngày): {n} — mới {v.get('new', 0)}, quay lại {ret} ({ret * 100 // max(1, n)}%: hôm qua {v.get('1d', 0)}, 2–7 ngày {v.get('2-7d', 0)}, >7 ngày {v.get('8d+', 0)})")
+    if by.get("recent_click") or by.get("recent_show"):
+        out.append(f"👀 Dải 'lần trước bạn xem': hiện {sum(by['recent_show'].values())} lần, bấm {sum(by['recent_click'].values())}")
     if by.get("land_src"):
         out.append("🚪 Nguồn vào: " + ", ".join(f"{k} ({n})" for k, n in by["land_src"].most_common(4)))
     s, c = sum(by["search"].values()) + sum(by["search_none"].values()), sum(by["shop_click"].values())

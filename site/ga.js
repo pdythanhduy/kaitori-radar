@@ -51,6 +51,17 @@
     if (q0 || ref) beacon("land", { search_term: q0 || "(trang chủ)", value: ref || "(trực tiếp)" });
   } catch (e) {}
 
+  // tỉ lệ quay lại: trên máy chỉ lưu ngày vào gần nhất + số ngày đã vào; gửi đi chỉ nhóm "lần đầu / cách mấy ngày" (không ID)
+  try {
+    var td = new Date(Date.now() + 9 * 36e5).toISOString().slice(0, 10);
+    var lv = localStorage.getItem("kp_lastday"), nd = +(localStorage.getItem("kp_days") || 0) + 1;
+    if (lv !== td) {
+      var gap = lv ? Math.round((Date.parse(td) - Date.parse(lv)) / 864e5) : -1;
+      beacon("visit", { step: gap < 0 ? "new" : gap <= 1 ? "1d" : gap <= 7 ? "2-7d" : "8d+", value: lv ? (nd >= 6 ? "6+" : String(nd)) : "1" });
+      localStorage.setItem("kp_lastday", td); localStorage.setItem("kp_days", lv ? nd : 1);
+    }
+  } catch (e) {}
+
   // bấm sang trang tiệm / link affiliate / mã giới thiệu (dùng chung cho app và trang tĩnh /p/)
   document.addEventListener("click", function (e) {
     var a = e.target.closest && e.target.closest("a[href]"); if (!a) return;
@@ -69,7 +80,7 @@
     var vi = /[?&]lang=ja/.test(location.search) ? false : ls === "vi" || (document.documentElement.lang || "").indexOf("vi") === 0 || location.pathname.indexOf("/vi") === 0 || /[?&]lang=vi/.test(location.search);
     p.textContent = GA_ID
       ? (vi ? "Trang dùng Google Analytics (cookie) để thống kê lượt xem ẩn danh." : "当サイトはアクセス解析にGoogle アナリティクス（Cookie）を使用しています。個人を特定する情報は収集しません。")
-      : (vi ? "Trang thống kê ẩn danh (từ khoá, lượt bấm), không dùng cookie, không thu thập thông tin cá nhân." : "当サイトはCookieを使わない匿名のアクセス解析（検索語・クリック数の集計）を行っています。個人を特定する情報は収集しません。");
+      : (vi ? "Trang thống kê ẩn danh (từ khoá, lượt bấm, lần đầu hay quay lại), không dùng cookie, không thu thập thông tin cá nhân. Món bạn đã xem và ngày vào gần nhất chỉ lưu trên máy bạn." : "当サイトはCookieを使わない匿名のアクセス解析（検索語・クリック数・初回/再訪の集計）を行っています。個人を特定する情報は収集しません。閲覧した商品と前回の訪問日はお使いの端末内にのみ保存されます。");
     f.appendChild(p);
   });
 

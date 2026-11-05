@@ -73,6 +73,48 @@
     return Object.entries(mine.watch).map(([id, w]) => ({ id, w, it: m.get(id) })).filter((x) => x.it && x.it.best !== x.w.seen);
   }
 
+  // ================= 👀 "Từ lần trước bạn xem": tự nhớ món đã xem (chỉ lưu trên máy bạn), lần sau vào báo giá đổi bao nhiêu
+  const REC_KEY = "kp_recent", REC_GAP = 3 * 36e5;  // cách ≥3 giờ mới tính là "lần trước"
+  let recent = []; try { const r = JSON.parse(localStorage.getItem(REC_KEY) || "[]"); if (Array.isArray(r)) recent = r.filter((x) => x && x.id && x.name); } catch {}
+  const saveRec = () => { try { localStorage.setItem(REC_KEY, JSON.stringify(recent.slice(0, 8).map(({ cur, ...r }) => r))); } catch {} };
+  function noteSeen(it) {
+    if (!it || !it.best) return;
+    const id = idOf(it), now = Date.now(), i = recent.findIndex((r) => r.id === id);
+    const r = i >= 0 ? recent.splice(i, 1)[0] : { id };
+    if (r.t && now - r.t > REC_GAP) { r.pp = r.p; r.pt = r.t; }
+    Object.assign(r, { name: it.name, p: it.best, t: now, cur: it.best });
+    recent.unshift(r); saveRec(); renderRecent();
+  }
+  let recReady = false;
+  async function initRecent() {
+    const now = Date.now(), use = recent.slice(0, 6);
+    if (use.length) {
+      const cats = [...new Set(use.map((r) => r.id.split("|")[0]).filter((c) => CATS[c]))];
+      const m = new Map((await Promise.all(cats.map((c) => loadCat(c).catch(() => [])))).flat().map((it) => [idOf(it), it]));
+      for (const r of use) {
+        const it = m.get(r.id); if (!it || !it.best) continue;
+        r.cur = it.best;
+        if (r.t && now - r.t > REC_GAP) { r.pp = r.p; r.pt = r.t; r.p = it.best; r.t = now; }  // lần vào mới: mốc so sánh = giá lần trước
+      }
+      saveRec();
+      const back = use.filter((r) => r.pt).length;
+      if (back) window.kpTrack?.("recent_show", { n: back });
+    }
+    recReady = true; renderRecent();
+  }
+  function renderRecent() {
+    const el = $("#recent"); if (!el) return;
+    const t = T(), hide = !recReady || (!st.q && (st.view === "mine" || st.view === "deals"));
+    const rows = hide ? [] : recent.filter((r) => r.pp && r.pt).slice(0, 6);
+    if (!rows.length) { el.innerHTML = ""; return; }
+    const now = Date.now();
+    el.innerHTML = `<div class="rec"><b class="rec-t">${t.recTitle}</b>` + rows.map((r) => {
+      const cur = r.cur ?? r.p, d = cur - r.pp, cls = d > 0 ? "up" : d < 0 ? "dn" : "eq";
+      const dd = d ? `${d > 0 ? "▲" : "▼"}${Math.abs(d).toLocaleString("ja-JP")}円` : t.recSame;
+      return `<button class="rec-i" data-q="${esc(r.name)}" title="${esc(`${t.recAgo((now - r.pt) / 36e5)}: ${yen(r.pp)} → ${yen(cur)}`)}"><span class="rn">${esc(r.name.replace(/^iPhone /, ""))}</span><span class="rp">${yen(cur)}</span><b class="${cls}">${dd}</b><small>${t.recAgo((now - r.pt) / 36e5)}</small></button>`;
+    }).join("") + "</div>";
+  }
+
   // ================= static text
   function applyLang() {
     document.documentElement.lang = lang;
@@ -445,6 +487,7 @@
     view = sortItems(base.filter((i) => passes(i)));
     $("#hint").textContent = $("#mhint").textContent = st.q ? T().hintQ(st.q, view.length.toLocaleString()) : T().hintCat(T().cats[st.cat], view.length.toLocaleString(), CATS[st.cat]?.multi?.toLocaleString() || 0);
     renderFacets(); renderActive(); renderQuick(); paint(true);
+    if (st.q && st.q === landQ && view.length && view.length <= 3) noteSeen(view[0]);
     if (document.body.classList.contains("side-open")) updApply();
   }
   async function render() {
@@ -455,7 +498,7 @@
     $("#mine").hidden = st.view !== "mine" || !!st.q;
     const ttl = st.q ? `「${st.q}」` : st.view === "cat" ? (lang === "ja" ? CAT_JA[st.cat] : T().cats[st.cat]) : "";
     document.title = ttl ? `${ttl} ${lang === "ja" ? "買取価格比較｜買取プライス" : "– so sánh giá thu mua｜Kaitori Price"}` : (lang === "ja" ? TITLE0 : "Kaitori Price｜So sánh giá thu mua iPhone, máy game, thẻ Pokémon ở Nhật");
-    chips();
+    chips(); renderRecent();
     // thống kê: 1 page_view mỗi lần đổi màn hình, gửi SAU khi URL đã cập nhật
     const pv = (url) => { history.replaceState(null, "", new URL(url, location.href).href); if (url !== lastPv) { lastPv = url; window.kpPage?.(); } };
     if (st.view === "deals" && !st.q) { pv("?v=deals"); return renderDeals(); }
@@ -478,7 +521,7 @@
     refresh();
     pv(st.q ? "./?q=" + encodeURIComponent(st.q) : "?c=" + st.cat);
   }
-  let lastPv = null, sidx = null;
+  let lastPv = null, sidx = null, landQ = "";
   function clearFilters() { for (const k in st.f) st.f[k].clear(); st.price = 0; st.multi = st.gap = false; }
 
   // ================= Của tôi
@@ -641,12 +684,14 @@
     updMineBadge(0);
   }
   document.addEventListener("click", (e) => {
+    const ri = e.target.closest(".rec-i"); if (ri) { window.kpTrack?.("recent_click", { item: ri.dataset.q }); st.q = ri.dataset.q; $("#q").value = st.q; window.scrollTo({ top: 0 }); return render(); }
+    const so = e.target.closest("a.sh, a.sbest"); if (so) { const c = so.closest(".card"); noteSeen(REG.get(c?.querySelector("[data-id]")?.dataset.id)); }
     const sh = e.target.closest(".shr"); if (sh) { e.preventDefault(); return shareItem(REG.get(sh.dataset.id)); }
     const ch = e.target.closest(".crow-h"); if (ch) {
       const w = ch.closest(".crow"), it = REG.get(ch.dataset.id), body = w.querySelector(".crow-b"); if (!it) return;
       const open = !w.classList.contains("open"); w.classList.toggle("open", open); ch.setAttribute("aria-expanded", open);
       body.innerHTML = open ? card(it) : "";
-      if (open) window.kpTrack?.("row_open", { item: it.name });
+      if (open) { window.kpTrack?.("row_open", { item: it.name }); noteSeen(it); }
       return;
     }
     const bl = e.target.closest(".bell"); if (bl) { e.preventDefault(); return bellPanel(bl); }
@@ -657,6 +702,7 @@
       v ? CSEL.set(id, v) : CSEL.delete(id);
       el.outerHTML = card(it);
       if (v) window.kpTrack?.("color_pick", { item: it.name, color: v });
+      noteSeen(it);
       return;
     }
     const sm = e.target.closest(".shmore"); if (sm) { const box = sm.previousElementSibling; box.classList.toggle("clip"); sm.textContent = box.classList.contains("clip") ? sm.textContent.replace("▴", "▾") : sm.textContent.replace("▾", "▴"); return; }
@@ -899,6 +945,7 @@
   if (sp.get("v") === "deals") st.view = "deals";
   if (sp.get("v") === "mine") st.view = "mine";
   if (sp.get("q")) { st.q = sp.get("q").trim().slice(0, 80); $("#q").value = st.q; }
+  landQ = st.q;
   applyLang();
   installPrompt();
   $("#top").innerHTML = top.slice(0, 18).map(card).join("");
@@ -917,4 +964,5 @@
   $("#lang").addEventListener("click", homeExtra);
   $("#movers").addEventListener("click", (e) => { const b = e.target.closest(".mv-i"); if (b) { $("#q").value = b.dataset.q; $("#q").dispatchEvent(new Event("input", { bubbles: true })); } });
   render();
+  initRecent();
 })();

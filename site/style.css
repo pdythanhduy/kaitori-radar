@@ -556,3 +556,14 @@ a.sbest.cta:active{opacity:.85}
 .crow.open .crow-h{border-bottom:1px solid var(--line)}
 .crow-b .card{border:0;border-radius:0;box-shadow:none;margin:0}
 @media(max-width:560px){#list.list{display:flex;flex-direction:column;gap:8px}}
+
+/* 👀 Từ lần trước bạn xem */
+#recent:empty{display:none}
+.rec{display:flex;gap:8px;align-items:center;overflow-x:auto;padding:8px 0 4px;scrollbar-width:none}
+.rec::-webkit-scrollbar{display:none}
+.rec-t{flex:none;font-size:.8rem;white-space:nowrap}
+.rec-i{flex:none;display:flex;gap:6px;align-items:baseline;border:0;background:var(--card);box-shadow:0 0 0 1px var(--line);border-radius:999px;padding:6px 12px;font-size:.8rem;cursor:pointer;color:var(--fg);white-space:nowrap}
+.rec-i:hover{box-shadow:0 0 0 1px var(--a)}
+.rec-i .rn{font-weight:700}.rec-i .rp{font-variant-numeric:tabular-nums}
+.rec-i b.up{color:var(--g)}.rec-i b.dn{color:var(--r)}.rec-i b.eq{color:var(--muted);font-weight:600}
+.rec-i small{color:var(--muted);font-size:.72rem}
