@@ -35,3 +35,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-05 | 11:55 | 1 | 💰 HÔM NAY MUA iPHONE GIÁ APPLE RỒI BÁN KAI THÌ LỜI HAY LỖ? | https://www.facebook.com/groups/1118827834446963 (+ dòng giá Duo giảm 2–6k so tối qua)
 2026-11-05 | 13:55 | 2 | 🔀 CÙNG 1 MÓN, BÁN SAI TIỆM LÀ MẤT TIỀN | https://www.facebook.com/groups/1118827834446963 (bỏ 3 dòng nghi sai: Switch OLED 当番 2 giá, iPhone 16e ルデヤ 84k; thêm giá giảm trong ngày)
 2026-11-05 | 15:55 | 3 | 📊 GIÁ KAI ĐỔI GÌ HÔM NAY? | https://www.facebook.com/groups/1118827834446963 (+ mục iPhone giảm đồng loạt từ hist; script chỉ bắt mv cùng tiệm dẫn đầu)
+2026-11-05 | 19:54 | 4 | 🃏 HỘP THẺ POKÉMON: VÌ SAO GIỮ MÀNG CO (シュリンク)? | https://www.facebook.com/groups/1118827834446963 (page Nhật Bản 24H)
