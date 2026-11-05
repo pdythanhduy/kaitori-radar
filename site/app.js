@@ -396,7 +396,7 @@
     return `<div class="fg" data-fk="${key}"><div class="fg-t">${title}</div>${rows}${more}</div>`;
   }
   // giá trị bộ lọc trong facets.js là tiếng Việt (dùng làm khoá) → khi xem tiếng Nhật thì dịch để không lẫn tiếng Việt
-  const FL_JA = { "Khác": "その他", "Tay cầm": "コントローラー", "Switch 2 (bộ kèm game)": "Switch 2（ソフト同梱）", "Nintendo (khác)": "Nintendo（その他）" };
+  const FL_JA = { "Khác": "その他", "Tay cầm": "コントローラー", "Switch 2 (bộ kèm game)": "Switch 2（ソフト同梱）", "Nintendo (khác)": "Nintendo（その他）", "PlayStation (đời cũ)": "PlayStation（旧機種）" };
   const FL = (v) => (lang === "ja" ? FL_JA[v] || v : v === "Khác" ? T().otherB : v);
   const PIN = ["iPad", "Nintendo Switch 2", "PlayStation 5", "Pokémon", "iPhone"];  // hãng hay tìm nhất lên đầu (cuối mảng = ưu tiên cao nhất)
   function renderFacets() {

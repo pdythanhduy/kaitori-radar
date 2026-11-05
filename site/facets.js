@@ -4,26 +4,31 @@
   const BRANDS = {
     phone: [["iPhone", /iPhone/i], ["Samsung Galaxy", /Galaxy|SAMSUNG|\bSC-|\bSCG\d/i], ["Google Pixel", /Pixel/i], ["Sony Xperia", /Xperia|\bSO-|\bSOG\d/i],
       ["AQUOS (SHARP)", /AQUOS|SHARP|シャープ|\bSH-|\bSHG\d/i], ["OPPO", /OPPO/i], ["Xiaomi", /Xiaomi|Redmi|POCO/i], ["Motorola", /motorola|\bmoto\b/i],
-      ["arrows", /arrows|\bF-\d/i], ["ASUS", /Zenfone|ROG Phone|ASUS/i], ["Nothing", /Nothing Phone|\bCMF\b/i]],
-    tablet: [["iPad", /iPad/i], ["Galaxy Tab", /Galaxy Tab/i], ["Kindle / Fire", /Kindle|Fire HD|Fire TV/i], ["Pixel Tablet", /Pixel Tablet/i], ["Xiaomi", /Xiaomi|Redmi/i], ["LAVIE / NEC", /LAVIE|NEC/i]],
-    game: [["Nintendo Switch 2", /Switch\s?2/i], ["Nintendo Switch", /Switch/i], ["PlayStation 5", /PlayStation\s?5|PS5|プレイステーション5|プレステ5|CFI-/i],
-      ["PS VR2 / Portal", /VR2|Portal/i], ["Xbox", /Xbox/i], ["Steam", /Steam/i], ["Meta Quest", /Quest/i], ["ROG Ally", /ROG|Ally/i], ["Nintendo (khác)", /Nintendo|任天堂/i]],
-    camera: [["Canon", /Canon|キヤノン|キャノン|EOS|\bRF\d/i], ["Nikon", /Nikon|ニコン|\bZ\s?\d|NIKKOR/i], ["Sony", /SONY|ソニー|ILCE|α\d|\bSEL\d|\bFE\s?\d/i],
-      ["Fujifilm", /FUJIFILM|富士フイルム|\bX-[A-Z]\d|instax|チェキ/i], ["Panasonic", /Panasonic|LUMIX/i], ["OM / Olympus", /OM SYSTEM|OLYMPUS|オリンパス/i],
+      ["arrows", /arrows|\bF-\d/i], ["ASUS", /Zenfone|ROG Phone|ASUS/i], ["Nothing", /Nothing Phone|\bCMF\b/i], ["Fitbit", /Fitbit/i]],
+    tablet: [["iPad", /iPad/i], ["Galaxy Tab", /Galaxy Tab/i], ["Kindle / Fire", /Kindle|Fire HD|Fire TV/i], ["Pixel Tablet", /Pixel Tablet/i], ["Xiaomi", /Xiaomi|Redmi/i], ["LAVIE / NEC", /LAVIE|NEC/i],
+      ["Lenovo", /Lenovo|Yoga Tab|IdeaPad|Ideapad/i], ["HUAWEI", /HUAWEI|MatePad|MediaPad/i], ["OPPO", /OPPO Pad|OPPO/i], ["Microsoft Surface", /Surface/i], ["富士通 / arrows", /富士通|FMV|arrows Tab|LOOX/i]],
+    game: [["Nintendo Switch 2", /Switch\s?2|【NS2】|Joy-Con\s?2/i], ["Nintendo Switch", /Switch|【NS1?】|Joy-Con|Proコントローラー/i], ["PlayStation 5", /PlayStation\s?5|PS5|プレイステーション5|プレステ5|CFI-?[0-9Z]|DualSense|デュアルセンス|アストロボット/i],
+      ["PlayStation 4", /PlayStation\s?4|PS4|プレイステーション4|CUH-/i],
+      ["PS VR2 / Portal", /VR2|Portal/i], ["Xbox", /Xbox/i], ["Steam", /Steam/i], ["Meta Quest", /Quest/i], ["ROG Ally", /ROG|Ally/i], ["Nintendo (khác)", /Nintendo|任天堂|ニンテンドー|Alarmo|ゲーム&ウオッチ|3DS|\bDS\b/i], ["PlayStation (đời cũ)", /PSP|PS\s?Vita|\bPS[1-3]\b|PlayStation\s?[1-3]\b/i]],
+    camera: [["Canon", /Canon|キヤノン|キャノン|EOS|\bRF\d|\bEF-?S?\d|PowerShot|IXY/i], ["Nikon", /Nikon|ニコン|\bZ\s?\d|NIKKOR|\bD\d{3,4}\b|COOLPIX/i], ["Sony", /SONY|ソニー|ILCE|ILME|α\d|\bSEL\d|\bFE\s?\d|\bZV-|\bDSC-|VLOGCAM|Cyber-shot|\bFDR-|\bHDR-/i],
+      ["Fujifilm", /FUJIFILM|富士フイルム|\bX-[A-Z]\d|instax|チェキ|\bXF\d|\bXC\d|写ルンです/i], ["Panasonic", /Panasonic|LUMIX/i], ["OM / Olympus", /OM SYSTEM|OLYMPUS|オリンパス|\bOM-\d|Tough TG|\bPEN E-|\bE-M\d|\bE-P\d|M\.ZUIKO/i],
       ["Ricoh / Pentax", /RICOH|リコー|PENTAX|\bGR\s?I/i], ["SIGMA", /SIGMA/i], ["TAMRON", /TAMRON/i], ["DJI", /DJI|Osmo/i], ["GoPro", /GoPro/i], ["Insta360", /Insta360/i],
       ["Hasselblad", /ハッセルブラッド|Hasselblad/i], ["Leica", /Leica|ライカ/i]],
-    card: [["Pokémon", /ポケモン|ポケカ|Pokémon|Pokemon/i], ["ONE PIECE", /ONE PIECE|ワンピース|\bOP-\d|\bEB-\d|\bST-?\d/i], ["遊戯王", /遊戯王|YU-GI-OH/i],
-      ["Dragon Ball", /ドラゴンボール|DRAGON BALL|\bFB\d/i], ["Duel Masters", /デュエル/i]],
-    audio: [["Apple AirPods", /AirPods|Beats/i], ["Sony", /SONY|ソニー|\bWF-|\bWH-|LinkBuds|INZONE/i], ["Bose", /Bose/i], ["Sennheiser", /Sennheiser|ゼンハイザー|MOMENTUM/i],
-      ["Anker", /Anker|Soundcore/i], ["JBL", /JBL/i], ["Jabra", /Jabra|Elite/i], ["Samsung", /Galaxy Buds/i], ["Google", /Pixel Buds/i]],
+    card: [["Pokémon", /ポケモン|ポケカ|Pokémon|Pokemon|【(S|SV|SM|M|XY|BW)\d*[A-Za-z]?】|【MEGA】|\d{3}\/(SM|S|SV|XY|BW|DP|M)-P\b|VMAX|VSTAR|\bGX\b|ピカチュウ|イーブイ|リザードン|30th\s?CELEBRATION|拡張パック/i], ["ONE PIECE", /ONE PIECE|ワンピース|\bOP-?\d|\bEB-\d|\bST-?\d|\bPRB-?\d/i], ["遊戯王", /遊戯王|YU-GI-OH/i],
+      ["Dragon Ball", /ドラゴンボール|DRAGON BALL|\bFB-?\d|MANGA BOOSTER/i], ["Duel Masters", /デュエル/i], ["UNION ARENA", /UNION\s?ARENA/i],
+      ["Pokémon", /\bBOX\b|^[^【\[]*DX$|クレイバースト|ステラミラクル/i], ["Pokémon", /ex\b/]],  // box chỉ ghi tên đợt (vd "サイバージャッジ BOX"); các hãng khác đều có mã/tên riêng ở trên
+    audio: [["Apple AirPods", /AirPods|Beats/i], ["Sony", /SONY|ソニー|\bWF-|\bWH-|LinkBuds|INZONE/i], ["Bose", /Bose|QuietComfort|SoundLink/i], ["Sennheiser", /Sennheiser|ゼンハイザー|MOMENTUM/i],
+      ["Anker", /Anker|Soundcore/i], ["JBL", /JBL|TOUR PRO|\bTUNE\b/i], ["Jabra", /Jabra|Elite/i], ["Samsung", /Galaxy Buds/i], ["Google", /Pixel Buds/i],
+      ["Technics", /Technics|EAH-/i], ["Audio-Technica", /audio-technica|オーディオテクニカ|\bATH-/i], ["Shokz", /Shokz|OpenRun|OpenFit|OpenDots|\bSKZ-/i], ["JVC / Victor", /JVC|Victor|ビクター/i], ["HUAWEI", /HUAWEI|FreeClip|FreeBuds/i]],
     watch: [["Apple Watch", /Apple Watch|^\s*Watch\s*(Ultra|Series|SE)/i], ["Galaxy Watch", /Galaxy Watch/i], ["Pixel Watch", /Pixel Watch/i], ["Garmin", /Garmin|ガーミン/i], ["Casio / G-SHOCK", /CASIO|カシオ|G-SHOCK/i],
       ["Seiko", /SEIKO|セイコー|Grand Seiko/i], ["Citizen", /CITIZEN|シチズン/i]],
-    pc: [["Apple Mac", /MacBook|Mac mini|iMac|Mac Studio/i], ["NVIDIA GPU", /GeForce|RTX/i], ["AMD", /Radeon|Ryzen/i], ["Microsoft Surface", /Surface/i], ["ASUS", /ASUS/i], ["Lenovo", /Lenovo|ThinkPad/i], ["Dell", /Dell|Alienware/i], ["HP", /\bHP\b/i]],
+    pc: [["Apple Mac", /MacBook|Mac mini|iMac|Mac Studio/i], ["NVIDIA GPU", /GeForce|RTX|GV-N\d{4}/i], ["AMD", /Radeon|Ryzen/i], ["Microsoft Surface", /Surface/i], ["ASUS", /ASUS/i], ["Lenovo", /Lenovo|ThinkPad/i], ["Dell", /Dell|Alienware/i], ["HP", /\bHP\b/i], ["富士通", /富士通|FMV|LIFEBOOK/i], ["RAM / SSD", /DDR[45]|\bSSD\b|NVMe/i]],
   };
-  const GENERIC = [["Apple", /Apple|AirTag|Apple TV|HomePod/i], ["Dyson", /dyson|ダイソン/i], ["Panasonic", /Panasonic|パナソニック/i], ["SHARP", /SHARP|シャープ/i],
+  const GENERIC = [["Apple", /Apple|AirTag|Apple TV|HomePod/i], ["Dyson", /dyson|ダイソン/i], ["Panasonic", /Panasonic|パナソニック|ストラーダ|ナノケア|\bEH-[A-Z]{2}|\bES-[A-Z]{2}|ラムダッシュ/i], ["SHARP", /SHARP|シャープ/i],
     ["日立 Hitachi", /日立|HITACHI/i], ["東芝 Toshiba", /東芝|TOSHIBA/i], ["iRobot", /iRobot|ルンバ|Roomba/i], ["ReFa", /ReFa|リファ/i], ["Philips", /PHILIPS|フィリップス/i],
-    ["BALMUDA", /BALMUDA|バルミューダ/i], ["De'Longhi", /DeLonghi|デロンギ/i], ["Sony", /SONY|ソニー/i], ["Nintendo", /Nintendo|任天堂/i], ["Amazon", /Echo|Fire TV|Kindle/i],
-    ["Anker", /Anker/i], ["SwitchBot", /SwitchBot/i], ["Canon", /Canon|キヤノン/i], ["EPSON", /EPSON|エプソン/i], ["BANDAI", /BANDAI|バンダイ/i]];
+    ["BALMUDA", /BALMUDA|バルミューダ/i], ["De'Longhi", /DeLonghi|デロンギ/i], ["Sony", /SONY|ソニー|\bFDR-|\bMDR-/i], ["Nintendo", /Nintendo|任天堂/i], ["Amazon", /Echo|Fire TV|Kindle/i],
+    ["Anker", /Anker/i], ["SwitchBot", /SwitchBot/i], ["Canon", /Canon|キヤノン/i], ["EPSON", /EPSON|エプソン/i], ["BANDAI", /BANDAI|バンダイ|たまごっち|Tamagotchi|ガンダム|METAL BUILD|ガンプラ|超合金|S\.H\.Figuarts/i], ["Takara Tomy", /タカラトミー|TAKARA TOMY|BEYBLADE|ベイブレード|トミカ|プラレール/i], ["Alpine", /アルパイン|ALPINE|ビッグX/i],
+    ["Pioneer", /パイオニア|Pioneer|carrozzeria|カロッツェリア|サイバーナビ|楽ナビ/i], ["Kenwood", /ケンウッド|KENWOOD|彩速/i], ["遊戯王", /遊戯王/i], ["LEGO", /LEGO|レゴ/i], ["NEC / LAVIE", /LAVIE|\bNEC\b/i], ["MSI", /\bMSI\b/i], ["dynabook", /dynabook|ダイナブック/i]];
 
   function brand(cat, name) {
     const n = N(name);
