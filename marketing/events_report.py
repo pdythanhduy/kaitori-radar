@@ -24,7 +24,8 @@ LABEL = {
     "search": "🔎 Tìm nhiều", "search_none": "❓ Tìm mà KHÔNG ra kết quả", "shop_click": "🏪 Bấm sang tiệm",
     "affiliate_click": "🤝 Bấm link đối tác", "land": "🚪 Vào từ link", "guide_click": "📚 Mở bài hướng dẫn",
     "drill": "🗂 Lọc danh mục", "watch_add": "⭐ Theo dõi giá", "push_on": "🔔 Bật thông báo", "stock_add": "📦 Thêm máy của tôi",
-    "share": "📤 Chia sẻ",
+    "share": "📤 Chia sẻ", "profit_teaser": "💹 Mở bảng lời/lỗ", "profit_open": "💹 Bấm mẫu trong bảng lời/lỗ",
+    "scan_open": "📷 Mở quét mã vạch", "scan_ok": "📷 Quét ra giá", "scan_miss": "📷 Quét không ra",
 }
 
 
@@ -59,7 +60,7 @@ def summary(day_from: str, day_to: str, top: int = 6) -> str:
         by[x["e"]][a or "(trống)"] += x["n"]
     tot = Counter({e: sum(c.values()) for e, c in by.items() if e in LABEL})
     out = ["🧭 <b>Hành vi người dùng</b>: " + ", ".join(f"{LABEL[e].split(' ', 1)[1].lower()} {n}" for e, n in tot.most_common(5))]
-    for e in ("search", "search_none", "shop_click", "land", "guide_click", "affiliate_click"):
+    for e in ("search", "search_none", "shop_click", "land", "guide_click", "affiliate_click", "scan_ok", "scan_miss", "profit_open"):
         if by.get(e):
             items = by[e].most_common(top)
             out.append(f"{LABEL[e]}: " + ", ".join(f"{k} ({n})" for k, n in items))
