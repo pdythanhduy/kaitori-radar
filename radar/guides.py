@@ -637,6 +637,142 @@ mua đủ giá. Bảng dưới lấy <b>đúng ghi chú các tiệm đăng trên
             "Bảng mức trừ tiền theo màu (ブラック, シルバー, グレイシャー, ホワイト…) của từng tiệm kaitori cho iPhone 18 / Duo, lấy từ ghi chú của tiệm, cập nhật mỗi giờ.",
             "Bảng trừ màu", "🎨 Màu iPhone nào bị trừ tiền? Bảng từng tiệm", body_c)
 
+    # ---------------------------------------------------------------- 9. Trang giá hôm nay cho Google (VI) — 05/11/2026
+    # Người Việt hay tìm "giá kai iPhone 18 Pro Max hôm nay", "giá kai Duo", "giá box Pokémon"; bảng tự cập nhật mỗi giờ.
+    COL_VI = {"red": "Đỏ", "glacier": "Xanh băng", "black": "Đen", "silver": "Bạc", "nightsky": "Đen (ナイトスカイ)", "white": "Trắng",
+              "blue": "Xanh", "orange": "Cam", "pink": "Hồng", "green": "Xanh lá", "purple": "Tím", "gold": "Vàng"}
+    sname = lambda sid: shops.get(sid, {}).get("name", sid)
+    FB = ('<p class="cta"><a href="https://www.facebook.com/groups/1118827834446963" target="_blank" rel="noopener">'
+          '👥 Nhận giá mỗi ngày trong nhóm Facebook "Săn Giá Kaitori Nhật Bản" →</a></p>')
+
+    def color_rows(models):
+        """1 dòng / dung lượng: giá cao nhất (mọi tiệm) + giá cao nhất từng màu ở các tiệm có bảng giá theo màu."""
+        cols, rows = [], []
+        for it in models:
+            ps = [(sid, pr) for sid, pr in it["prices"].items() if pr and pr.get("price")]
+            if not ps:
+                continue
+            best_sid, best = max(ps, key=lambda kv: kv[1]["price"])
+            per = {}
+            for sid, pr in ps:
+                for ck, v in (pr.get("c") or {}).items():
+                    if v and (ck not in per or v > per[ck][1]):
+                        per[ck] = (sid, v)
+            for ck in per:
+                if ck not in cols:
+                    cols.append(ck)
+            rows.append((it, best_sid, best["price"], per))
+        cols.sort(key=lambda k: list(COL_VI).index(k) if k in COL_VI else 99)
+        return cols, rows
+
+    def color_table(models):
+        cols, rows = color_rows(models)
+        if not rows:
+            return ""
+        head = "".join(f"<th>{e(COL_VI.get(c, c))}</th>" for c in cols)
+        trs = []
+        for it, bsid, bp, per in rows:
+            cap = (re.search(r"(\d+(GB|TB))", it["name"]) or [None, it["name"]])[1]
+            link = f'<a href="/p/{it["_slug"]}/">{e(cap)}</a>' if it.get("_slug") else e(cap)
+            msrp = it.get("msrp")
+            cells = "".join(f"<td>{_yen(per[c][1])}<br><small>{e(sname(per[c][0]))}</small></td>" if c in per else "<td>—</td>" for c in cols)
+            trs.append(f"<tr><td>{link}</td><td><b>{_yen(bp)}</b><br><small>{e(sname(bsid))}</small></td>{cells}"
+                       f"<td>{_yen(msrp) if msrp else '—'}</td></tr>")
+        return ('<div class="tw"><table class="pt"><thead><tr><th>Dung lượng</th><th>Cao nhất (mọi tiệm)</th>'
+                f"{head}<th>Giá Apple</th></tr></thead><tbody>{''.join(trs)}</tbody></table></div>")
+
+    def vi_faq(faq):
+        return "<section><h2>Câu hỏi thường gặp</h2>" + "".join(f"<details><summary>{e(q)}</summary><p>{e(a)}</p></details>" for q, a in faq) + "</section>"
+
+    for slug, label, rx, ask in [
+        ("gia-kai-iphone-18-pro-max", "iPhone 18 Pro Max", r"iPhone 18 Pro Max \d", "18 Pro Max (hay gọi 18 PRM)"),
+        ("gia-kai-iphone-duo", "iPhone Duo", r"iPhone Duo \d", "iPhone Duo"),
+    ]:
+        models = sorted([i for i in phones if re.match(rx, i["key"]) and i["n_shops"] >= 2], key=_iphone_order)
+        if not models:
+            continue
+        cols, rows = color_rows(models)
+        top = rows[0] if rows else None
+        top_cap = (re.search(r"(\d+(GB|TB))", top[0]["name"]) or [None, ""])[1] if top else ""
+        top_txt = (f"Bản {e(top_cap)} đang được trả cao nhất "
+                   f"<b>{_yen(top[2])}</b> ở {e(sname(top[1]))}.") if top else ""
+        faq = [
+            (f"Giá kai {label} hôm nay bao nhiêu?", f"Xem bảng trên: giá cao nhất từng dung lượng ở {n_shops} tiệm kaitori lớn ở Nhật, cập nhật mỗi giờ (lần cuối {updated} JST)."),
+            ("Màu nào bị trừ tiền?", "Mỗi tiệm trừ khác nhau. Cột theo màu là giá đã trừ ở các tiệm có bảng giá riêng từng màu; tiệm khác ghi số trừ trong ghi chú. Xem thêm bài 'Màu iPhone nào bị trừ tiền?'."),
+            ("Bán ở tiệm hay bán cho người dùng?", "Bán tiệm nhanh, an toàn, không lo lừa đảo; bán người dùng (thường giá Apple trừ vài nghìn) được hơn nhưng phải tự tìm người và cẩn thận khi giao dịch."),
+            ("Cần mang gì khi bán?", "Máy mới chưa mở (còn màng co), giấy tờ tuỳ thân có địa chỉ (thẻ ngoại kiều 在留カード). Một số tiệm cần đặt trước hoặc giới hạn số máy mỗi người."),
+        ]
+        body = f"""
+<p class="upd">Giá cập nhật: {upd} JST (tự động mỗi giờ)</p>
+<p>Bảng giá thu mua (kai, 買取) <b>{e(ask)}</b> máy mới chưa mở ở <b>{n_shops} tiệm kaitori</b> lớn ở Nhật. {top_txt}
+Cùng một máy mà các tiệm trả lệch nhau vài nghìn tới hơn chục nghìn yên, nên so giá trước khi bán.</p>
+<h2>Giá kai {e(label)} hôm nay theo dung lượng và màu</h2>
+{color_table(models)}
+<p class="small">Cột theo màu: giá cao nhất của màu đó ở các tiệm có bảng giá riêng từng màu (đã trừ màu). "—" là chưa có tiệm nào ghi giá riêng cho màu đó.
+Bấm dung lượng để xem giá cả {n_shops} tiệm và biểu đồ giá.</p>
+<h2>Mẹo bán được giá cao</h2>
+<ul class="tips">
+<li><b>Chọn đúng màu:</b> màu bị trừ ít nhất thường có giá cao nhất; xem <a href="/guide/tru-mau-iphone/">bảng trừ màu từng tiệm</a>.</li>
+<li><b>Giữ máy nguyên seal:</b> mở hộp hoặc kích hoạt là mất giá "mới chưa mở".</li>
+<li><b>Bán xa tiệm:</b> nhiều tiệm nhận gửi bưu điện (郵送買取); để ý điều kiện giữ giá theo ngày hàng tới.</li>
+<li><b>Giá kai đang giảm?</b> Xem <a href="/guide/gia-iphone-giam/">nên huỷ, bán ngay hay giữ</a> và <a href="/guide/huy-iphone/">cách huỷ đơn</a>.</li>
+<li><b>Giao dịch trực tiếp trong nhóm:</b> đọc <a href="/guide/lua-dao-iphone/">các kiểu lừa hay gặp</a> trước khi gặp.</li>
+</ul>
+<p class="cta"><a href="/vi/?q={e(label)}">Xem giá {e(label)} ở {n_shops} tiệm, chọn màu để thấy giá đã trừ →</a></p>
+{FB}
+{vi_faq(faq)}
+<p class="small">Giá là giá công khai trên web các tiệm, chưa tính điểm thưởng và phí gửi; giá thực tế khi bán có thể khác. Bài chỉ để tham khảo, không phải lời khuyên đầu tư.</p>"""
+        vi_page(f"/guide/{slug}/", f"Giá kai {label} hôm nay ở {n_shops} tiệm (cập nhật mỗi giờ) | Kaitori Price",
+                f"Giá thu mua {label} mới chưa mở hôm nay ở {n_shops} tiệm kaitori Nhật: từng dung lượng, từng màu, so với giá Apple. Tự cập nhật mỗi giờ.",
+                f"Giá kai {label}", f"📱 Giá kai {label} hôm nay", body)
+
+    # hộp thẻ Pokémon: tên gọi trong nhóm FB → tên tiệm ghi
+    NICK = [("Box 30th", "30th CELEBRATION", r"【M6a】"), ("set 9", "9種セット", None), ("dekki mèo", "エーフィ・ブラッキー", None),
+            ("Dream", "メガドリームex", None), ("Inferno X", "インフェルノX", None), ("Ninja Spinner", "ニンジャスピナー", None),
+            ("Mega Brave", "メガブレイブ", None), ("Mega Symphonia", "メガシンフォニア", None)]
+    cards = items.get("card", [])
+    nick_rows = []
+    for nick, frag, must in NICK:
+        hit = [i for i in cards if frag in i["name"] and (not must or must in i["name"]) and not i["name"].startswith("PSA") and i["n_shops"] >= 2]
+        if hit:
+            it = max(hit, key=lambda i: (i["n_shops"], i["best"]))
+            ps = sorted([kv for kv in it["prices"].items() if kv[1] and kv[1].get("price")], key=lambda kv: -kv[1]["price"])
+            link = f'<a href="/p/{it["_slug"]}/">{e(it["name"].strip())}</a>' if it.get("_slug") else e(it["name"].strip())
+            nick_rows.append(f"<tr><td><b>{e(nick)}</b></td><td>{link}</td><td><b>{_yen(ps[0][1]['price'])}</b><br><small>{e(sname(ps[0][0]))}</small></td>"
+                             f"<td>{_yen(ps[-1][1]['price'])}</td><td>{it['n_shops']}</td></tr>")
+    box_rows = []
+    for it in boxes[:30]:
+        ps = sorted([kv for kv in it["prices"].items() if kv[1] and kv[1].get("price")], key=lambda kv: -kv[1]["price"])
+        link = f'<a href="/p/{it["_slug"]}/">{e(it["name"].strip())}</a>' if it.get("_slug") else e(it["name"].strip())
+        box_rows.append(f"<tr><td>{link}</td><td><b>{_yen(ps[0][1]['price'])}</b><br><small>{e(sname(ps[0][0]))}</small></td>"
+                        f"<td>{_yen(ps[0][1]['price'] - ps[-1][1]['price'])}</td><td>{it['n_shops']}</td></tr>")
+    if nick_rows or box_rows:
+        th = "<thead><tr><th>Tên trong nhóm</th><th>Tên tiệm ghi</th><th>Cao nhất</th><th>Thấp nhất</th><th>Số tiệm</th></tr></thead>"
+        th2 = "<thead><tr><th>Hộp</th><th>Cao nhất</th><th>Chênh cao–thấp</th><th>Số tiệm</th></tr></thead>"
+        body_box = f"""
+<p class="upd">Giá cập nhật: {upd} JST (tự động mỗi giờ)</p>
+<p>Giá thu mua <b>hộp thẻ Pokémon (ポケカ BOX)</b> mới, còn màng co, ở các tiệm kaitori lớn ở Nhật. Tên hộp trên web tiệm toàn tiếng Nhật,
+nên bảng đầu ghép <b>tên anh em hay gọi trong nhóm</b> với tên tiệm ghi để dễ tìm.</p>
+<h2>Hộp đang hot: tên gọi trong nhóm → giá</h2>
+{'<div class="tw"><table class="pt">' + th + '<tbody>' + ''.join(nick_rows) + '</tbody></table></div>' if nick_rows else ''}
+<h2>30 hộp được nhiều tiệm thu nhất</h2>
+{'<div class="tw"><table class="pt">' + th2 + '<tbody>' + ''.join(box_rows) + '</tbody></table></div>' if box_rows else ''}
+<h2>Điều kiện thu mua cần biết</h2>
+<ul class="tips">
+<li><b>Còn màng co (シュリンク付き):</b> đa số tiệm chỉ thu box chưa bóc, còn nguyên màng. Bóc màng hoặc màng rách là giá thấp hơn nhiều hoặc không thu.</li>
+<li><b>Hộp móp, hư:</b> có tiệm trừ tiền tuỳ mức. Mua online thì chụp ảnh hộp lúc mở thùng; móp nặng thì hỏi tiệm trước.</li>
+<li><b>Giá đổi rất nhanh</b> theo đợt phát hành và tin bán lại (再販), xem giá ngay trước khi mang đi.</li>
+</ul>
+<p class="cta"><a href="/vi/?c=card">Xem giá tất cả hộp thẻ ở các tiệm →</a></p>
+{FB}
+{vi_faq([("Box Pokémon nào đang được giá nhất?", "Xem bảng trên, sắp theo số tiệm thu và giá cao nhất, cập nhật mỗi giờ."),
+         ("Box mất màng co có bán được không?", "Đa số tiệm chỉ thu box còn màng co; vài tiệm có bảng giá riêng cho box không màng co, thấp hơn hàng còn màng."),
+         ("Bán thẻ lẻ PSA ở đâu?", "Một số tiệm thu thẻ đã chấm điểm PSA; tìm tên thẻ trên web để so giá các tiệm.")])}
+<p class="small">Giá là giá công khai trên web các tiệm cho box mới còn màng co; giá thực tế có thể khác. Không phải lời khuyên mua bán hay đầu tư.</p>"""
+        vi_page("/guide/gia-kai-pokemon-box/", "Giá thu mua hộp thẻ Pokémon (box ポケカ) hôm nay | Kaitori Price",
+                "Giá kai box Pokémon mới nhất ở các tiệm Nhật, ghép tên gọi trong nhóm (Box 30th, set 9, dekki mèo…) với tên tiệm ghi. Cập nhật mỗi giờ.",
+                "Giá box Pokémon", "🃏 Giá thu mua hộp thẻ Pokémon hôm nay", body_box)
+
     # ---------------------------------------------------------------- trang tổng hợp (JA /guide/, VI /guide/vi/)
     # (path, icon, tiêu đề VI, mô tả VI, có bản tiếng Việt?) — nhóm theo mục để dễ tìm
     SECTIONS = [
@@ -663,14 +799,17 @@ mua đủ giá. Bảng dưới lấy <b>đúng ghi chú các tiệm đăng trên
         m = META[p]
         return card(m[4], m[1], m[2], m[3]) if m[4] else card(p, m[1], m[2], m[3], '<span class="gl">日本語</span>')
     VI_TOPICS = [
-        ("iphone", "📱 iPhone", [card("/guide/gia-iphone-giam/", "📉", "Giá kai iPhone giảm: huỷ, bán hay giữ?", "Bảng giá mới nhất 9 tiệm + cách tính lời lỗ"),
+        ("iphone", "📱 iPhone", [card("/guide/gia-kai-iphone-18-pro-max/", "💴", "Giá kai iPhone 18 Pro Max hôm nay", "Từng dung lượng, từng màu, so giá Apple — cập nhật mỗi giờ"),
+                               card("/guide/gia-kai-iphone-duo/", "💴", "Giá kai iPhone Duo hôm nay", "Từng dung lượng, đen / trắng, so giá Apple"),
+                               card("/guide/gia-iphone-giam/", "📉", "Giá kai iPhone giảm: huỷ, bán hay giữ?", "Bảng giá mới nhất 9 tiệm + cách tính lời lỗ"),
                                card("/guide/huy-iphone/", "❌", "Cách huỷ đơn iPhone không mất phí", "Apple Store, docomo, au, SoftBank, Rakuten: huỷ trước khi gửi hàng"),
                                card("/guide/tra-iphone-apple/", "↩️", "Trả iPhone cho Apple trong 14 ngày", "Điều kiện, tắt Tìm iPhone, khi nào bị phí 15%"),
                                card("/guide/ban-nguoi-dung-hay-kai/", "⚖️", "Bán cho người dùng (app −5s) hay bán kai?", "Bảng so giá Apple −5.000 với giá kai cao nhất từng mẫu"),
                                card("/guide/tru-mau-iphone/", "🎨", "Màu iPhone nào bị trừ tiền?", "Bảng trừ màu từng tiệm, đúng như tiệm ghi"),
                                card("/guide/lua-dao-iphone/", "⚠️", "Cảnh giác lừa đảo khi mua bán trực tiếp", "Hộp seal có vật lạ, chuyển khoản giả, máy khoá iCloud / 利用制限")]
                               + [vcard(p) for p in ["/guide/iphone-18-kaitori/"] if p in have]),
-        ("shop", "🏪 Bán cho tiệm", [card("/guide/tiem-kaitori/", "📍", "Danh sách tiệm kaitori (Tokyo, Osaka, Nagoya)",
+        ("shop", "🏪 Bán cho tiệm", [card("/guide/gia-kai-pokemon-box/", "🃏", "Giá thu mua hộp thẻ Pokémon hôm nay", "Tên gọi trong nhóm (Box 30th, set 9…) → giá từng tiệm"),
+                                   card("/guide/tiem-kaitori/", "📍", "Danh sách tiệm kaitori (Tokyo, Osaka, Nagoya)",
                                          "Địa chỉ, giờ mở cửa, ga gần nhất, link bản đồ của các tiệm web đang so giá")]
                                    + [vcard(p) for p in ["/guide/yoyaku-kaitori/", "/guide/pokeca-box-kaitori/"] if p in have]),
         ("buy", "🛒 Mua rẻ để bán lại", [card("/guide/meo-mua-re/", "🛒", "7 cách mua hàng giảm giá ở Nhật",
