@@ -16,7 +16,7 @@
       ["Dragon Ball", /ドラゴンボール|DRAGON BALL|\bFB\d/i], ["Duel Masters", /デュエル/i]],
     audio: [["Apple AirPods", /AirPods|Beats/i], ["Sony", /SONY|ソニー|\bWF-|\bWH-|LinkBuds|INZONE/i], ["Bose", /Bose/i], ["Sennheiser", /Sennheiser|ゼンハイザー|MOMENTUM/i],
       ["Anker", /Anker|Soundcore/i], ["JBL", /JBL/i], ["Jabra", /Jabra|Elite/i], ["Samsung", /Galaxy Buds/i], ["Google", /Pixel Buds/i]],
-    watch: [["Apple Watch", /Apple Watch/i], ["Galaxy Watch", /Galaxy Watch/i], ["Pixel Watch", /Pixel Watch/i], ["Garmin", /Garmin|ガーミン/i], ["Casio / G-SHOCK", /CASIO|カシオ|G-SHOCK/i],
+    watch: [["Apple Watch", /Apple Watch|^\s*Watch\s*(Ultra|Series|SE)/i], ["Galaxy Watch", /Galaxy Watch/i], ["Pixel Watch", /Pixel Watch/i], ["Garmin", /Garmin|ガーミン/i], ["Casio / G-SHOCK", /CASIO|カシオ|G-SHOCK/i],
       ["Seiko", /SEIKO|セイコー|Grand Seiko/i], ["Citizen", /CITIZEN|シチズン/i]],
     pc: [["Apple Mac", /MacBook|Mac mini|iMac|Mac Studio/i], ["NVIDIA GPU", /GeForce|RTX/i], ["AMD", /Radeon|Ryzen/i], ["Microsoft Surface", /Surface/i], ["ASUS", /ASUS/i], ["Lenovo", /Lenovo|ThinkPad/i], ["Dell", /Dell|Alienware/i], ["HP", /\bHP\b/i]],
   };
@@ -43,7 +43,12 @@
     if ((m = n.match(/Galaxy\s+(Z\s*(Fold|Flip)\s*\d+|S\d{2}\s*(Ultra|\+|FE|Edge)?|A\d{2,3}|Tab\s*S\d+)/i))) return "Galaxy " + m[1].replace(/\s+/g, " ").trim();
     if ((m = n.match(/Pixel\s*(\d+a?)\s*(Pro\s*XL|Pro\s*Fold|Pro|XL)?/i))) return "Pixel " + m[1] + (m[2] ? " " + m[2].replace(/\s+/g, " ") : "");
     if ((m = n.match(/Xperia\s*(1|5|10|Ace)\s*(I{1,3}V?|IV|V|VI|VII|Ⅶ|Ⅵ|Ⅴ)?/i))) return "Xperia " + m[1] + (m[2] ? " " + m[2] : "");
-    if ((m = n.match(/Apple Watch\s*(Ultra\s*\d?|Series\s*\d+|SE)/i))) return "Apple Watch " + m[1].replace(/\s+/g, " ");
+    // tên tiệm thường bỏ chữ "Apple" ("Watch Ultra 3 GPS+…", "Watch SE(第2世代)…") → vẫn nhận là Apple Watch (không nhầm Galaxy/Pixel Watch)
+    if ((m = n.match(/(?:^\s*|Apple\s*)Watch\s*(Ultra|Series|SE)\s*(\d+)?/i))) {
+      const kind = { ultra: "Ultra", series: "Series", se: "SE" }[m[1].toLowerCase()];
+      const num = m[2] || (kind === "SE" && (n.match(/第\s*(\d)\s*世代/) || [])[1]) || "";
+      return "Apple Watch " + kind + (num ? " " + num : "");
+    }
     if ((m = n.match(/AirPods\s*(Pro\s*\d?|Max|4|3)?/i))) return "AirPods" + (m[1] ? " " + m[1].trim() : "");
     if (cat === "game") {
       if (/Pro/i.test(n) && /PlayStation\s?5|PS5|CFI-7/i.test(n)) return "PS5 Pro";
