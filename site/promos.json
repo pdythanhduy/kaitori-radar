@@ -22,8 +22,8 @@
       "ja": "Android一括1円・最大14,000pt"
      },
      "desc": {
-      "vi": "Chuyển mạng sang: Galaxy A25 5G, nubia S2R, moto g37j một lần trả 1円. Chương trình giới thiệu (三木谷キャンペーン) thêm 14.000 điểm, iPhone giảm tới 20.000円. 💴 moto g37j bản Rakuten đang được kai thu ~26.000円. (Theo trang tổng hợp 02/11/2026, chưa đối chiếu trang chính thức; kiểm tra điều kiện trước khi đăng ký.)",
-      "ja": "MNPでGalaxy A25 5G・nubia S2R・moto g37jが一括1円。三木谷キャンペーンで最大14,000pt、iPhoneは最大20,000円割引。（2026/11/2時点のまとめサイト情報。申込前に公式で条件をご確認ください）"
+      "vi": "Chuyển mạng sang: Galaxy A25 5G, nubia S2R, moto g37j một lần trả 1円 (giảm 22.000円, máy Android không phải trả lại). Chương trình giới thiệu (三木谷キャンペーン): chuyển mạng 14.000 điểm, đăng ký mới 13.000 điểm. 💴 moto g37j bản Rakuten đang được kai thu ~26.000円, Galaxy A25 bản Rakuten ~16.000円. (Theo trang tổng hợp 05/11/2026, chưa đối chiếu trang chính thức; kiểm tra điều kiện trước khi đăng ký.)",
+      "ja": "MNPでGalaxy A25 5G・nubia S2R・moto g37jが一括1円（22,000円割引、Androidは返却不要）。三木谷キャンペーンはMNP 14,000pt・新規13,000pt。（2026/11/5時点のまとめサイト情報。申込前に公式で条件をご確認ください）"
      }
     },
     {
@@ -35,8 +35,8 @@
       "ja": "一括1円"
      },
      "desc": {
-      "vi": "Chuyển mạng sang: Galaxy A25 5G, nubia S2 một lần trả 1円. ⚠️ Hợp đồng đăng ký từ 01/07/2026 có phí huỷ tối đa 1.100円. (Theo trang tổng hợp 02/11/2026, chưa đối chiếu trang chính thức; kiểm tra điều kiện trước khi đăng ký.)",
-      "ja": "MNPでGalaxy A25 5G・nubia S2が一括1円。2026/7/1以降の契約は解除料最大1,100円。（2026/11/2時点のまとめサイト情報。申込前に公式で条件をご確認ください）"
+      "vi": "Chuyển mạng sang: Galaxy A25 5G, nubia S2 một lần trả 1円 (các trang ghi khác nhau, kiểm tra trang chính thức; đợt OPPO A5 1円 Halloween đã hết 02/11). ⚠️ Hợp đồng đăng ký từ 01/07/2026 có phí huỷ tối đa 1.100円. 💴 Galaxy A25 bản Y!mobile/SoftBank đang được kai thu ~16.500–17.200円. (Theo trang tổng hợp 05/11/2026, chưa đối chiếu trang chính thức; kiểm tra điều kiện trước khi đăng ký.)",
+      "ja": "MNPでGalaxy A25 5G・nubia S2が一括1円（記事により異なる。OPPO A5のハロウィンSALEは11/2終了）。2026/7/1以降の契約は解除料最大1,100円。（2026/11/5時点のまとめサイト情報。申込前に公式で条件をご確認ください）"
      }
     },
     {
@@ -63,21 +63,8 @@
       "ja": "OPPO A5 5G 一括1円"
      },
      "desc": {
-      "vi": "Chuyển mạng sang: OPPO A5 5G một lần trả 1円, các máy Android khác từ 2円/tháng. 💴 OPPO A5 5G (OPG06) đang được kai thu ~19.100円. (Theo trang tổng hợp 02/11/2026, chưa đối chiếu trang chính thức; kiểm tra điều kiện trước khi đăng ký.)",
-      "ja": "MNPでOPPO A5 5Gが一括1円、他のAndroidは月2円〜。（2026/11/2時点のまとめサイト情報。申込前に公式で条件をご確認ください）"
-     }
-    },
-    {
-     "name": "IIJmio",
-     "url": "https://www.iijmio.jp/campaign/",
-     "affiliate": false,
-     "badge": {
-      "vi": "Máy từ 4.980円 · tới 04/11",
-      "ja": "一括4,980円〜・11/4まで"
-     },
-     "desc": {
-      "vi": "Chuyển mạng kèm mua máy: từ 4.980円 trả một lần, hạn tới 04/11/2026. Cước tháng rẻ, hợp để giữ số lâu dài. (Theo trang tổng hợp 02/11/2026, chưa đối chiếu trang chính thức; kiểm tra điều kiện trước khi đăng ký.)",
-      "ja": "MNP同時購入で一括4,980円〜（11/4まで）。（2026/11/2時点のまとめサイト情報。申込前に公式で条件をご確認ください）"
+      "vi": "Chuyển mạng sang: OPPO A5 5G một lần trả 1円, các máy Android khác từ 2円/tháng; iPhone không có giá 1円. 💴 OPPO A5 5G (OPG06) đang được kai thu ~19.100円. (Theo trang tổng hợp 05/11/2026, chưa đối chiếu trang chính thức; kiểm tra điều kiện trước khi đăng ký.)",
+      "ja": "MNPでOPPO A5 5Gが一括1円、他のAndroidは月2円〜（iPhoneは対象外）。（2026/11/5時点のまとめサイト情報。申込前に公式で条件をご確認ください）"
      }
     },
     {
