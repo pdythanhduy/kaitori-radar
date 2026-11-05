@@ -27,6 +27,7 @@ Thí nghiệm nào không hiệu quả sau 3–7 ngày thì dừng. Thí nghiệ
 | X @duyto2 えにし神社 (4 bài hẹn giờ) | 05/11 | 10/11 | lượt vào enishijinja.com (mốc khoảng 5/ngày) |
 | 💹 Bảng lời/lỗ mua Apple → bán kai (?v=profit) + dòng trên trang chủ | 05/11 | 12/11 | profit_teaser / profit_open / profit_pts, lượt vào ?v=profit |
 | 📅 Lịch Pokémon /guide/lich-pokemon/ (radar/events.json) | 05/11 | 19/11 | lượt vào path, Google |
+| 📷 Quét mã vạch / gõ số JAN (5.534 mã) | 05/11 | 12/11 | scan_open / scan_ok / scan_miss (mã nào thiếu → bổ sung) |
 
 ## Nhật ký
 
