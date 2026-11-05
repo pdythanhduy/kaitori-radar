@@ -495,6 +495,7 @@
     $("#home").hidden = st.view !== "home" || !!st.q;
     $("#catview").hidden = !listMode;
     $("#deals").hidden = st.view !== "deals" || !!st.q;
+    $("#profit").hidden = st.view !== "profit" || !!st.q;
     $("#mine").hidden = st.view !== "mine" || !!st.q;
     const ttl = st.q ? `「${st.q}」` : st.view === "cat" ? (lang === "ja" ? CAT_JA[st.cat] : T().cats[st.cat]) : "";
     document.title = ttl ? `${ttl} ${lang === "ja" ? "買取価格比較｜買取プライス" : "– so sánh giá thu mua｜Kaitori Price"}` : (lang === "ja" ? TITLE0 : "Kaitori Price｜So sánh giá thu mua iPhone, máy game, thẻ Pokémon ở Nhật");
@@ -502,8 +503,9 @@
     // thống kê: 1 page_view mỗi lần đổi màn hình, gửi SAU khi URL đã cập nhật
     const pv = (url) => { history.replaceState(null, "", new URL(url, location.href).href); if (url !== lastPv) { lastPv = url; window.kpPage?.(); } };
     if (st.view === "deals" && !st.q) { pv("?v=deals"); return renderDeals(); }
+    if (st.view === "profit" && !st.q) { pv("?v=profit"); return renderProfit(); }
     if (st.view === "mine" && !st.q) { pv("?v=mine"); return renderMine(); }
-    if (st.view === "home" && !st.q) renderNews();
+    if (st.view === "home" && !st.q) { renderNews(); renderPfTeaser(); }
     if (!listMode) { pv("./"); return; }
     $("#hint").textContent = "…";
     if (st.q) {
@@ -728,6 +730,52 @@
     s.qty = Math.max(1, Math.round(+q.value || 1)); saveMine(); renderMine();
   });
 
+  // ================= 💹 Mua giá Apple → bán kai hôm nay lời/lỗ bao nhiêu (câu dân buôn hỏi mỗi sáng)
+  let profitData = null, pfSer = "";
+  let pts = 0; try { pts = Math.min(20, Math.max(0, +localStorage.getItem("kp_pts") || 0)); } catch {}
+  const pfLoad = async () => (profitData ||= FACETS.enrich(await fetch("data/profit.json" + bust).then((r) => r.json()).catch(() => [])));
+  const pfCost = (it) => Math.round(it.msrp * (1 - pts / 100));
+  const pfSeries = (it) => (it.name.match(/^iPhone (Duo|Air|\d+e?(?: Pro Max| Pro| Plus)?)/) || [, "?"])[1];
+  // chỉ đời Apple đang bán (Duo, 18): giá niêm yết đời cũ trong dữ liệu tiệm có thể là giá trước đợt tăng giá 07/2026
+  const PF_OK = /^iPhone (Duo|18)\b/;
+  const pfSign = (p) => (p >= 0 ? "+" : "−") + Math.abs(p).toLocaleString("ja-JP") + "円";
+  async function renderProfit() {
+    const V = lang === "vi", all = (await pfLoad()).filter((i) => i.msrp && i.best && PF_OK.test(i.name));
+    const sers = [...new Set(all.map(pfSeries))].filter((x) => x !== "?");
+    if (pfSer && !sers.includes(pfSer)) pfSer = "";
+    const rows = all.filter((i) => !pfSer || pfSeries(i) === pfSer).map((it) => ({ it, cost: pfCost(it) })).map((r) => ({ ...r, p: r.it.best - r.cost })).sort((a, b) => b.p - a.p);
+    const win = rows.filter((r) => r.p > 0).length;
+    const chip = (v, l) => `<button class="dtab ${pfSer === v ? "on" : ""}" data-pser="${esc(v)}">${esc(l)}</button>`;
+    const head = V ? ["Mẫu", "Mua (Apple)", "Kai cao nhất", "Lời / lỗ"] : ["機種", "購入（Apple）", "最高買取", "差額"];
+    $("#profitBody").innerHTML = `
+      <h1 class="pf-h">💹 ${V ? "Mua giá Apple, bán kai hôm nay: lời hay lỗ?" : "Apple定価で買って売ると、今日いくら？"}</h1>
+      <p class="pf-sub">${V ? `Giá Apple (máy mới) so với giá kai cao nhất ở ${Object.keys(SH).length} tiệm · cập nhật ${esc(idx.updated.slice(5))} · <b>${win}/${rows.length}</b> mẫu đang lời`
+                           : `Apple定価と${Object.keys(SH).length}店の最高買取価格の差 · ${esc(idx.updated.slice(5))}更新 · プラス <b>${win}/${rows.length}</b> 機種`}</p>
+      <label class="pf-pts">${V ? "Điểm thưởng / giảm giá khi mua (thẻ, gift card…)" : "購入時のポイント還元・割引（カード等）"} <input id="pfPts" type="number" inputmode="decimal" min="0" max="20" step="0.5" value="${pts}"> %</label>
+      <div class="dtabs">${chip("", V ? "Tất cả" : "すべて")}${sers.map((x) => chip(x, x)).join("")}</div>
+      <div class="pf-list"><div class="pf-row pf-hd"><span>${head[0]}</span><span>${head[1]}</span><span>${head[2]}</span><span>${head[3]}</span></div>
+      ${rows.map(({ it, cost, p }) => `<button class="pf-row" data-q="${esc(it.name)}"><span class="pf-n">${esc(it.name.replace(/^iPhone /, ""))}</span><span class="pf-a">${yen(cost)}</span><span class="pf-k">${yen(it.best)}<small>${esc(SH[it.best_shop]?.name || "")}</small></span><b class="${p >= 0 ? "up" : "dn"}">${pfSign(p)}</b></button>`).join("")}</div>
+      <p class="small pf-note">${V ? "Giá kai là của màu được giá nhất (màu khác có thể bị trừ, bấm từng mẫu để chọn màu). Giá Apple (đã gồm thuế) theo giá niêm yết tiệm ghi, chỉ tính các đời Apple đang bán (Duo, 18). Chưa tính phí đi lại / gửi hàng; máy đặt hôm nay có thể vài tuần mới về, lúc đó giá kai có thể khác. Chỉ để tham khảo, không phải lời khuyên đầu tư."
+                                    : "買取価格は最も高い色の価格です（色により減額あり。各機種で色を選べます）。Apple価格（税込）は買取店掲載の定価で、販売中のDuo・18シリーズのみ。交通費・送料は含みません。注文から届くまでに買取価格が変わることがあります。投資助言ではありません。"}</p>`;
+  }
+  async function renderPfTeaser() {
+    const el = $("#pfTeaser"); if (!el) return;
+    const all = (await pfLoad()).filter((i) => i.msrp && i.best && PF_OK.test(i.name));
+    if (!all.length) { el.innerHTML = ""; return; }
+    const V = lang === "vi", best = all.map((it) => ({ it, p: it.best - pfCost(it) })).sort((a, b) => b.p - a.p)[0], win = all.filter((i) => i.best - pfCost(i) > 0).length;
+    el.innerHTML = `<button class="pf-teaser" data-v="profit"><span>💹 ${V ? "Mua giá Apple bán kai hôm nay" : "Apple定価→買取の差額（今日）"}: <b>${win}/${all.length}</b> ${V ? "mẫu lời" : "機種プラス"} · ${V ? "cao nhất" : "最大"} <b>${esc(best.it.name.replace(/^iPhone /, ""))} <em class="${best.p >= 0 ? "up" : "dn"}">${pfSign(best.p)}</em></b></span><span class="pf-go">${V ? "Xem bảng" : "一覧"} →</span></button>`;
+  }
+  document.addEventListener("click", (e) => {
+    const r = e.target.closest(".pf-row[data-q]"); if (r) { window.kpTrack?.("profit_open", { item: r.dataset.q }); st.q = r.dataset.q; $("#q").value = st.q; window.scrollTo({ top: 0 }); return render(); }
+    const c = e.target.closest("[data-pser]"); if (c) { pfSer = c.dataset.pser; return renderProfit(); }
+    const tz = e.target.closest(".pf-teaser"); if (tz) { window.kpTrack?.("profit_teaser", {}); st.view = "profit"; $("#q").value = ""; st.q = ""; window.scrollTo({ top: 0 }); return render(); }
+  });
+  document.addEventListener("change", (e) => {
+    if (e.target.id !== "pfPts") return;
+    pts = Math.min(20, Math.max(0, +e.target.value || 0)); try { localStorage.setItem("kp_pts", pts); } catch {}
+    window.kpTrack?.("profit_pts", { value: pts }); renderProfit();
+  });
+
   // ================= deals (PR)
   let deals = null, dTab = "", dQ = "";
   const dSeen = new Set(); // pixel hiển thị chỉ bắn 1 lần / mục, không bắn lại mỗi lần lọc
@@ -791,6 +839,7 @@
     $("#drNav").innerHTML = `
       <button data-v="home" class="${on(st.view === "home" && !st.q)}">🏠 ${t.drHome}</button>
       <button data-v="mine" class="${on(st.view === "mine")}">♥ ${t.drMine}</button>
+      <button data-v="profit" class="${on(st.view === "profit")}">💹 ${lang === "vi" ? "Lời/lỗ mua Apple bán kai" : "Apple定価→買取 差額"}</button>
       <button data-v="deals" class="${on(st.view === "deals")}">🎁 ${t.drDeals}</button>
       <a href="${lang === "vi" ? "/guide/vi/" : "/guide/"}">📚 ${t.guideBtn}</a>
       ${lang === "vi" ? `<a href="https://www.facebook.com/groups/1118827834446963" target="_blank" rel="noopener">👥 ${t.drFb}</a>` : ""}
@@ -947,6 +996,7 @@
   if (sp.get("c") && CATS[sp.get("c")]) { st.view = "cat"; st.cat = sp.get("c"); }
   if (sp.get("v") === "deals") st.view = "deals";
   if (sp.get("v") === "mine") st.view = "mine";
+  if (sp.get("v") === "profit") st.view = "profit";
   if (sp.get("q")) { st.q = sp.get("q").trim().slice(0, 80); $("#q").value = st.q; }
   landQ = st.q;
   applyLang();

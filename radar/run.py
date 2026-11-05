@@ -272,6 +272,9 @@ def write_outputs(items, status):
         if len(top) >= 30:
             break
     (OUT / "top.json").write_text(json.dumps(top, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    # 💹 mua giá Apple → bán kai: món có giá niêm yết (msrp), so được ≥2 tiệm (trang ?v=profit + dòng trên trang chủ)
+    prof = sorted([i for i in items if i.get("msrp") and i["n_shops"] >= 2], key=lambda x: -(x["best"] - x["msrp"]))
+    (OUT / "profit.json").write_text(json.dumps(prof, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     # 🔥 đang thu mạnh (買取強化): ưu tiên món so được nhiều tiệm, đa dạng nhóm hàng
     bpool = sorted([i for i in items if any(p.get("b") for p in i["prices"].values()) and "PSA" not in i["name"]],
                    key=lambda x: (-x["n_shops"], -x["best"]))
