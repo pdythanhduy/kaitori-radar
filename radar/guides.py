@@ -773,6 +773,58 @@ nên bảng đầu ghép <b>tên anh em hay gọi trong nhóm</b> với tên ti�
                 "Giá kai box Pokémon mới nhất ở các tiệm Nhật, ghép tên gọi trong nhóm (Box 30th, set 9, dekki mèo…) với tên tiệm ghi. Cập nhật mỗi giờ.",
                 "Giá box Pokémon", "🃏 Giá thu mua hộp thẻ Pokémon hôm nay", body_box)
 
+    # ---------------------------------------------------------------- 10. Lịch phát hành / bốc thăm (VI) — 05/11/2026, dữ liệu radar/events.json
+    import json as _json
+    from pathlib import Path as _Path
+    try:
+        evs = _json.loads((_Path(__file__).parent / "events.json").read_text(encoding="utf-8")).get("events", [])
+    except Exception:
+        evs = []
+    today = (updated or "")[:10]
+    evs = sorted([x for x in evs if (x.get("end") or x.get("date", "")) >= today], key=lambda x: (x.get("date", ""), x.get("time", "")))
+    if evs:
+        KIND = {"release": ("🆕", "Phát hành"), "lottery": ("🎟", "Bốc thăm"), "online": ("🛒", "Bán online")}
+        WD = ["T2", "T3", "T4", "T5", "T6", "T7", "CN"]
+        import datetime as _dt
+        allit = [i for c in ("card", "phone", "game") for i in items.get(c, [])]
+        def dshow(d):
+            try:
+                x = _dt.date.fromisoformat(d)
+                return f"{x.day}/{x.month} ({WD[x.weekday()]})"
+            except Exception:
+                return d
+        lis = []
+        for x in evs:
+            ic, kl = KIND.get(x.get("kind"), ("📌", ""))
+            when = dshow(x["date"]) + (f" {e(x['time'])}" if x.get("time") else "") + (f" → {dshow(x['end'])}" if x.get("end") else "")
+            price = ""
+            if x.get("match"):
+                hit = sorted([i for i in allit if x["match"] in i["name"] and not i["name"].startswith("PSA")], key=lambda i: (-i["n_shops"], -i["best"]))
+                if hit:
+                    it = hit[0]
+                    nm = f'<a href="/p/{it["_slug"]}/">{e(it["name"].strip())}</a>' if it.get("_slug") else e(it["name"].strip())
+                    price = f'<p class="ev-p">💴 Giá kai hiện tại: <b>{_yen(it["best"])}</b> ({e(sname(it["best_shop"]))}, {it["n_shops"]} tiệm) · {nm}</p>'
+            src = f' · <a href="{e(x["src"])}" target="_blank" rel="noopener nofollow">nguồn</a>' if x.get("src") else ""
+            warn = "" if x.get("confirmed", True) else ' <span class="ev-w">chưa xác nhận</span>'
+            lis.append(f'<li class="ev"><div class="ev-d">{ic} <b>{when}</b> · {e(kl)}{warn}</div><div class="ev-t">{e(x["title"])}</div>'
+                       f'<p class="ev-n">{e(x.get("where", ""))}{" — " + e(x["note"]) if x.get("note") else ""}{src}</p>{price}</li>')
+        body_cal = f"""
+<p class="upd">Cập nhật: {upd} JST</p>
+<p>Lịch các đợt <b>phát hành, bốc thăm (抽選) và bán online</b> thẻ Pokémon sắp tới ở Nhật, kèm <b>giá kai hiện tại</b> nếu tiệm đã thu.
+Mỗi mục có nguồn; lịch bốc thăm của từng cửa hàng hay đổi, nhớ xem lại thông báo chính thức trước khi đăng ký.</p>
+<style>.evs{{list-style:none;padding:0;margin:12px 0;display:grid;gap:10px}}.ev{{border:1px solid #e4e4e7;border-radius:12px;padding:10px 12px;background:#fff}}.ev-d{{font-size:.85rem;color:#52525b}}.ev-t{{font-weight:800;margin:2px 0}}.ev-n,.ev-p{{margin:4px 0 0;font-size:.85rem}}.ev-w{{background:#fef3c7;color:#92400e;border-radius:6px;padding:0 6px;font-size:.75rem;font-weight:700}}</style><ul class="evs">{''.join(lis)}</ul>
+<h2>Mẹo khi đi bốc thăm / săn hàng</h2>
+<ul class="tips">
+<li>Pokémon Center Online thường cần tài khoản và xác minh danh tính; đăng ký sẵn trước ngày mở đơn.</li>
+<li>Trúng rồi đừng bóc màng co nếu định bán: đa số tiệm chỉ thu box còn màng (xem <a href="/guide/gia-kai-pokemon-box/">giá box Pokémon</a>).</li>
+<li>Giá kai box mới thường biến động mạnh vài ngày đầu sau phát hành; xem giá ngay trước khi mang đi.</li>
+</ul>
+{FB}
+<p class="small">Lịch tổng hợp từ thông báo của cửa hàng và trang tin; có thể thay đổi. Không phải lời khuyên mua bán hay đầu tư.</p>"""
+        vi_page("/guide/lich-pokemon/", "Lịch phát hành & bốc thăm thẻ Pokémon ở Nhật (cập nhật mỗi ngày) | Kaitori Price",
+                "Lịch phát hành box Pokémon, bốc thăm (抽選) Pokémon Center và cửa hàng, bán online sắp tới ở Nhật, kèm giá kai hiện tại.",
+                "Lịch Pokémon", "📅 Lịch phát hành & bốc thăm thẻ Pokémon", body_cal)
+
     # ---------------------------------------------------------------- trang tổng hợp (JA /guide/, VI /guide/vi/)
     # (path, icon, tiêu đề VI, mô tả VI, có bản tiếng Việt?) — nhóm theo mục để dễ tìm
     SECTIONS = [
@@ -808,7 +860,8 @@ nên bảng đầu ghép <b>tên anh em hay gọi trong nhóm</b> với tên ti�
                                card("/guide/tru-mau-iphone/", "🎨", "Màu iPhone nào bị trừ tiền?", "Bảng trừ màu từng tiệm, đúng như tiệm ghi"),
                                card("/guide/lua-dao-iphone/", "⚠️", "Cảnh giác lừa đảo khi mua bán trực tiếp", "Hộp seal có vật lạ, chuyển khoản giả, máy khoá iCloud / 利用制限")]
                               + [vcard(p) for p in ["/guide/iphone-18-kaitori/"] if p in have]),
-        ("shop", "🏪 Bán cho tiệm", [card("/guide/gia-kai-pokemon-box/", "🃏", "Giá thu mua hộp thẻ Pokémon hôm nay", "Tên gọi trong nhóm (Box 30th, set 9…) → giá từng tiệm"),
+        ("shop", "🏪 Bán cho tiệm", [card("/guide/lich-pokemon/", "📅", "Lịch phát hành & bốc thăm thẻ Pokémon", "Ngày bán, bốc thăm sắp tới + giá kai hiện tại"),
+                                   card("/guide/gia-kai-pokemon-box/", "🃏", "Giá thu mua hộp thẻ Pokémon hôm nay", "Tên gọi trong nhóm (Box 30th, set 9…) → giá từng tiệm"),
                                    card("/guide/tiem-kaitori/", "📍", "Danh sách tiệm kaitori (Tokyo, Osaka, Nagoya)",
                                          "Địa chỉ, giờ mở cửa, ga gần nhất, link bản đồ của các tiệm web đang so giá")]
                                    + [vcard(p) for p in ["/guide/yoyaku-kaitori/", "/guide/pokeca-box-kaitori/"] if p in have]),
