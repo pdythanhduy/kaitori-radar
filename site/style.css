@@ -585,3 +585,16 @@ a.sbest.cta:active{opacity:.85}
 .pf-row b{text-align:right}.pf-hd span:last-child{text-align:right}
 .pf-note{margin-top:8px}
 @media (max-width:560px){.pf-row{grid-template-columns:1.3fr 1fr 1fr .95fr;padding:9px 10px;font-size:.78rem;gap:6px}}
+
+/* 📷 quét mã vạch */
+.qwrap{position:relative;flex:0 0 420px;display:flex}
+.qwrap .hero-q{flex:1;min-width:0;padding-right:46px}
+@media (max-width:900px){.qwrap{flex:auto}}
+.scan-b{position:absolute;right:4px;top:50%;transform:translateY(-50%);border:0;background:none;color:var(--muted);cursor:pointer;padding:6px 8px;border-radius:999px;line-height:0}
+.scan-b:hover{color:var(--fg);background:rgba(0,0,0,.05)}
+#scanBox{position:fixed;inset:0;z-index:200;background:#000;display:flex;align-items:center;justify-content:center}
+#scanBox[hidden]{display:none}
+#scanBox video{width:100%;height:100%;object-fit:cover}
+.scan-frame{position:absolute;left:10%;right:10%;top:38%;height:24%;border:3px solid rgba(255,255,255,.9);border-radius:14px;box-shadow:0 0 0 100vmax rgba(0,0,0,.45)}
+.scan-t{position:absolute;left:16px;right:16px;bottom:18%;text-align:center;color:#fff;font-weight:700;margin:0}
+.scan-x{position:absolute;top:max(14px,env(safe-area-inset-top));right:14px;width:44px;height:44px;border-radius:999px;border:0;background:rgba(255,255,255,.2);color:#fff;font-size:1.2rem;cursor:pointer}

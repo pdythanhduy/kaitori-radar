@@ -508,6 +508,7 @@
     if (st.view === "home" && !st.q) { renderNews(); renderPfTeaser(); }
     if (!listMode) { pv("./"); return; }
     $("#hint").textContent = "…";
+    if (st.q && /^\d{8,14}$/.test(st.q.trim())) { if (await openByJan(st.q.trim(), "typed")) return; }
     if (st.q) {
       // từ lóng hay gõ trong nhóm FB: "18 prm" / "18pm" = 18 Pro Max, "ip18" = iPhone 18, gõ thiếu "iphon"
       const q = st.q.normalize("NFKC").toLowerCase().replace(/\s/g, "")
@@ -775,6 +776,57 @@
     pts = Math.min(20, Math.max(0, +e.target.value || 0)); try { localStorage.setItem("kp_pts", pts); } catch {}
     window.kpTrack?.("profit_pts", { value: pts }); renderProfit();
   });
+
+  // ================= 📷 Quét mã vạch (JAN) trên hộp → giá 9 tiệm (tên tiếng Nhật trên hộp khó gõ)
+  let janMap = null, scanStream = null, scanStop = null;
+  const loadJan = async () => (janMap ||= await fetch("data/jan.json" + bust).then((r) => r.json()).catch(() => ({})));
+  async function openByJan(code, src) {
+    const V = lang === "vi", id = (await loadJan())[code];
+    if (!id) { window.kpTrack?.("scan_miss", { search_term: code, value: src }); toast(V ? `Chưa có giá cho mã ${code}. Thử gõ tên sản phẩm nhé` : `${code} の買取価格はまだありません`); return false; }
+    const cut = id.indexOf("|"), cat = id.slice(0, cut), key = id.slice(cut + 1);
+    const it = CATS[cat] ? (await loadCat(cat)).find((i) => i.key === key) : null;
+    if (!it) { toast(V ? `Chưa có giá cho mã ${code}` : `${code} の買取価格はまだありません`); return false; }
+    window.kpTrack?.("scan_ok", { item: it.name, value: src });
+    st.q = it.name; $("#q").value = st.q; window.scrollTo({ top: 0 }); render(); return true;
+  }
+  function closeScan() {
+    try { scanStop?.(); } catch {}
+    scanStop = null; scanStream?.getTracks().forEach((t) => t.stop()); scanStream = null;
+    const b = $("#scanBox"); if (b) b.hidden = true;
+  }
+  async function openScan() {
+    const V = lang === "vi";
+    let box = $("#scanBox");
+    if (!box) {
+      box = document.createElement("div"); box.id = "scanBox";
+      box.innerHTML = `<video playsinline muted></video><div class="scan-frame"></div><p class="scan-t"></p><button class="scan-x" aria-label="close">✕</button>`;
+      document.body.appendChild(box); box.querySelector(".scan-x").onclick = closeScan;
+    }
+    box.hidden = false;
+    box.querySelector(".scan-t").textContent = V ? "Đưa mã vạch (JAN) trên hộp vào khung" : "箱のバーコード（JAN）を枠に合わせてください";
+    window.kpTrack?.("scan_open", {});
+    const video = box.querySelector("video");
+    try { scanStream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" }, audio: false }); }
+    catch { closeScan(); toast(V ? "Không mở được camera. Cho phép dùng camera, hoặc gõ số mã vạch vào ô tìm" : "カメラを起動できません。バーコードの数字を検索欄に入力できます"); return; }
+    video.srcObject = scanStream; await video.play().catch(() => {});
+    let done = false;
+    const hit = async (code) => { if (done || !/^\d{8,14}$/.test(code)) return; done = true; closeScan(); await openByJan(code, "camera"); };
+    let native = false;
+    if ("BarcodeDetector" in window) { try { native = (await BarcodeDetector.getSupportedFormats()).includes("ean_13"); } catch {} }
+    if (native) {
+      const det = new BarcodeDetector({ formats: ["ean_13", "ean_8"] }); let on = true; scanStop = () => (on = false);
+      const tick = async () => { if (!on) return; try { const r = await det.detect(video); if (r[0]) return hit(r[0].rawValue); } catch {} setTimeout(tick, 200); };
+      tick();
+    } else {
+      try {
+        const { BrowserMultiFormatReader } = await import("https://cdn.jsdelivr.net/npm/@zxing/browser@0.1.5/+esm");
+        const ctrl = await new BrowserMultiFormatReader().decodeFromVideoElement(video, (res) => res && hit(res.getText()));
+        scanStop = () => ctrl.stop();
+      } catch { closeScan(); toast(V ? "Trình duyệt này chưa quét được. Gõ số mã vạch vào ô tìm nhé" : "このブラウザでは読み取れません。数字を入力してください"); }
+    }
+  }
+  $("#scanBtn")?.addEventListener("click", openScan);
+  addEventListener("keydown", (e) => { if (e.key === "Escape" && scanStream) closeScan(); });
 
   // ================= deals (PR)
   let deals = null, dTab = "", dQ = "";

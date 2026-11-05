@@ -164,9 +164,14 @@ def color_key(name):
     return None
 
 
+JANMAP = {}  # mã JAN → "cat|key" (cho tính năng quét mã vạch trên web)
+
+
 def aggregate(rows):
     rows = unify_by_jan(rows)
     rows = split_mixed(rows)
+    JANMAP.clear()
+    JANMAP.update({r["jan"]: r["cat"] + "|" + r["key"] for r in rows if r.get("jan")})
     groups = {}
     for r in rows:
         g = groups.setdefault((r["cat"], r["key"]), {"names": [], "prices": {}})
@@ -272,6 +277,9 @@ def write_outputs(items, status):
         if len(top) >= 30:
             break
     (OUT / "top.json").write_text(json.dumps(top, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    # 📷 quét mã vạch: JAN → món (chỉ món đang có trên web)
+    have = {i["cat"] + "|" + i["key"] for i in items}
+    (OUT / "jan.json").write_text(json.dumps({j: k for j, k in sorted(JANMAP.items()) if k in have}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     # 💹 mua giá Apple → bán kai: món có giá niêm yết (msrp), so được ≥2 tiệm (trang ?v=profit + dòng trên trang chủ)
     prof = sorted([i for i in items if i.get("msrp") and i["n_shops"] >= 2], key=lambda x: -(x["best"] - x["msrp"]))
     (OUT / "profit.json").write_text(json.dumps(prof, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
