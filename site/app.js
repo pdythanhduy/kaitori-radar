@@ -507,7 +507,10 @@
     if (!listMode) { pv("./"); return; }
     $("#hint").textContent = "…";
     if (st.q) {
-      const q = st.q.toLowerCase().replace(/\s/g, "");
+      // từ lóng hay gõ trong nhóm FB: "18 prm" / "18pm" = 18 Pro Max, "ip18" = iPhone 18, gõ thiếu "iphon"
+      const q = st.q.normalize("NFKC").toLowerCase().replace(/\s/g, "")
+        .replace(/prm|pro?max/g, "promax").replace(/(\d)pm(?=\d|$)/g, "$1promax")
+        .replace(/^ip(?=\d)/, "iphone").replace(/iphon(?!e)/g, "iphone");
       // tìm trước trong mục lục nhỏ → chỉ tải những nhóm có kết quả
       sidx ||= await fetch("data/search.json" + bust).then((r) => r.json()).catch(() => null);
       const cats = sidx ? [...new Set(sidx.filter(([, n]) => n.toLowerCase().replace(/\s/g, "").includes(q)).map(([c]) => c))] : Object.keys(CATS);
