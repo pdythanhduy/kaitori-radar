@@ -49,6 +49,23 @@
     var ref = document.referrer ? new URL(document.referrer).hostname.replace(/^(www|m|l|lm)\./, "") : "";
     if (ref === location.hostname) ref = "";
     if (q0 || ref) beacon("land", { search_term: q0 || "(trang chủ)", value: ref || "(trực tiếp)" });
+    // 07/11/2026: điểm bỏ đi — khi rời trang (đóng tab/chuyển app), người vào từ link đã làm gì và ở bao lâu
+    if (q0 || ref) {
+      var t0 = Date.now(), act = "none", done = false;
+      document.addEventListener("click", function (e) {
+        var s = e.target.closest && e.target.closest("a.sh, .pt a, a.sbest, a[rel~=sponsored]");
+        act = s ? "shop" : act === "shop" ? "shop" : "click";
+      }, true);
+      addEventListener("scroll", function () { if (act === "none") act = "scroll"; }, { passive: true, once: true });
+      document.addEventListener("keydown", function () { if (act !== "shop") act = "click"; }, true);  // gõ tìm cũng là có tương tác
+      var fin = function () {
+        if (done) return; done = true;
+        var s = (Date.now() - t0) / 1000;
+        beacon("land_exit", { step: act, value: s < 5 ? "<5s" : s < 15 ? "5-15s" : s < 60 ? "15-60s" : "60s+" });
+      };
+      addEventListener("pagehide", fin);
+      document.addEventListener("visibilitychange", function () { if (document.visibilityState === "hidden") fin(); });
+    }
   } catch (e) {}
 
   // tỉ lệ quay lại: trên máy chỉ lưu ngày vào gần nhất + số ngày đã vào; gửi đi chỉ nhóm "lần đầu / cách mấy ngày" (không ID)

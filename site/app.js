@@ -488,6 +488,19 @@
     $("#hint").textContent = $("#mhint").textContent = st.q ? T().hintQ(st.q, view.length.toLocaleString()) : T().hintCat(T().cats[st.cat], view.length.toLocaleString(), CATS[st.cat]?.multi?.toLocaleString() || 0);
     renderFacets(); renderActive(); renderQuick(); paint(true);
     if (st.q && st.q === landQ && view.length && view.length <= 3) noteSeen(view[0]);
+    // 07/11/2026: vào từ link (?q= trong bình luận FB) → chỉ hiện câu trả lời (thẻ giá), ẩn thanh lọc/sắp xếp; đo lúc thẻ giá lọt vào màn hình
+    const landing = !!st.q && st.q === landQ && view.length > 0 && view.length <= 3;
+    document.body.classList.toggle("landq", landing);
+    if (landing && !priceSeen && "IntersectionObserver" in window) {
+      const el = $("#list").firstElementChild;
+      if (el) {
+        priceSeen = true;
+        const io = new IntersectionObserver((es) => {
+          if (es.some((x) => x.isIntersecting)) { io.disconnect(); window.kpTrack?.("price_seen", { value: (Math.round(performance.now() / 100) / 10) + "s" }); }
+        });
+        io.observe(el);
+      }
+    }
     if (document.body.classList.contains("side-open")) updApply();
   }
   async function render() {
@@ -527,7 +540,7 @@
     refresh();
     pv(st.q ? "./?q=" + encodeURIComponent(st.q) : "?c=" + st.cat);
   }
-  let lastPv = null, sidx = null, landQ = "";
+  let lastPv = null, sidx = null, landQ = "", priceSeen = false;
   function clearFilters() { for (const k in st.f) st.f[k].clear(); st.price = 0; st.multi = st.gap = false; }
 
   // ================= Của tôi

@@ -598,3 +598,7 @@ a.sbest.cta:active{opacity:.85}
 .scan-frame{position:absolute;left:10%;right:10%;top:38%;height:24%;border:3px solid rgba(255,255,255,.9);border-radius:14px;box-shadow:0 0 0 100vmax rgba(0,0,0,.45)}
 .scan-t{position:absolute;left:16px;right:16px;bottom:18%;text-align:center;color:#fff;font-weight:700;margin:0}
 .scan-x{position:absolute;top:max(14px,env(safe-area-inset-top));right:14px;width:44px;height:44px;border-radius:999px;border:0;background:rgba(255,255,255,.2);color:#fff;font-size:1.2rem;cursor:pointer}
+
+/* 07/11/2026: vào từ link (?q=, ≤3 kết quả) → chỉ hiện thẻ giá, ẩn thanh lọc/sắp xếp (bấm ô tìm để đổi món) */
+body.landq .rbar, body.landq #quick, body.landq #drill, body.landq #mhint, body.landq #active { display: none }
+body.landq #list { margin-top: 4px }

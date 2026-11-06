@@ -57,6 +57,10 @@ def summary(day_from: str, day_to: str, top: int = 6) -> str:
             by["shop_item"][f'{x["b"][:40]} → {a}'] += x["n"]
         if x["e"] == "land":
             by["land_src"][x["b"] or "?"] += x["n"]
+        if x["e"] == "land_exit":
+            by["exit_t"][f'{a or "?"} {x["b"] or "?"}'] += x["n"]
+        if x["e"] == "price_seen":
+            by["seen_t"][x["b"] or "?"] += x["n"]
         by[x["e"]][a or "(trống)"] += x["n"]
     tot = Counter({e: sum(c.values()) for e, c in by.items() if e in LABEL})
     out = ["🧭 <b>Hành vi người dùng</b>: " + ", ".join(f"{LABEL[e].split(' ', 1)[1].lower()} {n}" for e, n in tot.most_common(5))]
@@ -71,6 +75,15 @@ def summary(day_from: str, day_to: str, top: int = 6) -> str:
         out.append(f"🔁 Thiết bị vào (mỗi máy 1 lần/ngày): {n} — mới {v.get('new', 0)}, quay lại {ret} ({ret * 100 // max(1, n)}%: hôm qua {v.get('1d', 0)}, 2–7 ngày {v.get('2-7d', 0)}, >7 ngày {v.get('8d+', 0)})")
     if by.get("recent_click") or by.get("recent_show"):
         out.append(f"👀 Dải 'lần trước bạn xem': hiện {sum(by['recent_show'].values())} lần, bấm {sum(by['recent_click'].values())}")
+    if by.get("land_exit"):  # 07/11/2026: điểm bỏ đi của người vào từ link
+        ex = by["land_exit"]; n = sum(ex.values())
+        nm = {"shop": "bấm sang tiệm", "click": "có bấm/gõ", "scroll": "chỉ cuộn", "none": "không làm gì"}
+        out.append(f"🚶 Rời trang (người vào từ link, {n} lượt): " + ", ".join(f"{nm.get(k, k)} {v * 100 // max(1, n)}%" for k, v in ex.most_common()))
+        q = Counter({k: v for k, v in by["exit_t"].items() if k.startswith("none ")})
+        if q:
+            out.append("   ↳ 'không làm gì' ở lại: " + ", ".join(f"{k[5:]} ({v})" for k, v in q.most_common()))
+    if by.get("price_seen"):
+        out.append(f"👁 Thấy thẻ giá (người vào từ link): {sum(by['price_seen'].values())} lượt")
     if by.get("land_src"):
         out.append("🚪 Nguồn vào: " + ", ".join(f"{k} ({n})" for k, n in by["land_src"].most_common(4)))
     s, c = sum(by["search"].values()) + sum(by["search_none"].values()), sum(by["shop_click"].values())
