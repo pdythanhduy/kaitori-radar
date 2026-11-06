@@ -141,9 +141,25 @@ def split_mixed(rows, ratio=1.3):
         k = (r["shop"], r["cat"], r["key"])
         lo, hi = rng.get(k, (r["price"], r["price"]))
         rng[k] = (min(lo, r["price"]), max(hi, r["price"]))
-    bad = {(c, k) for (s, c, k), (lo, hi) in rng.items() if hi > lo * ratio}
+    bad = {(s, c, k) for (s, c, k), (lo, hi) in rng.items() if hi > lo * ratio}
+    # 07/11/2026: trước đây 1 tiệm lẫn dòng lạ là tách CẢ khoá ở mọi tiệm (vd box 30th CELEBRATION bị vỡ thành ~7 dòng).
+    # Giờ chỉ xử lý dòng của đúng tiệm đó: giữ dòng có giá gần trung vị các tiệm KHÁC nhất, tách các dòng còn lại.
+    # Không có tiệm khác để so → tách hết dòng của tiệm đó như cũ.
+    import statistics
+    others = {}
     for r in rows:
-        if (r["cat"], r["key"]) in bad:
+        others.setdefault((r["cat"], r["key"]), []).append((r["shop"], r["price"]))
+    keep = {}
+    for (s, c, k) in bad:
+        ref = [p for sh, p in others.get((c, k), []) if sh != s]
+        if ref:
+            med = statistics.median(ref)
+            cand = [r for r in rows if r["shop"] == s and r["cat"] == c and r["key"] == k]
+            kp = min(cand, key=lambda r: abs(r["price"] - med))["price"]
+            keep[(s, c, k)] = {id(r) for r in cand if abs(r["price"] - kp) <= kp * 0.15}  # giữ cả các màu cùng mức giá
+    for r in rows:
+        sk = (r["shop"], r["cat"], r["key"])
+        if sk in bad and id(r) not in keep.get(sk, ()):
             r["key"] = f'{r["key"]}|{name_key(r["name"])}'
     return rows
 
