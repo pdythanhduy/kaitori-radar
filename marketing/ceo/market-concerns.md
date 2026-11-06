@@ -55,6 +55,11 @@ Tài liệu cho đội CEO và các lịch săn trend: người bán đang lo g�
 - Hộp còn seal nhưng bên trong là vật lạ, chuyển khoản giả, máy khoá iCloud.
 - Đã có trang /guide/lua-dao-iphone/. Bài đăng về lừa đảo thường được chú ý nhiều.
 
+## 6. Mua trả góp ở Apple bằng thẻ Rakuten bị lỗi (06/11)
+- **Trong nhóm 53K:** "Mua trả góp mà nhập thẻ, ấn xác nhận báo lỗi không được. Mình thẻ rakuten - 50 man."
+- **Thông tin có nguồn (trang Rakuten Card):** phí trả góp Apple Store 0 phí cho giao dịch từ 03/08/2026, nhưng phải nằm trong hạn mức trả góp (分割払いご利用可能枠, thường thấp hơn hạn mức thẻ), thẻ Amex không áp dụng, "あとから分割" không áp dụng.
+- **Cách trả lời:** nhắc kiểm tra hạn mức trả góp trong app Rakuten e-NAVI, không phải hạn mức tổng; không chắc thì gọi Rakuten Card. Không đoán nguyên nhân.
+
 ## Nguồn
 - Yahoo!ニュース (ピンズバ): https://news.yahoo.co.jp/articles/316d4c3745207ff5b95186ad13d94fba8173c7ec
 - Investing.com (Jefferies): https://jp.investing.com/news/stock-market-news/article-1715940
@@ -63,3 +68,4 @@ Tài liệu cho đội CEO và các lịch săn trend: người bán đang lo g�
 - 36Kr Japan (chênh giá bán lại Duo thu hẹp): https://36kr.jp/503578/
 - Record China (Duo bán lại ở Trung Quốc): https://topics.smt.docomo.ne.jp/article/recordchina/business/recordchina-RC_995402
 - 攻略大百科 (giá Pokémon): https://premium.gamepedia.jp/pokeca/archives/21037
+- Rakuten Card (trả góp Apple Store): https://www.rakuten-card.co.jp/adjustment/installment/
