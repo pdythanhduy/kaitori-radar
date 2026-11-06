@@ -86,3 +86,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-06 | 13:43 | 32K | posts/1451836703588489 | SilverLemur4725 12:14: tìm mua Duo 1TB mỗi màu, kai+ (Thành Duy) → 13h: 森森 503k, ルデヤ/1丁目/モバイル一番 502k, 当番 496k, PANDA 490k, Apple 469,8k (+33k); link /guide/gia-kai-iphone-duo/ (N=11)
 2026-11-06 | 14:13 | 85K | posts/1737268847371217 | Thành Tokyo 13:50: bán 18PM 512 (hộp đỏ バーガンディ) (Thành Duy) → 13h40: đỏ 262k ルデヤ/森森/1丁目/モバイル一番/ゲスト, 当番 257k, PANDA 254k, Apple 274,8k; KHÔNG link, mời nhóm (N=12)
 2026-11-06 | 14:43 | 53K | posts/1604727537636524 | Lê Vương 14:07: bán Duo 256 trắng, Shinmatsudo (Thành Duy) → 14h trắng: 森森 373k, ルデヤ/モバイル一番 371k, 1丁目/ゲスト 370k, 当番 367k, Apple 364,8k; link /guide/gia-kai-iphone-duo/ (N=13)
+2026-11-06 | 15:14 | 32K | posts/1451903896915103 | Lê Hồng Sử 13:43: tìm/gom 30 box 30th 20,4k + 10 Duo (Thành Duy) → box 30th 14h40: 当番 21.200, ほむら 21.000, 1丁目 20.000, 森森 19.000; ルデヤ chỉ thu chưa mở; link ?q=30th+CELEBRATION (N=14)
