@@ -1,6 +1,10 @@
 {
   "_note": "Lịch phát hành / bốc thăm / bán online (Pokémon, iPhone, máy game). Mỗi mục phải có nguồn. Cron tin hot buổi sáng thêm/sửa mục đã kiểm chứng. date/end: YYYY-MM-DD (JST). match: chuỗi để tìm giá kai trong data (tuỳ chọn).",
   "events": [
+    {"date": "2026-11-06", "time": "16:00", "end": "2026-11-10", "kind": "lottery", "title": "Pokémon Center Online: bốc thăm bổ sung ハドウシーカー (nhận đơn tới 10/11 16:59)",
+     "title_ja": "ハドウシーカー ポケモンセンターオンライン 追加抽選", "where": "Pokémon Center Online",
+     "note": "Theo SNKRDUNK / 入荷Now cập nhật 6/11; điều kiện (本人認証) xem trang chính thức.",
+     "src": "https://snkrdunk.com/articles/33599/", "match": "ハドウシーカー", "confirmed": true},
     {"date": "2026-11-06", "time": "15:00", "kind": "lottery", "title": "Pokémon Center Online: gửi kết quả bốc thăm ピカピカボックス2027",
      "title_ja": "ピカピカボックス2027 抽選結果発表", "where": "Pokémon Center Online (email)",
      "note": "Nhận đơn 10/27–11/2. Trúng thì đặt hàng qua link trong email trước hạn, quá hạn mất suất.",
