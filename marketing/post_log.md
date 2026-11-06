@@ -44,3 +44,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-06 | 11:37 | 1 | 💰 HÔM NAY MUA iPHONE GIÁ APPLE RỒI BÁN KAI THÌ LỜI HAY LỖ? | https://www.facebook.com/groups/1118827834446963 (link ?v=profit + ghi chú 双11; Thành Duy; nhóm 21 thành viên)
 2026-11-06 | 13:38 | 2 | 🔀 CÙNG 1 MÓN, BÁN SAI TIỆM LÀ MẤT TIỀN | https://www.facebook.com/groups/1118827834446963 (thay bản script vì 4 dòng nghi sai: 16e ルデヤ 84k, Xbox S 81,2k, iPad ケータイゴッド, Switch 当番; dùng góc trend: lệch giá 5 iPhone hot 13:10)
 2026-11-06 | 15:51 | 3 | 📊 GIÁ KAI ĐỔI GÌ HÔM NAY? | https://www.facebook.com/groups/1118827834446963 (script chỉ 1 dòng → bổ sung 7 món đổi giá từ hist: 18PM256 +5k, 18 Pro −2k, box SV8/SV3/スカーレット tăng; nhóm 22 thành viên)
+2026-11-06 | 18:25 | big-85K | 💳 HUỶ ĐƠN APPLE RỒI MÀ TIỀN CHƯA VỀ, HAY THẤY BỊ TRỪ 2 LẦN? (không link, đăng ngay; đã bình luận link /guide/huy-iphone/#hoantien; Thành Duy) | https://www.facebook.com/groups/congdongmuabandienthoaimaytinhnhatban/posts/1737458090685626/
