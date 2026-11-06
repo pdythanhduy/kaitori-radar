@@ -48,3 +48,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-06 | 19:37 | 4 | 🔔 ĐỂ ĐIỆN THOẠI CANH GIÁ GIÙM BẠN | https://www.facebook.com/groups/1118827834446963 (góc trend 🎯: 💳 HUỶ ĐƠN APPLE RỒI MÀ TIỀN CHƯA VỀ, link /guide/huy-iphone/#hoantien; Thành Duy; nhóm 25 thành viên)
 2026-11-06 | 22:21 | pokemon-daily | 📊 1 TUẦN QUA BOX POKÉMON NÀO TĂNG, NÀO GIẢM? (kèm ảnh box-tuan-1106.png, Thành Duy) – CHỜ DUYỆT, chưa bình luận link | https://www.facebook.com/groups/pokemonae/my_pending_content
 2026-11-06 | 22:22 | 5 | 🎮 GIÁ THU MUA MÁY GAME HÔM NAY | https://www.facebook.com/groups/1118827834446963 (máy game: Steam Machine/PS5 Pro; đăng trễ ~22:35; Thành Duy)
+2026-11-06 | 22:51 | canhan | BỎ LƯỢT: tab Facebook treo/không phản hồi 3 lần (máy đang bận giải phóng ảnh iCloud); /me đã chuyển đúng trang ttduy95 | -
