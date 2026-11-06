@@ -687,6 +687,7 @@ mua đủ giá. Bảng dưới lấy <b>đúng ghi chú các tiệm đăng trên
     for slug, label, rx, ask in [
         ("gia-kai-iphone-18-pro-max", "iPhone 18 Pro Max", r"iPhone 18 Pro Max \d", "18 Pro Max (hay gọi 18 PRM)"),
         ("gia-kai-iphone-duo", "iPhone Duo", r"iPhone Duo \d", "iPhone Duo"),
+        ("gia-kai-iphone-18-pro", "iPhone 18 Pro", r"iPhone 18 Pro \d", "18 Pro (bản thường, không phải Pro Max)"),
     ]:
         models = sorted([i for i in phones if re.match(rx, i["key"]) and i["n_shops"] >= 2], key=_iphone_order)
         if not models:
@@ -852,6 +853,7 @@ Mỗi mục có nguồn; lịch bốc thăm của từng cửa hàng hay đổi,
         return card(m[4], m[1], m[2], m[3]) if m[4] else card(p, m[1], m[2], m[3], '<span class="gl">日本語</span>')
     VI_TOPICS = [
         ("iphone", "📱 iPhone", [card("/guide/gia-kai-iphone-18-pro-max/", "💴", "Giá kai iPhone 18 Pro Max hôm nay", "Từng dung lượng, từng màu, so giá Apple — cập nhật mỗi giờ"),
+                               card("/guide/gia-kai-iphone-18-pro/", "💴", "Giá kai iPhone 18 Pro hôm nay", "Từng dung lượng, từng màu, so giá Apple — cập nhật mỗi giờ"),
                                card("/guide/gia-kai-iphone-duo/", "💴", "Giá kai iPhone Duo hôm nay", "Từng dung lượng, đen / trắng, so giá Apple"),
                                card("/guide/gia-iphone-giam/", "📉", "Giá kai iPhone giảm: huỷ, bán hay giữ?", "Bảng giá mới nhất 9 tiệm + cách tính lời lỗ"),
                                card("/guide/huy-iphone/", "❌", "Cách huỷ đơn iPhone không mất phí", "Apple Store, docomo, au, SoftBank, Rakuten: huỷ trước khi gửi hàng"),
