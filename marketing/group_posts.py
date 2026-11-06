@@ -14,7 +14,7 @@ from __future__ import annotations
 import json
 import re
 import sys
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 from urllib.parse import quote
 
@@ -91,16 +91,42 @@ def post1() -> str:
 
 
 # ------------------------------------------------------------------ 2. chênh giá giữa các tiệm
+def fair(it) -> list[tuple[int, str]]:
+    """Giá các tiệm dùng để so chênh lệch (07/11/2026): bỏ ケータイゴッド (chỉ ghi 新品上限 = giá trần) và giá lạc hẳn
+    so với trung vị (< 88% hoặc > 112%) — thường do ghép nhầm mẫu/tình trạng (vd 16e ルデヤ 84k, Xbox S 81k)."""
+    ok = {s: p for s, p in it["prices"].items()
+          if s != "keitaigod" and p and p.get("price") and "上限" not in (p.get("note") or "")}
+    newest = max((p.get("ts") or "" for p in ok.values()), default="")
+    if newest:  # bỏ giá cũ hơn 12 giờ so với tiệm cập nhật mới nhất (tiệm đó lâu không cào được → giá có thể đã đổi)
+        try:
+            lim = (datetime.fromisoformat(newest) - timedelta(hours=12)).strftime("%Y-%m-%d %H:%M")
+            ok = {s: p for s, p in ok.items() if (p.get("ts") or newest) >= lim}
+        except ValueError:
+            pass
+    ps = sorted(((p["price"], s) for s, p in ok.items()), reverse=True)
+    if len(ps) < 3:
+        return []
+    med = ps[len(ps) // 2][0]
+    return [x for x in ps if med * 0.88 <= x[0] <= med * 1.12]
+
+
 def post2() -> str:
-    pool = [i for c in ("phone", "game", "tablet") for i in cat(c) if i["n_shops"] >= 3 and i["best"] >= 20000 and sane(i)]
+    pool = []
+    for c in ("phone", "game", "tablet"):
+        for i in cat(c):
+            f = fair(i)
+            if len(f) >= 4 and f[0][0] >= 20000:
+                pool.append((i, f))
     if not pool:
         return ""
-    pool.sort(key=lambda i: (i["best"] - low(i)[1]) / i["best"], reverse=True)
+    pool.sort(key=lambda x: (x[1][0][0] - x[1][-1][0]) / x[1][0][0], reverse=True)
     top = pool[:4]
     L = ["🔀 CÙNG 1 MÓN, BÁN SAI TIỆM LÀ MẤT TIỀN", "", "Hôm nay chênh lệch lớn nhất giữa các tiệm:"]
-    for i in top:
-        ls, lp = low(i)
-        L.append(f"• {short(i['name'])}: {shop(i['best_shop'])} trả {yen(i['best'])}, {shop(ls)} chỉ {yen(lp)} → chênh {yen(i['best'] - lp)}{ref(i)}")
+    for i, f in top:
+        (hp, hs), (lp, ls) = f[0], f[-1]
+        r = " (森森: mã giới thiệu 75798 được coupon 3.000円 khi đăng ký mới)" if hs == "morimori" else ""
+        L.append(f"• {short(i['name'])}: {shop(hs)} trả {yen(hp)}, {shop(ls)} chỉ {yen(lp)} → chênh {yen(hp - lp)}{r}")
+    top = [i for i, _ in top]
     L += ["", "Cách kiếm thêm đơn giản nhất không cần vốn: đồ bạn ĐÃ có (máy cũ, máy game, hộp thẻ…) đừng bán ở tiệm gần nhà theo thói quen. "
               "So giá trước 1 phút, nhiều khi được thêm cả chục nghìn yên. Ở xa thì hầu hết các tiệm nhận gửi bưu điện (郵送買取).",
               "(Mỗi tiệm có điều kiện riêng về tình trạng máy, phụ kiện, bảo hành; xem ghi chú từng tiệm trên web trước khi gửi.)"]
