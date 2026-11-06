@@ -97,9 +97,9 @@ def fair(it) -> list[tuple[int, str]]:
     ok = {s: p for s, p in it["prices"].items()
           if s != "keitaigod" and p and p.get("price") and "上限" not in (p.get("note") or "")}
     newest = max((p.get("ts") or "" for p in ok.values()), default="")
-    if newest:  # bỏ giá cũ hơn 12 giờ so với tiệm cập nhật mới nhất (tiệm đó lâu không cào được → giá có thể đã đổi)
+    if newest:  # bỏ giá cũ hơn 6 giờ so với tiệm cập nhật mới nhất (tiệm đó lâu không cào được → giá có thể đã đổi)
         try:
-            lim = (datetime.fromisoformat(newest) - timedelta(hours=12)).strftime("%Y-%m-%d %H:%M")
+            lim = (datetime.fromisoformat(newest) - timedelta(hours=6)).strftime("%Y-%m-%d %H:%M")
             ok = {s: p for s, p in ok.items() if (p.get("ts") or newest) >= lim}
         except ValueError:
             pass
