@@ -87,3 +87,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-06 | 14:13 | 85K | posts/1737268847371217 | Thành Tokyo 13:50: bán 18PM 512 (hộp đỏ バーガンディ) (Thành Duy) → 13h40: đỏ 262k ルデヤ/森森/1丁目/モバイル一番/ゲスト, 当番 257k, PANDA 254k, Apple 274,8k; KHÔNG link, mời nhóm (N=12)
 2026-11-06 | 14:43 | 53K | posts/1604727537636524 | Lê Vương 14:07: bán Duo 256 trắng, Shinmatsudo (Thành Duy) → 14h trắng: 森森 373k, ルデヤ/モバイル一番 371k, 1丁目/ゲスト 370k, 当番 367k, Apple 364,8k; link /guide/gia-kai-iphone-duo/ (N=13)
 2026-11-06 | 15:14 | 32K | posts/1451903896915103 | Lê Hồng Sử 13:43: tìm/gom 30 box 30th 20,4k + 10 Duo (Thành Duy) → box 30th 14h40: 当番 21.200, ほむら 21.000, 1丁目 20.000, 森森 19.000; ルデヤ chỉ thu chưa mở; link ?q=30th+CELEBRATION (N=14)
+2026-11-06 | 15:43 | 53K | posts/1604774277631850 | Thưng Võ 15:19: cần mua 18 Pro đỏ + 18PM xanh 256 giá app−1man (Thành Duy) → 15h: 18 Pro đỏ 201k (Apple 219,8k), 18PM xanh băng 229k 森森/227,5k (Apple 239,8k); KHÔNG link, mời nhóm (N=15)
