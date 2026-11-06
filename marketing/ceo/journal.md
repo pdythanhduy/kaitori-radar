@@ -29,6 +29,7 @@ Thí nghiệm nào không hiệu quả sau 3–7 ngày thì dừng. Thí nghiệ
 | 📅 Lịch Pokémon /guide/lich-pokemon/ (radar/events.json) | 05/11 | 19/11 | lượt vào path, Google |
 | 📷 Quét mã vạch / gõ số JAN (5.534 mã) | 05/11 | 12/11 | scan_open / scan_ok / scan_miss (mã nào thiếu → bổ sung) |
 | Trang SEO /guide/gia-kai-iphone-18-pro/ | 06/11 | 20/11 | lượt vào path, Google |
+| Trang vào từ link gọn: ẩn thanh lọc, đo price_seen + land_exit | 07/11 | 14/11 | tỉ lệ bấm sang tiệm/land (mốc 23%), % "không làm gì" khi rời |
 
 ## Nhật ký
 
