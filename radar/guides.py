@@ -418,6 +418,13 @@ sao cho <b>không mất phí</b>. Nguyên tắc quan trọng nhất: <b>huỷ tr
 <li>Thanh toán ở konbini hoặc chuyển khoản mà <b>không trả tiền trong 2 tuần</b> thì đơn tự huỷ (theo bài tổng hợp, trang trợ giúp của Apple không ghi rõ).</li>
 <li>Apple không công bố hạn chót cụ thể. Muốn huỷ thì <b>huỷ càng sớm càng tốt</b>, đừng đợi tới ngày giao.</li>
 </ul>
+<h3 id="hoantien">💳 Huỷ rồi mà tiền chưa về, hoặc thấy bị trừ 2 lần?</h3>
+<ul class="tips">
+<li>Theo hướng dẫn của Apple (được trích lại trên Apple Community): thẻ tín dụng <b>bị tính tiền khi máy xuất kho</b>. Huỷ trước khi xuất kho thì thường chỉ là <b>tạm giữ hạn mức (与信)</b>, chưa phải trừ tiền thật, và việc mở lại hạn mức "có thể mất một thời gian".</li>
+<li>Mở lại hạn mức nhanh hay chậm <b>tuỳ công ty thẻ</b>. Người dùng kể từ vài ngày tới vài tuần, có trường hợp lâu hơn; đây là trải nghiệm cá nhân, không phải cam kết của Apple.</li>
+<li>Nếu đã bị tính tiền thật, tiền hoàn thường hiện thành <b>dòng âm (マイナス)</b> trên sao kê tháng sau hoặc tháng sau nữa.</li>
+<li>Thấy "trừ 2 lần": xem trong app thẻ khoản đó là <b>tạm giữ</b> hay <b>đã chốt</b>. Lâu không thấy thay đổi thì hỏi công ty thẻ và Apple (0120-993-993). Nguồn: <a href="https://discussionsjapan.apple.com/thread/255794218" target="_blank" rel="noopener nofollow">Apple Community</a>.</li>
+</ul>
 
 <h2 id="docomo">📶 docomo</h2>
 <ul class="tips">

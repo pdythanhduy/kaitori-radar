@@ -60,6 +60,11 @@ Tài liệu cho đội CEO và các lịch săn trend: người bán đang lo g�
 - **Thông tin có nguồn (trang Rakuten Card):** phí trả góp Apple Store 0 phí cho giao dịch từ 03/08/2026, nhưng phải nằm trong hạn mức trả góp (分割払いご利用可能枠, thường thấp hơn hạn mức thẻ), thẻ Amex không áp dụng, "あとから分割" không áp dụng.
 - **Cách trả lời:** nhắc kiểm tra hạn mức trả góp trong app Rakuten e-NAVI, không phải hạn mức tổng; không chắc thì gọi Rakuten Card. Không đoán nguyên nhân.
 
+## 7. Huỷ đơn Apple rồi tiền chưa về / bị trừ 2 lần (06/11)
+- **Trong nhóm 32K/53K:** "đặt máy 12/9 mà huỷ, tiền hoàn chưa về", "apple trừ tiền 2 lần thì bao lâu hoàn lại hạn mức", "Apple tự huỷ đơn dù không bấm huỷ".
+- **Thông tin có nguồn (Apple Community, trích hướng dẫn Apple):** thẻ bị tính tiền khi xuất kho; huỷ trước đó là tạm giữ hạn mức (与信), mở lại "có thể mất một thời gian", tuỳ công ty thẻ; nếu đã tính tiền thì hoàn ở sao kê tháng sau/tháng sau nữa (dòng âm).
+- **Cách trả lời:** /guide/huy-iphone/#hoantien. Không hứa số ngày; khuyên xem app thẻ (tạm giữ hay đã chốt), gọi công ty thẻ/Apple.
+
 ## Nguồn
 - Yahoo!ニュース (ピンズバ): https://news.yahoo.co.jp/articles/316d4c3745207ff5b95186ad13d94fba8173c7ec
 - Investing.com (Jefferies): https://jp.investing.com/news/stock-market-news/article-1715940
@@ -69,3 +74,4 @@ Tài liệu cho đội CEO và các lịch săn trend: người bán đang lo g�
 - Record China (Duo bán lại ở Trung Quốc): https://topics.smt.docomo.ne.jp/article/recordchina/business/recordchina-RC_995402
 - 攻略大百科 (giá Pokémon): https://premium.gamepedia.jp/pokeca/archives/21037
 - Rakuten Card (trả góp Apple Store): https://www.rakuten-card.co.jp/adjustment/installment/
+- Apple Community (hoàn tiền sau huỷ): https://discussionsjapan.apple.com/thread/255794218

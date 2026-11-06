@@ -1,22 +1,21 @@
 # Trend nóng hôm nay (lịch săn trend ghi; bình luận + bài nhóm đọc để chọn góc)
 
-**Quét lúc 06/11 12:30 JST**
+**Quét lúc 06/11 17:50 JST**
 
-## ⚡ Giá đổi trong ngày (số thật, site/data 12:10)
-- 18 Pro Max 256: 228k → 231k (森森 dẫn; đỏ 230,5k), +3k so với tối 5/11. 7 ngày trước 235,5k.
-- Duo: 256 374k (森森), 512 ~428k, gần như đứng; bảng lời/lỗ không mẫu nào đổi dấu (Duo lời, 18 Pro/PM lỗ).
-- Box Pokémon: 超電ブレイカー 26,5k → 27,5k, 黒炎の支配者 18,6k → 19,2k, スカーレットex 13k → 13,6k (森森); バイオレットex 10,3k → 9,8k.
+## ⚡ Giá đổi trong ngày (site/data, so tối 5/11)
+- 18 Pro Max 256: 228k → 231k (森森; đỏ 233k lúc 16h). 512 đỏ 262,5k (ルデヤ).
+- Duo: đứng giá (256 374k, 512 429k, 1TB 503k, 2TB 609k) — vẫn lời 9–34k so giá Apple. 18 Pro/PM vẫn lỗ 9–53k; không mẫu nào đổi dấu.
+- Box Pokémon: SV8 超電ブレイカー 27,5k (+1k), SV3 19,2k (+600), スカーレットex 13,6k (+600); バイオレットex 9,8k (−500).
 
-## 🗣 Chủ đề nóng trong nhóm 32K/53K (sáng nay)
-1. "App −5 cắt lỗ" 18PM đỏ/trắng, nhiều người rao 22,7–23,5 man → trả lời: giá kai từng màu + so giá Apple (/guide/gia-kai-iphone-18-pro-max/).
-2. Tìm mua Duo 256/512 "giá kai +" → trả lời: bảng Duo từng dung lượng/màu (/guide/gia-kai-iphone-duo/).
-3. Mua trả góp ở Apple bằng thẻ Rakuten báo lỗi; hỏi bao lâu nhận hàng; hỏi tiền hoàn → chỉ nói điều đã kiểm (xem market-concerns mục 6), khuyên hỏi Rakuten/Apple.
+## 🗣 Chủ đề nóng trong nhóm 32K/53K (chiều nay)
+1. **Huỷ đơn rồi tiền chưa về / Apple trừ 2 lần / Apple tự huỷ đơn** (3–4 bài: "đặt 12/9 huỷ tiền chưa về", "trừ tiền 2 lần bao lâu hoàn hạn mức") → trả lời bằng mục mới /guide/huy-iphone/#hoantien (tạm giữ 与信 vs đã chốt, tuỳ công ty thẻ, gọi Apple 0120-993-993). Không đoán số ngày.
+2. Rao 18PM đỏ 23–23,5 man, 512 đỏ 26,6–27 man; nhiều người tìm Duo 512/1TB "kai+" → giá kai từng màu + giá Apple.
+3. Gom box 30th (20,4k/box) → giá kai box 30th (当番 21,2k, ほむら 21k, 1丁目 20k, 森森 19k).
 
 ## 📰 Tin
-- Rakuten Card: phí trả góp Apple Store 0 phí (từ 03/08/2026), nhưng phải trong 分割払いご利用可能枠, Amex không áp dụng (rakuten-card.co.jp).
-- Docomo/KDDI đã giảm giá 18 Pro sau khi bán (ケータイWatch).
+- Apple Community: tiền thẻ bị tính khi xuất kho; huỷ trước đó chỉ là tạm giữ hạn mức, mở lại tuỳ công ty thẻ (discussionsjapan.apple.com/thread/255794218).
 
 ## 🎯 Góc đề xuất
-- Bình luận: bài rao 18PM 256 đỏ → nhấn "giá kai vừa nhích lên lại 231k trưa nay" (số thật, không đoán xu hướng).
-- Bài nhóm khung kế tiếp (13h, khung 2): "🔀 CÙNG 1 MÁY 18PM 256 ĐỎ, TIỆM CAO NHẤT VÀ THẤP NHẤT LỆCH BAO NHIÊU?" (森森 230,5k vs 当番 224k).
-- Bài nhóm lớn tối nay: "💳 MUA iPHONE TRẢ GÓP Ở APPLE BẰNG THẺ RAKUTEN BỊ LỖI? 3 ĐIỀU CẦN XEM" (hạn mức trả góp, Amex, liên hệ) — chỉ dùng thông tin trang Rakuten.
+- Bình luận: bài hỏi "huỷ rồi tiền chưa về" → link https://kaitoriprice.com/guide/huy-iphone/#hoantien.
+- Bài nhóm 19h (khung 4): "💳 HUỶ ĐƠN APPLE RỒI MÀ TIỀN CHƯA VỀ? PHÂN BIỆT TẠM GIỮ HẠN MỨC VÀ TRỪ TIỀN THẬT".
+- Bài nhóm 21h (khung 5): box Pokémon — giá box 30th các tiệm + SV8/SV3 tăng.
