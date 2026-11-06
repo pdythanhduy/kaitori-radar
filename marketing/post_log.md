@@ -41,3 +41,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-05 | 22:56 | canhan | BỎ LƯỢT: Chrome đang dùng page Nhật Bản 24H (/me chuyển sang trang page), không đăng dưới tên Thành Duy | -
 2026-11-05 | 23:00 | canhan | 💹 MUA iPHONE GIÁ APPLE RỒI BÁN CHO TIỆM: HÔM NAY LỜI HAY LỖ? (Thành Duy, Công khai; đăng lại sau khi user chuyển tài khoản) | https://www.facebook.com/ttduy95
 2026-11-06 | 08:15 | tinhot | 🔥 POKÉMON & iPHONE: TIN HOT HÔM NAY 06/11 (kết quả bốc thăm ピカピカボックス2027 15h hôm nay, 30th tái bản AEON/TSUTAYA/GEO, au −44k 18 Pro 256; Thành Duy) | https://www.facebook.com/groups/1118827834446963
+2026-11-06 | 11:37 | 1 | 💰 HÔM NAY MUA iPHONE GIÁ APPLE RỒI BÁN KAI THÌ LỜI HAY LỖ? | https://www.facebook.com/groups/1118827834446963 (link ?v=profit + ghi chú 双11; Thành Duy; nhóm 21 thành viên)
