@@ -78,3 +78,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-06 | 09:43 | 53K | posts/1604519410990670 | OutgoingMouse2195 09:01: bán Duo 256 đen, hỏi giá (Thành Duy) → đen 372k ルデヤ/森森/モバイル一番, 1丁目/ゲスト 371k, Apple 364,8k, nhắc giá giảm ~6k hôm qua; KHÔNG link, mời nhóm (N=3)
 2026-11-06 | 10:14 | 32K | posts/1451662600272566 | Văn Kiên Osaka 07:29: bán 2 18PM512 đỏ + 1 Duo (Thành Duy) → đỏ PANDA 263k/森森 262k/ルデヤ 261k, Apple 274,8k; Duo theo dung lượng 372/427/501/607k; mã 75798; link ?q=iPhone+18+Pro+Max+512GB (N=4)
 2026-11-06 | 10:43 | 53K | posts/1604578890984722 | Dzcogisai617 10:35: tìm mua 18 Pro 256 bạc/xanh giá kai+ (Thành Duy) → bạc ~192k, xanh 198k 森森/197k PANDA, Apple 219,8k, app−1man cao hơn kai 12–18k; link ?q=iPhone+18+Pro+256GB (N=5)
+2026-11-06 | 11:13 | 32K | posts/1451769596928533 | Van Trung 10:32: cần mua Duo, Nagoya (Thành Duy) → Duo 10:43: 256 372k, 512 428k, 1TB 501k, 2TB 607k, trắng trừ 1–5k, kèm giá Apple; KHÔNG link, mời nhóm (N=6)
