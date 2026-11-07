@@ -98,3 +98,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-06 | 20:22 | 32K | posts/1452135550225271 | Thanh Canh 19:35: tìm mua 17 Pro mới seal, xin giá (14 bình luận) (Thành Duy) → 17 Pro 256 bạc 174,5k PANDA/174k, xanh 173,5–174k, cam 169–171,5k; 512 bạc 202,5k; 18 Pro đỏ 201,5k vs Apple 219,8k; link ?q=iPhone+17+Pro (N=23)
 2026-11-06 | 20:52 | 109K | posts/2238929347007060 | HakaksjsL 20:29: bán iPhone 17 256 new (Thành Duy) → kai ゲスト 139,7k, PANDA 139k, 4 tiệm 138k, 森森 trừ đen/trắng 135k; mời nhóm + link ?q=iPhone+17+256GB (N=24)
 2026-11-06 | 22:25 | 53K | posts/1605097944266150 | Quang Hoang 22:13: bán 18PM xanh 256 App−5, Namba (Thành Duy) → App−5 ≈234,8k vs kai xanh 森森 231k/ルデヤ 228k; link /guide/gia-kai-iphone-18-pro-max/ (N=25)
+2026-11-07 | 09:23 | 32K | posts/1452654650173361 | Kyoto Quang 07:59: bán 18PM256 đỏ seal 23m4 Kyoto (Thành Duy) → kai tối 6/11 231k 森森/230,5k, Apple 239,8k, rao +3k so kai; link /guide/gia-kai-iphone-18-pro-max/ (N=1)
