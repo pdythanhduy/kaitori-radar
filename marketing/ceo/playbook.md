@@ -65,6 +65,11 @@ Năm 1997, Kakaku.com bắt đầu chỉ là bảng so giá các tiệm điện 
    - Khi đủ khoảng 3.000 lượt bấm/tháng sang một tiệm: soạn đề nghị phí giới thiệu khách, kèm số liệu thật.
 4. **Lâu dài:** báo giá thật do người dùng gửi (nội dung riêng), gói cho dân buôn.
 
+## Bình luận: học mỗi ngày (user yêu cầu 07/11)
+- Lượt CEO sáng: đọc comment_log.md hôm qua + lượt vào từ Facebook (daily_traffic) và land/shop_click (events_report), tính lượt FB / bình luận theo kiểu bình luận (dài vs [ngắn]).
+- Ghi 1 dòng "Học được" mới nhất vào marketing/ceo/comment_style.md (kiểu nào kéo nhiều hơn, câu mở đầu nào tự nhiên, chỗ nào còn giống máy) và sửa phần Nguyên tắc/Ví dụ nếu cần.
+- Mốc: 06/11 ≈ 3,7 lượt FB/bình luận (bình luận dài); sáng 07/11 ≈ 1,3.
+
 ## Nguồn
 - Kakaku.com: asiajin.com/blog/?p=17, thebridge.jp/en/2013/05/kakaku-com-japan-price-comparison, porterprize.org (2013)
 - Mô hình web so giá thu mua: thebridge.jp/2016/01/find-out-how-much-a-product-is-worth-at-uridoki, netshop.impress.co.jp/node/5833, batonz.jp/sell_cases/100381

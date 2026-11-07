@@ -1,0 +1,24 @@
+# Cách viết bình luận cho giống người thật (cập nhật mỗi ngày)
+
+Lịch bình luận đọc file này trước mỗi lượt. Lượt CEO sáng sửa file này theo số liệu hôm trước (mục "Học được").
+User yêu cầu 07/11: "comment sao cho thật để khỏi giống AI, học hỏi từng ngày cải thiện đi".
+
+## Nguyên tắc
+- Viết như một người trong nhóm đang nói chuyện, không như bản tin. **1–2 câu, dưới ~200 ký tự** (chưa tính link).
+- Chỉ đưa **1–2 con số đúng cái người ta hỏi** (đúng máy, đúng màu, đúng dung lượng). Bảng đủ 9 tiệm, từng màu để ở link: đó là lý do để bấm.
+- Dùng cách nói của nhóm: "kai", "man", "k" (nghìn), "app" (giá Apple), "b/bạn", "nha", "đó", "á". Số viết kiểu nhóm: 23.1, 231k, 23m1.
+- Không mở đầu kiểu "Tham khảo giá…", "Để bạn có mốc…", "Mốc giá…". Không liệt kê "ở A, B, C, D". Không dấu chấm phẩy, không ngoặc chồng ngoặc, không dấu gạch dài "—".
+- Không lặp một mẫu câu 2 lần trong ngày. Đổi cách mở đầu, có khi chỉ là câu trả lời thẳng.
+- Vẫn trung thực: chỉ số thật, có giờ nếu cần ("sáng nay", "tối qua"), không bịa, không giả làm người mua/bán.
+- Link để cuối, nói tự nhiên: "giá từng màu mình hay xem ở đây", "đủ 9 tiệm ở link này nha", "mình check ở đây".
+- Lượt mời nhóm (N chia hết cho 3): nửa câu ngắn, ví dụ "nhóm Săn Giá Kaitori Nhật Bản ngày nào cũng có bảng này".
+- Mã 森森 75798: chỉ thêm khi giá cao nhất là 森森, nói gọn: "bán 森森 nhập mã 75798 (mã của mình) được coupon 3k".
+
+## Ví dụ (đổi chữ mỗi lần, đừng chép y nguyên)
+- Bài rao 18PM đỏ 256 23.4: "đỏ 256 kai sáng nay 231k (森森), app 239.8 nên 23.4 là ổn á b. giá từng màu đủ 9 tiệm ở đây nha 👉 <link>"
+- Bài tìm Duo 512: "duo 512 kai đang 428-429k, app 399.8 nên mua app bán vẫn hơn ~29k. mình hay xem giá ở đây <link>"
+- Bài hỏi tiền hoàn: "huỷ trước khi xuất kho thì chỉ là tạm giữ hạn mức thôi b, mở lại nhanh chậm tuỳ thẻ. mình gom thông tin ở đây <link>"
+- Bài rao 17PM trắng: "17PM trắng 256 tiệm đang thu ~191k (PANDA) b nhé, màu khác bị trừ vài k. bảng màu <link>"
+
+## Học được (CEO sáng cập nhật, mới nhất ở trên)
+- 07/11: bình luận dài liệt kê đủ giá các tiệm → người đọc không cần bấm (sáng 07/11 chỉ 5 lượt từ FB / 4 bình luận). Chuyển sang kiểu ngắn ở trên từ 07/11 trưa. So lượt FB/bình luận các ngày sau (06/11 ≈ 3,7; sáng 07/11 ≈ 1,3).
