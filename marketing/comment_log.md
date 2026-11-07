@@ -99,3 +99,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-06 | 20:52 | 109K | posts/2238929347007060 | HakaksjsL 20:29: bán iPhone 17 256 new (Thành Duy) → kai ゲスト 139,7k, PANDA 139k, 4 tiệm 138k, 森森 trừ đen/trắng 135k; mời nhóm + link ?q=iPhone+17+256GB (N=24)
 2026-11-06 | 22:25 | 53K | posts/1605097944266150 | Quang Hoang 22:13: bán 18PM xanh 256 App−5, Namba (Thành Duy) → App−5 ≈234,8k vs kai xanh 森森 231k/ルデヤ 228k; link /guide/gia-kai-iphone-18-pro-max/ (N=25)
 2026-11-07 | 09:23 | 32K | posts/1452654650173361 | Kyoto Quang 07:59: bán 18PM256 đỏ seal 23m4 Kyoto (Thành Duy) → kai tối 6/11 231k 森森/230,5k, Apple 239,8k, rao +3k so kai; link /guide/gia-kai-iphone-18-pro-max/ (N=1)
+2026-11-07 | 09:53 | 53K | posts/1605560374219907 | BlueJackfruit6320 09:36: tìm mua 17PM Fukuoka (Thành Duy) → kai cao nhất tối 6/11: 256 191,5k, 512 216,5k, 1TB 239k, 2TB 278k (PANDA/ルデヤ); link ?q=iPhone+17+Pro+Max (N=2)
