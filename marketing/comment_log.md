@@ -101,3 +101,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-07 | 09:23 | 32K | posts/1452654650173361 | Kyoto Quang 07:59: bán 18PM256 đỏ seal 23m4 Kyoto (Thành Duy) → kai tối 6/11 231k 森森/230,5k, Apple 239,8k, rao +3k so kai; link /guide/gia-kai-iphone-18-pro-max/ (N=1)
 2026-11-07 | 09:53 | 53K | posts/1605560374219907 | BlueJackfruit6320 09:36: tìm mua 17PM Fukuoka (Thành Duy) → kai cao nhất tối 6/11: 256 191,5k, 512 216,5k, 1TB 239k, 2TB 278k (PANDA/ルデヤ); link ?q=iPhone+17+Pro+Max (N=2)
 2026-11-07 | 10:24 | 85K | posts/1738100197288082 | ẩn danh 08:57: tìm 17PM trắng Tokyo, xin giá (Thành Duy; Chrome đang ở page NB24H → đã chuyển về Duy) → 10h: 256 trắng 191,5k PANDA/191k, 512 216,5k, 1TB 239k, 2TB 278k; mời nhóm + link ?q=iPhone+17+Pro+Max (N=3)
+2026-11-07 | 11:21 | 32K | posts/1452764676829025 | IntelligentHedgehog4430 11:11: bán 18PM512 đỏ App−5 Osaka (Thành Duy) → App−5 ≈269,8k vs kai 11h 262,5k ルデヤ/262k; link ?q=iPhone+18+Pro+Max+512GB (N=4)
