@@ -30,6 +30,8 @@ Thí nghiệm nào không hiệu quả sau 3–7 ngày thì dừng. Thí nghiệ
 | 📷 Quét mã vạch / gõ số JAN (5.534 mã) | 05/11 | 12/11 | scan_open / scan_ok / scan_miss (mã nào thiếu → bổ sung) |
 | Trang SEO /guide/gia-kai-iphone-18-pro/ | 06/11 | 20/11 | lượt vào path, Google |
 | Trang vào từ link gọn: ẩn thanh lọc, đo price_seen + land_exit | 07/11 | 14/11 | tỉ lệ bấm sang tiệm/land (mốc 23%), % "không làm gì" khi rời |
+| Trang SEO /guide/gia-kai-iphone-17-pro-max/ (không cột giá Apple) | 07/11 | 21/11 | lượt vào path, Google |
+| Mọi bình luận đều có link (bỏ lượt không link) | 06/11 18h | 10/11 | lượt FB/bình luận (06/11 trước 17h30 ~4) |
 
 ## Nhật ký
 
@@ -64,3 +66,19 @@ Thí nghiệm nào không hiệu quả sau 3–7 ngày thì dừng. Thí nghiệ
 - **Đề xuất chờ user:**
   - Gửi sitemap / yêu cầu lập chỉ mục 4 trang /guide/gia-kai-* trong Google Search Console (user tự làm, cần đăng nhập).
   - Quyết bài đăng nhầm tài khoản 04/11 (slot 5) và 2 bài Pokémon đang chờ duyệt.
+
+### 07/11/2026
+- **Hôm qua (06/11, cả ngày):**
+  - 143 lượt vào (05/11: 217, −34%), 258 lượt xem. Nguồn: FB 77, gõ thẳng 61, Google 4.
+  - Vào từ link 114, bấm sang tiệm 23 (20%, dưới mốc 25%). 森森 13, ルデヤ 5.
+  - Nguyên nhân chính đã tìm ra hôm qua: 1/3 bình luận không link + không có bài nhóm lớn buổi sáng. Sau 17h30 (đổi quy tắc + bài lớn 85K) lượt vào tăng ~40% so cùng giờ 05/11 (35 vs 25).
+  - /guide/gia-kai-iphone-18-pro-max/ 12, /guide/huy-iphone/ 10 (bài nhóm lớn 85K + bài nhóm mình), /guide/gia-kai-iphone-duo/ 5.
+  - Tìm không ra 37% (6/16): "iphone 18 promax 257", "iphone dou" (đã sửa 06/11), "ポケモン せ", "ポケモン セット 9", "ポケモン セット 9個", "ポケモン 箱".
+  - Quay lại 7 máy (6%). Dải "lần trước bạn xem" hiện 20 lần, bấm 0.
+  - Đăng 06/11: 25/25 bình luận, 5 bài nhóm mình, 1 bài nhóm lớn (85K, hoàn tiền sau huỷ), Pokémon (chờ duyệt), X ③. Nhóm Săn Giá: 25 thành viên (05/11: 20). Search Console: đã xin lập chỉ mục 4 trang /guide/gia-kai-*.
+- **Việc kỹ thuật 06–07/11:** sửa bài khung 2 (so giá chỉ dùng giá đáng tin), sửa box 30th bị tách 7 dòng (split_mixed), trang vào từ link gọn + đo bỏ đi, ngừng dùng page Nhật Bản 24H (user yêu cầu).
+- **Hôm nay đã làm:**
+  1. Tìm kiếm hiểu tiếng Nhật kiểu "ポケモン セット 9個" → 9種セット, "箱" → box, bỏ tiền tố ポケモン.
+  2. Trang SEO /guide/gia-kai-iphone-17-pro-max/ (nhiều bài 17PM ở 85K/32K hôm qua), ẩn cột giá Apple vì giá Apple đời 17 trong data chưa chắc đúng.
+- **Lưu ý:** update-prices không chạy từ 22:37 06/11 (đúng thiết kế: 10:07–22:37; lượt dự phòng 06:48 GitHub không chạy). Web hiện giá tối qua tới ~10h.
+- **Đề xuất chờ user:** làm đọc giá máy cũ イオシス (robots cho phép, cần đọc điều khoản trước).
