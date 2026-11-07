@@ -52,3 +52,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-07 | 08:15 | tinhot | 🔥 POKÉMON & iPHONE: TIN HOT HÔM NAY 07/11 (PCO bốc thăm bổ sung ハドウシーカー tới 10/11, hạn chót tối 7/11 ヤマシロヤ/ビックカメラ広島, SoftBank đổi giảm giá 17/11; Thành Duy) | https://www.facebook.com/groups/1118827834446963
 2026-11-07 | 11:54 | 1 | 💰 HÔM NAY MUA iPHONE GIÁ APPLE RỒI BÁN KAI THÌ LỜI HAY LỖ? | https://www.facebook.com/groups/1118827834446963 (link ?v=profit; Thành Duy)
 2026-11-07 | 12:11 | tinnong | ⚡ TIN NÓNG: POKÉMON CARD LẠI TĂNG GIÁ, PACK 200円 → 230円 TỪ THÁNG 5/2027 (ORICON 6/11, user gửi link SmartNews; link /guide/gia-kai-pokemon-box/; Thành Duy) | https://www.facebook.com/groups/1118827834446963
+2026-11-07 | 13:55 | 2 | 🔀 CÙNG 1 MÓN, BÁN SAI TIỆM LÀ MẤT TIỀN | https://www.facebook.com/groups/1118827834446963 (Thành Duy)
