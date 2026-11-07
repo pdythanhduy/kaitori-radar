@@ -54,3 +54,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-07 | 12:11 | tinnong | ⚡ TIN NÓNG: POKÉMON CARD LẠI TĂNG GIÁ, PACK 200円 → 230円 TỪ THÁNG 5/2027 (ORICON 6/11, user gửi link SmartNews; link /guide/gia-kai-pokemon-box/; Thành Duy) | https://www.facebook.com/groups/1118827834446963
 2026-11-07 | 13:55 | 2 | 🔀 CÙNG 1 MÓN, BÁN SAI TIỆM LÀ MẤT TIỀN | https://www.facebook.com/groups/1118827834446963 (Thành Duy)
 2026-11-07 | 15:56 | 3 | 📊 GIÁ KAI ĐỔI GÌ HÔM NAY? | https://www.facebook.com/groups/1118827834446963 (Thành Duy; bỏ dòng OP-03 ▼169k và スカイレジェンド ▼50k vì số lạ, thêm 18 Pro 1TB/2TB giảm theo trends)
+2026-11-07 | 19:52 | 4 | 📉 DUO GIẢM 3,5–5,5K HÔM NAY: CÒN LỜI BAO NHIÊU SO VỚI GIÁ APPLE? | https://www.facebook.com/groups/1118827834446963 (góc trends 🎯 thay khung 4; link ?v=profit; Thành Duy)
