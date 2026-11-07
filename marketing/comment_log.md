@@ -104,3 +104,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-07 | 11:21 | 32K | posts/1452764676829025 | IntelligentHedgehog4430 11:11: bán 18PM512 đỏ App−5 Osaka (Thành Duy) → App−5 ≈269,8k vs kai 11h 262,5k ルデヤ/262k; link ?q=iPhone+18+Pro+Max+512GB (N=4)
 2026-11-07 | 11:50 | 53K | posts/1605628937546384 | [ngắn] OrangeLynx1011 11:20: 18PM256 đỏ ai thu xin giá (Thành Duy) → 'đỏ 256 trưa nay kai 231k (森森)… mình hay xem ở đây'; link /guide/gia-kai-iphone-18-pro-max/ (N=5)
 2026-11-07 | 12:51 | 32K | posts/1452808646824628 | [ngắn] EnthusiasticParrot7145 12:15: bán 3 Duo 256 Omiya-Ike (Thành Duy) → 'duo 256 trưa nay kai hơi tụt, cao nhất 372k ゲスト, ルデヤ 368.5k, app 364.8' + mời nhóm; link ?q=iPhone+Duo+256GB (N=6)
+2026-11-07 | 13:20 | 53K | posts/1605695490873062 | [ngắn] EmpatheticRabbit1764 12:58: 18 Pro đỏ cắt lỗ app−1m5 Otsu (Thành Duy) → 'bản 256 app 219.8 −1m5 = 204.8, kai đỏ ~201k (ルデヤ), sát kai'; link /guide/gia-kai-iphone-18-pro/ (N=7)
