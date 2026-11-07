@@ -58,3 +58,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-07 | 21:14 | pokemon-daily | 📅 4 MỐC POKÉMON CẦN NHỚ TỪ NAY TỚI 27/11 (kèm ảnh lich-1107.png, Thành Duy) – ĐÃ DUYỆT ~21:15, đã bình luận link 21:48; my_posted/my_pending_content treo nên chưa kiểm tra bài 04–06/11 | https://www.facebook.com/groups/pokemonae/posts/1752247855873506/
 2026-11-07 | 21:55 | 5 | 🃏 GIÁ THU MUA HỘP THẺ POKÉMON CAO NHẤT HÔM NAY | https://www.facebook.com/groups/1118827834446963 (Thành Duy; bỏ 2 dòng ONE PIECE OP-01/EB-02, link /guide/gia-kai-pokemon-box/)
 2026-11-07 | 22:55 | canhan | BỎ LƯỢT: hộp soạn bài trên ttduy95 treo ở khung xám 3 lần (đã chọn góc 'Duo giảm 3,5–5,5K, box Pokémon lên nhẹ') | -
+2026-11-08 | 08:20 | tinhot | BỎ LƯỢT: Facebook treo màn logo / hộp soạn không mở 3 lần; bài nháp ở marketing/drafts/2026-11-08-tinhot.md | -
