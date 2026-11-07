@@ -117,3 +117,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-07 | 18:55 | 32K | posts/1453033010135525 | [ngắn] EnthusiasticDachshund2854 ~18:00: mua 17PM gặp ở ga, làm sao check hàng chuẩn (Thành Duy) → 'hẹn gần tiệm kaitori nhờ check, soi màng co, đăng xuất iCloud tại chỗ'; link /guide/lua-dao-iphone/ (N=17; mở bài trực tiếp bị kẹt, bình luận từ feed)
 2026-11-07 | 20:18 | 85K | posts/1738551737242928 | [ngắn] Thanh Bình 19:07: tìm 17PM/18PM xin giá (Thành Duy) → 17PM256 bạc 191k/cam-xanh 185k, 18PM256 đỏ 230.5k, giá rao 23.5 cao hơn kai ~4k + mời nhóm + /vi/?q=pro max
 2026-11-07 | 20:49 | 109K | posts/2240058993560762 | [ngắn] 白山 20:34: bán 17 Pro 256 dùng 4 tháng 16m5 Akihabara (Thành Duy) → seal bạc kai ~175k (PANDA), máy dùng rồi kai thấp hơn + /vi/?q=17 pro
+2026-11-07 | 21:19 | 85K | posts/1738651283899640 | [ngắn] Vi Văn Thống 21:11: tìm mua 16 Pro full hộp (Thành Duy) → seal 128 ~159k / 256 ~179k (ゲストモバイル), máy dùng kai thấp hơn + /vi/?q=16 pro
