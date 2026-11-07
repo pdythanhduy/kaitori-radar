@@ -672,7 +672,7 @@ mua đủ giá. Bảng dưới lấy <b>đúng ghi chú các tiệm đăng trên
         cols.sort(key=lambda k: list(COL_VI).index(k) if k in COL_VI else 99)
         return cols, rows
 
-    def color_table(models):
+    def color_table(models, apple=True):
         cols, rows = color_rows(models)
         if not rows:
             return ""
@@ -684,9 +684,9 @@ mua đủ giá. Bảng dưới lấy <b>đúng ghi chú các tiệm đăng trên
             msrp = it.get("msrp")
             cells = "".join(f"<td>{_yen(per[c][1])}<br><small>{e(sname(per[c][0]))}</small></td>" if c in per else "<td>—</td>" for c in cols)
             trs.append(f"<tr><td>{link}</td><td><b>{_yen(bp)}</b><br><small>{e(sname(bsid))}</small></td>{cells}"
-                       f"<td>{_yen(msrp) if msrp else '—'}</td></tr>")
+                       + (f"<td>{_yen(msrp) if msrp else '—'}</td>" if apple else "") + "</tr>")
         return ('<div class="tw"><table class="pt"><thead><tr><th>Dung lượng</th><th>Cao nhất (mọi tiệm)</th>'
-                f"{head}<th>Giá Apple</th></tr></thead><tbody>{''.join(trs)}</tbody></table></div>")
+                f"{head}{'<th>Giá Apple</th>' if apple else ''}</tr></thead><tbody>{''.join(trs)}</tbody></table></div>")
 
     def vi_faq(faq):
         return "<section><h2>Câu hỏi thường gặp</h2>" + "".join(f"<details><summary>{e(q)}</summary><p>{e(a)}</p></details>" for q, a in faq) + "</section>"
@@ -695,6 +695,8 @@ mua đủ giá. Bảng dưới lấy <b>đúng ghi chú các tiệm đăng trên
         ("gia-kai-iphone-18-pro-max", "iPhone 18 Pro Max", r"iPhone 18 Pro Max \d", "18 Pro Max (hay gọi 18 PRM)"),
         ("gia-kai-iphone-duo", "iPhone Duo", r"iPhone Duo \d", "iPhone Duo"),
         ("gia-kai-iphone-18-pro", "iPhone 18 Pro", r"iPhone 18 Pro \d", "18 Pro (bản thường, không phải Pro Max)"),
+        # 07/11: nhóm 85K/32K hỏi nhiều 17PM; giá Apple của đời 17 trong data có thể là giá cũ → ẩn cột Giá Apple
+        ("gia-kai-iphone-17-pro-max", "iPhone 17 Pro Max", r"iPhone 17 Pro Max \d", "17 Pro Max (17 PRM)"),
     ]:
         models = sorted([i for i in phones if re.match(rx, i["key"]) and i["n_shops"] >= 2], key=_iphone_order)
         if not models:
@@ -715,7 +717,7 @@ mua đủ giá. Bảng dưới lấy <b>đúng ghi chú các tiệm đăng trên
 <p>Bảng giá thu mua (kai, 買取) <b>{e(ask)}</b> máy mới chưa mở ở <b>{n_shops} tiệm kaitori</b> lớn ở Nhật. {top_txt}
 Cùng một máy mà các tiệm trả lệch nhau vài nghìn tới hơn chục nghìn yên, nên so giá trước khi bán.</p>
 <h2>Giá kai {e(label)} hôm nay theo dung lượng và màu</h2>
-{color_table(models)}
+{color_table(models, apple=not slug.startswith("gia-kai-iphone-17"))}
 <p class="small">Cột theo màu: giá cao nhất của màu đó ở các tiệm có bảng giá riêng từng màu (đã trừ màu). "—" là chưa có tiệm nào ghi giá riêng cho màu đó.
 Bấm dung lượng để xem giá cả {n_shops} tiệm và biểu đồ giá.</p>
 <h2>Mẹo bán được giá cao</h2>
@@ -731,7 +733,7 @@ Bấm dung lượng để xem giá cả {n_shops} tiệm và biểu đồ giá.<
 {vi_faq(faq)}
 <p class="small">Giá là giá công khai trên web các tiệm, chưa tính điểm thưởng và phí gửi; giá thực tế khi bán có thể khác. Bài chỉ để tham khảo, không phải lời khuyên đầu tư.</p>"""
         vi_page(f"/guide/{slug}/", f"Giá kai {label} hôm nay ở {n_shops} tiệm (cập nhật mỗi giờ) | Kaitori Price",
-                f"Giá thu mua {label} mới chưa mở hôm nay ở {n_shops} tiệm kaitori Nhật: từng dung lượng, từng màu, so với giá Apple. Tự cập nhật mỗi giờ.",
+                f"Giá thu mua {label} mới chưa mở hôm nay ở {n_shops} tiệm kaitori Nhật: từng dung lượng, từng màu{'' if slug.startswith('gia-kai-iphone-17') else ', so với giá Apple'}. Tự cập nhật mỗi giờ.",
                 f"Giá kai {label}", f"📱 Giá kai {label} hôm nay", body)
 
     # hộp thẻ Pokémon: tên gọi trong nhóm FB → tên tiệm ghi
@@ -861,6 +863,7 @@ Mỗi mục có nguồn; lịch bốc thăm của từng cửa hàng hay đổi,
     VI_TOPICS = [
         ("iphone", "📱 iPhone", [card("/guide/gia-kai-iphone-18-pro-max/", "💴", "Giá kai iPhone 18 Pro Max hôm nay", "Từng dung lượng, từng màu, so giá Apple — cập nhật mỗi giờ"),
                                card("/guide/gia-kai-iphone-18-pro/", "💴", "Giá kai iPhone 18 Pro hôm nay", "Từng dung lượng, từng màu, so giá Apple — cập nhật mỗi giờ"),
+                               card("/guide/gia-kai-iphone-17-pro-max/", "💴", "Giá kai iPhone 17 Pro Max hôm nay", "Máy mới chưa mở, từng dung lượng, từng màu"),
                                card("/guide/gia-kai-iphone-duo/", "💴", "Giá kai iPhone Duo hôm nay", "Từng dung lượng, đen / trắng, so giá Apple"),
                                card("/guide/gia-iphone-giam/", "📉", "Giá kai iPhone giảm: huỷ, bán hay giữ?", "Bảng giá mới nhất 9 tiệm + cách tính lời lỗ"),
                                card("/guide/huy-iphone/", "❌", "Cách huỷ đơn iPhone không mất phí", "Apple Store, docomo, au, SoftBank, Rakuten: huỷ trước khi gửi hàng"),
