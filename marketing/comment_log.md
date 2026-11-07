@@ -121,3 +121,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-07 | 21:48 | Pokémon 96K (pokemonae) | posts/1752247855873506 | pokemon-daily + link (bài 4 mốc tới 27/11 đã duyệt) → /guide/gia-kai-pokemon-box/
 2026-11-07 | 22:19 | 85K | posts/1738702903894478 | [ngắn] Hà Cầm Sơn Tùng 22:08: tìm 16PM meet Tokyo (Thành Duy) → 16PM256 seal ~190k (ゲストモバイル), máy cũ trả dưới mốc + /vi/?q=16 pro max (109K feed không tải)
 2026-11-07 | 22:52 | 109K | posts/2240134826886512 | [ngắn] RubyArugula2299 21:51: bán 17 256 seal 14m (Thành Duy) → 17 256 xanh kai ~139k (PANDA), 14m nhỉnh hơn kai + /vi/?q=iPhone 17
+2026-11-07 | 23:19 | 85K | posts/1738733833891385 | [ngắn] Võ Hoàng Dương 22:48: 16plus + 7m5 đổi 17PM, Osaka (Thành Duy) → 17PM256 seal bạc ~191k, cam/xanh ~185k, 16plus phải ~11m mới khớp + mời nhóm + /vi/?q=17 pro max
