@@ -50,3 +50,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-06 | 22:22 | 5 | 🎮 GIÁ THU MUA MÁY GAME HÔM NAY | https://www.facebook.com/groups/1118827834446963 (máy game: Steam Machine/PS5 Pro; đăng trễ ~22:35; Thành Duy)
 2026-11-06 | 22:51 | canhan | BỎ LƯỢT: tab Facebook treo/không phản hồi 3 lần (máy đang bận giải phóng ảnh iCloud); /me đã chuyển đúng trang ttduy95 | -
 2026-11-07 | 08:15 | tinhot | 🔥 POKÉMON & iPHONE: TIN HOT HÔM NAY 07/11 (PCO bốc thăm bổ sung ハドウシーカー tới 10/11, hạn chót tối 7/11 ヤマシロヤ/ビックカメラ広島, SoftBank đổi giảm giá 17/11; Thành Duy) | https://www.facebook.com/groups/1118827834446963
+2026-11-07 | 11:54 | 1 | 💰 HÔM NAY MUA iPHONE GIÁ APPLE RỒI BÁN KAI THÌ LỜI HAY LỖ? | https://www.facebook.com/groups/1118827834446963 (link ?v=profit; Thành Duy)
