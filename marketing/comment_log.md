@@ -137,3 +137,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-08 | 16:16 | 53K | posts/1606824094093535 | [ngắn] ProductiveLynx7651 15:41: huỷ Duo (thẻ debit thiếu số dư), gần 1 tuần tiền chưa về (Thành Duy) → debit trừ thẳng khi tạm giữ, hỏi ngân hàng tạm giữ/đã chốt, gọi Apple 0120-993-993 + /guide/huy-iphone/#hoantien
 2026-11-08 | 16:44 | 109K | posts/2240966983469963 | [ngắn] Dat Nguyen 16:24: bán 18PM 256 trắng seal app−5 Osaka (Thành Duy) → kai bạc/trắng 225k (ルデヤ, 森森), app−5 = 234.8 trên tiệm ~10k + /vi/?q=18 pro max
 2026-11-08 | 17:15 | 32K | posts/1453941380044688 | [ngắn] Lê Hồng Sử 16:14: tìm 20 box 30th + máy game Nagoya (Thành Duy) → box 30th M6a kai 21k (当番/1丁目/森森), tiệm thấp 17–18k + mời nhóm + /guide/gia-kai-pokemon-box/ (85K chỉ máy cũ)
+2026-11-08 | 17:44 | 53K | posts/1606892227420055 | [ngắn] SincerePear3960 17:11: 4 máy 18 Pro đỏ 256 21m1 Umeda (Thành Duy) → kai 18 Pro đỏ 201.5k (ルデヤ), app 219.8k, 21m1 rẻ hơn app ~9k + /vi/?q=18 pro
