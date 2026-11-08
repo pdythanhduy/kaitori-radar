@@ -141,3 +141,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-08 | 18:15 | 32K | posts/1454014873370672 | [ngắn] Huy Thanh 18:04: bán 17PM trắng 256 seal 196 Osaka (Thành Duy) → kai bạc 191.5k (PANDA)/191k (ルデヤ), rao trên tiệm ~4.5k + /guide/gia-kai-iphone-17-pro-max/ (109K không có bài hợp)
 2026-11-08 | 18:49 | 53K | posts/1606960527413225 | [ngắn] TaupeFlower3094 18:43: đổi 18PM đỏ 256 lấy xanh/trắng Okazaki (Thành Duy; trước đó FB đang ở page Nhật Bản 24H → đã chuyển về Duy rồi mới bình luận) → đỏ/xanh ~231k, bạc 225k, đổi trắng thiệt ~6k + mời nhóm + /vi/?q=18 pro max
 2026-11-08 | 20:14 | 32K | posts/1454055530033273 | [ngắn] Nguyễn Thị Thuỷ 19:04: tìm 18PM 256 bạc Kawagoe (Thành Duy; bài 10 bình luận) → bạc 225k (ルデヤ, 森森), app 239.8 + /guide/gia-kai-iphone-18-pro-max/
+2026-11-08 | 21:16 | Pokémon 96K (pokemonae) | posts/1753304632434495 | pokemon-daily + link (bảng tên lóng → giá kai) → /guide/gia-kai-pokemon-box/

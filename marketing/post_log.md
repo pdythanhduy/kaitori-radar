@@ -65,3 +65,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-08 | 13:52 | 2 | 🔀 CÙNG 1 MÓN, BÁN SAI TIỆM LÀ MẤT TIỀN | https://www.facebook.com/groups/1118827834446963 (Thành Duy; bỏ dòng 16 Pro 1TB vì script ghi sai tiệm cao nhất)
 2026-11-08 | 15:54 | 3 | 🎨 18 PRO MAX: MÀU NÀO KAI CAO NHẤT HÔM NAY? | https://www.facebook.com/groups/1118827834446963 (góc trends 🎯 thay khung 3; link /guide/gia-kai-iphone-18-pro-max/; Thành Duy)
 2026-11-08 | 19:52 | 4 | 💳 HUỶ ĐƠN APPLE TRẢ BẰNG THẺ DEBIT: BAO LÂU TIỀN MỚI VỀ? | https://www.facebook.com/groups/1118827834446963 (góc trends 🎯 thay khung 4; link /guide/huy-iphone/#hoantien; Thành Duy)
+2026-11-08 | 21:15 | pokemon-daily | 📖 NÓI "SET 9", "DEKKI MÈO"… TIỆM ĐANG THU BAO NHIÊU? (kèm ảnh long-1108.png, Thành Duy; FB đang ở page Nhật Bản 24H → chuyển về Duy trước khi gõ; duyệt ngay, đã bình luận link 21:16; bài 06/11 cũng đã duyệt, CHƯA bình luận link) | https://www.facebook.com/groups/pokemonae/posts/1753304632434495/
