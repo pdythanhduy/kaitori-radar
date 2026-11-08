@@ -19,7 +19,7 @@ Thí nghiệm nào không hiệu quả sau 3–7 ngày thì dừng. Thí nghiệ
 | Thử nghiệm | Bắt đầu | Xem lại | Đo bằng |
 |---|---|---|---|
 | Dải "👀 Từ lần trước bạn xem" | 05/11 | 12/11 | recent_show / recent_click, tỉ lệ quay lại |
-| Hiểu tiếng lóng khi tìm (18 prm, ip18, iphon) | 05/11 | 08/11 | % tìm không ra kết quả (05/11: 10%) |
+| Hiểu tiếng lóng khi tìm (18 prm, ip18, iphon) | 05/11 | ✅ giữ 08/11 | % tìm không ra: 07/11 0% (05/11 10%) |
 | 3 trang SEO /guide/gia-kai-* | 05/11 | 19/11 | lượt Google, lượt vào các path này |
 | Bình luận lượt lẻ dẫn về trang /guide/gia-kai-* | 05/11 | 09/11 | lượt vào path guide so với land ?q= |
 | Bình luận lượt chia hết cho 3 mời vào nhóm (không link) | 05/11 | 12/11 | số thành viên nhóm (05/11: 20) |
@@ -31,6 +31,8 @@ Thí nghiệm nào không hiệu quả sau 3–7 ngày thì dừng. Thí nghiệ
 | Trang SEO /guide/gia-kai-iphone-18-pro/ | 06/11 | 20/11 | lượt vào path, Google |
 | Trang vào từ link gọn: ẩn thanh lọc, đo price_seen + land_exit | 07/11 | 14/11 | tỉ lệ bấm sang tiệm/land (mốc 23%), % "không làm gì" khi rời |
 | Trang SEO /guide/gia-kai-iphone-17-pro-max/ (không cột giá Apple) | 07/11 | 21/11 | lượt vào path, Google |
+| Trang SEO /guide/gia-kai-iphone-17-pro/ (không cột giá Apple) | 08/11 | 22/11 | lượt vào path, Google |
+| Bài khung 5 Pokémon lọc bỏ ONE PIECE | 08/11 | — | (sửa lỗi) |
 | Mọi bình luận đều có link (bỏ lượt không link) | 06/11 18h | 10/11 | lượt FB/bình luận (06/11 trước 17h30 ~4) |
 
 ## Nhật ký
@@ -82,3 +84,24 @@ Thí nghiệm nào không hiệu quả sau 3–7 ngày thì dừng. Thí nghiệ
   2. Trang SEO /guide/gia-kai-iphone-17-pro-max/ (nhiều bài 17PM ở 85K/32K hôm qua), ẩn cột giá Apple vì giá Apple đời 17 trong data chưa chắc đúng.
 - **Lưu ý:** update-prices không chạy từ 22:37 06/11 (đúng thiết kế: 10:07–22:37; lượt dự phòng 06:48 GitHub không chạy). Web hiện giá tối qua tới ~10h.
 - **Đề xuất chờ user:** làm đọc giá máy cũ イオシス (robots cho phép, cần đọc điều khoản trước).
+
+### 08/11/2026
+- **Hôm qua (07/11, cả ngày):**
+  - 127 lượt vào (06/11: 143, −11%), 241 lượt xem. Nguồn: FB 70, gõ thẳng 53, Google 3.
+  - Vào từ link 113, bấm sang tiệm 33 (**29%**, 06/11: 20%, mốc 23%). ルデヤ 10, 森森 10, 1丁目 5, ゲストモバイル 3. Món được bấm nhiều: Duo 256 (23 lượt bấm sang tiệm, nhờ bài nhóm khung 4 "Duo giảm").
+  - Link vào nhiều nhất: Duo 256 (32), trang chủ (28), 18PM 256 (14), Galaxy A25 (5).
+  - Tìm không ra: 0%. Quay lại 14/88 máy (15%, 06/11: 6%). Dải "lần trước bạn xem" hiện 34, bấm 0 (3 ngày liền 0).
+  - Rời trang (vào từ link): chỉ cuộn 58%, bấm tiệm 16%, không làm gì 12% (phần lớn <5s).
+  - Trang guide: 18 Pro 4, 17PM 4, 18PM 3, huy-iphone 3, lua-dao 3, pokemon-box 2.
+  - Đăng: 24 bình luận (19h47 bỏ vì FB treo), 5 bài nhóm, tin hot, tin nóng, Pokémon 4 mốc (được duyệt ~21:15, đã bình luận link). Trang cá nhân bỏ lượt (FB treo 3 lần).
+- **Trend (có nguồn):** không có tin 24h mới về giá kai iPhone/máy game. 双11 TQ (JD 18 Pro −300 tệ + 500 đổi máy) chạy tới ~11–13/11. Pokémon: nhiều tiệm hết hạn bốc thăm ハドウシーカー/30th tối 8/11, ファミマオンライン tới 9/11, ふるいち八潮 10–15/11.
+- **Đã làm:**
+  1. Trang SEO /guide/gia-kai-iphone-17-pro/ (17 Pro được rao/hỏi ở 109K, 85K) + thẻ ở mục mẹo VI; ẩn cột giá Apple như 17PM.
+  2. Bài khung 5 (Pokémon, ngày lẻ) lọc bỏ hộp ONE PIECE (OP-/EB-/PRB-/ST-) — 07/11 phải sửa tay.
+  3. events.json: thêm ファミマオンライン ハドウシーカー (tới 9/11) và ふるいち八潮 (10–15/11).
+- **Đánh giá:** tiếng lóng → giữ (0% tìm không ra). Trang vào từ link gọn (07/11) → bấm tiệm 29%, tốt, xem tiếp tới 14/11.
+- **Lưu ý:** Facebook trên Chrome treo ở màn logo nhiều lần tối 07/11–sáng 08/11 (máy chạy 24 ngày, bộ nhớ 87%). Đã báo user, đề xuất khởi động lại/tắt tiến trình cũ.
+- **Đề xuất chờ user:**
+  - Dải "lần trước bạn xem": 3 ngày 0 lượt bấm → đề xuất thu gọn/đổi chỗ (quyết ở mốc 12/11).
+  - ゲストモバイル 17 Pro 1TB 219k cao hơn các tiệm ~14k: có thể đúng (tiệm hay trả cao bản 1TB) — chưa sửa, theo dõi.
+

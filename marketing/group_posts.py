@@ -216,7 +216,9 @@ def post4(day: int) -> str:
 # ------------------------------------------------------------------ 5. máy game / thẻ Pokémon + câu hỏi
 def post5(day: int) -> str:
     if day % 2:
-        pool = [i for i in cat("card") if i["key"].startswith("box:") and i["n_shops"] >= 3]
+        # 08/11: bỏ hộp ONE PIECE (OP-/EB-/PRB-/ST-) — tiêu đề là Pokémon (07/11 lẫn OP-01, EB-02)
+        pool = [i for i in cat("card") if i["key"].startswith("box:") and i["n_shops"] >= 3
+                and not re.match(r"box:(op|eb|prb|st)\d", i["key"]) and "ONE PIECE" not in i["name"].upper()]
         head, ask = "🃏 GIÁ THU MUA HỘP THẺ POKÉMON CAO NHẤT HÔM NAY", "Bạn đang giữ hộp nào? Comment tên hộp, mình xem giá giúp 👇"
     else:
         pool = [i for i in cat("game") if i["n_shops"] >= 3]

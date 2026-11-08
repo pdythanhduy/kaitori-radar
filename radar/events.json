@@ -1,29 +1,101 @@
 {
-  "_note": "Lịch phát hành / bốc thăm / bán online (Pokémon, iPhone, máy game). Mỗi mục phải có nguồn. Cron tin hot buổi sáng thêm/sửa mục đã kiểm chứng. date/end: YYYY-MM-DD (JST). match: chuỗi để tìm giá kai trong data (tuỳ chọn).",
-  "events": [
-    {"date": "2026-11-06", "time": "16:00", "end": "2026-11-10", "kind": "lottery", "title": "Pokémon Center Online: bốc thăm bổ sung ハドウシーカー (nhận đơn tới 10/11 16:59)",
-     "title_ja": "ハドウシーカー ポケモンセンターオンライン 追加抽選", "where": "Pokémon Center Online",
-     "note": "Theo SNKRDUNK / 入荷Now cập nhật 6/11; điều kiện (本人認証) xem trang chính thức.",
-     "src": "https://snkrdunk.com/articles/33599/", "match": "ハドウシーカー", "confirmed": true},
-    {"date": "2026-11-06", "time": "15:00", "kind": "lottery", "title": "Pokémon Center Online: gửi kết quả bốc thăm ピカピカボックス2027",
-     "title_ja": "ピカピカボックス2027 抽選結果発表", "where": "Pokémon Center Online (email)",
-     "note": "Nhận đơn 10/27–11/2. Trúng thì đặt hàng qua link trong email trước hạn, quá hạn mất suất.",
-     "src": "https://www.pokemon.co.jp/goods/2026/10/261023_to01.html", "match": "", "confirmed": true},
-    {"date": "2026-11-09", "time": "20:00", "kind": "online", "title": "Bán online Box Pokémon 30th CELEBRATION trên au PAY マーケット",
-     "title_ja": "au PAY マーケットで ポケカ 30th CELEBRATION BOX 販売", "where": "au PAY マーケット",
-     "note": "Theo thông báo được chia sẻ trong nhóm: cần Pontaパス và đăng ký メルマガ trước 13:00. Chưa thấy trang chính thức, xem lại trước khi mua.",
-     "src": "", "match": "30th CELEBRATION", "confirmed": false},
-    {"date": "2026-11-13", "kind": "release", "title": "Phát hành スペシャルデッキセットMEGA (メガオーダイル・メガカイリュー・メガゲンガー), 5.500円",
-     "title_ja": "スペシャルデッキセットMEGA 発売（5,500円）", "where": "Toàn quốc; Pokémon Center Online bán bằng bốc thăm",
-     "note": "Một số tiệm (カードラボ, トレカステーション) mở bốc thăm, mua trong khoảng 11/13–11/19.",
-     "src": "https://nyuka-now.com/archives/2459", "match": "スペシャルデッキセットMEGA", "confirmed": true},
-    {"date": "2026-11-17", "end": "2026-11-24", "kind": "lottery", "title": "Pokémon Center Online: đợt bốc thăm bổ sung (追加抽選)",
-     "title_ja": "ポケモンセンターオンライン 追加抽選", "where": "Pokémon Center Online",
-     "note": "Nhận đơn 11/17 15:00 → 11/24 16:59, gửi hàng 12/1–12/18. Sản phẩm cụ thể xem trên trang chính thức.",
-     "src": "https://nyuka-now.com/archives/2459", "match": "", "confirmed": true},
-    {"date": "2026-11-27", "kind": "release", "title": "Phát hành gói mở rộng ハドウシーカー (M7)",
-     "title_ja": "拡張パック ハドウシーカー（M7）発売", "where": "Toàn quốc",
-     "note": "Giá 1 gói các trang ghi khác nhau (200円 / 360円), xem trang chính thức. Một số cửa hàng (イトーヨーカドー・アリオ) bốc thăm, mua 11/27–11/29.",
-     "src": "https://snkrdunk.com/articles/15950/", "match": "ハドウシーカー", "confirmed": true}
-  ]
+ "_note": "Lịch phát hành / bốc thăm / bán online (Pokémon, iPhone, máy game). Mỗi mục phải có nguồn. Cron tin hot buổi sáng thêm/sửa mục đã kiểm chứng. date/end: YYYY-MM-DD (JST). match: chuỗi để tìm giá kai trong data (tuỳ chọn).",
+ "events": [
+  {
+   "date": "2026-11-06",
+   "time": "15:00",
+   "kind": "lottery",
+   "title": "Pokémon Center Online: gửi kết quả bốc thăm ピカピカボックス2027",
+   "title_ja": "ピカピカボックス2027 抽選結果発表",
+   "where": "Pokémon Center Online (email)",
+   "note": "Nhận đơn 10/27–11/2. Trúng thì đặt hàng qua link trong email trước hạn, quá hạn mất suất.",
+   "src": "https://www.pokemon.co.jp/goods/2026/10/261023_to01.html",
+   "match": "",
+   "confirmed": true
+  },
+  {
+   "date": "2026-11-06",
+   "time": "16:00",
+   "end": "2026-11-10",
+   "kind": "lottery",
+   "title": "Pokémon Center Online: bốc thăm bổ sung ハドウシーカー (nhận đơn tới 10/11 16:59)",
+   "title_ja": "ハドウシーカー ポケモンセンターオンライン 追加抽選",
+   "where": "Pokémon Center Online",
+   "note": "Theo SNKRDUNK / 入荷Now cập nhật 6/11; điều kiện (本人認証) xem trang chính thức.",
+   "src": "https://snkrdunk.com/articles/33599/",
+   "match": "ハドウシーカー",
+   "confirmed": true
+  },
+  {
+   "date": "2026-11-06",
+   "end": "2026-11-09",
+   "time": "23:59",
+   "kind": "lottery",
+   "title": "ファミマオンライン: bốc thăm ハドウシーカー (nhận đơn tới 9/11 23:59)",
+   "title_ja": "ハドウシーカー ファミマオンライン 抽選",
+   "where": "ファミマオンライン",
+   "note": "Theo SNKRDUNK cập nhật 6/11; điều kiện xem trang ファミマオンライン.",
+   "src": "https://snkrdunk.com/articles/33599/",
+   "match": "ハドウシーカー",
+   "confirmed": true
+  },
+  {
+   "date": "2026-11-09",
+   "time": "20:00",
+   "kind": "online",
+   "title": "Bán online Box Pokémon 30th CELEBRATION trên au PAY マーケット",
+   "title_ja": "au PAY マーケットで ポケカ 30th CELEBRATION BOX 販売",
+   "where": "au PAY マーケット",
+   "note": "Theo thông báo được chia sẻ trong nhóm: cần Pontaパス và đăng ký メルマガ trước 13:00. Chưa thấy trang chính thức, xem lại trước khi mua.",
+   "src": "",
+   "match": "30th CELEBRATION",
+   "confirmed": false
+  },
+  {
+   "date": "2026-11-10",
+   "end": "2026-11-15",
+   "kind": "lottery",
+   "title": "ふるいち八潮中央店 (Saitama): bốc thăm online Pokémon nhân dịp khai trương (10–15/11)",
+   "title_ja": "ふるいち八潮中央店 オープン記念 ポケカ オンライン抽選",
+   "where": "ふるいち八潮中央店 (online)",
+   "note": "Theo やしおん (tin địa phương Yashio). Sản phẩm, điều kiện xem thông báo của ふるいち.",
+   "src": "https://yashion.jp/news/46573/",
+   "match": "",
+   "confirmed": true
+  },
+  {
+   "date": "2026-11-13",
+   "kind": "release",
+   "title": "Phát hành スペシャルデッキセットMEGA (メガオーダイル・メガカイリュー・メガゲンガー), 5.500円",
+   "title_ja": "スペシャルデッキセットMEGA 発売（5,500円）",
+   "where": "Toàn quốc; Pokémon Center Online bán bằng bốc thăm",
+   "note": "Một số tiệm (カードラボ, トレカステーション) mở bốc thăm, mua trong khoảng 11/13–11/19.",
+   "src": "https://nyuka-now.com/archives/2459",
+   "match": "スペシャルデッキセットMEGA",
+   "confirmed": true
+  },
+  {
+   "date": "2026-11-17",
+   "end": "2026-11-24",
+   "kind": "lottery",
+   "title": "Pokémon Center Online: đợt bốc thăm bổ sung (追加抽選)",
+   "title_ja": "ポケモンセンターオンライン 追加抽選",
+   "where": "Pokémon Center Online",
+   "note": "Nhận đơn 11/17 15:00 → 11/24 16:59, gửi hàng 12/1–12/18. Sản phẩm cụ thể xem trên trang chính thức.",
+   "src": "https://nyuka-now.com/archives/2459",
+   "match": "",
+   "confirmed": true
+  },
+  {
+   "date": "2026-11-27",
+   "kind": "release",
+   "title": "Phát hành gói mở rộng ハドウシーカー (M7)",
+   "title_ja": "拡張パック ハドウシーカー（M7）発売",
+   "where": "Toàn quốc",
+   "note": "Giá 1 gói các trang ghi khác nhau (200円 / 360円), xem trang chính thức. Một số cửa hàng (イトーヨーカドー・アリオ) bốc thăm, mua 11/27–11/29.",
+   "src": "https://snkrdunk.com/articles/15950/",
+   "match": "ハドウシーカー",
+   "confirmed": true
+  }
+ ]
 }
