@@ -423,6 +423,7 @@ sao cho <b>không mất phí</b>. Nguyên tắc quan trọng nhất: <b>huỷ tr
 <li>Theo hướng dẫn của Apple (được trích lại trên Apple Community): thẻ tín dụng <b>bị tính tiền khi máy xuất kho</b>. Huỷ trước khi xuất kho thì thường chỉ là <b>tạm giữ hạn mức (与信)</b>, chưa phải trừ tiền thật, và việc mở lại hạn mức "có thể mất một thời gian".</li>
 <li>Mở lại hạn mức nhanh hay chậm <b>tuỳ công ty thẻ</b>. Người dùng kể từ vài ngày tới vài tuần, có trường hợp lâu hơn; đây là trải nghiệm cá nhân, không phải cam kết của Apple.</li>
 <li>Nếu đã bị tính tiền thật, tiền hoàn thường hiện thành <b>dòng âm (マイナス)</b> trên sao kê tháng sau hoặc tháng sau nữa.</li>
+<li><b>Thẻ debit (デビットカード)</b>: khác thẻ tín dụng, khoản tạm giữ lúc đặt hàng thường bị <b>trừ thẳng khỏi tài khoản</b>. Apple ghi tiền hoàn có thể mất <b>tới khoảng 30 ngày</b> mới hiện; người dùng debit trên Apple Community kể có ngân hàng mất <b>45–60 ngày</b> (tuỳ quy định từng ngân hàng). Quá 30 ngày chưa thấy thì hỏi cả Apple và ngân hàng phát hành thẻ. Nguồn: <a href="https://discussionsjapan.apple.com/thread/255794218" target="_blank" rel="noopener nofollow">Apple Community</a>.</li>
 <li>Thấy "trừ 2 lần": xem trong app thẻ khoản đó là <b>tạm giữ</b> hay <b>đã chốt</b>. Lâu không thấy thay đổi thì hỏi công ty thẻ và Apple (0120-993-993). Nguồn: <a href="https://discussionsjapan.apple.com/thread/255794218" target="_blank" rel="noopener nofollow">Apple Community</a>.</li>
 </ul>
 

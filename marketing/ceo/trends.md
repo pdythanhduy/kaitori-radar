@@ -1,20 +1,21 @@
 # Trend nóng hôm nay (lịch săn trend ghi; bình luận + bài nhóm đọc để chọn góc)
 
-**Quét lúc 08/11 12:20 JST**
+**Quét lúc 08/11 18:20 JST**
 
 ## ⚡ Giá đổi trong ngày (site/data, so tối 7/11)
-- iPhone/Duo/Switch 2/PS5: KHÔNG món nào đổi ≥2% hoặc ≥3k. 18PM 256 đỏ 230,5k · xanh 228k · đen 226k · bạc 225k (ルデヤ). Duo 256 369k · 512 424k (森森) · 1TB 498k.
-- Bảng lời/lỗ: không đổi dấu. Duo 256 vẫn mỏng nhất (+4,2k so app 364,8k); 18 Pro/PM vẫn lỗ.
-- Box: ストームエメラルダ 8,8k (▲200). Bỏ OP-05 ▼3k, EB-03 (ONE PIECE, ít liên quan nhóm).
+- iPhone/Duo/17/Switch 2/PS5: không món nào đổi ≥2% hoặc ≥3k. 18PM 256: đỏ/xanh 231k (森森), đen 227k, bạc 225k. 18 Pro 256 đỏ 201,5k (app 219,8k). 17PM 256 bạc 191,5k (PANDA), cam/xanh ~185k. Duo 256 369k.
+- Box: シャイニートレジャーex 17,5k → 16k (ルデヤ, ▼1,5k); ブラックボルトDX 25,6k (▲600). Không box hot nào ≥5%.
 
-## 🗣 Chủ đề nóng trong 53K (trưa CN)
-1. Rất nhiều bài rao 18PM 256 "bán cho ai về dùng" 23.3–23.5m (trắng, xanh, đỏ mận/Cherry), có bài "cắt lỗ", "app-7" → trả lời đúng màu: kai đỏ 230,5k, xanh 228k, bạc/trắng 225k, đen 226k; app 239,8k. Link /guide/gia-kai-iphone-18-pro-max/.
-2. Người tìm mua Duo trắng/đen (Tokyo, Osaka) → Duo 256 kai 369k, app 364,8k. Link /guide/gia-kai-iphone-duo/.
-3. Tìm 18PM 512 (trắng/đỏ) "kai +5s" → 512 đỏ 262,5k, bạc 257,5k. Link trang 18PM.
+## 🗣 Chủ đề nóng (32K, 53K chiều tối)
+1. Rao 18PM 256 "app−5…−11", 23.1–23.5m, 18 Pro đỏ 21m1 (nhiều máy) → so đúng màu với kai (rao thường trên kai 2–10k). Link trang 18PM / ?q=18 pro.
+2. 17PM seal trắng/cam rao ~196 và người tìm 17PM trắng → bạc 191,5k, cam/xanh ~185k. Link /guide/gia-kai-iphone-17-pro-max/.
+3. Hỏi tiền hoàn sau khi huỷ, trả bằng THẺ DEBIT (gần 1 tuần chưa về) → đã thêm vào /guide/huy-iphone/#hoantien: debit trừ thẳng, Apple ghi tới ~30 ngày, có ngân hàng 45–60 ngày (Apple Community).
+- Cảm xúc: "được thì ăn, lỗ thì chịu", cắt lỗ 18 Pro trắng → chỉ đưa số, không khuyên.
 
 ## 📰 Tin
-- Không có tin 24–48h mới về giá kai iPhone hay tái bản Pokémon. 双11 TQ (JD 18 Pro −300 tệ + 500 đổi máy) chạy tới ~11–13/11 (ifeng cuối 10).
+- Không có tin 24–48h mới về giá kai. Apple Community: hoàn tiền debit có thể 45–60 ngày tuỳ ngân hàng (bài cộng đồng, không phải cam kết Apple).
 
 ## 🎯 Góc đề xuất
-- Bình luận: bài rao 18PM 256 theo màu → so giá rao với kai đúng màu (rao thường cao hơn kai 3–10k). Bài tìm Duo → nói 256 chỉ hơn app ~4k.
-- Bài nhóm 13h (khung 2): giữ mặc định (so tiệm). 15h (khung 3): "🎨 18 PRO MAX 256: MÀU NÀO KAI CAO NHẤT HÔM NAY?" (đỏ 230,5k → bạc 225k, chênh 5,5k) + link /guide/gia-kai-iphone-18-pro-max/.
+- Bình luận: bài hỏi tiền hoàn/huỷ → link /guide/huy-iphone/#hoantien (giờ có mục debit). Bài 17PM → link trang 17PM.
+- Bài nhóm 19h (khung 4): "💳 HUỶ ĐƠN APPLE TRẢ BẰNG THẺ DEBIT: BAO LÂU TIỀN VỀ?" (30 ngày theo Apple, debit có thể 45–60 ngày, khi nào gọi ai) + link /guide/huy-iphone/#hoantien.
+- Bài nhóm 21h: giữ mặc định.
