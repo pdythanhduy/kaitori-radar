@@ -60,3 +60,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-07 | 22:55 | canhan | BỎ LƯỢT: hộp soạn bài trên ttduy95 treo ở khung xám 3 lần (đã chọn góc 'Duo giảm 3,5–5,5K, box Pokémon lên nhẹ') | -
 2026-11-08 | 08:20 | tinhot | BỎ LƯỢT: Facebook treo màn logo / hộp soạn không mở 3 lần; bài nháp ở marketing/drafts/2026-11-08-tinhot.md | -
 2026-11-08 | 08:22 | tinhot | 🔥 POKÉMON & iPHONE: TIN HOT HÔM NAY 08/11 (hạn chót bốc thăm tối 8/11, FamiMa 9/11, PCO 10/11, ふるいち 10–15/11, Duo có hàng au/楽天; đăng lại sau khi FB hết treo; Thành Duy) | https://www.facebook.com/groups/1118827834446963
+2026-11-08 | 11:52 | 1 | 💰 HÔM NAY MUA iPHONE GIÁ APPLE RỒI BÁN KAI THÌ LỜI HAY LỖ? | https://www.facebook.com/groups/1118827834446963 (Thành Duy; link ?v=profit)
