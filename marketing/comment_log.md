@@ -123,3 +123,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-07 | 22:52 | 109K | posts/2240134826886512 | [ngắn] RubyArugula2299 21:51: bán 17 256 seal 14m (Thành Duy) → 17 256 xanh kai ~139k (PANDA), 14m nhỉnh hơn kai + /vi/?q=iPhone 17
 2026-11-07 | 23:19 | 85K | posts/1738733833891385 | [ngắn] Võ Hoàng Dương 22:48: 16plus + 7m5 đổi 17PM, Osaka (Thành Duy) → 17PM256 seal bạc ~191k, cam/xanh ~185k, 16plus phải ~11m mới khớp + mời nhóm + /vi/?q=17 pro max
 2026-11-08 | 09:49 | 53K | posts/1606558994120045 | [ngắn] Trần Đức Nguyên 9:26: rao 18PM 256 trắng 23m / đỏ 23.4 / 512 đỏ 26.9 Osaka (Thành Duy) → kai tối qua 256 đỏ 230.5k, bạc 225k, 512 đỏ 262.5k (ルデヤ), rao trên kai 3–6k + /guide/gia-kai-iphone-18-pro-max/
+2026-11-08 | 10:18 | 85K | posts/1739243450507090 | [ngắn] デイン ルック 10:00: bán 16PM 256 titan dùng rồi 14m Shizuoka (Thành Duy) → mốc seal ~190k (ゲストモバイル), máy dùng tuỳ pin/ngoại hình + /vi/?q=16 pro max
