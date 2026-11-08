@@ -131,3 +131,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-08 | 13:14 | 85K | posts/1739352510496184 | [ngắn] Đỗ Hoàng Vy 12:35: bán 18PM 256 bạc dùng 1 tháng 22m, lên Duo (Thành Duy) → seal bạc ~225k (mốc trên), Duo 256 kai 369k / app 364.8k + /guide/gia-kai-iphone-18-pro-max/
 2026-11-08 | 13:44 | 109K | posts/2240812720152056 | [ngắn] Paul Nguyễn Hùng 12:57: bán 17 Pro 256 xanh dùng rồi 15m9 Tochigi (Thành Duy) → seal xanh ~174.5k (PANDA), máy dùng dưới mốc + /vi/?q=17 pro
 2026-11-08 | 14:14 | 53K | posts/1606731780769433 | [ngắn] Dekki1000000 13:31: bán 18PM 256+512 đen app−1.1man Tokyo (Thành Duy) → kai đen 256 ~227k, 512 ~258.5k, rao trên kai 2–5k + mời nhóm + /guide/gia-kai-iphone-18-pro-max/
+2026-11-08 | 14:44 | 32K | posts/1453874136718079 | [ngắn] Nguyễn Ngọc Ánh 14:25: xin giá Duo trắng 256 Osaka (Thành Duy) → kai trắng 368.5k (ルデヤ), app 364.8k + /vi/?q=duo 256
