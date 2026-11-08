@@ -68,3 +68,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-08 | 21:15 | pokemon-daily | 📖 NÓI "SET 9", "DEKKI MÈO"… TIỆM ĐANG THU BAO NHIÊU? (kèm ảnh long-1108.png, Thành Duy; FB đang ở page Nhật Bản 24H → chuyển về Duy trước khi gõ; duyệt ngay, đã bình luận link 21:16; bài 06/11 cũng đã duyệt, CHƯA bình luận link) | https://www.facebook.com/groups/pokemonae/posts/1753304632434495/
 2026-11-08 | 21:53 | 5 | BỎ LƯỢT: tiện ích Chrome chưa kết nối (đổi tài khoản Claude Code sang thanhduy8vn) | -
 2026-11-08 | 22:06 | 5 | 🎮 GIÁ THU MUA MÁY GAME HÔM NAY | https://www.facebook.com/groups/1118827834446963 (đăng bù 22:06 sau khi nối lại Chrome; Thành Duy)
+2026-11-08 | 22:50 | canhan | BỎ LƯỢT: trang ttduy95 treo (không phản hồi 3 lần); bài soạn sẵn 'TỐI 8/11: GIÁ THU iPHONE ĐANG BAO NHIÊU? (cùng máy khác màu khác giá)' | -
