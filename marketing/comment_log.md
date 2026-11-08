@@ -126,3 +126,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-08 | 10:18 | 85K | posts/1739243450507090 | [ngắn] デイン ルック 10:00: bán 16PM 256 titan dùng rồi 14m Shizuoka (Thành Duy) → mốc seal ~190k (ゲストモバイル), máy dùng tuỳ pin/ngoại hình + /vi/?q=16 pro max
 2026-11-08 | 10:49 | 109K | posts/2240690086830986 | [ngắn] ẩn danh 10:08: 17PM cam + 5m đổi 18PM đỏ, Saitama (Thành Duy) → seal 18PM256 đỏ 230.5k vs 17PM256 cam ~185k, chênh ~45k + mời nhóm + /guide/gia-kai-iphone-18-pro-max/
 2026-11-08 | 11:18 | 32K | posts/1453736673398492 | [ngắn] EagerAvocado7008 10:59: bán 18PM 256 đỏ 23m5 (Thành Duy) → kai đỏ 230.5k (ルデヤ), app 239.8 + /vi/?q=18 pro max
+2026-11-08 | 12:15 | 53K | posts/1606675947441683 | big-53K bài của mình + link /guide/gia-kai-iphone-duo/

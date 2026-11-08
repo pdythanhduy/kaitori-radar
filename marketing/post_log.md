@@ -61,3 +61,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-08 | 08:20 | tinhot | BỎ LƯỢT: Facebook treo màn logo / hộp soạn không mở 3 lần; bài nháp ở marketing/drafts/2026-11-08-tinhot.md | -
 2026-11-08 | 08:22 | tinhot | 🔥 POKÉMON & iPHONE: TIN HOT HÔM NAY 08/11 (hạn chót bốc thăm tối 8/11, FamiMa 9/11, PCO 10/11, ふるいち 10–15/11, Duo có hàng au/楽天; đăng lại sau khi FB hết treo; Thành Duy) | https://www.facebook.com/groups/1118827834446963
 2026-11-08 | 11:52 | 1 | 💰 HÔM NAY MUA iPHONE GIÁ APPLE RỒI BÁN KAI THÌ LỜI HAY LỖ? | https://www.facebook.com/groups/1118827834446963 (Thành Duy; link ?v=profit)
+2026-11-08 | 12:15 | big-53K | 📉 DUO 1 TUẦN GIẢM 5–9K: MUA GIÁ APPLE BÁN KAI CÒN LỜI BAO NHIÊU? (không link, lên ngay không chờ duyệt; đã bình luận link /guide/gia-kai-iphone-duo/; chạy bù trưa; Thành Duy) | https://www.facebook.com/groups/713324666776820/posts/1606675947441683/
