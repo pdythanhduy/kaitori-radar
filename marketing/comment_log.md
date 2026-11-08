@@ -133,3 +133,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-08 | 14:14 | 53K | posts/1606731780769433 | [ngắn] Dekki1000000 13:31: bán 18PM 256+512 đen app−1.1man Tokyo (Thành Duy) → kai đen 256 ~227k, 512 ~258.5k, rao trên kai 2–5k + mời nhóm + /guide/gia-kai-iphone-18-pro-max/
 2026-11-08 | 14:44 | 32K | posts/1453874136718079 | [ngắn] Nguyễn Ngọc Ánh 14:25: xin giá Duo trắng 256 Osaka (Thành Duy) → kai trắng 368.5k (ルデヤ), app 364.8k + /vi/?q=duo 256
 2026-11-08 | 15:16 | 53K | posts/1606800054095939 | [ngắn] vippro7262 15:05: tìm 18PM đỏ 256 Osaka, trả 23m1 (Thành Duy) → kai đỏ 森森 231k / ルデヤ 230.5k, 23m1 ngang tiệm cao nhất + /guide/gia-kai-iphone-18-pro-max/ (85K, 109K không có bài máy mới)
+2026-11-08 | 15:44 | 32K | posts/1453900300048796 | [ngắn] ShinyKiwi2538H 15:09: tìm 18PM 512 giá kai+2s, Ebina (Thành Duy; bài 7 bình luận) → kai 512 đỏ 262.5k / xanh 260.5k / bạc 257.5k, kai+2 = 259.5–264.5k + mời nhóm + /vi/?q=18 pro max 512
