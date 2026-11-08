@@ -1,24 +1,20 @@
 # Trend nóng hôm nay (lịch săn trend ghi; bình luận + bài nhóm đọc để chọn góc)
 
-**Quét lúc 07/11 18:20 JST**
+**Quét lúc 08/11 12:20 JST**
 
-## ⚡ Giá đổi trong ngày (site/data, so tối 6/11)
-- **Duo giảm cả dải** (ルデヤ dẫn đầu): 256 372,5k → 369k (▼3,5k), 512 429k → 423,5k (▼5,5k), 1TB 503k → 498k, 2TB 609k → 604k. ゲストモバイル không còn trả 372k. Lời Duo 256 so app (364,8k) còn +4,2k (sáng +7,7k); 512 còn +23,7k.
-- 18 Pro 1TB 302,5k (▼3,5k), 2TB 375k (▼3k). 18PM 256 đứng 230,5k (đỏ), xanh 228k, bạc 225k (ルデヤ).
-- Box: ニンジャスピナー 9,1k (▲600, 森森), バトルパートナーズ 9,7k (▲200).
-- Bỏ: OP-06/OP-03 giảm >1000% (lỗi ghép split_mixed còn sót), 17 Pro 1TB +9k (chỉ ゲストモバイル).
-- Bảng lời/lỗ: không mẫu nào đổi dấu; Duo 256 là mẫu lời mỏng nhất, cần theo dõi.
+## ⚡ Giá đổi trong ngày (site/data, so tối 7/11)
+- iPhone/Duo/Switch 2/PS5: KHÔNG món nào đổi ≥2% hoặc ≥3k. 18PM 256 đỏ 230,5k · xanh 228k · đen 226k · bạc 225k (ルデヤ). Duo 256 369k · 512 424k (森森) · 1TB 498k.
+- Bảng lời/lỗ: không đổi dấu. Duo 256 vẫn mỏng nhất (+4,2k so app 364,8k); 18 Pro/PM vẫn lỗ.
+- Box: ストームエメラルダ 8,8k (▲200). Bỏ OP-05 ▼3k, EB-03 (ONE PIECE, ít liên quan nhóm).
 
-## 🗣 Chủ đề nóng trong nhóm 32K/53K (chiều tối)
-1. Rao 18PM 256 đỏ 23.5 / trắng 23 / xanh-tím 23.3, "app −7" cho 512 → trả lời: màu bạc kai thấp nhất (225k), xanh 228k, đỏ 230,5k; app 239,8. Link trang 18PM.
-2. Tìm Duo 256 trắng/đen giá 368 (Namba, Sakae) → kai trắng 368,5k, đang tụt; link trang Duo.
-3. Hỏi nhận máy: "Yamato không hẹn nhận tại cửa hàng được nữa", "khi nào nhận máy", "huỷ vì lùi lịch bao lâu hoàn tiền" → /guide/huy-iphone/#hoantien (chưa có nguồn chính thức về đổi chính sách Yamato, KHÔNG khẳng định).
-4. Kèo nhà mạng (visa tokutei, lấy máy 1円) → /vi/?v=deals, nhắc 44.000円, cước, danh sách đen.
+## 🗣 Chủ đề nóng trong 53K (trưa CN)
+1. Rất nhiều bài rao 18PM 256 "bán cho ai về dùng" 23.3–23.5m (trắng, xanh, đỏ mận/Cherry), có bài "cắt lỗ", "app-7" → trả lời đúng màu: kai đỏ 230,5k, xanh 228k, bạc/trắng 225k, đen 226k; app 239,8k. Link /guide/gia-kai-iphone-18-pro-max/.
+2. Người tìm mua Duo trắng/đen (Tokyo, Osaka) → Duo 256 kai 369k, app 364,8k. Link /guide/gia-kai-iphone-duo/.
+3. Tìm 18PM 512 (trắng/đỏ) "kai +5s" → 512 đỏ 262,5k, bạc 257,5k. Link trang 18PM.
 
 ## 📰 Tin
-- Pokémon Card tăng giá pack 200円 → 230円 từ bản phát hành 5/2027 (ORICON NEWS 6/11). Chưa có tin mới 24h về giá kai iPhone/Duo.
+- Không có tin 24–48h mới về giá kai iPhone hay tái bản Pokémon. 双11 TQ (JD 18 Pro −300 tệ + 500 đổi máy) chạy tới ~11–13/11 (ifeng cuối 10).
 
 ## 🎯 Góc đề xuất
-- Bình luận: bài rao/tìm Duo → "duo đang tụt nhẹ, 256 còn hơn app ~4k" (đúng số giờ đó). Bài 18PM theo màu → nói đúng màu.
-- Bài nhóm 19h (khung 4): "📉 DUO GIẢM 3,5–5,5K HÔM NAY: CÒN LỜI BAO NHIÊU SO VỚI GIÁ APPLE?" (4 dung lượng: kai, app, chênh) + link /vi/?v=profit.
-- Bài nhóm 21h: giữ mặc định.
+- Bình luận: bài rao 18PM 256 theo màu → so giá rao với kai đúng màu (rao thường cao hơn kai 3–10k). Bài tìm Duo → nói 256 chỉ hơn app ~4k.
+- Bài nhóm 13h (khung 2): giữ mặc định (so tiệm). 15h (khung 3): "🎨 18 PRO MAX 256: MÀU NÀO KAI CAO NHẤT HÔM NAY?" (đỏ 230,5k → bạc 225k, chênh 5,5k) + link /guide/gia-kai-iphone-18-pro-max/.
