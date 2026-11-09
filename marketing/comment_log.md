@@ -146,3 +146,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-08 | 22:46 | 32K | posts/1454198740018952 | [ngắn] ẩn danh 22:08: bán 18PM 256 trắng 23m5 Tokyo (Thành Duy; FB lại ở page Nhật Bản 24H lần 3 → chuyển về Duy trước) → kai bạc 225k, trả 23m hơn tiệm 5k, 23m5 hơn 10k + /vi/?q=18 pro max
 2026-11-09 | 17:51 | 53K | posts/1607930333982911 | [ngắn] Lưu Thảo: hỏi giá 18PM 256 trắng → bạc 225k, trừ ~7k so đỏ 232k + link guide 18PM
 2026-11-09 | 18:22 | 32K | posts/1454911666614326 | [ngắn] SupportiveGoldfish6163: bán 18PM 256 trắng 23m Osaka → bạc kai 225k, rao trên kai ~5k + link ?q=18 pro max
+2026-11-09 | 18:53 | 109K | posts/2241923633374298 | [ngắn] Bảo Ngọc Trâm: 16PM 256 titan đổi bảo hành → seal mốc trên ~188k (GUEST), hỏi tiệm trước + mời nhóm + link ?q=16 pro max
