@@ -71,3 +71,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-08 | 22:50 | canhan | BỎ LƯỢT: trang ttduy95 treo (không phản hồi 3 lần); bài soạn sẵn 'TỐI 8/11: GIÁ THU iPHONE ĐANG BAO NHIÊU? (cùng máy khác màu khác giá)' | -
 2026-11-09 | 19:26 | 4 | 📈 DUO TĂNG LẠI 2 NGÀY: 256GB 374,5K, 512GB 429,5K (góc trend thay khung 4) | https://www.facebook.com/groups/1118827834446963/posts/1127165330279880/
 2026-11-09 | 21:15 | pokemon-daily | 🎟 TRÚNG CHYU 30TH RỒI? CÙNG 1 HỘP, TIỆM CAO VÀ TIỆM THẤP CHÊNH TỚI 5.000円 (kèm ảnh chenh-1109.png, Thành Duy) – báo chờ duyệt, được duyệt ngay; đã bình luận link 21:20. Bổ sung link bài 06/11 (posts/1751300885968203, đã duyệt). Bài 05/11 (page Nhật Bản 24H) không thấy dưới Duy | https://www.facebook.com/groups/pokemonae/posts/1754362902328668/
+2026-11-09 | 21:34 | 5 | 🃏 GIÁ THU MUA HỘP THẺ POKÉMON CAO NHẤT HÔM NAY | 
