@@ -148,3 +148,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-09 | 18:22 | 32K | posts/1454911666614326 | [ngắn] SupportiveGoldfish6163: bán 18PM 256 trắng 23m Osaka → bạc kai 225k, rao trên kai ~5k + link ?q=18 pro max
 2026-11-09 | 18:53 | 109K | posts/2241923633374298 | [ngắn] Bảo Ngọc Trâm: 16PM 256 titan đổi bảo hành → seal mốc trên ~188k (GUEST), hỏi tiệm trước + mời nhóm + link ?q=16 pro max
 2026-11-09 | 19:23 | 53K | posts/1607930890649522 | [ngắn] HonestAvocado7196: huỷ máy hơn tháng chưa hoàn tiền → xem tạm giữ/đã trừ, 30 ngày Apple, 45–60 ngày tuỳ thẻ, gọi công ty thẻ + link #hoantien
+2026-11-09 | 19:53 | 32K | posts/1455023273269832 | [ngắn] LivelyChestnut8507: đổi 18PM 256 đỏ sang 18 Pro 512 đỏ → kai 232k vs 236k, chênh ~4k + link guide 18 Pro
