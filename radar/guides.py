@@ -553,6 +553,13 @@ hoặc máy rẻ tiền. Người mua không dám bóc vì sợ mất giá "chư
 <li>Giá trị lớn thì ưu tiên tiền mặt, đếm tại chỗ ở nơi đông người.</li>
 </ul>
 
+<h2>🎁 "Bạn trúng iPhone, chuyển phí để nhận máy"</h2>
+<ul class="tips">
+<li>Tin nhắn / cuộc gọi báo "trúng thưởng iPhone 18 Pro Max", rồi đòi chuyển trước "phí ship", "thuế", "phí nhận thưởng" là kiểu lừa quen thuộc. <b>Giải thưởng thật không bắt bạn trả tiền trước để nhận.</b></li>
+<li>Không chuyển tiền, không gửi ảnh thẻ cư trú, mã OTP hay thông tin thẻ cho bên "trao giải". Muốn chắc thì tự tìm số điện thoại chính thức của bên tổ chức để hỏi, đừng gọi lại số trong tin nhắn.</li>
+<li>Đã lỡ chuyển: giữ lại tin nhắn và biên lai, báo ngân hàng ngay và gọi cảnh sát <b>#9110</b>.</li>
+</ul>
+
 <h2>🔒 Máy bị khoá hoặc bị chặn mạng</h2>
 <ul class="tips">
 <li><b>Khoá kích hoạt (Tìm iPhone / iCloud):</b> máy đã kích hoạt mà người bán không đăng xuất được iCloud thì máy gần như vô dụng.</li>
