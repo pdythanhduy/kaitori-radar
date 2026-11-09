@@ -1,21 +1,21 @@
 # Trend nóng hôm nay (lịch săn trend ghi; bình luận + bài nhóm đọc để chọn góc)
 
-**Quét lúc 08/11 18:20 JST**
+**Quét lúc 09/11 17:40 JST** (Chrome không kết nối → chưa đọc nhóm FB lượt này)
 
-## ⚡ Giá đổi trong ngày (site/data, so tối 7/11)
-- iPhone/Duo/17/Switch 2/PS5: không món nào đổi ≥2% hoặc ≥3k. 18PM 256: đỏ/xanh 231k (森森), đen 227k, bạc 225k. 18 Pro 256 đỏ 201,5k (app 219,8k). 17PM 256 bạc 191,5k (PANDA), cam/xanh ~185k. Duo 256 369k.
-- Box: シャイニートレジャーex 17,5k → 16k (ルデヤ, ▼1,5k); ブラックボルトDX 25,6k (▲600). Không box hot nào ≥5%.
+## ⚡ Giá đổi trong ngày (site/data 17:12, so 8/11)
+- Duo tăng: 256GB 371k → 374,5k (▲3,5k, 森森; ルデヤ 373k, trắng 367–370k), 512GB 425k → 429,5k (▲4,5k), 2TB 607k (▲3k). Duo 256 giá Apple 364,8k → kai cao hơn ~9,7k.
+- 18PM 256: 232k (森森 đỏ; đen 226k, bạc 225k) · 18 Pro 256 đỏ 202k (ルデヤ; bạc 192–194k) · 17PM 256 bạc 191,5k (PANDA), cam/xanh ~184–185k. Không đổi ≥2%.
+- Box: ブラックボルト 22,5k (▼500, 1丁目), シャイニートレジャー 9,6k (▼200). EB-01 +22% chỉ do 森森 19,5k (tiệm khác 15,5–16k) → nghi lệch, không dùng.
 
-## 🗣 Chủ đề nóng (32K, 53K chiều tối)
-1. Rao 18PM 256 "app−5…−11", 23.1–23.5m, 18 Pro đỏ 21m1 (nhiều máy) → so đúng màu với kai (rao thường trên kai 2–10k). Link trang 18PM / ?q=18 pro.
-2. 17PM seal trắng/cam rao ~196 và người tìm 17PM trắng → bạc 191,5k, cam/xanh ~185k. Link /guide/gia-kai-iphone-17-pro-max/.
-3. Hỏi tiền hoàn sau khi huỷ, trả bằng THẺ DEBIT (gần 1 tuần chưa về) → đã thêm vào /guide/huy-iphone/#hoantien: debit trừ thẳng, Apple ghi tới ~30 ngày, có ngân hàng 45–60 ngày (Apple Community).
-- Cảm xúc: "được thì ăn, lỗ thì chịu", cắt lỗ 18 Pro trắng → chỉ đưa số, không khuyên.
+## 🗣 Chủ đề nóng (dữ liệu tối 8/11, chưa quét lại)
+1. Rao 18PM 256 "app−5…−11" → so đúng màu với kai (đỏ 232k, đen 226k).
+2. Tìm/rao 17PM trắng/cam → bạc 191,5k, cam/xanh ~185k; link /guide/gia-kai-iphone-17-pro-max/.
+3. Tiền hoàn sau huỷ trả bằng debit → /guide/huy-iphone/#hoantien.
 
 ## 📰 Tin
-- Không có tin 24–48h mới về giá kai. Apple Community: hoàn tiền debit có thể 45–60 ngày tuỳ ngân hàng (bài cộng đồng, không phải cam kết Apple).
+- Không có tin 24–48h có nguồn về giá kai Duo hay ポケカ 再販/抽選 tuần này.
 
 ## 🎯 Góc đề xuất
-- Bình luận: bài hỏi tiền hoàn/huỷ → link /guide/huy-iphone/#hoantien (giờ có mục debit). Bài 17PM → link trang 17PM.
-- Bài nhóm 19h (khung 4): "💳 HUỶ ĐƠN APPLE TRẢ BẰNG THẺ DEBIT: BAO LÂU TIỀN VỀ?" (30 ngày theo Apple, debit có thể 45–60 ngày, khi nào gọi ai) + link /guide/huy-iphone/#hoantien.
+- Bình luận: bài rao/hỏi Duo → "Duo 256 đen đang 374,5k, cao hơn giá Apple ~10k" + /guide/gia-kai-iphone-duo/.
+- Bài nhóm 19h (khung 4): "📈 DUO TĂNG LẠI 3 NGÀY: 256GB 374,5K, 512GB 429,5K" (so 7/11 369k/423,5k, giá Apple 364,8k, màu trắng thấp hơn 4,5–6k) + link /guide/gia-kai-iphone-duo/. Ghi "giá lúc 17:12, là giá đã qua".
 - Bài nhóm 21h: giữ mặc định.
