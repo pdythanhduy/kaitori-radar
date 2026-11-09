@@ -69,3 +69,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-08 | 21:53 | 5 | BỎ LƯỢT: tiện ích Chrome chưa kết nối (đổi tài khoản Claude Code sang thanhduy8vn) | -
 2026-11-08 | 22:06 | 5 | 🎮 GIÁ THU MUA MÁY GAME HÔM NAY | https://www.facebook.com/groups/1118827834446963 (đăng bù 22:06 sau khi nối lại Chrome; Thành Duy)
 2026-11-08 | 22:50 | canhan | BỎ LƯỢT: trang ttduy95 treo (không phản hồi 3 lần); bài soạn sẵn 'TỐI 8/11: GIÁ THU iPHONE ĐANG BAO NHIÊU? (cùng máy khác màu khác giá)' | -
+2026-11-09 | 19:26 | 4 | 📈 DUO TĂNG LẠI 2 NGÀY: 256GB 374,5K, 512GB 429,5K (góc trend thay khung 4) | https://www.facebook.com/groups/1118827834446963/posts/1127165330279880/
