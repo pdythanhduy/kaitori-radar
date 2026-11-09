@@ -144,3 +144,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-08 | 21:16 | Pokémon 96K (pokemonae) | posts/1753304632434495 | pokemon-daily + link (bảng tên lóng → giá kai) → /guide/gia-kai-pokemon-box/
 2026-11-08 | 22:17 | 53K | posts/1607111667398111 | [ngắn] PastelPersimmon8165 22:00: hàng pick up store có trả qua Yamato được không (Thành Duy) → bắt đầu từ ご注文状況→返品を開始する, chưa chắc thì gọi Apple 0120-993-993, 14 ngày/đủ hộp/tắt Tìm iPhone + /guide/tra-iphone-apple/
 2026-11-08 | 22:46 | 32K | posts/1454198740018952 | [ngắn] ẩn danh 22:08: bán 18PM 256 trắng 23m5 Tokyo (Thành Duy; FB lại ở page Nhật Bản 24H lần 3 → chuyển về Duy trước) → kai bạc 225k, trả 23m hơn tiệm 5k, 23m5 hơn 10k + /vi/?q=18 pro max
+2026-11-09 | 17:51 | 53K | posts/1607930333982911 | [ngắn] Lưu Thảo: hỏi giá 18PM 256 trắng → bạc 225k, trừ ~7k so đỏ 232k + link guide 18PM
