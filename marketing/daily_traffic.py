@@ -125,6 +125,8 @@ def report() -> str:
 
 def send(text: str):
     tok, chat = E.get("TELEGRAM_BOT_TOKEN"), E.get("TELEGRAM_CHAT_ID")
+    import html  # escape mọi thứ, chỉ giữ thẻ <b> (vd '<5s', '>7 ngày' làm Telegram báo 400)
+    text = html.escape(text, quote=False).replace("&lt;b&gt;", "<b>").replace("&lt;/b&gt;", "</b>")
     r = requests.post(f"https://api.telegram.org/bot{tok}/sendMessage", timeout=45,
                       data={"chat_id": chat, "text": text[:4000], "parse_mode": "HTML", "disable_web_page_preview": "true"})
     if not r.ok:
