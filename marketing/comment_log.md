@@ -151,3 +151,5 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-09 | 19:53 | 32K | posts/1455023273269832 | [ngắn] LivelyChestnut8507: đổi 18PM 256 đỏ sang 18 Pro 512 đỏ → kai 232k vs 236k, chênh ~4k + link guide 18 Pro
 2026-11-09 | 20:24 | 53K | posts/1608045533971391 | [ngắn] BreathtakingElk5613: lần đầu huỷ đơn bao giờ hoàn tiền → tạm giữ trước xuất kho, ~30 ngày nếu đã trừ, Apple 0120-993-993 + mời nhóm + link #hoantien
 2026-11-09 | 20:54 | 32K | posts/1455053779933448 | [ngắn] ẩn danh: bán 18PM 256 đỏ + 512 xanh Osaka → kai đỏ 256 232k (森森), xanh 512 260.5k (ルデヤ) + link guide 18PM
+2026-11-09 | 21:17 | Pokémon 96K (pokemonae) | posts/1754362902328668 | pokemon-daily + link (chênh tiệm 30th, chyu)
+2026-11-09 | 21:17 | Pokémon 96K (pokemonae) | posts/1751300885968203 | link bổ sung bài 06/11 (đã duyệt, trước chưa có link)
