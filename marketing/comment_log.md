@@ -150,3 +150,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-09 | 19:23 | 53K | posts/1607930890649522 | [ngắn] HonestAvocado7196: huỷ máy hơn tháng chưa hoàn tiền → xem tạm giữ/đã trừ, 30 ngày Apple, 45–60 ngày tuỳ thẻ, gọi công ty thẻ + link #hoantien
 2026-11-09 | 19:53 | 32K | posts/1455023273269832 | [ngắn] LivelyChestnut8507: đổi 18PM 256 đỏ sang 18 Pro 512 đỏ → kai 232k vs 236k, chênh ~4k + link guide 18 Pro
 2026-11-09 | 20:24 | 53K | posts/1608045533971391 | [ngắn] BreathtakingElk5613: lần đầu huỷ đơn bao giờ hoàn tiền → tạm giữ trước xuất kho, ~30 ngày nếu đã trừ, Apple 0120-993-993 + mời nhóm + link #hoantien
+2026-11-09 | 20:54 | 32K | posts/1455053779933448 | [ngắn] ẩn danh: bán 18PM 256 đỏ + 512 xanh Osaka → kai đỏ 256 232k (森森), xanh 512 260.5k (ルデヤ) + link guide 18PM
