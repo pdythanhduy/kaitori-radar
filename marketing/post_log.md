@@ -81,3 +81,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-10 | 19:25 | 4 | 📉 BOX 30th GIẢM CÒN 20.200円, FUTURISTIC 47.500円: GIÁ HỘP POKÉMON TỐI NAY (góc trend thay khung 4: bản mặc định 予約買取 chỉ 2 dòng; Thành Duy) | https://www.facebook.com/groups/1118827834446963
 2026-11-10 | 21:14 | pokemon-daily | 📊 HỌ 30th ĐANG HẠ NHIỆT, NINJA SPINNER LẠI TĂNG (kèm ảnh gia10ngay-1110.png, Thành Duy) – CHỜ DUYỆT; chưa bình luận link (đã đủ 25/25 hôm nay) → bình luận link ngày mai khi được duyệt | https://www.facebook.com/groups/pokemonae/my_pending_content
 2026-11-10 | 21:33 | 5 | 🎮 GIÁ THU MUA MÁY GAME HÔM NAY | https://www.facebook.com/groups/1118827834446963
+2026-11-10 | 22:47 | canhan | BỎ LƯỢT: Chrome extension 'not connected' (Claude Code vừa đăng nhập tài khoản khác, tiện ích còn ở tài khoản cũ); góc định đăng 'TỐI 10/11: BOX 30th GIẢM CÒN 20,2K, DUO 512 TĂNG 3K' | -
