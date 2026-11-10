@@ -111,43 +111,54 @@ def fair(it) -> list[tuple[int, str]]:
 
 
 def post2() -> str:
+    # 10/11: so tiệm cao nhất với MỨC ĐA SỐ tiệm (trung vị), không so với 1 tiệm thấp lẻ (vd ルデヤ 200k khi 4 tiệm 220k)
     pool = []
     for c in ("phone", "game", "tablet"):
         for i in cat(c):
             f = fair(i)
             if len(f) >= 4 and f[0][0] >= 20000:
-                pool.append((i, f))
+                med = f[len(f) // 2][0]
+                n_med = sum(1 for p, _ in f if p == med)
+                if f[0][0] - med >= 3000:
+                    pool.append((i, f, med, n_med))
     if not pool:
         return ""
-    pool.sort(key=lambda x: (x[1][0][0] - x[1][-1][0]) / x[1][0][0], reverse=True)
+    pool.sort(key=lambda x: (x[1][0][0] - x[2]) / x[1][0][0], reverse=True)
     top = pool[:4]
-    L = ["🔀 CÙNG 1 MÓN, BÁN SAI TIỆM LÀ MẤT TIỀN", "", "Hôm nay chênh lệch lớn nhất giữa các tiệm:"]
-    for i, f in top:
-        (hp, hs), (lp, ls) = f[0], f[-1]
+    L = ["🔀 CÙNG 1 MÓN, BÁN SAI TIỆM LÀ MẤT TIỀN", "", "Hôm nay tiệm trả cao nhất so với mức đa số tiệm trả:"]
+    for i, f, med, n_med in top:
+        hp, hs = f[0]
         r = " (森森: mã giới thiệu 75798 được coupon 3.000円 khi đăng ký mới)" if hs == "morimori" else ""
-        L.append(f"• {short(i['name'])}: {shop(hs)} trả {yen(hp)}, {shop(ls)} chỉ {yen(lp)} → chênh {yen(hp - lp)}{r}")
-    top = [i for i, _ in top]
+        many = f"{n_med} tiệm khác" if n_med >= 2 else "mức giữa các tiệm"
+        L.append(f"• {short(i['name'])}: {shop(hs)} trả {yen(hp)}, {many} {yen(med)} → chênh {yen(hp - med)}{r}")
+    top = [x[0] for x in top]
     L += ["", "Cách kiếm thêm đơn giản nhất không cần vốn: đồ bạn ĐÃ có (máy cũ, máy game, hộp thẻ…) đừng bán ở tiệm gần nhà theo thói quen. "
-              "So giá trước 1 phút, nhiều khi được thêm cả chục nghìn yên. Ở xa thì hầu hết các tiệm nhận gửi bưu điện (郵送買取).",
+              "So giá trước 1 phút, nhiều khi được thêm cả chục nghìn yên. Ở xa thì nhiều tiệm nhận gửi bưu điện (郵送買取).",
               "(Mỗi tiệm có điều kiện riêng về tình trạng máy, phụ kiện, bảo hành; xem ghi chú từng tiệm trên web trước khi gửi.)"]
     return "\n".join(L) + FOOT.format(url=q(top[0]["name"]), upd=updated())
 
 
 # ------------------------------------------------------------------ 3. biến động giá
 def post3() -> str:
-    mv = json.loads((DATA / "movers.json").read_text(encoding="utf-8"))
-    ok = lambda i: i.get("cat") in ("phone", "game", "card", "tablet") and i.get("best", 0) >= 10000
-    big = lambda a: sorted([i for i in a if ok(i) and abs(i.get("mv", 0)) >= 1000], key=lambda i: -abs(i["mv"]))[:4]
-    up, dn = big(mv.get("up", [])), big(mv.get("down", []))
-    if not up and not dn:
+    # 10/11: lấy từ món nhiều tiệm (≥4, giá không lệch lẻ) có `chg` so với hôm qua, thay vì movers.json
+    # (movers hay toàn món 2 tiệm ít người quan tâm: iPad mini 1 tiệm, Galaxy A57, Pixel 8a…)
+    pool = []
+    for c in ("phone", "card", "game", "tablet"):
+        for i in cat(c):
+            ch = i.get("chg") or 0
+            if (i.get("n_shops", 0) >= 4 and i.get("best", 0) >= 8000 and sane(i)
+                    and not re.match(r"(box|name):(op|eb|prb|st)\d", i["key"]) and (abs(ch) >= 3000 or abs(ch) >= max(500, i["best"] * 0.015))):
+                pool.append(i)
+    pool.sort(key=lambda i: -abs(i["chg"]) / i["best"])
+    up = [i for i in pool if i["chg"] > 0][:4]
+    dn = [i for i in pool if i["chg"] < 0][:4]
+    if len(up) + len(dn) < 2:
         return ""
-    L = ["📊 GIÁ KAI ĐỔI GÌ HÔM NAY?", ""]
+    L = ["📊 GIÁ KAI ĐỔI GÌ HÔM NAY?"]
     if up:
-        L.append("📈 Tăng:")
-        L += [f"• {short(i['name'])}: {yen(i['best'])} (▲{yen(abs(i['mv']))})" for i in up]
+        L += ["", "📈 Tăng so với hôm qua:"] + [f"• {short(i['name'])}: {yen(i['best'])} (▲{yen(i['chg'])}, {shop(i['best_shop'])})" for i in up]
     if dn:
-        L += ["", "📉 Giảm:"]
-        L += [f"• {short(i['name'])}: {yen(i['best'])} (▼{yen(abs(i['mv']))})" for i in dn]
+        L += ["", "📉 Giảm so với hôm qua:"] + [f"• {short(i['name'])}: {yen(i['best'])} (▼{yen(-i['chg'])}, {shop(i['best_shop'])})" for i in dn]
     L += ["", "Người buôn kai giỏi không đoán giá, họ THEO DÕI giá. Trên web bấm ♡ món bạn quan tâm, vào mục Của tôi bật 🔔 thông báo: "
               "giá đạt mức bạn đặt là điện thoại báo ngay, khỏi phải mở web canh."]
     return "\n".join(L) + FOOT.format(url=f"{SITE}/vi/", upd=updated())

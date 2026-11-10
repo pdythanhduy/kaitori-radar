@@ -32,7 +32,7 @@ def load():
 
 
 def row(it, hist, shops):
-    s = hist.get(it["key"], [])
+    s = [x for x in hist.get(it["key"], []) if len(x) > 2]  # 10/11: bỏ điểm đầu không ghi tiệm (dữ liệu ngày đầu chưa đủ tiệm)
     first = s[0][1] if s else it["best"]
     top = sorted(it["prices"].items(), key=lambda x: -x[1]["price"])[:3]
     return {
@@ -46,15 +46,22 @@ def row(it, hist, shops):
 def main():
     items, hist, idx = load()
     shops = idx["shops"]
-    boxes = [i for i in items if i["n_shops"] >= 3 and "PSA" not in i["name"] and not i["key"].startswith("single")]
+    import re
+    # 10/11: bỏ ONE PIECE (OP-/EB-/PRB-/ST-) — bài là Pokémon; OP-03/06/17 từng báo −90% do ghép nhầm
+    boxes = [i for i in items if i["n_shops"] >= 3 and "PSA" not in i["name"] and not i["key"].startswith("single")
+             and not re.match(r"(box|name):(op|eb|prb|st)\d", i["key"]) and not re.search(r"【(OP|EB|PRB|ST)-?\d", i["name"])
+             and "ONE PIECE" not in i["name"].upper()]
     rows = [row(i, hist, shops) for i in boxes]
-    movers = sorted([r for r in rows if r["days"] >= 3 and r["from"]], key=lambda r: r["pct_n"])
+    # biến động > ±40% trong vài ngày gần như luôn là lỗi ghép mẫu → để riêng, không đưa vào bài
+    sus = [r for r in rows if abs(r["pct_n"]) > 40]
+    movers = sorted([r for r in rows if r["days"] >= 3 and r["from"] and abs(r["pct_n"]) <= 40], key=lambda r: r["pct_n"])
     slang = {}
     for k, frag in SLANG.items():
         hit = sorted([i for i in items if frag in i["name"]], key=lambda x: -x["n_shops"])
         if hit:
             slang[k] = row(hit[0], hist, shops)
-    out = {"updated": idx.get("updated"), "down": movers[:8], "up": movers[::-1][:8], "slang": slang}
+    out = {"updated": idx.get("updated"), "down": [r for r in movers if r["pct_n"] < 0][:8],
+           "up": [r for r in movers[::-1] if r["pct_n"] > 0][:8], "slang": slang, "suspect": sus}
     if "--json" in sys.argv:
         print(json.dumps(out, ensure_ascii=False, indent=1))
         return
