@@ -163,3 +163,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-10 | 10:22 | 53K | posts/1608623750580236 | [ngắn] 2 máy 18 cùng màu 2 tài khoản, lỡ bóc mã đơn khi trả → đối serial hộp với mail/đơn, gọi Apple 0120-993-993, 14 ngày + tắt Tìm iPhone + link tra-iphone-apple
 2026-11-10 | 10:52 | 109K | posts/2242825436617451 | [ngắn] tìm 17PM 512 bạc → seal bạc 216.5k (PANDA) mốc trên + mời nhóm + link ?q=17 pro max 512
 2026-11-10 | 11:23 | 32K | posts/1455715566533936 | [ngắn] bán 18PM đỏ 256 ở Mie → kai cao nhất 232k (森森), tiệm khác 230-231k, gửi bưu điện 郵送買取 + link guide 18PM
+2026-11-10 | 11:52 | 53K | posts/1608710580571553 | [ngắn] có 3 máy 18PM 512 đỏ ai thu → kai 262.5k (ルデヤ), đa số 262k, app 274.8 + link ?q=18 pro max 512
