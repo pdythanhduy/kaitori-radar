@@ -170,3 +170,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-10 | 13:52 | 85K | posts/1741583276939774 | [ngắn] hỏi giá AirPods Pro 3 → seal kai cao nhất 33.4k (ルデヤ), rao đập hộp 3m7 trên giá thu ~3.6k + mời nhóm + link ?q=airpods pro 3
 2026-11-10 | 14:23 | 32K | posts/1455817259857100 | [ngắn] bán 18PM đen app-1.3 → 256 = 226.8k, 512 = 261.8k ≈ kai đen 226.5k/262k (ルデヤ) + link guide 18PM
 2026-11-10 | 14:52 | 53K | posts/1608832747226003 | [ngắn] Duo trắng 256 ai thu (Ichinomiya) → trắng bị trừ màu, cao nhất 368k (森森), đen 373k + mã 75798 + link ?q=duo 256
+2026-11-10 | 15:23 | 32K | posts/1455868836518609 | [ngắn] hỏi 18PM đỏ 256 thu bao nhiêu → kai cao nhất 232k (森森), tiệm khác 230-231k + mời nhóm + link guide 18PM
