@@ -87,6 +87,17 @@
    "confirmed": true
   },
   {
+   "date": "2026-11-17",
+   "time": "15:00",
+   "kind": "lottery",
+   "title": "Pokémon Center Online: báo kết quả bốc thăm bổ sung ハドウシーカー (đợt 6–10/11)",
+   "title_ja": "ハドウシーカー ポケモンセンターオンライン 追加抽選 当選発表",
+   "where": "Pokémon Center Online (email)",
+   "note": "Theo bài tổng hợp easter.ne.jp/snkrdunk; giờ chính xác xem email/trang PCO.",
+   "src": "https://easter.ne.jp/drops/2026-11-07/",
+   "confirmed": false
+  },
+  {
    "date": "2026-11-27",
    "kind": "release",
    "title": "Phát hành gói mở rộng ハドウシーカー (M7)",

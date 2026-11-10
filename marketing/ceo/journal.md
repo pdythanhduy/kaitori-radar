@@ -33,7 +33,8 @@ Thí nghiệm nào không hiệu quả sau 3–7 ngày thì dừng. Thí nghiệ
 | Trang SEO /guide/gia-kai-iphone-17-pro-max/ (không cột giá Apple) | 07/11 | 21/11 | lượt vào path, Google |
 | Trang SEO /guide/gia-kai-iphone-17-pro/ (không cột giá Apple) | 08/11 | 22/11 | lượt vào path, Google |
 | Bài khung 5 Pokémon lọc bỏ ONE PIECE | 08/11 | — | (sửa lỗi) |
-| Mọi bình luận đều có link (bỏ lượt không link) | 06/11 18h | 10/11 | lượt FB/bình luận (06/11 trước 17h30 ~4) |
+| Mọi bình luận đều có link (bỏ lượt không link) | 06/11 18h | ✅ giữ 10/11 | lượt FB/bình luận (06/11 trước 17h30 ~4) |
+| Trang SEO /guide/gia-kai-iphone-17/ (bản thường, không cột giá Apple) | 10/11 | 24/11 | lượt vào path, Google |
 
 ## Nhật ký
 
@@ -104,4 +105,22 @@ Thí nghiệm nào không hiệu quả sau 3–7 ngày thì dừng. Thí nghiệ
 - **Đề xuất chờ user:**
   - Dải "lần trước bạn xem": 3 ngày 0 lượt bấm → đề xuất thu gọn/đổi chỗ (quyết ở mốc 12/11).
   - ゲストモバイル 17 Pro 1TB 219k cao hơn các tiệm ~14k: có thể đúng (tiệm hay trả cao bản 1TB) — chưa sửa, theo dõi.
+
+### 10/11/2026
+- **Hôm qua (09/11, cả ngày):**
+  - 80 lượt vào (08/11 ~148, −46%), 138 lượt xem. Nguồn: FB 50%, gõ thẳng 48%, Google 1 lượt.
+  - Nguyên nhân chính: lịch tự động chết từ tối 08/11 tới chiều 09/11 (phiên Claude đóng) → chỉ 12 bình luận (08/11: 24), không có CEO/tin hot buổi sáng. Khôi phục 12 lịch + lịch tự gia hạn (15/11) + watchdog.
+  - Vào từ link 65, bấm sang tiệm 9 (**14%**, 08/11: 29%). 森森 3, ルデヤ 3, モバイル一番 2. Link vào trang chủ 24/65 (nhiều nhất) → vào trang chủ ít bấm tiệm hơn vào thẳng món.
+  - Quay lại 20/62 máy (**32%**, 08/11: 15%). Dải "lần trước bạn xem": hiện 27, **bấm 5** (lần đầu có bấm sau 3 ngày 0).
+  - Rời trang: chỉ cuộn 40%, không làm gì 20% (đa số <5s). Tìm không ra 0%.
+  - Lượt FB/bình luận ≈ 37/12 ≈ 3,1 (08/11 ≈ 2,9) → kiểu [ngắn] giữ được lượt.
+  - Đăng 09/11: 12 bình luận, bài nhóm khung 4 (Duo tăng) + 5 (lừa trúng iPhone), Pokémon 96K "chênh tiệm" (duyệt ngay), trang cá nhân.
+- **Trend (có nguồn):** PCO bốc thăm bổ sung ハドウシーカー hết 16:59 hôm nay, kết quả 17/11 15:00; Deck MEGA 13/11 (5.500円); ハドウシーカー 27/11. 双11 TQ mai 11/11 (JD 18 Pro thấp nhất báo ghi 8.499 tệ). Máy game: không tin giảm giá/khan hàng mới (Switch 2 bản Nhật 59.980円 từ 5/2026). Không có tin giá kai iPhone 24h. Apple CN/HK không đổi giá.
+- **Đã làm:**
+  1. Trang SEO /guide/gia-kai-iphone-17/ (17 bản thường: 8 tiệm có giá, hay là máy MNP/1円 đem bán) + thẻ ở mục mẹo VI. Tuần này: trang thứ 1.
+  2. events.json: thêm ngày báo kết quả PCO ハドウシーカー 17/11 (confirmed: false, nguồn tổng hợp).
+  3. Sửa daily_traffic.py: Telegram báo lỗi 400 khi báo cáo có "<5s", ">7 ngày" → escape HTML.
+- **Đánh giá:** "Mọi bình luận có link" → giữ (lượt FB/bình luận 2,9–3,1, trước ~1,3–4 không ổn định). Dải "lần trước bạn xem" có bấm lần đầu → chờ mốc 12/11.
+- **Nhận định:** lượt vào phụ thuộc lịch tự động chạy liên tục. Bấm tiệm giảm khi khách vào trang chủ thay vì vào thẳng món → bình luận/bài nên link ?q=<model> hoặc trang guide, hạn chế link /vi/ trơn.
+- **Đề xuất chờ user:** giữ máy/Claude Code mở liên tục (lịch chỉ sống trong phiên); nếu muốn chạy cả khi tắt máy thì cân nhắc chuyển một phần sang lịch đám mây (cần user quyết).
 
