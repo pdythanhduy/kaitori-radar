@@ -171,3 +171,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-10 | 14:23 | 32K | posts/1455817259857100 | [ngắn] bán 18PM đen app-1.3 → 256 = 226.8k, 512 = 261.8k ≈ kai đen 226.5k/262k (ルデヤ) + link guide 18PM
 2026-11-10 | 14:52 | 53K | posts/1608832747226003 | [ngắn] Duo trắng 256 ai thu (Ichinomiya) → trắng bị trừ màu, cao nhất 368k (森森), đen 373k + mã 75798 + link ?q=duo 256
 2026-11-10 | 15:23 | 32K | posts/1455868836518609 | [ngắn] hỏi 18PM đỏ 256 thu bao nhiêu → kai cao nhất 232k (森森), tiệm khác 230-231k + mời nhóm + link guide 18PM
+2026-11-10 | 15:53 | 53K | posts/1608875650555046 | [ngắn] lỡ huỷ đơn Duo (giao 23/1), tưởng bị trừ 3 man → đó là 消費税込み trong tổng, huỷ trước xuất kho chỉ tạm giữ hạn mức, mua lại thì đặt đơn mới + link #hoantien
