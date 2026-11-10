@@ -165,3 +165,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-10 | 11:23 | 32K | posts/1455715566533936 | [ngắn] bán 18PM đỏ 256 ở Mie → kai cao nhất 232k (森森), tiệm khác 230-231k, gửi bưu điện 郵送買取 + link guide 18PM
 2026-11-10 | 11:52 | 53K | posts/1608710580571553 | [ngắn] có 3 máy 18PM 512 đỏ ai thu → kai 262.5k (ルデヤ), đa số 262k, app 274.8 + link ?q=18 pro max 512
 2026-11-10 | 12:22 | 32K | posts/1455754333196726 | [ngắn] 2 máy Duo 256 đen ai thu (Nagoya) → kai 373k (ルデヤ/森森), app 364.8 hơn ~8k + mời nhóm + link guide Duo
+2026-11-10 | 12:52 | 109K | posts/2242961706603824 | [ngắn] thu 5 máy 18PM 512 + 18 Pro 256 xanh giá kai+ → 512 đỏ 262.5k, 18 Pro 256 xanh 199k (ルデヤ) + link ?q=18 pro max 512
