@@ -1,21 +1,20 @@
 # Trend nóng hôm nay (lịch săn trend ghi; bình luận + bài nhóm đọc để chọn góc)
 
-**Quét lúc 09/11 18:17 JST**
+**Quét lúc 10/11 12:05 JST**
 
-## ⚡ Giá đổi trong ngày (site/data 17:42, so 8/11)
-- Duo tăng: 256GB 374,5k (▲3,5k, 森森; trắng 367–370k), 512GB 429,5k (▲4,5k), 2TB 607k (▲3k). Duo 256 giá Apple 364,8k.
-- 18PM 256: đỏ 232k (森森), xanh 231k, đen 226k, bạc 225k · 18PM 512: đỏ 262,5k (ルデヤ), bạc 257,5k, app 274,8k · 18 Pro 256 đỏ 202k. Không đổi ≥2%.
-- Box: ブラックボルト 22,5k (▼500). EB-01 +22% chỉ 森森 19,5k (tiệm khác ~16k) → bỏ.
+## ⚡ Giá đổi trong ngày (site/data ~11:40, so 9/11)
+- iPhone/Duo/17/máy game: không món nào đổi ≥2% hay ≥3k. Duo 256 373k (▼1,5k; đen 373k, trắng 367–368k), Duo 1TB 503k, 512GB ~429,5k.
+- 18PM 256: đỏ 232k (森森), xanh 231k, đen 227k (ルデヤ), bạc 226k · 18PM 512 đỏ 262,5k (ルデヤ), app 274,8k · 18 Pro 256 đỏ 202k (ルデヤ).
+- Box: ストームエメラルダ 8,6k (▼200), OP-15 8k (▲200) – nhỏ, bỏ qua. Lời/lỗ: vẫn 4/12 mẫu lời (Duo), không mẫu nào đổi dấu.
 
-## 🗣 Chủ đề nóng (32K + 53K, ~30 bài 3 giờ qua)
-1. Rao/tìm 18PM 256 đỏ/trắng: "đỏ 23,1", "đỏ 233 shinjuku", "trắng 23m", "18prm 512 đỏ 26m8", nhiều người tìm "giá ngang kai". → rao cao hơn kai 2–5k (đỏ 232k, bạc 225k; 512 đỏ 262,5k). Link trang 18PM.
-2. Lừa đảo "trúng iPhone 18 PM, chuyển 10tr để nhận máy" (32K, bài mỉa mai). → đã thêm mục 🎁 vào /guide/lua-dao-iphone/.
-3. "Huỷ máy hơn tháng rồi chưa hoàn tiền" (53K). → /guide/huy-iphone/#hoantien: thẻ tín dụng tới 30 ngày; tạm giữ hạn mức có thể 45–60 ngày tuỳ công ty thẻ; quá 30 ngày gọi công ty thẻ.
+## 🗣 Chủ đề nóng (32K + 53K, ~30 bài 2 giờ qua)
+1. Rao 18PM 256 đỏ/xanh 23,2–23,6m ("23.5man", "23m6 ike", "x2 23m3"), 512 đỏ 26m8; nhiều bài "ai thu" lẻ 2–3 máy. → so với kai đúng màu: đỏ 232k, 512 đỏ 262,5k; rao cao hơn kai 1–4k.
+2. Duo 256 đen "ai thu" (Nagoya, Tennoji) → Duo 256 đen 373k (ルデヤ/森森), trắng thấp hơn ~5k. Link /guide/gia-kai-iphone-duo/.
+3. Trả hàng Apple: "chưa quá 14 ngày có mất 15%", "2 máy cùng màu 2 tài khoản lỡ bóc mã đơn" → 15% chỉ đơn lớn, đối serial hộp với mail/đơn; /guide/tra-iphone-apple/. Thêm: "bán kai tiền về tk nhanh không", "đợt 11–17/11 đen chưa nhảy vận chuyển".
 
 ## 📰 Tin
-- Counterpoint: 18 Pro/Pro Max bán 3 tuần đầu ở Nhật giảm 27% so với 17 Pro (selectra.jp). Không có tin giá kai 24–48h.
+- Không có tin giá kai 18PM 24–48h. Duo: Apple online vẫn giao cuối 1/2027; 楽天 báo 256GB về tuần 9/11 (iPhone Mania 4/11). 双11 TQ mai 11/11 (JD 18 Pro giảm, xem market_log 10/11).
 
 ## 🎯 Góc đề xuất
-- Bình luận: bài rao 18PM → so đúng màu với kai; bài hỏi hoàn tiền → /guide/huy-iphone/#hoantien; bài nói trúng thưởng → /guide/lua-dao-iphone/.
-- Bài nhóm 19h (khung 4): "📈 DUO TĂNG LẠI: 256GB 374,5K, 512GB 429,5K" + /guide/gia-kai-iphone-duo/.
-- Bài nhóm 21h: "🎁 'TRÚNG IPHONE 18, CHUYỂN PHÍ ĐỂ NHẬN' = LỪA" + /guide/lua-dao-iphone/ (nếu khung 5 mặc định yếu).
+- Bình luận: bài rao/ai thu 18PM, Duo → giá đúng màu + tiệm; bài trả hàng → /guide/tra-iphone-apple/.
+- Bài nhóm 13h (khung 2) giữ mặc định. Khung 4 (19h): "📦 CÓ DUO 256 ĐEN MUỐN BÁN? ĐEN 373K, TRẮNG THẤP HƠN ~5K" + /guide/gia-kai-iphone-duo/ (nếu giá còn vậy).
