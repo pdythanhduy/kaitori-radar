@@ -110,44 +110,44 @@
   "ts": "2026-11-10 10:52"
  },
  "mobile_ichiban:1": {
-  "ok": false,
-  "err": "HTTPSConnectionPool(host='www.mobile-ichiban.com', port=443): Max retries exceeded with url: /Prod/1 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.mobile-ichiban.com', port=443) at 0x7f831",
-  "ts": "2026-11-10 12:11"
+  "ok": true,
+  "n": 43,
+  "ts": "2026-11-10 12:41"
  },
  "mobile_ichiban:3": {
-  "ok": false,
-  "err": "HTTPSConnectionPool(host='www.mobile-ichiban.com', port=443): Max retries exceeded with url: /Prod/3 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.mobile-ichiban.com', port=443) at 0x7f831",
-  "ts": "2026-11-10 12:11"
+  "ok": true,
+  "n": 56,
+  "ts": "2026-11-10 12:42"
  },
  "homura:box": {
   "ok": true,
-  "n": 104,
-  "ts": "2026-11-10 12:12"
+  "n": 103,
+  "ts": "2026-11-10 12:42"
  },
  "morimori:0301": {
   "ok": true,
   "n": 211,
-  "ts": "2026-11-10 12:07"
+  "ts": "2026-11-10 12:37"
  },
  "morimori:0101": {
   "ok": true,
   "n": 108,
-  "ts": "2026-11-10 12:07"
+  "ts": "2026-11-10 12:37"
  },
  "morimori:0104": {
   "ok": true,
   "n": 71,
-  "ts": "2026-11-10 12:08"
+  "ts": "2026-11-10 12:38"
  },
  "morimori:2401010": {
   "ok": true,
   "n": 7,
-  "ts": "2026-11-10 12:08"
+  "ts": "2026-11-10 12:38"
  },
  "morimori:2401001": {
   "ok": true,
   "n": 27,
-  "ts": "2026-11-10 12:08"
+  "ts": "2026-11-10 12:38"
  },
  "rudeya:full": {
   "ok": true,
@@ -157,7 +157,7 @@
  "rudeya:hot": {
   "ok": true,
   "n": 299,
-  "ts": "2026-11-10 12:08"
+  "ts": "2026-11-10 12:38"
  },
  "panda:full": {
   "ok": true,
@@ -182,27 +182,27 @@
  "panda:hot": {
   "ok": true,
   "n": 334,
-  "ts": "2026-11-10 12:08"
+  "ts": "2026-11-10 12:38"
  },
  "guestmobile:hot": {
   "ok": true,
   "n": 143,
-  "ts": "2026-11-10 12:09"
+  "ts": "2026-11-10 12:40"
  },
  "toban:hot": {
   "ok": true,
-  "n": 1211,
-  "ts": "2026-11-10 12:10"
+  "n": 1210,
+  "ts": "2026-11-10 12:40"
  },
  "keitaigod:hot": {
   "ok": true,
   "n": 296,
-  "ts": "2026-11-10 12:10"
+  "ts": "2026-11-10 12:40"
  },
  "ichome:hot": {
   "ok": true,
   "n": 410,
-  "ts": "2026-11-10 12:12"
+  "ts": "2026-11-10 12:42"
  },
  "ichome:full": {
   "ok": true,
