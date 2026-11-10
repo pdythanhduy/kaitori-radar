@@ -86,6 +86,7 @@
     if (/sponsored/.test(a.rel)) return window.kpTrack("affiliate_click", { program: a.textContent.replace("→", "").trim(), item: (item || "").trim().slice(0, 100) });
     var shop = a.matches("a.sh") ? (a.querySelector(".sn b") || {}).textContent : a.closest(".pt") ? a.textContent : a.matches(".sbest") ? (a.querySelector("b") || {}).textContent : "";
     if (shop) return window.kpTrack("shop_click", { shop: shop.trim(), item: (item || "").trim().slice(0, 100) });
+    if (a.closest("#qpick")) return window.kpTrack("qpick_click", { item: a.textContent.trim() });  // 10/11: chip 🔥 Hay xem trên trang chủ
     if (/\/guide\//.test(a.getAttribute("href") || "")) window.kpTrack("guide_click", { item: a.getAttribute("href") });
   }, true);
 

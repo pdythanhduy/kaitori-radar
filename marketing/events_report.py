@@ -73,6 +73,8 @@ def summary(day_from: str, day_to: str, top: int = 6) -> str:
     if by.get("visit"):
         v = by["visit"]; n = sum(v.values()); ret = n - v.get("new", 0)
         out.append(f"🔁 Thiết bị vào (mỗi máy 1 lần/ngày): {n} — mới {v.get('new', 0)}, quay lại {ret} ({ret * 100 // max(1, n)}%: hôm qua {v.get('1d', 0)}, 2–7 ngày {v.get('2-7d', 0)}, >7 ngày {v.get('8d+', 0)})")
+    if by.get("qpick_click"):  # 10/11: chip "🔥 Hay xem" trên trang chủ
+        out.append("🔥 Bấm chip Hay xem: " + ", ".join(f"{k} ({n})" for k, n in by["qpick_click"].most_common(6)))
     if by.get("recent_click") or by.get("recent_show"):
         out.append(f"👀 Dải 'lần trước bạn xem': hiện {sum(by['recent_show'].values())} lần, bấm {sum(by['recent_click'].values())}")
     if by.get("land_exit"):  # 07/11/2026: điểm bỏ đi của người vào từ link
