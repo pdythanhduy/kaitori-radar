@@ -167,3 +167,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-10 | 12:22 | 32K | posts/1455754333196726 | [ngắn] 2 máy Duo 256 đen ai thu (Nagoya) → kai 373k (ルデヤ/森森), app 364.8 hơn ~8k + mời nhóm + link guide Duo
 2026-11-10 | 12:52 | 109K | posts/2242961706603824 | [ngắn] thu 5 máy 18PM 512 + 18 Pro 256 xanh giá kai+ → 512 đỏ 262.5k, 18 Pro 256 xanh 199k (ルデヤ) + link ?q=18 pro max 512
 2026-11-10 | 13:22 | 53K | posts/1608772453898699 | [ngắn] bán 18 Pro đỏ 256 app-1m Kanagawa → app-1m=209.8k, kai đỏ 202k (ルデヤ), cao hơn kai ~8k + link guide 18 Pro
+2026-11-10 | 13:52 | 85K | posts/1741583276939774 | [ngắn] hỏi giá AirPods Pro 3 → seal kai cao nhất 33.4k (ルデヤ), rao đập hộp 3m7 trên giá thu ~3.6k + mời nhóm + link ?q=airpods pro 3
