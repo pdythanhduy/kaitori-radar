@@ -76,3 +76,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-10 | 08:15 | tinhot | 🔥 POKÉMON & iPHONE: TIN HOT HÔM NAY 10/11 (PCO bốc thăm ハドウシーカー hạn 16:59 hôm nay, KQ 17/11; Deck MEGA 13/11, ハドウシーカー 27/11; Duo au/楽天; SoftBank 17/11; giá kai 30th 21K; Thành Duy) | https://www.facebook.com/groups/1118827834446963
 2026-11-10 | 10:08 | big-109K | 🔁 NHẬN MÁY CHƯA QUÁ 14 NGÀY: TRẢ APPLE CÓ MẤT 15% KHÔNG? (không link, chờ duyệt → được duyệt ~10:15, đã bình luận link /guide/tra-iphone-apple/ 10:28; Thành Duy) | https://www.facebook.com/groups/310466206520060/posts/2242870346612960/
 2026-11-10 | 11:25 | 1 | 💰 HÔM NAY MUA iPHONE GIÁ APPLE RỒI BÁN KAI THÌ LỜI HAY LỖ? | https://www.facebook.com/groups/1118827834446963
+2026-11-10 | 13:25 | 2 | 🔀 CÙNG 1 MÓN, BÁN SAI TIỆM LÀ MẤT TIỀN | https://www.facebook.com/groups/1118827834446963 (Thành Duy; so với mức nhiều tiệm cùng trả thay vì ルデヤ thấp riêng; 16 Pro/PM)
