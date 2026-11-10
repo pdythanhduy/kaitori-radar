@@ -173,3 +173,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-10 | 15:23 | 32K | posts/1455868836518609 | [ngắn] hỏi 18PM đỏ 256 thu bao nhiêu → kai cao nhất 232k (森森), tiệm khác 230-231k + mời nhóm + link guide 18PM
 2026-11-10 | 15:53 | 53K | posts/1608875650555046 | [ngắn] lỡ huỷ đơn Duo (giao 23/1), tưởng bị trừ 3 man → đó là 消費税込み trong tổng, huỷ trước xuất kho chỉ tạm giữ hạn mức, mua lại thì đặt đơn mới + link #hoantien
 2026-11-10 | 16:52 | 32K | posts/1455897993182360 | [ngắn] cần mua 18PM 512 xanh → kai thu tới 262k (ルデヤ/森森), app 274.8 làm 2 mốc + link guide 18PM
+2026-11-10 | 17:22 | 53K | posts/1608945940548017 | [ngắn] debit Mizuho bị trừ ngay, Apple báo lỗi thanh toán nên huỷ, bao lâu hoàn → debit trừ thẳng, Apple ghi tới ~30 ngày, có ngân hàng 45-60 ngày, quá 30 ngày hỏi Apple + ngân hàng + mời nhóm + link #hoantien
