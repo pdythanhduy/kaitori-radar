@@ -158,3 +158,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-09 | 23:23 | 53K | posts/1608213257287952 | [ngắn] bán 18 Pro 256 21m Osaka → đỏ 202k (ルデヤ), bạc 194k, rao trên kai 8k+ + mời nhóm + link ?q=18 pro
 2026-11-10 | 08:23 | 32K | posts/1455598033212356 | [ngắn] rao 18PM 256 trắng+đỏ nguyên hộp Sendai → đỏ 232k (森森), bạc ~226k + mã 75798 + link guide 18PM
 2026-11-10 | 08:52 | 53K | posts/1608566873919257 | [ngắn] hỏi trả hàng trong 14 ngày có mất 15% → ảnh phí 0円 đúng, 15% chỉ đơn số lượng lớn; 18PM đỏ 256 kai 232k vs app 239.8 + link tra-iphone-apple
+2026-11-10 | 09:22 | 109K | posts/2242743863292275 | [ngắn] hỏi 17m mua được 17 Pro/PRM không → seal 17 Pro 256 175.5k, 17PM 256 191.5k (PANDA) mốc trên + mời nhóm + link guide 17 Pro
