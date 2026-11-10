@@ -74,4 +74,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-09 | 21:34 | 5 | 🎁 "TRÚNG IPHONE 18, CHUYỂN PHÍ ĐỂ NHẬN MÁY" = LỪA (góc trend thay khung 5, link /guide/lua-dao-iphone/) | https://www.facebook.com/groups/1118827834446963
 2026-11-09 | 22:49 | canhan | 🧾 CÙNG 1 CHIẾC IPHONE DUO, BÁN SAI TIỆM MẤT HƠN 10.000円 (Thành Duy, Công khai) | https://www.facebook.com/me
 2026-11-10 | 08:15 | tinhot | 🔥 POKÉMON & iPHONE: TIN HOT HÔM NAY 10/11 (PCO bốc thăm ハドウシーカー hạn 16:59 hôm nay, KQ 17/11; Deck MEGA 13/11, ハドウシーカー 27/11; Duo au/楽天; SoftBank 17/11; giá kai 30th 21K; Thành Duy) | https://www.facebook.com/groups/1118827834446963
-2026-11-10 | 10:08 | big-109K | 🔁 NHẬN MÁY CHƯA QUÁ 14 NGÀY: TRẢ APPLE CÓ MẤT 15% KHÔNG? (không link, CHỜ DUYỆT, chưa bình luận link — khi duyệt bình luận /guide/tra-iphone-apple/; Thành Duy) | https://www.facebook.com/groups/310466206520060
+2026-11-10 | 10:08 | big-109K | 🔁 NHẬN MÁY CHƯA QUÁ 14 NGÀY: TRẢ APPLE CÓ MẤT 15% KHÔNG? (không link, chờ duyệt → được duyệt ~10:15, đã bình luận link /guide/tra-iphone-apple/ 10:28; Thành Duy) | https://www.facebook.com/groups/310466206520060/posts/2242870346612960/
