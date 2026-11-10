@@ -215,6 +215,10 @@ def build_vi():
         s, n = re.subn(a, lambda m, b=b: b, s, count=1)
         assert n == 1, a
     s = s.replace("<head>", '<head>\n<base href="/">', 1)  # file css/js/ảnh dùng đường dẫn tương đối → lấy từ gốc
+    # 10/11: hàng chip "🔥 Hay xem" (id="qpick") — nhãn tiếng Việt, link về /vi/?q= (vì <base href="/"> làm ./?q= thành trang JP)
+    s = s.replace("🔥 よく見られる:", "🔥 Hay xem:", 1)
+    s = re.sub(r'(<div class="wrap qpick" id="qpick">.*?</div>)',
+               lambda m: m.group(1).replace('href="./?q=', 'href="/vi/?q='), s, count=1, flags=re.S)
     s = s.replace('<meta property="og:type" content="website">',
                   '<meta property="og:type" content="website">\n<meta property="og:locale" content="vi_VN">', 1)
     out = SITE / "vi"

@@ -602,3 +602,10 @@ a.sbest.cta:active{opacity:.85}
 /* 07/11/2026: vào từ link (?q=, ≤3 kết quả) → chỉ hiện thẻ giá, ẩn thanh lọc/sắp xếp (bấm ô tìm để đổi món) */
 body.landq .rbar, body.landq #quick, body.landq #drill, body.landq #mhint, body.landq #active { display: none }
 body.landq #list { margin-top: 4px }
+
+/* 10/11: hàng "🔥 Hay xem" dưới ô tìm — người vào trang chủ từ FB bấm 1 lần tới đúng món (bấm tiệm từ trang chủ thấp hơn vào thẳng món) */
+.qpick{display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding-bottom:12px;font-size:14px}
+.qpick span{color:var(--muted);font-weight:700;margin-right:2px}
+.qpick a{display:inline-block;padding:5px 11px;border-radius:999px;background:var(--card);border:1.5px solid var(--line);color:inherit;text-decoration:none;font-weight:700;white-space:nowrap}
+.qpick a:hover{border-color:var(--brand)}
+body.landq .qpick{display:none}
