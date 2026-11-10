@@ -177,3 +177,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-10 | 17:53 | 32K | posts/1455914316514061 | [ngắn] Duo trắng ở Yokohama ai thu → trắng 256 368k, 512 420k (森森) + mã 75798 + link guide Duo
 2026-11-10 | 18:22 | 53K | posts/1608980800544531 | [ngắn] hỏi mua 18PM xanh 256 giá 23m được không → kai xanh 231k (ルデヤ/森森), 23m thấp hơn ~1k + link ?q=18 pro max 256
 2026-11-10 | 18:53 | 32K | posts/1456003109838515 | [ngắn] bán iPad mini 8 128 WiFi new 11man → đời 2026 (8.5) seal kai 103.5k (ルデヤ), đời 2024 ~79.6k + mời nhóm + link ?q=ipad mini
+2026-11-10 | 19:22 | 109K | posts/2243261776573817 | [ngắn] shop DHP rao Pixel 11 Pro Canyon 256 mời phát giá → seal kai cao nhất 141.7k (ゲストモバイル), Canyon ルデヤ 135.5k + link ?q=pixel 11 pro
