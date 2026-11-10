@@ -35,6 +35,8 @@ Thí nghiệm nào không hiệu quả sau 3–7 ngày thì dừng. Thí nghiệ
 | Bài khung 5 Pokémon lọc bỏ ONE PIECE | 08/11 | — | (sửa lỗi) |
 | Mọi bình luận đều có link (bỏ lượt không link) | 06/11 18h | ✅ giữ 10/11 | lượt FB/bình luận (06/11 trước 17h30 ~4) |
 | Trang SEO /guide/gia-kai-iphone-17/ (bản thường, không cột giá Apple) | 10/11 | 24/11 | lượt vào path, Google |
+| Chip "🔥 Hay xem" dưới ô tìm trang chủ (18PM, Duo, 18 Pro, 17PM, box 30th, AirPods Pro 3) | 10/11 tối | 17/11 | qpick_click, tỉ lệ bấm tiệm của người vào trang chủ (09/11: 14%) |
+| Bài nhóm tự động: khung 2 so với mức đa số tiệm, khung 3 chỉ món ≥4 tiệm, Pokémon bỏ ONE PIECE + cờ >±40% | 10/11 tối | — | (sửa lỗi) số lần phải sửa tay/ngày (10/11: 3) |
 
 ## Nhật ký
 
@@ -123,4 +125,18 @@ Thí nghiệm nào không hiệu quả sau 3–7 ngày thì dừng. Thí nghiệ
 - **Đánh giá:** "Mọi bình luận có link" → giữ (lượt FB/bình luận 2,9–3,1, trước ~1,3–4 không ổn định). Dải "lần trước bạn xem" có bấm lần đầu → chờ mốc 12/11.
 - **Nhận định:** lượt vào phụ thuộc lịch tự động chạy liên tục. Bấm tiệm giảm khi khách vào trang chủ thay vì vào thẳng món → bình luận/bài nên link ?q=<model> hoặc trang guide, hạn chế link /vi/ trơn.
 - **Đề xuất chờ user:** giữ máy/Claude Code mở liên tục (lịch chỉ sống trong phiên); nếu muốn chạy cả khi tắt máy thì cân nhắc chuyển một phần sang lịch đám mây (cần user quyết).
+
+### 10/11/2026 (tối) — tổng kết tuần đầu (user hỏi "web qua 1 tuần cần cải thiện gì")
+- **Lượt vào/ngày:** 03/11 358 → 04/11 283 → 05/11 217 → 06/11 143 → 07/11 127 → 08/11 148 → 09/11 80 → 10/11 151. Facebook chiếm 60–70%, Google 1–5/ngày (03/11 có 11).
+- **Nhận định:**
+  1. Giảm chủ yếu do hết hiệu ứng ra mắt + ngừng page Nhật Bản 24H (07/11) + 09/11 lịch chết nửa ngày. Ngày chạy đủ (25 bình luận + 5 bài nhóm + bài nhóm lớn) giữ được ~150.
+  2. Google gần 0 sau 1 tuần → phụ thuộc hoàn toàn vào bình luận. Đây là rủi ro số 1.
+  3. Trang /guide/ đang kéo tốt: 64 lượt xem 10/11 (cao nhất tuần) nhờ bình luận trả lời đúng câu hỏi + link trang hướng dẫn (trả hàng Apple, 18PM, 17 Pro).
+  4. Bấm sang tiệm tụt khi khách vào trang chủ thay vì vào thẳng món (09/11: 14%, 08/11: 29%).
+- **Đã làm tối nay:**
+  1. Chip "🔥 Hay xem" dưới ô tìm trang chủ (JP + VI), đo qpick_click; landing ?q= vẫn ẩn chip. Kiểm thử playwright điện thoại + PC, VI giữ /vi/.
+  2. group_posts.py: khung 2 so với mức đa số tiệm (trước so với 1 tiệm thấp lẻ → phóng đại chênh); khung 3 lấy món ≥4 tiệm có chg so hôm qua (trước toàn món lẻ 2 tiệm). pokemon_insight.py: bỏ ONE PIECE, biến động >±40% để riêng "nghi lỗi". → 10/11 phải sửa tay 3 lần, giờ code tự đúng.
+- **Đề xuất chờ user:**
+  1. Search Console: xem các trang /guide/gia-kai-* đã lập chỉ mục chưa, gửi lại sitemap (cần đăng nhập Google của user).
+  2. Lịch chỉ sống khi máy + Claude Code mở (đổi tài khoản/đóng máy là dừng, 09/11 và 10/11 tối). Phần không cần Chrome (radar, CEO số liệu) có thể chuyển lịch đám mây nếu user muốn.
 

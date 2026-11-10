@@ -70,6 +70,10 @@ Năm 1997, Kakaku.com bắt đầu chỉ là bảng so giá các tiệm điện 
 - Ghi 1 dòng "Học được" mới nhất vào marketing/ceo/comment_style.md (kiểu nào kéo nhiều hơn, câu mở đầu nào tự nhiên, chỗ nào còn giống máy) và sửa phần Nguyên tắc/Ví dụ nếu cần.
 - Mốc: 06/11 ≈ 3,7 lượt FB/bình luận (bình luận dài); sáng 07/11 ≈ 1,3.
 
+## Tự sửa thay vì sửa tay (10/11)
+- Lượt nào phải sửa tay nội dung tự động (số sai, món lạ, so lệch) **2 lần trở lên** thì lượt CEO sáng hôm sau sửa luôn code tạo nội dung (group_posts.py, pokemon_insight.py, comment...), có kiểm thử, ghi vào bảng "Đang thử".
+- Quy tắc số liệu đã học: so với **mức đa số tiệm** (trung vị), không so với 1 tiệm thấp lẻ; món đưa vào bài phải **≥3–4 tiệm**; biến động **>±40%** trong vài ngày gần như luôn là lỗi ghép mẫu; bài Pokémon không lẫn ONE PIECE.
+
 ## Nguồn
 - Kakaku.com: asiajin.com/blog/?p=17, thebridge.jp/en/2013/05/kakaku-com-japan-price-comparison, porterprize.org (2013)
 - Mô hình web so giá thu mua: thebridge.jp/2016/01/find-out-how-much-a-product-is-worth-at-uridoki, netshop.impress.co.jp/node/5833, batonz.jp/sell_cases/100381
