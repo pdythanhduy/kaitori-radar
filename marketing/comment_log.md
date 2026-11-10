@@ -179,3 +179,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-10 | 18:53 | 32K | posts/1456003109838515 | [ngắn] bán iPad mini 8 128 WiFi new 11man → đời 2026 (8.5) seal kai 103.5k (ルデヤ), đời 2024 ~79.6k + mời nhóm + link ?q=ipad mini
 2026-11-10 | 19:22 | 109K | posts/2243261776573817 | [ngắn] shop DHP rao Pixel 11 Pro Canyon 256 mời phát giá → seal kai cao nhất 141.7k (ゲストモバイル), Canyon ルデヤ 135.5k + link ?q=pixel 11 pro
 2026-11-10 | 19:52 | 85K | posts/1741840046914097 | [ngắn] cần 2 cây 17PM 256 xanh/trắng Nagoya → seal bạc 190.5k (ルデヤ), xanh 185k (PANDA) trừ màu + link guide 17PM
+2026-11-10 | 20:23 | 53K | posts/1609084847200793 | [ngắn] muốn đổi 18PM 256 đen lấy 512 màu khác, bù tiền → kai đen 256 226.5k, 512 đỏ/xanh 262k, chênh ~35.5k + mời nhóm + link ?q=18 pro max
