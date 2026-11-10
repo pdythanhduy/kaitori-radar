@@ -77,3 +77,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-10 | 10:08 | big-109K | 🔁 NHẬN MÁY CHƯA QUÁ 14 NGÀY: TRẢ APPLE CÓ MẤT 15% KHÔNG? (không link, chờ duyệt → được duyệt ~10:15, đã bình luận link /guide/tra-iphone-apple/ 10:28; Thành Duy) | https://www.facebook.com/groups/310466206520060/posts/2242870346612960/
 2026-11-10 | 11:25 | 1 | 💰 HÔM NAY MUA iPHONE GIÁ APPLE RỒI BÁN KAI THÌ LỜI HAY LỖ? | https://www.facebook.com/groups/1118827834446963
 2026-11-10 | 13:25 | 2 | 🔀 CÙNG 1 MÓN, BÁN SAI TIỆM LÀ MẤT TIỀN | https://www.facebook.com/groups/1118827834446963 (Thành Duy; so với mức nhiều tiệm cùng trả thay vì ルデヤ thấp riêng; 16 Pro/PM)
+2026-11-10 | 15:26 | 3 | 📦 CÓ iPHONE DUO MUỐN BÁN? ĐEN VÀ TRẮNG CHÊNH NHAU TỚI 12.500円 (góc trend thay khung 3: bản tự động chỉ có món lẻ đổi giá ở 1 tiệm; Thành Duy) | https://www.facebook.com/groups/1118827834446963
