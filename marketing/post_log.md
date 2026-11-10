@@ -82,3 +82,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-10 | 21:14 | pokemon-daily | 📊 HỌ 30th ĐANG HẠ NHIỆT, NINJA SPINNER LẠI TĂNG (kèm ảnh gia10ngay-1110.png, Thành Duy) – CHỜ DUYỆT; chưa bình luận link (đã đủ 25/25 hôm nay) → bình luận link ngày mai khi được duyệt | https://www.facebook.com/groups/pokemonae/my_pending_content
 2026-11-10 | 21:33 | 5 | 🎮 GIÁ THU MUA MÁY GAME HÔM NAY | https://www.facebook.com/groups/1118827834446963
 2026-11-10 | 22:52 | canhan | 🌙 TỐI 10/11: BOX POKÉMON 30th GIẢM, iPHONE DUO 512 TĂNG (Thành Duy, Công khai; đăng lại sau khi Chrome kết nối lại) | https://www.facebook.com/me
+2026-11-11 | 08:15 | tinhot | 🔥 POKÉMON & iPHONE: TIN HOT HÔM NAY 11/11 (Deck MEGA 13/11, ハドウシーカー 27/11; bốc thăm ドンキ/三洋堂/GEO/キッズリパブリック tới ~11–15/11, PCO KQ 17/11; Duo au/楽天; docomo 18 Pro giảm, SoftBank đổi 17/11; kai 30th 20.2K ↓800, FUTURISTIC 47.5K ↓2K; Thành Duy) | https://www.facebook.com/groups/1118827834446963
