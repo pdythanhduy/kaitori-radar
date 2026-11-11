@@ -182,3 +182,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-10 | 20:23 | 53K | posts/1609084847200793 | [ngắn] muốn đổi 18PM 256 đen lấy 512 màu khác, bù tiền → kai đen 256 226.5k, 512 đỏ/xanh 262k, chênh ~35.5k + mời nhóm + link ?q=18 pro max
 2026-11-10 | 20:53 | 32K | posts/1456103466495146 | [ngắn] bán 18PM 256 trắng 23.2 Saitama → bạc bị trừ màu, kai 226k (ルデヤ), đỏ 232k, rao trên kai ~6k + link guide 18PM
 2026-11-11 | 08:23 | 53K | posts/1609605650482046 | [ngắn] bán 18PM 512 đỏ Chiba → kai cao nhất 262k (ルデヤ/森森 cùng mức), app 274.8 + link guide 18PM
+2026-11-11 | 09:52 | 32K | posts/1456677223104437 | [ngắn] đẩy 5 máy 18PM 256 xanh/đỏ 23.4, đen 23.2 → kai đỏ 232k (森森), xanh 231k, đen 226.5k (ルデヤ), rao chênh 2–5k + mã 森森 + link ?q=18 pro max 256
