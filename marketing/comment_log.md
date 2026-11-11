@@ -206,3 +206,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-11 | 21:15 | Pokémon 96K (pokemonae) | posts/1755378625560429 | pokemon-daily 10/11 (đã duyệt) + link /guide/gia-kai-pokemon-box/
 2026-11-11 | 21:53 | 53K | posts/1610142120428399 | [ngắn] cần mua 18PM 512 → kai đỏ/xanh/đen 262k, bạc 258k, app 274.8 + link ?q=18 pro max 512
 2026-11-11 | 22:22 | 32K | posts/1457138266391666 | [ngắn] cần 17PM trắng Tochigi mới/cũ → seal bạc 256 191k (ルデヤ) mốc trên + link guide 17PM
+2026-11-12 | 08:22 | 53K | posts/1610588640383747 | [ngắn] đổi 18 Pro xanh + bù 2man lấy 18PM → kai tối qua 18 Pro xanh 199k vs 18PM bạc/đen 226k, đỏ/xanh 231k, chênh 2.7–3.2man + link guide 18PM
