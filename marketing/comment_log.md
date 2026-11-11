@@ -199,3 +199,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-11 | 16:52 | 32K | posts/1456871429751683 | [ngắn] bay 2 máy 18PM đỏ 256 23m4 Nagoya → kai đỏ ~231k, rao trên kai ~3k + link ?q=18 pro max 256
 2026-11-11 | 17:52 | 53K | posts/1609967267112551 | [ngắn] Duo trắng 256 Ikebukuro ai thu → trắng 366.5k (ルデヤ), tiệm khác trừ 5–7k ~366k + link guide Duo
 2026-11-11 | 18:22 | 32K | posts/1456975929741233 | [ngắn] đặt Apple bị cancel liên tục → lý do gọi Apple 0120-993-993; huỷ trước xuất kho chỉ tạm giữ hạn mức + mời nhóm + link /guide/huy-iphone/#hoantien
+2026-11-11 | 19:22 | 53K | posts/1610013410441270 | [ngắn] cần thu vài 17PM 512 trắng → seal bạc 216.5k (PANDA), tiệm khác 214k + link guide 17PM
