@@ -1,20 +1,20 @@
 # Trend nóng hôm nay (lịch săn trend ghi; bình luận + bài nhóm đọc để chọn góc)
 
-**Quét lúc 11/11 12:05 JST**
+**Quét lúc 11/11 18:20 JST**
 
-## ⚡ Giá đổi trong ngày (site/data ~11:40, so hôm qua)
-- **Duo 512 đen 432,5k → 428,5k (▼4k, 森森)**, trắng 420k. Lời mua Apple→kai còn +28,7k (sáng +32,7k). Duo 256/1TB/2TB không đổi (373k / 504k / 609k).
-- 18PM 256 đỏ 232k (森森), xanh 231k, đen 226,5k, bạc 226k; 512 262k (bạc 258k) — không đổi. 18 Pro 256 202k.
-- Pokémon: box 30th 20,2k, FUTURISTIC 47,5k, deck mèo 14k (đứng giá); メガドリームex 11,6k (▼500), set 9 14,7k (▲500).
+## ⚡ Giá đổi trong ngày (site/data ~18:10, so hôm qua)
+- **Duo 512: 432,5k → 427k (▼5,5k)**, đen 426,5k (ルデヤ), trắng 420k. Lời mua Apple→kai còn +27,2k. Duo 256 đen 373k / trắng 366,5k; 1TB 505k (▲1k), 2TB 609k.
+- 18PM 256 đỏ 231k (▼1k, 森森 232→231k), bạc 226k; 512 262k. 18 Pro 256 203k (▲1k). Chưa mẫu nào đổi dấu lời↔lỗ.
+- **Box Pokémon trượt nhẹ ở 森森:** ニンジャスピナー 9,3k → 8,8k (▼5%), 超電ブレイカー 26,5k (▼1k), 熱風のアリーナ 17,7k (▼600), メガドリームex 11,5k (▼600). Box 30th 20,2k đứng giá; set 9 14,7k (▲500).
 
-## 🗣 Chủ đề nóng (32K + 53K, sáng 8–12h)
-1. Rất nhiều bài đẩy 18PM đỏ 256 giá 23,0–23,4m ("cắt lỗ 23M", "gồng không được đẩy 5 em"), 512 đỏ "app −8s". → kai đỏ 232k, rao ≈ kai ±2k; bạc/đen bị trừ ~6k.
-2. Hỏi thu Duo 256 đen, tìm 17 Pro/PM trắng 512 → Duo đen 373k, 17PM bạc 512 216,5k (PANDA).
-3. Hỏi lẻ: "bị dời lịch giao" (Apple), mua bằng visa du lịch ở AEON có hoàn thuế không, ion debit huỷ đơn chưa hoàn tiền. → /guide/huy-iphone/#hoantien.
+## 🗣 Chủ đề nóng (32K + 53K, chiều 13–18h)
+1. Tiếp tục đẩy 18PM đỏ 256 giá 23,2–23,5m, nhiều bài 2–7 máy ("giá kai cộng", "3 máy 233 Namba"). → đỏ 231k, rao trên kai 1–4k.
+2. Duo 256 trắng/đen hỏi "ai thu, cho giá" (Kobe, Ikebukuro, Osaka) → đen 373k, trắng 366,5k (trừ 5–7k).
+3. Lẻ: máy MNP au "mua đứt giảm giá nhà mạng" 18PM 512 nguyên hộp; PayPay thanh toán lỗi hỏi khi nào hoàn tiền → /guide/huy-iphone/#hoantien.
 
 ## 📰 Tin
-- Không có tin có nguồn 24–48h về giá kai iPhone ở Nhật. TQ 双11 hôm nay: giảm 18 Pro là của JD/Tmall, Apple CN không đổi giá.
+- Không có tin có nguồn 24–48h về giá kai Nhật. SCMP có bài "chênh giá Duo ở chợ buôn TQ biến mất" (chưa xác minh ngày đăng) → khớp Duo 512 giảm hôm nay, chỉ dùng làm bối cảnh.
 
 ## 🎯 Góc đề xuất
-- Bình luận: bài rao 18PM đỏ 23,x → so kai đúng màu 232k; bài Duo 512 → nhắc vừa giảm 4k còn 428,5k.
-- Bài nhóm khung 2 (13h): "📉 DUO 512 VỪA GIẢM 4K TRƯA NAY: MUA APPLE BÁN KAI CÒN LỜI ~28,7K" (+ /guide/gia-kai-iphone-duo/).
+- Bình luận: Duo 512 → nhắc vừa giảm 5,5k còn 427k; Duo trắng → trừ màu 5–7k.
+- Bài nhóm khung 4 (19h): "📉 HỘP POKÉMON TRƯỢT NHẸ HÔM NAY: NINJA SPINNER ▼5%, SIÊU ĐIỆN ▼1K" + /guide/gia-kai-pokemon-box/ (hoặc giữ khung 4 mặc định nếu có số tốt hơn).

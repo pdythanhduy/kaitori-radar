@@ -80,3 +80,7 @@ Tài liệu cho đội CEO và các lịch săn trend: người bán đang lo g�
 - **Trong nhóm 32K:** "trúng ngay iPhone 18 pro max ngta bảo chuyển 10tr để nhận máy" (bài mỉa mai, cảnh báo).
 - **Cách trả lời:** /guide/lua-dao-iphone/ (mục 🎁 thêm 09/11): giải thật không bắt trả trước; không gửi OTP/thẻ cư trú; lỡ chuyển → ngân hàng + #9110.
 - **Liên quan:** Counterpoint — 18 Pro/Pro Max 3 tuần đầu ở Nhật giảm 27% so với 17 Pro: https://selectra.jp/telecom/news/iphone18-pro-japan-sales-down-27-percent-counterpoint
+
+
+## Cập nhật 11/11/2026 18:20
+- Duo 512 kai giảm 5,5k trong ngày (432,5k → 427k); các bản Duo khác đứng giá. SCMP có bài nói chênh giá Duo ở chợ buôn TQ đang biến mất (https://www.scmp.com/tech/article/3372169/apple-iphone-duo-price-premiums-evaporate-chinas-scalper-market, chưa xác minh ngày) — khớp mối lo 'lời Duo có bền không' ở mục 2. Cách trả lời giữ nguyên: chỉ nói lời hôm nay, không dự đoán.
