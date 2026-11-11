@@ -204,3 +204,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-11 | 20:22 | 53K | posts/1610099327099345 | [ngắn] 18PM đỏ 256 Namba xin giá → kai 20h 231k (ルデヤ/森森/当番) + mời nhóm + link guide 18PM
 2026-11-11 | 20:52 | 32K | posts/1457111143061045 | [ngắn] tìm 5 cây 18PM xanh cộng kai 3s Tokyo → kai xanh 256 231k / 512 262k → +3s ≈ 234k/265k + link ?q=18 pro max
 2026-11-11 | 21:15 | Pokémon 96K (pokemonae) | posts/1755378625560429 | pokemon-daily 10/11 (đã duyệt) + link /guide/gia-kai-pokemon-box/
+2026-11-11 | 21:53 | 53K | posts/1610142120428399 | [ngắn] cần mua 18PM 512 → kai đỏ/xanh/đen 262k, bạc 258k, app 274.8 + link ?q=18 pro max 512
