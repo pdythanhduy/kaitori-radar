@@ -183,3 +183,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-10 | 20:53 | 32K | posts/1456103466495146 | [ngắn] bán 18PM 256 trắng 23.2 Saitama → bạc bị trừ màu, kai 226k (ルデヤ), đỏ 232k, rao trên kai ~6k + link guide 18PM
 2026-11-11 | 08:23 | 53K | posts/1609605650482046 | [ngắn] bán 18PM 512 đỏ Chiba → kai cao nhất 262k (ルデヤ/森森 cùng mức), app 274.8 + link guide 18PM
 2026-11-11 | 09:52 | 32K | posts/1456677223104437 | [ngắn] đẩy 5 máy 18PM 256 xanh/đỏ 23.4, đen 23.2 → kai đỏ 232k (森森), xanh 231k, đen 226.5k (ルデヤ), rao chênh 2–5k + mã 森森 + link ?q=18 pro max 256
+2026-11-11 | 10:22 | 53K | posts/1609685680474043 | [ngắn] tìm mua 17 Pro/PM trắng 512 Osaka → seal bạc 17PM 216.5k (PANDA), 17 Pro ~203k mốc trên + mời nhóm + link guide 17PM
