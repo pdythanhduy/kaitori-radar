@@ -83,3 +83,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-10 | 21:33 | 5 | 🎮 GIÁ THU MUA MÁY GAME HÔM NAY | https://www.facebook.com/groups/1118827834446963
 2026-11-10 | 22:52 | canhan | 🌙 TỐI 10/11: BOX POKÉMON 30th GIẢM, iPHONE DUO 512 TĂNG (Thành Duy, Công khai; đăng lại sau khi Chrome kết nối lại) | https://www.facebook.com/me
 2026-11-11 | 08:15 | tinhot | 🔥 POKÉMON & iPHONE: TIN HOT HÔM NAY 11/11 (Deck MEGA 13/11, ハドウシーカー 27/11; bốc thăm ドンキ/三洋堂/GEO/キッズリパブリック tới ~11–15/11, PCO KQ 17/11; Duo au/楽天; docomo 18 Pro giảm, SoftBank đổi 17/11; kai 30th 20.2K ↓800, FUTURISTIC 47.5K ↓2K; Thành Duy) | https://www.facebook.com/groups/1118827834446963
+2026-11-11 | 10:07 | big-32K | 🎨 CÙNG 18 PRO MAX 256 MÀ CHÊNH 6K CHỈ VÌ MÀU (không link, lên ngay; đã bình luận link /guide/tru-mau-iphone/; giá lúc 22:40 10/11; Thành Duy) | https://www.facebook.com/groups/807826924656140/posts/1456700553102104/
