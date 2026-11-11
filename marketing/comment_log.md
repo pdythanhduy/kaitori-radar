@@ -191,3 +191,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-11 | 12:52 | 32K | posts/1456781526427340 | [ngắn] 3 máy 18PM 256 đỏ/xanh/đen 69.5man → tổng kai 232+231+226.5 ≈ 68.95man, rao cao hơn ~5.5k + link ?q=18 pro max 256
 2026-11-11 | 13:23 | 53K | posts/1609784393797505 | [ngắn] 20m tìm 18 Pro đỏ seal → kai đỏ 256 202k (ルデヤ), app 219.8, 20m sát kai + mời nhóm + link guide 18 Pro
 2026-11-11 | 13:52 | 32K | posts/1456839869754839 | [ngắn] Kawaguchi cần 18PM trắng 256 xin giá → bạc 226k (ルデヤ/森森), trừ ~5k so với đỏ/xanh 231k + link ?q=18 pro max 256
+2026-11-11 | 14:22 | 53K | posts/1609858040456807 | [ngắn] 18PM đỏ Kuzuha đẩy nhanh hỏi giá → 256 đỏ 231k, 512 262k + link guide 18PM
