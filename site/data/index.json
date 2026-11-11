@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11 11:31",
+ "updated": "2026-11-11 11:42",
  "shops": {
   "morimori": {
    "name": "森森買取",
@@ -217,44 +217,44 @@
    "ts": "2026-11-11 11:04"
   },
   "mobile_ichiban:1": {
-   "ok": true,
-   "n": 43,
-   "ts": "2026-11-11 11:29"
+   "ok": false,
+   "err": "HTTPSConnectionPool(host='www.mobile-ichiban.com', port=443): Max retries exceeded with url: /Prod/1 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.mobile-ichiban.com', port=443) at 0x7fd27",
+   "ts": "2026-11-11 11:40"
   },
   "mobile_ichiban:3": {
-   "ok": true,
-   "n": 56,
-   "ts": "2026-11-11 11:30"
+   "ok": false,
+   "err": "HTTPSConnectionPool(host='www.mobile-ichiban.com', port=443): Max retries exceeded with url: /Prod/3 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.mobile-ichiban.com', port=443) at 0x7fd27",
+   "ts": "2026-11-11 11:41"
   },
   "homura:box": {
    "ok": true,
    "n": 103,
-   "ts": "2026-11-11 11:30"
+   "ts": "2026-11-11 11:42"
   },
   "morimori:0301": {
    "ok": true,
    "n": 211,
-   "ts": "2026-11-11 11:25"
+   "ts": "2026-11-11 11:37"
   },
   "morimori:0101": {
    "ok": true,
    "n": 108,
-   "ts": "2026-11-11 11:26"
+   "ts": "2026-11-11 11:37"
   },
   "morimori:0104": {
    "ok": true,
    "n": 72,
-   "ts": "2026-11-11 11:26"
+   "ts": "2026-11-11 11:38"
   },
   "morimori:2401010": {
    "ok": true,
    "n": 7,
-   "ts": "2026-11-11 11:26"
+   "ts": "2026-11-11 11:38"
   },
   "morimori:2401001": {
    "ok": true,
    "n": 27,
-   "ts": "2026-11-11 11:26"
+   "ts": "2026-11-11 11:38"
   },
   "rudeya:full": {
    "ok": true,
@@ -264,7 +264,7 @@
   "rudeya:hot": {
    "ok": true,
    "n": 299,
-   "ts": "2026-11-11 11:26"
+   "ts": "2026-11-11 11:38"
   },
   "panda:full": {
    "ok": false,
@@ -289,27 +289,27 @@
   "panda:hot": {
    "ok": true,
    "n": 335,
-   "ts": "2026-11-11 11:26"
+   "ts": "2026-11-11 11:38"
   },
   "guestmobile:hot": {
    "ok": true,
    "n": 143,
-   "ts": "2026-11-11 11:28"
+   "ts": "2026-11-11 11:39"
   },
   "toban:hot": {
-   "ok": true,
-   "n": 1211,
-   "ts": "2026-11-11 11:28"
+   "ok": false,
+   "err": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+   "ts": "2026-11-11 11:40"
   },
   "keitaigod:hot": {
    "ok": true,
    "n": 296,
-   "ts": "2026-11-11 11:29"
+   "ts": "2026-11-11 11:40"
   },
   "ichome:hot": {
    "ok": true,
    "n": 397,
-   "ts": "2026-11-11 11:30"
+   "ts": "2026-11-11 11:41"
   },
   "ichome:full": {
    "ok": true,
