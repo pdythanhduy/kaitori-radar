@@ -65,6 +65,9 @@ Năm 1997, Kakaku.com bắt đầu chỉ là bảng so giá các tiệm điện 
    - Khi đủ khoảng 3.000 lượt bấm/tháng sang một tiệm: soạn đề nghị phí giới thiệu khách, kèm số liệu thật.
 4. **Lâu dài:** báo giá thật do người dùng gửi (nội dung riêng), gói cho dân buôn.
 
+## Link trong bài viết tay (11/11)
+- 10/11: 51% khách vào từ link rơi vào trang chủ, bấm tiệm chỉ 14%. Bài tin hot / trang cá nhân / bài nhóm viết tay: link cuối bài dùng trang guide đúng chủ đề (vd /guide/gia-kai-pokemon-box/, /guide/gia-kai-iphone-18-pro-max/) hoặc /vi/?q=<model>, chỉ dùng /vi/ trơn khi bài nói nhiều món khác loại.
+
 ## Bình luận: học mỗi ngày (user yêu cầu 07/11)
 - Lượt CEO sáng: đọc comment_log.md hôm qua + lượt vào từ Facebook (daily_traffic) và land/shop_click (events_report), tính lượt FB / bình luận theo kiểu bình luận (dài vs [ngắn]).
 - Ghi 1 dòng "Học được" mới nhất vào marketing/ceo/comment_style.md (kiểu nào kéo nhiều hơn, câu mở đầu nào tự nhiên, chỗ nào còn giống máy) và sửa phần Nguyên tắc/Ví dụ nếu cần.

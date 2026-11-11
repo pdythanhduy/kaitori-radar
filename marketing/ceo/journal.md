@@ -140,3 +140,18 @@ Thí nghiệm nào không hiệu quả sau 3–7 ngày thì dừng. Thí nghiệ
   1. Search Console: xem các trang /guide/gia-kai-* đã lập chỉ mục chưa, gửi lại sitemap (cần đăng nhập Google của user).
   2. Lịch chỉ sống khi máy + Claude Code mở (đổi tài khoản/đóng máy là dừng, 09/11 và 10/11 tối). Phần không cần Chrome (radar, CEO số liệu) có thể chuyển lịch đám mây nếu user muốn.
 
+
+### 11/11/2026
+- **Hôm qua (10/11, cả ngày, lịch chạy đủ):**
+  - **153 lượt vào** (09/11: 80, +91%), 260 lượt xem. Nguồn: FB 98 (64%), gõ thẳng 52, Google 3.
+  - Đăng: 25 bình luận + 5 bài nhóm + tin hot + bài 109K + Pokémon 96K + trang cá nhân → FB/bình luận ≈ 3,9 (09/11 3,1).
+  - Trang guide: 18PM **39**, trả hàng Apple 14, box Pokémon 4, 17 Pro 3. → guide 18PM là trang kéo nhất sau trang chủ.
+  - Vào từ link 132, bấm sang tiệm 19 (**14%**, 09/11 14%). Vào trang chủ 67/132 (51%) — vẫn cao. 森森 10, ルデヤ 7.
+  - Quay lại 23/127 máy (18%; 09/11 32%, vì nhiều khách mới). Dải "lần trước bạn xem": hiện 36, bấm 3.
+  - Rời trang: chỉ cuộn 61%, không làm gì 11%. Tìm không ra 0%.
+- **Trend (có nguồn):** bốc thăm ハドウシーカー còn ở ドンキ/三洋堂/GEO/キッズリパブリック tới ~11–15/11 (SNKRDUNK 9/11); Deck MEGA 13/11; ハドウシーカー 27/11. TQ 双11: giảm giá 18 Pro là của JD/Tmall, Apple CN/HK không đổi giá; 先達 HK chưa có số mới sau 06/11. Máy game: không tin khan hàng/giảm giá mới.
+- **Đã làm:**
+  1. events.json: thêm mục bốc thăm ハドウシーカー nhiều tiệm (hạn ~15/11, confirmed: false, nguồn SNKRDUNK) → lịch Pokémon có thêm mục.
+  2. Playbook: bài viết tay (tin hot, trang cá nhân) đặt link đúng món/guide thay vì /vi/ trơn, vì 51% khách vào trang chủ.
+- **Nhận định:** ngày lịch chạy đủ giữ ~150 lượt; trang guide 18PM là điểm vào tốt nhất → lượt bình luận lẻ dẫn guide đang hiệu quả, giữ. Chip "Hay xem" mới chạy từ tối 10/11, đánh giá 17/11.
+- **Đề xuất chờ user:** (như hôm qua) Search Console + sitemap; cân nhắc chuyển phần không cần Chrome sang lịch đám mây.

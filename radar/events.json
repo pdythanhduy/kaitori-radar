@@ -75,6 +75,17 @@
    "confirmed": true
   },
   {
+   "date": "2026-11-15",
+   "kind": "lottery",
+   "title": "Bốc thăm ハドウシーカー ở nhiều tiệm (ドン・キホーテ, 三洋堂書店, GEO Online, app キッズリパブリック), hạn khoảng 11–15/11",
+   "title_ja": "ハドウシーカー 抽選（ドン・キホーテ・三洋堂書店・ゲオオンライン・キッズリパブリック）",
+   "where": "Online / app từng tiệm",
+   "note": "Theo bài tổng hợp SNKRDUNK (cập nhật 9/11); mỗi tiệm hạn khác nhau, xem trang chính thức của tiệm.",
+   "src": "https://snkrdunk.com/articles/33599/",
+   "match": "ハドウシーカー",
+   "confirmed": false
+  },
+  {
    "date": "2026-11-17",
    "end": "2026-11-24",
    "kind": "lottery",
