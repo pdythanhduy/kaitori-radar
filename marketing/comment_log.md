@@ -202,3 +202,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-11 | 19:22 | 53K | posts/1610013410441270 | [ngắn] cần thu vài 17PM 512 trắng → seal bạc 216.5k (PANDA), tiệm khác 214k + link guide 17PM
 2026-11-11 | 19:52 | 32K | posts/1457042639734562 | [ngắn] PayPay lỗi thanh toán bao giờ hoàn → đơn chưa thành, chỉ tạm giữ hạn mức, lâu thì hỏi PayPayカード/Apple 0120-993-993 + link /guide/huy-iphone/#hoantien
 2026-11-11 | 20:22 | 53K | posts/1610099327099345 | [ngắn] 18PM đỏ 256 Namba xin giá → kai 20h 231k (ルデヤ/森森/当番) + mời nhóm + link guide 18PM
+2026-11-11 | 20:52 | 32K | posts/1457111143061045 | [ngắn] tìm 5 cây 18PM xanh cộng kai 3s Tokyo → kai xanh 256 231k / 512 262k → +3s ≈ 234k/265k + link ?q=18 pro max
