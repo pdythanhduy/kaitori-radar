@@ -88,3 +88,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-11 | 13:27 | 2 | 📉 DUO 512 GIẢM 5.500円 SO VỚI HÔM QUA: MUA APPLE BÁN KAI CÒN LỜI BAO NHIÊU? (góc trend thay khung 2 mặc định; giá 13:12; Thành Duy) | https://www.facebook.com/groups/1118827834446963
 2026-11-11 | 15:26 | 3 | 📊 GIÁ KAI ĐỔI GÌ HÔM NAY? | https://www.facebook.com/groups/1118827834446963
 2026-11-11 | 19:27 | 4 | 📉 HỘP POKÉMON TRƯỢT NHẸ HÔM NAY: NINJA SPINNER ▼500, SIÊU ĐIỆN ▼1.000 (góc trend thay khung 4 mặc định 'mẹo mua rẻ'; giá 19:11; nhóm 28 thành viên; Thành Duy) | https://www.facebook.com/groups/1118827834446963
+2026-11-11 | 21:18 | pokemon-daily | 📅 TUẦN NÀY: DECK MEGA RA THỨ 6, BỐC THĂM HADOU SEEKER SẮP ĐÓNG (kèm ảnh lich-1111.png, Thành Duy) – CHỜ DUYỆT, chưa bình luận link; bài 10/11 đã duyệt → đã bình luận link pokemon-box | https://www.facebook.com/groups/pokemonae/my_pending_content
