@@ -197,3 +197,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-11 | 15:52 | 32K | posts/1456871996418293 | [ngắn] muốn bán Duo 256 Osaka → đen 373k (森森), trắng ~366.5k, trắng trừ 6–7k + link ?q=duo 256
 2026-11-11 | 16:22 | 53K | posts/1609879897121288 | [ngắn] bán 18PM xanh 256 23.5 Kuwana → kai xanh 231k (ルデヤ/森森), rao hơn ~4k + mời nhóm + link guide 18PM
 2026-11-11 | 16:52 | 32K | posts/1456871429751683 | [ngắn] bay 2 máy 18PM đỏ 256 23m4 Nagoya → kai đỏ ~231k, rao trên kai ~3k + link ?q=18 pro max 256
+2026-11-11 | 17:52 | 53K | posts/1609967267112551 | [ngắn] Duo trắng 256 Ikebukuro ai thu → trắng 366.5k (ルデヤ), tiệm khác trừ 5–7k ~366k + link guide Duo
