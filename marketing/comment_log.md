@@ -193,3 +193,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-11 | 13:52 | 32K | posts/1456839869754839 | [ngắn] Kawaguchi cần 18PM trắng 256 xin giá → bạc 226k (ルデヤ/森森), trừ ~5k so với đỏ/xanh 231k + link ?q=18 pro max 256
 2026-11-11 | 14:22 | 53K | posts/1609858040456807 | [ngắn] 18PM đỏ Kuzuha đẩy nhanh hỏi giá → 256 đỏ 231k, 512 262k + link guide 18PM
 2026-11-11 | 14:52 | 32K | posts/1456851923086967 | [ngắn] tìm 18 Pro 256 xanh Ikebukuro → kai xanh 199k (ルデヤ/森森), app 219.8 + mời nhóm + link ?q=18 pro 256
+2026-11-11 | 15:22 | 53K | posts/1609858403790104 | [ngắn] bán 7 máy 18PM đỏ 256 giá kai cộng Nagoya → mốc kai đỏ 15h 231k (4 tiệm), PANDA 230k + link guide 18PM
