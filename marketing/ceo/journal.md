@@ -18,11 +18,11 @@ Thí nghiệm nào không hiệu quả sau 3–7 ngày thì dừng. Thí nghiệ
 
 | Thử nghiệm | Bắt đầu | Xem lại | Đo bằng |
 |---|---|---|---|
-| Dải "👀 Từ lần trước bạn xem" | 05/11 | 12/11 | recent_show / recent_click, tỉ lệ quay lại |
+| Dải "👀 Từ lần trước bạn xem" | 05/11 | ✅ giữ, dừng làm thêm 12/11 (~6% bấm) | recent_show / recent_click, tỉ lệ quay lại |
 | Hiểu tiếng lóng khi tìm (18 prm, ip18, iphon) | 05/11 | ✅ giữ 08/11 | % tìm không ra: 07/11 0% (05/11 10%) |
 | 3 trang SEO /guide/gia-kai-* | 05/11 | 19/11 | lượt Google, lượt vào các path này |
 | Bình luận lượt lẻ dẫn về trang /guide/gia-kai-* | 05/11 | 09/11 | lượt vào path guide so với land ?q= |
-| Bình luận lượt chia hết cho 3 mời vào nhóm (không link) | 05/11 | 12/11 | số thành viên nhóm (05/11: 20) |
+| Bình luận lượt chia hết cho 3 mời vào nhóm (không link) | 05/11 | ✅ giữ 12/11 (20→28 tv) | số thành viên nhóm (05/11: 20) |
 | Trang cá nhân Duy 1 bài/ngày | 05/11 | 12/11 | lượt từ facebook.com vào /vi/ ngoài giờ bình luận |
 | X @duyto2 えにし神社 (4 bài hẹn giờ) | 05/11 | 10/11 | lượt vào enishijinja.com (mốc khoảng 5/ngày) |
 | 💹 Bảng lời/lỗ mua Apple → bán kai (?v=profit) + dòng trên trang chủ | 05/11 | 12/11 | profit_teaser / profit_open / profit_pts, lượt vào ?v=profit |
@@ -35,6 +35,7 @@ Thí nghiệm nào không hiệu quả sau 3–7 ngày thì dừng. Thí nghiệ
 | Bài khung 5 Pokémon lọc bỏ ONE PIECE | 08/11 | — | (sửa lỗi) |
 | Mọi bình luận đều có link (bỏ lượt không link) | 06/11 18h | ✅ giữ 10/11 | lượt FB/bình luận (06/11 trước 17h30 ~4) |
 | Trang SEO /guide/gia-kai-iphone-17/ (bản thường, không cột giá Apple) | 10/11 | 24/11 | lượt vào path, Google |
+| Tìm "thẻ/thẻ bài/máy game" → mở nhóm hàng | 12/11 | 19/11 | search_cat, % tìm không ra |
 | Chip "🔥 Hay xem" dưới ô tìm trang chủ (18PM, Duo, 18 Pro, 17PM, box 30th, AirPods Pro 3) | 10/11 tối | 17/11 | qpick_click, tỉ lệ bấm tiệm của người vào trang chủ (09/11: 14%) |
 | Bài nhóm tự động: khung 2 so với mức đa số tiệm, khung 3 chỉ món ≥4 tiệm, Pokémon bỏ ONE PIECE + cờ >±40% | 10/11 tối | — | (sửa lỗi) số lần phải sửa tay/ngày (10/11: 3) |
 
@@ -155,3 +156,26 @@ Thí nghiệm nào không hiệu quả sau 3–7 ngày thì dừng. Thí nghiệ
   2. Playbook: bài viết tay (tin hot, trang cá nhân) đặt link đúng món/guide thay vì /vi/ trơn, vì 51% khách vào trang chủ.
 - **Nhận định:** ngày lịch chạy đủ giữ ~150 lượt; trang guide 18PM là điểm vào tốt nhất → lượt bình luận lẻ dẫn guide đang hiệu quả, giữ. Chip "Hay xem" mới chạy từ tối 10/11, đánh giá 17/11.
 - **Đề xuất chờ user:** (như hôm qua) Search Console + sitemap; cân nhắc chuyển phần không cần Chrome sang lịch đám mây.
+
+### 12/11/2026
+- **Hôm qua (11/11, cả ngày):**
+  - **129 lượt vào** (10/11: 153, −16%), 227 lượt xem. FB 86 (67%), gõ thẳng 41, Google 0 (Yahoo 1).
+  - Chrome kẹt từ chiều (mở FB phải 2–3 lần, mất 2 lượt bình luận, bỏ bài trang cá nhân) nhưng vẫn đủ 25 bình luận + 5 bài nhóm + tin hot + 32K + Pokémon 96K (chờ duyệt).
+  - **Bấm sang tiệm 23/133 (17%**, 10/11 14%). 森森 12, ルデヤ 7. Món: 18PM 256 → 森森 6, Duo 256 → 森森 4.
+  - **Chip "Hay xem": 10 lượt bấm ngày đầu** (18PM 8, Duo 2). Trang chủ vẫn 55/133 lượt vào.
+  - Guide: 18PM 22, huỷ đơn 11 (bình luận hỏi PayPay/cancel), trừ màu 8 (bài 32K), Duo 6.
+  - Quay lại 20/110 máy (18%). Dải "lần trước bạn xem": hiện 34, bấm 0.
+  - Tìm không ra: "thẻ", "thẻ bài" (2/4 lượt tìm).
+  - Nhóm Săn Giá Kaitori: **28 thành viên** (05/11: 20).
+- **Trend (có nguồn):** Deck MEGA ra 13/11; ヨドバシ ハドウシーカー trúng mua tới 23:59 12/11; 平和堂 bốc thăm mới từ 14/11; PCO KQ 17/11. TQ 双11 không có giảm giá iPhone mới; Apple CN/HK giữ giá máy. Duo 512 kai 427k (▼5,5k 11/11).
+- **Đã làm:**
+  1. Tìm "thẻ / thẻ bài / pokemon / máy game" → mở thẳng nhóm hàng (Thẻ bài / Máy game) thay vì 0 kết quả; đo search_cat. Kiểm thử local: ?q=thẻ bài → ?c=card 48 món; "18 prm" vẫn ra 4 món.
+  2. events.json: thêm 平和堂 bốc thăm 14/11 (confirmed: false, nguồn goal.com 11/11).
+- **Đánh giá thí nghiệm hạn 12/11:**
+  - Dải "lần trước bạn xem": 4 ngày ~130 lần hiện, 8 lần bấm (~6%) → **giữ nhưng dừng làm thêm** (không tốn gì, không ưu tiên).
+  - Bình luận N%3 mời nhóm: nhóm 20 → 28 thành viên trong 1 tuần → **giữ**.
+  - Bảng lời/lỗ ?v=profit: 2–3 lượt mở/ngày → giữ, link ?v=profit chỉ khi người ta hỏi "mua Apple bán có lời không".
+  - Trang cá nhân 1 bài/ngày: 2/7 ngày bỏ lượt vì trang ttduy95 treo → giữ, theo dõi.
+  - Quét mã vạch: không thấy lượt scan trong báo cáo → giữ (không tốn), không quảng bá thêm.
+- **Nhận định:** chip trang chủ có hiệu quả ngay (bấm tiệm 14% → 17%). Lượt vào phụ thuộc Chrome ổn định; Google vẫn 0 sau 9 ngày.
+- **Đề xuất chờ user:** (1) Search Console + sitemap; (2) khởi động lại Chrome/máy khi rảnh (kẹt từ chiều 11/11); (3) cân nhắc lịch đám mây cho phần không cần Chrome.

@@ -75,6 +75,17 @@
    "confirmed": true
   },
   {
+   "date": "2026-11-14",
+   "kind": "lottery",
+   "title": "平和堂: mở đợt bốc thăm mới box ハドウシーカー + set thẻ 30th CELEBRATION (từ 14/11)",
+   "title_ja": "平和堂 ハドウシーカーBOX・30th CELEBRATION カードセット 抽選受付",
+   "where": "平和堂 (Shiga, Kyoto…)",
+   "note": "Theo bài tổng hợp goal.com cập nhật 11/11; hạn và cách đăng ký xem trang 平和堂.",
+   "src": "https://www.goal.com/jp/%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B9/pokemon-card-lottery-information-2026/blt9aa2212834fd35bf",
+   "match": "ハドウシーカー",
+   "confirmed": false
+  },
+  {
    "date": "2026-11-15",
    "kind": "lottery",
    "title": "Bốc thăm ハドウシーカー ở nhiều tiệm (ドン・キホーテ, 三洋堂書店, GEO Online, app キッズリパブリック), hạn khoảng 11–15/11",

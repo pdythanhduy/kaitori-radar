@@ -504,6 +504,12 @@
     if (document.body.classList.contains("side-open")) updApply();
   }
   async function render() {
+    // 12/11: gõ tên nhóm hàng chung chung tiếng Việt ("thẻ", "thẻ bài", "máy game") không ra món nào → mở thẳng nhóm hàng
+    if (st.q) {
+      const g = st.q.normalize("NFC").toLowerCase().replace(/\s/g, "");
+      const vc = { "thẻ": "card", "thẻbài": "card", "thẻpokemon": "card", "thẻpokémon": "card", "pokemon": "card", "pokémon": "card", "hộpthẻ": "card", "boxpokemon": "card", "máygame": "game", "mayga": "game", "maygame": "game" }[g];
+      if (vc && CATS[vc]) { window.kpTrack?.("search_cat", { q: st.q, cat: vc }); st.q = ""; st.cat = vc; st.view = "cat"; }
+    }
     const listMode = st.view === "cat" || !!st.q;
     $("#home").hidden = st.view !== "home" || !!st.q;
     $("#catview").hidden = !listMode;
