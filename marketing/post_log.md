@@ -92,3 +92,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-11 | 21:33 | 5 | 🃏 GIÁ THU MUA HỘP THẺ POKÉMON CAO NHẤT HÔM NAY | https://www.facebook.com/groups/1118827834446963
 2026-11-11 | 23:00 | canhan | BỎ LƯỢT: trang ttduy95 treo ở 'đang tải' (2 lần chờ 45s), Chrome kẹt từ chiều; góc định đăng: '📉 11/11: DUO 512 GIẢM 5.500円, HỘP POKÉMON CŨNG HẠ NHẸ' | -
 2026-11-12 | 08:20 | tinhot | 🔥 POKÉMON & iPHONE: TIN HOT HÔM NAY 12/11 (Deck MEGA mai 13/11; ヨドバシ trúng mua tới 23:59 hôm nay; 平和堂 bốc thăm từ 14/11; ドンキ/GEO… ~15/11; PCO KQ 17/11; Duo 512 427k lời ~27k; Thành Duy) | https://www.facebook.com/groups/1118827834446963
+2026-11-12 | 10:07 | big-85K | 💰 MUA iPHONE GIÁ APPLE RỒI BÁN KAI: MẪU NÀO CÒN LỜI, MẪU NÀO ĐANG LỖ? (không link, lên ngay; đã bình luận link /vi/?v=profit; giá 22:40 11/11; Thành Duy) | https://www.facebook.com/groups/congdongmuabandienthoaimaytinhnhatban/posts/1743486893416079/
