@@ -212,3 +212,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-12 | 09:52 | 32K | posts/1457671409671685 | [ngắn] cần 17PM trắng 512 Yokohama → seal bạc 214–216.5k (PANDA) mốc trả giá + link ?q=17 pro max 512
 2026-11-12 | 10:22 | 53K | posts/1610671477042130 | [ngắn] bán 2 máy 18PM 256 đen Saitama → đen trừ màu 226.5k (ルデヤ/森森/1丁目), đỏ/xanh 231k + link guide 18PM
 2026-11-12 | 10:53 | 32K | posts/1457746879664138 | [ngắn] tìm 30 box 30th Nagoya → box 30th tiệm thu cao nhất 20.2k (森森), 当番/ホムラ 20k, thấp ~17k + mời nhóm + link ?q=30th
+2026-11-12 | 11:22 | 53K | posts/1610672003708744 | [ngắn] tìm 18PM xanh 23.5 / đỏ 23.3 Sengendai → xanh/đỏ 256 kai 231k, trả trên kai 2–4k + link guide 18PM
