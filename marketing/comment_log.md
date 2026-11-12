@@ -215,3 +215,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-12 | 11:22 | 53K | posts/1610672003708744 | [ngắn] tìm 18PM xanh 23.5 / đỏ 23.3 Sengendai → xanh/đỏ 256 kai 231k, trả trên kai 2–4k + link guide 18PM
 2026-11-12 | 11:52 | 32K | posts/1457755592996600 | [ngắn] 18PM 256 2 đỏ + 1 trắng Saitama → đỏ 232k (ルデヤ), bạc 226k, 3 máy ~69man + link ?q=18 pro max 256
 2026-11-12 | 12:22 | 53K | posts/1610754683700476 | [ngắn] Duo đen 256 ai thu → 371.5k (ルデヤ), 森森/1丁目 371k, giảm nhẹ từ 373k + mời nhóm + link guide Duo
+2026-11-12 | 12:52 | 32K | posts/1457818562990303 | [ngắn] 23man tìm 18PM đỏ/trắng Nagoya → kai đỏ 232k, bạc 226k: 23man trên trắng 4k, dưới đỏ 2k + link ?q=18 pro max 256
