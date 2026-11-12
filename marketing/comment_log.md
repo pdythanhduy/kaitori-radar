@@ -231,3 +231,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-12 | 20:22 | 53K | posts/1611067907002487 | [ngắn] đơn Apple tự huỷ (thẻ trả sau) → gọi 0120-993-993 hỏi lý do; huỷ trước xuất kho chỉ giữ hạn mức + link /guide/huy-iphone/#hoantien
 2026-11-12 | 20:53 | 109K | posts/2245617056338289 | [ngắn] shop K-MOBILE rao iPad gen 11 128 (đã bóc seal) 55k → còn seal kai ~66k (森森/ルデヤ), bóc seal thấp hơn + mời nhóm + link ?q=iPad 第11世代
 2026-11-12 | 21:15 | Pokémon 96K (pokemonae) | posts/1756502982114660 | pokemon-daily 11/11 (đã duyệt) + link /guide/lich-pokemon/
+2026-11-13 | 08:23 | 32K | posts/1458756656229827 | [ngắn] bán 18PM cherry 256 Osaka → kai tối qua đỏ 232k (ゲストモバイル), 森森 231k + link guide 18PM
