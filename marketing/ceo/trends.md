@@ -1,20 +1,20 @@
 # Trend nóng hôm nay (lịch săn trend ghi; bình luận + bài nhóm đọc để chọn góc)
 
-**Quét lúc 11/11 18:20 JST**
+**Quét lúc 12/11 12:05 JST**
 
-## ⚡ Giá đổi trong ngày (site/data ~18:10, so hôm qua)
-- **Duo 512: 432,5k → 427k (▼5,5k)**, đen 426,5k (ルデヤ), trắng 420k. Lời mua Apple→kai còn +27,2k. Duo 256 đen 373k / trắng 366,5k; 1TB 505k (▲1k), 2TB 609k.
-- 18PM 256 đỏ 231k (▼1k, 森森 232→231k), bạc 226k; 512 262k. 18 Pro 256 203k (▲1k). Chưa mẫu nào đổi dấu lời↔lỗ.
-- **Box Pokémon trượt nhẹ ở 森森:** ニンジャスピナー 9,3k → 8,8k (▼5%), 超電ブレイカー 26,5k (▼1k), 熱風のアリーナ 17,7k (▼600), メガドリームex 11,5k (▼600). Box 30th 20,2k đứng giá; set 9 14,7k (▲500).
+## ⚡ Giá đổi trong ngày (site/data ~12:00, so hôm qua)
+- **Deck mèo 30th エーフィ・ブラッキー: 14k → 12,8k (▼8,6%)**; 森森 14k → 12k, tiệm cao nhất giờ là 1丁目 12,8k, ルデヤ 10k. (PCO đang giao đợt 1–15/11 → hàng ra nhiều; nguồn: tin PCO tổng hợp goal.com 11/11.)
+- **Duo 2TB 609k → 605k (▼4k), 1TB 505k → 502k (▼3k)**, 256 373k → 371,5k; 512 giữ 427k. Lời mua Apple→kai: 1TB +32,2k, 2TB +30,2k, 512 +27,2k, 256 +6,7k.
+- 18PM 256 đỏ lên 232k (ルデヤ/1丁目, ▲1k); bạc/đen 226–226,5k. Box 30th 20,2k đứng giá; set 9 thẻ 15,1k (▲400); シャイニートレジャーex 17,5k (▲1,5k).
 
-## 🗣 Chủ đề nóng (32K + 53K, chiều 13–18h)
-1. Tiếp tục đẩy 18PM đỏ 256 giá 23,2–23,5m, nhiều bài 2–7 máy ("giá kai cộng", "3 máy 233 Namba"). → đỏ 231k, rao trên kai 1–4k.
-2. Duo 256 trắng/đen hỏi "ai thu, cho giá" (Kobe, Ikebukuro, Osaka) → đen 373k, trắng 366,5k (trừ 5–7k).
-3. Lẻ: máy MNP au "mua đứt giảm giá nhà mạng" 18PM 512 nguyên hộp; PayPay thanh toán lỗi hỏi khi nào hoàn tiền → /guide/huy-iphone/#hoantien.
+## 🗣 Chủ đề nóng (32K + 53K, sáng 8–12h)
+1. Vẫn rất nhiều bài đẩy 18PM đỏ 256 giá 23,0–23,4m (Kuzuha, Sagamihara, Umeda, Ike…), cả "2 đỏ + 1 trắng", "3 con đỏ". → đỏ 232k, bạc 226k.
+2. Người MUA: tìm 18PM xanh 23,5 / đỏ 23,3, 17PM trắng 512, Duo + PRM quanh Osaka; dân buôn "tìm 30 box 30th hôm nay" Nagoya → box 30th 20,2k (森森).
+3. Đổi máy: 18 Pro xanh + bù 2man lấy 18PM → chênh kai 2,7–3,2man. Lẻ: "nhảy lịch giao", bị cancel đơn.
 
 ## 📰 Tin
-- Không có tin có nguồn 24–48h về giá kai Nhật. SCMP có bài "chênh giá Duo ở chợ buôn TQ biến mất" (chưa xác minh ngày đăng) → khớp Duo 512 giảm hôm nay, chỉ dùng làm bối cảnh.
+- Deck MEGA phát hành mai 13/11 (5.500円); 平和堂 bốc thăm ハドウシーカー + set 30th từ 14/11 (goal.com 11/11). Không có tin giá kai iPhone 24–48h có nguồn.
 
 ## 🎯 Góc đề xuất
-- Bình luận: Duo 512 → nhắc vừa giảm 5,5k còn 427k; Duo trắng → trừ màu 5–7k.
-- Bài nhóm khung 4 (19h): "📉 HỘP POKÉMON TRƯỢT NHẸ HÔM NAY: NINJA SPINNER ▼5%, SIÊU ĐIỆN ▼1K" + /guide/gia-kai-pokemon-box/ (hoặc giữ khung 4 mặc định nếu có số tốt hơn).
+- Bình luận: hỏi deck mèo / dekki mèo → vừa giảm còn 12,8k (1丁目), 森森 12k; Duo 1TB/2TB → giảm 3–4k sáng nay.
+- Bài nhóm khung 2 (13h): "📉 DECK MÈO 30th RỚT 14K → 12,8K, DUO 1TB/2TB GIẢM 3–4K: GIÁ KAI SÁNG NAY" + /guide/gia-kai-pokemon-box/.
