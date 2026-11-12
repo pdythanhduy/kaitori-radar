@@ -209,3 +209,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-12 | 08:22 | 53K | posts/1610588640383747 | [ngắn] đổi 18 Pro xanh + bù 2man lấy 18PM → kai tối qua 18 Pro xanh 199k vs 18PM bạc/đen 226k, đỏ/xanh 231k, chênh 2.7–3.2man + link guide 18PM
 2026-11-12 | 08:52 | 32K | posts/1457310783041081 | [ngắn] bán gấp 18PM đỏ 256 23m Sagamihara → tiệm 231k (giá tối qua), hơn rao chút + link ?q=18 pro max 256
 2026-11-12 | 09:22 | 53K | posts/1610577250384886 | [ngắn] bán máy đỏ 256 Umeda xin giá → kai tối qua 18PM 231k, 18 Pro 202k + mời nhóm + link guide 18PM
+2026-11-12 | 09:52 | 32K | posts/1457671409671685 | [ngắn] cần 17PM trắng 512 Yokohama → seal bạc 214–216.5k (PANDA) mốc trả giá + link ?q=17 pro max 512
