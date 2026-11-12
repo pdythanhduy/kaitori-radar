@@ -217,3 +217,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-12 | 12:22 | 53K | posts/1610754683700476 | [ngắn] Duo đen 256 ai thu → 371.5k (ルデヤ), 森森/1丁目 371k, giảm nhẹ từ 373k + mời nhóm + link guide Duo
 2026-11-12 | 12:52 | 32K | posts/1457818562990303 | [ngắn] 23man tìm 18PM đỏ/trắng Nagoya → kai đỏ 232k, bạc 226k: 23man trên trắng 4k, dưới đỏ 2k + link ?q=18 pro max 256
 2026-11-12 | 13:22 | 53K | posts/1610777037031574 | [ngắn] ra đi Duo 512 đen Tokyo hỏi giá → ゲストモバイル 427k, ルデヤ/森森/1丁目 vừa xuống 417k, lệch 10k + link guide Duo
+2026-11-12 | 14:22 | 32K | posts/1457855072986652 | [ngắn] bán 2 PM đen + 1 Duo đen 256 Omiya → 18PM đen 226.5k, Duo đen 371.5k (ルデヤ) + mời nhóm + link ?q=duo 256
