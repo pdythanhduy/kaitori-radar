@@ -229,3 +229,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-12 | 18:52 | 53K | posts/1610994077009870 | [ngắn] Duo đen Hyogo ai nhận → 256 371.5k (ルデヤ), 512 đã xuống 417k + mời nhóm + link guide Duo
 2026-11-12 | 19:52 | 32K | posts/1458032126302280 | [ngắn] giải cứu 1 đỏ 512 + 2 đỏ 256 Namba → đỏ 512 262k, đỏ 256 231–232k, 3 máy ~72.5man + link ?q=18 pro max
 2026-11-12 | 20:22 | 53K | posts/1611067907002487 | [ngắn] đơn Apple tự huỷ (thẻ trả sau) → gọi 0120-993-993 hỏi lý do; huỷ trước xuất kho chỉ giữ hạn mức + link /guide/huy-iphone/#hoantien
+2026-11-12 | 20:53 | 109K | posts/2245617056338289 | [ngắn] shop K-MOBILE rao iPad gen 11 128 (đã bóc seal) 55k → còn seal kai ~66k (森森/ルデヤ), bóc seal thấp hơn + mời nhóm + link ?q=iPad 第11世代
