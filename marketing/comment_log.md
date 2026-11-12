@@ -223,3 +223,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-12 | 15:52 | 53K | posts/1610834160359195 | [ngắn] 23m4 tìm 18PM xanh Ike → kai xanh 256 231k (ルデヤ/森森/1丁目), trả trên kai ~3k + mời nhóm + link guide 18PM
 2026-11-12 | 16:23 | 32K | posts/1457966732975486 | [ngắn] thanh lí 3 PRM trắng 23m HigashiOsaka → bạc 256 kai 226k (trừ màu), rao trên kai ~4k + link ?q=18 pro max 256
 2026-11-12 | 16:52 | 53K | posts/1610908170351794 | [ngắn] 1 xanh 1 đỏ 256 Nippori ai thu → 18PM đỏ 232k (ゲストモバイル), xanh 231k (森森/ルデヤ) + link guide 18PM
+2026-11-12 | 17:22 | 32K | posts/1457970189641807 | [ngắn] 18PM đỏ 512 Tokyo xin giá → kai 262k (đa số tiệm), app 274.8 + mời nhóm + link ?q=18 pro max 512
