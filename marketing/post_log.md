@@ -97,3 +97,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-12 | 13:28 | 2 | 📉 TRƯA NAY GIÁ KAI GIẢM: DUO 512 MẤT 9K Ở 3 TIỆM, DECK MÈO 30th CÒN 12.500円 (góc trend thay khung 2 mặc định; giá 13:11; Thành Duy) | https://www.facebook.com/groups/1118827834446963
 2026-11-12 | 15:26 | 3 | 📊 GIÁ KAI ĐỔI GÌ HÔM NAY? | https://www.facebook.com/groups/1118827834446963
 2026-11-12 | 19:27 | 4 | 📉 DUO 512 MẤT 9.500円 TRONG NGÀY: MUA GIÁ APPLE RỒI BÁN KAI CÒN LỜI 17.700円 (góc trend thay khung 4; giá 19:11; Thành Duy) | https://www.facebook.com/groups/1118827834446963
+2026-11-12 | 21:18 | pokemon-daily | 🐱 DEKKI MÈO 30th RỚT 25% TỪ ĐẦU THÁNG: 16.000円 → 12.000円 (kèm ảnh meo-1112.png, Thành Duy) – CHỜ DUYỆT, chưa bình luận link; bài 11/11 đã duyệt → đã bình luận link lich-pokemon | https://www.facebook.com/groups/pokemonae/my_pending_content
