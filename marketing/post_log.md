@@ -95,3 +95,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-12 | 10:07 | big-85K | 💰 MUA iPHONE GIÁ APPLE RỒI BÁN KAI: MẪU NÀO CÒN LỜI, MẪU NÀO ĐANG LỖ? (không link, lên ngay; đã bình luận link /vi/?v=profit; giá 22:40 11/11; Thành Duy) | https://www.facebook.com/groups/congdongmuabandienthoaimaytinhnhatban/posts/1743486893416079/
 2026-11-12 | 11:25 | 1 | 💰 HÔM NAY MUA iPHONE GIÁ APPLE RỒI BÁN KAI THÌ LỜI HAY LỖ? | https://www.facebook.com/groups/1118827834446963
 2026-11-12 | 13:28 | 2 | 📉 TRƯA NAY GIÁ KAI GIẢM: DUO 512 MẤT 9K Ở 3 TIỆM, DECK MÈO 30th CÒN 12.500円 (góc trend thay khung 2 mặc định; giá 13:11; Thành Duy) | https://www.facebook.com/groups/1118827834446963
+2026-11-12 | 15:26 | 3 | 📊 GIÁ KAI ĐỔI GÌ HÔM NAY? | https://www.facebook.com/groups/1118827834446963
