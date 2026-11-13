@@ -240,3 +240,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-13 | 11:23 | 85K | permalink/1744481116649990 | [ngắn] cắt lỗ 10 máy 18PM đỏ 256 23.3man → 11h đỏ 232k (ゲストモバイル), 森森 231k, vài tiệm xuống 229k + link guide 18PM
 2026-11-13 | 11:53 | 32K | permalink/1458883319550494 | [ngắn] shop nào thu 18PM đỏ 256x2/512x1/1TBx4 Tokyo-Chiba-Saitama → 256 232k (ゲストモバイル), 512 262k, 1TB 334k vs 331k (4 cây chênh 12k) + link ?q=18 pro max 1TB
 2026-11-13 | 12:23 | 53K | permalink/1611761113599833 | [ngắn] bán 18 Pro trắng 256 chưa active 20m Osaka → trắng 198.5k (ルデヤ/森森, trừ màu), tiệm không tách màu 203.5k + mời nhóm + link guide 18 Pro
+2026-11-13 | 12:53 | 85K | permalink/1744545013310267 | [ngắn] rao iPad Pro M5 11 inch đã bóc hộp → seal 256 wifi 169.3k (ゲストモバイル), 512 187k, bóc hộp thấp hơn + link ?q=iPad Pro M5
