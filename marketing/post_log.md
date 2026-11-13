@@ -101,3 +101,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-12 | 21:33 | 5 | 🎮 GIÁ THU MUA MÁY GAME HÔM NAY | https://www.facebook.com/groups/1118827834446963
 2026-11-13 | 08:15 | tinhot | 🔥 POKÉMON & iPHONE: TIN HOT HÔM NAY 13/11 (bản nhắc ngắn: Deck MEGA hôm nay; ドンキ/GEO/三洋堂 ~15/11, deck エーフィ・ブラッキー 15/11, 平和堂 từ 14/11, PCO KQ 17/11; Duo 512 417.5k lời ~17.7k; box 30th 19.5k; Thành Duy) | https://www.facebook.com/groups/1118827834446963
 2026-11-13 | 10:09 | big-53K | 🔀 CÙNG 1 MÁY, BÁN SAI TIỆM LÀ MẤT CẢ CHỤC NGHÌN YÊN (không link, lên ngay không chờ duyệt; đã bình luận link /vi/?q=iPhone 16 Pro 512GB; giá 09:22 13/11, bỏ 17 Pro 1TB 森森 vì giá lẻ; Thành Duy) | https://www.facebook.com/groups/713324666776820/posts/1611678720274739/
+2026-11-13 | 11:26 | 1 | 💰 HÔM NAY MUA iPHONE GIÁ APPLE RỒI BÁN KAI THÌ LỜI HAY LỖ? | https://www.facebook.com/groups/1118827834446963
