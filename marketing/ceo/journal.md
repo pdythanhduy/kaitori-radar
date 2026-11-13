@@ -179,3 +179,20 @@ Thí nghiệm nào không hiệu quả sau 3–7 ngày thì dừng. Thí nghiệ
   - Quét mã vạch: không thấy lượt scan trong báo cáo → giữ (không tốn), không quảng bá thêm.
 - **Nhận định:** chip trang chủ có hiệu quả ngay (bấm tiệm 14% → 17%). Lượt vào phụ thuộc Chrome ổn định; Google vẫn 0 sau 9 ngày.
 - **Đề xuất chờ user:** (1) Search Console + sitemap; (2) khởi động lại Chrome/máy khi rảnh (kẹt từ chiều 11/11); (3) cân nhắc lịch đám mây cho phần không cần Chrome.
+
+### 13/11/2026
+- **Hôm qua (12/11, cả ngày, lịch chạy đủ):**
+  - **118 lượt vào** (11/11: 129, −9%), 233 lượt xem. FB 74 (63%), gõ thẳng 41, Google 3.
+  - 25 bình luận + 5 bài nhóm + tin hot + bài nhóm lớn → FB/bình luận ≈ 3,0 (11/11 ≈ 3,4).
+  - **Bấm sang tiệm 25/118 (21%**, 11/11 17%, 10/11 14%) → tăng 2 ngày liền. ルデヤ 9, ゲストモバイル 5, 森森 5, 1丁目 4.
+  - **Chip "Hay xem": 20 lượt bấm** (11/11: 10) — 18PM 13, Duo 6, Box 30th 1. Trang chủ còn 41/118 lượt vào (11/11: 55).
+  - Guide: 18PM 18, Duo 6, huỷ đơn 5, lịch Pokémon 2.
+  - Quay lại 24/98 máy (24%, 11/11 18%). Dải "lần trước bạn xem": hiện 38, bấm 0. Tìm không ra 0%.
+- **Trend (có nguồn):** Deck MEGA ra hôm nay 13/11; bốc thăm ドンキ/GEO/三洋堂 ~15/11, deck 30th エーフィ・ブラッキー hạn 15/11 (cardchusen); 平和堂 từ 14/11; PCO KQ 17/11. Switch 2/PS5: không có tin giảm giá/khan hàng mới (chỉ tin tăng giá cũ). TQ/HK: Apple giữ giá, 先達 chưa có số mới sau 06/11. Kai: Duo 512 ▼9,5k còn 417,5k; Đài Loan 18PM 256 ▼3,7%.
+- **Phát hiện:** giá trên web đứng từ 22:42 tối qua đến sáng. Worker chỉ chạy 10:07–22:37 JST; lượt dự phòng GitHub 06:48 JST thực tế chạy trễ ~5 giờ (11/11 10:29, 12/11 11:32 JST). Trong khi bình luận bắt đầu 8:07 → 4 lượt bình luận buổi sáng dùng giá tối qua (đã ghi "tối qua" cho trung thực).
+- **Đã làm:**
+  1. Bấm chạy cập nhật giá ngay lúc 09:18 (workflow_dispatch, giống Worker làm) để giá buổi sáng mới.
+  2. events.json: thêm hạn bốc thăm deck 30th エーフィ・ブラッキー 15/11 23:59 (confirmed: false, nguồn cardchusen) → hiện trên /guide/lich-pokemon/.
+  3. comment_style.md: thêm "Học được" 13/11.
+- **Đánh giá:** chip "Hay xem" → hiệu quả rõ (bấm gấp đôi, khách vào trang chủ giảm, bấm tiệm 14% → 21%), giữ, xem lại 17/11 như hẹn.
+- **Đề xuất chờ user:** (1) thêm cron Worker kaitori-cron `7,37 23 * * *` (UTC) = 08:07/08:37 JST để giá có trước lượt bình luận sáng (cần deploy Worker trên tài khoản Cloudflare của user — đổi lịch hạ tầng nên chờ user đồng ý); (2) Search Console + sitemap (vẫn Google ~3/ngày).

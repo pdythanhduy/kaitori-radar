@@ -97,6 +97,18 @@
    "confirmed": false
   },
   {
+   "date": "2026-11-15",
+   "time": "23:59",
+   "kind": "lottery",
+   "title": "Hạn bốc thăm deck 30th CELEBRATION エーフィ・ブラッキー (có nơi nhận tới 23:59 ngày 15/11)",
+   "title_ja": "30th CELEBRATION プレミアムデッキセット エーフィ・ブラッキー 抽選 締切",
+   "where": "Tuỳ tiệm (xem trang tổng hợp)",
+   "note": "Theo trang tổng hợp cardchusen (cập nhật 11/11); bốc thăm khoảng 16/11. Mỗi tiệm hạn khác nhau, xem trang chính thức.",
+   "src": "https://cardchusen.com/pokeka/30th-celebration",
+   "match": "エーフィ・ブラッキー",
+   "confirmed": false
+  },
+  {
    "date": "2026-11-17",
    "end": "2026-11-24",
    "kind": "lottery",

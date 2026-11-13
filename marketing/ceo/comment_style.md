@@ -21,6 +21,7 @@ User yêu cầu 07/11: "comment sao cho thật để khỏi giống AI, học h�
 - Bài rao 17PM trắng: "17PM trắng 256 tiệm đang thu ~191k (PANDA) b nhé, màu khác bị trừ vài k. bảng màu <link>"
 
 ## Học được (CEO sáng cập nhật, mới nhất ở trên)
+- 13/11: 12/11 25 bình luận → 74 lượt FB ≈ 3,0/bình luận, bấm sang tiệm 21% (cao nhất tuần). Bình luận đúng màu + dung lượng (đỏ 256 232k, trắng 512 258k) kéo lượt vào thẳng ?q=18 pro max 256 (21) → giữ kiểu này. Giá web chỉ cập nhật 10:07–22:37: bình luận trước ~10h phải nói "tối qua", không nói "sáng nay".
 - 10/11: 09/11 chỉ 12 bình luận (lịch chết nửa ngày) → 37 lượt FB ≈ 3,1/bình luận, giữ được. Nhưng 24/65 lượt vào là trang chủ /vi/ và bấm tiệm chỉ 14% → link đúng món (?q=<model> hoặc trang guide) thay vì /vi/ trơn. Bình luận trả lời đúng câu hỏi kèm ảnh (vd phí trả hàng 0円) tự nhiên hơn đọc bảng giá.
 - 08/11: 07/11 (ngắn từ trưa) 24 bình luận → 70 lượt FB ≈ 2,9/bình luận (06/11 ≈ 3,1), nhưng bấm sang tiệm 29% (06/11: 20%) → bình luận ngắn không làm mất lượt, khách vào đúng ý hơn. Bài máy cũ/đổi máy: nói giá seal là "mốc trên", không đoán giá máy cũ. Tránh lặp "máy đã dùng thì kai trả thấp hơn" (đã dùng 3 lần 07/11).
 - 07/11: bình luận dài liệt kê đủ giá các tiệm → người đọc không cần bấm (sáng 07/11 chỉ 5 lượt từ FB / 4 bình luận). Chuyển sang kiểu ngắn ở trên từ 07/11 trưa. So lượt FB/bình luận các ngày sau (06/11 ≈ 3,7; sáng 07/11 ≈ 1,3).
