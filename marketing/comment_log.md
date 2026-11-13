@@ -256,3 +256,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-13 | 19:54 | 32K | permalink/1459210956184397 | [ngắn] tìm 17 Pro 256 full box xin giá → seal bạc 176.5k (PANDA), xanh/cam trừ 2–6k, ~17.6 sát kai + link guide 17 Pro
 2026-11-13 | 20:23 | 53K | permalink/1612074686901809 | [ngắn] trả Apple có cần thùng carton (đã bóc, máy còn seal)? → cần tình trạng ban đầu, đủ phụ kiện + hộp máy; 15% chỉ đơn số lượng lớn/bất thường; thùng ship gọi 0120-993-993 + mời nhóm + link /guide/tra-iphone-apple/
 2026-11-13 | 21:16 | Pokémon 96K (pokemonae) | posts/1758620318569593 | pokemon-daily 13/11 (đã lên) + link /guide/gia-kai-pokemon-box/
+2026-11-14 | 08:23 | 32K | permalink/1459789696126523 | [ngắn] bán 17PM cam 256 nguyên carton 18m9 Omiya → cam tối qua PANDA 186k, 森森 184.9k (trừ màu), không tách màu 192k + link guide 17PM
