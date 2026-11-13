@@ -14,7 +14,7 @@
 3. Pokémon: "box kỉ niệm đang về mà các tổng im ắng, không thấy ai thu", tìm set 9 (~1m5), hỏi thu box 30th không seal. → kai box 30th 19k (chỉ seal), set 9 15k, link /guide/gia-kai-pokemon-box/.
 
 ## 📰 Tin
-- SCMP: chênh giá bán lại iPhone Duo ở chợ chợ đen Trung Quốc đang "bốc hơi" (Huaqiangbei hạ 1TB đen ~2.800 tệ trong vài ngày). Giải thích thêm cho việc kai Nhật giảm.
+- SCMP: chênh giá bán lại iPhone Duo ở chợ Trung Quốc đang "bốc hơi" (Huaqiangbei hạ 1TB đen ~2.800 tệ trong vài ngày). Giải thích thêm cho việc kai Nhật giảm.
 - Pokémon Center Online đã báo sẽ có bốc thăm bổ sung box 30th / deck エーフィ・ブラッキー / FUTURISTIC khoảng tháng 12, chưa có ngày (inside-games 29/9).
 
 ## 🎯 Góc đề xuất
