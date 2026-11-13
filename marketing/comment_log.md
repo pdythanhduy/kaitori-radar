@@ -244,3 +244,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-13 | 13:23 | 32K | permalink/1458951842876975 | [ngắn] huỷ 4 Duo giao tháng 12, 請求発生しません có mất 15%? → huỷ trước xuất kho chỉ tạm giữ hạn mức, 15% chỉ đơn số lượng lớn/bất thường, gọi 0120-993-993 + link /guide/huy-iphone/#hoantien
 2026-11-13 | 13:53 | 53K | permalink/1611822466927031 | [ngắn] "18 vs Duo thế là hết rồi hả" → trưa nay 7 tiệm hạ Duo 11–15k, Duo 256 360.5k < app 364.8, 18PM 256 230k + mời nhóm + link ?q=iPhone Duo
 2026-11-13 | 14:23 | 32K | permalink/1458945682877591 | [ngắn] cần mua 18PM đỏ 512 giá app-kai Utsunomiya → đỏ 512 kai 262k, app 274.8 → chênh ~12.8k + link guide 18PM
+2026-11-13 | 14:53 | 53K | permalink/1611836693592275 | [ngắn] tìm Duo trắng 256 36m7 Kasukabe → trưa vừa xuống, kai trắng 360.5k (ルデヤ), trả trên kai ~6k + link ?q=duo 256
