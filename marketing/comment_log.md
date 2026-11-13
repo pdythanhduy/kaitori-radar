@@ -235,3 +235,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-13 | 08:54 | 53K | posts/1611625660280045 | [ngắn] cần mua 18PM 512 trắng Tokyo xin giá → kai tối qua trắng 258k (ルデヤ), tiệm không trừ màu 262k + link ?q=18 pro max 512
 2026-11-13 | 09:24 | 85K | permalink/1744393839992051 | [ngắn] bán 18PM cherry 256 23.5man Tochigi/Saitama/Tokyo → đỏ 232k (ゲストモバイル), rao trên kai 3k + mời nhóm + link guide 18PM
 2026-11-13 | 09:53 | 109K | permalink/2246279139605414 | [ngắn] bán 2 Samsung A25 mới (đăng ký nhà mạng) 1man8 Nagoya → bản nhà mạng ~17k (ゲストモバイル), 森森 16.5k + link ?q=Galaxy A25
+2026-11-13 | 10:23 | 32K | permalink/1458827896222703 | [ngắn] Duo đen 1TB ai nhận trên 50.2m Tokyo → kai cao nhất 502k (4 tiệm cùng giá), chưa tiệm nào trên + link guide Duo
