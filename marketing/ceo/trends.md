@@ -1,26 +1,22 @@
 # Trend nóng hôm nay (lịch săn trend ghi; bình luận + bài nhóm đọc để chọn góc)
 
-**Quét lúc 13/11 12:05 JST**
+**Quét lúc 13/11 18:20 JST**
 
-## ⚡ Giá đổi (site/data ~11:45, so hôm qua / 7 ngày)
-- **13:15 ⚡ Duo giảm 11–15k trong trưa (12:10–12:40, cả 7 tiệm): 256 360,5k (thấp hơn Apple ~4,3k → LỖ), 512 405,5k (+5,7k), 1TB 491k (+21,2k), 2TB 590k (+15,2k). 18PM 256 230k.** Số bên dưới là trước đợt giảm.
-- Trong ngày yên: không món hot nào đổi ≥2% hay ≥3k so hôm qua. Lời/lỗ giữ 4/12 mẫu có lời (Duo cả 4 bản), không mẫu nào đổi dấu.
-- 18PM 256: ゲストモバイル 232k, 森森 231k (đỏ), 1丁目/当番/モバイル一番 vừa xuống 229k (giá chung). 512 262k. 1TB 334k (森森/ゲストモバイル) vs 331k.
-- Duo: 256 371,5k · 512 417,5k (sau ▼9,5k hôm qua) · 1TB 502k (4 tiệm cùng giá) · 2TB 605k.
-- 7 ngày Pokémon: deck 30th エーフィ・ブラッキー 15k → 12k (▼20%), box 30th 21,2k → 19,5k (▼8%), FUTURISTIC 49,5k → 47,5k (▼4%).
-- Bỏ: 17 Pro 1TB 森森 227k (giá lẻ, tiệm khác 203–219k).
+## ⚡ Giá đổi (site/data ~17:40, so hôm qua)
+- Duo (cả 7 tiệm hạ 12:10–12:40, đã báo Telegram): 256 360,5k (▼11k, thấp hơn Apple ~4,3k → LỖ), 512 405,5k (▼12k, lời +5,7k), 1TB 491k (▼11k, +21,2k), 2TB 590k (▼15k, +15,2k). 7 ngày Duo 512 ▼23,5k.
+- 18PM 256: 230k (森森/PANDA), đa số 229k; đỏ/xanh 230k, bạc 226k. 512 262k (app 274,8 → app −12,8). 1TB 332k.
+- Pokémon chiều (đã báo): FUTURISTIC 47,5k → 44k (▼7%), deck エーフィ・ブラッキー 12k → 11,3k (7 ngày 15k → 11,3k), box 30th 19,5k → 19k, シャイニートレジャー 17,5k → 16k.
+- Lời/lỗ: Duo 256 vừa đổi dấu sang lỗ; 18 Pro / Pro Max vẫn lỗ 10–23k (2TB ~53–55k).
 
-## 🗣 Chủ đề nóng (32K + 53K + 85K, 08–12h hôm nay)
-1. Đẩy 18PM đỏ/trắng 256 giá 23,0–23,5m, có người "cắt lỗ 10 máy 23,3", "chán ôm rồi vác lên kai". → đỏ 232k, trắng (bạc) 226k: 23,3 là sát kai.
-2. Duo: "Duo 256 trắng ế à, không thấy ai thu", "Duo đen 1TB ai nhận hơn 50,2m". → 256 371,5k, 1TB 502k là trần hiện tại.
-3. Lỡ bấm 返品 (henpin) khi máy chưa ship, sợ mất 15%. → 15% chỉ đơn số lượng lớn/bất thường; xem màn hình 返金額; gọi 0120-993-993; link /guide/tra-iphone-apple/.
+## 🗣 Chủ đề nóng (32K + 53K + 85K + pokemonae, chiều nay)
+1. Phản ứng Duo giảm: "Ip 18 vs duo thế là hết luôn r hả", người tìm Duo 256 trả 36m5–36m7 (trên kai 4–6k). → nói đúng số mới + "vừa giảm trưa nay", không đoán tiếp.
+2. 18PM đỏ/xanh 256 đẩy 23,0–23,5 và người mua hỏi "app trừ mấy" (đang app −9,8 = kai). → so app 239,8 / kai 230k.
+3. Pokémon: "box kỉ niệm đang về mà các tổng im ắng, không thấy ai thu", tìm set 9 (~1m5), hỏi thu box 30th không seal. → kai box 30th 19k (chỉ seal), set 9 15k, link /guide/gia-kai-pokemon-box/.
 
 ## 📰 Tin
-- Counterpoint: 18 Pro series ở Nhật 3 tuần đầu bán ít hơn 17 Pro 27% (selectra.jp, tin tháng 10, không phải 24h). Không có tin giá kai mới 24–48h có nguồn.
-- Bốc thăm: ドンキ/GEO/三洋堂 + deck エーフィ・ブラッキー hạn 15/11; 平和堂 từ 14/11; PCO KQ 17/11.
+- SCMP: chênh giá bán lại iPhone Duo ở chợ chợ đen Trung Quốc đang "bốc hơi" (Huaqiangbei hạ 1TB đen ~2.800 tệ trong vài ngày). Giải thích thêm cho việc kai Nhật giảm.
+- Pokémon Center Online đã báo sẽ có bốc thăm bổ sung box 30th / deck エーフィ・ブラッキー / FUTURISTIC khoảng tháng 12, chưa có ngày (inside-games 29/9).
 
 ## 🎯 Góc đề xuất
-- (15:25) ⚡ Pokémon chiều nay: FUTURISTIC 47,5k → 44k (▼7%, 1丁目), deck エーフィ・ブラッキー 12k → 11,3k, box 30th 19,5k → 19k, シャイニートレジャー 17,5k → 16k. Khung 3 đã đăng.
-- (13:15) Bình luận bài Duo: nói giá mới 360,5k/405,5k/491k, "vừa giảm trưa nay". Duo 256 hỏi mua Apple bán → đang lỗ ~4k. Khung 2 đã đăng tin này.
-- Bình luận: bài rao 18PM 23,x → so đúng màu (đỏ 232k / bạc 226k); bài Duo "ế" → nói 371,5k (256) và lời mua Apple chỉ +6,7k nên ít người gom.
-- Bài nhóm khung 2 (13h): "🔀 CÙNG 18PM 1TB, TIỆM TRẢ 334K, TIỆM TRẢ 328K" (so tiệm) hoặc mặc định. Khung 3 (15h): "📉 DECK 30th エーフィ・ブラッキー 7 NGÀY MẤT 3.000円" + /guide/gia-kai-pokemon-box/.
+- Bình luận: bài Duo → 360,5k/405,5k/491k "vừa giảm trưa nay", Duo 256 mua Apple bán đang lỗ ~4k; bài 18PM "app trừ mấy" → app −9,8 (256), −12,8 (512).
+- Bài nhóm khung 4 (19h): "📉 1 NGÀY DUO MẤT 11–15K: MẪU NÀO MUA GIÁ APPLE CÒN LỜI?" (?v=profit). Khung 5 (21h, ngày lẻ → Pokémon): "📉 30th FUTURISTIC ▼3.500, DECK エーフィ 7 NGÀY MẤT 3.700円" + /guide/gia-kai-pokemon-box/.

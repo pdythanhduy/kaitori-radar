@@ -84,3 +84,9 @@ Tài liệu cho đội CEO và các lịch săn trend: người bán đang lo g�
 
 ## Cập nhật 11/11/2026 18:20
 - Duo 512 kai giảm 5,5k trong ngày (432,5k → 427k); các bản Duo khác đứng giá. SCMP có bài nói chênh giá Duo ở chợ buôn TQ đang biến mất (https://www.scmp.com/tech/article/3372169/apple-iphone-duo-price-premiums-evaporate-chinas-scalper-market, chưa xác minh ngày) — khớp mối lo 'lời Duo có bền không' ở mục 2. Cách trả lời giữ nguyên: chỉ nói lời hôm nay, không dự đoán.
+
+## Cập nhật 13/11/2026 18:20 — Duo giảm 11–15k trong 1 trưa
+- **Trong nhóm:** "Ip 18 vs duo thế là hết luôn r hả ta", "Duo 256 trắng ế, không ai thu" (sáng), người mua trả 36m5–36m7 cho Duo 256.
+- **Số thật:** 12:10–12:40 cả 7 tiệm hạ Duo: 256 371,5k → 360,5k (thấp hơn Apple 364,8k), 512 417,5k → 405,5k, 1TB 502k → 491k, 2TB 605k → 590k. Duo 512 7 ngày ▼23,5k.
+- **Tin có nguồn:** SCMP — chênh giá bán lại Duo ở chợ Trung Quốc đang mất dần (scmp.com/tech/article/3372169). Pokémon Center Online sẽ bốc thăm bổ sung hàng 30th khoảng tháng 12 (inside-games 29/9) — có thể là lý do giá kai box 30th/FUTURISTIC/deck mềm.
+- **Cách trả lời:** chỉ nêu giá đã qua + giờ, Duo 256 mua Apple bán đang lỗ ~4k; không dự đoán đáy, không khuyên ôm/xả.
