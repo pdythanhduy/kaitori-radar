@@ -253,3 +253,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-13 | 17:54 | 53K | permalink/1611954203580524 | [ngắn] 18 giờ app- mấy, tìm 18PM xanh Nagoya app-6/7 → xanh 256 kai 230k (森森), app 239.8 → app-9.8 = kai, trừ 6–7 trên kai 3–4k + link ?q=18 pro max 256
 2026-11-13 | 18:23 | 32K | permalink/1459137439525082 | [ngắn] tìm 18PM 512 trắng Kyoto → trắng 258k (森森/ルデヤ trừ màu 4k), tiệm không tách màu 262k + mời nhóm + link guide 18PM
 2026-11-13 | 19:05 | 53K | permalink/1612010293574915 | [ngắn] tìm 18PM 512 xanh kai+ Osaka (11 cmt) → xanh 512 kai 262k hầu hết tiệm, kai+ = từ 26.2 + link ?q=18 pro max 512
+2026-11-13 | 19:54 | 32K | permalink/1459210956184397 | [ngắn] tìm 17 Pro 256 full box xin giá → seal bạc 176.5k (PANDA), xanh/cam trừ 2–6k, ~17.6 sát kai + link guide 17 Pro
