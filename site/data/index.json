@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13 12:11",
+ "updated": "2026-11-13 12:40",
  "shops": {
   "morimori": {
    "name": "森森買取",
@@ -50,8 +50,8 @@
  "cats": {
   "phone": {
    "label": "スマホ",
-   "count": 1225,
-   "multi": 466
+   "count": 1222,
+   "multi": 463
   },
   "tablet": {
    "label": "タブレット",
@@ -60,8 +60,8 @@
   },
   "game": {
    "label": "ゲーム機",
-   "count": 628,
-   "multi": 282
+   "count": 634,
+   "multi": 289
   },
   "card": {
    "label": "トレカ",
@@ -70,41 +70,41 @@
   },
   "pc": {
    "label": "パソコン",
-   "count": 355,
-   "multi": 10
+   "count": 327,
+   "multi": 9
   },
   "camera": {
    "label": "カメラ",
-   "count": 1358,
-   "multi": 577
+   "count": 1375,
+   "multi": 593
   },
   "audio": {
    "label": "オーディオ",
-   "count": 380,
-   "multi": 156
+   "count": 405,
+   "multi": 159
   },
   "appliance": {
    "label": "家電・美容",
-   "count": 1656,
-   "multi": 107
+   "count": 1684,
+   "multi": 108
   },
   "watch": {
    "label": "腕時計",
    "count": 256,
-   "multi": 56
+   "multi": 49
   },
   "hobby": {
    "label": "ホビー・フィギュア",
-   "count": 176,
-   "multi": 10
+   "count": 175,
+   "multi": 5
   },
   "other": {
    "label": "その他",
    "count": 979,
-   "multi": 2
+   "multi": 3
   }
  },
- "total": 9009,
+ "total": 9053,
  "status": {
   "mobile_ichiban:2": {
    "ok": true,
@@ -219,42 +219,42 @@
   "mobile_ichiban:1": {
    "ok": true,
    "n": 9,
-   "ts": "2026-11-13 12:11"
+   "ts": "2026-11-13 12:40"
   },
   "mobile_ichiban:3": {
    "ok": true,
    "n": 20,
-   "ts": "2026-11-13 12:11"
+   "ts": "2026-11-13 12:40"
   },
   "homura:box": {
    "ok": true,
    "n": 105,
-   "ts": "2026-11-13 12:11"
+   "ts": "2026-11-13 12:40"
   },
   "morimori:0301": {
    "ok": true,
    "n": 211,
-   "ts": "2026-11-13 12:07"
+   "ts": "2026-11-13 12:37"
   },
   "morimori:0101": {
    "ok": true,
    "n": 108,
-   "ts": "2026-11-13 12:07"
+   "ts": "2026-11-13 12:37"
   },
   "morimori:0104": {
    "ok": true,
    "n": 73,
-   "ts": "2026-11-13 12:08"
+   "ts": "2026-11-13 12:38"
   },
   "morimori:2401010": {
    "ok": true,
    "n": 7,
-   "ts": "2026-11-13 12:08"
+   "ts": "2026-11-13 12:38"
   },
   "morimori:2401001": {
    "ok": true,
    "n": 27,
-   "ts": "2026-11-13 12:08"
+   "ts": "2026-11-13 12:38"
   },
   "rudeya:full": {
    "ok": true,
@@ -264,7 +264,7 @@
   "rudeya:hot": {
    "ok": true,
    "n": 299,
-   "ts": "2026-11-13 12:08"
+   "ts": "2026-11-13 12:38"
   },
   "panda:full": {
    "ok": true,
@@ -287,29 +287,29 @@
    "ts": "2026-11-13 11:33"
   },
   "panda:hot": {
-   "ok": true,
-   "n": 335,
-   "ts": "2026-11-13 12:08"
+   "ok": false,
+   "err": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+   "ts": "2026-11-13 12:38"
   },
   "guestmobile:hot": {
    "ok": true,
    "n": 143,
-   "ts": "2026-11-13 12:09"
+   "ts": "2026-11-13 12:39"
   },
   "toban:hot": {
    "ok": true,
    "n": 1221,
-   "ts": "2026-11-13 12:10"
+   "ts": "2026-11-13 12:39"
   },
   "keitaigod:hot": {
    "ok": true,
    "n": 296,
-   "ts": "2026-11-13 12:10"
+   "ts": "2026-11-13 12:40"
   },
   "ichome:hot": {
    "ok": true,
    "n": 399,
-   "ts": "2026-11-13 12:11"
+   "ts": "2026-11-13 12:40"
   },
   "ichome:full": {
    "ok": true,
