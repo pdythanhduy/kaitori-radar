@@ -112,42 +112,42 @@
  "mobile_ichiban:1": {
   "ok": true,
   "n": 9,
-  "ts": "2026-11-13 11:36"
+  "ts": "2026-11-13 11:44"
  },
  "mobile_ichiban:3": {
   "ok": true,
   "n": 20,
-  "ts": "2026-11-13 11:36"
+  "ts": "2026-11-13 11:44"
  },
  "homura:box": {
   "ok": true,
   "n": 105,
-  "ts": "2026-11-13 11:37"
+  "ts": "2026-11-13 11:45"
  },
  "morimori:0301": {
-  "ok": true,
-  "n": 211,
-  "ts": "2026-11-13 10:37"
+  "ok": false,
+  "err": "HTTPSConnectionPool(host='www.morimori-kaitori.jp', port=443): Max retries exceeded with url: /category/0301 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.morimori-kaitori.jp', port=443) a",
+  "ts": "2026-11-13 11:38"
  },
  "morimori:0101": {
-  "ok": true,
-  "n": 108,
-  "ts": "2026-11-13 10:37"
+  "ok": false,
+  "err": "HTTPSConnectionPool(host='www.morimori-kaitori.jp', port=443): Max retries exceeded with url: /category/0101 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.morimori-kaitori.jp', port=443) a",
+  "ts": "2026-11-13 11:39"
  },
  "morimori:0104": {
-  "ok": true,
-  "n": 73,
-  "ts": "2026-11-13 10:38"
+  "ok": false,
+  "err": "HTTPSConnectionPool(host='www.morimori-kaitori.jp', port=443): Max retries exceeded with url: /category/0104 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.morimori-kaitori.jp', port=443) a",
+  "ts": "2026-11-13 11:40"
  },
  "morimori:2401010": {
-  "ok": true,
-  "n": 7,
-  "ts": "2026-11-13 10:38"
+  "ok": false,
+  "err": "HTTPSConnectionPool(host='www.morimori-kaitori.jp', port=443): Max retries exceeded with url: /category/2401010 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.morimori-kaitori.jp', port=443",
+  "ts": "2026-11-13 11:40"
  },
  "morimori:2401001": {
-  "ok": true,
-  "n": 27,
-  "ts": "2026-11-13 10:38"
+  "ok": false,
+  "err": "HTTPSConnectionPool(host='www.morimori-kaitori.jp', port=443): Max retries exceeded with url: /category/2401001 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.morimori-kaitori.jp', port=443",
+  "ts": "2026-11-13 11:41"
  },
  "rudeya:full": {
   "ok": true,
@@ -157,7 +157,7 @@
  "rudeya:hot": {
   "ok": true,
   "n": 299,
-  "ts": "2026-11-13 10:38"
+  "ts": "2026-11-13 11:42"
  },
  "panda:full": {
   "ok": true,
@@ -182,27 +182,27 @@
  "panda:hot": {
   "ok": true,
   "n": 335,
-  "ts": "2026-11-13 10:38"
+  "ts": "2026-11-13 11:42"
  },
  "guestmobile:hot": {
   "ok": true,
   "n": 143,
-  "ts": "2026-11-13 10:40"
+  "ts": "2026-11-13 11:43"
  },
  "toban:hot": {
   "ok": true,
-  "n": 1222,
-  "ts": "2026-11-13 10:40"
+  "n": 1223,
+  "ts": "2026-11-13 11:43"
  },
  "keitaigod:hot": {
   "ok": true,
   "n": 296,
-  "ts": "2026-11-13 10:41"
+  "ts": "2026-11-13 11:44"
  },
  "ichome:hot": {
   "ok": true,
-  "n": 398,
-  "ts": "2026-11-13 10:41"
+  "n": 399,
+  "ts": "2026-11-13 11:45"
  },
  "ichome:full": {
   "ok": true,
