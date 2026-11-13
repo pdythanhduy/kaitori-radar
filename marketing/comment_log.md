@@ -237,3 +237,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-13 | 09:53 | 109K | permalink/2246279139605414 | [ngắn] bán 2 Samsung A25 mới (đăng ký nhà mạng) 1man8 Nagoya → bản nhà mạng ~17k (ゲストモバイル), 森森 16.5k + link ?q=Galaxy A25
 2026-11-13 | 10:23 | 32K | permalink/1458827896222703 | [ngắn] Duo đen 1TB ai nhận trên 50.2m Tokyo → kai cao nhất 502k (4 tiệm cùng giá), chưa tiệm nào trên + link guide Duo
 2026-11-13 | 10:54 | 53K | permalink/1611697420272869 | [ngắn] lỡ bấm henpin Duo 256 chưa ship, có mất 15%? → ảnh 合計返金額 đủ 364.800, 15% chỉ đơn số lượng lớn/bất thường, gọi 0120-993-993 + mời nhóm + link /guide/tra-iphone-apple/
+2026-11-13 | 11:23 | 85K | permalink/1744481116649990 | [ngắn] cắt lỗ 10 máy 18PM đỏ 256 23.3man → 11h đỏ 232k (ゲストモバイル), 森森 231k, vài tiệm xuống 229k + link guide 18PM
