@@ -246,3 +246,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-13 | 14:23 | 32K | permalink/1458945682877591 | [ngắn] cần mua 18PM đỏ 512 giá app-kai Utsunomiya → đỏ 512 kai 262k, app 274.8 → chênh ~12.8k + link guide 18PM
 2026-11-13 | 14:53 | 53K | permalink/1611836693592275 | [ngắn] tìm Duo trắng 256 36m7 Kasukabe → trưa vừa xuống, kai trắng 360.5k (ルデヤ), trả trên kai ~6k + link ?q=duo 256
 2026-11-13 | 15:23 | 85K | permalink/1744592323305536 | [ngắn] bán AirPods Pro Tokyo (nhiều người xin giá) → Pro 3 seal 33.4k (ルデヤ), Pro 2 USB-C 28.1k (ゲストモバイル) + mời nhóm + link ?q=AirPods Pro
+2026-11-13 | 15:53 | 32K | permalink/1459059739532852 | [ngắn] ra đi 18PM trắng 256 nguyên carton → trắng 226k (森森/ルデヤ trừ màu), tiệm không tách màu 229k + link ?q=18 pro max 256
