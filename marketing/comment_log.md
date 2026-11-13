@@ -248,3 +248,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-13 | 15:23 | 85K | permalink/1744592323305536 | [ngắn] bán AirPods Pro Tokyo (nhiều người xin giá) → Pro 3 seal 33.4k (ルデヤ), Pro 2 USB-C 28.1k (ゲストモバイル) + mời nhóm + link ?q=AirPods Pro
 2026-11-13 | 15:53 | 32K | permalink/1459059739532852 | [ngắn] ra đi 18PM trắng 256 nguyên carton → trắng 226k (森森/ルデヤ trừ màu), tiệm không tách màu 229k + link ?q=18 pro max 256
 2026-11-13 | 16:24 | 53K | permalink/1611896530252958 | [ngắn] tìm 18PM đỏ 256 Shinjuku xin báo giá (15 cmt) → đỏ 230k (森森/PANDA), đa số 229k, 23.0–23.1 sát kai + link guide 18PM
+2026-11-13 | 16:53 | 32K | permalink/1459043336201159 | [ngắn] bán Duo trắng giá kai Namba → kai Duo 256 360.5k, 512 405.5k (ルデヤ), trưa giảm >10k + mời nhóm + link ?q=iPhone Duo
