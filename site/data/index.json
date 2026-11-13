@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13 20:42",
+ "updated": "2026-11-13 21:11",
  "shops": {
   "morimori": {
    "name": "森森買取",
@@ -217,44 +217,44 @@
    "ts": "2026-11-13 11:18"
   },
   "mobile_ichiban:1": {
-   "ok": false,
-   "err": "HTTPSConnectionPool(host='www.mobile-ichiban.com', port=443): Max retries exceeded with url: /Prod/1 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.mobile-ichiban.com', port=443) at 0x7f603",
-   "ts": "2026-11-13 20:41"
+   "ok": true,
+   "n": 9,
+   "ts": "2026-11-13 21:11"
   },
   "mobile_ichiban:3": {
-   "ok": false,
-   "err": "HTTPSConnectionPool(host='www.mobile-ichiban.com', port=443): Max retries exceeded with url: /Prod/3 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.mobile-ichiban.com', port=443) at 0x7f603",
-   "ts": "2026-11-13 20:41"
+   "ok": true,
+   "n": 20,
+   "ts": "2026-11-13 21:11"
   },
   "homura:box": {
    "ok": true,
    "n": 105,
-   "ts": "2026-11-13 20:42"
+   "ts": "2026-11-13 21:11"
   },
   "morimori:0301": {
    "ok": true,
    "n": 211,
-   "ts": "2026-11-13 20:37"
+   "ts": "2026-11-13 21:07"
   },
   "morimori:0101": {
    "ok": true,
    "n": 108,
-   "ts": "2026-11-13 20:37"
+   "ts": "2026-11-13 21:07"
   },
   "morimori:0104": {
    "ok": true,
    "n": 73,
-   "ts": "2026-11-13 20:38"
+   "ts": "2026-11-13 21:08"
   },
   "morimori:2401010": {
    "ok": true,
    "n": 7,
-   "ts": "2026-11-13 20:38"
+   "ts": "2026-11-13 21:08"
   },
   "morimori:2401001": {
    "ok": true,
    "n": 27,
-   "ts": "2026-11-13 20:38"
+   "ts": "2026-11-13 21:08"
   },
   "rudeya:full": {
    "ok": true,
@@ -264,7 +264,7 @@
   "rudeya:hot": {
    "ok": true,
    "n": 300,
-   "ts": "2026-11-13 20:38"
+   "ts": "2026-11-13 21:08"
   },
   "panda:full": {
    "ok": true,
@@ -289,27 +289,27 @@
   "panda:hot": {
    "ok": true,
    "n": 335,
-   "ts": "2026-11-13 20:38"
+   "ts": "2026-11-13 21:08"
   },
   "guestmobile:hot": {
    "ok": true,
    "n": 143,
-   "ts": "2026-11-13 20:39"
+   "ts": "2026-11-13 21:09"
   },
   "toban:hot": {
    "ok": true,
    "n": 1221,
-   "ts": "2026-11-13 20:40"
+   "ts": "2026-11-13 21:10"
   },
   "keitaigod:hot": {
    "ok": true,
    "n": 296,
-   "ts": "2026-11-13 20:40"
+   "ts": "2026-11-13 21:10"
   },
   "ichome:hot": {
    "ok": true,
    "n": 397,
-   "ts": "2026-11-13 20:42"
+   "ts": "2026-11-13 21:11"
   },
   "ichome:full": {
    "ok": true,
