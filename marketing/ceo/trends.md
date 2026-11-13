@@ -20,6 +20,7 @@
 - Bốc thăm: ドンキ/GEO/三洋堂 + deck エーフィ・ブラッキー hạn 15/11; 平和堂 từ 14/11; PCO KQ 17/11.
 
 ## 🎯 Góc đề xuất
+- (15:25) ⚡ Pokémon chiều nay: FUTURISTIC 47,5k → 44k (▼7%, 1丁目), deck エーフィ・ブラッキー 12k → 11,3k, box 30th 19,5k → 19k, シャイニートレジャー 17,5k → 16k. Khung 3 đã đăng.
 - (13:15) Bình luận bài Duo: nói giá mới 360,5k/405,5k/491k, "vừa giảm trưa nay". Duo 256 hỏi mua Apple bán → đang lỗ ~4k. Khung 2 đã đăng tin này.
 - Bình luận: bài rao 18PM 23,x → so đúng màu (đỏ 232k / bạc 226k); bài Duo "ế" → nói 371,5k (256) và lời mua Apple chỉ +6,7k nên ít người gom.
 - Bài nhóm khung 2 (13h): "🔀 CÙNG 18PM 1TB, TIỆM TRẢ 334K, TIỆM TRẢ 328K" (so tiệm) hoặc mặc định. Khung 3 (15h): "📉 DECK 30th エーフィ・ブラッキー 7 NGÀY MẤT 3.000円" + /guide/gia-kai-pokemon-box/.

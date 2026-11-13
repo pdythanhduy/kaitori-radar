@@ -103,3 +103,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-13 | 10:09 | big-53K | 🔀 CÙNG 1 MÁY, BÁN SAI TIỆM LÀ MẤT CẢ CHỤC NGHÌN YÊN (không link, lên ngay không chờ duyệt; đã bình luận link /vi/?q=iPhone 16 Pro 512GB; giá 09:22 13/11, bỏ 17 Pro 1TB 森森 vì giá lẻ; Thành Duy) | https://www.facebook.com/groups/713324666776820/posts/1611678720274739/
 2026-11-13 | 11:26 | 1 | 💰 HÔM NAY MUA iPHONE GIÁ APPLE RỒI BÁN KAI THÌ LỜI HAY LỖ? | https://www.facebook.com/groups/1118827834446963
 2026-11-13 | 13:26 | 2 | 📉 DUO GIẢM 11–15K NGAY TRƯA NAY, DUO 256 ĐÃ THẤP HƠN GIÁ APPLE (thay nội dung mặc định theo ⚡; bản mặc định trùng góc big-53K sáng nay; Thành Duy) | https://www.facebook.com/groups/1118827834446963
+2026-11-13 | 15:27 | 3 | 📊 CHIỀU NAY GIÁ KAI ĐỔI GÌ? POKÉMON 30th CŨNG XUỐNG (sửa bản tự động: thêm Duo ▼11–15k, FUTURISTIC 47.5→44k, deck エーフィ 12→11.3k; link /guide/gia-kai-pokemon-box/; Thành Duy) | https://www.facebook.com/groups/1118827834446963
