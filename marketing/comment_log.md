@@ -233,3 +233,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-12 | 21:15 | Pokémon 96K (pokemonae) | posts/1756502982114660 | pokemon-daily 11/11 (đã duyệt) + link /guide/lich-pokemon/
 2026-11-13 | 08:23 | 32K | posts/1458756656229827 | [ngắn] bán 18PM cherry 256 Osaka → kai tối qua đỏ 232k (ゲストモバイル), 森森 231k + link guide 18PM
 2026-11-13 | 08:54 | 53K | posts/1611625660280045 | [ngắn] cần mua 18PM 512 trắng Tokyo xin giá → kai tối qua trắng 258k (ルデヤ), tiệm không trừ màu 262k + link ?q=18 pro max 512
+2026-11-13 | 09:24 | 85K | permalink/1744393839992051 | [ngắn] bán 18PM cherry 256 23.5man Tochigi/Saitama/Tokyo → đỏ 232k (ゲストモバイル), rao trên kai 3k + mời nhóm + link guide 18PM
