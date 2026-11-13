@@ -250,3 +250,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-13 | 16:24 | 53K | permalink/1611896530252958 | [ngắn] tìm 18PM đỏ 256 Shinjuku xin báo giá (15 cmt) → đỏ 230k (森森/PANDA), đa số 229k, 23.0–23.1 sát kai + link guide 18PM
 2026-11-13 | 16:53 | 32K | permalink/1459043336201159 | [ngắn] bán Duo trắng giá kai Namba → kai Duo 256 360.5k, 512 405.5k (ルデヤ), trưa giảm >10k + mời nhóm + link ?q=iPhone Duo
 2026-11-13 | 17:24 | 85K | permalink/1744693703295398 | [ngắn] xin giá 17PM 512 + 18PM 256 → seal 17PM 512 217.5k (PANDA), 18PM 256 230k (森森/PANDA), đã dùng thấp hơn + link guide 17PM
+2026-11-13 | 17:54 | 53K | permalink/1611954203580524 | [ngắn] 18 giờ app- mấy, tìm 18PM xanh Nagoya app-6/7 → xanh 256 kai 230k (森森), app 239.8 → app-9.8 = kai, trừ 6–7 trên kai 3–4k + link ?q=18 pro max 256
