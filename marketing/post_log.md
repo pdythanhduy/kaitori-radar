@@ -104,3 +104,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-13 | 11:26 | 1 | 💰 HÔM NAY MUA iPHONE GIÁ APPLE RỒI BÁN KAI THÌ LỜI HAY LỖ? | https://www.facebook.com/groups/1118827834446963
 2026-11-13 | 13:26 | 2 | 📉 DUO GIẢM 11–15K NGAY TRƯA NAY, DUO 256 ĐÃ THẤP HƠN GIÁ APPLE (thay nội dung mặc định theo ⚡; bản mặc định trùng góc big-53K sáng nay; Thành Duy) | https://www.facebook.com/groups/1118827834446963
 2026-11-13 | 15:27 | 3 | 📊 CHIỀU NAY GIÁ KAI ĐỔI GÌ? POKÉMON 30th CŨNG XUỐNG (sửa bản tự động: thêm Duo ▼11–15k, FUTURISTIC 47.5→44k, deck エーフィ 12→11.3k; link /guide/gia-kai-pokemon-box/; Thành Duy) | https://www.facebook.com/groups/1118827834446963
+2026-11-13 | 19:26 | 4 | 📍 Ở XA TIỆM VẪN BÁN ĐƯỢC GIÁ TOKYO (bản mặc định + 5 dòng giá thật 19:11: 18PM 230k/262k, Duo 256 360.5k, Duo 1TB 491k vs 460k, box 30th 19k; link /guide/tiem-kaitori/; Thành Duy) | https://www.facebook.com/groups/1118827834446963
