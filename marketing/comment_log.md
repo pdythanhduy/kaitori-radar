@@ -257,3 +257,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-13 | 20:23 | 53K | permalink/1612074686901809 | [ngắn] trả Apple có cần thùng carton (đã bóc, máy còn seal)? → cần tình trạng ban đầu, đủ phụ kiện + hộp máy; 15% chỉ đơn số lượng lớn/bất thường; thùng ship gọi 0120-993-993 + mời nhóm + link /guide/tra-iphone-apple/
 2026-11-13 | 21:16 | Pokémon 96K (pokemonae) | posts/1758620318569593 | pokemon-daily 13/11 (đã lên) + link /guide/gia-kai-pokemon-box/
 2026-11-14 | 08:23 | 32K | permalink/1459789696126523 | [ngắn] bán 17PM cam 256 nguyên carton 18m9 Omiya → cam tối qua PANDA 186k, 森森 184.9k (trừ màu), không tách màu 192k + link guide 17PM
+2026-11-14 | 08:53 | 53K | permalink/1612643626844915 | [ngắn] 1 đỏ 1 đen 18PM 256 Tokyo xin giá → tối qua đỏ 230k (森森/PANDA), đen 227k, 2 máy ~45.7man + link ?q=18 pro max 256
