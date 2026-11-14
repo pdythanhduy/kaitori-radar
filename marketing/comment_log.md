@@ -259,3 +259,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-14 | 08:23 | 32K | permalink/1459789696126523 | [ngắn] bán 17PM cam 256 nguyên carton 18m9 Omiya → cam tối qua PANDA 186k, 森森 184.9k (trừ màu), không tách màu 192k + link guide 17PM
 2026-11-14 | 08:53 | 53K | permalink/1612643626844915 | [ngắn] 1 đỏ 1 đen 18PM 256 Tokyo xin giá → tối qua đỏ 230k (森森/PANDA), đen 227k, 2 máy ~45.7man + link ?q=18 pro max 256
 2026-11-14 | 09:23 | 85K | permalink/1745397316558370 | [ngắn] tìm 17PM 512 bạc lướt / 18PM xanh 256-512 Osaka → tối qua kai xanh 256 230k, 512 262k + mời nhóm + link guide 18PM
+2026-11-14 | 09:54 | 32K | permalink/1459833792788780 | [ngắn] ôm 3 máy (2 đỏ 256 + 1 đỏ 512) giá xuống, nhờ gỡ Tokyo → tối qua đỏ 256 230k, đỏ 512 262k, 3 máy ~72.2man + link ?q=18 pro max
