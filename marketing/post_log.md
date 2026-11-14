@@ -118,3 +118,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-14 | 21:54 | 5 | 🎮 SWITCH 2 HÔM NAY TIỆM THU BAO NHIÊU? (thay bản tự động: bỏ PS5 Pro 208.8k + Steam Machine vì số nghi lỗi; giá 21:41; link ?q=Switch 2; Thành Duy) | https://www.facebook.com/groups/1118827834446963
 
 - 14/11 22:0x: kiểm tra bài Pokémon 12/11 (dekki mèo, 1753304632434495) — đã có bình luận link /guide/gia-kai-pokemon-box/ từ trước, không bình luận thêm (giữ lượt 25/25).
+2026-11-14 | 22:49 | canhan | 🔻 iPHONE DUO GIẢM 2 NGÀY LIỀN: BẢN 1TB CÒN 481.000円 (Thành Duy, Công khai; Duo 1TB 481k ▼10k, 512 401.5k ▼4k, 18PM 230k, box 30th 17.5k ▼1.5k, FUTURISTIC 44k) | https://www.facebook.com/me
