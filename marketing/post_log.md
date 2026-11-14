@@ -112,3 +112,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-14 | 10:08 | big-109K | 🚨 MUA BÁN iPHONE GẶP TRỰC TIẾP: 4 KIỂU LỪA HAY GẶP NHẤT (không link; CHỜ DUYỆT, chưa bình luận link — khi duyệt thì bình luận /guide/lua-dao-iphone/; Thành Duy) | https://www.facebook.com/groups/310466206520060
 2026-11-14 | 11:25 | 1 | 💰 HÔM NAY MUA iPHONE GIÁ APPLE RỒI BÁN KAI THÌ LỜI HAY LỖ? | https://www.facebook.com/groups/1118827834446963
 2026-11-14 | 13:26 | 2 | 📉 DUO GIẢM NGÀY THỨ 2: 1TB MẤT THÊM 10.000円, 512 GẦN HÒA VỐN GIÁ APPLE (thay nội dung theo ⚡ trends 12:05; giá 13:11; link ?v=profit; Thành Duy) | https://www.facebook.com/groups/1118827834446963
+2026-11-14 | 15:27 | 3 | 📉 BOX POKÉMON 30th CÒN 17.500円: 1 TUẦN MẤT 3.700円 (−17%) (thay bản tự động theo 🎯 trends; bỏ dòng Switch2 ▲45.100 vì lỗi ghép mẫu; link /guide/gia-kai-pokemon-box/; Thành Duy) | https://www.facebook.com/groups/1118827834446963
