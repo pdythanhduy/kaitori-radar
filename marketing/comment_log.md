@@ -281,3 +281,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-14 | 19:24 | 32K | permalink/1460188839419942 | [ngắn] bán 18PM đỏ 23.2m Osaka → đỏ 256 PANDA 230k, 森森/ルデヤ 229k → nhỉnh hơn tiệm 2–3k + link guide 18PM
 2026-11-14 | 21:17 | Pokémon 96K (pokemonae) | posts/1759614351803523 | pokemon-daily 14/11 (đã lên) + link /guide/lich-pokemon/
 2026-11-14 | 22:23 | 109K | posts/2248022016097793 | [ngắn] tìm 17PM đập hộp Shibuya/Shinjuku (4 cmt) → 256 tiệm thu bạc ~192k, cam/xanh ~186k + /guide/gia-kai-iphone-17-pro-max/
+2026-11-15 | 00:08 | 85K | posts/1745913913173377 | [ngắn] shop Nishikawaguchi thu chục 18PM xanh 256 23.1 → xanh tối 14/11 229k (森森/ルデヤ), thu 23.1 nhỉnh ~2k + /guide/gia-kai-iphone-18-pro-max/
