@@ -262,3 +262,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-14 | 09:54 | 32K | permalink/1459833792788780 | [ngắn] ôm 3 máy (2 đỏ 256 + 1 đỏ 512) giá xuống, nhờ gỡ Tokyo → tối qua đỏ 256 230k, đỏ 512 262k, 3 máy ~72.2man + link ?q=18 pro max
 2026-11-14 | 10:23 | 53K | permalink/1612692710173340 | [ngắn] bán 18PM cherry 512 Nagoya → sáng nay đa số tiệm 262k (森森/ルデヤ không trừ đỏ), PANDA 258k + link guide 18PM
 2026-11-14 | 10:53 | 32K | permalink/1459880932784066 | [ngắn] bán 2 18 Pro đỏ 256 app-5s (21.5m) Nagoya → kai 203.5k, app 219.8 → app-5 cao hơn kai ~11k + mời nhóm + link ?q=iPhone 18 Pro 256GB
+2026-11-14 | 11:23 | 53K | permalink/1612747183501226 | [ngắn] bán Duo trắng 256 Hirano → trưa nay ルデヤ 360.5k, tiệm khác 360k, giữ mức sau đợt giảm + link guide Duo
