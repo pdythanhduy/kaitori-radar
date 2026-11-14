@@ -273,3 +273,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-14 | 15:25 | 32K | permalink/1460012996104193 | [ngắn] Osaka 2 máy 18PM xanh 256 nguyên carton → xanh 229k (森森/ルデヤ), 2 máy ~45.8man + mời nhóm + link guide 18PM
 2026-11-14 | 15:54 | 53K | permalink/1612937676815510 | [ngắn] cần 18PM gần ga xin giá → 256 tiệm thu 227–230k tuỳ màu (đỏ 230k PANDA), 512 262k + link ?q=18 pro max
 2026-11-14 | 16:24 | 32K | permalink/1460124869426339 | [ngắn] đẩy 18PM trắng 256 23 tròn Amagasaki → trắng 226k (森森/ルデヤ trừ màu), không tách màu 229k → nhỉnh hơn 1–4k + link guide 18PM
+2026-11-14 | 16:53 | 53K | permalink/1612953840147227 | [ngắn] bán 17PM bạc nguyên carton 195 → bạc 256 PANDA 192.2k, 森森 192k → trên tiệm ~3k + mời nhóm + link ?q=17 pro max 256
