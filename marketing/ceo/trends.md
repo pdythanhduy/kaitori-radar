@@ -1,22 +1,21 @@
 # Trend nóng hôm nay (lịch săn trend ghi; bình luận + bài nhóm đọc để chọn góc)
 
-**Quét lúc 13/11 18:20 JST**
+**Quét lúc 14/11 12:05 JST**
 
-## ⚡ Giá đổi (site/data ~17:40, so hôm qua)
-- Duo (cả 7 tiệm hạ 12:10–12:40, đã báo Telegram): 256 360,5k (▼11k, thấp hơn Apple ~4,3k → LỖ), 512 405,5k (▼12k, lời +5,7k), 1TB 491k (▼11k, +21,2k), 2TB 590k (▼15k, +15,2k). 7 ngày Duo 512 ▼23,5k.
-- 18PM 256: 230k (森森/PANDA), đa số 229k; đỏ/xanh 230k, bạc 226k. 512 262k (app 274,8 → app −12,8). 1TB 332k.
-- Pokémon chiều (đã báo): FUTURISTIC 47,5k → 44k (▼7%), deck エーフィ・ブラッキー 12k → 11,3k (7 ngày 15k → 11,3k), box 30th 19,5k → 19k, シャイニートレジャー 17,5k → 16k.
-- Lời/lỗ: Duo 256 vừa đổi dấu sang lỗ; 18 Pro / Pro Max vẫn lỗ 10–23k (2TB ~53–55k).
+## ⚡ Giá đổi (site/data ~11:40, so hôm qua)
+- **Duo giảm tiếp ngày thứ 2** (5 tiệm cùng hạ ~11:40): 1TB 491k → 480k (▼11k), 512 405,5k → 400,5k (▼5k), 2TB 590k → 585k (▼5k). 256 giữ 360,5k. 7 ngày: 512 ▼23k, 1TB ▼18k.
+- **Lời/lỗ:** Duo 512 chỉ còn +0,7k (gần hoà), Duo 1TB/2TB +10,2k (hôm qua +21,2k/+15,2k). Duo 256 lỗ ~4,3k.
+- 18PM 256: PANDA 230k, đa số tiệm xuống 227k (hôm qua 229k), 当番 225k.
+- Box 30th: cao nhất 18k (ホムラ), 森森 19k → 17,5k (▼5% ở mức cao nhất). Deck エーフィ・ブラッキー 11,3k. 7 ngày box 30th 21,2k → 18k.
 
-## 🗣 Chủ đề nóng (32K + 53K + 85K + pokemonae, chiều nay)
-1. Phản ứng Duo giảm: "Ip 18 vs duo thế là hết luôn r hả", người tìm Duo 256 trả 36m5–36m7 (trên kai 4–6k). → nói đúng số mới + "vừa giảm trưa nay", không đoán tiếp.
-2. 18PM đỏ/xanh 256 đẩy 23,0–23,5 và người mua hỏi "app trừ mấy" (đang app −9,8 = kai). → so app 239,8 / kai 230k.
-3. Pokémon: "box kỉ niệm đang về mà các tổng im ắng, không thấy ai thu", tìm set 9 (~1m5), hỏi thu box 30th không seal. → kai box 30th 19k (chỉ seal), set 9 15k, link /guide/gia-kai-pokemon-box/.
+## 🗣 Chủ đề nóng (32K + 53K + 85K, sáng nay)
+1. Đẩy 18PM đỏ 256 hàng loạt 23,0–23,3m ("ra đi gấp 4 máy 23m", "bán 10 máy 23m3"), "ôm 3 máy như bom nổ chậm". → nói kai đỏ 230k (PANDA), đa số 227k.
+2. Bán 18 Pro "app −5s / app −1man" (21,5m). → kai 203,5k, app 219,8: app −1man vẫn trên kai ~6k.
+3. Duo trắng 256 rao bán; người hỏi 18PM ở Apple Store Saitama có cần đặt lịch. → Duo 256 360,5k; Apple Store: không có số liệu, không trả lời đoán.
 
 ## 📰 Tin
-- SCMP: chênh giá bán lại iPhone Duo ở chợ Trung Quốc đang "bốc hơi" (Huaqiangbei hạ 1TB đen ~2.800 tệ trong vài ngày). Giải thích thêm cho việc kai Nhật giảm.
-- Pokémon Center Online đã báo sẽ có bốc thăm bổ sung box 30th / deck エーフィ・ブラッキー / FUTURISTIC khoảng tháng 12, chưa có ngày (inside-games 29/9).
+- 楽天ブックス bốc thăm MEGA tới 18/11 (famitsu); SoftBank 18 Pro MNP 990円/tháng, đổi mức giảm 17/11 (shimajiro-mobiler 12/11). HK01 先達 chưa có số sau 10/11.
 
 ## 🎯 Góc đề xuất
-- Bình luận: bài Duo → 360,5k/405,5k/491k "vừa giảm trưa nay", Duo 256 mua Apple bán đang lỗ ~4k; bài 18PM "app trừ mấy" → app −9,8 (256), −12,8 (512).
-- Bài nhóm khung 4 (19h): "📉 1 NGÀY DUO MẤT 11–15K: MẪU NÀO MUA GIÁ APPLE CÒN LỜI?" (?v=profit). Khung 5 (21h, ngày lẻ → Pokémon): "📉 30th FUTURISTIC ▼3.500, DECK エーフィ 7 NGÀY MẤT 3.700円" + /guide/gia-kai-pokemon-box/.
+- Bình luận: bài Duo → số mới (512 400,5k, 1TB 480k), "giảm tiếp sáng nay"; bài 18PM 256 → 227–230k, ghi tiệm.
+- Bài nhóm khung 2 (13h): "📉 DUO GIẢM NGÀY THỨ 2: 1TB MẤT THÊM 11.000円, 512 GẦN HOÀ VỐN GIÁ APPLE" + /vi/?v=profit. Khung 3 (15h): box 30th 18k (7 ngày ▼3,2k) + /guide/gia-kai-pokemon-box/.
