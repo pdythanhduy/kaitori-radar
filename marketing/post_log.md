@@ -119,3 +119,4 @@ ngày | giờ | khung | tiêu đề | link
 
 - 14/11 22:0x: kiểm tra bài Pokémon 12/11 (dekki mèo, 1753304632434495) — đã có bình luận link /guide/gia-kai-pokemon-box/ từ trước, không bình luận thêm (giữ lượt 25/25).
 2026-11-14 | 22:49 | canhan | 🔻 iPHONE DUO GIẢM 2 NGÀY LIỀN: BẢN 1TB CÒN 481.000円 (Thành Duy, Công khai; Duo 1TB 481k ▼10k, 512 401.5k ▼4k, 18PM 230k, box 30th 17.5k ▼1.5k, FUTURISTIC 44k) | https://www.facebook.com/me
+2026-11-15 | 08:15 | tinhot | 🔥 POKÉMON & iPHONE: TIN HOT HÔM NAY 15/11 (bốc thăm hết hạn 23:59 hôm nay: ドンキ/三洋堂 ハドウ, 30th, MEGAドリームex; 楽天ブックス 18/11; PCO kết quả 17/11; Duo 楽天 hàng về tuần 16 & 23/11; box 30th 17.5k) | https://www.facebook.com/groups/1118827834446963
