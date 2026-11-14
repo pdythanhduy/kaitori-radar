@@ -116,3 +116,5 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-14 | 19:27 | 4 | 🎨 ĐỔI MÀU 18 PRO MAX CÓ ĐÁNG BÙ TIỀN? GIÁ TIỆM GIỮA CÁC MÀU CHỈ CHÊNH 2–4K (theo 🎯 trends 18:20; giá 19:11; link /guide/tru-mau-iphone/; Thành Duy) | https://www.facebook.com/groups/1118827834446963
 2026-11-14 | 21:17 | pokemon-daily | 🎟 CUỐI TUẦN NÀY: 3 ĐỢT BỐC THĂM POKÉMON SẮP ĐÓNG (kèm ảnh boctham-1114.png; đã lên; đã bình luận link /guide/lich-pokemon/; bài 12/11 vẫn CHƯA có link; Thành Duy) | https://www.facebook.com/groups/pokemonae/posts/1759614351803523/
 2026-11-14 | 21:54 | 5 | 🎮 SWITCH 2 HÔM NAY TIỆM THU BAO NHIÊU? (thay bản tự động: bỏ PS5 Pro 208.8k + Steam Machine vì số nghi lỗi; giá 21:41; link ?q=Switch 2; Thành Duy) | https://www.facebook.com/groups/1118827834446963
+
+- 14/11 22:0x: kiểm tra bài Pokémon 12/11 (dekki mèo, 1753304632434495) — đã có bình luận link /guide/gia-kai-pokemon-box/ từ trước, không bình luận thêm (giữ lượt 25/25).
