@@ -709,6 +709,8 @@ mua đủ giá. Bảng dưới lấy <b>đúng ghi chú các tiệm đăng trên
         ("gia-kai-iphone-17-pro", "iPhone 17 Pro", r"iPhone 17 Pro \d", "17 Pro (bản thường, không phải Pro Max)"),
         # 10/11: 17 bản thường (hàng 1円/MNP hay đem bán), 8 tiệm có giá
         ("gia-kai-iphone-17", "iPhone 17", r"iPhone 17 \d", "iPhone 17 (bản thường, không phải Pro / Air)"),
+        # 14/11: 17e được tìm/bấm (search "17e", 17e 256 → tiệm), hay là máy MNP; 6 tiệm có giá
+        ("gia-kai-iphone-17e", "iPhone 17e", r"iPhone 17e \d", "iPhone 17e (bản giá rẻ, ra 3/2026)"),
     ]:
         models = sorted([i for i in phones if re.match(rx, i["key"]) and i["n_shops"] >= 2], key=_iphone_order)
         if not models:
@@ -878,6 +880,7 @@ Mỗi mục có nguồn; lịch bốc thăm của từng cửa hàng hay đổi,
                                card("/guide/gia-kai-iphone-17-pro-max/", "💴", "Giá kai iPhone 17 Pro Max hôm nay", "Máy mới chưa mở, từng dung lượng, từng màu"),
                                card("/guide/gia-kai-iphone-17-pro/", "💴", "Giá kai iPhone 17 Pro hôm nay", "Máy mới chưa mở, từng dung lượng, từng màu"),
                                card("/guide/gia-kai-iphone-17/", "💴", "Giá kai iPhone 17 hôm nay", "Bản thường, máy mới chưa mở, từng dung lượng, từng màu"),
+                               card("/guide/gia-kai-iphone-17e/", "💴", "Giá kai iPhone 17e hôm nay", "Máy mới chưa mở, 256GB / 512GB, từng màu"),
                                card("/guide/gia-kai-iphone-duo/", "💴", "Giá kai iPhone Duo hôm nay", "Từng dung lượng, đen / trắng, so giá Apple"),
                                card("/guide/gia-iphone-giam/", "📉", "Giá kai iPhone giảm: huỷ, bán hay giữ?", "Bảng giá mới nhất 9 tiệm + cách tính lời lỗ"),
                                card("/guide/huy-iphone/", "❌", "Cách huỷ đơn iPhone không mất phí", "Apple Store, docomo, au, SoftBank, Rakuten: huỷ trước khi gửi hàng"),

@@ -75,6 +75,18 @@
    "confirmed": true
   },
   {
+   "date": "2026-11-13",
+   "end": "2026-11-18",
+   "kind": "lottery",
+   "title": "楽天ブックス: bốc thăm dòng MEGA (ハドウシーカー, Deck MEGA, hàng 30th…) tới 23:59 ngày 18/11, mỗi người trúng tối đa 1 món",
+   "title_ja": "楽天ブックス ポケカ MEGAシリーズ 抽選販売（〜11/18）",
+   "where": "楽天ブックス (online)",
+   "note": "Theo famitsu (11/2026): nhận đơn từ 10:00 ngày 13/11 tới 23:59 ngày 18/11. Điều kiện chi tiết xem trang 楽天ブックス.",
+   "src": "https://www.famitsu.com/article/202611/93883",
+   "match": "楽天ブックス",
+   "confirmed": true
+  },
+  {
    "date": "2026-11-14",
    "kind": "lottery",
    "title": "平和堂: mở đợt bốc thăm mới box ハドウシーカー + set thẻ 30th CELEBRATION (từ 14/11)",

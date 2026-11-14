@@ -196,3 +196,19 @@ Thí nghiệm nào không hiệu quả sau 3–7 ngày thì dừng. Thí nghiệ
   3. comment_style.md: thêm "Học được" 13/11.
 - **Đánh giá:** chip "Hay xem" → hiệu quả rõ (bấm gấp đôi, khách vào trang chủ giảm, bấm tiệm 14% → 21%), giữ, xem lại 17/11 như hẹn.
 - **Đề xuất chờ user:** (1) thêm cron Worker kaitori-cron `7,37 23 * * *` (UTC) = 08:07/08:37 JST để giá có trước lượt bình luận sáng (cần deploy Worker trên tài khoản Cloudflare của user — đổi lịch hạ tầng nên chờ user đồng ý); (2) Search Console + sitemap (vẫn Google ~3/ngày).
+
+### 14/11/2026
+- **Hôm qua (13/11, cả ngày, lịch chạy đủ trừ Pokémon 20:43 phải đăng tay 21:15):**
+  - **183 lượt vào** (12/11: 118, **+55%**, cao nhất từ 04/11), 435 lượt xem (gấp ~1,9). FB 125 (68%), gõ thẳng 57, Google 0.
+  - 25 bình luận + 5 bài nhóm + tin hot + big-53K + Pokémon 96K (đã lên, có link) + trang cá nhân → **FB/bình luận ≈ 5,0** (12/11 ≈ 3,0).
+  - Vào từ link: **iPhone Duo 49** (bài khung 2 "Duo giảm 11–15k" + bình luận Duo), trang chủ 43, 18PM 23, **iPhone 16 Pro 512 17** (link bài big-53K), 18 pro max 256 14, **Galaxy A25 12** (1 bình luận 109K).
+  - ⚠️ **Bấm sang tiệm 21/196 (11%**, 12/11 21%). Nhiều khách vào xem giá Duo sau tin giảm / bài so tiệm máy 16 → xem chứ không bán. 森森 7, ゲストモバイル 6, ルデヤ 4, ケータイゴッド 3.
+  - Dải "lần trước bạn xem": hiện 47, **bấm 14** (trước ~0). Chip Hay xem 37 lượt. Chia sẻ 3. Quay lại 19/161 (11%, nhiều khách mới).
+  - Guide: 18PM 22, trả hàng 4, huỷ 4, danh sách tiệm 4, Duo 3.
+- **Trend (có nguồn, từ tin hot + radar sáng nay):** 楽天ブックス bốc thăm MEGA tới 18/11 (famitsu); SoftBank 18 Pro MNP 990円/tháng, đổi mức giảm 17/11; HK01 先達 chưa có số mới sau 10/11 (Duo chênh còn 100–300 HKD); Apple CN/HK giữ giá. Không tra thêm Switch 2/PS5 (13/11 không có tin mới).
+- **Đã làm:**
+  1. Trang SEO /guide/gia-kai-iphone-17e/ (17e: có lượt tìm "17e" + bấm tiệm 17e 13/11; 6 tiệm có giá) + thẻ ở mục mẹo VI. Tuần này: trang thứ 2 (sau 17 bản thường 10/11).
+  2. events.json: thêm 楽天ブックス bốc thăm MEGA 13–18/11 (confirmed, famitsu) → hiện trên /guide/lich-pokemon/.
+  3. (tối 13/11) Gắn link affiliate A8 Y!mobile (Yステーション, 4.500円/MNP) vào mục 📱 Chuyển mạng — chương trình duyệt từ 04/11 mà chưa gắn.
+- **Nhận định:** tin "giá vừa giảm" kéo view mạnh nhất (Duo 49 lượt) nhưng ít bấm tiệm → giữ góc này cho view, còn bấm tiệm/doanh thu đến từ bình luận trả lời người đang rao bán (đúng màu, đúng dung lượng). Link bình luận chuyển mạng (/vi/?v=deals) giờ có tiền thật (Y!mobile) → ưu tiên trả lời bài hỏi MNP/1円 khi gặp.
+- **Đề xuất chờ user:** (1) Search Console: gửi sitemap + yêu cầu lập chỉ mục 5 trang (hướng dẫn đã gửi 13/11 tối); (2) cron Worker 08:07/08:37 JST để giá có trước lượt bình luận sáng (sáng nay vẫn dùng giá 22:41 tối qua tới ~10h); (3) lịch 20:43 (Pokémon) 13/11 không chạy — nếu lặp lại thì khôi phục lịch (marketing/ceo/crons.json).
