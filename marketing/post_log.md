@@ -110,3 +110,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-13 | 22:49 | canhan | 📉 HÔM NAY 13/11: iPHONE DUO GIẢM HƠN 10.000円 CHỈ TRONG 1 BUỔI TRƯA (Thành Duy, Công khai; Duo 256 360.5k < Apple, 1TB 491k, 18PM 230k, FUTURISTIC 44k, deck エーフィ 11.3k) | https://www.facebook.com/me
 2026-11-14 | 08:16 | tinhot | 🔥 POKÉMON & iPHONE: TIN HOT HÔM NAY 14/11 (楽天ブックス bốc thăm MEGA tới 18/11; 平和堂 từ 14/11; ドンキ/GEO/deck エーフィ ~15/11; PCO KQ 17/11; SoftBank 18 Pro MNP 990円/tháng, đổi 17/11; Duo 1TB lời ~21k, Duo 256 lỗ ~4k; Thành Duy) | https://www.facebook.com/groups/1118827834446963
 2026-11-14 | 10:08 | big-109K | 🚨 MUA BÁN iPHONE GẶP TRỰC TIẾP: 4 KIỂU LỪA HAY GẶP NHẤT (không link; CHỜ DUYỆT, chưa bình luận link — khi duyệt thì bình luận /guide/lua-dao-iphone/; Thành Duy) | https://www.facebook.com/groups/310466206520060
+2026-11-14 | 11:25 | 1 | 💰 HÔM NAY MUA iPHONE GIÁ APPLE RỒI BÁN KAI THÌ LỜI HAY LỖ? | https://www.facebook.com/groups/1118827834446963
