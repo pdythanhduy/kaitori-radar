@@ -1,21 +1,20 @@
 # Trend nóng hôm nay (lịch săn trend ghi; bình luận + bài nhóm đọc để chọn góc)
 
-**Quét lúc 14/11 12:05 JST**
+**Quét lúc 14/11 18:20 JST**
 
-## ⚡ Giá đổi (site/data ~11:40, so hôm qua)
-- **Duo giảm tiếp ngày thứ 2** (5 tiệm cùng hạ ~11:40): 1TB 491k → 480k (▼11k), 512 405,5k → 400,5k (▼5k), 2TB 590k → 585k (▼5k). 256 giữ 360,5k. 7 ngày: 512 ▼23k, 1TB ▼18k.
-- **Lời/lỗ:** Duo 512 chỉ còn +0,7k (gần hoà), Duo 1TB/2TB +10,2k (hôm qua +21,2k/+15,2k). Duo 256 lỗ ~4,3k.
-- 18PM 256: PANDA 230k, đa số tiệm xuống 227k (hôm qua 229k), 当番 225k.
-- Box 30th: cao nhất 18k (ホムラ), 森森 19k → 17,5k (▼5% ở mức cao nhất). Deck エーフィ・ブラッキー 11,3k. 7 ngày box 30th 21,2k → 18k.
+## ⚡ Giá đổi (site/data 18:11)
+- Chiều yên sau đợt Duo giảm sáng (~11:40): Duo 256 361,5k · 512 401,5k · 1TB 481k · 2TB 586k (nhích +0,5–1k so trưa). So hôm qua: 1TB ▼10k, 512 ▼4k, 2TB ▼4k.
+- Lời mua Apple: Duo 1TB +11,2k, 2TB +11,2k, 512 +1,7k, 256 −3,3k. 18PM 256 −9,8k (kai 230k PANDA, đa số 227–229k), 512 −12,8k (262k).
+- 18 Pro 256 204,5k (森森, ▲1k). Box 30th 17,5k (7 ngày ▼3,7k), FUTURISTIC 44k, deck エーフィ 11,3k — đứng giá chiều nay.
 
-## 🗣 Chủ đề nóng (32K + 53K + 85K, sáng nay)
-1. Đẩy 18PM đỏ 256 hàng loạt 23,0–23,3m ("ra đi gấp 4 máy 23m", "bán 10 máy 23m3"), "ôm 3 máy như bom nổ chậm". → nói kai đỏ 230k (PANDA), đa số 227k.
-2. Bán 18 Pro "app −5s / app −1man" (21,5m). → kai 203,5k, app 219,8: app −1man vẫn trên kai ~6k.
-3. Duo trắng 256 rao bán; người hỏi 18PM ở Apple Store Saitama có cần đặt lịch. → Duo 256 360,5k; Apple Store: không có số liệu, không trả lời đoán.
+## 🗣 Chủ đề nóng (32K + 53K, 13–18h)
+1. Đổi màu "xanh ↔ đỏ bù bao nhiêu", "lên 18PM xanh bù thêm bao nhiêu". → kai đỏ/xanh 18PM 256 gần như ngang (229–230k), bạc/đen thấp 2–4k: chênh màu nhỏ.
+2. Đẩy 18PM đỏ 256 22,8–23,3m, "app −5/−6/−7". → app 239,8 / kai 227–230k; app −6 ≈ trên kai ~4–5k.
+3. Thu Galaxy A25 (máy 1円 MNP) 1m5–1m75. → kai A25 nhà mạng 17,3k (ゲストモバイル); link /vi/?v=deals (có affiliate Y!mobile).
 
 ## 📰 Tin
-- 楽天ブックス bốc thăm MEGA tới 18/11 (famitsu); SoftBank 18 Pro MNP 990円/tháng, đổi mức giảm 17/11 (shimajiro-mobiler 12/11). HK01 先達 chưa có số sau 10/11.
+- Không có tin mới 24h ngoài tin sáng (楽天ブックス bốc thăm MEGA tới 18/11; SoftBank đổi mức giảm 17/11). HK01 先達 chưa có số sau 10/11.
 
 ## 🎯 Góc đề xuất
-- Bình luận: bài Duo → số mới (512 400,5k, 1TB 480k), "giảm tiếp sáng nay"; bài 18PM 256 → 227–230k, ghi tiệm.
-- Bài nhóm khung 2 (13h): "📉 DUO GIẢM NGÀY THỨ 2: 1TB MẤT THÊM 11.000円, 512 GẦN HOÀ VỐN GIÁ APPLE" + /vi/?v=profit. Khung 3 (15h): box 30th 18k (7 ngày ▼3,2k) + /guide/gia-kai-pokemon-box/.
+- Bình luận: bài hỏi đổi màu → nói chênh kai giữa màu (đỏ/xanh 229–230k, bạc 226k, đen 227k); bài A25/MNP → giá kai + /vi/?v=deals.
+- Bài nhóm khung 4 (19h): "🎨 ĐỔI MÀU 18PM CÓ ĐÁNG BÙ TIỀN? CHÊNH GIÁ TIỆM GIỮA CÁC MÀU CHỈ 2–4K" + /guide/tru-mau-iphone/. Khung 5 (21h, ngày chẵn → iPhone/khác): mặc định.
