@@ -277,3 +277,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-14 | 17:23 | 32K | permalink/1460148356090657 | [ngắn] Kumamoto cần 18 Pro xanh 512 → xanh 512 238k (森森/ルデヤ), app 254.8, ~23.8–24 sát tiệm + link guide 18 Pro
 2026-11-14 | 17:54 | 53K | permalink/1612985580144053 | [ngắn] thu A25 (8 cmt, người rao 1m5–1m75) → A25 nhà mạng 17.3k (ゲストモバイル), 森森 16.5k; A25 là máy 1円 khi MNP Y!mobile/楽天 + link /vi/?v=deals (affiliate Y!mobile)
 2026-11-14 | 18:23 | 32K | permalink/1460143179424508 | [ngắn] bán 18PM đỏ 512 app-1man Nagoya (người trả 26.2, chủ đòi 26.4) → 森森 262k: 26.2 đúng giá tiệm, 26.4 nhỉnh 2k + mời nhóm + link guide 18PM
+2026-11-14 | 18:53 | 53K | permalink/1613051886804089 | [ngắn] bán 17PM cam 256 + trắng 512 nguyên seal Tokyo → cam 256 PANDA 186k (trừ màu), trắng 512 217.5k + link ?q=17 pro max
