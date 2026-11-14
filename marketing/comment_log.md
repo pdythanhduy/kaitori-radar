@@ -267,3 +267,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-14 | 12:23 | 32K | permalink/1459964432775716 | [ngắn] bán Duo trắng Tokyo hỏi giá → 256 360.5k (ルデヤ), 512 vừa xuống 400.5k, 1TB 480k + mời nhóm + link guide Duo
 2026-11-14 | 12:53 | 53K | permalink/1612799636829314 | [ngắn] 2 máy 18PM 256 Nagoya hôm nay giá nào (có người trả 22.7) → đỏ 230k (PANDA), 森森 229k, đa số 227k, bạc/đen thấp hơn 2–4k + link ?q=18 pro max 256
 2026-11-14 | 13:24 | 32K | permalink/1459987869440039 | [ngắn] muốn mua 18PM 256 sợ bị lừa (30 cmt) → gặp tại quầy tiệm kai, soi màng co + tra serial Apple; tiệm thu 227–230k, rẻ hơn nhiều phải cẩn thận + link /guide/lua-dao-iphone/
+2026-11-14 | 13:53 | 53K | permalink/1612842863491658 | [ngắn] mua 6 18PM bằng 2 tk/2 thẻ có bị huỷ/giam tiền? → huỷ trước xuất kho chỉ tạm giữ hạn mức, Apple không công bố, gọi 0120-993-993 + mời nhóm + link /guide/huy-iphone/#hoantien
