@@ -927,4 +927,6 @@ Mỗi mục có nguồn; lịch bốc thăm của từng cửa hàng hay đổi,
         '<a class="hd-cta" href="/">全商品を比較 →</a>', '<a class="hd-cta" href="/vi/">So giá 9 tiệm →</a>', 1)
     (out / "index.html").write_text(pv, encoding="utf-8")
     extra.append(("/guide/vi/", "weekly"))
+    from . import visa
+    extra += visa.build(page, e, site, updated)
     return [("/guide/", "weekly")] + [(p, "daily") for p, _, _ in guides] + extra

@@ -123,6 +123,7 @@
     $("#lang").innerHTML = `<span class="${lang === "vi" ? "on" : ""}">VI</span><span class="${lang === "ja" ? "on" : ""}">JP</span>`;
     $("#lang").setAttribute("aria-label", lang === "vi" ? "日本語に切り替え" : "Chuyển sang tiếng Việt");
     const fbg = $("#fbg"); if (fbg) fbg.hidden = lang !== "vi";
+    const vtz = $("#visaTeaser"); if (vtz) vtz.hidden = lang !== "vi";
     // đầu/chân trang theo ngôn ngữ: link hướng dẫn + tên danh mục
     $("#hdGuide") && ($("#hdGuide").href = lang === "vi" ? "/guide/vi/" : "/guide/");
     $("#ftGuideJa") && ($("#ftGuideJa").hidden = lang === "vi");
@@ -790,6 +791,7 @@
   document.addEventListener("click", (e) => {
     const r = e.target.closest(".pf-row[data-q]"); if (r) { window.kpTrack?.("profit_open", { item: r.dataset.q }); st.q = r.dataset.q; $("#q").value = st.q; window.scrollTo({ top: 0 }); return render(); }
     const c = e.target.closest("[data-pser]"); if (c) { pfSer = c.dataset.pser; return renderProfit(); }
+    if (e.target.closest(".visa-teaser")) window.kpTrack?.("visa_teaser", {});
     const tz = e.target.closest(".pf-teaser"); if (tz) { window.kpTrack?.("profit_teaser", {}); st.view = "profit"; $("#q").value = ""; st.q = ""; window.scrollTo({ top: 0 }); return render(); }
   });
   document.addEventListener("change", (e) => {
@@ -915,6 +917,7 @@
       <button data-v="profit" class="${on(st.view === "profit")}">💹 ${lang === "vi" ? "Lời/lỗ mua Apple bán kai" : "Apple定価→買取 差額"}</button>
       <button data-v="deals" class="${on(st.view === "deals")}">🎁 ${t.drDeals}</button>
       <a href="${lang === "vi" ? "/guide/vi/" : "/guide/"}">📚 ${t.guideBtn}</a>
+      ${lang === "vi" ? `<a href="/visa/">🛂 Visa & thủ tục</a>` : ""}
       ${lang === "vi" ? `<a href="https://www.facebook.com/groups/1118827834446963" target="_blank" rel="noopener">👥 ${t.drFb}</a>` : ""}
       <h4>${t.drCats}</h4>${cats}
       <button class="dr-lang" data-lang="1">🌐 ${t.drLang}</button>`;
