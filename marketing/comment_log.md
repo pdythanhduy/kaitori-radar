@@ -271,3 +271,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-14 | 14:24 | 32K | permalink/1460013369437489 | [ngắn] bán 4 18PM xanh 256 app-6s Osaka → xanh 229k (森森/ルデヤ), app 239.8 → app-6 cao hơn tiệm ~4.8k + link guide 18PM
 2026-11-14 | 14:53 | 53K | permalink/1612885590154052 | [ngắn] bán 18PM đỏ 512 app-7s Gifu → đa số tiệm 262k, app 274.8 → app-7 trên tiệm ~5.8k + link ?q=18 pro max 512
 2026-11-14 | 15:25 | 32K | permalink/1460012996104193 | [ngắn] Osaka 2 máy 18PM xanh 256 nguyên carton → xanh 229k (森森/ルデヤ), 2 máy ~45.8man + mời nhóm + link guide 18PM
+2026-11-14 | 15:54 | 53K | permalink/1612937676815510 | [ngắn] cần 18PM gần ga xin giá → 256 tiệm thu 227–230k tuỳ màu (đỏ 230k PANDA), 512 262k + link ?q=18 pro max
