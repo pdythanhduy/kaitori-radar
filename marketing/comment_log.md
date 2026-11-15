@@ -291,3 +291,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-15 | 11:23 | 53K | posts/1613730723402872 | [ngắn] 17PM 512 đổi lên 18PM bù bao nhiêu (Aichi) → 17PM 512 bạc ~217k, cam/xanh ~210k, 18PM 256 ~229k → bù 12–19k + /vi/?q=17 pro max 512
 2026-11-15 | 12:22 | 85K | posts/1746405106457591 | [ngắn] cần mua 17PM (10 cmt, có người rao cam seal 19.2) → 256 bạc ~192k, cam/xanh ~186k, 19.2 cao hơn tiệm ~6k + mời nhóm + /guide/gia-kai-iphone-17-pro-max/
 2026-11-15 | 12:53 | 53K | posts/1613795050063106 | [ngắn] đơn Apple 18PM xanh từ cuối 9 bị dời ngày mãi (6 cmt) → chưa xuất kho huỷ ở ご注文状況, tiền là tạm giữ; giữ bán thì kai 229k vs app 239.8 hụt ~10k + /guide/huy-iphone/#hoantien
+2026-11-15 | 13:52 | 32K | posts/1461000686005424 | [ngắn] 18PM đỏ 256 cắt lỗ 23.1 Kashiwa → PANDA trả 230k, 23.1 chỉ hơn tiệm ~1k + /guide/gia-kai-iphone-18-pro-max/
