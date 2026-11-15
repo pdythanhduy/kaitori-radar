@@ -531,18 +531,24 @@
     if (st.q && /^\d{8,14}$/.test(st.q.trim())) { if (await openByJan(st.q.trim(), "typed")) return; }
     if (st.q) {
       // từ lóng hay gõ trong nhóm FB: "18 prm" / "18pm" = 18 Pro Max, "ip18" = iPhone 18, gõ thiếu "iphon"
-      const q = st.q.normalize("NFKC").toLowerCase().replace(/\s/g, "")
-        .replace(/prm|pro?max/g, "promax").replace(/(\d)pm(?=\d|$)/g, "$1promax")
+      const nq = (s) => s.replace(/prm|pro?max/g, "promax").replace(/(\d)pm(?=\d|$)/g, "$1promax")
         .replace(/^ip(?=\d)/, "iphone").replace(/iphon(?!e)/g, "iphone").replace(/dou|duoo/g, "duo")
         // 07/11: tìm tiếng Nhật kiểu "ポケモン セット 9個", "ポケモン 箱" không ra (tên hộp trên web không có chữ ポケモン)
         .replace(/^(ポケモンカード|ポケモン|ポケカ)(?=.)/, "").replace(/セット9個?|9個?セット/g, "9種セット").replace(/箱/g, "box");
+      const q0 = st.q.normalize("NFKC").toLowerCase();
+      const q = nq(q0.replace(/\s/g, ""));
+      // 15/11: "ipad pro m4" không ra vì tên là "iPad Pro 13インチ M4…" → cả cụm không thấy thì tìm theo từng từ (đủ mọi từ)
+      const toks = q0.split(/\s+/).filter(Boolean).map(nq).filter(Boolean);
+      const hit = (s, any) => any ? toks.every((t) => s.includes(t)) : s.includes(q);
       // tìm trước trong mục lục nhỏ → chỉ tải những nhóm có kết quả
       sidx ||= await fetch("data/search.json" + bust).then((r) => r.json()).catch(() => null);
-      const cats = sidx ? [...new Set(sidx.filter(([, n]) => n.toLowerCase().replace(/\s/g, "").includes(q)).map(([c]) => c))] : Object.keys(CATS);
+      const sn = sidx ? sidx.map(([c, n]) => [c, n.toLowerCase().replace(/\s/g, "")]) : null;
+      const byTok = !!sn && toks.length > 1 && !sn.some(([, n]) => hit(n, false));
+      const cats = sn ? [...new Set(sn.filter(([, n]) => hit(n, byTok)).map(([c]) => c))] : Object.keys(CATS);
       const use = (cats.length ? cats : Object.keys(CATS)).filter((c) => CATS[c]);
       // tìm trong ≤ 2 nhóm (vd link ?q=iPhone từ Facebook): tải luôn lịch sử để có biểu đồ + nhãn xu hướng
       const [all] = await Promise.all([Promise.all(use.map(loadCat)).then((a) => a.flat()), use.length <= 2 ? Promise.all(use.map(loadHist)) : null]);
-      base = all.filter((i) => (i.name + i.key + (i._f.series || "")).toLowerCase().replace(/\s/g, "").includes(q));
+      base = all.filter((i) => hit((i.name + i.key + (i._f.series || "")).toLowerCase().replace(/\s/g, ""), byTok));
     } else {
       base = (await Promise.all([loadCat(st.cat), loadHist(st.cat)]))[0];
     }
