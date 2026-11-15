@@ -147,7 +147,9 @@ def post3() -> str:
         for i in cat(c):
             ch = i.get("chg") or 0
             if (i.get("n_shops", 0) >= 4 and i.get("best", 0) >= 8000 and sane(i)
-                    and not re.match(r"(box|name):(op|eb|prb|st)\d", i["key"]) and (abs(ch) >= 3000 or abs(ch) >= max(500, i["best"] * 0.015))):
+                    and not re.match(r"(box|name):(op|eb|prb|st)\d", i["key"]) and (abs(ch) >= 3000 or abs(ch) >= max(500, i["best"] * 0.015))
+                    # 15/11: 14/11 ra "Switch2 53.000円 (▲45.100)" — giá hôm qua bị ghép nhầm mẫu; đổi >40%/ngày gần như luôn là lỗi
+                    and i["best"] - ch > 0 and abs(ch) <= 0.4 * (i["best"] - ch)):
                 pool.append(i)
     pool.sort(key=lambda i: -abs(i["chg"]) / i["best"])
     up = [i for i in pool if i["chg"] > 0][:4]
