@@ -296,3 +296,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-15 | 14:53 | 32K | posts/1461040049334821 | [ngắn] sẵn 2TB đỏ Tokyo ai thu → 18PM 2TB ~395–397k, 18 Pro 2TB ~375k, đỏ hơn màu khác ~10k + /guide/gia-kai-iphone-18-pro-max/
 2026-11-15 | 15:23 | 53K | posts/1613894406719837 | [ngắn] cần vài cây 18PM 256 đỏ Namba (13 cmt) → mốc trả giá: đỏ chiều nay 230k (PANDA), app 239.8 + /vi/?q=18 pro max 256
 2026-11-15 | 15:53 | 32K | posts/1461072725998220 | [ngắn] cần mua 18PM xanh Tokyo/Chiba kai+3 → xanh 256 kai 229k (森森/ルデヤ) nên ~232k + mời nhóm + /guide/gia-kai-iphone-18-pro-max/
+2026-11-15 | 16:23 | 53K | posts/1613934003382544 | [ngắn] hỏi hướng dẫn huỷ henpin (返品) → 14 ngày, đủ hộp, tắt Tìm iPhone, 15% chỉ đơn số lượng lớn + /guide/tra-iphone-apple/
