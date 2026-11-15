@@ -17,4 +17,4 @@
 
 ## 🎯 Góc đề xuất
 - Bình luận: bài rao bán / thu chục cây → 1 số đúng màu; bài cắt lỗ trắng/bạc → chênh màu nhỏ, so tiệm trước khi bán.
-- Bài nhóm khung 4 (19h): "🎨 iPHONE 18 PRO MAX TRẮNG/BẠC ĐANG THẤP NHẤT: CHÊNH MẤY NGHÌN SO VỚI ĐỎ?" (bạc 226k / đen 227k / xanh 229k / đỏ 230k) + /guide/tru-mau-iphone/. Khung 5 (21h, ngày lẻ → Pokémon box): mặc định.
+- Bài nhóm khung 4 (19h): góc màu đã dùng 14/11 19h → đổi sang "📋 TRẢ iPHONE CHO APPLE (HENPIN) & HUỶ ĐƠN BỊ DỜI NGÀY: 4 ĐIỀU CẦN BIẾT" (14 ngày, đủ hộp, tắt Tìm iPhone, 15% chỉ đơn số lượng lớn; huỷ trước xuất kho = tạm giữ hạn mức) + /guide/tra-iphone-apple/. Khung 5 (21h, ngày lẻ → Pokémon box): mặc định.
