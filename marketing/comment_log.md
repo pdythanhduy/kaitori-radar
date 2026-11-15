@@ -288,3 +288,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-15 | 09:53 | 32K | posts/1460842616021231 | [ngắn] 1 Duo trắng cần ra đi → trắng/đen như nhau, sáng nay 256 361.5k (ルデヤ), 512 401.5k + /guide/gia-kai-iphone-duo/
 2026-11-15 | 10:19 | 32K | posts/1460865152685644 | big-32K (Duo 1 tuần) → link /guide/gia-kai-iphone-duo/
 2026-11-15 | 10:53 | 109K | posts/2248709499362378 | [ngắn] bán 2 18PM xanh 256 23.4 Osaka → xanh trưa nay 229k (森森/ルデヤ), 23.4 cao hơn tiệm ~5k + /guide/gia-kai-iphone-18-pro-max/
+2026-11-15 | 11:23 | 53K | posts/1613730723402872 | [ngắn] 17PM 512 đổi lên 18PM bù bao nhiêu (Aichi) → 17PM 512 bạc ~217k, cam/xanh ~210k, 18PM 256 ~229k → bù 12–19k + /vi/?q=17 pro max 512
