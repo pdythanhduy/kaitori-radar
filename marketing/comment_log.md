@@ -284,3 +284,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-15 | 00:08 | 85K | posts/1745913913173377 | [ngắn] shop Nishikawaguchi thu chục 18PM xanh 256 23.1 → xanh tối 14/11 229k (森森/ルデヤ), thu 23.1 nhỉnh ~2k + /guide/gia-kai-iphone-18-pro-max/
 2026-11-15 | 08:22 | 32K | posts/1460778396027653 | [ngắn] ra đi 18PM đỏ 256 nguyên hộp Kobe → đỏ tối qua PANDA 230k, 森森 229k, app 239.8 + /vi/?q=18 pro max 256
 2026-11-15 | 08:53 | 53K | posts/1613600753415869 | [ngắn] 18 Pro đỏ 256 Gifu ai thu → đỏ tối qua 森森/ルデヤ 204.5k, màu được giá nhất + mời nhóm + /guide/gia-kai-iphone-18-pro/
+2026-11-15 | 09:22 | 109K | posts/2247466866153308 | big-109K 14/11 (4 kiểu lừa) đã duyệt → link /guide/lua-dao-iphone/

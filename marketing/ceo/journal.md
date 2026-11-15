@@ -212,3 +212,19 @@ Thí nghiệm nào không hiệu quả sau 3–7 ngày thì dừng. Thí nghiệ
   3. (tối 13/11) Gắn link affiliate A8 Y!mobile (Yステーション, 4.500円/MNP) vào mục 📱 Chuyển mạng — chương trình duyệt từ 04/11 mà chưa gắn.
 - **Nhận định:** tin "giá vừa giảm" kéo view mạnh nhất (Duo 49 lượt) nhưng ít bấm tiệm → giữ góc này cho view, còn bấm tiệm/doanh thu đến từ bình luận trả lời người đang rao bán (đúng màu, đúng dung lượng). Link bình luận chuyển mạng (/vi/?v=deals) giờ có tiền thật (Y!mobile) → ưu tiên trả lời bài hỏi MNP/1円 khi gặp.
 - **Đề xuất chờ user:** (1) Search Console: gửi sitemap + yêu cầu lập chỉ mục 5 trang (hướng dẫn đã gửi 13/11 tối); (2) cron Worker 08:07/08:37 JST để giá có trước lượt bình luận sáng (sáng nay vẫn dùng giá 22:41 tối qua tới ~10h); (3) lịch 20:43 (Pokémon) 13/11 không chạy — nếu lặp lại thì khôi phục lịch (marketing/ceo/crons.json).
+
+### 15/11/2026
+- **Hôm qua (14/11, cả ngày, lịch chạy đủ, Pokémon 20:43 chạy trễ, đăng 21:17):**
+  - **127 lượt vào** (13/11: 183, −31%; ngang mức thường 118–153), 254 lượt xem. FB 97 (76%), gõ thẳng 30, Google 0.
+  - 25 bình luận + 5 bài nhóm + tin hot + big-109K (chờ duyệt) + Pokémon 96K + trang cá nhân → FB/bình luận ≈ 3,9 (13/11 ≈ 5,0, 12/11 ≈ 3,0).
+  - **Bấm sang tiệm 17/128 (13%**, 13/11 11%, 12/11 21%). 森森 4, 当番 4, 1丁目 3, PANDA 2, ルデヤ 2.
+  - 🤝 **Bấm link đối tác 6 lần — lần đầu có**: 楽天モバイル 3 (chưa duyệt A8 → link thường), UQ 1 (chưa duyệt), Y!mobile/Yステーション 1 (affiliate), ネットオフ 1. → 4/6 lượt bấm rơi vào chương trình A8 còn "chờ duyệt".
+  - Quay lại 25/115 máy (21%, 13/11 11%). Vào từ link: trang chủ 49, 18 pro max 256 24, 18PM 18. Guide: 18PM 18, Duo 5, trả/trừ màu/huỷ 4.
+  - Tìm không ra: "iphone duo" (thử lại thì ra 4 mẫu → có lẽ gõ lúc trang chưa tải xong), "ipad pro m4" (không ra thật).
+- **Trend (có nguồn):** bốc thăm ドンキ/三洋堂 ハドウシーカー, họ 30th, MEGAドリームex hết hạn 23:59 hôm nay; 楽天ブックス tới 18/11; PCO KQ 17/11 (cardchusen, PCO). Duo: 楽天モバイル hàng về tuần 16 & 23/11 (iPhone Mania 13/11). Nintendo nói không tăng giá Switch 2 thêm (godisageek 11/2026). Counterpoint: 18 Pro bán ở Nhật 3 tuần đầu −27% so 17 Pro (selectra). TQ/HK: không đổi. Không thêm mục events.json (không có lịch mới đã xác nhận).
+- **Đã làm:**
+  1. Tìm kiếm: cả cụm không ra thì tìm theo từng từ (đủ mọi từ) → "ipad pro m4" ra 16 mẫu; thử playwright các kiểu cũ (18 prm 256, 18pm, ポケモン 箱, iphone duo) vẫn đúng. app.js v76.
+  2. group_posts.py khung 3: bỏ món đổi >40%/ngày (14/11 ra "Switch2 ▲45.100" do giá hôm qua ghép nhầm) — sửa tay 2 lần → sửa code theo playbook. Khung 5 (PS5 Pro 208,8k, Steam Machine) kiểm lại: 4–5 tiệm cùng mức → số thật, không sửa.
+  3. Bài big-109K 14/11 đã duyệt → bình luận link /guide/lua-dao-iphone/. Bấm chạy cập nhật giá 09:22 (giá vẫn từ 22:41 tối qua).
+- **Nhận định:** lượt vào về mức thường sau ngày đỉnh tin Duo; chất lượng tốt hơn (bấm tiệm 13%, quay lại 21%, có bấm affiliate). Doanh thu đang nghẽn ở A8 chưa duyệt 楽天/UQ, không phải ở lượt bấm.
+- **Đề xuất chờ user:** (1) vào A8 xem 楽天/UQ/三井住友 (chờ duyệt từ 03/11); bị từ chối thì nộp lại hoặc thử もしも/バリューコマース; (2) Search Console + sitemap; (3) cron Worker 08:07/08:37 JST (sáng nay lại phải bấm tay).
