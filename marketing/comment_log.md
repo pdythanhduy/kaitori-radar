@@ -305,3 +305,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-15 | 19:53 | 32K | posts/1461234692648690 | [ngắn] cắt lỗ 18PM đen 256 + 2 18 Pro cherry 256 app−1m Nagoya → 18PM đen 229.8k vs tiệm 227k, 18 Pro 209.8k vs đỏ 204.5k + /vi/?q=18 pro
 2026-11-15 | 20:23 | 53K | posts/1614086543367290 | [ngắn] cần mua 18PM trắng/xanh 256 Osaka (15 cmt) → xanh 229k, bạc 226k, rao 23 hơn tiệm 1–4k + /guide/gia-kai-iphone-18-pro-max/
 2026-11-15 | 20:53 | 32K | posts/1461274312644728 | [ngắn] cần 18PM trắng 512 → bạc 512 258k, đỏ/xanh 262k, app 274.8 + mời nhóm + /vi/?q=18 pro max 512
+2026-11-15 | 21:16 | Pokémon 96K (pokemonae) | posts/1760564678375157 | pokemon-daily 15/11 (hộp bom Deck MEGA) + link /guide/gia-kai-pokemon-box/
