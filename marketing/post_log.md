@@ -127,3 +127,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-15 | 19:56 | 4 | 📋 ĐƠN APPLE BỊ DỜI NGÀY HAY MUỐN TRẢ MÁY (HENPIN)? 4 ĐIỀU CẦN BIẾT (thay bản tự động theo 🎯 trends 18:20; huỷ ở ご注文状況, tạm giữ hạn mức, 14 ngày + tắt Tìm iPhone, 15% đơn lớn, tự huỷ sim; link /guide/tra-iphone-apple/) | https://www.facebook.com/groups/1118827834446963
 2026-11-15 | 21:15 | pokemon-daily | 💣 TRÚNG "HỘP BOM" DECK MEGA? 9 TIỆM THU MUA CHƯA TIỆM NÀO CÓ GIÁ (ảnh hopbom-1115.png; lên ngay; đã bình luận link /guide/gia-kai-pokemon-box/) | https://www.facebook.com/groups/pokemonae/posts/1760564678375157/
 2026-11-15 | 21:54 | 5 | 🃏 GIÁ THU MUA HỘP THẺ POKÉMON CAO NHẤT HÔM NAY | https://www.facebook.com/groups/1118827834446963
+2026-11-15 | 22:49 | canhan | BỎ LƯỢT + DỪNG: Facebook checkpoint yêu cầu tải giấy tờ tuỳ thân (facebook.com/checkpoint) khi mở /me; đã xoá các lịch đăng/bình luận/quét FB | -
