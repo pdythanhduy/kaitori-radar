@@ -301,3 +301,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-15 | 17:23 | 53K | posts/1613988266710451 | [ngắn] tìm 18PM lướt Saitama → mốc trên: seal 226k (bạc)–230k (đỏ), lướt dưới mốc + mời nhóm + /vi/?q=18 pro max 256
 2026-11-15 | 18:18 | Visa vĩnh trú 6.3万 | posts/1125472616982031 | [visa] hỏi xin vĩnh trú 80 điểm, 3 người phụ thuộc ở VN (23 cmt) → bảng tham khảo tính thu nhập theo số người (+~70 vạn/người, không chính thức) + /visa/vinh-tru/ + hỏi 行政書士
 2026-11-15 | 18:53 | 32K | posts/1461189922653167 | [ngắn] không gồng nổi bán 18PM đỏ 256/512 app−9 Nagoya → 256 ~230.8k ≈ PANDA 230k, 512 ~265.8k vs tiệm 262k + /vi/?q=18 pro max
+2026-11-15 | 19:23 | 53K | posts/1614061353369809 | [ngắn] bán 17PM 256 bạc nguyên carton (10 cmt, có người trả 19.5) → bạc ~192k (PANDA/森森), 19.5 nhỉnh hơn tiệm + mời nhóm + /guide/gia-kai-iphone-17-pro-max/
