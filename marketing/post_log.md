@@ -124,3 +124,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-15 | 11:55 | 1 | 💰 HÔM NAY MUA iPHONE GIÁ APPLE RỒI BÁN KAI THÌ LỜI HAY LỖ? | https://www.facebook.com/groups/1118827834446963
 2026-11-15 | 13:55 | 2 | 🔁 ĐỔI 17 PRO MAX LÊN 18 PRO MAX THÌ BÙ BAO NHIÊU? (thay bản tự động theo 🎯 trends 11:55; 17PM256→18PM256 chênh 37–44k, 17PM512→18PM256 12–20k, →18PM512 45–52k, 17Pro→18Pro 27.5k; giá 13:38) | https://www.facebook.com/groups/1118827834446963
 2026-11-15 | 15:55 | 3 | 📊 GIÁ KAI ĐỔI GÌ HÔM NAY? | https://www.facebook.com/groups/1118827834446963
+2026-11-15 | 19:56 | 4 | 📋 ĐƠN APPLE BỊ DỜI NGÀY HAY MUỐN TRẢ MÁY (HENPIN)? 4 ĐIỀU CẦN BIẾT (thay bản tự động theo 🎯 trends 18:20; huỷ ở ご注文状況, tạm giữ hạn mức, 14 ngày + tắt Tìm iPhone, 15% đơn lớn, tự huỷ sim; link /guide/tra-iphone-apple/) | https://www.facebook.com/groups/1118827834446963
