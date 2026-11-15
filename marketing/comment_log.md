@@ -285,3 +285,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-15 | 08:22 | 32K | posts/1460778396027653 | [ngắn] ra đi 18PM đỏ 256 nguyên hộp Kobe → đỏ tối qua PANDA 230k, 森森 229k, app 239.8 + /vi/?q=18 pro max 256
 2026-11-15 | 08:53 | 53K | posts/1613600753415869 | [ngắn] 18 Pro đỏ 256 Gifu ai thu → đỏ tối qua 森森/ルデヤ 204.5k, màu được giá nhất + mời nhóm + /guide/gia-kai-iphone-18-pro/
 2026-11-15 | 09:22 | 109K | posts/2247466866153308 | big-109K 14/11 (4 kiểu lừa) đã duyệt → link /guide/lua-dao-iphone/
+2026-11-15 | 09:53 | 32K | posts/1460842616021231 | [ngắn] 1 Duo trắng cần ra đi → trắng/đen như nhau, sáng nay 256 361.5k (ルデヤ), 512 401.5k + /guide/gia-kai-iphone-duo/
