@@ -123,3 +123,4 @@ ngày | giờ | khung | tiêu đề | link
 2026-11-15 | 10:08 | big-32K | 📉 iPHONE DUO 1 TUẦN QUA: BẢN 512 MẤT 31.000円, BẢN 256 ĐÃ THẤP HƠN GIÁ APPLE (không link, lên ngay; đã bình luận link /guide/gia-kai-iphone-duo/ 10:19; Duo 256 361.5k < Apple 364.8k, 512 432.5→401.5k, 1TB 505→481k, 2TB 609→586k; giá 09:26) | https://www.facebook.com/groups/807826924656140/posts/1460865152685644/
 2026-11-15 | 11:55 | 1 | 💰 HÔM NAY MUA iPHONE GIÁ APPLE RỒI BÁN KAI THÌ LỜI HAY LỖ? | https://www.facebook.com/groups/1118827834446963
 2026-11-15 | 13:55 | 2 | 🔁 ĐỔI 17 PRO MAX LÊN 18 PRO MAX THÌ BÙ BAO NHIÊU? (thay bản tự động theo 🎯 trends 11:55; 17PM256→18PM256 chênh 37–44k, 17PM512→18PM256 12–20k, →18PM512 45–52k, 17Pro→18Pro 27.5k; giá 13:38) | https://www.facebook.com/groups/1118827834446963
+2026-11-15 | 15:55 | 3 | 📊 GIÁ KAI ĐỔI GÌ HÔM NAY? | https://www.facebook.com/groups/1118827834446963
