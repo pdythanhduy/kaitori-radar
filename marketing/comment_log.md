@@ -293,3 +293,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-15 | 12:53 | 53K | posts/1613795050063106 | [ngắn] đơn Apple 18PM xanh từ cuối 9 bị dời ngày mãi (6 cmt) → chưa xuất kho huỷ ở ご注文状況, tiền là tạm giữ; giữ bán thì kai 229k vs app 239.8 hụt ~10k + /guide/huy-iphone/#hoantien
 2026-11-15 | 13:52 | 32K | posts/1461000686005424 | [ngắn] 18PM đỏ 256 cắt lỗ 23.1 Kashiwa → PANDA trả 230k, 23.1 chỉ hơn tiệm ~1k + /guide/gia-kai-iphone-18-pro-max/
 2026-11-15 | 14:23 | 53K | posts/1613873090055302 | [ngắn] bán 1 18PM 256 Kuki 23 nhẹ → tiệm 226k (bạc)–230k (đỏ), 23 sát giá tiệm + mời nhóm + /vi/?q=18 pro max 256
+2026-11-15 | 14:53 | 32K | posts/1461040049334821 | [ngắn] sẵn 2TB đỏ Tokyo ai thu → 18PM 2TB ~395–397k, 18 Pro 2TB ~375k, đỏ hơn màu khác ~10k + /guide/gia-kai-iphone-18-pro-max/
