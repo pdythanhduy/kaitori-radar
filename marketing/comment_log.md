@@ -303,3 +303,4 @@ Dùng để: đếm số bình luận/ngày (tối đa 8), giãn cách giữa c�
 2026-11-15 | 18:53 | 32K | posts/1461189922653167 | [ngắn] không gồng nổi bán 18PM đỏ 256/512 app−9 Nagoya → 256 ~230.8k ≈ PANDA 230k, 512 ~265.8k vs tiệm 262k + /vi/?q=18 pro max
 2026-11-15 | 19:23 | 53K | posts/1614061353369809 | [ngắn] bán 17PM 256 bạc nguyên carton (10 cmt, có người trả 19.5) → bạc ~192k (PANDA/森森), 19.5 nhỉnh hơn tiệm + mời nhóm + /guide/gia-kai-iphone-17-pro-max/
 2026-11-15 | 19:53 | 32K | posts/1461234692648690 | [ngắn] cắt lỗ 18PM đen 256 + 2 18 Pro cherry 256 app−1m Nagoya → 18PM đen 229.8k vs tiệm 227k, 18 Pro 209.8k vs đỏ 204.5k + /vi/?q=18 pro
+2026-11-15 | 20:23 | 53K | posts/1614086543367290 | [ngắn] cần mua 18PM trắng/xanh 256 Osaka (15 cmt) → xanh 229k, bạc 226k, rao 23 hơn tiệm 1–4k + /guide/gia-kai-iphone-18-pro-max/
