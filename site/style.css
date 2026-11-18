@@ -622,3 +622,6 @@ body.landq .qpick{display:none}
 .bc-note,.bc-none{font-size:.68rem;color:var(--muted);margin:2px 2px 0}
 .rk-more{margin:-.4rem 0 1rem;font-size:.82rem}.rk-more a{color:#2563eb;font-weight:600}
 @media (max-width:560px){.bchart .ax,.bchart .mk{font-size:20px}}
+/* 18/11 · nút "+N tiệm khác" dễ thấy hơn: nền nhạt, chữ xanh như link, không còn viền nét đứt */
+.bcard .shmore{border:1px solid #bfdbfe;background:#eff6ff;color:#1d4ed8;font-size:.8rem;padding:.5rem}
+.bcard .shmore:hover{background:#dbeafe}

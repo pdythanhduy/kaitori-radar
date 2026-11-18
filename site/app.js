@@ -364,7 +364,7 @@
       ${pills ? `<div class="bh-pills">${pills}</div>` : ""}
       ${colorPick(it, id, col, shops)}
       ${shops.length > 1 ? `<div class="pods">${pods}</div>` : ""}
-      ${rest.length ? `<div class="shops clip">${shopRows(it, shops)}</div><button class="shmore" type="button">${restLine} · ${t.allShops(shops.length)} ▾</button>` : ""}
+      ${rest.length ? `<div class="shops clip">${shopRows(it, shops)}</div><button class="shmore" type="button">${restLine} ▾</button>` : ""}
       <a class="sbest cta" href="${esc(lnk(bestS, bp))}" target="_blank" rel="noopener nofollow"${SH[bestS]?.list ? ` data-copy="${esc(bp.n || it.name)}"` : ""}><span>${t.ctaOpen}<b>${SH[bestS]?.name || ""}</b></span><span aria-hidden="true">↗</span></a>
       ${REF[bestS] ? `<div class="ref-line">${esc(refText(bestS))}</div>` : ""}${boostTag(it)}
       <div class="b-acts"><button class="chb" type="button" data-id="${esc(id)}">📈 ${lang === "vi" ? "Biểu đồ giá" : "価格推移グラフ"}</button><button class="bell ${mine.watch[id]?.target ? "on" : ""}" type="button" data-id="${esc(id)}" title="${esc(t.bellTip)}">${mine.watch[id]?.target ? "🔔 " + yen(mine.watch[id].target) : t.bellBtn}</button></div><div class="chbox" hidden></div>
@@ -783,7 +783,7 @@
       noteSeen(it);
       return;
     }
-    const sm = e.target.closest(".shmore"); if (sm) { const box = sm.previousElementSibling; box.classList.toggle("clip"); sm.textContent = box.classList.contains("clip") ? sm.textContent.replace("▴", "▾") : sm.textContent.replace("▾", "▴"); return; }
+    const sm = e.target.closest(".shmore"); if (sm) { const box = sm.previousElementSibling; box.classList.toggle("clip"); if (!box.classList.contains("clip")) window.kpTrack?.("shops_more", {}); sm.textContent = box.classList.contains("clip") ? sm.textContent.replace("▴", "▾") : sm.textContent.replace("▾", "▴"); return; }
     const f = e.target.closest(".fav"); if (f) { e.preventDefault(); return toggleWatch(f.dataset.id); }
     const k = e.target.closest(".stk"); if (k) { e.preventDefault(); return addStock(k.dataset.id, k); }
     const d = e.target.closest(".sdel"); if (d) { delete mine.stock[d.dataset.id]; saveMine(); return renderMine(); }
