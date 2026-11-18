@@ -566,7 +566,7 @@
     if (st.q && /^\d{8,14}$/.test(st.q.trim())) { if (await openByJan(st.q.trim(), "typed")) return; }
     if (st.q) {
       // từ lóng hay gõ trong nhóm FB: "18 prm" / "18pm" = 18 Pro Max, "ip18" = iPhone 18, gõ thiếu "iphon"
-      const nq = (s) => s.replace(/prm|pro?max/g, "promax").replace(/(\d)pm(?=\d|$)/g, "$1promax")
+      const nq = (s) => s.replace(/(?:mark|mk)([2-5])(?!\d)/g, (_, d) => "mark" + ["", "", "ii", "iii", "iv", "v"][d]).replace(/prm|pro?max/g, "promax").replace(/(\d)pm(?=\d|$)/g, "$1promax")
         .replace(/^ip(?=\d)/, "iphone").replace(/iphon(?!e)/g, "iphone").replace(/dou|duoo/g, "duo")
         // 07/11: tìm tiếng Nhật kiểu "ポケモン セット 9個", "ポケモン 箱" không ra (tên hộp trên web không có chữ ポケモン)
         .replace(/^(ポケモンカード|ポケモン|ポケカ)(?=.)/, "").replace(/セット9個?|9個?セット/g, "9種セット").replace(/箱/g, "box");
