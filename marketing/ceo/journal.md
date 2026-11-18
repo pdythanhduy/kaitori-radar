@@ -235,3 +235,4 @@ Thí nghiệm nào không hiệu quả sau 3–7 ngày thì dừng. Thí nghiệ
 - /vi/, /guide/vi/, /guide/gia-kai-iphone-18-pro-max/, /guide/gia-kai-iphone-duo/, /visa/vinh-tru/: Google CHƯA biết tới. /guide/pokeca-box-kaitori/: đã thu thập 01/11 nhưng chưa lập chỉ mục.
 - Đã bấm "Yêu cầu lập chỉ mục" 6 trang trên + gửi lại sitemap.xml (thành công).
 - Bài học: trang VI quan trọng không có link nội bộ trỏ tới từ trang được index → cần thêm link /vi/ và /guide/vi/ ở trang chủ JA/footer các trang /p/ (việc cho lịch mỗi giờ/CEO). Kiểm tra lại sau ~1 tuần (25/11).
+- 18/11 tối (user duyệt #1 #2 kiểu kakaku): biểu đồ giá (/p/ + nút 📈 trong thẻ SPA), /ranking/ + /vi/xep-hang/, ranking trên /c/<cat>/. Sửa lỗi dữ liệu: từ ~11h 18/11 "iPhone 18 Pro 2TB" bị dồn vào 1TB (PANDA ghi sai JAN) → 1TB hiện 375.000 thay vì ~302.000; đã sửa run.py, lượt cập nhật giá kế tiếp sẽ đúng. Theo dõi: event chart_open, lượt vào /vi/xep-hang/.
