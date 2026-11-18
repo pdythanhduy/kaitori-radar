@@ -625,3 +625,7 @@ body.landq .qpick{display:none}
 /* 18/11 · nút "+N tiệm khác" dễ thấy hơn: nền nhạt, chữ xanh như link, không còn viền nét đứt */
 .bcard .shmore{border:1px solid #bfdbfe;background:#eff6ff;color:#1d4ed8;font-size:.8rem;padding:.5rem}
 .bcard .shmore:hover{background:#dbeafe}
+/* 18/11 · chip "Hay xem / よく見られる" nhỏ lại cho đồng cỡ chữ thường; điện thoại: 1 dòng vuốt ngang */
+.qpick{font-size:12.5px;gap:5px;padding-bottom:10px}
+.qpick a{padding:3px 10px;border-width:1px;font-weight:600}
+@media (max-width:640px){.qpick{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}.qpick::-webkit-scrollbar{display:none}.qpick span,.qpick a{flex:0 0 auto}}
