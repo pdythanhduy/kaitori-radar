@@ -228,3 +228,10 @@ Thí nghiệm nào không hiệu quả sau 3–7 ngày thì dừng. Thí nghiệ
   3. Bài big-109K 14/11 đã duyệt → bình luận link /guide/lua-dao-iphone/. Bấm chạy cập nhật giá 09:22 (giá vẫn từ 22:41 tối qua).
 - **Nhận định:** lượt vào về mức thường sau ngày đỉnh tin Duo; chất lượng tốt hơn (bấm tiệm 13%, quay lại 21%, có bấm affiliate). Doanh thu đang nghẽn ở A8 chưa duyệt 楽天/UQ, không phải ở lượt bấm.
 - **Đề xuất chờ user:** (1) vào A8 xem 楽天/UQ/三井住友 (chờ duyệt từ 03/11); bị từ chối thì nộp lại hoặc thử もしも/バリューコマース; (2) Search Console + sitemap; (3) cron Worker 08:07/08:37 JST (sáng nay lại phải bấm tay).
+
+### 18/11/2026 – Search Console (user yêu cầu)
+- Property https://kaitoriprice.com/ đã xác minh từ 01/11 (file google98113e1dfdc92d08.html); sitemap gửi 01/11, Google đọc lần cuối 10/11.
+- Lập chỉ mục: 112 trang được lập chỉ mục, 2.327 chưa (2.208 "đã phát hiện – chưa lập chỉ mục", 73 "đã thu thập – chưa lập chỉ mục"). Tổng 9 lượt nhấp từ Google tới nay.
+- /vi/, /guide/vi/, /guide/gia-kai-iphone-18-pro-max/, /guide/gia-kai-iphone-duo/, /visa/vinh-tru/: Google CHƯA biết tới. /guide/pokeca-box-kaitori/: đã thu thập 01/11 nhưng chưa lập chỉ mục.
+- Đã bấm "Yêu cầu lập chỉ mục" 6 trang trên + gửi lại sitemap.xml (thành công).
+- Bài học: trang VI quan trọng không có link nội bộ trỏ tới từ trang được index → cần thêm link /vi/ và /guide/vi/ ở trang chủ JA/footer các trang /p/ (việc cho lịch mỗi giờ/CEO). Kiểm tra lại sau ~1 tuần (25/11).
