@@ -188,6 +188,41 @@
     const [ex, ey] = pts[pts.length - 1];
     return `<svg class="spark" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" aria-hidden="true"><path d="M${pts[0][0].toFixed(1)},${h - 1} L${line.replace(/ /g, " L")} L${ex.toFixed(1)},${h - 1} Z" fill="${c}" opacity=".12"/><polyline fill="none" stroke="${c}" stroke-width="2" stroke-linejoin="round" points="${line}"/><circle cx="${ex.toFixed(1)}" cy="${ey.toFixed(1)}" r="2.8" fill="${c}"/></svg>`;
   }
+  // 18/11 · biểu đồ giá lớn (kiểu 価格推移グラフ): trục giá, ngày, cao/thấp nhất; chạm/rê để xem từng ngày
+  function bigChart(it) {
+    const s = ((hcache[it.cat] || {})[it.key] || []).slice(-90), vi = lang === "vi";
+    if (s.length < 2) return `<p class="bc-none">${vi ? "Chưa đủ dữ liệu để vẽ biểu đồ (cần ≥2 ngày)." : "グラフ表示にはデータが不足しています（2日以上必要）。"}</p>`;
+    const W = 640, H = 230, L = vi ? 104 : 74, R = 16, T = 16, B = 30, v = s.map((p) => p[1]);
+    const mn = Math.min(...v), mx = Math.max(...v), pad = (mx - mn) * 0.12 || Math.max(mx * 0.01, 1), lo = mn - pad, hi = mx + pad;
+    const X = (i) => L + (i / (v.length - 1)) * (W - L - R), Y = (y) => T + (1 - (y - lo) / (hi - lo)) * (H - T - B);
+    const col = v[v.length - 1] >= v[0] ? "#16a34a" : "#dc2626", f = (n) => n.toFixed(1);
+    const ax = (y) => (y >= 100000 ? (vi ? (y / 10000).toFixed(1).replace(".", ",") + " man" : (y / 10000).toFixed(1).replace(/\.0$/, "") + "万") : Math.round(y).toLocaleString());
+    const md = (d) => `${+d.slice(5, 7)}/${+d.slice(8, 10)}`;
+    const line = v.map((y, i) => `${f(X(i))},${f(Y(y))}`).join(" ");
+    let g = (mx !== mn ? [mx, (mx + mn) / 2, mn] : [mx]).map((y) => `<line x1="${L}" x2="${W - R}" y1="${f(Y(y))}" y2="${f(Y(y))}" class="gl"/><text x="${L - 6}" y="${f(Y(y) + 4)}" text-anchor="end" class="ax">${ax(y)}</text>`).join("");
+    g += [...new Set([0, (v.length - 1) >> 1, v.length - 1])].map((i) => `<text x="${f(X(i))}" y="${H - 8}" text-anchor="${i === 0 ? "start" : i === v.length - 1 ? "end" : "middle"}" class="ax">${md(s[i][0])}</text>`).join("");
+    let mk = "";
+    if (mx !== mn) for (const [y, lab, dy] of [[mx, vi ? "Cao nhất" : "最高", -8], [mn, vi ? "Thấp nhất" : "最低", 16]]) {
+      const i = v.lastIndexOf(y), anc = X(i) > W - 110 ? "end" : X(i) < L + 50 ? "start" : "middle";
+      mk += `<circle cx="${f(X(i))}" cy="${f(Y(y))}" r="3.5" fill="${col}"/><text x="${f(X(i))}" y="${f(Y(y) + dy)}" text-anchor="${anc}" class="mk">${lab} ${y.toLocaleString()}円</text>`;
+    }
+    const pts = s.map((p, i) => [f(X(i)), f(Y(p[1])), p[0], p[1], SH[p[2]]?.name || ""]);
+    const dd = v[v.length - 1] - v[0], pc = ((dd / v[0]) * 100).toFixed(1);
+    const sum = vi ? `${s.length} ngày (${md(s[0][0])}–${md(s[s.length - 1][0])}): ${dd === 0 ? "không đổi" : (dd > 0 ? "tăng " : "giảm ") + yen(Math.abs(dd)) + ` (${dd > 0 ? "+" : "−"}${Math.abs(pc).toFixed(1).replace(".", ",")}%)`}`
+      : `${s.length}日間（${md(s[0][0])}〜${md(s[s.length - 1][0])}）：${dd === 0 ? "変動なし" : (dd > 0 ? "+" : "−") + yen(Math.abs(dd)) + `（${dd > 0 ? "+" : "−"}${Math.abs(pc)}%）`}`;
+    return `<div class="bc-sum">${sum}</div><svg class="bchart" viewBox="0 0 ${W} ${H}" data-pts='${esc(JSON.stringify(pts))}' role="img" aria-label="${vi ? "Biểu đồ giá thu mua cao nhất theo ngày" : "最高買取価格の推移"}">${g}<path d="M${f(X(0))},${H - B} L${line.replace(/ /g, " L")} L${f(X(v.length - 1))},${H - B} Z" fill="${col}" opacity=".10"/><polyline fill="none" stroke="${col}" stroke-width="2.5" stroke-linejoin="round" points="${line}"/>${mk}<circle cx="${f(X(v.length - 1))}" cy="${f(Y(v[v.length - 1]))}" r="4.5" fill="#fff" stroke="${col}" stroke-width="2.5"/><g class="bc-cur" visibility="hidden"><line y1="${T}" y2="${H - B}" class="bc-vl"/><circle r="5" fill="${col}"/></g></svg><div class="bc-tip">${vi ? "Chạm vào biểu đồ để xem giá từng ngày" : "グラフをタップすると日別の価格を表示"}</div><p class="bc-note">${vi ? "Giá thu mua cao nhất mỗi ngày trong các tiệm. Giá đã qua, không phải dự báo." : "各日の最高買取価格（全店舗）。過去の価格であり予測ではありません。"}</p>`;
+  }
+  function chartPoint(svg, ev) {
+    const pts = JSON.parse(svg.dataset.pts), r = svg.getBoundingClientRect(), x = ((ev.clientX - r.left) / r.width) * 640;
+    let i = 0; for (let k = 1; k < pts.length; k++) if (Math.abs(pts[k][0] - x) < Math.abs(pts[i][0] - x)) i = k;
+    const [px, py, d, p, sn] = pts[i], g = svg.querySelector(".bc-cur");
+    g.setAttribute("visibility", "visible"); g.querySelector("line").setAttribute("x1", px); g.querySelector("line").setAttribute("x2", px);
+    g.querySelector("circle").setAttribute("cx", px); g.querySelector("circle").setAttribute("cy", py);
+    const tip = svg.nextElementSibling; tip.classList.add("on");
+    tip.innerHTML = `<b>${d}</b> · ${yen(p)}${sn ? ` · ${esc(sn)}` : ""}`;
+  }
+  document.addEventListener("pointermove", (e) => { const sv = e.target.closest?.(".bchart"); if (sv && e.pointerType === "mouse") chartPoint(sv, e); });
+  document.addEventListener("pointerdown", (e) => { const sv = e.target.closest?.(".bchart"); if (sv) chartPoint(sv, e); });
   // thước giá: hôm nay nằm ở đâu trong khoảng thấp–cao các ngày có dữ liệu
   function gauge(it) {
     const s = ((hcache[it.cat] || {})[it.key] || []).slice(-30);
@@ -287,7 +322,7 @@
     const t = T(), row = (i) => `<button class="mv-i" data-q="${esc(i.name)}"><span>${esc(i.name)}</span><b class="${i.mv > 0 ? "up" : "dn"}">${i.mv > 0 ? "▲" : "▼"}${Math.abs(i.mv).toLocaleString()}円</b><small>${yen(i.best)}</small></button>`;
     const col = (title, arr) => arr.length ? `<div class="mv-c"><h3>${title}</h3>${arr.slice(0, 3).map(row).join("")}</div>` : "";
     const h = col(t.upTitle, mv.up || []) + col(t.downTitle, mv.down || []);
-    return h ? `<div class="movers">${h}</div>` : "";
+    return h ? `<div class="movers">${h}</div><p class="rk-more"><a href="${lang === "vi" ? "/vi/xep-hang/" : "/ranking/"}">🏆 ${lang === "vi" ? "Xem bảng xếp hạng đầy đủ (tăng/giảm 7 ngày, giá cao nhất) →" : "ランキングをもっと見る（7日間の値上がり・値下がり、高価買取）→"}</a></p>` : "";
   }
   function card(it) {
     const t = T();
@@ -332,7 +367,7 @@
       ${rest.length ? `<div class="shops clip">${shopRows(it, shops)}</div><button class="shmore" type="button">${restLine} · ${t.allShops(shops.length)} ▾</button>` : ""}
       <a class="sbest cta" href="${esc(lnk(bestS, bp))}" target="_blank" rel="noopener nofollow"${SH[bestS]?.list ? ` data-copy="${esc(bp.n || it.name)}"` : ""}><span>${t.ctaOpen}<b>${SH[bestS]?.name || ""}</b></span><span aria-hidden="true">↗</span></a>
       ${REF[bestS] ? `<div class="ref-line">${esc(refText(bestS))}</div>` : ""}${boostTag(it)}
-      <div class="b-acts"><button class="bell ${mine.watch[id]?.target ? "on" : ""}" type="button" data-id="${esc(id)}" title="${esc(t.bellTip)}">${mine.watch[id]?.target ? "🔔 " + yen(mine.watch[id].target) : t.bellBtn}</button></div>
+      <div class="b-acts"><button class="chb" type="button" data-id="${esc(id)}">📈 ${lang === "vi" ? "Biểu đồ giá" : "価格推移グラフ"}</button><button class="bell ${mine.watch[id]?.target ? "on" : ""}" type="button" data-id="${esc(id)}" title="${esc(t.bellTip)}">${mine.watch[id]?.target ? "🔔 " + yen(mine.watch[id].target) : t.bellBtn}</button></div><div class="chbox" hidden></div>
       ${affBox(it.cat, it.key)}${cardBox(it) || buyBox(it)}
       <div class="calc-row"><label class="calc">${t.calc} <input type="number" inputmode="numeric" placeholder="${Math.round(it.best * 0.9).toLocaleString()}" data-best="${it.best}"> 円 → ${t.profit} <b class="pf">—</b></label><button class="stk ${mine.stock[id] ? "on" : ""}" data-id="${esc(id)}">${mine.stock[id] ? t.inStock : t.addStock}</button></div>
     </article>`;
@@ -728,6 +763,15 @@
       if (open) { window.kpTrack?.("row_open", { item: it.name }); noteSeen(it); }
       return;
     }
+    const cb = e.target.closest(".chb"); if (cb) {
+      e.preventDefault();
+      const it = REG.get(cb.dataset.id), box = cb.closest(".card")?.querySelector(".chbox"); if (!it || !box) return;
+      if (!box.hidden) { box.hidden = true; cb.classList.remove("on"); return; }
+      box.hidden = false; cb.classList.add("on"); box.innerHTML = "…";
+      loadHist(it.cat).then(() => { box.innerHTML = bigChart(it); });
+      window.kpTrack?.("chart_open", { item: it.name });
+      return;
+    }
     const bl = e.target.closest(".bell"); if (bl) { e.preventDefault(); return bellPanel(bl); }
     const ok = e.target.closest(".aok, .aoff"); if (ok) { e.preventDefault(); return bellSave(ok, ok.classList.contains("aoff")); }
     const cp = e.target.closest(".cpick button"); if (cp) {
@@ -922,6 +966,7 @@
       <button data-v="mine" class="${on(st.view === "mine")}">♥ ${t.drMine}</button>
       <button data-v="profit" class="${on(st.view === "profit")}">💹 ${lang === "vi" ? "Lời/lỗ mua Apple bán kai" : "Apple定価→買取 差額"}</button>
       <button data-v="deals" class="${on(st.view === "deals")}">🎁 ${t.drDeals}</button>
+      <a href="${lang === "vi" ? "/vi/xep-hang/" : "/ranking/"}">🏆 ${lang === "vi" ? "Bảng xếp hạng giá" : "買取価格ランキング"}</a>
       <a href="${lang === "vi" ? "/guide/vi/" : "/guide/"}">📚 ${t.guideBtn}</a>
       ${lang === "vi" ? `<a href="/visa/">🛂 Visa & thủ tục</a>` : ""}
       ${lang === "vi" ? `<a href="https://www.facebook.com/groups/1118827834446963" target="_blank" rel="noopener">👥 ${t.drFb}</a>` : ""}

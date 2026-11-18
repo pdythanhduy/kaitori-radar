@@ -124,7 +124,9 @@ def unify_by_jan(rows):
     remap = {}
     for r in rows:
         j = r.get("jan")
-        if j and best[j][1] != r["key"]:
+        # Khoá iPhone (đọc từ tên: đời + dung lượng) đã chính xác — không gộp iPhone↔iPhone theo JAN: 1 tiệm ghi sai JAN
+        # sẽ dồn cả mẫu đó của MỌI tiệm sang mẫu khác (18/11 PANDA ghi JAN bản 1TB cho máy 2TB → "iPhone 18 Pro 2TB" biến mất)
+        if j and best[j][1] != r["key"] and not (_key_rank(r["key"]) == 0 and _key_rank(best[j][1]) == 0):
             remap[(r["cat"], r["key"])] = best[j]
     for r in rows:
         if (r["cat"], r["key"]) in remap:

@@ -610,3 +610,15 @@ body.landq #list { margin-top: 4px }
 .qpick a:hover{border-color:var(--brand)}
 body.landq .qpick{display:none}
 .visa-teaser{display:flex;justify-content:space-between;align-items:center;gap:10px;background:linear-gradient(135deg,#eff6ff,#fff);box-shadow:0 0 0 1px #bfdbfe;border-radius:16px;padding:10px 14px;margin:6px 0 4px;color:var(--fg);font-size:.86rem;text-decoration:none}.visa-teaser:hover{text-decoration:none;box-shadow:0 0 0 1px #60a5fa}.visa-teaser[hidden]{display:none}.visa-teaser em{font-style:normal;font-weight:800;color:#2563eb}
+/* 18/11 · biểu đồ giá trong thẻ + link bảng xếp hạng */
+.chb{border:1px solid var(--line);background:var(--card);color:var(--fg);border-radius:999px;padding:2px 9px;font-size:.7rem;font-weight:600;line-height:1.5;white-space:nowrap;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.chb.on{background:#eff6ff;border-color:#93c5fd;color:#1d4ed8}
+.chbox{margin-top:8px;border:1px solid var(--line);border-radius:10px;padding:8px 8px 4px;background:var(--card)}
+.bc-sum{font-size:.78rem;font-weight:700;margin:0 2px 4px}
+.bchart{width:100%;height:auto;display:block;touch-action:pan-y;cursor:crosshair}
+.bchart .gl{stroke:var(--line);stroke-dasharray:3 3}.bchart .ax{font-size:12px;fill:var(--muted)}.bchart .mk{font-size:12px;font-weight:700;fill:#3f3f46}
+.bchart .bc-vl{stroke:#94a3b8;stroke-width:1}
+.bc-tip{font-size:.74rem;color:var(--muted);text-align:center;min-height:1.3em;margin-top:2px}.bc-tip.on{color:var(--fg)}
+.bc-note,.bc-none{font-size:.68rem;color:var(--muted);margin:2px 2px 0}
+.rk-more{margin:-.4rem 0 1rem;font-size:.82rem}.rk-more a{color:#2563eb;font-weight:600}
+@media (max-width:560px){.bchart .ax,.bchart .mk{font-size:20px}}

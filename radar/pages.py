@@ -61,6 +61,195 @@ def spark_svg(pts: list) -> str:
             f'<polyline fill="none" stroke="{col}" stroke-width="2" points="{xy}"/></svg>')
 
 
+def _ax(v: float) -> str:
+    """Nhãn trục giá gọn: 586000 -> '58.6万', 6600 -> '6,600'."""
+    return f"{v / 10000:.1f}万".replace(".0万", "万") if v >= 100000 else f"{int(round(v)):,}"
+
+
+def chart_svg(pts: list, shops: dict | None = None) -> str:
+    """Biểu đồ giá thu mua cao nhất theo ngày (kiểu 価格推移グラフ): trục giá, ngày, đánh dấu cao/thấp nhất."""
+    if len(pts) < 2:
+        return ""
+    W, H, L, R, T, B = 640, 230, 74, 16, 16, 30
+    v = [p[1] for p in pts]
+    mn, mx = min(v), max(v)
+    pad = (mx - mn) * 0.12 or max(mx * 0.01, 1)
+    lo, hi = mn - pad, mx + pad
+    X = lambda i: L + i / (len(v) - 1) * (W - L - R)
+    Y = lambda y: T + (1 - (y - lo) / (hi - lo)) * (H - T - B)
+    up = v[-1] >= v[0]
+    col = "#16a34a" if up else "#dc2626"
+    line = " ".join(f"{X(i):.1f},{Y(y):.1f}" for i, y in enumerate(v))
+    area = f"M{X(0):.1f},{H - B} L" + line.replace(" ", " L") + f" L{X(len(v) - 1):.1f},{H - B} Z"
+    g = []
+    for y in (mx, (mx + mn) / 2, mn) if mx != mn else (mx,):
+        g.append(f'<line x1="{L}" x2="{W - R}" y1="{Y(y):.1f}" y2="{Y(y):.1f}" class="gl"/>'
+                 f'<text x="{L - 6}" y="{Y(y) + 4:.1f}" text-anchor="end" class="ax">{_ax(y)}</text>')
+    md = lambda s: f"{int(s[5:7])}/{int(s[8:10])}"
+    xs = sorted({0, (len(v) - 1) // 2, len(v) - 1})
+    for i in xs:
+        anc = "start" if i == 0 else "end" if i == len(v) - 1 else "middle"
+        g.append(f'<text x="{X(i):.1f}" y="{H - 8}" text-anchor="{anc}" class="ax">{md(pts[i][0])}</text>')
+    mk = []
+    if mx != mn:
+        for y, lab, dy in ((mx, "最高", -8), (mn, "最低", 16)):
+            i = max(j for j, t in enumerate(v) if t == y)
+            anc = "end" if X(i) > W - 90 else "start" if X(i) < L + 40 else "middle"
+            mk.append(f'<circle cx="{X(i):.1f}" cy="{Y(y):.1f}" r="3.5" fill="{col}"/>'
+                      f'<text x="{X(i):.1f}" y="{Y(y) + dy:.1f}" text-anchor="{anc}" class="mk">{lab} {y:,}円</text>')
+    mk.append(f'<circle cx="{X(len(v) - 1):.1f}" cy="{Y(v[-1]):.1f}" r="4.5" fill="#fff" stroke="{col}" stroke-width="2.5"/>')
+    tips = "".join(
+        f'<circle cx="{X(i):.1f}" cy="{Y(y):.1f}" r="7" class="hp"><title>{p[0]}：{y:,}円'
+        f'{"（" + (shops or {}).get(p[2], {}).get("name", p[2]) + "）" if len(p) > 2 and p[2] else ""}</title></circle>'
+        for i, (p, y) in enumerate(zip(pts, v)))
+    return (f'<svg class="hc" viewBox="0 0 {W} {H}" role="img" aria-label="買取価格の推移グラフ（{pts[0][0]}〜{pts[-1][0]}）">'
+            f'{"".join(g)}<path d="{area}" fill="{col}" opacity=".10"/>'
+            f'<polyline fill="none" stroke="{col}" stroke-width="2.5" stroke-linejoin="round" points="{line}"/>{"".join(mk)}{tips}</svg>')
+
+
+def hist_table(pts: list, shops: dict) -> str:
+    """Bảng giá từng ngày (mới nhất trước) — để người đọc và Google thấy số cụ thể."""
+    rows, prev = [], None
+    out = []
+    for p in pts:
+        d = p[1] - prev if prev is not None else None
+        out.append((p, d))
+        prev = p[1]
+    for p, d in reversed(out[-14:]):
+        sn = shops.get(p[2], {}).get("name", p[2]) if len(p) > 2 and p[2] else ""
+        dc = "" if not d else f'<span class="{"up" if d > 0 else "dn"}">{"+" if d > 0 else "−"}{abs(d):,}</span>'
+        rows.append(f"<tr><td>{p[0]}</td><td class=\"p\">{yen(p[1])}</td><td class=\"d\">{dc or '±0'}</td><td><small>{e(sn)}</small></td></tr>")
+    return ('<details class="hd-t"><summary>日別の最高買取価格（直近14日）</summary><table class="pt"><thead><tr><th>日付</th>'
+            f'<th>最高買取価格</th><th>前日比</th><th>最高値の店</th></tr></thead><tbody>{"".join(rows)}</tbody></table></details>')
+
+
+def change_n(it: dict, hist: list, days: int = 7):
+    """(chênh yên, %) giữa giá cao nhất hiện tại và ~N ngày trước; None nếu thiếu dữ liệu hoặc trông vô lý."""
+    if len(hist) < 3:
+        return None
+    last = datetime.strptime(hist[-1][0], "%Y-%m-%d")
+    cut = (last - timedelta(days=days)).strftime("%Y-%m-%d")
+    old = [p for p in hist if p[0] <= cut]
+    base = old[-1][1] if old else hist[0][1]
+    if base <= 0:
+        return None
+    d = it["best"] - base
+    pct = d / base * 100
+    if abs(pct) > 40:  # nhảy quá mạnh thường là lỗi ghép tên/tiệm lạ — bỏ
+        return None
+    return d, pct
+
+
+NO_SPREAD = {"keitaigod"}  # giá "新品上限"/lệch hẳn mặt bằng → làm sai bảng chênh lệch
+
+
+def _spread(i: dict) -> int:
+    ps = [p["price"] for s, p in i["prices"].items() if s not in NO_SPREAD]
+    return max(ps) - min(ps) if len(ps) >= 2 else 0
+
+
+def rankings(items: list, hist: dict, n: int = 10, overall: bool = False) -> dict:
+    # chỉ món nhiều tiệm thu (= hàng được giao dịch nhiều), tránh món rẻ/lẻ 1–2 tiệm nhảy % ảo
+    ms, mb = (4, 15000) if overall else (3, 5000)
+    """4 bảng xếp hạng từ dữ liệu thật: giá cao, tăng/giảm 7 ngày (%), chênh lệch giữa các tiệm."""
+    its = [i for i in items if i.get("n_shops", len(i["prices"])) >= MIN_SHOPS and i.get("_slug")]
+    ch = []
+    for i in its:
+        if i["best"] < mb or i.get("n_shops", len(i["prices"])) < ms:
+            continue
+        c = change_n(i, hist.get(i["key"], []))
+        if c and abs(c[0]) >= 500:
+            ch.append((i, *c))
+    return {
+        "high": [] if overall else sorted(its, key=lambda i: -i["best"])[:n],
+        "up": [x for x in sorted(ch, key=lambda x: -x[2]) if x[1] > 0][:n],
+        "down": [x for x in sorted(ch, key=lambda x: x[2]) if x[1] < 0][:n],
+        "spread": [i for i in sorted(its, key=lambda i: -_spread(i)) if _spread(i) > 0][:n],
+    }
+
+
+RK_LAB = {
+    "ja": {"high": ("💰 高価買取ランキング", "最高買取価格が高い順"),
+           "up": ("📈 値上がりランキング（7日間）", "最高買取価格の上昇率"),
+           "down": ("📉 値下がりランキング（7日間）", "最高買取価格の下落率"),
+           "spread": ("💡 店舗間の価格差ランキング", "売る店で差が大きい商品")},
+    "vi": {"high": ("💰 Giá thu mua cao nhất", "món được tiệm trả giá cao nhất"),
+           "up": ("📈 Tăng giá mạnh nhất 7 ngày", "% tăng của giá thu mua cao nhất"),
+           "down": ("📉 Giảm giá mạnh nhất 7 ngày", "% giảm của giá thu mua cao nhất"),
+           "spread": ("💡 Bán sai tiệm mất nhiều nhất", "chênh lệch giữa tiệm trả cao nhất và thấp nhất")},
+}
+
+
+def rank_html(rk: dict, shops: dict, lang: str = "ja", h: str = "h2") -> str:
+    lab = RK_LAB[lang]
+    href = (lambda i: f'/p/{i["_slug"]}/') if lang == "ja" else (lambda i: "/vi/?q=" + _q(i["name"]))
+    sn = lambda i: e(shops.get(i["best_shop"], {}).get("name", i["best_shop"]))
+    secs = []
+    for k in ("high", "up", "down", "spread"):
+        rows = rk.get(k) or []
+        if not rows:
+            continue
+        lis = []
+        for r, x in enumerate(rows, 1):
+            i = x[0] if isinstance(x, tuple) else x
+            if k in ("up", "down"):
+                val = f'<b class="{"up" if x[1] > 0 else "dn"}">{"+" if x[1] > 0 else "−"}{abs(x[2]):.1f}%</b><small>{"+" if x[1] > 0 else "−"}{abs(x[1]):,}円 → {yen(i["best"])}</small>'
+            elif k == "spread":
+                val = f'<b>{yen(_spread(i))}</b><small>{"最高" if lang == "ja" else "cao nhất"} {yen(i["best"])}</small>'
+            else:
+                val = f'<b>{yen(i["best"])}</b><small>{sn(i)}</small>'
+            lis.append(f'<li><span class="rn r{r}">{r}</span><a href="{e(href(i))}">{e(i["name"])}</a><span class="rv">{val}</span></li>')
+        secs.append(f'<section class="rk"><{h}>{lab[k][0]}</{h}><p class="rks">{lab[k][1]}</p><ol class="rkl">{"".join(lis)}</ol></section>')
+    return f'<div class="rkg">{"".join(secs)}</div>'
+
+
+def ranking_pages(all_items: dict, all_hist: dict, shops: dict, updated: str) -> list:
+    """/ranking/ (JA) và /vi/xep-hang/ (VI): bảng xếp hạng toàn bộ + theo danh mục."""
+    flat = [i for c in CAT_ORDER for i in all_items.get(c, [])]
+    hist = {k: v for c in CAT_ORDER for k, v in all_hist.get(c, {}).items()}
+    rk_all = rankings(flat, hist, overall=True)
+    cats = [c for c in CAT_ORDER if any(i.get("_slug") for i in all_items.get(c, []))]
+    # JA
+    per = "".join(f'<section class="rkc"><h2 id="{c}">{e(CAT_JA[c])}</h2>{rank_html(rankings(all_items[c], all_hist.get(c, {}), 5), shops, "ja", "h3")}'
+                  f'<p class="cta"><a href="/c/{c}/">{e(CAT_JA[c])}の全商品を見る →</a></p></section>' for c in cats)
+    toc = " ".join(f'<a href="#{c}">{e(CAT_JA[c])}</a>' for c in cats)
+    body = f"""<nav class="bc"><a href="/">トップ</a> › 買取価格ランキング</nav>
+<h1>買取価格ランキング</h1>
+<p class="lead">大手買取店の新品・未開封の買取価格（毎時取得）から作成したランキングです。値上がり・値下がりは各商品の最高買取価格を約7日前と比較しています。</p>
+<p class="upd">最終更新：{e(updated)} JST</p>
+<h2>全カテゴリ</h2>{rank_html(rk_all, shops, "ja", "h3")}
+<h2>カテゴリ別ランキング</h2><p class="toc">{toc}</p>{per}
+<section class="vi" lang="vi"><h2>Tiếng Việt</h2><p><a href="/vi/xep-hang/">Xem bảng xếp hạng giá thu mua bằng tiếng Việt →</a></p></section>"""
+    ld = [crumbs([("トップ", "/"), ("買取価格ランキング", "/ranking/")])]
+    out = SITE / "ranking"
+    shutil.rmtree(out, ignore_errors=True)
+    out.mkdir(parents=True)
+    (out / "index.html").write_text(page("買取価格ランキング｜値上がり・値下がり・高価買取 - " + BRAND,
+                                         "iPhone・ゲーム機・ポケカBOXなどの買取価格ランキング。高価買取、7日間の値上がり・値下がり、店舗間の価格差を毎時更新。",
+                                         "/ranking/", body, ld, updated), encoding="utf-8")
+    # VI
+    CAT_VI = {"phone": "Điện thoại", "tablet": "Máy tính bảng", "game": "Máy game", "card": "Thẻ Pokémon / TCG",
+              "pc": "Máy tính", "camera": "Máy ảnh", "audio": "Tai nghe / loa", "appliance": "Đồ điện tử",
+              "watch": "Đồng hồ", "hobby": "Mô hình / đồ chơi", "other": "Khác"}
+    per = "".join(f'<section class="rkc"><h2 id="{c}">{e(CAT_VI[c])}</h2>{rank_html(rankings(all_items[c], all_hist.get(c, {}), 5), shops, "vi", "h3")}</section>' for c in cats)
+    toc = " ".join(f'<a href="#{c}">{e(CAT_VI[c])}</a>' for c in cats)
+    body = f"""<nav class="bc"><a href="/vi/">Trang chủ</a> › Bảng xếp hạng</nav>
+<article lang="vi"><h1>🏆 Bảng xếp hạng giá thu mua</h1>
+<p class="lead">Lấy từ giá thu mua hàng mới (chưa mở hộp) của 9 tiệm kaitori, cập nhật mỗi giờ. "Tăng/giảm 7 ngày" là so giá cao nhất hiện tại với khoảng 7 ngày trước. Giá đã qua, không phải dự báo.</p>
+<p class="upd">Cập nhật: {e(updated)} (giờ Nhật)</p>
+<h2>Tất cả danh mục</h2>{rank_html(rk_all, shops, "vi", "h3")}
+<h2>Theo danh mục</h2><p class="toc">{toc}</p>{per}
+<p class="cta"><a href="/vi/">So giá 9 tiệm cho mọi món →</a></p></article>"""
+    out = SITE / "vi" / "xep-hang"
+    shutil.rmtree(out, ignore_errors=True)
+    out.mkdir(parents=True)
+    html_vi = page("Bảng xếp hạng giá thu mua ở Nhật｜tăng, giảm, cao nhất - Kaitori Price",
+                   "Món nào đang được tiệm kaitori ở Nhật trả giá cao nhất, tăng/giảm mạnh nhất 7 ngày, bán sai tiệm mất nhiều nhất. Cập nhật mỗi giờ.",
+                   "/vi/xep-hang/", body, [], updated).replace('<html lang="ja">', '<html lang="vi">', 1)
+    (out / "index.html").write_text(html_vi, encoding="utf-8")
+    return [("/ranking/", "hourly"), ("/vi/xep-hang/", "hourly")]
+
+
 def page(title: str, desc: str, path: str, body: str, ld: list, updated: str) -> str:
     url = BASE + path
     lds = "".join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>' for x in ld)
@@ -84,7 +273,7 @@ def page(title: str, desc: str, path: str, body: str, ld: list, updated: str) ->
 <link rel="icon" href="/icon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#0f172a">
-<link rel="stylesheet" href="/page.css?v=7">
+<link rel="stylesheet" href="/page.css?v=8">
 <script src="/ga.js?v=7"></script>
 {lds}
 </head>
@@ -94,7 +283,7 @@ def page(title: str, desc: str, path: str, body: str, ld: list, updated: str) ->
 {body}
 </main>
 <footer class="ft">
-<nav>{" ".join(f'<a href="/c/{c}/">{e(CAT_JA[c])}</a>' for c in CAT_ORDER)} <a href="/guide/">買取ガイド</a></nav>
+<nav>{" ".join(f'<a href="/c/{c}/">{e(CAT_JA[c])}</a>' for c in CAT_ORDER)} <a href="/ranking/">ランキング</a> <a href="/guide/">買取ガイド</a></nav>
 <p>価格は各買取店の公開ページから自動取得（最終更新 {e(updated)} JST）。実際の買取額は状態・時期により変わります。必ず各店舗でご確認ください。</p>
 <p>© {BRAND} · <a href="/">kaitoriprice.com</a></p>
 </footer>
@@ -150,9 +339,9 @@ def product_page(it: dict, shops: dict, hist: list, related: list, updated: str)
     hist_html = ""
     chg_txt = f" / 前日比 {it['chg']:+,}円" if it.get("chg") else ""
     if len(hpts) >= 2:
-        hist_html = (f'<section><h2>買取価格の推移</h2>{spark_svg(hpts)}'
+        hist_html = (f'<section><h2>買取価格の推移グラフ</h2>{chart_svg(hpts, shops)}'
                      f'<p class="hm">{e(hpts[0][0])} 〜 {e(hpts[-1][0])}：最高 {yen(max(hv))} / 最低 {yen(min(hv))}'
-                     f'{chg_txt}</p></section>')
+                     f'{chg_txt}</p>{hist_table(hpts, shops)}</section>')
     rel_html = ""
     if related:
         rel_html = "<section><h2>関連商品の買取価格</h2><ul class=\"rel\">" + "".join(
@@ -173,7 +362,7 @@ def product_page(it: dict, shops: dict, hist: list, related: list, updated: str)
     return page(title, desc, f"/p/{it['_slug']}/", body, ld, updated)
 
 
-def cat_page(cat: str, its: list, n_all: int, updated: str) -> str:
+def cat_page(cat: str, its: list, n_all: int, updated: str, rk_html: str = "") -> str:
     label = CAT_JA.get(cat, cat)
     title = f"{label}の買取価格比較｜大手買取店を毎時比較 - {BRAND}"
     top = its[0] if its else None
@@ -190,6 +379,7 @@ def cat_page(cat: str, its: list, n_all: int, updated: str) -> str:
 <h1>{e(label)}の買取価格比較</h1>
 <p class="lead">{e(label)}（新品・未開封）{n_all:,}商品のうち、複数店で比較できる{len(its):,}商品の最高買取価格です。絞り込み・並び替えは<a href="/?c={cat}">比較ツール</a>で。</p>
 <p class="upd">最終更新：{e(updated)} JST</p>
+{f'<h2>{e(label)}の買取価格ランキング</h2>{rk_html}<p class="cta"><a href="/ranking/">全カテゴリのランキング →</a></p><h2>全商品一覧</h2>' if rk_html else ''}
 {''.join(secs)}"""
     ld = [crumbs([("トップ", "/"), (label, f"/c/{cat}/")])]
     return page(title, desc, f"/c/{cat}/", body, ld, updated)
@@ -230,6 +420,7 @@ def build() -> int:
     idx = json.loads((DATA / "index.json").read_text(encoding="utf-8"))
     shops, updated = idx.get("shops", {}), idx.get("updated", "")
     all_items: dict[str, list] = {}
+    all_hist: dict[str, dict] = {}
     for d in ("p", "c", "guide"):
         shutil.rmtree(SITE / d, ignore_errors=True)
     urls: list[tuple[str, str]] = []
@@ -245,6 +436,7 @@ def build() -> int:
         all_items[cat] = items
         hp = DATA / "hist" / f"{cat}.json"
         hist = json.loads(hp.read_text(encoding="utf-8")) if hp.exists() else {}
+        all_hist[cat] = hist
         its = [i for i in items if i.get("n_shops", len(i["prices"])) >= MIN_SHOPS]
         for it in its:
             s = slug(it["key"], it["name"])
@@ -266,7 +458,7 @@ def build() -> int:
             cats_present.append((cat, len(its)))
             out = SITE / "c" / cat
             out.mkdir(parents=True, exist_ok=True)
-            (out / "index.html").write_text(cat_page(cat, its, len(items), updated), encoding="utf-8")
+            (out / "index.html").write_text(cat_page(cat, its, len(items), updated, rank_html(rankings(its, hist), shops, "ja", "h3")), encoding="utf-8")
     from . import guides
     try:  # ảnh giá + bài viết sẵn cho Facebook (/share/), cần Pillow + font
         from . import share
@@ -275,6 +467,7 @@ def build() -> int:
         print("share skipped:", exc)
     urls += guides.build(all_items, shops, updated, page, e, SITE, BASE)
     build_vi()
+    urls = ranking_pages(all_items, all_hist, shops, updated) + urls
     head = [("/", "hourly"), ("/vi/", "hourly")] + [(f"/c/{c}/", "hourly") for c, _ in cats_present] + [("/?v=deals", "daily")]
     nl = "\n"
     sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
