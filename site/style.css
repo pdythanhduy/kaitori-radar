@@ -631,3 +631,16 @@ body.landq .qpick{display:none}
 @media (max-width:640px){.qpick{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}.qpick::-webkit-scrollbar{display:none}.qpick span,.qpick a{flex:0 0 auto}}
 /* 18/11 · iPhone (Safari) tự phóng to khi chạm ô nhập có chữ < 16px và không tự thu lại → ô nhập trên màn cảm ứng luôn 16px */
 @media (pointer:coarse){input,select,textarea{font-size:16px!important}}
+
+/* v73: dịu màu — header/khối điều khiển slate thay navy gần đen; khối giá "Bán ở…" nền sáng thay đen */
+:root{--brand:#334155}
+.hd{border-bottom-color:#475569}
+.lang{border-color:rgba(255,255,255,.28)}
+.lang:hover,.hd-mine:hover{background:#475569}
+.upd{color:#cbd5e1}
+@media(max-width:900px){body.scrolled .mcat{box-shadow:0 6px 16px -6px rgba(51,65,85,.4)}}
+.bhero{background:#f8fafc;color:var(--fg);border:1px solid #e2e8f0}
+.bh-lab{color:var(--muted)}.bh-lab b{color:var(--fg)}
+.g-knob{border-color:#334155;box-shadow:0 0 0 1px #e2e8f0}
+.g-ends{color:var(--muted)}
+.fbtn{background:var(--brand)!important;border-color:var(--brand)!important}
