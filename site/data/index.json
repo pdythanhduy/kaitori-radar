@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-19 10:41",
+ "updated": "2026-11-19 11:20",
  "shops": {
   "morimori": {
    "name": "森森買取",
@@ -55,17 +55,17 @@
   },
   "tablet": {
    "label": "タブレット",
-   "count": 668,
-   "multi": 236
+   "count": 675,
+   "multi": 238
   },
   "game": {
    "label": "ゲーム機",
    "count": 640,
-   "multi": 287
+   "multi": 286
   },
   "card": {
    "label": "トレカ",
-   "count": 1341,
+   "count": 1338,
    "multi": 195
   },
   "pc": {
@@ -75,17 +75,17 @@
   },
   "camera": {
    "label": "カメラ",
-   "count": 1367,
-   "multi": 579
+   "count": 1368,
+   "multi": 583
   },
   "audio": {
    "label": "オーディオ",
-   "count": 388,
-   "multi": 153
+   "count": 389,
+   "multi": 154
   },
   "appliance": {
    "label": "家電・美容",
-   "count": 1640,
+   "count": 1641,
    "multi": 104
   },
   "watch": {
@@ -100,136 +100,136 @@
   },
   "other": {
    "label": "その他",
-   "count": 974,
+   "count": 984,
    "multi": 7
   }
  },
- "total": 9054,
+ "total": 9071,
  "status": {
   "mobile_ichiban:2": {
    "ok": true,
    "n": 20,
-   "ts": "2026-11-18 12:34"
+   "ts": "2026-11-19 11:18"
   },
   "morimori:01": {
-   "ok": true,
-   "n": 163,
-   "ts": "2026-11-18 12:12"
+   "ok": false,
+   "err": "HTTPSConnectionPool(host='www.morimori-kaitori.jp', port=443): Max retries exceeded with url: /category/01 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.morimori-kaitori.jp', port=443) at ",
+   "ts": "2026-11-19 10:47"
   },
   "morimori:02": {
-   "ok": true,
-   "n": 1,
-   "ts": "2026-11-18 12:12"
+   "ok": false,
+   "err": "HTTPSConnectionPool(host='www.morimori-kaitori.jp', port=443): Max retries exceeded with url: /category/02 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.morimori-kaitori.jp', port=443) at ",
+   "ts": "2026-11-19 10:48"
   },
   "morimori:03": {
-   "ok": true,
-   "n": 704,
-   "ts": "2026-11-18 12:12"
+   "ok": false,
+   "err": "HTTPSConnectionPool(host='www.morimori-kaitori.jp', port=443): Max retries exceeded with url: /category/03 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.morimori-kaitori.jp', port=443) at ",
+   "ts": "2026-11-19 10:49"
   },
   "morimori:04": {
-   "ok": true,
-   "n": 364,
-   "ts": "2026-11-18 12:13"
+   "ok": false,
+   "err": "HTTPSConnectionPool(host='www.morimori-kaitori.jp', port=443): Max retries exceeded with url: /category/04 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.morimori-kaitori.jp', port=443) at ",
+   "ts": "2026-11-19 10:49"
   },
   "morimori:05": {
-   "ok": true,
-   "n": 703,
-   "ts": "2026-11-18 12:14"
+   "ok": false,
+   "err": "HTTPSConnectionPool(host='www.morimori-kaitori.jp', port=443): Max retries exceeded with url: /category/05 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.morimori-kaitori.jp', port=443) at ",
+   "ts": "2026-11-19 10:50"
   },
   "morimori:06": {
-   "ok": true,
-   "n": 325,
-   "ts": "2026-11-18 12:15"
+   "ok": false,
+   "err": "HTTPSConnectionPool(host='www.morimori-kaitori.jp', port=443): Max retries exceeded with url: /category/06 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.morimori-kaitori.jp', port=443) at ",
+   "ts": "2026-11-19 10:51"
   },
   "morimori:07": {
-   "ok": true,
-   "n": 141,
-   "ts": "2026-11-18 12:15"
+   "ok": false,
+   "err": "HTTPSConnectionPool(host='www.morimori-kaitori.jp', port=443): Max retries exceeded with url: /category/07 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.morimori-kaitori.jp', port=443) at ",
+   "ts": "2026-11-19 10:51"
   },
   "morimori:08": {
-   "ok": true,
-   "n": 228,
-   "ts": "2026-11-18 12:16"
+   "ok": false,
+   "err": "HTTPSConnectionPool(host='www.morimori-kaitori.jp', port=443): Max retries exceeded with url: /category/08 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.morimori-kaitori.jp', port=443) at ",
+   "ts": "2026-11-19 10:52"
   },
   "morimori:09": {
-   "ok": true,
-   "n": 28,
-   "ts": "2026-11-18 12:16"
+   "ok": false,
+   "err": "HTTPSConnectionPool(host='www.morimori-kaitori.jp', port=443): Max retries exceeded with url: /category/09 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.morimori-kaitori.jp', port=443) at ",
+   "ts": "2026-11-19 10:53"
   },
   "morimori:10": {
-   "ok": true,
-   "n": 0,
-   "ts": "2026-11-18 12:16"
+   "ok": false,
+   "err": "HTTPSConnectionPool(host='www.morimori-kaitori.jp', port=443): Max retries exceeded with url: /category/10 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.morimori-kaitori.jp', port=443) at ",
+   "ts": "2026-11-19 10:53"
   },
   "morimori:12": {
-   "ok": true,
-   "n": 0,
-   "ts": "2026-11-18 12:16"
+   "ok": false,
+   "err": "HTTPSConnectionPool(host='www.morimori-kaitori.jp', port=443): Max retries exceeded with url: /category/12 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.morimori-kaitori.jp', port=443) at ",
+   "ts": "2026-11-19 10:54"
   },
   "morimori:13": {
-   "ok": true,
-   "n": 2,
-   "ts": "2026-11-18 12:16"
+   "ok": false,
+   "err": "HTTPSConnectionPool(host='www.morimori-kaitori.jp', port=443): Max retries exceeded with url: /category/13 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.morimori-kaitori.jp', port=443) at ",
+   "ts": "2026-11-19 10:55"
   },
   "morimori:14": {
-   "ok": true,
-   "n": 131,
-   "ts": "2026-11-18 12:16"
+   "ok": false,
+   "err": "HTTPSConnectionPool(host='www.morimori-kaitori.jp', port=443): Max retries exceeded with url: /category/14 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.morimori-kaitori.jp', port=443) at ",
+   "ts": "2026-11-19 10:55"
   },
   "morimori:15": {
-   "ok": true,
-   "n": 131,
-   "ts": "2026-11-18 12:16"
+   "ok": false,
+   "err": "HTTPSConnectionPool(host='www.morimori-kaitori.jp', port=443): Max retries exceeded with url: /category/15 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.morimori-kaitori.jp', port=443) at ",
+   "ts": "2026-11-19 10:56"
   },
   "morimori:16": {
-   "ok": true,
-   "n": 34,
-   "ts": "2026-11-18 12:16"
+   "ok": false,
+   "err": "HTTPSConnectionPool(host='www.morimori-kaitori.jp', port=443): Max retries exceeded with url: /category/16 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.morimori-kaitori.jp', port=443) at ",
+   "ts": "2026-11-19 10:57"
   },
   "morimori:18": {
-   "ok": true,
-   "n": 4,
-   "ts": "2026-11-18 12:16"
+   "ok": false,
+   "err": "HTTPSConnectionPool(host='www.morimori-kaitori.jp', port=443): Max retries exceeded with url: /category/18 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.morimori-kaitori.jp', port=443) at ",
+   "ts": "2026-11-19 10:57"
   },
   "morimori:19": {
-   "ok": true,
-   "n": 155,
-   "ts": "2026-11-18 12:17"
+   "ok": false,
+   "err": "HTTPSConnectionPool(host='www.morimori-kaitori.jp', port=443): Max retries exceeded with url: /category/19 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.morimori-kaitori.jp', port=443) at ",
+   "ts": "2026-11-19 10:58"
   },
   "morimori:24": {
-   "ok": true,
-   "n": 493,
-   "ts": "2026-11-18 12:17"
+   "ok": false,
+   "err": "HTTPSConnectionPool(host='www.morimori-kaitori.jp', port=443): Max retries exceeded with url: /category/24 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.morimori-kaitori.jp', port=443) at ",
+   "ts": "2026-11-19 10:59"
   },
   "morimori:27": {
-   "ok": true,
-   "n": 0,
-   "ts": "2026-11-18 12:17"
+   "ok": false,
+   "err": "HTTPSConnectionPool(host='www.morimori-kaitori.jp', port=443): Max retries exceeded with url: /category/27 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.morimori-kaitori.jp', port=443) at ",
+   "ts": "2026-11-19 11:00"
   },
   "morimori:31": {
-   "ok": true,
-   "n": 23,
-   "ts": "2026-11-18 12:17"
+   "ok": false,
+   "err": "HTTPSConnectionPool(host='www.morimori-kaitori.jp', port=443): Max retries exceeded with url: /category/31 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.morimori-kaitori.jp', port=443) at ",
+   "ts": "2026-11-19 11:00"
   },
   "morimori:99": {
-   "ok": true,
-   "n": 342,
-   "ts": "2026-11-18 12:17"
+   "ok": false,
+   "err": "HTTPSConnectionPool(host='www.morimori-kaitori.jp', port=443): Max retries exceeded with url: /category/99 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.morimori-kaitori.jp', port=443) at ",
+   "ts": "2026-11-19 11:01"
   },
   "mobile_ichiban:1": {
    "ok": true,
    "n": 10,
-   "ts": "2026-11-19 10:40"
+   "ts": "2026-11-19 11:18"
   },
   "mobile_ichiban:3": {
    "ok": true,
    "n": 20,
-   "ts": "2026-11-19 10:40"
+   "ts": "2026-11-19 11:18"
   },
   "homura:box": {
    "ok": true,
    "n": 110,
-   "ts": "2026-11-19 10:41"
+   "ts": "2026-11-19 11:20"
   },
   "morimori:0301": {
    "ok": true,
@@ -258,8 +258,8 @@
   },
   "rudeya:full": {
    "ok": true,
-   "n": 3383,
-   "ts": "2026-11-18 12:18"
+   "n": 3389,
+   "ts": "2026-11-19 11:02"
   },
   "rudeya:hot": {
    "ok": true,
@@ -268,23 +268,23 @@
   },
   "panda:full": {
    "ok": true,
-   "n": 900,
-   "ts": "2026-11-18 12:25"
+   "n": 908,
+   "ts": "2026-11-19 11:09"
   },
   "guestmobile:full": {
    "ok": true,
    "n": 1494,
-   "ts": "2026-11-18 12:31"
+   "ts": "2026-11-19 11:15"
   },
   "toban:full": {
    "ok": true,
    "n": 1220,
-   "ts": "2026-11-18 12:31"
+   "ts": "2026-11-19 11:15"
   },
   "keitaigod:full": {
    "ok": true,
    "n": 2578,
-   "ts": "2026-11-18 12:32"
+   "ts": "2026-11-19 11:16"
   },
   "panda:hot": {
    "ok": true,
@@ -313,8 +313,8 @@
   },
   "ichome:full": {
    "ok": true,
-   "n": 1777,
-   "ts": "2026-11-18 12:34"
+   "n": 1803,
+   "ts": "2026-11-19 11:19"
   },
   "mobasute:hot": {
    "ok": false,
