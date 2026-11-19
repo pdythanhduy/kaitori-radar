@@ -236,3 +236,14 @@ Thí nghiệm nào không hiệu quả sau 3–7 ngày thì dừng. Thí nghiệ
 - Đã bấm "Yêu cầu lập chỉ mục" 6 trang trên + gửi lại sitemap.xml (thành công).
 - Bài học: trang VI quan trọng không có link nội bộ trỏ tới từ trang được index → cần thêm link /vi/ và /guide/vi/ ở trang chủ JA/footer các trang /p/ (việc cho lịch mỗi giờ/CEO). Kiểm tra lại sau ~1 tuần (25/11).
 - 18/11 tối (user duyệt #1 #2 kiểu kakaku): biểu đồ giá (/p/ + nút 📈 trong thẻ SPA), /ranking/ + /vi/xep-hang/, ranking trên /c/<cat>/. Sửa lỗi dữ liệu: từ ~11h 18/11 "iPhone 18 Pro 2TB" bị dồn vào 1TB (PANDA ghi sai JAN) → 1TB hiện 375.000 thay vì ~302.000; đã sửa run.py, lượt cập nhật giá kế tiếp sẽ đúng. Theo dõi: event chart_open, lượt vào /vi/xep-hang/.
+
+### 19/11/2026 (FB dừng từ 15/11 — chỉ web)
+- **Hôm qua (18/11):** 27 máy vào (mới 10, **quay lại 17 = 62%**), 18 lượt visit-event (17/11: 9, 16/11: 22, 12–15/11: 27–33 khi còn FB). Nguồn: trực tiếp 20, google 1. Vào từ link 21 (18PM 10, 30th 4, Duo 4).
+  - Bấm sang tiệm 3 (モバイル一番 2, 1丁目 1); 3/9 lượt tìm không ra: "g7 mark3" (đã sửa tối 18/11), "fff", "xnxn" (rác).
+  - Dải "lần trước bạn xem" hiện 41, bấm 0. Chip Hay xem 5.
+  - ⚠️ Cloudflare Analytics: **lỗi xác thực token** (CF_API_TOKEN) → không có số lượt xem/nguồn chi tiết. Cần user tạo lại token.
+- **Nhận định:** mất FB → lượt vào còn ~1/2 so với tuần trước, còn lại chủ yếu khách quen (62% quay lại). Google gần như 0 → SEO là đường duy nhất không phụ thuộc FB; trang /vi/ chưa được Google biết.
+- **Trend:** không có tin mới có nguồn (先達 HK01 mới nhất 06/11; ポケカ chưa có lịch bốc thăm mới; Black Friday 27/11, PS5 thường không giảm thân máy). Apple CN/HK giữ giá. events.json không đổi.
+- **Đã làm:** (1) Link /vi/ + /guide/vi/ (hreflang vi) ở chân trang tất cả ~2.100 trang tĩnh /p/ /c/ /guide/ /ranking/ + trang chủ JA (thêm link ランキング) → Google lần theo link nội bộ tới bản VI. (2) Tối 18/11: dịu màu header + khối giá theo góp ý user.
+- **Đang thử:** chart_open / shops_more / /vi/xep-hang/ — chưa đủ số (mới 1 shops_more sáng nay). Xem lại 22/11.
+- **Chờ user:** (1) Cloudflare: tạo lại API token "Account Analytics: Read", dán vào .env CF_API_TOKEN; (2) xác minh FB; (3) kênh không phụ thuộc FB — LINE OpenChat / kênh Telegram giá — chỉ đề xuất, chờ duyệt; (4) A8 楽天/UQ.
