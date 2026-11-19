@@ -1,21 +1,20 @@
 # Trend nóng hôm nay (lịch săn trend ghi; bình luận + bài nhóm đọc để chọn góc)
 
-**Quét lúc 19/11 12:20 JST** (giá site/data 12:14) — FB đang dừng: không đọc nhóm, nguồn = market-concerns.md + từ khoá tìm trên web
+**Quét lúc 19/11 18:20 JST** (giá site/data 18:11) — FB đang dừng: nguồn = market-concerns.md + từ khoá tìm trên web
 
 ## ⚡ Giá đổi
-- **Duo giảm tiếp hôm nay:** 2TB 579k → 570k (−9k), 1TB 481k → 470k (−11k), 512 401,5k → 396,5k (−5k), 256 360,5k → 358,5k. So 12/11: 2TB −35k, 1TB −32k, 512 −21k.
-- **Đổi dấu lời→lỗ (so giá Apple):** Duo 512 (−3.300), Duo 2TB (−4.800); 1TB chỉ còn +200, 256 −6.300.
-- 18PM 256 227k (+1k), 18 Pro 256 207,5k (đứng). 18 Pro 1TB 302k là sửa lỗi dữ liệu (không phải tăng/giảm thật).
-- Pokémon box nhích nhẹ +300–1.500 (sv2a 45k → 46,5k, s12a 26k → 26,7k); không món nào ≥5%.
+- **Box 30th FUTURISTIC:** 買取当番 50.000 (sáng 44.000 là giá cao nhất, ở 1丁目). Chỉ 1 tiệm lên; 1丁目 44k, ルデヤ 40k, 森森 31k → chênh tiệm 19k.
+- **Duo giữ mức trưa (đã giảm sáng nay):** 2TB 570k, 1TB 470k, 512 396,5k, 256 358,5k. So giá Apple: 512 −3.300, 2TB −4.800, 256 −6.300, 1TB +200.
+- 18PM 256 227k (−12,8k so Apple), 18 Pro 256 207,5k. PS5 tay cầm (CFI-ZCT2J) 11k → 12,3k. Box khác +300–1.500.
 
-## 🗣 Mối lo (market-concerns.md §2 "lời Duo có bền không") + tìm kiếm web
-1. Duo hết lời → trả lời bằng số đã qua + giờ, /guide/gia-kai-iphone-duo/ (FAQ mới "mua giá Apple bán kai còn lời không", số tự cập nhật).
-2. Huỷ/trả máy khi đang lỗ → /guide/gia-iphone-giam/, /guide/huy-iphone/, /guide/tra-iphone-apple/.
-- Tìm hôm nay: "mii", "redmi 12 5g" — đều ra kết quả; không có lượt tìm không ra.
+## 🗣 Mối lo (market-concerns §2 Duo hết lời) + tìm trên web
+1. Duo sang lỗ → /guide/gia-kai-iphone-duo/ (FAQ lời/lỗ theo giờ).
+2. Box 30th: giá lệch tiệm rất lớn → /guide/gia-kai-pokemon-box/ (thêm dòng "Futuristic (30th)").
+- Tìm hôm nay: mii, redmi 12 5g (đều ra). Vào từ link nhiều nhất: 18 Pro Max (11), 30th (3).
 
 ## 📰 Tin
-- HK01 10/11: chênh giá Duo ở 先達 (HK) co còn 100–300 HKD, 256 lỗ ([hk01](https://www.hk01.com/數碼生活/60391154/iphone-duo先達炒價直擊-18-pro-duo溢價收窄-每日更新)).
-- gori.me (BuyBack 15/11): Duo 256 đã qua dùng ở Nhật thu 300–312k, Mỹ −22% ([gori.me](https://gori.me/iphone/iphone-news/172617)). Gizmodo: Duo vẫn thiếu hàng tới khoảng cuối tháng 1.
+- SNKRDUNK 10/2026: dự đoán giá shop thu FUTURISTIC ~55k (dự đoán, không phải giá thật). Pokemon Wizard 01/11: giá Mỹ $596, gần đỉnh 52 tuần.
+- Không có tin Duo mới trong 24h.
 
-## 🎯 Góc đề xuất (khi FB mở lại / cho trang web)
-- "Duo 2TB, 512 vừa chuyển sang lỗ so với giá Apple — số theo giờ ở 8 tiệm" + link trang Duo. Không dự đoán đáy, không khuyên giữ/xả.
+## 🎯 Góc đề xuất (khi FB mở lại / cho web)
+- "Box 30th FUTURISTIC: cùng 1 hộp, tiệm trả 31k – 50k" + link trang box. Không khuyên giữ/xả.

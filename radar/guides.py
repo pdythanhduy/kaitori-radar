@@ -759,7 +759,7 @@ Bấm dung lượng để xem giá cả {n_shops} tiệm và biểu đồ giá.<
                 f"Giá kai {label}", f"📱 Giá kai {label} hôm nay", body)
 
     # hộp thẻ Pokémon: tên gọi trong nhóm FB → tên tiệm ghi
-    NICK = [("Box 30th", "30th CELEBRATION", r"【M6a】"), ("set 9", "9種セット", None), ("dekki mèo", "エーフィ・ブラッキー", None),
+    NICK = [("Box 30th", "30th CELEBRATION", r"【M6a】"), ("Futuristic (30th)", "FUTURISTIC", None), ("set 9", "9種セット", None), ("dekki mèo", "エーフィ・ブラッキー", None),
             ("Dream", "メガドリームex", None), ("Inferno X", "インフェルノX", None), ("Ninja Spinner", "ニンジャスピナー", None),
             ("Mega Brave", "メガブレイブ", None), ("Mega Symphonia", "メガシンフォニア", None)]
     cards = items.get("card", [])
