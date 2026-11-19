@@ -36,8 +36,8 @@ H = {"Authorization": f"Bearer {E.get('CF_API_TOKEN', '')}"}
 
 def site_tag() -> str:
     r = requests.get(f"https://api.cloudflare.com/client/v4/accounts/{ACCOUNT}/rum/site_info/list", headers=H, timeout=30).json()
-    if not r.get("success"):
-        raise RuntimeError("Cloudflare: " + "; ".join(e.get("message", "") for e in r.get("errors", [])))
+    if not r.get("success"):  # 19/11: token không có quyền RUM site_info (Authentication error) — tag không cần cho day()
+        return ""
     for s in r["result"]:
         if s.get("host") == HOST or HOST in str(s.get("ruleset", {}).get("zone_name", "")):
             return s["site_tag"]
