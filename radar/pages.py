@@ -283,7 +283,7 @@ def page(title: str, desc: str, path: str, body: str, ld: list, updated: str) ->
 {body}
 </main>
 <footer class="ft">
-<nav>{" ".join(f'<a href="/c/{c}/">{e(CAT_JA[c])}</a>' for c in CAT_ORDER)} <a href="/ranking/">ランキング</a> <a href="/guide/">買取ガイド</a></nav>
+<nav>{" ".join(f'<a href="/c/{c}/">{e(CAT_JA[c])}</a>' for c in CAT_ORDER)} <a href="/ranking/">ランキング</a> <a href="/guide/">買取ガイド</a> <a href="/vi/" hreflang="vi" lang="vi">Tiếng Việt</a> <a href="/guide/vi/" hreflang="vi" lang="vi">Mẹo &amp; hướng dẫn</a></nav>
 <p>価格は各買取店の公開ページから自動取得（最終更新 {e(updated)} JST）。実際の買取額は状態・時期により変わります。必ず各店舗でご確認ください。</p>
 <p>© {BRAND} · <a href="/">kaitoriprice.com</a></p>
 </footer>
