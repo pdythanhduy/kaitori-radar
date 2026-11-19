@@ -644,3 +644,5 @@ body.landq .qpick{display:none}
 .g-knob{border-color:#334155;box-shadow:0 0 0 1px #e2e8f0}
 .g-ends{color:var(--muted)}
 .fbtn{background:var(--brand)!important;border-color:var(--brand)!important}
+/* v74: nút về đầu trang to hơn, cao hơn trên điện thoại (user 19/11: nhỏ, thấp, khó bấm) */
+@media(max-width:900px){#toTop{width:52px;height:52px;right:14px;bottom:calc(72px + env(safe-area-inset-bottom));font-size:1.45rem;background:var(--brand);color:#fff;border-color:var(--brand);box-shadow:0 4px 14px rgba(15,23,42,.28)}#toTop.show{opacity:.92}}
