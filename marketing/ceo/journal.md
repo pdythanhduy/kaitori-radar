@@ -241,7 +241,7 @@ Thí nghiệm nào không hiệu quả sau 3–7 ngày thì dừng. Thí nghiệ
 - **Hôm qua (18/11):** 27 máy vào (mới 10, **quay lại 17 = 62%**), 18 lượt visit-event (17/11: 9, 16/11: 22, 12–15/11: 27–33 khi còn FB). Nguồn: trực tiếp 20, google 1. Vào từ link 21 (18PM 10, 30th 4, Duo 4).
   - Bấm sang tiệm 3 (モバイル一番 2, 1丁目 1); 3/9 lượt tìm không ra: "g7 mark3" (đã sửa tối 18/11), "fff", "xnxn" (rác).
   - Dải "lần trước bạn xem" hiện 41, bấm 0. Chip Hay xem 5.
-  - ⚠️ Cloudflare Analytics: **lỗi xác thực token** (CF_API_TOKEN) → không có số lượt xem/nguồn chi tiết. Cần user tạo lại token.
+  - Cloudflare 18/11: 42 lượt truy cập, 88 lượt xem, gõ thẳng 97%, Google 2% (lỗi token sáng nay là do lệnh phụ site_info, đã sửa — token vẫn tốt).
 - **Nhận định:** mất FB → lượt vào còn ~1/2 so với tuần trước, còn lại chủ yếu khách quen (62% quay lại). Google gần như 0 → SEO là đường duy nhất không phụ thuộc FB; trang /vi/ chưa được Google biết.
 - **Trend:** không có tin mới có nguồn (先達 HK01 mới nhất 06/11; ポケカ chưa có lịch bốc thăm mới; Black Friday 27/11, PS5 thường không giảm thân máy). Apple CN/HK giữ giá. events.json không đổi.
 - **Đã làm:** (1) Link /vi/ + /guide/vi/ (hreflang vi) ở chân trang tất cả ~2.100 trang tĩnh /p/ /c/ /guide/ /ranking/ + trang chủ JA (thêm link ランキング) → Google lần theo link nội bộ tới bản VI. (2) Tối 18/11: dịu màu header + khối giá theo góp ý user.
