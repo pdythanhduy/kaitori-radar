@@ -19,7 +19,7 @@ jobs:
         with: { python-version: "3.11" }
       - name: fonts + Pillow (ảnh giá /share/)
         run: |
-          sudo apt-get install -y -qq fonts-noto-core fonts-noto-cjk >/dev/null || true
+          timeout 180 sudo apt-get install -y -qq fonts-noto-core fonts-noto-cjk >/dev/null || echo "fonts: bỏ qua (apt chậm/lỗi)"
           pip install -q pillow || true
       - name: build SEO pages (/p, /c, sitemap, llms.txt)
         run: python -m radar.pages
