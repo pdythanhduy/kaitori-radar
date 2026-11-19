@@ -726,6 +726,14 @@ mua đủ giá. Bảng dưới lấy <b>đúng ghi chú các tiệm đăng trên
             ("Bán ở tiệm hay bán cho người dùng?", "Bán tiệm nhanh, an toàn, không lo lừa đảo; bán người dùng (thường giá Apple trừ vài nghìn) được hơn nhưng phải tự tìm người và cẩn thận khi giao dịch."),
             ("Cần mang gì khi bán?", "Máy mới chưa mở (còn màng co), giấy tờ tuỳ thân có địa chỉ (thẻ ngoại kiều 在留カード). Một số tiệm cần đặt trước hoặc giới hạn số máy mỗi người."),
         ]
+        # 19/11: Duo 512/2TB vừa chuyển từ lời sang lỗ so với giá Apple → câu hỏi "mua Apple bán kai còn lời không" (số tự cập nhật)
+        pl = [((re.search(r"(\d+(GB|TB))", m["name"]) or [None, m["name"]])[1], m["best"] - m["msrp"])
+              for m in models if m.get("msrp") and m.get("best")]
+        if pl and not slug.startswith("gia-kai-iphone-17"):
+            faq.insert(1, (f"Mua {label} giá Apple rồi bán kai còn lời không?",
+                           "Theo giá lúc " + updated + " JST (giá kai cao nhất trừ giá Apple, chưa tính điểm thẻ/phí gửi): "
+                           + ", ".join(f"{c} {'lời' if d >= 0 else 'lỗ'} {abs(d):,}円".replace(",", ".") for c, d in pl)
+                           + ". Giá kai đổi theo giờ; đây chỉ là số đã qua, không phải dự đoán."))
         body = f"""
 <p class="upd">Giá cập nhật: {upd} JST (tự động mỗi giờ)</p>
 <p>Bảng giá thu mua (kai, 買取) <b>{e(ask)}</b> máy mới chưa mở ở <b>{n_shops} tiệm kaitori</b> lớn ở Nhật. {top_txt}

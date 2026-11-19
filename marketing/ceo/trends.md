@@ -1,20 +1,21 @@
 # Trend nóng hôm nay (lịch săn trend ghi; bình luận + bài nhóm đọc để chọn góc)
 
-**Quét lúc 15/11 18:20 JST** (giá site/data 18:11)
+**Quét lúc 19/11 12:20 JST** (giá site/data 12:14) — FB đang dừng: không đọc nhóm, nguồn = market-concerns.md + từ khoá tìm trên web
 
 ## ⚡ Giá đổi
-- iPhone/Duo đứng giá cả ngày: 18PM 256 230k (PANDA đỏ), xanh 229k, bạc 226k · 512 262k · 18 Pro 256 204,5k · Duo 256 361,5k / 512 401,5k / 1TB 481k / 2TB 586k. Không mẫu nào đổi dấu lời↔lỗ.
-- Pokémon: Box 30th 17.500 → 17.000 · Set 9 thẻ 30th 14.800 → 14.300 · Deck エーフィ 11.300 → 11.700. Không có biến động lớn.
+- **Duo giảm tiếp hôm nay:** 2TB 579k → 570k (−9k), 1TB 481k → 470k (−11k), 512 401,5k → 396,5k (−5k), 256 360,5k → 358,5k. So 12/11: 2TB −35k, 1TB −32k, 512 −21k.
+- **Đổi dấu lời→lỗ (so giá Apple):** Duo 512 (−3.300), Duo 2TB (−4.800); 1TB chỉ còn +200, 256 −6.300.
+- 18PM 256 227k (+1k), 18 Pro 256 207,5k (đứng). 18 Pro 1TB 302k là sửa lỗi dữ liệu (không phải tăng/giảm thật).
+- Pokémon box nhích nhẹ +300–1.500 (sv2a 45k → 46,5k, s12a 26k → 26,7k); không món nào ≥5%.
 
-## 🗣 Chủ đề nóng (32K + 53K, chiều 15/11)
-1. Shop/người mua "cần chục cây 18PM 256 đỏ/xanh, kai+ / kai+3". → nhắc mốc kai đúng màu (đỏ 230k, xanh 229k) để người bán so.
-2. Cắt lỗ: "chấp nhận lỗ 3man 6 cây trắng", "bán 6 cây lỗ hơn 6m". → bạc/trắng thấp nhất (226k), chênh màu 2–4k; /guide/tru-mau-iphone/.
-3. Hỏi thủ tục: henpin (返品) ở đâu, đơn Apple bị dời ngày giao. → /guide/tra-iphone-apple/, /guide/huy-iphone/#hoantien.
-- Mới: nhóm visa vĩnh trú (6.3万) — hỏi điều kiện, người phụ thuộc, 80 điểm → /visa/vinh-tru/, /visa/koudo/ (chỉ trả lời, không đăng).
+## 🗣 Mối lo (market-concerns.md §2 "lời Duo có bền không") + tìm kiếm web
+1. Duo hết lời → trả lời bằng số đã qua + giờ, /guide/gia-kai-iphone-duo/ (FAQ mới "mua giá Apple bán kai còn lời không", số tự cập nhật).
+2. Huỷ/trả máy khi đang lỗ → /guide/gia-iphone-giam/, /guide/huy-iphone/, /guide/tra-iphone-apple/.
+- Tìm hôm nay: "mii", "redmi 12 5g" — đều ra kết quả; không có lượt tìm không ra.
 
 ## 📰 Tin
-- dime.jp: năm 2025 giá thu iPhone xuống đáy khoảng tháng 11–12 (nhận định chung, không phải dự báo). Counterpoint: 18 Pro bán ở Nhật 3 tuần đầu −27% (selectra). Không có tin 24h mới về 30th.
+- HK01 10/11: chênh giá Duo ở 先達 (HK) co còn 100–300 HKD, 256 lỗ ([hk01](https://www.hk01.com/數碼生活/60391154/iphone-duo先達炒價直擊-18-pro-duo溢價收窄-每日更新)).
+- gori.me (BuyBack 15/11): Duo 256 đã qua dùng ở Nhật thu 300–312k, Mỹ −22% ([gori.me](https://gori.me/iphone/iphone-news/172617)). Gizmodo: Duo vẫn thiếu hàng tới khoảng cuối tháng 1.
 
-## 🎯 Góc đề xuất
-- Bình luận: bài rao bán / thu chục cây → 1 số đúng màu; bài cắt lỗ trắng/bạc → chênh màu nhỏ, so tiệm trước khi bán.
-- Bài nhóm khung 4 (19h): góc màu đã dùng 14/11 19h → đổi sang "📋 TRẢ iPHONE CHO APPLE (HENPIN) & HUỶ ĐƠN BỊ DỜI NGÀY: 4 ĐIỀU CẦN BIẾT" (14 ngày, đủ hộp, tắt Tìm iPhone, 15% chỉ đơn số lượng lớn; huỷ trước xuất kho = tạm giữ hạn mức) + /guide/tra-iphone-apple/. Khung 5 (21h, ngày lẻ → Pokémon box): mặc định.
+## 🎯 Góc đề xuất (khi FB mở lại / cho trang web)
+- "Duo 2TB, 512 vừa chuyển sang lỗ so với giá Apple — số theo giờ ở 8 tiệm" + link trang Duo. Không dự đoán đáy, không khuyên giữ/xả.
