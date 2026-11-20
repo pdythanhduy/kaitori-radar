@@ -761,7 +761,7 @@ Bấm dung lượng để xem giá cả {n_shops} tiệm và biểu đồ giá.<
     # hộp thẻ Pokémon: tên gọi trong nhóm FB → tên tiệm ghi
     NICK = [("Box 30th", "30th CELEBRATION", r"【M6a】"), ("Futuristic (30th)", "FUTURISTIC", None), ("set 9", "9種セット", None), ("dekki mèo", "エーフィ・ブラッキー", None),
             ("Dream", "メガドリームex", None), ("Inferno X", "インフェルノX", None), ("Ninja Spinner", "ニンジャスピナー", None),
-            ("Mega Brave", "メガブレイブ", None), ("Mega Symphonia", "メガシンフォニア", None)]
+            ("Mega Brave", "メガブレイブ", None), ("Mega Symphonia", "メガシンフォニア", None), ("Hadou Seeker (M7)", "ハドウシーカー", None)]
     cards = items.get("card", [])
     nick_rows = []
     for nick, frag, must in NICK:
@@ -778,6 +778,10 @@ Bấm dung lượng để xem giá cả {n_shops} tiệm và biểu đồ giá.<
         link = f'<a href="/p/{it["_slug"]}/">{e(it["name"].strip())}</a>' if it.get("_slug") else e(it["name"].strip())
         box_rows.append(f"<tr><td>{link}</td><td><b>{_yen(ps[0][1]['price'])}</b><br><small>{e(sname(ps[0][0]))}</small></td>"
                         f"<td>{_yen(ps[0][1]['price'] - ps[-1][1]['price'])}</td><td>{it['n_shops']}</td></tr>")
+    # 20/11: ハドウシーカー ra 27/11 — tự hiện giá khi tiệm bắt đầu thu
+    hd = sorted([i for i in cards if "ハドウシーカー" in i["name"] and not i["name"].startswith("PSA")], key=lambda i: (-i["n_shops"], -i["best"]))
+    HD_A = ((f"Lúc {upd} JST giá cao nhất {_yen(hd[0]['best'])} ({sname(hd[0]['best_shop'])}, {hd[0]['n_shops']} tiệm) cho {hd[0]['name'].strip()}. Giá hàng mới ra đổi theo giờ.")
+            if hd else f"Lúc {upd} JST chưa tiệm nào trong danh sách công bố giá thu box ハドウシーカー; bảng trên tự hiện dòng 'Hadou Seeker (M7)' khi có từ 2 tiệm thu.") +            " Theo price-base, 4 đợt gần nhất giá ngày phát hành cao hơn giá niêm yết rồi phần lớn giảm sau khoảng 1 tháng — đó là chuyện đã qua, không phải dự đoán."
     if nick_rows or box_rows:
         th = "<thead><tr><th>Tên trong nhóm</th><th>Tên tiệm ghi</th><th>Cao nhất</th><th>Thấp nhất</th><th>Số tiệm</th></tr></thead>"
         th2 = "<thead><tr><th>Hộp</th><th>Cao nhất</th><th>Chênh cao–thấp</th><th>Số tiệm</th></tr></thead>"
@@ -797,7 +801,8 @@ nên bảng đầu ghép <b>tên anh em hay gọi trong nhóm</b> với tên ti�
 </ul>
 <p class="cta"><a href="/vi/?c=card">Xem giá tất cả hộp thẻ ở các tiệm →</a></p>
 {FB}
-{vi_faq([("Box Pokémon nào đang được giá nhất?", "Xem bảng trên, sắp theo số tiệm thu và giá cao nhất, cập nhật mỗi giờ."),
+{vi_faq([("Box ハドウシーカー (ra 27/11) bán kai được bao nhiêu?", HD_A),
+         ("Box Pokémon nào đang được giá nhất?", "Xem bảng trên, sắp theo số tiệm thu và giá cao nhất, cập nhật mỗi giờ."),
          ("Box mất màng co có bán được không?", "Đa số tiệm chỉ thu box còn màng co; vài tiệm có bảng giá riêng cho box không màng co, thấp hơn hàng còn màng."),
          ("Bán thẻ lẻ PSA ở đâu?", "Một số tiệm thu thẻ đã chấm điểm PSA; tìm tên thẻ trên web để so giá các tiệm.")])}
 <p class="small">Giá là giá công khai trên web các tiệm cho box mới còn màng co; giá thực tế có thể khác. Không phải lời khuyên mua bán hay đầu tư.</p>"""
