@@ -805,6 +805,49 @@ nên bảng đầu ghép <b>tên anh em hay gọi trong nhóm</b> với tên ti�
                 "Giá kai box Pokémon mới nhất ở các tiệm Nhật, ghép tên gọi trong nhóm (Box 30th, set 9, dekki mèo…) với tên tiệm ghi. Cập nhật mỗi giờ.",
                 "Giá box Pokémon", "🃏 Giá thu mua hộp thẻ Pokémon hôm nay", body_box)
 
+    # máy game (20/11: người dùng tìm "ps5", "ps"; Black Friday 27/11) — tên gọi → tên tiệm ghi → giá
+    import re as _re
+    GAME = [("Switch 2 bản Nhật + Mario Kart", r"Switch ?2.*マリオカート"), ("Switch 2 bản Nhật + Pokémon Z-A", r"Switch ?2.*LEGENDS Z-A"),
+            ("Switch 2 bản đa ngôn ngữ", r"Switch ?2.*多言語"), ("Switch OLED (有機EL) trắng", r"有機EL.*ホワイト"),
+            ("Switch Lite", r"Switch Lite"), ("PS5 Pro", r"CFI-7[01]00B01"), ("PS5 Slim có ổ đĩa", r"CFI-2000A01"),
+            ("PS5 Slim Digital", r"CFI-2000B01"), ("PS5 bản tiếng Nhật", r"CFI-2200B01"), ("PlayStation Portal", r"Portal リモート"),
+            ("Steam Machine 2TB", r"^Steam Machine 2TB$"), ("Xbox Series X", r"Series X")]
+    games = items.get("game", [])
+    g_rows = []
+    for nick, pat in GAME:
+        hit = [i for i in games if _re.search(pat, i["name"]) and i["n_shops"] >= 2 and "30周年" not in i["name"]]
+        if not hit:
+            continue
+        it = max(hit, key=lambda i: (i["n_shops"], i["best"]))
+        ps = sorted([kv for kv in it["prices"].items() if kv[1] and kv[1].get("price")], key=lambda kv: -kv[1]["price"])
+        link = f'<a href="/p/{it["_slug"]}/">{e(it["name"].strip())}</a>' if it.get("_slug") else e(it["name"].strip())
+        g_rows.append(f"<tr><td><b>{e(nick)}</b></td><td>{link}</td><td><b>{_yen(ps[0][1]['price'])}</b><br><small>{e(sname(ps[0][0]))}</small></td>"
+                      f"<td>{_yen(ps[-1][1]['price'])}</td><td>{it['n_shops']}</td></tr>")
+    if len(g_rows) >= 4:
+        th = "<thead><tr><th>Máy</th><th>Tên tiệm ghi</th><th>Cao nhất</th><th>Thấp nhất</th><th>Số tiệm</th></tr></thead>"
+        body_game = f"""
+<p class="upd">Giá cập nhật: {upd} JST (tự động mỗi giờ)</p>
+<p>Giá thu mua <b>máy game mới chưa mở</b> (Switch 2, PS5, PS5 Pro, Steam Machine…) ở các tiệm kaitori lớn ở Nhật.
+Tên máy trên web tiệm ghi bằng tiếng Nhật và mã máy, nên bảng ghép tên thường gọi với tên tiệm ghi. Bấm tên để xem giá từng tiệm.</p>
+<h2>Máy game: tên thường gọi → giá</h2>
+<div class="tw"><table class="pt">{th}<tbody>{''.join(g_rows)}</tbody></table></div>
+<h2>Điều kiện thu mua cần biết</h2>
+<ul class="tips">
+<li><b>Bản Nhật (日本語・国内専用) và bản đa ngôn ngữ (多言語)</b> là hai mã khác nhau, giá thu khác nhau. Xem đúng chữ trên hộp.</li>
+<li><b>Mới chưa mở (未開封)</b>: bảng trên là giá hàng mới. Máy đã mở hộp, đã dùng thì giá thấp hơn, tuỳ tiệm.</li>
+<li><b>Phiếu bảo hành / hoá đơn:</b> vài tiệm yêu cầu hộp có dấu cửa hàng hoặc hoá đơn; thiếu thì có thể bị trừ tiền.</li>
+<li>Dịp giảm giá (Black Friday 27/11, cuối năm) giá thu có thể đổi nhanh, xem giá ngay trước khi mang đi.</li>
+</ul>
+<p class="cta"><a href="/vi/?c=game">Xem giá tất cả máy game ở các tiệm →</a></p>
+{FB}
+{vi_faq([("Switch 2 bản Nhật và bản đa ngôn ngữ bán kai khác gì?", "Hai bản có mã khác nhau và tiệm thu giá khác nhau; xem dòng tương ứng trong bảng (nếu tiệm đang thu)."),
+         ("PS5 Pro bán kai được bao nhiêu?", "Xem dòng PS5 Pro trong bảng, cập nhật mỗi giờ từ giá công khai của các tiệm."),
+         ("Máy đã mở hộp có bán được không?", "Được ở nhiều tiệm nhưng giá thấp hơn hàng mới; bảng trên chỉ là giá hàng mới chưa mở.")])}
+<p class="small">Giá là giá công khai trên web các tiệm cho máy mới chưa mở; giá thực tế có thể khác. Không phải lời khuyên mua bán hay đầu tư.</p>"""
+        vi_page("/guide/gia-kai-may-game/", "Giá thu mua Switch 2, PS5, PS5 Pro hôm nay | Kaitori Price",
+                "Giá kai máy game mới ở các tiệm Nhật: Switch 2 bản Nhật / đa ngôn ngữ, PS5 Slim, PS5 Pro, Portal, Steam Machine. Cập nhật mỗi giờ.",
+                "Giá máy game", "🎮 Giá thu mua máy game hôm nay", body_game)
+
     # ---------------------------------------------------------------- 10. Lịch phát hành / bốc thăm (VI) — 05/11/2026, dữ liệu radar/events.json
     import json as _json
     from pathlib import Path as _Path
@@ -899,6 +942,7 @@ Mỗi mục có nguồn; lịch bốc thăm của từng cửa hàng hay đổi,
                               + [vcard(p) for p in ["/guide/iphone-18-kaitori/"] if p in have]),
         ("shop", "🏪 Bán cho tiệm", [card("/guide/lich-pokemon/", "📅", "Lịch phát hành & bốc thăm thẻ Pokémon", "Ngày bán, bốc thăm sắp tới + giá kai hiện tại"),
                                    card("/guide/gia-kai-pokemon-box/", "🃏", "Giá thu mua hộp thẻ Pokémon hôm nay", "Tên gọi trong nhóm (Box 30th, set 9…) → giá từng tiệm"),
+                                   card("/guide/gia-kai-may-game/", "🎮", "Giá thu mua máy game hôm nay", "Switch 2, PS5, PS5 Pro, Portal… → giá từng tiệm"),
                                    card("/guide/tiem-kaitori/", "📍", "Danh sách tiệm kaitori (Tokyo, Osaka, Nagoya)",
                                          "Địa chỉ, giờ mở cửa, ga gần nhất, link bản đồ của các tiệm web đang so giá")]
                                    + [vcard(p) for p in ["/guide/yoyaku-kaitori/", "/guide/pokeca-box-kaitori/"] if p in have]),
