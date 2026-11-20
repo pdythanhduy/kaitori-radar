@@ -38,6 +38,8 @@ Thí nghiệm nào không hiệu quả sau 3–7 ngày thì dừng. Thí nghiệ
 | Tìm "thẻ/thẻ bài/máy game" → mở nhóm hàng | 12/11 | 19/11 | search_cat, % tìm không ra |
 | Chip "🔥 Hay xem" dưới ô tìm trang chủ (18PM, Duo, 18 Pro, 17PM, box 30th, AirPods Pro 3) | 10/11 tối | 17/11 | qpick_click, tỉ lệ bấm tiệm của người vào trang chủ (09/11: 14%) |
 | Trang SEO /guide/gia-kai-may-game/ (Switch 2, PS5, PS5 Pro…) | 20/11 | 04/12 | lượt vào path, Google, tìm "ps5" |
+| SEO: /p/ <4 tiệm (trừ iPhone) noindex + sitemap 2.157→505 url | 20/11 tối | 04/12 | Search Console: số trang được index (20/11: 59), lượt hiển thị |
+| A8 LINXAS trong thẻ điện thoại (xoay 1/3 với ネットオフ, ふるいち) | 20/11 tối | 04/12 | click/đơn LINXAS trên A8 |
 | Bài nhóm tự động: khung 2 so với mức đa số tiệm, khung 3 chỉ món ≥4 tiệm, Pokémon bỏ ONE PIECE + cờ >±40% | 10/11 tối | — | (sửa lỗi) số lần phải sửa tay/ngày (10/11: 3) |
 
 ## Nhật ký
@@ -265,3 +267,4 @@ Thí nghiệm nào không hiệu quả sau 3–7 ngày thì dừng. Thí nghiệ
 - **Vẫn "申込中" (từ 01–03/11, ~18 ngày):** 楽天モバイル (7.000円), UQ (3.450円), 三井住友NL (4.800円), PRICE BASE トレカ (1.500円), ノジマ (1.100円), ホビーコレクト (2.500円).
 - **Search Console (dữ liệu tới ~18/11):** **được lập chỉ mục 59 (18/11: 112)**, chưa lập chỉ mục 2.380 (phát hiện-chưa-index 2.208, đã thu thập-chưa-index 126 ↑ từ 73). 28 ngày: 9 click, 90 lượt hiển thị, vị trí TB 19; truy vấn: p10買取, iphone11promax買取, ips 買取…
 - **Nhận định:** Google đang bỏ bớt trang /p/ mỏng (nhiều trang na ná nhau) → cần ít trang hơn nhưng tốt hơn; doanh thu nghẽn vì 0 đơn từ 56 click (link chủ yếu là 宅配買取 — người dùng là dân bán kai trực tiếp, ít khi gửi bưu điện).
+- **Đã làm (user duyệt):** (1) gắn LINXAS (a8mat 4BGAUV+25ZT0Y+5V1I+BWVTE) vào nhóm bán điện thoại + thẻ iPhone; (2) 1.661 trang /p/ mỏng → noindex,follow, sitemap còn 505 url.
