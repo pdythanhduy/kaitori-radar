@@ -121,6 +121,20 @@
    },
    "items": [
     {
+     "name": "リンクサス買取 (LINXAS)",
+     "url": "https://px.a8.net/svt/ejp?a8mat=4BGAUV+25ZT0Y+5V1I+BWVTE",
+     "px": "https://www10.a8.net/0.gif?a8mat=4BGAUV+25ZT0Y+5V1I+BWVTE",
+     "affiliate": true,
+     "badge": {
+      "vi": "Thu cả máy hỏng",
+      "ja": "ジャンク品もOK"
+     },
+     "desc": {
+      "vi": "Thu iPhone/điện thoại cả máy cũ, máy hỏng (ジャンク). Mở 10 năm.",
+      "ja": "創業10年。iPhone・スマホ・ジャンク品も高価買取。"
+     }
+    },
+    {
      "name": "ネットオフ スマホ買取",
      "url": "https://px.a8.net/svt/ejp?a8mat=4BGAUV+247I7M+1SOW+ZQ80I",
      "px": "https://www17.a8.net/0.gif?a8mat=4BGAUV+247I7M+1SOW+ZQ80I",
@@ -501,6 +515,11 @@
  ],
  "inline": {
   "phone": [
+   {
+    "name": "リンクサス買取 (LINXAS)",
+    "a8mat": "4BGAUV+25ZT0Y+5V1I+BWVTE",
+    "px": "https://www10.a8.net/0.gif"
+   },
    {
     "name": "ネットオフ スマホ買取",
     "a8mat": "4BGAUV+247I7M+1SOW+ZQ80I",

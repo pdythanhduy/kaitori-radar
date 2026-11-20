@@ -250,7 +250,7 @@ def ranking_pages(all_items: dict, all_hist: dict, shops: dict, updated: str) ->
     return [("/ranking/", "hourly"), ("/vi/xep-hang/", "hourly")]
 
 
-def page(title: str, desc: str, path: str, body: str, ld: list, updated: str) -> str:
+def page(title: str, desc: str, path: str, body: str, ld: list, updated: str, noindex: bool = False) -> str:
     url = BASE + path
     lds = "".join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>' for x in ld)
     return f"""<!DOCTYPE html>
@@ -260,7 +260,7 @@ def page(title: str, desc: str, path: str, body: str, ld: list, updated: str) ->
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{e(title)}</title>
 <meta name="description" content="{e(desc)}">
-<link rel="canonical" href="{url}">
+{'<meta name="robots" content="noindex,follow">' + chr(10) if noindex else ''}<link rel="canonical" href="{url}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{BRAND}">
 <meta property="og:title" content="{e(title)}">
@@ -314,6 +314,13 @@ def buy_html(it, name):
     return f'<p class="buy"><span class="pr">PR</span> 新品を探す：{" ".join(links)}</p>'
 
 
+def indexable(it: dict) -> bool:
+    """20/11: Search Console — 2.208 trang 'đã phát hiện, chưa lập chỉ mục', số trang được index giảm 112 → 59.
+    Trang /p/ chỉ 2–3 tiệm na ná nhau → noindex (vẫn follow link), bỏ khỏi sitemap; Google dồn sức cho trang tốt.
+    Giữ index: >= 4 tiệm, hoặc iPhone (Google vẫn có lượt hiển thị cho 'iphone11promax買取'…)."""
+    return it.get("n_shops", len(it.get("prices", {}))) >= 4 or "iphone" in it["name"].lower()
+
+
 def product_page(it: dict, shops: dict, hist: list, related: list, updated: str) -> str:
     cat, name = it["cat"], it["name"]
     rows = sorted(it["prices"].items(), key=lambda kv: -kv[1]["price"])
@@ -359,7 +366,7 @@ def product_page(it: dict, shops: dict, hist: list, related: list, updated: str)
 {rel_html}
 <section class="vi" lang="vi"><h2>Tiếng Việt</h2><p>Giá thu mua <b>{e(name)}</b> (hàng mới, chưa mở hộp) tại {it['n_shops']} tiệm kaitori ở Nhật. Cao nhất: <b>{yen(it['best'])}</b> tại {e(best_name)}{f", chênh lệch giữa các tiệm tới {yen(gap)}" if gap > 0 else ""}. Cập nhật mỗi giờ.</p></section>"""
     ld = [crumbs([("トップ", "/"), (CAT_JA.get(cat, cat), f"/c/{cat}/"), (name, f"/p/{it['_slug']}/")])]
-    return page(title, desc, f"/p/{it['_slug']}/", body, ld, updated)
+    return page(title, desc, f"/p/{it['_slug']}/", body, ld, updated, noindex=not indexable(it))
 
 
 def cat_page(cat: str, its: list, n_all: int, updated: str, rk_html: str = "") -> str:
@@ -452,7 +459,8 @@ def build() -> int:
             out = SITE / "p" / it["_slug"]
             out.mkdir(parents=True, exist_ok=True)
             (out / "index.html").write_text(product_page(it, shops, hist.get(it["key"], []), rel, updated), encoding="utf-8")
-            urls.append((f"/p/{it['_slug']}/", "daily"))
+            if indexable(it):
+                urls.append((f"/p/{it['_slug']}/", "daily"))
             n_pages += 1
         if its:
             cats_present.append((cat, len(its)))
