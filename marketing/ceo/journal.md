@@ -258,3 +258,10 @@ Thí nghiệm nào không hiệu quả sau 3–7 ngày thì dừng. Thí nghiệ
 - **Đã làm:** Trang VI mới /guide/gia-kai-may-game/ — 12 máy (Switch 2 bản Nhật/đa ngôn ngữ, Switch OLED/Lite, PS5 Pro/Slim/Digital/bản tiếng Nhật, Portal, Steam Machine, Xbox X) tên gọi → tên tiệm ghi → giá; link từ /guide/vi/, có trong sitemap. Lý do: người dùng tìm "ps5"/"ps" (18/11), chưa có trang VI máy game.
 - **Đánh giá thử nghiệm:** 3 trang gia-kai iPhone + lịch Pokémon + 18 Pro: chưa đánh giá được vì Google chưa index → hoãn tới 25/11. Dải "lần trước bạn xem": 0 bấm 2 ngày — theo dõi tới 22/11, nếu vẫn ~0 thì đề xuất thu gọn.
 - **Chờ user:** (1) xác minh FB; (2) kênh không phụ thuộc FB — LINE OpenChat / kênh Telegram giá — chỉ đề xuất; (3) A8 楽天/UQ (có lượt bấm 楽天 trước đây nhưng chưa duyệt). (Token Cloudflare: không cần làm gì — vẫn chạy tốt.)
+
+### 20/11/2026 tối — user cho kiểm A8 + Search Console (chỉ đọc)
+- **A8 tháng 11:** 28.943 lượt hiển thị, **56 click, 0 đơn, 0円** (chưa có đơn nào từ đầu).
+- **Đã duyệt (20, có trên web phần lớn):** Epos, Yステーション, ネットオフ, ふるいち ×4 (3.124円), アローズ (game/camera/PC), フィギュア買取ネット, オクルウル, **LINXAS (3.000円/買取) và モバステ (2.000円) — chưa gắn lên web**.
+- **Vẫn "申込中" (từ 01–03/11, ~18 ngày):** 楽天モバイル (7.000円), UQ (3.450円), 三井住友NL (4.800円), PRICE BASE トレカ (1.500円), ノジマ (1.100円), ホビーコレクト (2.500円).
+- **Search Console (dữ liệu tới ~18/11):** **được lập chỉ mục 59 (18/11: 112)**, chưa lập chỉ mục 2.380 (phát hiện-chưa-index 2.208, đã thu thập-chưa-index 126 ↑ từ 73). 28 ngày: 9 click, 90 lượt hiển thị, vị trí TB 19; truy vấn: p10買取, iphone11promax買取, ips 買取…
+- **Nhận định:** Google đang bỏ bớt trang /p/ mỏng (nhiều trang na ná nhau) → cần ít trang hơn nhưng tốt hơn; doanh thu nghẽn vì 0 đơn từ 56 click (link chủ yếu là 宅配買取 — người dùng là dân bán kai trực tiếp, ít khi gửi bưu điện).
