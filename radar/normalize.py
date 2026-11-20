@@ -55,7 +55,8 @@ def iphone_key(name: str) -> str | None:
 
 # số model: chữ + số, có gạch nối, ví dụ CFI-7100B01, HEG-S-KAAAA, BEE-001, ILCE-7M4, WH-1000XM5, MacBook A2681
 _MODEL = re.compile(r"(?<![A-Za-z0-9])([A-Z]{2,6}-[A-Z0-9]{2,10}(?:-[A-Z0-9]{1,8})*|[A-Z]{2,5}\d{3,5}[A-Z0-9]{0,6})(?![A-Za-z0-9])")
-_MODEL_BAD = {"SIM", "USB", "LTE", "BOX", "HDMI", "OLED", "SSD", "HDD", "RAM", "ROM", "CPU", "GPU"}
+_MODEL_BAD = {"SIM", "USB", "LTE", "BOX", "HDMI", "OLED", "SSD", "HDD", "RAM", "ROM", "CPU", "GPU",
+              "PLAYSTATION5", "PLAYSTATION4", "SWITCH2"}  # 20/11: tên máy, không phải số model (gộp nhầm PS5 Wolverine với tay cầm)
 
 
 _TOKEN = re.compile(r"[A-Z0-9][A-Z0-9.\-/]*[A-Z0-9]")
