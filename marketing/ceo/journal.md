@@ -20,15 +20,15 @@ Thí nghiệm nào không hiệu quả sau 3–7 ngày thì dừng. Thí nghiệ
 |---|---|---|---|
 | Dải "👀 Từ lần trước bạn xem" | 05/11 | ✅ giữ, dừng làm thêm 12/11 (~6% bấm) | recent_show / recent_click, tỉ lệ quay lại |
 | Hiểu tiếng lóng khi tìm (18 prm, ip18, iphon) | 05/11 | ✅ giữ 08/11 | % tìm không ra: 07/11 0% (05/11 10%) |
-| 3 trang SEO /guide/gia-kai-* | 05/11 | 19/11 | lượt Google, lượt vào các path này |
+| 3 trang SEO /guide/gia-kai-* | 05/11 | ⏳ 20/11: 18PM 2 lượt xem/ngày (CF), Google ~0 → xem lại 25/11 | lượt Google, lượt vào các path này |
 | Bình luận lượt lẻ dẫn về trang /guide/gia-kai-* | 05/11 | 09/11 | lượt vào path guide so với land ?q= |
 | Bình luận lượt chia hết cho 3 mời vào nhóm (không link) | 05/11 | ✅ giữ 12/11 (20→28 tv) | số thành viên nhóm (05/11: 20) |
 | Trang cá nhân Duy 1 bài/ngày | 05/11 | 12/11 | lượt từ facebook.com vào /vi/ ngoài giờ bình luận |
 | X @duyto2 えにし神社 (4 bài hẹn giờ) | 05/11 | 10/11 | lượt vào enishijinja.com (mốc khoảng 5/ngày) |
 | 💹 Bảng lời/lỗ mua Apple → bán kai (?v=profit) + dòng trên trang chủ | 05/11 | 12/11 | profit_teaser / profit_open / profit_pts, lượt vào ?v=profit |
-| 📅 Lịch Pokémon /guide/lich-pokemon/ (radar/events.json) | 05/11 | 19/11 | lượt vào path, Google |
+| 📅 Lịch Pokémon /guide/lich-pokemon/ (radar/events.json) | 05/11 | ⏳ 25/11 (chưa có lượt Google) | lượt vào path, Google |
 | 📷 Quét mã vạch / gõ số JAN (5.534 mã) | 05/11 | 12/11 | scan_open / scan_ok / scan_miss (mã nào thiếu → bổ sung) |
-| Trang SEO /guide/gia-kai-iphone-18-pro/ | 06/11 | 20/11 | lượt vào path, Google |
+| Trang SEO /guide/gia-kai-iphone-18-pro/ | 06/11 | ⏳ 20/11: Google chưa index trang VI → xem lại 25/11 cùng Search Console | lượt vào path, Google |
 | Trang vào từ link gọn: ẩn thanh lọc, đo price_seen + land_exit | 07/11 | 14/11 | tỉ lệ bấm sang tiệm/land (mốc 23%), % "không làm gì" khi rời |
 | Trang SEO /guide/gia-kai-iphone-17-pro-max/ (không cột giá Apple) | 07/11 | 21/11 | lượt vào path, Google |
 | Trang SEO /guide/gia-kai-iphone-17-pro/ (không cột giá Apple) | 08/11 | 22/11 | lượt vào path, Google |
@@ -37,6 +37,7 @@ Thí nghiệm nào không hiệu quả sau 3–7 ngày thì dừng. Thí nghiệ
 | Trang SEO /guide/gia-kai-iphone-17/ (bản thường, không cột giá Apple) | 10/11 | 24/11 | lượt vào path, Google |
 | Tìm "thẻ/thẻ bài/máy game" → mở nhóm hàng | 12/11 | 19/11 | search_cat, % tìm không ra |
 | Chip "🔥 Hay xem" dưới ô tìm trang chủ (18PM, Duo, 18 Pro, 17PM, box 30th, AirPods Pro 3) | 10/11 tối | 17/11 | qpick_click, tỉ lệ bấm tiệm của người vào trang chủ (09/11: 14%) |
+| Trang SEO /guide/gia-kai-may-game/ (Switch 2, PS5, PS5 Pro…) | 20/11 | 04/12 | lượt vào path, Google, tìm "ps5" |
 | Bài nhóm tự động: khung 2 so với mức đa số tiệm, khung 3 chỉ món ≥4 tiệm, Pokémon bỏ ONE PIECE + cờ >±40% | 10/11 tối | — | (sửa lỗi) số lần phải sửa tay/ngày (10/11: 3) |
 
 ## Nhật ký
@@ -247,3 +248,13 @@ Thí nghiệm nào không hiệu quả sau 3–7 ngày thì dừng. Thí nghiệ
 - **Đã làm:** (1) Link /vi/ + /guide/vi/ (hreflang vi) ở chân trang tất cả ~2.100 trang tĩnh /p/ /c/ /guide/ /ranking/ + trang chủ JA (thêm link ランキング) → Google lần theo link nội bộ tới bản VI. (2) Tối 18/11: dịu màu header + khối giá theo góp ý user.
 - **Đang thử:** chart_open / shops_more / /vi/xep-hang/ — chưa đủ số (mới 1 shops_more sáng nay). Xem lại 22/11.
 - **Chờ user:** (1) Cloudflare: tạo lại API token "Account Analytics: Read", dán vào .env CF_API_TOKEN; (2) xác minh FB; (3) kênh không phụ thuộc FB — LINE OpenChat / kênh Telegram giá — chỉ đề xuất, chờ duyệt; (4) A8 楽天/UQ.
+
+### 20/11/2026 (FB dừng từ 15/11 — chỉ web)
+- **Hôm qua (19/11):** 27 máy (mới 11, **quay lại 16 = 59%**; 18/11: 27, 62%). Cloudflare: 31 lượt truy cập / 58 lượt xem (18/11: 42/88), gõ thẳng/Zalo/LINE 100%, Google 0. Path: / 45, /vi/ 10, /guide/gia-kai-iphone-18-pro-max/ 2.
+  - Vào từ link 22 (18PM 11, 30th 6, Duo 2). Bấm sang tiệm 4 (森森 2, ルデヤ 1, 当番 1 — box FUTURISTIC). Tìm 2, không ra 0. Rời trang: không làm gì 27% (đa số <5s).
+  - Dải "lần trước bạn xem": hiện 44, bấm 0 (2 ngày liền 0).
+- **Nhận định:** lượt vào tiếp tục giảm nhẹ (khách quen giữ ~16 máy/ngày). Google vẫn 0 → chờ index (đã gửi lại sitemap 18/11, thêm link chân trang 19/11); xem Search Console 25/11.
+- **Trend (có nguồn):** 先達 HK: Duo 2TB 17/11 mở lại −1.399 HKD (HK01 17/11). PCO 追加抽選 nhận đơn tới 24/11 16:59 (đã có trong events.json). PS5/Switch 2 đã tăng giá 2026, Black Friday 27/11 dự kiến không giảm thân máy (selectra). events.json không đổi.
+- **Đã làm:** Trang VI mới /guide/gia-kai-may-game/ — 12 máy (Switch 2 bản Nhật/đa ngôn ngữ, Switch OLED/Lite, PS5 Pro/Slim/Digital/bản tiếng Nhật, Portal, Steam Machine, Xbox X) tên gọi → tên tiệm ghi → giá; link từ /guide/vi/, có trong sitemap. Lý do: người dùng tìm "ps5"/"ps" (18/11), chưa có trang VI máy game.
+- **Đánh giá thử nghiệm:** 3 trang gia-kai iPhone + lịch Pokémon + 18 Pro: chưa đánh giá được vì Google chưa index → hoãn tới 25/11. Dải "lần trước bạn xem": 0 bấm 2 ngày — theo dõi tới 22/11, nếu vẫn ~0 thì đề xuất thu gọn.
+- **Chờ user:** (1) xác minh FB; (2) kênh không phụ thuộc FB — LINE OpenChat / kênh Telegram giá — chỉ đề xuất; (3) A8 楽天/UQ (có lượt bấm 楽天 trước đây nhưng chưa duyệt). (Token Cloudflare: không cần làm gì — vẫn chạy tốt.)
