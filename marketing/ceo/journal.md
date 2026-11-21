@@ -268,3 +268,12 @@ Thí nghiệm nào không hiệu quả sau 3–7 ngày thì dừng. Thí nghiệ
 - **Search Console (dữ liệu tới ~18/11):** **được lập chỉ mục 59 (18/11: 112)**, chưa lập chỉ mục 2.380 (phát hiện-chưa-index 2.208, đã thu thập-chưa-index 126 ↑ từ 73). 28 ngày: 9 click, 90 lượt hiển thị, vị trí TB 19; truy vấn: p10買取, iphone11promax買取, ips 買取…
 - **Nhận định:** Google đang bỏ bớt trang /p/ mỏng (nhiều trang na ná nhau) → cần ít trang hơn nhưng tốt hơn; doanh thu nghẽn vì 0 đơn từ 56 click (link chủ yếu là 宅配買取 — người dùng là dân bán kai trực tiếp, ít khi gửi bưu điện).
 - **Đã làm (user duyệt):** (1) gắn LINXAS (a8mat 4BGAUV+25ZT0Y+5V1I+BWVTE) vào nhóm bán điện thoại + thẻ iPhone; (2) 1.661 trang /p/ mỏng → noindex,follow, sitemap còn 505 url.
+
+### 21/11/2026 (FB dừng từ 15/11 — chỉ web)
+- **Hôm qua (20/11):** **35 máy (cao nhất từ khi dừng FB)**, mới 20, quay lại 15 = 42% (19/11: 27 máy, 59%). Cloudflare: 42 lượt truy cập / 110 lượt xem (19/11: 41/96, số đã cập nhật muộn). Path: / 70, **/vi/ 35** (19/11: 7), /guide/gia-kai-iphone-18-pro-max/ 5. Nguồn: gõ thẳng/Zalo/LINE 41, bing 1, Google 0.
+  - Vào từ link 38 (18PM 24, 30th 3, Duo 2). **Bấm sang tiệm 13** (19/11: 4): 森森 5, 1丁目 3, PANDA 2, ゲスト 2, 当番 1. Tìm 2 ("フィルム" ×2), không ra 0.
+  - Dải "lần trước bạn xem": hiện 51, bấm 0 (3 ngày liền 0) → xem lại ngày mai 22/11.
+- **Nhận định:** lượt vào nhích lên nhờ link chia sẻ (Zalo/LINE) vào /vi/ và 18 Pro Max; bấm tiệm tăng mạnh. Google vẫn 0 — chờ hiệu ứng noindex + sitemap 505 url (xem 25/11).
+- **Trend (có nguồn):** 先達 HK: 18PM cam 256 ổn định (lỗ ~219 HKD), Duo 2TB tụt (HK01 17/11). Apple CN/HK giữ giá. ポケカ: 30th 抽選 DOPA tới 22/11, Amazon đang bốc thăm (altema); Hadou Seeker ra 27/11 (đã có trong events.json). Black Friday: ít giảm thân máy, Sony không giảm PS5 (selectra, tomsguide). events.json không đổi.
+- **Đã làm:** FAQ "Black Friday có giảm giá PS5, Switch 2 không?" trên /guide/gia-kai-may-game/ (có nguồn, không dự đoán giá).
+- **Chờ user:** (1) xác minh FB; (2) A8 楽天/UQ/三井住友 vẫn 申込中 ~18 ngày — hỏi A8 hoặc thử もしもアフィリエイト; (3) kênh không phụ thuộc FB (LINE OpenChat / kênh Telegram giá) — chỉ đề xuất; (4) モバステ A8 (đã duyệt, 2.000円) — có thể gắn như LINXAS nếu user muốn.

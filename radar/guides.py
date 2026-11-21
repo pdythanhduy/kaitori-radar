@@ -847,7 +847,8 @@ Tên máy trên web tiệm ghi bằng tiếng Nhật và mã máy, nên bảng g
 {FB}
 {vi_faq([("Switch 2 bản Nhật và bản đa ngôn ngữ bán kai khác gì?", "Hai bản có mã khác nhau và tiệm thu giá khác nhau; xem dòng tương ứng trong bảng (nếu tiệm đang thu)."),
          ("PS5 Pro bán kai được bao nhiêu?", "Xem dòng PS5 Pro trong bảng, cập nhật mỗi giờ từ giá công khai của các tiệm."),
-         ("Máy đã mở hộp có bán được không?", "Được ở nhiều tiệm nhưng giá thấp hơn hàng mới; bảng trên chỉ là giá hàng mới chưa mở.")])}
+         ("Máy đã mở hộp có bán được không?", "Được ở nhiều tiệm nhưng giá thấp hơn hàng mới; bảng trên chỉ là giá hàng mới chưa mở."),
+         ("Black Friday (27/11) có giảm giá PS5, Switch 2 không?", "PS5 tăng giá 4/2026, Switch 2 tăng 5/2026. Theo selectra.jp, đợt sale thường giảm phụ kiện, bộ combo và game, ít khi giảm thân máy. Ở Mỹ, Sony giảm phụ kiện/game nhưng không giảm PS5 (tomsguide). Bạn xem giá từng tiệm ở bảng trên, chúng tôi không đoán giá.")])}
 <p class="small">Giá là giá công khai trên web các tiệm cho máy mới chưa mở; giá thực tế có thể khác. Không phải lời khuyên mua bán hay đầu tư.</p>"""
         vi_page("/guide/gia-kai-may-game/", "Giá thu mua Switch 2, PS5, PS5 Pro hôm nay | Kaitori Price",
                 "Giá kai máy game mới ở các tiệm Nhật: Switch 2 bản Nhật / đa ngôn ngữ, PS5 Slim, PS5 Pro, Portal, Steam Machine. Cập nhật mỗi giờ.",
