@@ -1,4 +1,4 @@
-"""Canh PS5 Pro (user 22/11/2026): báo Telegram khi Yodobashi / Joshin / Edion / BicCamera.com / AEON đổi trạng thái bán.
+"""Canh PS5 Pro (user 21/11/2026): báo Telegram khi Yodobashi / Joshin / Edion / BicCamera.com / AEON đổi trạng thái bán.
 
 Trang tiệm chặn truy cập tự động (403 / Cloudflare / Akamai) → KHÔNG đọc thẳng, không lách chống bot.
 Nguồn: bài tổng hợp công khai của Goal.com (cập nhật trạng thái từng tiệm, thường mỗi ngày).
