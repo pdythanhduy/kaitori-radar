@@ -1,21 +1,21 @@
 # Trend nóng hôm nay (lịch săn trend ghi; bình luận + bài nhóm đọc để chọn góc)
 
-**Quét lúc 20/11 18:20 JST** (giá site/data 18:11) — FB đang dừng: nguồn = market-concerns.md + từ khoá tìm trên web
+**Quét lúc 21/11 12:20 JST** (giá site/data 12:15) — FB đang dừng: nguồn = market-concerns.md + từ khoá tìm trên web
 
 ## ⚡ Giá đổi
-- iPhone/Duo/Switch 2/PS5 thân máy: không món nào đổi ≥3.000円 so hôm qua. Duo: chỉ 1TB ngang giá Apple (+200), các bản khác lỗ 3,8k–6,8k.
-- Tay cầm PS5 GTA VI limited 12,1k → 13k (PANDA). Box Pokémon: không hộp nào đổi ≥5%.
-- Lỗi dữ liệu đã sửa: "PS5 コントローラー クロマ パール" hiện 109.200 — thật ra là PS5 Wolverine bị gộp nhầm (khoá model:PLAYSTATION5). Lượt cập nhật kế tiếp sẽ tách ra.
+- iPhone/Duo/Switch 2/PS5/box Pokémon: không món hot nào đổi ≥3.000円 hay ≥5% so hôm qua. PS5 Digital 日本語専用 51k → 49,2k (−1,8k).
+- Duo so giá Apple: 256 358k (Apple 364,8k), 512 395k (399,8k), 2TB 570k (574,8k) vẫn lỗ; 1TB 470k ≈ ngang (469,8k). Không đổi dấu so hôm qua.
+- Lệch lớn ở món ít người xem (Fold8 512 −37,8k, instax mini Evo −24,9k) — ít tiệm, chưa xác minh, không dùng.
 
 ## 🗣 Mối lo + tìm trên web
-1. Duo lỗ so giá Apple → /guide/gia-kai-iphone-duo/ (FAQ tự tính).
-2. Máy game: hôm nay 3 lượt bấm sang tiệm cho **Switch 2 多言語版** (1丁目 2, PANDA 1) → /guide/gia-kai-may-game/ (mới 20/11).
-- Vào từ link: 18 Pro Max (23), Duo (3), 30th (2). Không có từ khoá tìm không ra.
+1. Duo lỗ so giá Apple → /guide/gia-kai-iphone-duo/ (FAQ tự tính theo giờ).
+2. Hadou Seeker ra 27/11: chưa tiệm nào thu box → FAQ trên trang box Pokémon tự hiện giá khi có tiệm thu.
+- Hôm nay vào từ link: Duo 256 (2), 18 Pro Max (2). Tìm: "pokemon go" (có kết quả). Không có từ khoá tìm không ra.
 
 ## 📰 Tin
-- PRICE BASE (11/2026): 18 Pro 256 "新品同様" thu khoảng 174k (máy đã kích hoạt; khác giá máy mới chưa mở ~207k trên web mình).
-- Pokémon Center Online: bốc thăm bổ sung 30th (box, FUTURISTIC, deck) "khoảng tháng 12", chưa có ngày (inside-games 29/9). Chưa có tin mới.
+- Pokémon Center Online: ハドウシーカー phát hành 27/11, bốc thăm bổ sung đã đóng 10/11, hạn đặt khi trúng 24/11 (pokemoncenter-online.com, tinpanblog).
+- PRICE BASE (11/2026): 18 Pro Max 256 thu 187k, 512 216k (giá máy đã dùng/新品同様, khác giá máy mới chưa mở trên web mình: 226k/263k).
 
 ## 🎯 Góc đề xuất (khi FB mở lại / cho web)
-- "Switch 2 bản đa ngôn ngữ thu ~83k, bản Nhật + Mario Kart ~59k" + link trang máy game.
-- Duo: chỉ số đã qua, không dự đoán.
+- "Duo 1TB đang ngang giá Apple, các bản khác lỗ 4–7k" — chỉ số đã qua, không dự đoán.
+- Hadou Seeker: "ra 27/11, chưa tiệm nào báo giá thu — web sẽ tự hiện khi có".
