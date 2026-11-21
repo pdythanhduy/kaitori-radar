@@ -95,3 +95,8 @@ Tài liệu cho đội CEO và các lịch săn trend: người bán đang lo g�
 - **Số thật (site/data 12:14):** Duo 2TB 570k (Apple 574,8k), 512 396,5k (399,8k), 1TB 470k (469,8k, +200), 256 358,5k (364,8k). 7 ngày: 2TB −35k, 1TB −32k.
 - **Tin:** HK01 10/11 chênh giá Duo ở 先達 co còn 100–300 HKD; gori.me (số BuyBack 15/11): giá thu Duo 256 không trầy 300–312k, thấp hơn giá bán 14–18%.
 - **Cách trả lời:** /guide/gia-kai-iphone-duo/ có FAQ "mua giá Apple bán kai còn lời không" (tự tính theo giờ). Chỉ nói số đã qua.
+
+## Cập nhật 21/11/2026 18:20 — Duo 1TB cũng chuyển sang lỗ
+- **Số thật (site/data 18:11):** Duo 2TB 565k (Apple 574,8k), 1TB 465k (469,8k), 512 393,5k (399,8k), 256 354,5k (364,8k) — cả 4 bản thấp hơn giá Apple.
+- **Tin:** gori.me — Duo 256 không trầy thu 300–312k ở Nhật (−14–18% so giá bán).
+- **Cách trả lời:** /guide/gia-kai-iphone-duo/ FAQ tự tính; chỉ nói số đã qua.

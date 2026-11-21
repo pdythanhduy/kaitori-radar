@@ -1,21 +1,20 @@
 # Trend nóng hôm nay (lịch săn trend ghi; bình luận + bài nhóm đọc để chọn góc)
 
-**Quét lúc 21/11 12:20 JST** (giá site/data 12:15) — FB đang dừng: nguồn = market-concerns.md + từ khoá tìm trên web
+**Quét lúc 21/11 18:20 JST** (giá site/data 18:11) — FB đang dừng: nguồn = market-concerns.md + từ khoá tìm trên web
 
 ## ⚡ Giá đổi
-- iPhone/Duo/Switch 2/PS5/box Pokémon: không món hot nào đổi ≥3.000円 hay ≥5% so hôm qua. PS5 Digital 日本語専用 51k → 49,2k (−1,8k).
-- Duo so giá Apple: 256 358k (Apple 364,8k), 512 395k (399,8k), 2TB 570k (574,8k) vẫn lỗ; 1TB 470k ≈ ngang (469,8k). Không đổi dấu so hôm qua.
-- Lệch lớn ở món ít người xem (Fold8 512 −37,8k, instax mini Evo −24,9k) — ít tiệm, chưa xác minh, không dùng.
+- **Duo giảm chiều nay** (giá cao nhất, 8 tiệm): 2TB 570k → 565k (−5k), 1TB 470k → 465k (−5k), 256 358k → 354,5k (−3,5k), 512 → 393,5k.
+- **Duo 1TB đổi dấu: ngang/lời → lỗ** (465k vs Apple 469,8k). Giờ cả 4 bản Duo đều thấp hơn giá Apple (256 −10,3k, 512 −6,3k, 1TB −4,8k, 2TB −9,8k).
+- Box 30th CELEBRATION 19k → 18k (−1k, 7 tiệm). iPhone 18 Pro/Pro Max, Switch 2, PS5: không đổi ≥3k.
 
 ## 🗣 Mối lo + tìm trên web
-1. Duo lỗ so giá Apple → /guide/gia-kai-iphone-duo/ (FAQ tự tính theo giờ).
-2. Hadou Seeker ra 27/11: chưa tiệm nào thu box → FAQ trên trang box Pokémon tự hiện giá khi có tiệm thu.
-- Hôm nay vào từ link: Duo 256 (2), 18 Pro Max (2). Tìm: "pokemon go" (có kết quả). Không có từ khoá tìm không ra.
+1. Duo lỗ so giá Apple, giờ cả 1TB → /guide/gia-kai-iphone-duo/ (FAQ tự tính theo giờ).
+2. Box 30th giảm nhẹ → altema dự đoán sẽ giảm do còn bán tiếp (chỉ là dự đoán của họ, mình không nhắc lại như sự thật).
+- Hôm nay vào từ link: Duo 256 (2), 18 Pro Max, Duo, Switch 2 カメラ. Không có từ khoá tìm không ra.
 
 ## 📰 Tin
-- Pokémon Center Online: ハドウシーカー phát hành 27/11, bốc thăm bổ sung đã đóng 10/11, hạn đặt khi trúng 24/11 (pokemoncenter-online.com, tinpanblog).
-- PRICE BASE (11/2026): 18 Pro Max 256 thu 187k, 512 216k (giá máy đã dùng/新品同様, khác giá máy mới chưa mở trên web mình: 226k/263k).
+- gori.me: giá thu Duo 256 không trầy ở Nhật 300–312k, giảm 14–18% so giá bán (Mỹ −22%).
+- 30th CELEBRATION: chưa thấy tin bán lại/bốc thăm mới tháng 11 (altema).
 
 ## 🎯 Góc đề xuất (khi FB mở lại / cho web)
-- "Duo 1TB đang ngang giá Apple, các bản khác lỗ 4–7k" — chỉ số đã qua, không dự đoán.
-- Hadou Seeker: "ra 27/11, chưa tiệm nào báo giá thu — web sẽ tự hiện khi có".
+- "Duo chiều 21/11: cả 4 bản thấp hơn giá Apple 4,8k–10,3k" — số đã qua + giờ, không dự đoán đáy.
