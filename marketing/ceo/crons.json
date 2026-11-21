@@ -1,7 +1,7 @@
 [
  {
   "cron": "23 8 * * *",
-  "prompt": "[Radar thị trường hằng ngày] 1) Dùng WebSearch (mode standard, gửi các truy vấn cùng lúc) tìm tin MỚI trong 1–2 ngày qua: \"先達 炒價 每日更新 hk01 iPhone\" (HK01 có bài cập nhật hằng ngày giá thu mua ở chợ điện thoại 先達廣場 Hồng Kông, kèm giá HKD từng mẫu Duo / 18 Pro Max, lấy con số mới nhất có ghi ngày), \"华强北 iPhone 18 行情 今日\", \"iPhone 18 降价 京东 苹果 中国 双11\", \"iPhone 買取価格 下落 OR 上昇 今週\". Chỉ lấy thông tin có nguồn, ghi rõ ngày; bỏ tin cũ hoặc tin đồn. Nếu có giá 先達 bằng HKD thì quy ra yên (1 HKD ≈ tỷ giá trong báo cáo) và so với giá kai Nhật. Tóm tắt tối đa 5 gạch đầu dòng tiếng Việt, mỗi dòng ≤ 130 ký tự, kèm nguồn (vd \"(HK01 02/11)\"). Không có tin mới thì ghi \"Không có tin mới đáng chú ý\". 2) `git pull -q --rebase` rồi `PYTHONUTF8=1 python marketing/market_watch.py --news \"<tóm tắt>\"` (ghi market_log.csv + gửi Telegram; đã có sẵn giá Apple TQ/HK, tỷ giá, bảng giá thu mua Đài Loan miko3c). 3) Commit market_log.csv (kèm dòng Co-Authored-By/Claude-Session) và push. 4) Nếu Apple TQ/HK đổi giá, giá 先達 giảm mạnh, hoặc có đợt giảm giá lớn ở TQ (vd 双11), nhắc user trong chat là giá kai có thể giảm mấy ngày tới. Không đưa lời khuyên đầu tư."
+  "prompt": "[Radar thị trường hằng ngày] 1) Dùng WebSearch (mode standard, gửi các truy vấn cùng lúc) tìm tin MỚI trong 1–2 ngày qua: \"先達 炒價 每日更新 hk01 iPhone\" (HK01 có bài cập nhật hằng ngày giá thu mua ở chợ điện thoại 先達廣場 Hồng Kông, kèm giá HKD từng mẫu Duo / 18 Pro Max, lấy con số mới nhất có ghi ngày), \"华强北 iPhone 18 行情 今日\", \"iPhone 18 降价 京东 苹果 中国 双11\", \"iPhone 買取価格 下落 OR 上昇 今週\", \"PS5 Pro 抽選 受付 開始\" (user 22/11: chỉ lấy đợt bốc thăm/mời mua PS5 Pro ĐANG MỞ hoặc sắp mở, có nguồn; có thì thêm 1 dòng \"🎮 PS5 Pro: <tiệm> bốc thăm tới <hạn> (nguồn)\" vào tóm tắt và nhắc user trong chat). Chỉ lấy thông tin có nguồn, ghi rõ ngày; bỏ tin cũ hoặc tin đồn. Nếu có giá 先達 bằng HKD thì quy ra yên (1 HKD ≈ tỷ giá trong báo cáo) và so với giá kai Nhật. Tóm tắt tối đa 5 gạch đầu dòng tiếng Việt, mỗi dòng ≤ 130 ký tự, kèm nguồn (vd \"(HK01 02/11)\"). Không có tin mới thì ghi \"Không có tin mới đáng chú ý\". 2) `git pull -q --rebase` rồi `PYTHONUTF8=1 python marketing/market_watch.py --news \"<tóm tắt>\"` (ghi market_log.csv + gửi Telegram; đã có sẵn giá Apple TQ/HK, tỷ giá, bảng giá thu mua Đài Loan miko3c). 3) Commit market_log.csv (kèm dòng Co-Authored-By/Claude-Session) và push. 4) Nếu Apple TQ/HK đổi giá, giá 先達 giảm mạnh, hoặc có đợt giảm giá lớn ở TQ (vd 双11), nhắc user trong chat là giá kai có thể giảm mấy ngày tới. Không đưa lời khuyên đầu tư."
  },
  {
   "cron": "43 7 * * *",
@@ -50,5 +50,9 @@
  {
   "cron": "13 10,14,20 * * *",
   "prompt": "[Canh lịch tự động] Kiểm tra gọn, không đăng gì. 1) Gọi mcp__claude-in-chrome__tabs_context_mcp (nạp bằng ToolSearch nếu cần). 2) Nếu tiện ích \"not connected\": gửi Telegram \"⚠️ Chrome mất kết nối, bình luận/đăng bài đang bỏ lượt — mở Chrome + tiện ích Claude\" bằng `from daily_traffic import send` (chạy trong marketing/), mỗi ngày tối đa 1 lần (ghi ngày đã báo vào marketing/ceo/watchdog.txt). 3) Kết nối bình thường thì không báo gì; nếu có tab trống do bước này tạo thì đóng."
+ },
+ {
+  "cron": "11,41 9-23 * * *",
+  "prompt": "[Canh PS5 Pro] User 22/11: báo ngay khi Yodobashi/Joshin/Edion/BicCamera.com/AEON có bán PS5 Pro. Chạy `PYTHONUTF8=1 python marketing/ps5pro_watch.py` (đọc bài tổng hợp Goal.com, tự gửi Telegram khi trạng thái đổi; KHÔNG đọc thẳng trang tiệm, không lách chống bot). Không in gì thêm nếu \"không đổi\"; nếu script lỗi mạng thì bỏ qua, lỗi khác thì báo user 1 dòng."
  }
 ]
