@@ -54,5 +54,13 @@
  {
   "cron": "17 12 * * *",
   "prompt": "[PS5 Pro trên X mỗi ngày] User 22/11: \"lên x xem mỗi ngày coi thấy bản ps5 pro bán có lời ghê\". CHỈ ĐỌC X (không đăng/like/follow/DM); FACEBOOK VẪN DỪNG. 1) giá kai PS5 Pro (CFI-7100B01/7000B01) từ site/data/cat/game.json so Sony 137,980円. 2) Chrome x.com/search?f=live: 'PS5Pro 抽選', 'PS5 Pro 販売 開始 ヨドバシ OR ビック OR ジョーシン OR エディオン OR イオン', 'PS5Pro 買取' — tin 48h. 3) so marketing/ceo/ps5pro_x.md; đợt 抽選/bán mới hoặc kai đổi ≥5.000円 → Telegram 🎮. 4) ghi đè ps5pro_x.md ≤15 dòng. Không khuyên mua/bán."
+ },
+ {
+  "cron": "23 10 * * *",
+  "prompt": "[FB khởi động nhẹ – xin vào nhóm] Browser 1 (9c011c0f-9834-45e8-ae2f-61f1fed6e09b) only, FB 'Thảo Diệp'; ≤2 nhóm/ngày theo marketing/ceo/fb_warmup.md; checkpoint → dừng + Telegram."
+ },
+ {
+  "cron": "7 11,14,17,20,22 * * *",
+  "prompt": "[FB khởi động nhẹ – bình luận] Browser 1 only, 'Thảo Diệp'; tuần 1 (23–29/11) ≤5/ngày không link; từ 30/11 8–10/ngày nửa có link; chỉ nhóm đã duyệt; ghi fb_warmup.md."
  }
 ]
