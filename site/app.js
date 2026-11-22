@@ -573,12 +573,15 @@
       const q0 = st.q.normalize("NFKC").toLowerCase();
       const q = nq(q0.replace(/\s/g, ""));
       // 15/11: "ipad pro m4" không ra vì tên là "iPad Pro 13インチ M4…" → cả cụm không thấy thì tìm theo từng từ (đủ mọi từ)
-      const toks = q0.split(/\s+/).filter(Boolean).map(nq).filter(Boolean);
+      // 22/11: "galaxy a25 ymobile" không ra (tên máy không ghi nhà mạng) → bỏ từ nhà mạng khi tìm theo từng từ
+      const CARR = /^(y!?mobile|ワイモバイル|ワイモバ|docomo|ドコモ|softbank|ソフトバンク|sb|au|rakuten|楽天|楽天モバイル|uqmobile|uq|simフリー|simfree|sim)$/;
+      const toks0 = q0.split(/\s+/).filter(Boolean).map(nq).filter(Boolean);
+      const toks = toks0.some((t) => !CARR.test(t)) ? toks0.filter((t) => !CARR.test(t)) : toks0;
       const hit = (s, any) => any ? toks.every((t) => s.includes(t)) : s.includes(q);
       // tìm trước trong mục lục nhỏ → chỉ tải những nhóm có kết quả
       sidx ||= await fetch("data/search.json" + bust).then((r) => r.json()).catch(() => null);
       const sn = sidx ? sidx.map(([c, n]) => [c, n.toLowerCase().replace(/\s/g, "")]) : null;
-      const byTok = !!sn && toks.length > 1 && !sn.some(([, n]) => hit(n, false));
+      const byTok = !!sn && (toks.length > 1 || toks0.length > 1) && !sn.some(([, n]) => hit(n, false));
       const cats = sn ? [...new Set(sn.filter(([, n]) => hit(n, byTok)).map(([c]) => c))] : Object.keys(CATS);
       const use = (cats.length ? cats : Object.keys(CATS)).filter((c) => CATS[c]);
       // tìm trong ≤ 2 nhóm (vd link ?q=iPhone từ Facebook): tải luôn lịch sử để có biểu đồ + nhãn xu hướng
