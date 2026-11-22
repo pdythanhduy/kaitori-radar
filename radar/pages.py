@@ -283,7 +283,7 @@ def page(title: str, desc: str, path: str, body: str, ld: list, updated: str, no
 {body}
 </main>
 <footer class="ft">
-<nav>{" ".join(f'<a href="/c/{c}/">{e(CAT_JA[c])}</a>' for c in CAT_ORDER)} <a href="/ranking/">ランキング</a> <a href="/guide/">買取ガイド</a> <a href="/vi/" hreflang="vi" lang="vi">Tiếng Việt</a> <a href="/guide/vi/" hreflang="vi" lang="vi">Mẹo &amp; hướng dẫn</a></nav>
+<nav>{" ".join(f'<a href="/c/{c}/">{e(CAT_JA[c])}</a>' for c in CAT_ORDER)} <a href="/ranking/">ランキング</a> <a href="/news/">毎日の買取価格</a> <a href="/guide/">買取ガイド</a> <a href="/vi/" hreflang="vi" lang="vi">Tiếng Việt</a> <a href="/guide/vi/" hreflang="vi" lang="vi">Mẹo &amp; hướng dẫn</a> <a href="/tin/" hreflang="vi" lang="vi">Giá kai mỗi ngày</a></nav>
 <p>価格は各買取店の公開ページから自動取得（最終更新 {e(updated)} JST）。実際の買取額は状態・時期により変わります。必ず各店舗でご確認ください。</p>
 <p>© {BRAND} · <a href="/">kaitoriprice.com</a></p>
 </footer>
@@ -428,7 +428,7 @@ def build() -> int:
     shops, updated = idx.get("shops", {}), idx.get("updated", "")
     all_items: dict[str, list] = {}
     all_hist: dict[str, dict] = {}
-    for d in ("p", "c", "guide"):
+    for d in ("p", "c", "guide", "tin", "news"):
         shutil.rmtree(SITE / d, ignore_errors=True)
     urls: list[tuple[str, str]] = []
     lastmod = (updated or datetime.now(timezone(timedelta(hours=9))).strftime("%Y-%m-%d"))[:10]
@@ -474,6 +474,8 @@ def build() -> int:
     except Exception as exc:  # noqa: BLE001
         print("share skipped:", exc)
     urls += guides.build(all_items, shops, updated, page, e, SITE, BASE)
+    from . import daily  # bài "giá hôm nay" mỗi ngày (VI /tin/, JA /news/) — user 22/11
+    urls = daily.build(all_items, all_hist, shops, updated, page, e, SITE) + urls
     build_vi()
     urls = ranking_pages(all_items, all_hist, shops, updated) + urls
     head = [("/", "hourly"), ("/vi/", "hourly")] + [(f"/c/{c}/", "hourly") for c, _ in cats_present] + [("/?v=deals", "daily")]
