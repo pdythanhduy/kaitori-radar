@@ -50,9 +50,5 @@
  {
   "cron": "13 10,14,20 * * *",
   "prompt": "[Canh lịch tự động] Kiểm tra gọn, không đăng gì. 1) Gọi mcp__claude-in-chrome__tabs_context_mcp (nạp bằng ToolSearch nếu cần). 2) Nếu tiện ích \"not connected\": gửi Telegram \"⚠️ Chrome mất kết nối, bình luận/đăng bài đang bỏ lượt — mở Chrome + tiện ích Claude\" bằng `from daily_traffic import send` (chạy trong marketing/), mỗi ngày tối đa 1 lần (ghi ngày đã báo vào marketing/ceo/watchdog.txt). 3) Kết nối bình thường thì không báo gì; nếu có tab trống do bước này tạo thì đóng."
- },
- {
-  "cron": "11,41 9-23 * * *",
-  "prompt": "[Canh PS5 Pro] User 21/11: báo ngay khi Yodobashi/Joshin/Edion/BicCamera.com/AEON có bán PS5 Pro. Chạy `PYTHONUTF8=1 python marketing/ps5pro_watch.py` (đọc bài tổng hợp Goal.com, tự gửi Telegram khi trạng thái đổi; KHÔNG đọc thẳng trang tiệm, không lách chống bot). Không in gì thêm nếu \"không đổi\"; nếu script lỗi mạng thì bỏ qua, lỗi khác thì báo user 1 dòng."
  }
 ]
