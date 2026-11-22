@@ -277,3 +277,14 @@ Thí nghiệm nào không hiệu quả sau 3–7 ngày thì dừng. Thí nghiệ
 - **Trend (có nguồn):** 先達 HK: 18PM cam 256 ổn định (lỗ ~219 HKD), Duo 2TB tụt (HK01 17/11). Apple CN/HK giữ giá. ポケカ: 30th 抽選 DOPA tới 22/11, Amazon đang bốc thăm (altema); Hadou Seeker ra 27/11 (đã có trong events.json). Black Friday: ít giảm thân máy, Sony không giảm PS5 (selectra, tomsguide). events.json không đổi.
 - **Đã làm:** FAQ "Black Friday có giảm giá PS5, Switch 2 không?" trên /guide/gia-kai-may-game/ (có nguồn, không dự đoán giá).
 - **Chờ user:** (1) xác minh FB; (2) A8 楽天/UQ/三井住友 vẫn 申込中 ~18 ngày — hỏi A8 hoặc thử もしもアフィリエイト; (3) kênh không phụ thuộc FB (LINE OpenChat / kênh Telegram giá) — chỉ đề xuất; (4) モバステ A8 (đã duyệt, 2.000円) — có thể gắn như LINXAS nếu user muốn.
+
+### 22/11/2026 (FB dừng từ 15/11 — chỉ web)
+- **Hôm qua (21/11, thứ Bảy):** **14 máy** (20/11: 35), mới 6, quay lại 8 = 57%. Cloudflare 12 lượt truy cập / 29 lượt xem (20/11: 42/110). Gần như không ai vào sau 16h (đã kiểm: bộ đếm, ga.js, playwright đều chạy bình thường → vắng thật). **Google 2 lượt vào** (lần đầu sau nhiều ngày 0).
+  - Vào từ link 10 (Duo 256 2, trang chủ 2). Bấm sang tiệm 1 (ルデヤ, Pokémon GO Plus+), bấm đối tác 1 (**LINXAS** — lượt bấm đầu tiên sau khi gắn 20/11). Tìm 1 ("pokemon go"), không ra 0.
+- **Nhận định:** 20/11 cao nhờ link chia sẻ Zalo/LINE vào /vi/ (35 lượt xem /vi/); không có link mới thì lượt vào rơi về ~15. Không có FB = không có nguồn đẩy đều → SEO/Google là đường duy nhất tự chạy; 2 lượt Google hôm qua là dấu hiệu đầu (sau noindex + sitemap 505 url 20/11).
+- **Đánh giá thử nghiệm (đến hạn 22/11):**
+  - Dải "lần trước bạn xem": 15–17/11 có 2–4 bấm/ngày, từ 18/11 = 0 (hiện 18–51/ngày). Nghi lỗi sau đổi giao diện 18/11 → đã kiểm bằng playwright (390px): dải hiện, bấm chạy, gửi recent_click đúng → **không phải lỗi**; giảm bấm trùng lúc mất FB (ít khách quen xem nhiều món). **Giữ** (không tốn chỗ, chỉ hiện với người quay lại); xem lại 06/12.
+  - chart_open: 1 (19/11), 1 (20/11) → ít dùng; shops_more: 2/1/1 → ít. **Giữ**, không làm thêm.
+- **Trend:** Duo giảm chiều 21/11 (1TB 470k → 465k, sang lỗ so giá Apple; cả 4 bản thấp hơn Apple 4,8k–10,3k). Apple CN/HK giữ giá. 先達 HK chưa có bài mới từ 17/11. PS5 Pro: chưa có đợt bốc thăm mới (Sony Store đóng 7/10). events.json không đổi.
+- **Đã làm (user yêu cầu 21/11):** bot canh PS5 Pro (marketing/ps5pro_watch.py, đọc Goal.com mỗi 30 phút, báo Telegram khi Yodobashi/Joshin/Edion/Bic/AEON đổi trạng thái; trang tiệm chặn bot nên không đọc thẳng). Radar sáng thêm tìm "PS5 Pro 抽選".
+- **Chờ user:** (1) bot PS5 Pro nhanh (API chính thức Rakuten/Yahoo, mỗi 5 phút): user đăng ký RAKUTEN_APP_ID + YAHOO_CLIENT_ID, dán vào .env, đồng ý tạo tác vụ Windows; (2) xác minh FB; (3) A8 楽天/UQ vẫn 申込中; (4) kênh không phụ thuộc FB (LINE OpenChat / kênh Telegram giá) — chỉ đề xuất; (5) gắn モバステ?
