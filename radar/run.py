@@ -196,7 +196,7 @@ def aggregate(rows):
         g["names"].append(r["name"])
         if r.get("msrp"):
             g["msrp"] = r["msrp"]
-        if r.get("img") and r["cat"] == "card" and "img" not in g:
+        if r.get("img") and "img" not in g:  # 22/11: mọi nhóm hàng (ban đầu chỉ thẻ)
             g["img"] = r["img"]
         cur = g["prices"].get(r["shop"])
         ck = color_key(r["name"]) if r["cat"] == "phone" else None
@@ -251,29 +251,47 @@ def aggregate(rows):
 IMG = ROOT / "site" / "img" / "p"
 
 
-def attach_images(items, max_new=150):
-    """Ảnh hộp thẻ (user 22/11/2026): tải 1 lần ảnh thu nhỏ từ trang tiệm về site/img/p/ (tự host, không hotlink),
-    gắn it["img"] = "/img/p/<hash>.<ext>". Mỗi lượt tải tối đa max_new ảnh mới, chậm rãi."""
+def attach_images(items, max_new=400):
+    """Ảnh sản phẩm (user 22/11/2026: hộp Pokémon trước, rồi mọi nhóm hàng): tải 1 lần từ trang tiệm về site/img/p/
+    (tự host, không hotlink), thu nhỏ còn ≤200px webp (~6–8KB) nếu có Pillow; gắn it["img"] = "/img/p/<hash>.<ext>".
+    Mỗi lượt tải tối đa max_new ảnh mới (món nhiều tiệm trước), chậm rãi 0.3s/ảnh."""
     import hashlib
+    import io
     import time
+    try:
+        from PIL import Image
+    except Exception:  # noqa: BLE001
+        Image = None
     IMG.mkdir(parents=True, exist_ok=True)
     new = 0
-    for it in items:
+    for it in sorted(items, key=lambda i: -i.get("n_shops", 0)):
         src = it.pop("img_src", None)
         if not src:
             continue
-        src = src.replace("/product/thumbnail/webp/", "/product/webp/")  # ルデヤ: thumbnail 80px → bản 300px (~16KB)
+        src = src.replace("/product/thumbnail/webp/", "/product/webp/")  # ルデヤ: thumbnail 80px → bản 300px
+        h = hashlib.sha1(src.encode()).hexdigest()[:16]
         ext = src.rsplit(".", 1)[-1].lower()
-        fn = IMG / f"{hashlib.sha1(src.encode()).hexdigest()[:16]}.{ext}"
+        fn = IMG / f"{h}.{ext}"
+        if not fn.exists() and ext != "webp" and (IMG / f"{h}.webp").exists():
+            fn = IMG / f"{h}.webp"
         if not fn.exists():
             if new >= max_new:
                 continue
+            new += 1
             try:
                 r = requests.get(src, timeout=20, headers={"User-Agent": "Mozilla/5.0 (compatible; kaitori-radar/1.0)"})
-                if r.ok and r.headers.get("content-type", "").startswith("image/") and 500 < len(r.content) < 400_000:
-                    fn.write_bytes(r.content)
-                new += 1
                 time.sleep(0.3)
+                if not (r.ok and r.headers.get("content-type", "").startswith("image/") and 500 < len(r.content) < 2_000_000):
+                    continue
+                if Image is not None:
+                    im = Image.open(io.BytesIO(r.content)).convert("RGBA")
+                    im.thumbnail((200, 200))
+                    fn = IMG / f"{h}.webp"
+                    buf = io.BytesIO()
+                    im.save(buf, "WEBP", quality=80, method=6)
+                    fn.write_bytes(buf.getvalue())
+                else:
+                    fn.write_bytes(r.content)
             except Exception as exc:  # noqa: BLE001
                 print("  img:", exc)
                 continue
