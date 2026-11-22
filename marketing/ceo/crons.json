@@ -50,5 +50,9 @@
  {
   "cron": "13 10,14,20 * * *",
   "prompt": "[Canh lịch tự động] Kiểm tra gọn, không đăng gì. 1) Gọi mcp__claude-in-chrome__tabs_context_mcp (nạp bằng ToolSearch nếu cần). 2) Nếu tiện ích \"not connected\": gửi Telegram \"⚠️ Chrome mất kết nối, bình luận/đăng bài đang bỏ lượt — mở Chrome + tiện ích Claude\" bằng `from daily_traffic import send` (chạy trong marketing/), mỗi ngày tối đa 1 lần (ghi ngày đã báo vào marketing/ceo/watchdog.txt). 3) Kết nối bình thường thì không báo gì; nếu có tab trống do bước này tạo thì đóng."
+ },
+ {
+  "cron": "17 12 * * *",
+  "prompt": "[PS5 Pro trên X mỗi ngày] User 22/11: \"lên x xem mỗi ngày coi thấy bản ps5 pro bán có lời ghê\". CHỈ ĐỌC X (không đăng/like/follow/DM); FACEBOOK VẪN DỪNG. 1) giá kai PS5 Pro (CFI-7100B01/7000B01) từ site/data/cat/game.json so Sony 137,980円. 2) Chrome x.com/search?f=live: 'PS5Pro 抽選', 'PS5 Pro 販売 開始 ヨドバシ OR ビック OR ジョーシン OR エディオン OR イオン', 'PS5Pro 買取' — tin 48h. 3) so marketing/ceo/ps5pro_x.md; đợt 抽選/bán mới hoặc kai đổi ≥5.000円 → Telegram 🎮. 4) ghi đè ps5pro_x.md ≤15 dòng. Không khuyên mua/bán."
  }
 ]
