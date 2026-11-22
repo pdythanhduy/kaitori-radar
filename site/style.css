@@ -646,3 +646,8 @@ body.landq .qpick{display:none}
 .fbtn{background:var(--brand)!important;border-color:var(--brand)!important}
 /* v74: nút về đầu trang to hơn, cao hơn trên điện thoại (user 19/11: nhỏ, thấp, khó bấm) */
 @media(max-width:900px){#toTop{width:52px;height:52px;right:14px;bottom:calc(72px + env(safe-area-inset-bottom));font-size:1.45rem;background:var(--brand);color:#fff;border-color:var(--brand);box-shadow:0 4px 14px rgba(15,23,42,.28)}#toTop.show{opacity:.92}}
+
+/* v75: ảnh hộp thẻ Pokémon (user 22/11: trong nhóm mọi người toàn đăng hình có giá) */
+.c-img{width:64px;height:66px;object-fit:contain;flex:0 0 64px;border-radius:8px;background:#fff;border:1px solid var(--line,#e5e7eb)}
+.cr-img{width:34px;height:35px;object-fit:contain;vertical-align:middle;margin-right:8px;border-radius:5px;background:#fff;flex:0 0 34px}
+.cr-n{display:flex;align-items:center}

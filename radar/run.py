@@ -196,6 +196,8 @@ def aggregate(rows):
         g["names"].append(r["name"])
         if r.get("msrp"):
             g["msrp"] = r["msrp"]
+        if r.get("img") and r["cat"] == "card" and "img" not in g:
+            g["img"] = r["img"]
         cur = g["prices"].get(r["shop"])
         ck = color_key(r["name"]) if r["cat"] == "phone" else None
         if ck and cur is not None:
@@ -241,8 +243,43 @@ def aggregate(rows):
         core = [v for v in vals if med * 0.85 <= v <= med * 1.2]  # bỏ giá thấp bất thường khi tính chênh lệch
         items.append({"cat": cat, "key": key, "name": _display(cat, key, g["names"]), "prices": g["prices"],
                       "best_shop": best_shop, "best": vals[-1], "n_shops": len(vals),
-                      "spread": core[-1] - core[0] if len(core) > 1 else 0, **({"msrp": g["msrp"]} if g.get("msrp") else {})})
+                      "spread": core[-1] - core[0] if len(core) > 1 else 0, **({"msrp": g["msrp"]} if g.get("msrp") else {}),
+                      **({"img_src": g["img"]} if g.get("img") else {})})
     return items
+
+
+IMG = ROOT / "site" / "img" / "p"
+
+
+def attach_images(items, max_new=150):
+    """Ảnh hộp thẻ (user 22/11/2026): tải 1 lần ảnh thu nhỏ từ trang tiệm về site/img/p/ (tự host, không hotlink),
+    gắn it["img"] = "/img/p/<hash>.<ext>". Mỗi lượt tải tối đa max_new ảnh mới, chậm rãi."""
+    import hashlib
+    import time
+    IMG.mkdir(parents=True, exist_ok=True)
+    new = 0
+    for it in items:
+        src = it.pop("img_src", None)
+        if not src:
+            continue
+        src = src.replace("/product/thumbnail/webp/", "/product/webp/")  # ルデヤ: thumbnail 80px → bản 300px (~16KB)
+        ext = src.rsplit(".", 1)[-1].lower()
+        fn = IMG / f"{hashlib.sha1(src.encode()).hexdigest()[:16]}.{ext}"
+        if not fn.exists():
+            if new >= max_new:
+                continue
+            try:
+                r = requests.get(src, timeout=20, headers={"User-Agent": "Mozilla/5.0 (compatible; kaitori-radar/1.0)"})
+                if r.ok and r.headers.get("content-type", "").startswith("image/") and 500 < len(r.content) < 400_000:
+                    fn.write_bytes(r.content)
+                new += 1
+                time.sleep(0.3)
+            except Exception as exc:  # noqa: BLE001
+                print("  img:", exc)
+                continue
+        if fn.exists():
+            it["img"] = f"/img/p/{fn.name}"
+    print("images: new", new, "with img", sum(1 for i in items if i.get("img")))
 
 
 def write_outputs(items, status):
@@ -380,6 +417,7 @@ def main():
     if not items:
         print("no data")
         return 1
+    attach_images(items)
     cats = write_outputs(items, status)
     print("TOTAL", len(items), {k: (v["count"], v["multi"]) for k, v in cats.items()})
     if "--telegram" in sys.argv:

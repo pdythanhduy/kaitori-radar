@@ -236,8 +236,12 @@ def _rd_parse(s, cat_name):
         jan = re.search(r"JAN:\s*(\d{8,14})", blk)
         memo = re.search(r'product-card-memo">(.*?)</span>', blk, re.S)
         name = _clean(nm.group(2))
-        out.append(_row("rudeya", _rd_cat(cat_name, name), name, int(pr.group(1).replace(",", "")), nm.group(1),
-                        _clean(memo.group(1))[:40] if memo else "", jan.group(1) if jan else None))
+        r = _row("rudeya", _rd_cat(cat_name, name), name, int(pr.group(1).replace(",", "")), nm.group(1),
+                 _clean(memo.group(1))[:40] if memo else "", jan.group(1) if jan else None)
+        im = re.search(r'product-card-thumb.*?<img src="(https://kaitori-rudeya\.com/[^"]+\.(?:webp|jpg|jpeg|png))"', blk, re.S)
+        if im:
+            r["img"] = im.group(1)  # ảnh thu nhỏ (user 22/11: hộp Pokémon nên có hình) — run.py tải về /img/p/
+        out.append(r)
     return out
 
 

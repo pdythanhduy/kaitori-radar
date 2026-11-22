@@ -358,7 +358,7 @@
     const pills = [col ? "" : trend(it), vsA != null ? `<span class="trend ${vsA >= 0 ? "up" : "dn"}" title="${esc(t.msrpTip)}">🍎 Apple ${vsA >= 0 ? "+" : "−"}${yen(Math.abs(vsA))}</span>` : "", chg].filter(Boolean).join("");
     const bp = shops[0][1];
     return `<article class="card bcard">
-      <div class="c-top"><div><div class="c-name">${esc(it.name)}</div><div class="c-sub">${ICON[it.cat] || ""} ${esc(tag || t.cats[it.cat] || "")}・${t.shopsN(it.n_shops)}</div></div><div class="c-act"><button class="shr" data-id="${esc(id)}" aria-label="${esc(t.share)}" title="${esc(t.share)}"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M12 3v12"/><path d="m7 8 5-5 5 5"/></svg></button><button class="fav ${fav}" data-id="${esc(id)}" aria-label="${esc(t.watch)}" title="${esc(t.watch)}">${fav ? "♥" : "♡"}</button></div></div>
+      <div class="c-top">${it.img ? `<img class="c-img" src="${esc(it.img)}" alt="" width="64" height="66" loading="lazy" decoding="async">` : ""}<div><div class="c-name">${esc(it.name)}</div><div class="c-sub">${ICON[it.cat] || ""} ${esc(tag || t.cats[it.cat] || "")}・${t.shopsN(it.n_shops)}</div></div><div class="c-act"><button class="shr" data-id="${esc(id)}" aria-label="${esc(t.share)}" title="${esc(t.share)}"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M12 3v12"/><path d="m7 8 5-5 5 5"/></svg></button><button class="fav ${fav}" data-id="${esc(id)}" aria-label="${esc(t.watch)}" title="${esc(t.watch)}">${fav ? "♥" : "♡"}</button></div></div>
       <div class="bhero"><div class="bh-l"><div class="bh-lab">${it.n_shops > 1 ? t.sellAt(SH[bestS]?.name || "") : SH[bestS]?.name || ""}${col ? ` · ${esc(col === "_o" ? t.colOther : t.colNames[col] || col)}` : ""}</div>
         <div class="bh-p">${bestP.toLocaleString("ja-JP")}<small>円</small></div></div>${spark(it)}${col ? "" : gauge(it)}</div>
       ${pills ? `<div class="bh-pills">${pills}</div>` : ""}
@@ -378,7 +378,7 @@
     const vsA = it.msrp && /^iPhone (18|Duo)\b/.test(it.key) ? it.best - it.msrp : null;
     const k = (n) => (Math.abs(n) / 1000).toLocaleString(undefined, { maximumFractionDigits: 1 }) + "k";
     return `<div class="crow ${open ? "open" : ""}" data-id="${esc(id)}"><button class="crow-h" type="button" data-id="${esc(id)}" aria-expanded="${!!open}">
-      <span class="cr-n">${esc(it.name)}</span><span class="cr-p">${man(it.best)}</span>
+      <span class="cr-n">${it.img ? `<img class="cr-img" src="${esc(it.img)}" alt="" width="34" height="35" loading="lazy" decoding="async">` : ""}${esc(it.name)}</span><span class="cr-p">${man(it.best)}</span>
       <span class="cr-s">${it.n_shops > 1 ? SH[it.best_shop]?.name || "" : ""}${vsA != null ? ` <i class="${vsA >= 0 ? "up" : "dn"}">Apple ${vsA >= 0 ? "+" : "−"}${k(vsA)}</i>` : ""}${it.chg ? ` <i class="${it.chg > 0 ? "up" : "dn"}">${it.chg > 0 ? "▲" : "▼"}${k(it.chg)}</i>` : ""}</span>
       <span class="cr-sp">${spark(it, 64, 22)}</span></button><div class="crow-b">${open ? card(it) : ""}</div></div>`;
   }
