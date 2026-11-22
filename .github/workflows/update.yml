@@ -45,4 +45,10 @@ jobs:
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with: { path: site }
-      - uses: actions/deploy-pages@v4
+      - id: deploy1
+        uses: actions/deploy-pages@v4
+        continue-on-error: true  # 21/11: hay lỗi tạm thời "No artifacts named github-pages" → đợi rồi thử lại 1 lần
+      - if: steps.deploy1.outcome == 'failure'
+        run: sleep 45
+      - if: steps.deploy1.outcome == 'failure'
+        uses: actions/deploy-pages@v4
