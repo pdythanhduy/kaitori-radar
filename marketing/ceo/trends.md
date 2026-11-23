@@ -1,19 +1,21 @@
 # Trend nóng hôm nay (lịch săn trend ghi; bình luận + bài nhóm đọc để chọn góc)
 
-**Quét lúc 23/11 12:20 JST** (giá site/data 12:14, Thứ Hai – lễ 勤労感謝の日). Nguồn cộng đồng: bài đọc trong nhóm 32K lúc 11:30 (lượt bình luận Thảo Diệp) + từ khoá tìm trên web.
+**Quét lúc 23/11 18:25 JST** (giá site/data 18:11, lễ 勤労感謝の日). FB không đọc ở lượt này; nguồn = market-concerns.md + từ khoá tìm trên web + bình luận Thảo Diệp chiều nay.
 
-## ⚡ Giá đổi (so hôm qua, món ≥4 tiệm)
-- Box Pokémon giảm nhẹ hàng loạt 3–5%: 古代の咆哮 11,5k→11k, レイジングサーフ 15,2k→14,5k, 変幻の仮面 12k→11,5k, ワイルドフォース 12k→11,6k, メガブレイブ 8,2k→7,8k.
-- iPhone đứng giá: 18PM 256 226k (森森; Apple 239,8k), 512 260k (1丁目), 18 Pro 256 207,5k; Duo 256 354,5k (trắng 352k).
+## ⚡ Giá đổi (so hôm qua)
+- iPhone/Duo đứng giá cả ngày: 18PM 256 226k (森森), 18 Pro 256 207,5k, 18 Pro 512 241k (森森/1丁目/当番 17h), Duo 256 354,5k (vẫn dưới giá Apple 364,8k).
+- Box Pokémon giảm nhẹ 3–5% (từ trưa, không đổi thêm): レイジングサーフ 14,5k, 古代の咆哮 11k, 変幻の仮面 11,5k, メガブレイブ 7,8k.
+- Bỏ qua: 当番 "OP-17 BOX" 130k→79,2k (1 tiệm, các tiệm khác box 7–7,5k, carton 110k → số lẫn carton, không dùng).
 
-## 🗣 Đang hỏi nhiều (nhóm 32K sáng nay + web)
-1. "Lịch đỏ có tiệm nào ở Tokyo mở thu 18 Pro Max?" → đã thêm mục ngày lễ/Chủ nhật vào /guide/tiem-kaitori/ (当番 年中無休, ルデヤ mở ngày lễ nghỉ CN).
-2. Duo trắng giá kai bao nhiêu / ai hốt → trắng bị trừ 2,5k ở ルデヤ/森森 (256 352k). /guide/gia-kai-iphone-duo/.
-3. Bán PRM 256 người dùng ~23m (Kawasaki), 2 máy 46man → thấp hơn kai 226k ~3k/máy; /guide/ban-nguoi-dung-hay-kai/.
-4. Web: SX740 (đã sửa tìm màu), Galaxy A25 (trang mới /guide/gia-kai-galaxy-a25/).
+## 🗣 Đang hỏi nhiều
+1. Người mua trả "giá kai + 2sen" cho 18 Pro 512 (53K) → nêu kai 24m1 + giờ, kai+2 ≈ 26m1.
+2. Ngày lễ tiệm nào mở → /guide/tiem-kaitori/ mục ngày lễ (đã thêm trưa nay).
+3. Duo lỗ so giá Apple (market-concerns 21/11) → /guide/gia-kai-iphone-duo/ FAQ tự tính.
+4. Web: tìm Pokémon theo tên thẻ (おじょう, ブラックボルト) đều ra kết quả; không có từ khoá hỏng mới.
 
 ## 📰 Tin
-- ハドウシーカー: hạn đặt hàng trúng thăm Pokémon Center 24/11 16:59 (tinpanblog). Không có tin iPhone mới 24h.
+- Pokémon Center Online: bốc thăm bổ sung hàng 30th khoảng tháng 12, chưa có ngày (inside-games 29/9). Không thấy tin bốc thăm/再販 mới cho 24/11.
 
-## 🎯 Góc đề xuất (bình luận Thảo Diệp, không link tới 29/11)
-- Trả lời câu hỏi giờ mở cửa ngày lễ bằng tên tiệm + giờ; giá Duo theo màu; so người dùng vs kai bằng số.
+## 🎯 Góc đề xuất (Thảo Diệp, không link tới 29/11)
+- Bài hỏi mua "giá kai + x": nêu giá kai tiệm cao nhất + giờ để 2 bên tự chốt.
+- Box Pokémon giảm 3–5% sau lễ: chỉ nêu số đã qua, không dự đoán.
