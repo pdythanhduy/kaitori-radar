@@ -6,8 +6,8 @@ Tuần 1 (23–29/11): ≤5 bình luận/ngày, không link, không đăng bài.
 | Nhóm | Link | Xin ngày | Trạng thái |
 |---|---|---|---|
 | 32K | groups/807826924656140 | 22/11 23:58 | ĐÃ VÀO (duyệt ngay) |
-| 85K | groups/congdongmuabandienthoaimaytinhnhatban | 22/11 23:59 | chờ duyệt (đã trả lời: ở Osaka, mua bán ĐT; có ở Nhật) |
-| 53K | groups/713324666776820 | – | chưa xin |
-| 109K | groups/310466206520060 | – | chưa xin |
+| 85K | groups/congdongmuabandienthoaimaytinhnhatban | 22/11 23:59 | ĐÃ VÀO (duyệt trước 23/11 10:50; nội quy cấm tự đăng link) |
+| 53K | groups/713324666776820 | – | ĐÃ VÀO (đã là thành viên khi kiểm 23/11) |
+| 109K | groups/310466206520060 | 23/11 10:52 | ĐÃ VÀO (duyệt ngay) |
 
 ## Nhật ký bình luận
