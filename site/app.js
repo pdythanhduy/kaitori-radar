@@ -569,7 +569,9 @@
       const nq = (s) => s.replace(/(?:mark|mk)([2-5])(?!\d)/g, (_, d) => "mark" + ["", "", "ii", "iii", "iv", "v"][d]).replace(/prm|pro?max/g, "promax").replace(/(\d)pm(?=\d|$)/g, "$1promax")
         .replace(/^ip(?=\d)/, "iphone").replace(/iphon(?!e)/g, "iphone").replace(/dou|duoo/g, "duo")
         // 07/11: tìm tiếng Nhật kiểu "ポケモン セット 9個", "ポケモン 箱" không ra (tên hộp trên web không có chữ ポケモン)
-        .replace(/^(ポケモンカード|ポケモン|ポケカ)(?=.)/, "").replace(/セット9個?|9個?セット/g, "9種セット").replace(/箱/g, "box");
+        .replace(/^(ポケモンカード|ポケモン|ポケカ)(?=.)/, "").replace(/セット9個?|9個?セット/g, "9種セット").replace(/箱/g, "box")
+        // 23/11: "ちぇき" (gõ hiragana) không ra; tên trên web là チェキ
+        .replace(/ちぇき/g, "チェキ");
       const q0 = st.q.normalize("NFKC").toLowerCase();
       const q = nq(q0.replace(/\s/g, ""));
       // 15/11: "ipad pro m4" không ra vì tên là "iPad Pro 13インチ M4…" → cả cụm không thấy thì tìm theo từng từ (đủ mọi từ)
