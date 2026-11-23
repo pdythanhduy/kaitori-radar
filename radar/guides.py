@@ -370,6 +370,14 @@ Giờ mở cửa và ngày nghỉ có thể thay đổi, nên kiểm tra trang t
 <p class="pt-note">💡 Ở xa tiệm? Hầu hết các tiệm có <b>gửi bưu điện (郵送買取)</b>: gửi hàng đi, tiệm chuyển khoản. Trước khi đi hoặc gửi, so giá 9 tiệm ở <a href="/vi/">kaitoriprice.com/vi</a>.</p>
 <nav class="toc"><b>Khu vực:</b> {toc}</nav>
 {"".join(rows_html)}
+<h2>Ngày lễ (lịch đỏ) và Chủ nhật: tiệm nào ở Tokyo/Kanagawa mở?</h2>
+<p>23/11: nhiều người hỏi trong nhóm "lịch đỏ có tiệm nào mở thu 18 Pro Max không". Theo giờ mở cửa ghi trên trang chính thức (01/11/2026):</p>
+<ul class="tips">
+<li><b>買取当番</b> (秋葉原・川崎): <b>mở cả năm (年中無休)</b>, 11:00–19:00, nhận hàng tới 18:45.</li>
+<li><b>買取ルデヤ</b> (池袋・秋葉原・新宿・赤羽・川崎・大宮): <b>mở ngày lễ</b> (月〜土・祝 10:00–19:00), <b>nghỉ Chủ nhật</b>.</li>
+<li><b>ケータイゴッド</b> và <b>森森買取</b>: nghỉ không cố định (不定休) — xem lịch trên trang tiệm trước khi đi.</li>
+</ul>
+<p class="small">Giờ có thể đổi dịp lễ/Tết; gọi hoặc xem trang tiệm trước khi đi. Không đi được thì nhiều tiệm nhận gửi bưu điện.</p>
 <h2>Mang gì khi đi bán?</h2>
 <ul class="tips"><li>Thẻ cư trú (在留カード) hoặc bằng lái xe: bắt buộc</li><li>Máy còn nguyên seal, đủ hộp và phụ kiện</li><li>Nhiều tiệm cần đăng ký thành viên online trước (ví dụ 森森買取)</li></ul>
 <p><a href="https://www.facebook.com/groups/1118827834446963" target="_blank" rel="noopener">👥 Hỏi kinh nghiệm bán ở từng tiệm trong nhóm Facebook →</a></p>"""
