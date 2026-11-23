@@ -854,6 +854,38 @@ Tên máy trên web tiệm ghi bằng tiếng Nhật và mã máy, nên bảng g
                 "Giá kai máy game mới ở các tiệm Nhật: Switch 2 bản Nhật / đa ngôn ngữ, PS5 Slim, PS5 Pro, Portal, Steam Machine. Cập nhật mỗi giờ.",
                 "Giá máy game", "🎮 Giá thu mua máy game hôm nay", body_game)
 
+    # Galaxy A25 (23/11: món được tìm/vào nhiều nhất 22/11 — "galaxy a25", "galaxy a25 ymobile"; máy hay có giá rẻ khi chuyển mạng)
+    a25 = sorted([i for i in phones if "Galaxy A25" in i["name"] and i["n_shops"] >= 1], key=lambda i: (-i["n_shops"], -i["best"]))
+    if a25:
+        a_rows = []
+        for it in a25[:12]:
+            ps = sorted([kv for kv in it["prices"].items() if kv[1] and kv[1].get("price")], key=lambda kv: -kv[1]["price"])
+            link = f'<a href="/p/{it["_slug"]}/">{e(it["name"].strip())}</a>' if it.get("_slug") else e(it["name"].strip())
+            a_rows.append(f"<tr><td>{link}</td><td><b>{_yen(ps[0][1]['price'])}</b><br><small>{e(sname(ps[0][0]))}</small></td>"
+                          f"<td>{_yen(ps[-1][1]['price'])}</td><td>{it['n_shops']}</td></tr>")
+        top = a25[0]
+        body_a25 = f"""
+<p class="upd">Giá cập nhật: {upd} JST (tự động mỗi giờ)</p>
+<p>Giá thu mua <b>Galaxy A25 5G</b> mới chưa dùng ở các tiệm kaitori Nhật. Mỗi nhà mạng bán một mã máy khác nhau, và tiệm ghi giá theo
+<b>mã máy in trên hộp</b> (ví dụ SC-53F, SCG33, SM-A253…), nên hãy đối chiếu mã trên hộp với tên trong bảng.</p>
+<h2>Giá Galaxy A25 từng mã máy</h2>
+<div class="tw"><table class="pt"><thead><tr><th>Tên tiệm ghi</th><th>Cao nhất</th><th>Thấp nhất</th><th>Số tiệm</th></tr></thead><tbody>{''.join(a_rows)}</tbody></table></div>
+<h2>Điều kiện thu mua cần biết</h2>
+<ul class="tips">
+<li><b>Máy mới chưa kích hoạt</b> được giá nhất; đã dùng hoặc mất hộp/phụ kiện thì thấp hơn hoặc tiệm báo giá riêng.</li>
+<li><b>利用制限 (hạn chế nhà mạng):</b> máy mua trả góp còn nợ thường bị ghi △ — nhiều tiệm thu thấp hơn hoặc không thu, xem ghi chú từng tiệm.</li>
+<li><b>Khoá SIM:</b> máy nhà mạng bán từ 10/2021 đều không khoá SIM; máy cũ hơn nên mở khoá trước khi bán.</li>
+</ul>
+<p class="cta"><a href="/vi/?q=galaxy%20a25">Xem giá Galaxy A25 ở tất cả tiệm →</a></p>
+{FB}
+{vi_faq([("Galaxy A25 bán kai được bao nhiêu?", f"Lúc {upd} JST giá cao nhất {_yen(top['best'])} ({sname(top['best_shop'])}) cho {top['name'].strip()}, {top['n_shops']} tiệm có giá. Bảng trên có từng mã máy."),
+         ("Máy Y!mobile / docomo / au / 楽天 có giá khác nhau không?", "Có thể khác vì tiệm ghi giá theo mã máy. Tìm đúng mã in trên hộp trong bảng trên, hoặc gõ 'galaxy a25' vào ô tìm trên web."),
+         ("Máy còn trả góp (利用制限 △) có bán được không?", "Một số tiệm vẫn thu nhưng trừ tiền hoặc chỉ thu máy ○; xem ghi chú trên trang từng sản phẩm.")])}
+<p class="small">Giá là giá công khai trên web các tiệm cho máy mới; giá thực tế có thể khác theo tình trạng máy. Không phải lời khuyên mua bán hay đầu tư.</p>"""
+        vi_page("/guide/gia-kai-galaxy-a25/", "Giá kai Galaxy A25 hôm nay ở các tiệm Nhật (cập nhật mỗi giờ) | Kaitori Price",
+                "Giá thu mua Galaxy A25 5G mới ở các tiệm kaitori Nhật theo từng mã máy (SC-53F, SCG33, SM-A253…). Tự cập nhật mỗi giờ.",
+                "Giá Galaxy A25", "📱 Giá thu mua Galaxy A25 hôm nay", body_a25)
+
     # ---------------------------------------------------------------- 10. Lịch phát hành / bốc thăm (VI) — 05/11/2026, dữ liệu radar/events.json
     import json as _json
     from pathlib import Path as _Path
@@ -949,6 +981,7 @@ Mỗi mục có nguồn; lịch bốc thăm của từng cửa hàng hay đổi,
         ("shop", "🏪 Bán cho tiệm", [card("/guide/lich-pokemon/", "📅", "Lịch phát hành & bốc thăm thẻ Pokémon", "Ngày bán, bốc thăm sắp tới + giá kai hiện tại"),
                                    card("/guide/gia-kai-pokemon-box/", "🃏", "Giá thu mua hộp thẻ Pokémon hôm nay", "Tên gọi trong nhóm (Box 30th, set 9…) → giá từng tiệm"),
                                    card("/guide/gia-kai-may-game/", "🎮", "Giá thu mua máy game hôm nay", "Switch 2, PS5, PS5 Pro, Portal… → giá từng tiệm"),
+                                   card("/guide/gia-kai-galaxy-a25/", "📱", "Giá thu mua Galaxy A25 hôm nay", "Từng mã máy (SC-53F, SCG33, SM-A253…) → giá từng tiệm"),
                                    card("/guide/tiem-kaitori/", "📍", "Danh sách tiệm kaitori (Tokyo, Osaka, Nagoya)",
                                          "Địa chỉ, giờ mở cửa, ga gần nhất, link bản đồ của các tiệm web đang so giá")]
                                    + [vcard(p) for p in ["/guide/yoyaku-kaitori/", "/guide/pokeca-box-kaitori/"] if p in have]),
