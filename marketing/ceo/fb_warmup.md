@@ -11,3 +11,4 @@ Tuần 1 (23–29/11): ≤5 bình luận/ngày, không link, không đăng bài.
 | 109K | groups/310466206520060 | 23/11 10:52 | ĐÃ VÀO (duyệt ngay) |
 
 ## Nhật ký bình luận
+- 23/11 11:40 · 32K · facebook.com/groups/807826924656140/permalink/1468896795215813/ (HeartyGrape352 "Duo trắng giá kai ai hốt") · "duo trắng nay kai cũng hạ r b ơi, 256 trắng ルデヤ với 森森 tầm 35m2, 1丁目 35m4 (giá web tiệm lúc 11h). 512 trắng khoảng 39m1-39m2" · không link · hôm nay 1/5
