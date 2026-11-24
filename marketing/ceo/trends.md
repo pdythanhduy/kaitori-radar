@@ -1,22 +1,20 @@
 # Trend nóng hôm nay (lịch săn trend ghi; bình luận + bài nhóm đọc để chọn góc)
 
-**Quét lúc 24/11 12:25 JST** (giá site/data 12:11). FB không đọc ở lượt này; nguồn = market-concerns.md + từ khoá tìm trên web + bình luận Thảo Diệp sáng nay.
+**Quét lúc 24/11 18:25 JST** (giá site/data 18:12). Lượt này không đọc nhóm FB; nguồn là market-concerns.md, từ khoá tìm trên web và các bình luận của Thảo Diệp hôm nay.
 
-## ⚡ Giá đổi (so hôm qua)
-- **Box 30th CELEBRATION giảm 5%:** cao nhất 18k (ホムラ) → 17,1k (モバイル一番); ホムラ tự hạ 18k → 16,2k. Các tiệm: 森森 17k, 1丁目 16,5k, 当番 16,1k, ルデヤ 14k.
-- FUTURISTIC BOX: ホムラ 44k → 40k, nhưng モバイル一番 45k / 1丁目 44k giữ giá (森森 31k). Deck エーフィ・ブラッキー ホムラ 13,4k → 10,5k.
-- Box cũ ホムラ hạ 1–3k (151, 25th, ロストアビス, 蒼空ストリーム). Trước ngày ra ハドウシーカー 27/11.
-- iPhone đứng giá: 18PM 256 227k (森森, +1k), 18 Pro 256 207,5k, Duo 256 354k, 512 395k.
-- Bỏ qua: EB05 ルデヤ 143k → 111k (1 tiệm, có thể là carton).
+## ⚡ Giá đổi (so trưa / hôm qua)
+- Món hot đứng giá từ trưa. iPhone 18PM 256 227,1k, 18 Pro 256 208,6k (+1,1k), Duo 256 354,1k, 512 395,1k. Switch 2 マリカセット 59,1k.
+- Pokémon: box 30th 17,1k (vẫn sau đợt giảm 5% sáng nay). FUTURISTIC 45k, deck エーフィ・ブラッキー 12k, set 9 loại 13k.
+- Cả ngày chỉ đồ âm thanh/máy ảnh ít tiệm đổi ≥2%: BOSE QC Ultra Earbuds 14k → 17,5k, G7X II 168k → 160k. Không có món hot nào.
 
 ## 🗣 Đang hỏi nhiều
-1. Máy Android nội địa TQ (Find X9 Ultra, Xiaomi 17 Ultra) bán kai được không → nêu giá bản Nhật mới làm mốc, nói rõ nội địa/cũ thu thấp hơn.
-2. Người mua trả "giá kai + x" (18 Pro 512, 18PM màu đỏ) → nêu giá tiệm cao nhất + màu + giờ.
-3. Web: "a25" (có kết quả); チェキ/instax → trang mới /guide/gia-kai-instax-cheki/.
+1. Người mua hỏi "tài chính Xm có kiếm được 18PM 512 không" → nêu giá thu cao nhất (26m01 森森, giờ) để họ tự so.
+2. Người bán đặt giá "kai + x" cho 18PM 256 đỏ/xanh (22,7–23,5m) → nêu giá tiệm theo màu + giờ.
+3. Web: vào từ link chủ yếu iPhone 18 Pro Max (8) và 30th CELEBRATION (2). Tìm "a25" đều có kết quả.
 
 ## 📰 Tin
-- ハドウシーカー ra 27/11; hạn đặt hàng trúng thăm Pokémon Center hôm nay 16:59, giao 25–28/11 (pokemoncenter-online.com, tinpanblog). Amazon bốc thăm dạng mời mua.
+- ハドウシーカー: các trang tin nói ra 27/11 (chưa có công bố chính thức), box 30 gói 6.000円; altema dự báo giá thu giảm dần nếu tái bản nhiều, ví dụ set trước ストームエメラルダ 300 → 150円/gói (altema.jp/pokemoncard/hadouseeker, price-base.com/useful/?p=323685). Web chưa có giá thu set này (sẽ có khi tiệm niêm yết).
 
 ## 🎯 Góc đề xuất (Thảo Diệp, không link tới 29/11)
-- Box 30th đang hạ dần trước khi set mới ra: chỉ nêu giá từng tiệm + giờ, không đoán đáy.
-- Ai hỏi Android nội địa: giá bản Nhật làm mốc + nhắc tiệm có thể không thu.
+- Ai hỏi ハドウシーカー: chưa có giá thu, chờ tiệm niêm yết sau 27/11; không đoán.
+- Người hỏi ngân sách mua iPhone: so với giá thu cao nhất + giờ, không khuyên mua/bán.
