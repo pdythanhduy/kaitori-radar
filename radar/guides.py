@@ -894,6 +894,39 @@ Tên máy trên web tiệm ghi bằng tiếng Nhật và mã máy, nên bảng g
                 "Giá thu mua Galaxy A25 5G mới ở các tiệm kaitori Nhật theo từng mã máy (SC-53F, SCG33, SM-A253…). Tự cập nhật mỗi giờ.",
                 "Giá Galaxy A25", "📱 Giá thu mua Galaxy A25 hôm nay", body_a25)
 
+    # instax / チェキ (24/11: 23/11 tối có tìm "instax mini" ×2, "ちぇき", quét mã vạch phim instax, bấm 1丁目/ルデヤ; ~80 món chưa có trang)
+    chk = sorted([i for i in items.get("camera", []) if ("instax" in i["name"].lower() or "チェキ" in i["name"]) and i["n_shops"] >= 1],
+                 key=lambda i: (-i["n_shops"], -i["best"]))
+    if chk:
+        c_rows = []
+        for it in chk[:20]:
+            ps = sorted([kv for kv in it["prices"].items() if kv[1] and kv[1].get("price")], key=lambda kv: -kv[1]["price"])
+            link = f'<a href="/p/{it["_slug"]}/">{e(it["name"].strip())}</a>' if it.get("_slug") else e(it["name"].strip())
+            c_rows.append(f"<tr><td>{link}</td><td><b>{_yen(ps[0][1]['price'])}</b><br><small>{e(sname(ps[0][0]))}</small></td>"
+                          f"<td>{_yen(ps[-1][1]['price'])}</td><td>{it['n_shops']}</td></tr>")
+        top = chk[0]
+        body_chk = f"""
+<p class="upd">Giá cập nhật: {upd} JST (tự động mỗi giờ)</p>
+<p>Giá thu mua <b>máy ảnh lấy liền チェキ (FUJIFILM instax)</b> và phim instax mới chưa mở ở các tiệm kaitori Nhật:
+instax mini Evo, mini 12, mini 99, WIDE, SQUARE… Tiệm ghi tên tiếng Nhật kèm màu, mỗi màu có thể một giá. Bảng xếp theo số tiệm có giá.</p>
+<h2>Giá チェキ / instax từng mẫu</h2>
+<div class="tw"><table class="pt"><thead><tr><th>Tên tiệm ghi</th><th>Cao nhất</th><th>Thấp nhất</th><th>Số tiệm</th></tr></thead><tbody>{''.join(c_rows)}</tbody></table></div>
+<h2>Điều kiện thu mua cần biết</h2>
+<ul class="tips">
+<li><b>Mới chưa mở (未開封)</b> mới được giá như bảng; hộp đã mở, đã dùng thì thấp hơn hoặc tiệm báo giá riêng.</li>
+<li><b>Màu khác giá:</b> cùng một mẫu (vd mini Evo) màu hồng, nâu, đen có thể chênh nhau nhiều — xem đúng dòng màu của bạn.</li>
+<li><b>Phim instax</b> (フィルム) cũng có tiệm thu; gõ "instax フィルム" vào ô tìm hoặc quét mã vạch trên hộp.</li>
+</ul>
+<p class="cta"><a href="/vi/?q=instax">Xem giá チェキ / instax ở tất cả tiệm →</a></p>
+{FB}
+{vi_faq([("Máy チェキ / instax bán kai được bao nhiêu?", f"Lúc {upd} JST mẫu có nhiều tiệm giá nhất là {top['name'].strip()}: cao nhất {_yen(top['best'])} ({sname(top['best_shop'])}), {top['n_shops']} tiệm có giá. Bảng trên có từng mẫu và màu."),
+         ("Gõ tìm チェキ thế nào?", "Gõ 'instax', 'チェキ' hoặc 'ちぇき', kèm tên mẫu (mini evo, wide…) vào ô tìm trên web; hoặc bấm nút quét mã vạch trên hộp."),
+         ("Máy đã dùng có bán được không?", "Nhiều tiệm vẫn thu nhưng giá thấp hơn hàng mới; bảng trên chỉ là giá hàng mới chưa mở.")])}
+<p class="small">Giá là giá công khai trên web các tiệm cho hàng mới chưa mở; giá thực tế có thể khác. Không phải lời khuyên mua bán hay đầu tư.</p>"""
+        vi_page("/guide/gia-kai-instax-cheki/", "Giá kai máy チェキ instax hôm nay ở các tiệm Nhật (cập nhật mỗi giờ) | Kaitori Price",
+                "Giá thu mua máy ảnh チェキ FUJIFILM instax (mini Evo, mini 12, mini 99, WIDE…) và phim instax mới ở các tiệm kaitori Nhật. Tự cập nhật mỗi giờ.",
+                "Giá チェキ instax", "📸 Giá thu mua チェキ (instax) hôm nay", body_chk)
+
     # ---------------------------------------------------------------- 10. Lịch phát hành / bốc thăm (VI) — 05/11/2026, dữ liệu radar/events.json
     import json as _json
     from pathlib import Path as _Path
@@ -990,6 +1023,7 @@ Mỗi mục có nguồn; lịch bốc thăm của từng cửa hàng hay đổi,
                                    card("/guide/gia-kai-pokemon-box/", "🃏", "Giá thu mua hộp thẻ Pokémon hôm nay", "Tên gọi trong nhóm (Box 30th, set 9…) → giá từng tiệm"),
                                    card("/guide/gia-kai-may-game/", "🎮", "Giá thu mua máy game hôm nay", "Switch 2, PS5, PS5 Pro, Portal… → giá từng tiệm"),
                                    card("/guide/gia-kai-galaxy-a25/", "📱", "Giá thu mua Galaxy A25 hôm nay", "Từng mã máy (SC-53F, SCG33, SM-A253…) → giá từng tiệm"),
+                                   card("/guide/gia-kai-instax-cheki/", "📸", "Giá thu mua チェキ (instax) hôm nay", "mini Evo, mini 99, WIDE… từng màu → giá từng tiệm"),
                                    card("/guide/tiem-kaitori/", "📍", "Danh sách tiệm kaitori (Tokyo, Osaka, Nagoya)",
                                          "Địa chỉ, giờ mở cửa, ga gần nhất, link bản đồ của các tiệm web đang so giá")]
                                    + [vcard(p) for p in ["/guide/yoyaku-kaitori/", "/guide/pokeca-box-kaitori/"] if p in have]),
