@@ -1,21 +1,22 @@
 # Trend nóng hôm nay (lịch săn trend ghi; bình luận + bài nhóm đọc để chọn góc)
 
-**Quét lúc 23/11 18:25 JST** (giá site/data 18:11, lễ 勤労感謝の日). FB không đọc ở lượt này; nguồn = market-concerns.md + từ khoá tìm trên web + bình luận Thảo Diệp chiều nay.
+**Quét lúc 24/11 12:25 JST** (giá site/data 12:11). FB không đọc ở lượt này; nguồn = market-concerns.md + từ khoá tìm trên web + bình luận Thảo Diệp sáng nay.
 
 ## ⚡ Giá đổi (so hôm qua)
-- iPhone/Duo đứng giá cả ngày: 18PM 256 226k (森森), 18 Pro 256 207,5k, 18 Pro 512 241k (森森/1丁目/当番 17h), Duo 256 354,5k (vẫn dưới giá Apple 364,8k).
-- Box Pokémon giảm nhẹ 3–5% (từ trưa, không đổi thêm): レイジングサーフ 14,5k, 古代の咆哮 11k, 変幻の仮面 11,5k, メガブレイブ 7,8k.
-- Bỏ qua: 当番 "OP-17 BOX" 130k→79,2k (1 tiệm, các tiệm khác box 7–7,5k, carton 110k → số lẫn carton, không dùng).
+- **Box 30th CELEBRATION giảm 5%:** cao nhất 18k (ホムラ) → 17,1k (モバイル一番); ホムラ tự hạ 18k → 16,2k. Các tiệm: 森森 17k, 1丁目 16,5k, 当番 16,1k, ルデヤ 14k.
+- FUTURISTIC BOX: ホムラ 44k → 40k, nhưng モバイル一番 45k / 1丁目 44k giữ giá (森森 31k). Deck エーフィ・ブラッキー ホムラ 13,4k → 10,5k.
+- Box cũ ホムラ hạ 1–3k (151, 25th, ロストアビス, 蒼空ストリーム). Trước ngày ra ハドウシーカー 27/11.
+- iPhone đứng giá: 18PM 256 227k (森森, +1k), 18 Pro 256 207,5k, Duo 256 354k, 512 395k.
+- Bỏ qua: EB05 ルデヤ 143k → 111k (1 tiệm, có thể là carton).
 
 ## 🗣 Đang hỏi nhiều
-1. Người mua trả "giá kai + 2sen" cho 18 Pro 512 (53K) → nêu kai 24m1 + giờ, kai+2 ≈ 26m1.
-2. Ngày lễ tiệm nào mở → /guide/tiem-kaitori/ mục ngày lễ (đã thêm trưa nay).
-3. Duo lỗ so giá Apple (market-concerns 21/11) → /guide/gia-kai-iphone-duo/ FAQ tự tính.
-4. Web: tìm Pokémon theo tên thẻ (おじょう, ブラックボルト) đều ra kết quả; không có từ khoá hỏng mới.
+1. Máy Android nội địa TQ (Find X9 Ultra, Xiaomi 17 Ultra) bán kai được không → nêu giá bản Nhật mới làm mốc, nói rõ nội địa/cũ thu thấp hơn.
+2. Người mua trả "giá kai + x" (18 Pro 512, 18PM màu đỏ) → nêu giá tiệm cao nhất + màu + giờ.
+3. Web: "a25" (có kết quả); チェキ/instax → trang mới /guide/gia-kai-instax-cheki/.
 
 ## 📰 Tin
-- Pokémon Center Online: bốc thăm bổ sung hàng 30th khoảng tháng 12, chưa có ngày (inside-games 29/9). Không thấy tin bốc thăm/再販 mới cho 24/11.
+- ハドウシーカー ra 27/11; hạn đặt hàng trúng thăm Pokémon Center hôm nay 16:59, giao 25–28/11 (pokemoncenter-online.com, tinpanblog). Amazon bốc thăm dạng mời mua.
 
 ## 🎯 Góc đề xuất (Thảo Diệp, không link tới 29/11)
-- Bài hỏi mua "giá kai + x": nêu giá kai tiệm cao nhất + giờ để 2 bên tự chốt.
-- Box Pokémon giảm 3–5% sau lễ: chỉ nêu số đã qua, không dự đoán.
+- Box 30th đang hạ dần trước khi set mới ra: chỉ nêu giá từng tiệm + giờ, không đoán đáy.
+- Ai hỏi Android nội địa: giá bản Nhật làm mốc + nhắc tiệm có thể không thu.
