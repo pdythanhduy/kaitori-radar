@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24 21:41",
+ "updated": "2026-11-24 22:12",
  "shops": {
   "morimori": {
    "name": "森森買取",
@@ -217,44 +217,44 @@
    "ts": "2026-11-24 14:40"
   },
   "mobile_ichiban:1": {
-   "ok": true,
-   "n": 10,
-   "ts": "2026-11-24 21:41"
+   "ok": false,
+   "err": "HTTPSConnectionPool(host='www.mobile-ichiban.com', port=443): Max retries exceeded with url: /Prod/1 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.mobile-ichiban.com', port=443) at 0x739f9",
+   "ts": "2026-11-24 22:11"
   },
   "mobile_ichiban:3": {
-   "ok": true,
-   "n": 20,
-   "ts": "2026-11-24 21:41"
+   "ok": false,
+   "err": "HTTPSConnectionPool(host='www.mobile-ichiban.com', port=443): Max retries exceeded with url: /Prod/3 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.mobile-ichiban.com', port=443) at 0x739f9",
+   "ts": "2026-11-24 22:11"
   },
   "homura:box": {
    "ok": true,
    "n": 115,
-   "ts": "2026-11-24 21:41"
+   "ts": "2026-11-24 22:12"
   },
   "morimori:0301": {
    "ok": true,
    "n": 211,
-   "ts": "2026-11-24 21:37"
+   "ts": "2026-11-24 22:07"
   },
   "morimori:0101": {
    "ok": true,
    "n": 123,
-   "ts": "2026-11-24 21:37"
+   "ts": "2026-11-24 22:07"
   },
   "morimori:0104": {
    "ok": true,
    "n": 74,
-   "ts": "2026-11-24 21:38"
+   "ts": "2026-11-24 22:08"
   },
   "morimori:2401010": {
    "ok": true,
    "n": 7,
-   "ts": "2026-11-24 21:38"
+   "ts": "2026-11-24 22:08"
   },
   "morimori:2401001": {
    "ok": true,
    "n": 27,
-   "ts": "2026-11-24 21:38"
+   "ts": "2026-11-24 22:08"
   },
   "rudeya:full": {
    "ok": true,
@@ -264,7 +264,7 @@
   "rudeya:hot": {
    "ok": true,
    "n": 304,
-   "ts": "2026-11-24 21:38"
+   "ts": "2026-11-24 22:08"
   },
   "panda:full": {
    "ok": true,
@@ -289,27 +289,27 @@
   "panda:hot": {
    "ok": true,
    "n": 338,
-   "ts": "2026-11-24 21:38"
+   "ts": "2026-11-24 22:08"
   },
   "guestmobile:hot": {
    "ok": true,
    "n": 143,
-   "ts": "2026-11-24 21:40"
+   "ts": "2026-11-24 22:10"
   },
   "toban:hot": {
    "ok": true,
    "n": 1218,
-   "ts": "2026-11-24 21:40"
+   "ts": "2026-11-24 22:10"
   },
   "keitaigod:hot": {
    "ok": true,
    "n": 297,
-   "ts": "2026-11-24 21:40"
+   "ts": "2026-11-24 22:10"
   },
   "ichome:hot": {
    "ok": true,
    "n": 391,
-   "ts": "2026-11-24 21:41"
+   "ts": "2026-11-24 22:12"
   },
   "ichome:full": {
    "ok": true,
