@@ -571,7 +571,9 @@
         // 07/11: tìm tiếng Nhật kiểu "ポケモン セット 9個", "ポケモン 箱" không ra (tên hộp trên web không có chữ ポケモン)
         .replace(/^(ポケモンカード|ポケモン|ポケカ)(?=.)/, "").replace(/セット9個?|9個?セット/g, "9種セット").replace(/箱/g, "box")
         // 23/11: "ちぇき" (gõ hiragana) không ra; tên trên web là チェキ
-        .replace(/ちぇき/g, "チェキ");
+        .replace(/ちぇき/g, "チェキ")
+        // 25/11: bộ gõ Telex lọt dấu khi gõ "powershot" ("poư", "poơers"); "psv1" = PowerShot V1
+        .replace(/oơ/g, "ow").replace(/ơ/g, "ow").replace(/ư/g, "w").replace(/^ps(?=v\d)/, "powershot");
       const q0 = st.q.normalize("NFKC").toLowerCase();
       const q = nq(q0.replace(/\s/g, ""));
       // 15/11: "ipad pro m4" không ra vì tên là "iPad Pro 13インチ M4…" → cả cụm không thấy thì tìm theo từng từ (đủ mọi từ)
