@@ -927,6 +927,44 @@ instax mini Evo, mini 12, mini 99, WIDE, SQUARE… Tiệm ghi tên tiếng Nhậ
                 "Giá thu mua máy ảnh チェキ FUJIFILM instax (mini Evo, mini 12, mini 99, WIDE…) và phim instax mới ở các tiệm kaitori Nhật. Tự cập nhật mỗi giờ.",
                 "Giá チェキ instax", "📸 Giá thu mua チェキ (instax) hôm nay", body_chk)
 
+    # box thẻ One Piece (25/11: người dùng tìm "op13", "op-13" ×3 ngày 24/11; chưa có trang VI). Chỉ món ≥3 tiệm để tránh số lạ (carton, 1 tiệm)
+    import re as _re
+    def _opcode(n):
+        m = _re.match(r"\s*【(OP|EB|PRB)-(\d+)】", n)
+        return (m.group(1), int(m.group(2))) if m else None
+    opb = sorted([i for i in items.get("card", []) if _opcode(i["name"]) and i["n_shops"] >= 3],
+                 key=lambda i: ({"OP": 0, "EB": 1, "PRB": 2}[_opcode(i["name"])[0]], -_opcode(i["name"])[1]))
+    if opb:
+        o_rows = []
+        for it in opb:
+            ps = sorted([kv for kv in it["prices"].items() if kv[1] and kv[1].get("price")], key=lambda kv: -kv[1]["price"])
+            link = f'<a href="/p/{it["_slug"]}/">{e(it["name"].strip())}</a>' if it.get("_slug") else e(it["name"].strip())
+            o_rows.append(f"<tr><td>{link}</td><td><b>{_yen(ps[0][1]['price'])}</b><br><small>{e(sname(ps[0][0]))}</small></td>"
+                          f"<td>{_yen(ps[-1][1]['price'])}</td><td>{it['n_shops']}</td></tr>")
+        top = max(opb, key=lambda i: i["best"])
+        new = opb[0]
+        body_op = f"""
+<p class="upd">Giá cập nhật: {upd} JST (tự động mỗi giờ)</p>
+<p>Giá thu mua <b>box thẻ One Piece (ワンピースカード)</b> còn màng co ở các tiệm kaitori Nhật: bản thường OP-xx, bản đặc biệt EB-xx và PRB.
+Tiệm ghi mã set trong ngoặc 【】, ví dụ 【OP-13】受け継がれる意志. Bảng xếp từ set mới nhất, chỉ gồm box có từ 3 tiệm báo giá.</p>
+<h2>Giá box One Piece từng set</h2>
+<div class="tw"><table class="pt"><thead><tr><th>Tên tiệm ghi</th><th>Cao nhất</th><th>Thấp nhất</th><th>Số tiệm</th></tr></thead><tbody>{''.join(o_rows)}</tbody></table></div>
+<h2>Điều kiện thu mua cần biết</h2>
+<ul class="tips">
+<li><b>Còn màng co (シュリンク付き)</b> mới được giá như bảng; box đã bóc màng hoặc móp hộp thường bị trừ nhiều hoặc không thu.</li>
+<li><b>Box lẻ khác carton:</b> giá trong bảng là 1 box; carton (カートン, 12 box) tiệm báo giá riêng.</li>
+<li>Set mới ra giá hay đổi mạnh vài ngày đầu — xem giá ngay trước khi mang đi.</li>
+</ul>
+<p class="cta"><a href="/vi/?q=OP-">Xem giá box One Piece ở tất cả tiệm →</a></p>
+{FB}
+{vi_faq([("Box One Piece set mới nhất bán kai được bao nhiêu?", f"Lúc {upd} JST box {new['name'].strip()}: cao nhất {_yen(new['best'])} ({sname(new['best_shop'])}), {new['n_shops']} tiệm có giá."),
+         ("Box nào đang được giá cao nhất?", f"Trong các box có từ 3 tiệm báo giá, cao nhất là {top['name'].strip()}: {_yen(top['best'])} ({sname(top['best_shop'])}) lúc {upd} JST."),
+         ("Gõ tìm box One Piece thế nào?", "Gõ mã set như 'op13', 'op-13', 'eb04' hoặc tên tiếng Nhật vào ô tìm trên web.")])}
+<p class="small">Giá là giá công khai trên web các tiệm cho box mới còn màng; giá thực tế có thể khác. Không phải lời khuyên mua bán hay đầu tư.</p>"""
+        vi_page("/guide/gia-kai-box-one-piece/", "Giá kai box thẻ One Piece hôm nay (OP-xx, EB-xx) ở các tiệm Nhật | Kaitori Price",
+                "Giá thu mua box thẻ One Piece ワンピースカード còn màng (OP-18, OP-17, OP-13, EB-04, PRB…) ở các tiệm kaitori Nhật. Tự cập nhật mỗi giờ.",
+                "Giá box One Piece", "🏴‍☠️ Giá thu mua box thẻ One Piece hôm nay", body_op)
+
     # ---------------------------------------------------------------- 10. Lịch phát hành / bốc thăm (VI) — 05/11/2026, dữ liệu radar/events.json
     import json as _json
     from pathlib import Path as _Path
@@ -1024,6 +1062,7 @@ Mỗi mục có nguồn; lịch bốc thăm của từng cửa hàng hay đổi,
                                    card("/guide/gia-kai-may-game/", "🎮", "Giá thu mua máy game hôm nay", "Switch 2, PS5, PS5 Pro, Portal… → giá từng tiệm"),
                                    card("/guide/gia-kai-galaxy-a25/", "📱", "Giá thu mua Galaxy A25 hôm nay", "Từng mã máy (SC-53F, SCG33, SM-A253…) → giá từng tiệm"),
                                    card("/guide/gia-kai-instax-cheki/", "📸", "Giá thu mua チェキ (instax) hôm nay", "mini Evo, mini 99, WIDE… từng màu → giá từng tiệm"),
+                                   card("/guide/gia-kai-box-one-piece/", "🏴‍☠️", "Giá thu mua box thẻ One Piece hôm nay", "OP-xx, EB-xx, PRB từng set → giá từng tiệm"),
                                    card("/guide/tiem-kaitori/", "📍", "Danh sách tiệm kaitori (Tokyo, Osaka, Nagoya)",
                                          "Địa chỉ, giờ mở cửa, ga gần nhất, link bản đồ của các tiệm web đang so giá")]
                                    + [vcard(p) for p in ["/guide/yoyaku-kaitori/", "/guide/pokeca-box-kaitori/"] if p in have]),
