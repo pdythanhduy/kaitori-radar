@@ -1,20 +1,20 @@
 # Trend nóng hôm nay (lịch săn trend ghi; bình luận + bài nhóm đọc để chọn góc)
 
-**Quét lúc 24/11 18:25 JST** (giá site/data 18:12). Lượt này không đọc nhóm FB; nguồn là market-concerns.md, từ khoá tìm trên web và các bình luận của Thảo Diệp hôm nay.
+**Quét lúc 25/11 12:25 JST** (giá site/data 12:11). Lượt này không đọc nhóm FB; nguồn là market-concerns.md, từ khoá tìm trên web và các bình luận của Thảo Diệp.
 
-## ⚡ Giá đổi (so trưa / hôm qua)
-- Món hot đứng giá từ trưa. iPhone 18PM 256 227,1k, 18 Pro 256 208,6k (+1,1k), Duo 256 354,1k, 512 395,1k. Switch 2 マリカセット 59,1k.
-- Pokémon: box 30th 17,1k (vẫn sau đợt giảm 5% sáng nay). FUTURISTIC 45k, deck エーフィ・ブラッキー 12k, set 9 loại 13k.
-- Cả ngày chỉ đồ âm thanh/máy ảnh ít tiệm đổi ≥2%: BOSE QC Ultra Earbuds 14k → 17,5k, G7X II 168k → 160k. Không có món hot nào.
+## ⚡ Giá đổi (so hôm qua)
+- Món hot đứng giá: 18PM 256 227,6k (森森, +500), 18 Pro 256 209,1k (+500), Duo 256 354,1k, 512 395,1k. Box 30th 17,1k, FUTURISTIC 45k, Switch 2 マリカセット 59,1k.
+- Đổi ≥2% chỉ ở máy ảnh/tai nghe ít tiệm (Z50II kit 163,8k → 156,5k, GR IV Mono 220k → 215k).
 
 ## 🗣 Đang hỏi nhiều
-1. Người mua hỏi "tài chính Xm có kiếm được 18PM 512 không" → nêu giá thu cao nhất (26m01 森森, giờ) để họ tự so.
-2. Người bán đặt giá "kai + x" cho 18PM 256 đỏ/xanh (22,7–23,5m) → nêu giá tiệm theo màu + giờ.
-3. Web: vào từ link chủ yếu iPhone 18 Pro Max (8) và 30th CELEBRATION (2). Tìm "a25" đều có kết quả.
+1. Người mua đặt giá "về dùng 22,5" cho 18PM đen → nêu giá tiệm thu đen (森森 22m51, ルデヤ/パンダ 22m4).
+2. Người bán gấp 18PM đỏ, 17PM 256/512 nguyên seal → giá tiệm cao nhất theo màu + giờ.
+3. Web: tìm "30", "シャイニー", vào từ link OP-13 → trang mới /guide/gia-kai-box-one-piece/.
 
 ## 📰 Tin
-- ハドウシーカー: các trang tin nói ra 27/11 (chưa có công bố chính thức), box 30 gói 6.000円; altema dự báo giá thu giảm dần nếu tái bản nhiều, ví dụ set trước ストームエメラルダ 300 → 150円/gói (altema.jp/pokemoncard/hadouseeker, price-base.com/useful/?p=323685). Web chưa có giá thu set này (sẽ có khi tiệm niêm yết).
+- Amazon Black Friday 2026: sale trước 27–29/11, sale chính 30/11–7/12; có iPhone 17 Pro Max, PS5 trong danh sách hàng giảm (phileweb.com 19/11). Mức giảm chưa công bố.
+- ハドウシーカー ra 27/11 10:00; bốc thăm PCO/ヨドバシ đã đóng, Amazon có bốc thăm (pokemoncenter-online.com, tinpanblog).
 
 ## 🎯 Góc đề xuất (Thảo Diệp, không link tới 29/11)
-- Ai hỏi ハドウシーカー: chưa có giá thu, chờ tiệm niêm yết sau 27/11; không đoán.
-- Người hỏi ngân sách mua iPhone: so với giá thu cao nhất + giờ, không khuyên mua/bán.
+- Ai hỏi Black Friday có làm giá kai 17PM/PS5 giảm không: nêu ngày sale + "chưa biết mức giảm", giá tiệm hiện tại + giờ; không đoán.
+- ハドウシーカー: chưa có giá thu, chờ tiệm niêm yết sau 27/11.
