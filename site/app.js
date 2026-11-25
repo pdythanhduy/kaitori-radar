@@ -581,7 +581,7 @@
       const CARR = /^(y!?mobile|ワイモバイル|ワイモバ|docomo|ドコモ|softbank|ソフトバンク|sb|au|rakuten|楽天|楽天モバイル|uqmobile|uq|simフリー|simfree|sim)$/;
       const toks0 = q0.split(/\s+/).filter(Boolean).map(nq).filter(Boolean);
       // 23/11: "sx740 シルバー" / "sx740シルバー" không ra (tiệm ghi 1 dòng không màu) → bỏ từ màu khi tìm theo từng từ
-      const COLOR = "シルバー|ブラック|ホワイト|ゴールド|ブルー|ピンク|グレー|レッド|グリーン|silver|black|white|gold|blue|pink|gray|grey|red|green|bạc|đen|trắng|vàng|xanh|hồng";
+      const COLOR = "シルバー|ブラック|ホワイト|ゴールド|ブルー|ピンク|グレー|レッド|グリーン|silver|black|white|gold|blue|pink|gray|grey|red|green|bạc|đen|trắng|vàng|xanh|hồng|đỏ|tím|mận";
       const COL1 = new RegExp("^(" + COLOR + ")$"), COLEND = new RegExp("(.)(" + COLOR + ")$");
       const drop = (t) => CARR.test(t) || COL1.test(t);
       const toks1 = toks0.map((t) => t.replace(COLEND, "$1"));
