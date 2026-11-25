@@ -15,3 +15,6 @@ Facebook: KHÔNG mở Chrome/Facebook cho tới khi user nói tài khoản đã 
 ## Cập nhật 24/11/2026
 - Thêm (user 22/11): 17 12 * * * PS5 Pro trên X (chỉ đọc); FB khởi động "Thảo Diệp" CHỈ Chrome Browser 1 — 23 10 xin vào nhóm, 7 11,14,17,20,22 bình luận (fb_warmup.md). Lịch FB cũ (Thành Duy) vẫn TẮT.
 - 24/11: lịch lặp của CronCreate hết hạn sau 30 ngày (không phải 7) → giữ nguyên các lịch đang chạy, không xoá/tạo lại. Lượt gia hạn kế tiếp: 30/11 7:41 (đối chiếu CronList, tạo lại lịch nào thiếu).
+
+## Cập nhật 25/11/2026 23:22
+- Lịch kiểm tra mỗi giờ (d1b7be05, 52 9-22) hết hạn sau lượt 23:22 25/11: lịch lặp hết hạn sau 7 ngày (không phải 30 như ghi 24/11). Chưa tạo lại — chờ user. Các lịch khác tạo cùng đợt có thể cũng sắp hết.
