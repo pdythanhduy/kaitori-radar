@@ -307,3 +307,13 @@ Thí nghiệm nào không hiệu quả sau 3–7 ngày thì dừng. Thí nghiệ
 - **Đã làm:** hôm qua — tìm bỏ từ màu (sx740 シルバー), ちぇき→チェキ, mục ngày lễ/CN ở /guide/tiem-kaitori/, trang Galaxy A25. **Hôm nay:** trang VI /guide/gia-kai-instax-cheki/ (20 mẫu, giá từng tiệm + FAQ, thẻ trong mục Hướng dẫn).
 - **FB Thảo Diệp (ngày 1):** 5/5 bình luận không link (32K ×2, 85K 1 chờ duyệt, 53K ×2); có lượt thích + nhắc tên từ người đăng; không cảnh báo.
 - **Chờ user:** (1) Yahoo Client ID / 楽天 App ID cho bot PS5 Pro; (2) A8 楽天/UQ vẫn 申込中; (3) kênh không phụ thuộc FB (LINE OpenChat / kênh Telegram giá) — chỉ đề xuất; (4) gắn モバステ?; (5) Search Console: xem 25/11 (user cần đăng nhập nếu chưa xác minh).
+
+### 25/11/2026 (web; FB "Thảo Diệp" khởi động nhẹ ngày 2 xong)
+- **Hôm qua (24/11):** **20 máy** (23/11: 23), mới 11, quay lại 9 = 45%. Cloudflare 26 lượt truy cập / 55 lượt xem (23/11: 21/81); máy tính 17, điện thoại 9. Nguồn: gõ thẳng/Zalo/LINE 23, **Facebook 3** (lần đầu sau khi Thảo Diệp bình luận, dù bình luận không có link), Google 0. Path: / 35, /vi/ 20.
+  - Vào từ link 24 (18PM 9, 30th CELEBRATION 4, trang chủ 3, Duo 256 2). **Bấm sang tiệm 0** (23/11: 6). Tìm 5 (a25, samsung a25, op, op13, op-13), không ra 0. Rời trang: chỉ cuộn 58%, không làm gì 16%.
+  - Dải "lần trước bạn xem": hiện 27, bấm 0 (giữ, xem lại 06/12).
+- **Nhận định:** lượt vào giữ ~20/ngày nhờ khách quen (quay lại 45%). Bấm tiệm 0 — người xem giá rồi đi. Người dùng bắt đầu tìm box One Piece (op13 ×3) → nhóm thẻ khác Pokémon có nhu cầu. Google vẫn 0.
+- **Trend (có nguồn):** Không có tin 24h mới: HK01 先達 mới nhất 17/11; 双11 TQ đã qua (tháng 10); PS5 Pro chưa có đợt bốc thăm mở (Sony Store đóng 7/10). ハドウシーカー: hạn đặt hàng trúng thăm PCO 24/11 đã qua, ra 27/11 (tinpanblog); chưa thấy lịch One Piece set mới có nguồn. Radar sáng: Apple CN/HK giữ giá, CNY 23,87, kai đứng. events.json không đổi.
+- **Đã làm:** trang VI /guide/gia-kai-box-one-piece/ — 23 box (OP-01→OP-18, EB-01→04, PRB-01/02) có ≥3 tiệm báo giá (bỏ EB-05 2 tiệm, có thể là carton), giá cao/thấp từng tiệm + FAQ; thẻ trong mục Hướng dẫn; sitemap 559 url. (Kiểm: dữ liệu giá dừng 22:41–10:11 mỗi đêm là bình thường, không phải lỗi.)
+- **FB Thảo Diệp (ngày 2):** 5/5 bình luận không link (109K ×2 gồm 1 trả lời, 53K ×2, 32K 1); không cảnh báo.
+- **Chờ user:** (1) Search Console: hẹn xem 25/11 (lượt index sau noindex 20/11) — cần user mở/đăng nhập hoặc cho phép mình xem bằng trình duyệt của user; (2) Yahoo Client ID / 楽天 App ID cho bot PS5 Pro; (3) A8 楽天/UQ vẫn 申込中; (4) kênh không phụ thuộc FB (LINE OpenChat / kênh Telegram giá) — chỉ đề xuất; (5) gắn モバステ?
