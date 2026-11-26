@@ -20,3 +20,4 @@ Facebook: KHÔNG mở Chrome/Facebook cho tới khi user nói tài khoản đã 
 - Lịch kiểm tra mỗi giờ (d1b7be05, 52 9-22) hết hạn sau lượt 23:22 25/11: lịch lặp hết hạn sau 7 ngày (không phải 30 như ghi 24/11). Chưa tạo lại — chờ user. Các lịch khác tạo cùng đợt có thể cũng sắp hết.
 - 26/11 08:23: radar thị trường (dd52e337, 23 8) cũng hết hạn sau lượt này. Chưa tạo lại — chờ user.
 - 26/11 11:47: săn trend (434031cf, 47 11,17) hết hạn sau lượt này. Chưa tạo lại — chờ user.
+- 26/11 13:33: radar Hồng Kông (e5c70d0a, 33 13) hết hạn sau lượt này. Chưa tạo lại — chờ user.
