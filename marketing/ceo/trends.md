@@ -1,20 +1,21 @@
 # Trend nóng hôm nay (lịch săn trend ghi; bình luận + bài nhóm đọc để chọn góc)
 
-**Quét lúc 25/11 18:20 JST** (giá site/data 18:11). Lượt này không đọc nhóm FB. Nguồn: market-concerns.md, từ khoá tìm trên web, bài Thảo Diệp đã gặp.
+**Quét lúc 26/11 11:50 JST** (giá site/data 11:16). Lượt này không đọc nhóm FB. Nguồn: market-concerns.md, từ khoá tìm trên web, bài Thảo Diệp đã gặp.
 
-## ⚡ Giá đổi (so lượt 12:25)
-- 18PM 256 cao nhất 229,5k (森森, giá màu đỏ; +1,9k), 18 Pro 256 211k (森森, +1,9k). Duo 256 354,1k, 512 395,1k đứng giá.
-- Box 30th CELEBRATION cao nhất 16,5k (1丁目), giảm từ 17,1k lúc 12:25. FUTURISTIC 45k, Switch 2 マリカセット 59,1k đứng giá.
-- Đổi ≥2% so hôm qua chỉ có máy ít tiệm: Pixel 10 Pro Fold 256 177,5k → 160k, Z50II kit 163,8k → 156,5k, Bose QC Ultra 28k → 31k.
+## ⚡ Giá đổi (so 25/11 18:20)
+- Món hot đứng giá hoặc giảm nhẹ: 18PM 256 cao nhất 227k (森森, màu đỏ; −2,5k so chiều qua), 18 Pro 256 209k (−2k), Duo 256 354k, Duo 512 393k (ゲストモバイル, −2,1k).
+- Box 30th CELEBRATION 16,8k (1丁目, +300), FUTURISTIC 45k, Switch 2 マリカセット 59,1k đứng giá.
+- Đổi ≥2% so hôm qua chỉ ở máy ít tiệm (Xperia 5 IV 楽天 45k→56k, Reno11 A 26,5k→30,8k, Pixel 10 Pro Fold 160k→172k).
 
 ## 🗣 Đang hỏi nhiều
-1. Người có 18PM đỏ/trắng hỏi ai thu → nêu giá theo màu + dung lượng (đỏ 256 森森 22m95; màu khác 22m5–22m7; 512 26m–26m2).
-2. Người mua đặt giá kai+2–4k cho 18 Pro/18PM → cộng sẵn từ giá tiệm theo màu.
-3. Web: tìm máy ảnh PowerShot G7 X Mark III (vào từ link "G7 mark3"; bản 30th 森森 thu 193k). Đã sửa tìm "poư/poơers/psv1" và "đỏ 18 prm".
+1. Bán gấp 18PM 256 đỏ, người mua trả 22m5 → nêu giá tiệm đỏ (森森 22m7, ルデヤ/パンダ 22m5).
+2. Người mua tìm 18PM xanh (glacier) → 森森 22m5, 512 26m0.
+3. Web: khách vào từ link 18PM / Duo; hôm qua tìm máy ảnh PowerShot → trang /guide/gia-kai-may-anh-powershot/ (mới 26/11).
 
 ## 📰 Tin
-- Không có tin mới 24–48h cho iPhone 18/G7X 30th. Giữ tin Amazon Black Friday (sale trước 27–29/11, chính 30/11–7/12) và ハドウシーカー ra 27/11.
+- ハドウシーカー ra 27/11 (PRICE BASE); giá thu box chưa có, chờ tiệm niêm yết sau khi ra.
+- Amazon Black Friday: sale trước 27–29/11, sale chính 30/11–7/12. Y!mobile Black Friday tới 01/12 14:59 (OPPO A5 / SE3 中古 1円).
 
 ## 🎯 Góc đề xuất (Thảo Diệp, không link tới 29/11)
-- Hỏi màu nào được giá: 256 đỏ cao nhất; 512 thì đỏ lại thấp hơn đen/glacier ~2k ở 森森/ルデヤ → nói theo dung lượng.
-- Box 30th đang giảm nhẹ trong ngày: chỉ nêu giá + giờ, không đoán.
+- Ai hỏi giá ハドウシーカー: chưa có giá thu, mai (27/11) tiệm mới niêm yết; không đoán.
+- 18PM hơi giảm 2–3k từ chiều qua: chỉ nêu giá + giờ, không dự đoán.
