@@ -1,6 +1,7 @@
 # PS5 Pro – theo dõi X (lần quét gần nhất)
-**25/11 12:55 JST**
-- Kai (site/data 12:11): PS5 Pro 2025 (CFI-7100B01) cao nhất 217.700円 (1丁目), 6 tiệm 210k–217,7k (森森/パンダ 217,5k, モバイル一番 216,7k, ルデヤ 216k, 当番 210k); CFI-7000B01 217.500 (森森), 4 tiệm 205k–217,5k. Sony 2TB 137.980 → chênh ~79.700円. (+1.900 so với 24/11; bỏ dòng 当番 130k 1 tiệm.)
-- X: chưa có bài giá thu mới hôm nay; 24/11: 買仙人, 買取1丁目, 買取ギルド (Osaka), シーガル西多賀 đăng thu PS5 Pro (giá trong ảnh), 買仙人 216.500 (đã ghi hôm qua).
-- 抽選/bán mới: không thấy trong 48h (truy vấn 抽選; 販売開始 ヨドバシ/ビック/ジョーシン/エディオン/イオン chỉ ra bài cũ). Bài 2次抽選 gần nhất là người nhận hàng 16–17/11 (Sony Store đợt 9/2026 đã đóng 7/10).
-- Sắp tới: Amazon Black Friday sale trước 27–29/11, sale chính 30/11–7/12, có PS5 trong danh sách giảm (phileweb 19/11), chưa rõ có PS5 Pro.
+**26/11 13:00 JST**
+- Kai (site/data ~12:40): PS5 Pro 2025 (CFI-7100B01) cao nhất 221.000円 (パンダ, 森森, 1丁目), 6 tiệm 210k–221k (モバイル一番 220,2k, ルデヤ 216k, 当番 210k); CFI-7000B01 221.000 (森森), 4 tiệm 205k–221k. Sony 2TB 137.980 → chênh ~83.000円 (+3.300 so 25/11). Bỏ dòng 当番 130k 1 tiệm.
+- X giá thu tiệm khác: 買取達人 25/11 PS5PRO 217.300; 買仙人 25/11 có PS5 Pro (số trong ảnh); 買取ギルド Osaka đăng thu.
+- 抽選/bán mới: 1 bài X 24/11 nói ヨドバシ "お年玉抽選" (夢のお年玉箱, hộp may mắn, chỉ hội viên ヨドバシ.com) đã mở, có PS5 Pro — CHƯA xác minh trang chính thức; năm trước lịch 25/11 11:00 → 01/12 11:59 (Game Watch). Không có đợt Sony Store/ビック/ジョーシン/エディオン/イオン mới trong 48h.
+- Người nhận máy 2次抽選 Sony vẫn đăng (26/11). Sony có nói phần chưa mua sẽ bốc thăm thêm cho người không trúng, chưa có ngày.
+- Sắp tới: Amazon Black Friday 27/11–7/12 (có PS5, chưa rõ PS5 Pro).
