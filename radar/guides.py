@@ -927,6 +927,40 @@ instax mini Evo, mini 12, mini 99, WIDE, SQUARE… Tiệm ghi tên tiếng Nhậ
                 "Giá thu mua máy ảnh チェキ FUJIFILM instax (mini Evo, mini 12, mini 99, WIDE…) và phim instax mới ở các tiệm kaitori Nhật. Tự cập nhật mỗi giờ.",
                 "Giá チェキ instax", "📸 Giá thu mua チェキ (instax) hôm nay", body_chk)
 
+    # Canon PowerShot (26/11: 25/11 có tìm "g7", "g7 mark3", "power sho", "poư", "psv1", vào từ link G7 mark3, /c/camera/ 3 lượt; chưa có trang VI)
+    pws = sorted([i for i in items.get("camera", []) if "powershot" in i["name"].lower() and i["n_shops"] >= 1],
+                 key=lambda i: (-i["n_shops"], -i["best"]))
+    if pws:
+        w_rows = []
+        for it in pws[:20]:
+            ps = sorted([kv for kv in it["prices"].items() if kv[1] and kv[1].get("price")], key=lambda kv: -kv[1]["price"])
+            link = f'<a href="/p/{it["_slug"]}/">{e(it["name"].strip())}</a>' if it.get("_slug") else e(it["name"].strip())
+            w_rows.append(f"<tr><td>{link}</td><td><b>{_yen(ps[0][1]['price'])}</b><br><small>{e(sname(ps[0][0]))}</small></td>"
+                          f"<td>{_yen(ps[-1][1]['price'])}</td><td>{it['n_shops']}</td></tr>")
+        top = pws[0]
+        hi = max(pws, key=lambda i: i["best"])
+        body_pws = f"""
+<p class="upd">Giá cập nhật: {upd} JST (tự động mỗi giờ)</p>
+<p>Giá thu mua <b>máy ảnh Canon PowerShot</b> mới chưa mở ở các tiệm kaitori Nhật: G7 X Mark III (cả bản kỷ niệm 30th), V1, V10, SX740 HS, ZOOM…
+Tiệm ghi tên tiếng Nhật/Anh kèm màu, mỗi màu hoặc bản kit có thể một giá. Bảng xếp theo số tiệm có giá.</p>
+<h2>Giá PowerShot từng mẫu</h2>
+<div class="tw"><table class="pt"><thead><tr><th>Tên tiệm ghi</th><th>Cao nhất</th><th>Thấp nhất</th><th>Số tiệm</th></tr></thead><tbody>{''.join(w_rows)}</tbody></table></div>
+<h2>Điều kiện thu mua cần biết</h2>
+<ul class="tips">
+<li><b>Mới chưa mở (未開封)</b> mới được giá như bảng; đã mở hộp, đã dùng thì thấp hơn hoặc tiệm báo giá riêng.</li>
+<li><b>Bản thường và bản 30th khác giá:</b> G7 X Mark III bản kỷ niệm 30 năm (30th Anniversary) giá khác bản thường — xem đúng dòng.</li>
+<li><b>Màu / bộ kit:</b> bản đen, bạc, bộ kèm tay cầm (トライポッドグリップキット) có thể chênh nhau.</li>
+</ul>
+<p class="cta"><a href="/vi/?q=powershot">Xem giá PowerShot ở tất cả tiệm →</a></p>
+{FB}
+{vi_faq([("Máy ảnh PowerShot bán kai được bao nhiêu?", f"Lúc {upd} JST mẫu có giá cao nhất là {hi['name'].strip()}: {_yen(hi['best'])} ({sname(hi['best_shop'])}). Mẫu nhiều tiệm báo giá nhất là {top['name'].strip()} ({top['n_shops']} tiệm). Bảng trên có từng mẫu."),
+         ("Gõ tìm G7 X Mark III thế nào?", "Gõ 'g7x mark3', 'g7 mark iii' hoặc 'powershot g7' vào ô tìm trên web; PowerShot V1 gõ 'psv1' hoặc 'powershot v1' cũng ra."),
+         ("Máy đã dùng có bán được không?", "Nhiều tiệm vẫn thu nhưng giá thấp hơn hàng mới; bảng trên chỉ là giá hàng mới chưa mở.")])}
+<p class="small">Giá là giá công khai trên web các tiệm cho hàng mới chưa mở; giá thực tế có thể khác. Không phải lời khuyên mua bán hay đầu tư.</p>"""
+        vi_page("/guide/gia-kai-may-anh-powershot/", "Giá kai máy ảnh Canon PowerShot (G7 X Mark III, V1) hôm nay ở các tiệm Nhật | Kaitori Price",
+                "Giá thu mua máy ảnh Canon PowerShot mới (G7 X Mark III, bản 30th, V1, V10, SX740 HS…) ở các tiệm kaitori Nhật. Tự cập nhật mỗi giờ.",
+                "Giá PowerShot", "📷 Giá thu mua máy ảnh Canon PowerShot hôm nay", body_pws)
+
     # box thẻ One Piece (25/11: người dùng tìm "op13", "op-13" ×3 ngày 24/11; chưa có trang VI). Chỉ món ≥3 tiệm để tránh số lạ (carton, 1 tiệm)
     import re as _re
     def _opcode(n):
@@ -1062,6 +1096,7 @@ Mỗi mục có nguồn; lịch bốc thăm của từng cửa hàng hay đổi,
                                    card("/guide/gia-kai-may-game/", "🎮", "Giá thu mua máy game hôm nay", "Switch 2, PS5, PS5 Pro, Portal… → giá từng tiệm"),
                                    card("/guide/gia-kai-galaxy-a25/", "📱", "Giá thu mua Galaxy A25 hôm nay", "Từng mã máy (SC-53F, SCG33, SM-A253…) → giá từng tiệm"),
                                    card("/guide/gia-kai-instax-cheki/", "📸", "Giá thu mua チェキ (instax) hôm nay", "mini Evo, mini 99, WIDE… từng màu → giá từng tiệm"),
+                                   card("/guide/gia-kai-may-anh-powershot/", "📷", "Giá thu mua máy ảnh Canon PowerShot hôm nay", "G7 X Mark III, bản 30th, V1 → giá từng tiệm"),
                                    card("/guide/gia-kai-box-one-piece/", "🏴‍☠️", "Giá thu mua box thẻ One Piece hôm nay", "OP-xx, EB-xx, PRB từng set → giá từng tiệm"),
                                    card("/guide/tiem-kaitori/", "📍", "Danh sách tiệm kaitori (Tokyo, Osaka, Nagoya)",
                                          "Địa chỉ, giờ mở cửa, ga gần nhất, link bản đồ của các tiệm web đang so giá")]

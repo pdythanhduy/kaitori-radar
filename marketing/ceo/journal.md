@@ -317,3 +317,14 @@ Thí nghiệm nào không hiệu quả sau 3–7 ngày thì dừng. Thí nghiệ
 - **Đã làm:** trang VI /guide/gia-kai-box-one-piece/ — 23 box (OP-01→OP-18, EB-01→04, PRB-01/02) có ≥3 tiệm báo giá (bỏ EB-05 2 tiệm, có thể là carton), giá cao/thấp từng tiệm + FAQ; thẻ trong mục Hướng dẫn; sitemap 559 url. (Kiểm: dữ liệu giá dừng 22:41–10:11 mỗi đêm là bình thường, không phải lỗi.)
 - **FB Thảo Diệp (ngày 2):** 5/5 bình luận không link (109K ×2 gồm 1 trả lời, 53K ×2, 32K 1); không cảnh báo.
 - **Chờ user:** (1) Search Console: hẹn xem 25/11 (lượt index sau noindex 20/11) — cần user mở/đăng nhập hoặc cho phép mình xem bằng trình duyệt của user; (2) Yahoo Client ID / 楽天 App ID cho bot PS5 Pro; (3) A8 楽天/UQ vẫn 申込中; (4) kênh không phụ thuộc FB (LINE OpenChat / kênh Telegram giá) — chỉ đề xuất; (5) gắn モバステ?
+
+### 26/11/2026 (web; FB "Thảo Diệp" khởi động nhẹ ngày 3 xong)
+- **Hôm qua (25/11):** **29 máy** (24/11: 20), mới 14, quay lại 15 = 51%. Cloudflare **60 lượt truy cập / 117 lượt xem** (24/11: 26/55). Nguồn: gõ thẳng/Zalo/LINE 55, **Yahoo検索 3 (lượt tìm kiếm tự nhiên đầu tiên)**, Facebook 2, Google 0. Path: / 83, /vi/ 17, /p/switch2 4, /c/camera/ 3, /p/duo-256 3.
+  - Vào từ link 42 (18PM 17, "30" 7, trang chủ 4, 18PM 256 3). **Bấm sang tiệm 8** (24/11: 0): ゲストモバイル 4 (Reno15 A ×2, Switch 2 マリカ, 16e), 1丁目 2, ケータイゴッド 1, 森森 1. Tìm 15, không ra 3 (poư/poơers/psv1 → đã sửa 16h). Rời trang: chỉ cuộn 43%, không làm gì 12%.
+  - Dải "lần trước bạn xem": hiện 66, bấm 0 (giữ tới 06/12).
+- **Nhận định:** ngày tốt nhất tuần (gấp đôi lượt truy cập). Yahoo bắt đầu đưa khách tới. Khách tìm máy ảnh (G7 X Mark III / PowerShot) — nhóm hàng ngoài iPhone có nhu cầu thật. Bấm tiệm hồi lại 8.
+- **Trend (có nguồn):** không có tin 24h mới (HK01 先達 mới nhất 16/11; PS5 Pro không có đợt bốc thăm mở). Radar sáng: Apple CN/HK giữ giá, CNY 23,87, kai 18PM 256 227,8k, Duo 256 354k. events.json không đổi.
+- **Đã làm:** (1) tìm kiếm: Telex lọt dấu (poư/poơers), psv1 → PowerShot; bỏ qua chữ màu đỏ/tím/mận ("đỏ 18 prm" 0 → 6). (2) Trang VI mới /guide/gia-kai-may-anh-powershot/ (~20 mẫu, cao nhất G7 X Mark III 30th 193k 森森; FAQ cách gõ đã kiểm bằng playwright); sitemap 563.
+- **FB Thảo Diệp (ngày 3):** 5/5 bình luận không link (32K ×2, 53K ×3); không cảnh báo.
+- **Lịch tự động:** lịch lặp hết hạn sau 7 ngày: kiểm tra mỗi giờ (25/11 23:22), radar thị trường và CEO sáng (26/11) đã hết — chờ user bảo tạo lại.
+- **Chờ user:** (1) tạo lại các lịch đã hết hạn; (2) Search Console (hẹn 25/11, chưa xem được); (3) Yahoo Client ID / 楽天 App ID cho bot PS5 Pro; (4) A8 楽天/UQ; (5) kênh LINE OpenChat / Telegram giá — chỉ đề xuất.
