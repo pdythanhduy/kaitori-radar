@@ -578,7 +578,7 @@
       const q = nq(q0.replace(/\s/g, ""));
       // 15/11: "ipad pro m4" không ra vì tên là "iPad Pro 13インチ M4…" → cả cụm không thấy thì tìm theo từng từ (đủ mọi từ)
       // 22/11: "galaxy a25 ymobile" không ra (tên máy không ghi nhà mạng) → bỏ từ nhà mạng khi tìm theo từng từ
-      const CARR = /^(y!?mobile|ワイモバイル|ワイモバ|docomo|ドコモ|softbank|ソフトバンク|sb|au|rakuten|楽天|楽天モバイル|uqmobile|uq|simフリー|simfree|sim)$/;
+      const CARR = /^(y!?mobile|ワイモバイル|ワイモバ|docomo|ドコモ|softbank|ソフトバンク|sb|au|rakuten|楽天|楽天モバイル|uqmobile|uq|simフリー|simfree|sim|apple|アップル)$/;  // 28/11: "apple iphone air 256gb" không ra (tên không có chữ apple)
       const toks0 = q0.split(/\s+/).filter(Boolean).map(nq).filter(Boolean);
       // 23/11: "sx740 シルバー" / "sx740シルバー" không ra (tiệm ghi 1 dòng không màu) → bỏ từ màu khi tìm theo từng từ
       const COLOR = "シルバー|ブラック|ホワイト|ゴールド|ブルー|ピンク|グレー|レッド|グリーン|silver|black|white|gold|blue|pink|gray|grey|red|green|bạc|đen|trắng|vàng|xanh|hồng|đỏ|tím|mận";
